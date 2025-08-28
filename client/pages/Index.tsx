@@ -348,7 +348,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-playfair font-bold text-foreground mb-4">
-              Pourquoi Choisir GBÊTÔ ?
+              Pourquoi Choisir Danxomɛ? ?
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Nous nous engageons à vous offrir la meilleure expérience d'achat et de découverte

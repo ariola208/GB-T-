@@ -56,9 +56,9 @@ interface Achievement {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Kossivi GBÊTÔ",
+    name: "Kossivi Danxomɛ",
     position: "Fondateur & Directeur Général",
-    description: "Visionnaire passionné du patrimoine béninois, Kossivi a créé GBÊTÔ pour valoriser l'excellence artisanale et touristique du Bénin.",
+    description: "Visionnaire passionné du patrimoine béninois, Kossivi a créé Danxomɛ pour valoriser l'excellence artisanale et touristique du Bénin.",
     image: "/placeholder.svg",
     expertise: ["Patrimoine culturel", "Entrepreneuriat social", "Commerce équitable"],
     email: "kossivi@gbeto.bj"
@@ -142,7 +142,7 @@ const partners: Partner[] = [
 const achievements: Achievement[] = [
   {
     year: 2017,
-    title: "Création de GBÊTÔ",
+    title: "Création de Danxomɛ",
     description: "Lancement de la plateforme avec 5 artisans partenaires",
     impact: "Première vente en ligne d'artisanat béninois authentique"
   },
@@ -229,7 +229,7 @@ const testimonials = [
     name: "Marie Dubois",
     position: "Cliente VIP",
     country: "France",
-    comment: "GBÊTÔ m'a fait découvrir la beauté authentique du Bénin. Chaque achat soutient directement les artisans locaux. Une approche éthique remarquable !",
+    comment: " Danxomɛ m.*a fait découvrir la beauté authentique du Bénin. Chaque achat soutient directement les artisans locaux. Une approche éthique remarquable !",
     rating: 5,
     purchase: "Circuit culturel 10 jours",
     date: "Mars 2024"
@@ -239,7 +239,7 @@ const testimonials = [
     name: "Dr. James Wilson",
     position: "Professeur d'Histoire",
     country: "États-Unis",
-    comment: "La qualité historique et culturelle des expériences proposées par GBÊTÔ est exceptionnelle. Un véritable pont entre tradition et modernité.",
+    comment: "La qualité historique et culturelle des expériences proposées par Danxomɛ est exceptionnelle. Un véritable pont entre tradition et modernité.",
     rating: 5,
     purchase: "Collection bronzes royaux",
     date: "Février 2024"
@@ -249,7 +249,7 @@ const testimonials = [
     name: "Aminata Traoré",
     position: "Entrepreneur",
     country: "Mali",
-    comment: "GBÊTÔ inspire par son engagement social. Voir comment ils valorisent le patrimoine africain me donne espoir pour notre continent.",
+    comment: "Danxomɛ inspire par son engagement social. Voir comment ils valorisent le patrimoine africain me donne espoir pour notre continent.",
     rating: 5,
     purchase: "Tissus Kente premium",
     date: "Janvier 2024"
@@ -271,7 +271,7 @@ export default function About() {
               Révéler l'Excellence<br />Béninoise au Monde
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
-              GBÊTÔ unit tradition et innovation pour promouvoir l'artisanat, le tourisme et la culture du Bénin. Nous créons des ponts entre les artisans locaux et les amateurs d'authenticité dans le monde entier.
+              Danxomɛ unit tradition et innovation pour promouvoir l'artisanat, le tourisme et la culture du Bénin. Nous créons des ponts entre les artisans locaux et les amateurs d'authenticité dans le monde entier.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground">
