@@ -11,18 +11,26 @@
     ]
   },
   "scripts": {
-    "dev": "vite",
-    "build": "pnpm run build:client && pnpm run build:server && pnpm run dev",
+    "dev": "concurrently \"pnpm run dev:server\" \"pnpm run dev:client\"",
+    "dev:client": "vite",
+    "dev:server": "node server/index.js",
+    "build": "pnpm run build:client && pnpm run build:server",
     "build:client": "vite build",
     "build:server": "vite build --config vite.config.server.ts",
     "start": "node dist/server/node-build.mjs",
+    "start:server": "node server/index.js",
     "test": "vitest --run",
     "format.fix": "prettier --write .",
     "typecheck": "tsc"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
     "zod": "^3.25.76"
   },
   "devDependencies": {
@@ -59,8 +67,10 @@
     "@swc/core": "^1.13.3",
     "@tailwindcss/typography": "^0.5.16",
     "@tanstack/react-query": "^5.84.2",
+    "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^24.2.1",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
@@ -70,7 +80,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
-    "cors": "^2.8.5",
+    "concurrently": "^9.1.2",
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.23.12",
