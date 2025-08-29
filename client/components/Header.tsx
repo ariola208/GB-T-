@@ -52,15 +52,15 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="relative">
-              <div className="h-8 w-8 rounded-lg bg-gbeto-gold flex items-center justify-center">
-                <span className="text-gbeto-gold-foreground font-playfair font-bold text-lg">G</span>
+            <div className="flex items-center space-x-2">
+              {/* Logo D stylisé */}
+              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-[#7c3aed] to-[#5b21b6] flex items-center justify-center shadow-lg border-2 border-[#8b5cf6] transition-all duration-300 hover:scale-110 hover:rotate-6">
+                <span className="text-white font-bold text-xl">D</span>
               </div>
-              <div className="absolute -bottom-1 -right-1 h-3 w-3 rounded bg-primary"></div>
+              <span className="font-playfair font-bold text-xl text-foreground">
+                anxomɛ
+              </span>
             </div>
-            <span className="font-playfair font-bold text-xl text-foreground">
-              ÀSẸ̀LÉKỌ́
-            </span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
