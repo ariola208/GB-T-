@@ -30,7 +30,7 @@ export default function Index() {
       title: "Découvrez l'Excellence Béninoise",
       subtitle: "E-commerce • Dropshipping • Tourisme",
       description: "Votre destination unique pour l'artisanat authentique, les produits locaux et les expériences touristiques du Bénin",
-      image: "/placeholder.svg",
+      image: "/placeholder.svg/mask.jpeg",
       cta: "Explorer Maintenant"
     },
     {

@@ -16,7 +16,8 @@ import {
   ChevronRight,
   Theatre,
   Scroll,
-  Drum
+  Drum,
+  Hammer
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -83,7 +84,7 @@ const historicalPeriods: HistoricalPeriod[] = [
       "Pratiques du vodoun bien développées",
       "Système politique très organisé"
     ],
-    image: "/placeholder.svg",
+    image: "/placeholder.svg/Royaume du Dahomey.jpeg",
     rulers: ["Houegbadja", "Akaba", "Wegbaja", "Agadja", "Tegbesu", "Kpengla", "Agonglo", "Gezo", "Glele", "Béhanzin"]
   },
   {
@@ -98,7 +99,7 @@ const historicalPeriods: HistoricalPeriod[] = [
       "Préservation du patrimoine culturel",
       "Émergence d'une élite intellectuelle"
     ],
-    image: "/placeholder.svg"
+    image: "/placeholder.svg/Période Coloniale.jpeg"
   },
   {
     id: 3,
@@ -112,7 +113,7 @@ const historicalPeriods: HistoricalPeriod[] = [
       "Renaissance culturelle",
       "Promotion du patrimoine mondial"
     ],
-    image: "/placeholder.svg"
+    image: "/placeholder.svg/Bénin Moderne.jpeg"
   }
 ];
 
@@ -268,21 +269,21 @@ export default function Culture() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative h-[80vh] overflow-hidden bg-gradient-to-br from-gbeto-surface via-background to-gbeto-surface">
+      <section className="relative h-[80vh] overflow-hidden bg-gradient-to-br from-yellow-50 via-background to-yellow-50">
         <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-20"></div>
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-4xl">
-            <Badge className="mb-4 bg-gbeto-gold text-gbeto-gold-foreground">
+            <Badge className="mb-4 bg-yellow-500 text-yellow-900">
               Patrimoine Culturel Béninois
             </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
               L'Âme du Bénin<br />à Travers les Siècles
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
               Plongez dans la richesse culturelle du Bénin : des royaumes anciens aux traditions vivantes, découvrez un patrimoine exceptionnel reconnu par l'UNESCO.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground">
+              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-yellow-900">
                 Explorer l'Histoire
                 <Crown className="ml-2 h-5 w-5" />
               </Button>
@@ -311,7 +312,7 @@ export default function Culture() {
               {/* Histoire Tab */}
               <TabsContent value="histoire" className="mt-8">
                 <div className="mb-8">
-                  <h2 className="text-3xl font-playfair font-bold text-foreground mb-4">
+                  <h2 className="text-3xl font-bold text-foreground mb-4">
                     Histoire du Bénin
                   </h2>
                   <p className="text-muted-foreground max-w-3xl">
@@ -326,7 +327,7 @@ export default function Culture() {
                       key={period.id}
                       variant={selectedPeriod === index ? "default" : "outline"}
                       onClick={() => setSelectedPeriod(index)}
-                      className={selectedPeriod === index ? "bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground" : ""}
+                      className={selectedPeriod === index ? "bg-yellow-500 hover:bg-yellow-600 text-yellow-900" : ""}
                     >
                       {period.name}
                     </Button>
@@ -337,12 +338,12 @@ export default function Culture() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   <div>
                     <div className="flex items-center mb-4">
-                      <Crown className="h-6 w-6 text-gbeto-gold mr-2" />
-                      <h3 className="text-2xl font-playfair font-bold text-foreground">
+                      <Crown className="h-6 w-6 text-yellow-500 mr-2" />
+                      <h3 className="text-2xl font-bold text-foreground">
                         {historicalPeriods[selectedPeriod].name}
                       </h3>
                     </div>
-                    <Badge className="mb-4 bg-gbeto-gold/20 text-gbeto-gold">
+                    <Badge className="mb-4 bg-yellow-100 text-yellow-800">
                       {historicalPeriods[selectedPeriod].period}
                     </Badge>
                     <p className="text-muted-foreground mb-6">
@@ -353,7 +354,7 @@ export default function Culture() {
                     <ul className="space-y-2">
                       {historicalPeriods[selectedPeriod].keyFacts.map((fact, index) => (
                         <li key={index} className="flex items-start">
-                          <span className="w-2 h-2 bg-gbeto-gold rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                          <span className="w-2 h-2 bg-yellow-500 rounded-full mr-3 mt-2 flex-shrink-0"></span>
                           <span className="text-muted-foreground">{fact}</span>
                         </li>
                       ))}
@@ -374,11 +375,9 @@ export default function Culture() {
                   </div>
                   
                   <div className="relative">
-                    <img 
-                      src={historicalPeriods[selectedPeriod].image} 
-                      alt={historicalPeriods[selectedPeriod].name}
-                      className="w-full h-64 object-cover rounded-lg"
-                    />
+                    <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+                      <span className="text-gray-500">Image: {historicalPeriods[selectedPeriod].name}</span>
+                    </div>
                     <div className="absolute bottom-4 left-4 bg-black/60 text-white p-2 rounded">
                       <span className="text-sm">{historicalPeriods[selectedPeriod].period}</span>
                     </div>
@@ -389,7 +388,7 @@ export default function Culture() {
               {/* Festivals Tab */}
               <TabsContent value="festivals" className="mt-8">
                 <div className="mb-8">
-                  <h2 className="text-3xl font-playfair font-bold text-foreground mb-4">
+                  <h2 className="text-3xl font-bold text-foreground mb-4">
                     Festivals et Traditions
                   </h2>
                   <p className="text-muted-foreground max-w-3xl">
@@ -399,15 +398,13 @@ export default function Culture() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {festivals.map((festival, index) => (
-                    <Card key={festival.id} className="group hover:shadow-xl transition-all duration-300 animate-fade-in" style={{animationDelay: `${index * 200}ms`}}>
+                    <Card key={festival.id} className="group hover:shadow-xl transition-all duration-300">
                       <div className="relative overflow-hidden">
-                        <img 
-                          src={festival.image} 
-                          alt={festival.name}
-                          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                        />
+                        <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
+                          <span className="text-gray-500">Image: {festival.name}</span>
+                        </div>
                         <div className="absolute top-4 left-4">
-                          <Badge className="bg-gbeto-gold text-gbeto-gold-foreground">
+                          <Badge className="bg-yellow-500 text-yellow-900">
                             {festival.date}
                           </Badge>
                         </div>
@@ -419,7 +416,7 @@ export default function Culture() {
                       </div>
                       
                       <CardContent className="p-6">
-                        <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-gbeto-gold transition-colors">
+                        <h3 className="text-xl font-semibold text-foreground mb-2">
                           {festival.name}
                         </h3>
                         <div className="flex items-center text-sm text-muted-foreground mb-3">
@@ -441,14 +438,14 @@ export default function Culture() {
                           <div className="space-y-1">
                             {festival.activities.slice(0, 3).map((activity, idx) => (
                               <div key={idx} className="flex items-center text-sm text-muted-foreground">
-                                <span className="w-1 h-1 bg-gbeto-gold rounded-full mr-2"></span>
+                                <span className="w-1 h-1 bg-yellow-500 rounded-full mr-2"></span>
                                 {activity}
                               </div>
                             ))}
                           </div>
                         </div>
 
-                        <Button className="w-full bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground">
+                        <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-yellow-900">
                           Programmer ma Visite
                           <Calendar className="ml-2 h-4 w-4" />
                         </Button>
@@ -461,7 +458,7 @@ export default function Culture() {
               {/* Patrimoine Tab */}
               <TabsContent value="patrimoine" className="mt-8">
                 <div className="mb-8">
-                  <h2 className="text-3xl font-playfair font-bold text-foreground mb-4">
+                  <h2 className="text-3xl font-bold text-foreground mb-4">
                     Patrimoine Mondial
                   </h2>
                   <p className="text-muted-foreground max-w-3xl">
@@ -471,15 +468,13 @@ export default function Culture() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {culturalHeritage.map((heritage, index) => (
-                    <Card key={heritage.id} className="group hover:shadow-xl transition-all duration-300 animate-slide-up" style={{animationDelay: `${index * 150}ms`}}>
+                    <Card key={heritage.id} className="group hover:shadow-xl transition-all duration-300">
                       <div className="relative overflow-hidden">
-                        <img 
-                          src={heritage.image} 
-                          alt={heritage.name}
-                          className="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300"
-                        />
+                        <div className="w-full h-40 bg-gray-200 flex items-center justify-center">
+                          <span className="text-gray-500 text-sm">Image: {heritage.name}</span>
+                        </div>
                         {heritage.unescoStatus && (
-                          <Badge className="absolute top-2 left-2 bg-gbeto-gold text-gbeto-gold-foreground text-xs">
+                          <Badge className="absolute top-2 left-2 bg-yellow-500 text-yellow-900 text-xs">
                             <Award className="h-3 w-3 mr-1" />
                             UNESCO
                           </Badge>
@@ -490,20 +485,20 @@ export default function Culture() {
                       </div>
                       
                       <CardContent className="p-4">
-                        <h3 className="font-semibold text-foreground mb-2 group-hover:text-gbeto-gold transition-colors">
+                        <h3 className="font-semibold text-foreground mb-2">
                           {heritage.name}
                         </h3>
                         <div className="flex items-center text-xs text-muted-foreground mb-2">
                           <MapPin className="h-3 w-3 mr-1" />
                           {heritage.location}
                         </div>
-                        <p className="text-sm text-muted-foreground mb-3 line-clamp-3">
+                        <p className="text-sm text-muted-foreground mb-3">
                           {heritage.description}
                         </p>
                         
                         <div className="mb-3">
                           <h4 className="text-xs font-medium text-foreground mb-1">Importance :</h4>
-                          <p className="text-xs text-muted-foreground line-clamp-2">
+                          <p className="text-xs text-muted-foreground">
                             {heritage.significance}
                           </p>
                         </div>
@@ -511,7 +506,7 @@ export default function Culture() {
                         <Button 
                           size="sm" 
                           variant="outline" 
-                          className="w-full group-hover:bg-gbeto-gold group-hover:text-gbeto-gold-foreground group-hover:border-gbeto-gold transition-colors"
+                          className="w-full"
                           disabled={!heritage.visitable}
                         >
                           {heritage.visitable ? "Visiter" : "En Savoir Plus"}
@@ -525,7 +520,7 @@ export default function Culture() {
               {/* Arts Traditionnels Tab */}
               <TabsContent value="arts" className="mt-8">
                 <div className="mb-8">
-                  <h2 className="text-3xl font-playfair font-bold text-foreground mb-4">
+                  <h2 className="text-3xl font-bold text-foreground mb-4">
                     Arts et Traditions Vivantes
                   </h2>
                   <p className="text-muted-foreground max-w-3xl">
@@ -535,23 +530,21 @@ export default function Culture() {
 
                 <div className="space-y-8">
                   {traditionalArts.map((art, index) => (
-                    <Card key={art.id} className="overflow-hidden animate-slide-in-left" style={{animationDelay: `${index * 200}ms`}}>
+                    <Card key={art.id} className="overflow-hidden">
                       <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
                         <div className="relative">
-                          <img 
-                            src={art.image} 
-                            alt={art.name}
-                            className="w-full h-48 lg:h-full object-cover"
-                          />
+                          <div className="w-full h-48 lg:h-full bg-gray-200 flex items-center justify-center">
+                            <span className="text-gray-500">Image: {art.name}</span>
+                          </div>
                           <div className="absolute bottom-4 left-4">
-                            <Badge className="bg-gbeto-gold text-gbeto-gold-foreground">
+                            <Badge className="bg-yellow-500 text-yellow-900">
                               {art.type}
                             </Badge>
                           </div>
                         </div>
                         
                         <div className="lg:col-span-2 p-6">
-                          <h3 className="text-2xl font-playfair font-bold text-foreground mb-3">
+                          <h3 className="text-2xl font-bold text-foreground mb-3">
                             {art.name}
                           </h3>
                           <p className="text-muted-foreground mb-4">
@@ -581,7 +574,7 @@ export default function Culture() {
                               <ul className="space-y-1">
                                 {art.techniques.map((technique, idx) => (
                                   <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                                    <span className="w-1 h-1 bg-gbeto-gold rounded-full mr-2"></span>
+                                    <span className="w-1 h-1 bg-yellow-500 rounded-full mr-2"></span>
                                     {technique}
                                   </li>
                                 ))}
@@ -590,7 +583,7 @@ export default function Culture() {
                           </div>
 
                           <div className="flex gap-4 mt-6">
-                            <Button className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground">
+                            <Button className="bg-yellow-500 hover:bg-yellow-600 text-yellow-900">
                               <Play className="mr-2 h-4 w-4" />
                               Voir Démonstration
                             </Button>
@@ -609,7 +602,7 @@ export default function Culture() {
               {/* Expériences Tab */}
               <TabsContent value="experiences" className="mt-8">
                 <div className="mb-8">
-                  <h2 className="text-3xl font-playfair font-bold text-foreground mb-4">
+                  <h2 className="text-3xl font-bold text-foreground mb-4">
                     Expériences Culturelles Immersives
                   </h2>
                   <p className="text-muted-foreground max-w-3xl">
@@ -627,7 +620,6 @@ export default function Culture() {
                       location: "Ouidah",
                       price: "35000 FCFA",
                       includes: ["Cérémonie d'accueil", "Visite des temples", "Rencontre avec un prêtre", "Bénédiction traditionnelle"],
-                      image: "/placeholder.svg",
                       icon: Crown
                     },
                     {
@@ -638,7 +630,6 @@ export default function Culture() {
                       location: "Abomey",
                       price: "25000 FCFA",
                       includes: ["Atelier pratique", "Matériaux fournis", "Œuvre à emporter", "Certificat d'apprentissage"],
-                      image: "/placeholder.svg",
                       icon: Hammer
                     },
                     {
@@ -649,7 +640,6 @@ export default function Culture() {
                       location: "Porto-Novo",
                       price: "18000 FCFA",
                       includes: ["Cours de percussion", "Danse traditionnelle", "Instruments inclus", "Spectacle final"],
-                      image: "/placeholder.svg",
                       icon: Drum
                     },
                     {
@@ -660,7 +650,6 @@ export default function Culture() {
                       location: "Village traditionnel",
                       price: "12000 FCFA",
                       includes: ["Contes épiques", "Boissons traditionnelles", "Feu de camp", "Interaction groupe"],
-                      image: "/placeholder.svg",
                       icon: Book
                     },
                     {
@@ -671,7 +660,6 @@ export default function Culture() {
                       location: "Abomey",
                       price: "30000 FCFA",
                       includes: ["Ingrédients locaux", "Recettes traditionnelles", "Repas complet", "Livre de recettes"],
-                      image: "/placeholder.svg",
                       icon: Heart
                     },
                     {
@@ -682,20 +670,17 @@ export default function Culture() {
                       location: "Montagnes de l'Atacora",
                       price: "40000 FCFA",
                       includes: ["Guide expert", "Transport", "Déjeuner", "Rencontres villageoises"],
-                      image: "/placeholder.svg",
                       icon: MapPin
                     }
                   ].map((experience, index) => (
-                    <Card key={index} className="group hover:shadow-xl transition-all duration-300 animate-scale-in" style={{animationDelay: `${index * 150}ms`}}>
+                    <Card key={index} className="group hover:shadow-xl transition-all duration-300">
                       <div className="relative overflow-hidden">
-                        <img 
-                          src={experience.image} 
-                          alt={experience.title}
-                          className="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300"
-                        />
+                        <div className="w-full h-40 bg-gray-200 flex items-center justify-center">
+                          <span className="text-gray-500 text-sm">Image: {experience.title}</span>
+                        </div>
                         <div className="absolute top-4 left-4">
-                          <div className="w-10 h-10 bg-gbeto-gold rounded-full flex items-center justify-center">
-                            <experience.icon className="h-5 w-5 text-gbeto-gold-foreground" />
+                          <div className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center">
+                            <experience.icon className="h-5 w-5 text-yellow-900" />
                           </div>
                         </div>
                         <div className="absolute top-4 right-4">
@@ -706,7 +691,7 @@ export default function Culture() {
                       </div>
                       
                       <CardContent className="p-6">
-                        <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-gbeto-gold transition-colors">
+                        <h3 className="text-lg font-semibold text-foreground mb-2">
                           {experience.title}
                         </h3>
                         <p className="text-sm text-muted-foreground mb-4">
@@ -733,14 +718,14 @@ export default function Culture() {
                           <ul className="space-y-1">
                             {experience.includes.slice(0, 3).map((item, idx) => (
                               <li key={idx} className="flex items-center text-xs text-muted-foreground">
-                                <span className="w-1 h-1 bg-gbeto-gold rounded-full mr-2"></span>
+                                <span className="w-1 h-1 bg-yellow-500 rounded-full mr-2"></span>
                                 {item}
                               </li>
                             ))}
                           </ul>
                         </div>
 
-                        <Button className="w-full bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground">
+                        <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-yellow-900">
                           Réserver l'Expérience
                           <ChevronRight className="ml-2 h-4 w-4" />
                         </Button>
@@ -755,10 +740,10 @@ export default function Culture() {
       </section>
 
       {/* Cultural Calendar */}
-      <section className="py-16 bg-gbeto-surface">
+      <section className="py-16 bg-yellow-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Calendrier Culturel 2024
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -776,12 +761,12 @@ export default function Culture() {
                 { month: "Octobre", events: ["Festival Abomey", "Semaine du Patrimoine"] },
                 { month: "Décembre", events: ["Festival des Arts", "Célébrations Royales"] }
               ].map((period, index) => (
-                <Card key={index} className="text-center animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
+                <Card key={index} className="text-center">
                   <CardContent className="p-4">
                     <h3 className="font-semibold text-foreground mb-3">{period.month}</h3>
                     <div className="space-y-2">
                       {period.events.map((event, idx) => (
-                        <div key={idx} className="text-sm text-muted-foreground p-2 bg-gbeto-gold/10 rounded">
+                        <div key={idx} className="text-sm text-muted-foreground p-2 bg-yellow-100 rounded">
                           {event}
                         </div>
                       ))}

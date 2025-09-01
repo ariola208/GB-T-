@@ -7,12 +7,7 @@
 @tailwind utilities;
 
 @layer base {
-  /**
-   * Tailwind CSS theme
-   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
-   * A different format will require also updating the theme in tailwind.config.ts.
-  */
-  :root {
+    :root {
     --background: 0 0% 4%;
     --foreground: 0 0% 95%;
 

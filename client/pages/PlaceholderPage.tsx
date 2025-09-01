@@ -15,8 +15,8 @@ export default function PlaceholderPage({ title, description, suggestedContent }
       <div className="container mx-auto px-4 text-center">
         <Card className="max-w-2xl mx-auto">
           <CardContent className="p-12">
-            <div className="w-20 h-20 bg-gbeto-gold rounded-full flex items-center justify-center mx-auto mb-6">
-              <Construction className="h-10 w-10 text-gbeto-gold-foreground" />
+            <div className="w-20 h-20 bg-Danxomɛ-gold rounded-full flex items-center justify-center mx-auto mb-6">
+              <Construction className="h-10 w-10 text-Danxomɛ-gold-foreground" />
             </div>
             
             <h1 className="text-3xl md:text-4xl font-playfair font-bold text-foreground mb-4">
@@ -44,7 +44,7 @@ export default function PlaceholderPage({ title, description, suggestedContent }
             )}
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground">
+              <Button asChild className="bg-gbeto-gold hover:bg-Danxomɛ-gold/90 text-Danxomɛ-gold-foreground">
                 <Link to="/">
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Retour à l'Accueil

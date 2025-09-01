@@ -56,12 +56,12 @@ interface Achievement {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Kossivi Danxomɛ",
+    name: "Amoussoukpevi Ariola",
     position: "Fondateur & Directeur Général",
-    description: "Visionnaire passionné du patrimoine béninois, Kossivi a créé Danxomɛ pour valoriser l'excellence artisanale et touristique du Bénin.",
-    image: "/placeholder.svg",
+    description: "Visionnaire passionné du patrimoine béninois, Ariola a créé Danxomɛ pour valoriser l'excellence artisanale et touristique du Bénin.",
+    image: "/placeholder.svg/harry.jpeg",
     expertise: ["Patrimoine culturel", "Entrepreneuriat social", "Commerce équitable"],
-    email: "kossivi@gbeto.bj"
+    email: "amoussoukpeviariola4@gmail.com"
   },
   {
     id: 2,
