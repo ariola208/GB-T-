@@ -4,7 +4,6 @@ import {
   ShoppingBag,
   MapPin,
   Star,
-  TrendingUp,
   Truck,
   Shield,
   Users,
@@ -17,6 +16,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"; 
+
 import { useCart } from "@/contexts/CartContext";
 import { useWishlist } from "@/contexts/WishlistContext";
 
@@ -51,11 +52,12 @@ export default function Index() {
 
   const categories = [
     { name: "Artisanat", icon: Crown, count: "250+ produits", color: "bg-gbeto-gold" },
-    { name: "Vêtements", icon: ShoppingBag, count: "180+ articles", color: "bg-primary" },
-    { name: "Gastronomie", icon: Heart, count: "120+ spécialités", color: "bg-gbeto-gold" },
-    { name: "Tourisme", icon: Palmtree, count: "50+ destinations", color: "bg-primary" },
-    { name: "Culture", icon: Camera, count: "30+ expériences", color: "bg-gbeto-gold" },
-    { name: "Monuments", icon: MapPin, count: "25+ sites", color: "bg-primary" }
+    { name: "Restauration", icon: Heart, count: "50+ adresses", color: "bg-primary" },
+    { name: "Vêtements", icon: ShoppingBag, count: "180+ articles", color: "bg-gbeto-gold" },
+    { name: "Gastronomie", icon: Heart, count: "120+ spécialités", color: "bg-primary" },
+    { name: "Tourisme", icon: Palmtree, count: "50+ destinations", color: "bg-gbeto-gold" },
+    { name: "Culture", icon: Camera, count: "30+ expériences", color: "bg-primary" },
+    { name: "Monuments", icon: MapPin, count: "25+ sites", color: "bg-gbeto-gold" }
   ];
 
   const featuredProducts = [
@@ -125,14 +127,35 @@ export default function Index() {
     },
     {
       icon: Star,
-      title: "Qualité Garantie",
+      title: "Qualité Artisanale",
       description: "Produits authentiques certifiés"
     },
     {
-      icon: TrendingUp,
-      title: "Meilleurs Prix",
-      description: "Prix compétitifs et promotions exclusives"
+      icon: Heart,
+      title: "Qualité Alimentaire",
+      description: "Valorisation de la cuisine locale et internationale de qualité."
     }
+  ];
+
+  const impactValues = [
+    {
+      icon: Palmtree,
+      title: "Écotourisme Responsable",
+      description: "Approche favorisant l'écotourisme dans les zones naturelles fragiles, minimisant l'impact négatif sur l'environnement.",
+      color: "text-green-600"
+    },
+    {
+      icon: Users,
+      title: "Retombées Locales",
+      description: "Implication directe des communautés locales (guides, artisans) pour un développement économique juste et équitable de la zone.",
+      color: "text-gbeto-gold"
+    },
+    {
+      icon: MapPin,
+      title: "Architecture Traditionnelle",
+      description: "Privilégier les structures d'accueil inspirées de l'architecture locale pour une immersion culturelle authentique.",
+      color: "text-indigo-600"
+    },
   ];
 
   useEffect(() => {
@@ -141,6 +164,19 @@ export default function Index() {
     }, 5000);
     return () => clearInterval(timer);
   }, [heroSlides.length]);
+
+  const getProductContextData = (product: typeof featuredProducts[0]) => ({
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    originalPrice: product.originalPrice,
+    image: product.image,
+    category: product.badge,
+    inStock: 50, 
+    rating: product.rating,
+    reviews: product.reviews
+  });
+
 
   return (
     <div className="min-h-screen">
@@ -159,13 +195,22 @@ export default function Index() {
               {heroSlides[currentSlide].description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground" asChild>
+              <Button 
+                size="lg" 
+                className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground transition-transform hover:scale-105 active:scale-95 duration-300" 
+                asChild
+              >
                 <Link to={currentSlide === 0 ? "/shop" : currentSlide === 1 ? "/artisanat" : "/tourism"}>
                   {heroSlides[currentSlide].cta}
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="transition-transform hover:scale-105 active:scale-95 duration-300"
+                asChild
+              >
                 <Link to="/about">
                   En Savoir Plus
                 </Link>
@@ -179,8 +224,8 @@ export default function Index() {
           {heroSlides.map((_, index) => (
             <button
               key={index}
-              className={`w-3 h-3 rounded-full transition-all ${
-                index === currentSlide ? 'bg-gbeto-gold' : 'bg-muted-foreground/30'
+              className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-150 ${
+                index === currentSlide ? 'bg-gbeto-gold' : 'bg-muted-foreground/30 hover:bg-gbeto-gold/70'
               }`}
               onClick={() => setCurrentSlide(index)}
             />
@@ -200,17 +245,23 @@ export default function Index() {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4">
             {categories.map((category, index) => (
-              <Card key={category.name} className="group hover:scale-105 transition-all duration-300 cursor-pointer animate-slide-up" style={{animationDelay: `${index * 100}ms`}}>
-                <CardContent className="p-6 text-center">
-                  <div className={`w-12 h-12 ${category.color} rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
-                    <category.icon className="h-6 w-6 text-background" />
-                  </div>
-                  <h3 className="font-semibold text-foreground mb-2">{category.name}</h3>
-                  <p className="text-sm text-muted-foreground">{category.count}</p>
-                </CardContent>
-              </Card>
+              <Link 
+                key={category.name} 
+                to={`/shop/${category.name.toLowerCase()}`} 
+                className="block"
+              >
+                <Card className="group hover:scale-105 transition-all duration-300 cursor-pointer animate-slide-up" style={{animationDelay: `${index * 100}ms`}}>
+                  <CardContent className="p-6 text-center">
+                    <div className={`w-12 h-12 ${category.color} rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
+                      <category.icon className="h-6 w-6 text-background" />
+                    </div>
+                    <h3 className="font-semibold text-foreground mb-2 group-hover:text-gbeto-gold transition-colors">{category.name}</h3>
+                    <p className="text-sm text-muted-foreground">{category.count}</p>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
@@ -228,7 +279,11 @@ export default function Index() {
                 Découvrez nos sélections les plus populaires
               </p>
             </div>
-            <Button variant="outline" asChild>
+            <Button 
+              variant="outline" 
+              className="transition-transform hover:scale-105 active:scale-95 duration-300"
+              asChild
+            >
               <Link to="/shop">
                 Voir Tout
                 <ChevronRight className="ml-2 h-4 w-4" />
@@ -253,24 +308,13 @@ export default function Index() {
                   <Badge variant="secondary" className="absolute top-2 right-2">
                     {product.badge}
                   </Badge>
-                  {/* Wishlist Button */}
                   <Button
                     size="sm"
                     variant="ghost"
-                    className="absolute top-2 right-12 opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 hover:bg-white h-8 w-8 p-0"
-                    onClick={() => toggleWishlist({
-                      id: product.id,
-                      name: product.name,
-                      price: product.price,
-                      originalPrice: product.originalPrice,
-                      image: product.image,
-                      category: product.badge,
-                      inStock: 50, // Default stock
-                      rating: product.rating,
-                      reviews: product.reviews
-                    })}
+                    className="absolute top-2 right-12 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/80 hover:bg-white h-8 w-8 p-0 hover:scale-110 active:scale-90"
+                    onClick={() => toggleWishlist(getProductContextData(product))}
                   >
-                    <Heart className={`h-4 w-4 ${isInWishlist(product.id) ? 'fill-red-500 text-red-500' : 'text-muted-foreground'}`} />
+                    <Heart className={`h-4 w-4 transition-colors ${isInWishlist(product.id) ? 'fill-red-500 text-red-500' : 'text-muted-foreground'}`} />
                   </Button>
                 </div>
                 <CardContent className="p-4">
@@ -303,18 +347,8 @@ export default function Index() {
                     </div>
                     <Button
                       size="sm"
-                      className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground"
-                      onClick={() => addToCart({
-                        id: product.id,
-                        name: product.name,
-                        price: product.price,
-                        originalPrice: product.originalPrice,
-                        image: product.image,
-                        category: product.badge,
-                        inStock: 50, // Default stock
-                        rating: product.rating,
-                        reviews: product.reviews
-                      })}
+                      className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground transition-transform hover:scale-110 active:scale-90 duration-300"
+                      onClick={() => addToCart(getProductContextData(product))}
                     >
                       <ShoppingBag className="h-4 w-4" />
                     </Button>
@@ -342,34 +376,105 @@ export default function Index() {
           </div>
         </div>
       </section>
+      
+      {/* NOUVELLE SECTION : Artisan Spotlight */}
+      <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+              <div className="flex flex-col lg:flex-row items-center gap-10">
+                  {/* Image Placeholder */}
+                  <div className="lg:w-1/2 w-full">
+                      <div className="relative w-full aspect-square max-w-md mx-auto lg:mx-0 rounded-xl overflow-hidden shadow-2xl transition-transform hover:rotate-1 hover:scale-[1.02] duration-500">
+                          <img
+                              src="/placeholder.svg/artisan.jpeg" // Remplacer par une image d'artisan
+                              alt="Portrait de l'Artisan Sègbè"
+                              className="w-full h-full object-cover"
+                          />
+                          <Badge className="absolute bottom-4 left-4 bg-gbeto-gold text-gbeto-gold-foreground text-base px-3 py-1">
+                              Artisan du Mois
+                          </Badge>
+                      </div>
+                  </div>
 
-      {/* Features Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-foreground mb-4">
-              Pourquoi Choisir Danxomɛ? ?
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Nous nous engageons à vous offrir la meilleure expérience d'achat et de découverte
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <div key={feature.title} className="text-center animate-slide-up" style={{animationDelay: `${index * 150}ms`}}>
-                <div className="w-16 h-16 bg-gbeto-surface rounded-full flex items-center justify-center mx-auto mb-4">
-                  <feature.icon className="h-8 w-8 text-gbeto-gold" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
+                  {/* Content */}
+                  <div className="lg:w-1/2 w-full lg:text-left text-center">
+                      <h2 className="text-4xl md:text-5xl font-playfair font-bold text-foreground mb-4">
+                          Rencontrez Sègbè, Maître Bronzier
+                      </h2>
+                      <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+                          Depuis plus de 30 ans, Sègbè perpétue l'art ancestral de la fonte à cire perdue. Chaque pièce raconte une histoire du royaume de Danxomɛ.
+                      </p>
+                      <ul className="list-disc list-inside text-foreground/90 mb-8 space-y-2 lg:text-left mx-auto max-w-sm lg:mx-0">
+                          <li>Technique : Fonte à Cire Perdue.</li>
+                          <li>Localisation : Abomey, Bénin.</li>
+                          <li>Produits : Statuettes Ifè, Objets Rituels.</li>
+                      </ul>
+                      {/* Bouton pour voir ses produits - Animation ajoutée */}
+                      <Button 
+                          size="lg" 
+                          className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground transition-transform hover:scale-105 active:scale-95 duration-300" 
+                          asChild
+                      >
+                          <Link to="/artisan/segbe">
+                              Voir Ses Créations
+                              <Crown className="ml-2 h-5 w-5" />
+                          </Link>
+                      </Button>
+                  </div>
               </div>
-            ))}
           </div>
-        </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Section regroupée avec des Onglets (Tabs) pour les Features et l'Impact */}
+      <section className="py-16 bg-gbeto-surface/50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-center text-foreground mb-8">
+                Nos Valeurs et Engagements
+            </h2>
+            
+            <Tabs defaultValue="features" className="w-full max-w-4xl mx-auto">
+                <TabsList className="grid w-full grid-cols-2 h-auto p-1 bg-gbeto-surface">
+                    <TabsTrigger value="features" className="data-[state=active]:bg-gbeto-gold data-[state=active]:text-gbeto-gold-foreground transition-all duration-300">
+                        <Star className="h-4 w-4 mr-2" /> Pourquoi Nous Choisir
+                    </TabsTrigger>
+                    <TabsTrigger value="impact" className="data-[state=active]:bg-gbeto-gold data-[state=active]:text-gbeto-gold-foreground transition-all duration-300">
+                        <Palmtree className="h-4 w-4 mr-2" /> Notre Impact Durable
+                    </TabsTrigger>
+                </TabsList>
+
+                {/* Contenu : Features (Services) */}
+                <TabsContent value="features" className="mt-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-4">
+                        {features.map((feature, index) => (
+                            <div key={feature.title} className="text-center animate-slide-up" style={{animationDelay: `${index * 150}ms`}}>
+                                <div className="w-16 h-16 bg-gbeto-surface rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <feature.icon className="h-8 w-8 text-gbeto-gold" />
+                                </div>
+                                <h3 className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
+                                <p className="text-muted-foreground">{feature.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </TabsContent>
+
+                {/* Contenu : Impact Values (Écologie et Local) */}
+                <TabsContent value="impact" className="mt-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
+                        {impactValues.map((value, index) => (
+                            <div key={value.title} className="text-center bg-white p-6 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-slide-up" style={{animationDelay: `${index * 150}ms`}}>
+                                <div className="w-16 h-16 bg-gbeto-surface rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-gbeto-gold">
+                                    <value.icon className={`h-8 w-8 ${value.color}`} />
+                                </div>
+                                <h3 className="text-xl font-semibold text-foreground mb-2">{value.title}</h3>
+                                <p className="text-muted-foreground text-sm">{value.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </TabsContent>
+            </Tabs>
+          </div>
+      </section>
+
+      {/* CTA Section - Boutons de Navigation (Fonctionnent via Link) */}
       <section className="py-20 bg-gradient-to-r from-gbeto-gold/10 via-gbeto-surface to-gbeto-gold/10">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-5xl font-playfair font-bold text-foreground mb-6">
@@ -379,13 +484,13 @@ export default function Index() {
             Rejoignez des milliers de clients satisfaits et découvrez l'authenticité béninoise
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground" asChild>
+            <Button size="lg" className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground transition-transform hover:scale-105 active:scale-95 duration-300" asChild>
               <Link to="/shop">
                 Commencer Vos Achats
                 <ShoppingBag className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button size="lg" variant="outline" className="transition-transform hover:scale-105 active:scale-95 duration-300" asChild>
               <Link to="/tourism">
                 Explorer le Tourisme
                 <MapPin className="ml-2 h-5 w-5" />

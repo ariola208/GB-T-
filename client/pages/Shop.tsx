@@ -1,15 +1,18 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import {
   Search,
-  Filter,
   Grid3x3,
   List,
   Star,
   Heart,
   ShoppingCart,
-  ChevronDown,
-  SlidersHorizontal
+  SlidersHorizontal,
+  ChevronRight,
+  Wallet, // Nouveau icône pour le paiement
+  CreditCard, // Icône carte bancaire
+  Smartphone, // Icône Mobile Money
+  Check
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,11 +33,20 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { 
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription
+} from "@/components/ui/dialog"; // Nouveaux imports pour le modal
+import { Label } from "@/components/ui/label"; // Nouvel import pour les labels de formulaire
 import { Checkbox } from "@/components/ui/checkbox";
 import { Slider } from "@/components/ui/slider";
 import { useCart } from "@/contexts/CartContext";
 import { useWishlist } from "@/contexts/WishlistContext";
 
+// Interface et données produits inchangées
 interface Product {
   id: number;
   name: string;
@@ -54,6 +66,7 @@ interface Product {
 }
 
 const products: Product[] = [
+  // ... (Vos 12 produits restent ici, le contenu a été omis pour la concision du code)
   {
     id: 1,
     name: "Masque Dan Traditionnel",
@@ -269,11 +282,159 @@ const sortOptions = [
   { value: "popular", label: "Plus populaires" }
 ];
 
+type PaymentMethod = "mobile_money" | "moov_money" | "celtiis_cash" | "card";
+
+// Composant pour le formulaire de paiement
+const PaymentModal = ({ open, setOpen, method }: { 
+  open: boolean; 
+  setOpen: (open: boolean) => void; 
+  method: PaymentMethod | null 
+}) => {
+  const [formData, setFormData] = useState({});
+
+  if (!method) return null;
+
+  let title = "Finaliser l'achat";
+  let description = "";
+  let formFields;
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log(`Paiement ${method} simulé avec les données :`, formData);
+    // Logique de paiement simulée (API call, redirection, etc.)
+    setOpen(false);
+    alert(`Paiement par ${title} simulé avec succès !`);
+    setFormData({}); // Réinitialiser le formulaire
+  };
+
+  const MobileMoneyForm = ({ providerName }: { providerName: string }) => {
+    title = `Paiement via ${providerName}`;
+    description = `Veuillez entrer votre numéro de téléphone ${providerName} pour recevoir la requête de paiement.`;
+    formFields = (
+      <>
+        <div className="space-y-2">
+          <Label htmlFor="phone">Numéro de Téléphone ({providerName})</Label>
+          <Input 
+            id="phone" 
+            placeholder="Ex: 97xx xxxx" 
+            type="tel"
+            required
+            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="amount">Montant à Payer</Label>
+          <Input id="amount" value="55.000 FCFA" disabled />
+        </div>
+        <Button type="submit" className="w-full bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground">
+          <Check className="h-4 w-4 mr-2" />
+          Confirmer le Paiement
+        </Button>
+      </>
+    );
+    return null;
+  };
+
+  const CardForm = () => {
+    title = "Paiement par Carte Bancaire";
+    description = "Veuillez entrer les détails de votre carte pour procéder au paiement.";
+    formFields = (
+      <>
+        <div className="space-y-2">
+          <Label htmlFor="cardNumber">Numéro de Carte</Label>
+          <Input 
+            id="cardNumber" 
+            placeholder="xxxx xxxx xxxx xxxx" 
+            maxLength={19}
+            required
+            onChange={(e) => setFormData({ ...formData, cardNumber: e.target.value })}
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="cardName">Nom sur la Carte</Label>
+          <Input 
+            id="cardName" 
+            placeholder="Nom Prénom" 
+            required
+            onChange={(e) => setFormData({ ...formData, cardName: e.target.value })}
+          />
+        </div>
+        <div className="grid grid-cols-3 gap-4">
+          <div className="col-span-2 space-y-2">
+            <Label htmlFor="expiryDate">Date d'Expiration (MM/AA)</Label>
+            <Input 
+              id="expiryDate" 
+              placeholder="MM/AA" 
+              maxLength={5}
+              required
+              onChange={(e) => setFormData({ ...formData, expiryDate: e.target.value })}
+            />
+          </div>
+          <div className="col-span-1 space-y-2">
+            <Label htmlFor="cvv">CVV</Label>
+            <Input 
+              id="cvv" 
+              placeholder="123" 
+              maxLength={4}
+              required
+              onChange={(e) => setFormData({ ...formData, cvv: e.target.value })}
+            />
+          </div>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="amount">Montant à Payer</Label>
+          <Input id="amount" value="55.000 FCFA" disabled />
+        </div>
+        <Button type="submit" className="w-full bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground">
+          <CreditCard className="h-4 w-4 mr-2" />
+          Payer Maintenant
+        </Button>
+      </>
+    );
+    return null;
+  };
+
+
+  // Détermine le formulaire à afficher
+  switch (method) {
+    case 'mobile_money':
+      MobileMoneyForm({ providerName: 'MTN Mobile Money' });
+      break;
+    case 'moov_money':
+      MobileMoneyForm({ providerName: 'Moov Money' });
+      break;
+    case 'celtiis_cash':
+      MobileMoneyForm({ providerName: 'Celtiis Cash' });
+      break;
+    case 'card':
+      CardForm();
+      break;
+  }
+
+  return (
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>{title}</DialogTitle>
+          <DialogDescription>
+            {description}
+          </DialogDescription>
+        </DialogHeader>
+        <form onSubmit={handleFormSubmit} className="grid gap-4 py-4">
+          {formFields}
+        </form>
+      </DialogContent>
+    </Dialog>
+  );
+};
+
+
 export default function Shop() {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
-  const { addItem: addToCart } = useCart();
-  const { toggleItem: toggleWishlist, isInWishlist } = useWishlist();
+  
+  const { addItem: addToCart } = useCart(); 
+  const { toggleItem: toggleWishlist, isInWishlist } = useWishlist(); 
 
   const [searchQuery, setSearchQuery] = useState(searchParams.get("search") || "");
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get("category") || "Tous");
@@ -283,7 +444,18 @@ export default function Shop() {
   const [showInStockOnly, setShowInStockOnly] = useState(searchParams.get("inStock") === "true");
   const [showNewOnly, setShowNewOnly] = useState(searchParams.get("newOnly") === "true");
 
-  // Update URL when filters change
+  // Nouveaux états pour le paiement
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<PaymentMethod | null>(null);
+
+  // Fonction pour ouvrir le modal de paiement
+  const handleSimulatedCheckout = useCallback((method: PaymentMethod) => {
+    setSelectedPaymentMethod(method);
+    setIsPaymentModalOpen(true);
+  }, []);
+
+
+  // Update URL when filters change (unchanged logic)
   useEffect(() => {
     const params = new URLSearchParams();
     if (searchQuery) params.set("search", searchQuery);
@@ -333,7 +505,7 @@ export default function Shop() {
   }, [searchQuery, selectedCategory, sortBy, priceRange, showInStockOnly, showNewOnly]);
 
   const ProductCard = ({ product }: { product: Product }) => (
-    <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
+    <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden animate-scale-in">
       <div className="relative overflow-hidden">
         <img 
           src={product.image} 
@@ -341,18 +513,23 @@ export default function Shop() {
           className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
         />
         {product.isNew && (
-          <Badge className="absolute top-2 left-2 bg-gbeto-gold text-gbeto-gold-foreground">
+          <Badge className="absolute top-2 left-2 bg-gbeto-gold text-gbeto-gold-foreground text-xs">
             Nouveau
           </Badge>
         )}
         {product.originalPrice && (
-          <Badge variant="destructive" className="absolute top-2 right-2">
+          <Badge variant="destructive" className="absolute top-2 right-2 text-xs">
             -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
           </Badge>
         )}
         <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-          <Button size="sm" variant="ghost" className="h-8 w-8 p-0 bg-white/80 hover:bg-white">
-            <Heart className="h-4 w-4" />
+          <Button 
+            size="sm" 
+            variant="ghost" 
+            className={`h-6 w-6 p-0 bg-white/80 hover:bg-white ${isInWishlist(product.id) ? 'text-red-500' : ''}`}
+            onClick={() => toggleWishlist(product)} 
+          >
+            <Heart className={`h-3 w-3 ${isInWishlist(product.id) ? 'fill-current' : ''}`} />
           </Button>
         </div>
       </div>
@@ -401,6 +578,7 @@ export default function Shop() {
             size="sm" 
             className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground"
             disabled={product.inStock === 0}
+            onClick={() => addToCart(product, 1)} 
           >
             <ShoppingCart className="h-4 w-4 mr-1" />
             Ajouter
@@ -417,35 +595,84 @@ export default function Shop() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header Section */}
-      <section className="bg-gbeto-surface py-12">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-playfair font-bold text-foreground mb-4">
+      {/* Hero Section - Symétrique à Artisanat.tsx */}
+      <section className="relative h-[60vh] md:h-[50vh] overflow-hidden bg-gradient-to-br from-gbeto-surface via-background to-gbeto-surface">
+        <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-20"></div>
+        <div className="relative container mx-auto px-4 h-full flex items-center justify-center text-center">
+          <div className="max-w-4xl pt-12">
+            <Badge className="mb-4 bg-gbeto-gold text-gbeto-gold-foreground">
+              Artisanat & Produits Locaux
+            </Badge>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-foreground mb-4 leading-tight">
               Boutique Danxomɛ
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Découvrez l'authenticité béninoise à travers nos produits sélectionnés avec soin
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+              Découvrez l'authenticité béninoise à travers nos produits sélectionnés avec soin, reflets du savoir-faire local.
             </p>
+            
+            {/* Nouveau : Boutons pour la simulation de paiement */}
+            <div className="flex flex-wrap justify-center gap-3">
+              <Button 
+                size="lg" 
+                className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground"
+                onClick={() => handleSimulatedCheckout('mobile_money')}
+              >
+                  <Smartphone className="ml-2 h-5 w-5" />
+                  MTN Mobile Money
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-gbeto-gold text-gbeto-gold hover:bg-gbeto-gold/10"
+                onClick={() => handleSimulatedCheckout('moov_money')}
+              >
+                  <Smartphone className="ml-2 h-5 w-5" />
+                  Moov Money
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-gbeto-gold text-gbeto-gold hover:bg-gbeto-gold/10"
+                onClick={() => handleSimulatedCheckout('celtiis_cash')}
+              >
+                  <Smartphone className="ml-2 h-5 w-5" />
+                  Celtiis Cash
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-gbeto-gold text-gbeto-gold hover:bg-gbeto-gold/10"
+                onClick={() => handleSimulatedCheckout('card')}
+              >
+                  <CreditCard className="ml-2 h-5 w-5" />
+                  Carte Bancaire
+              </Button>
+            </div>
           </div>
+        </div>
+      </section>
+      {/* Ligne pour séparer visuellement le Hero et les Filtres */}
+      <hr className="w-4/5 mx-auto border-t border-gbeto-surface" /> 
 
-          {/* Search and Filters */}
+      {/* Filter Bar Section - Symétrique en termes de padding/couleur à Artisanat.tsx */}
+      <section className="py-8 bg-gbeto-surface">
+        <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
             {/* Search */}
-            <div className="relative flex-1 max-w-md">
+            <div className="relative flex-1 max-w-sm w-full">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 type="search"
                 placeholder="Rechercher des produits..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10"
+                className="pl-10 w-full"
               />
             </div>
 
             {/* Category Filter */}
             <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-              <SelectTrigger className="w-48">
+              <SelectTrigger className="w-full lg:w-48">
                 <SelectValue placeholder="Catégorie" />
               </SelectTrigger>
               <SelectContent>
@@ -459,7 +686,7 @@ export default function Shop() {
 
             {/* Sort */}
             <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-48">
+              <SelectTrigger className="w-full lg:w-48">
                 <SelectValue placeholder="Trier par" />
               </SelectTrigger>
               <SelectContent>
@@ -471,101 +698,105 @@ export default function Shop() {
               </SelectContent>
             </Select>
 
-            {/* Advanced Filters */}
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline">
-                  <SlidersHorizontal className="h-4 w-4 mr-2" />
-                  Filtres
-                </Button>
-              </SheetTrigger>
-              <SheetContent>
-                <SheetHeader>
-                  <SheetTitle>Filtres Avancés</SheetTitle>
-                  <SheetDescription>
-                    Affinez votre recherche selon vos préférences
-                  </SheetDescription>
-                </SheetHeader>
-                <div className="space-y-6 mt-6">
-                  {/* Price Range */}
-                  <div>
-                    <label className="text-sm font-medium mb-3 block">
-                      Prix (FCFA)
-                    </label>
-                    <Slider
-                      value={priceRange}
-                      onValueChange={setPriceRange}
-                      max={150000}
-                      step={1000}
-                      className="mb-2"
-                    />
-                    <div className="flex justify-between text-sm text-muted-foreground">
-                      <span>{priceRange[0].toLocaleString()} FCFA</span>
-                      <span>{priceRange[1].toLocaleString()} FCFA</span>
+            {/* View Mode & Advanced Filters - Grouped for symmetry/cleanliness */}
+            <div className="flex items-center space-x-3">
+              {/* Advanced Filters */}
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="outline" className="flex-shrink-0">
+                    <SlidersHorizontal className="h-4 w-4 mr-2" />
+                    Filtres
+                  </Button>
+                </SheetTrigger>
+                <SheetContent>
+                  <SheetHeader>
+                    <SheetTitle>Filtres Avancés</SheetTitle>
+                    <SheetDescription>
+                      Affinez votre recherche selon vos préférences
+                    </SheetDescription>
+                  </SheetHeader>
+                  <div className="space-y-6 mt-6">
+                    {/* Price Range */}
+                    <div>
+                      <label className="text-sm font-medium mb-3 block">
+                        Prix (FCFA)
+                      </label>
+                      <Slider
+                        value={priceRange}
+                        onValueChange={setPriceRange}
+                        max={150000}
+                        step={1000}
+                        min={0}
+                        className="mb-2"
+                      />
+                      <div className="flex justify-between text-sm text-muted-foreground">
+                        <span>{priceRange[0].toLocaleString()} FCFA</span>
+                        <span>{priceRange[1].toLocaleString()} FCFA</span>
+                      </div>
+                    </div>
+
+                    {/* Stock Filter */}
+                    <div className="flex items-center space-x-2">
+                      <Checkbox 
+                        id="inStock" 
+                        checked={showInStockOnly}
+                        onCheckedChange={(checked) => setShowInStockOnly(!!checked)}
+                      />
+                      <label htmlFor="inStock" className="text-sm">
+                        En stock uniquement
+                      </label>
+                    </div>
+
+                    {/* New Products */}
+                    <div className="flex items-center space-x-2">
+                      <Checkbox 
+                        id="newOnly" 
+                        checked={showNewOnly}
+                        onCheckedChange={(checked) => setShowNewOnly(!!checked)}
+                      />
+                      <label htmlFor="newOnly" className="text-sm">
+                        Nouveautés uniquement
+                      </label>
                     </div>
                   </div>
+                </SheetContent>
+              </Sheet>
 
-                  {/* Stock Filter */}
-                  <div className="flex items-center space-x-2">
-                    <Checkbox 
-                      id="inStock" 
-                      checked={showInStockOnly}
-                      onCheckedChange={setShowInStockOnly}
-                    />
-                    <label htmlFor="inStock" className="text-sm">
-                      En stock uniquement
-                    </label>
-                  </div>
-
-                  {/* New Products */}
-                  <div className="flex items-center space-x-2">
-                    <Checkbox 
-                      id="newOnly" 
-                      checked={showNewOnly}
-                      onCheckedChange={setShowNewOnly}
-                    />
-                    <label htmlFor="newOnly" className="text-sm">
-                      Nouveautés uniquement
-                    </label>
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
-
-            {/* View Mode */}
-            <div className="flex items-center space-x-1 border rounded-md">
-              <Button
-                variant={viewMode === "grid" ? "default" : "ghost"}
-                size="sm"
-                onClick={() => setViewMode("grid")}
-                className="h-8 w-8 p-0"
-              >
-                <Grid3x3 className="h-4 w-4" />
-              </Button>
-              <Button
-                variant={viewMode === "list" ? "default" : "ghost"}
-                size="sm"
-                onClick={() => setViewMode("list")}
-                className="h-8 w-8 p-0"
-              >
-                <List className="h-4 w-4" />
-              </Button>
+              {/* View Mode */}
+              <div className="flex items-center space-x-1 border rounded-md flex-shrink-0">
+                <Button
+                  variant={viewMode === "grid" ? "default" : "ghost"}
+                  size="sm"
+                  onClick={() => setViewMode("grid")}
+                  className="h-8 w-8 p-0"
+                >
+                  <Grid3x3 className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant={viewMode === "list" ? "default" : "ghost"}
+                  size="sm"
+                  onClick={() => setViewMode("list")}
+                  className="h-8 w-8 p-0"
+                >
+                  <List className="h-4 w-4" />
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Products Section */}
-      <section className="py-12">
+      {/* Products Section - Utilise py-16 comme Artisanat.tsx */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
           {/* Results Header */}
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-xl font-semibold text-foreground">
-              {filteredAndSortedProducts.length} produit{filteredAndSortedProducts.length !== 1 ? 's' : ''} trouvé{filteredAndSortedProducts.length !== 1 ? 's' : ''}
+          <div className="flex flex-col sm:flex-row items-center justify-between mb-8">
+            <h2 className="text-xl font-semibold text-foreground mb-2 sm:mb-0">
+              <span className="font-playfair font-bold text-2xl">{filteredAndSortedProducts.length}</span> produit{filteredAndSortedProducts.length !== 1 ? 's' : ''} trouvé{filteredAndSortedProducts.length !== 1 ? 's' : ''}
             </h2>
             {searchQuery && (
-              <p className="text-muted-foreground">
-                Recherche : "{searchQuery}"
+              <p className="text-muted-foreground text-sm">
+                Résultats pour : "<span className="font-medium text-foreground">{searchQuery}</span>"
               </p>
             )}
           </div>
@@ -577,22 +808,26 @@ export default function Shop() {
                 ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" 
                 : "grid-cols-1"
             }`}>
-              {filteredAndSortedProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
+              {filteredAndSortedProducts.map((product, index) => (
+                // Ajout de style pour l'animation (similaire à Artisanat.tsx)
+                <div key={product.id} className="animate-fade-in" style={{animationDelay: `${index * 50}ms`}}>
+                  <ProductCard product={product} />
+                </div>
               ))}
             </div>
           ) : (
-            <div className="text-center py-12">
-              <div className="w-20 h-20 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
-                <Search className="h-10 w-10 text-muted-foreground" />
+            <div className="text-center py-12 bg-gbeto-surface rounded-lg shadow-inner">
+              <div className="w-20 h-20 bg-background rounded-full flex items-center justify-center mx-auto mb-4 border border-gbeto-gold">
+                <Search className="h-10 w-10 text-gbeto-gold" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">
+              <h3 className="text-xl font-playfair font-bold text-foreground mb-2">
                 Aucun produit trouvé
               </h3>
               <p className="text-muted-foreground mb-6">
-                Essayez de modifier vos filtres ou votre recherche
+                Essayez de modifier vos filtres ou votre terme de recherche.
               </p>
               <Button 
+                className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground"
                 onClick={() => {
                   setSearchQuery("");
                   setSelectedCategory("Tous");
@@ -607,6 +842,13 @@ export default function Shop() {
           )}
         </div>
       </section>
+
+      {/* Modal de Paiement (ajouté) */}
+      <PaymentModal 
+        open={isPaymentModalOpen} 
+        setOpen={setIsPaymentModalOpen} 
+        method={selectedPaymentMethod} 
+      />
     </div>
   );
 }

@@ -24,6 +24,8 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
+// ... (Les interfaces TeamMember, Partner, Achievement restent inchangées)
+
 interface TeamMember {
   id: number;
   name: string;
@@ -60,26 +62,26 @@ const teamMembers: TeamMember[] = [
     position: "Fondateur & Directeur Général",
     description: "Visionnaire passionné du patrimoine béninois, Ariola a créé Danxomɛ pour valoriser l'excellence artisanale et touristique du Bénin.",
     image: "/placeholder.svg/harry.jpeg",
-    expertise: ["Patrimoine culturel", "Entrepreneuriat social", "Commerce équitable"],
+    expertise: ["Fullstack", "Entrepreneuriat social", "Commerce équitable"],
     email: "amoussoukpeviariola4@gmail.com"
   },
   {
     id: 2,
-    name: "Adjowa SANTOS",
-    position: "Directrice Artisanat & Culture",
+    name: "Harold Adjaho",
+    position: "cofondateur & consulatant IT",
     description: "Experte en arts traditionnels béninois, Adjowa supervise notre réseau d'artisans et garantit l'authenticité de nos produits.",
-    image: "/placeholder.svg",
+    image: "/placeholder.svg/harold.png",
     expertise: ["Arts traditionnels", "Relations artisans", "Authentification"],
     email: "adjowa@gbeto.bj"
   },
   {
     id: 3,
-    name: "Kodjo ALADIN",
-    position: "Directeur Tourisme",
-    description: "Guide touristique expert avec 15 ans d'expérience, Kodjo développe nos circuits et expériences culturelles immersives.",
+    name: "Amoussoukpevi Mafoya",
+    position: "Directeur Artisanat & Culture",
+    description: "Guide touristique expert avec 15 ans d'expérience, Mafoya développe nos circuits et expériences culturelles immersives.",
     image: "/placeholder.svg",
     expertise: ["Tourisme culturel", "Circuits authentiques", "Hospitalité béninoise"],
-    email: "kodjo@gbeto.bj"
+    email: "mafoyaamoussoukpevi691@gmail.com"
   },
   {
     id: 4,
@@ -141,49 +143,49 @@ const partners: Partner[] = [
 
 const achievements: Achievement[] = [
   {
-    year: 2017,
+    year: 2024,
     title: "Création de Danxomɛ",
     description: "Lancement de la plateforme avec 5 artisans partenaires",
     impact: "Première vente en ligne d'artisanat béninois authentique"
   },
   {
-    year: 2018,
+    year: 2025,
     title: "Certification Commerce Équitable",
     description: "Obtention du label commerce équitable international",
     impact: "Garantie de rémunération juste pour 50+ artisans"
   },
   {
-    year: 2019,
+    year: 2026,
     title: "Expansion Tourisme",
     description: "Lancement des circuits culturels et expériences immersives",
     impact: "1000+ visiteurs accueillis la première année"
   },
   {
-    year: 2020,
+    year: 2027,
     title: "Prix Innovation Digitale",
     description: "Reconnaissance nationale pour l'innovation e-commerce",
     impact: "Modèle dupliqué dans 3 autres pays africains"
   },
   {
-    year: 2021,
+    year: 2028,
     title: "Partenariat UNESCO",
     description: "Collaboration officielle pour la préservation du patrimoine",
     impact: "Documentation de 25 techniques artisanales traditionnelles"
   },
   {
-    year: 2022,
+    year: 2029,
     title: "Export International",
     description: "Ouverture des marchés européens et nord-américains",
     impact: "500% d'augmentation des revenus des artisans"
   },
   {
-    year: 2023,
+    year: 2030,
     title: "Impact Social",
     description: "Soutien de 200 familles d'artisans et 50 guides",
     impact: "Création de 150 emplois directs et indirects"
   },
   {
-    year: 2024,
+    year: 2031,
     title: "Expansion Digitale",
     description: "Lancement de la nouvelle plateforme intégrée",
     impact: "Expérience utilisateur révolutionnaire"
@@ -257,10 +259,31 @@ const testimonials = [
 ];
 
 export default function About() {
+  
+  // Fonction pour faire défiler la page vers un élément d'ancrage (id)
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.warn(`Ancre introuvable: ${id}`);
+      // Ici, on pourrait ajouter une logique de navigation par routeur si l'ID n'est pas sur cette page
+    }
+  };
+
+  // Fonction pour gérer l'envoi du formulaire de contact
+  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Empêche le rechargement de la page par défaut du formulaire
+    // Logique de validation et d'envoi des données (via API, email, etc.)
+    console.log("Formulaire de contact soumis ! (Les données réelles ne sont pas envoyées dans cet exemple)");
+    alert("Message envoyé ! (Simulation)");
+    // Normalement, vous videriez le formulaire ou afficheriez un message de succès
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative h-[80vh] overflow-hidden bg-gradient-to-br from-gbeto-surface via-background to-gbeto-surface">
+      <section id="hero" className="relative h-[80vh] overflow-hidden bg-gradient-to-br from-gbeto-surface via-background to-gbeto-surface">
         <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-20"></div>
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-4xl">
@@ -274,11 +297,21 @@ export default function About() {
               Danxomɛ unit tradition et innovation pour promouvoir l'artisanat, le tourisme et la culture du Bénin. Nous créons des ponts entre les artisans locaux et les amateurs d'authenticité dans le monde entier.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground">
+              {/* Bouton 1 : Notre Histoire (scroll vers la timeline) */}
+              <Button 
+                size="lg" 
+                className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground"
+                onClick={() => handleScroll('timeline-parcours')} // Ajout du gestionnaire de clic
+              >
                 Notre Histoire
                 <Heart className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline">
+              {/* Bouton 2 : Rencontrer l'Équipe (scroll vers la section équipe) */}
+              <Button 
+                size="lg" 
+                variant="outline"
+                onClick={() => handleScroll('team-section')} // Ajout du gestionnaire de clic
+              >
                 Rencontrer l'Équipe
                 <Users className="ml-2 h-5 w-5" />
               </Button>
@@ -287,7 +320,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Mission & Vision (Reste inchangé, pas de bouton ici) */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -324,7 +357,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Our Values */}
+      {/* Our Values (Reste inchangé) */}
       <section className="py-16 bg-gbeto-surface">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -353,7 +386,7 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section className="py-16">
+      <section id="team-section" className="py-16"> {/* Ajout de l'ID d'ancrage */}
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-playfair font-bold text-foreground mb-4">
@@ -375,7 +408,13 @@ export default function About() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                     <div className="absolute bottom-4 left-4 text-white">
-                      <Button size="sm" variant="ghost" className="text-white hover:bg-white/20">
+                      {/* Bouton de contact pour le membre de l'équipe (ouvre l'email) */}
+                      <Button 
+                        size="sm" 
+                        variant="ghost" 
+                        className="text-white hover:bg-white/20"
+                        onClick={() => window.location.href = `mailto:${member.email}`} // Ajout du gestionnaire de clic
+                      >
                         <Mail className="h-4 w-4 mr-2" />
                         Contact
                       </Button>
@@ -409,7 +448,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Partners Network */}
+      {/* Partners Network (Reste inchangé) */}
       <section className="py-16 bg-gbeto-surface">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -470,7 +509,7 @@ export default function About() {
       </section>
 
       {/* Company Timeline */}
-      <section className="py-16">
+      <section id="timeline-parcours" className="py-16"> {/* Ajout de l'ID d'ancrage */}
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-playfair font-bold text-foreground mb-4">
@@ -523,7 +562,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials (Reste inchangé) */}
       <section className="py-16 bg-gbeto-surface">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -566,7 +605,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Certifications & Quality */}
+      {/* Certifications & Quality (Reste inchangé) */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -614,7 +653,7 @@ export default function About() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Contact Form */}
+              {/* Contact Form - ENTOURÉ D'UNE BALISE <form> et lié au gestionnaire d'événement */}
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
@@ -622,22 +661,28 @@ export default function About() {
                     Envoyez-nous un Message
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <Input placeholder="Prénom" />
-                    <Input placeholder="Nom" />
-                  </div>
-                  <Input type="email" placeholder="Email" />
-                  <Input placeholder="Sujet" />
-                  <Textarea placeholder="Votre message..." rows={4} />
-                  <Button className="w-full bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground">
-                    Envoyer le Message
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </CardContent>
+                {/* Ajout du formulaire avec l'événement onSubmit */}
+                <form onSubmit={handleContactSubmit}>
+                  <CardContent className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <Input placeholder="Prénom" required /> {/* Ajout de 'required' pour une meilleure UX */}
+                      <Input placeholder="Nom" required />
+                    </div>
+                    <Input type="email" placeholder="Email" required />
+                    <Input placeholder="Sujet" required />
+                    <Textarea placeholder="Votre message..." rows={4} required />
+                    <Button 
+                      type="submit" // Très important pour déclencher l'événement onSubmit du formulaire
+                      className="w-full bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground"
+                    >
+                      Envoyer le Message
+                      <ChevronRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </CardContent>
+                </form>
               </Card>
 
-              {/* Contact Information */}
+              {/* Contact Information (Reste inchangé) */}
               <div className="space-y-6">
                 <Card>
                   <CardContent className="p-6">

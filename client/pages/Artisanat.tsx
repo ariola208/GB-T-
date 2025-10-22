@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { 
   Crown, 
   Hammer, 
@@ -29,6 +29,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { toast } from 'sonner'; // Supposons l'utilisation d'une librairie de toasts pour les notifications utilisateur
+
+// --- Interfaces (Laissées intactes) ---
 
 interface Artisan {
   id: number;
@@ -78,6 +81,8 @@ interface ArtisanalProduct {
   rating: number;
   reviews: number;
 }
+
+// --- Données (Laissées intactes) ---
 
 const artisans: Artisan[] = [
   {
@@ -272,6 +277,8 @@ const featuredProducts: ArtisanalProduct[] = [
   }
 ];
 
+// --- Composant Artisanat (Modifié) ---
+
 export default function Artisanat() {
   const [selectedCategory, setSelectedCategory] = useState("Tous");
   const [customOrderForm, setCustomOrderForm] = useState({
@@ -284,6 +291,68 @@ export default function Artisanat() {
     email: "",
     phone: ""
   });
+  const [isCustomOrderSubmitting, setIsCustomOrderSubmitting] = useState(false);
+
+  // Fonction pour simuler la navigation (ou un événement)
+  const handleNavigation = useCallback((destination: string, type: 'page' | 'action') => {
+    console.log(`Action: ${type === 'page' ? 'Naviguer vers' : 'Exécuter'} - ${destination}`);
+    // Ici, on pourrait utiliser useRouter() de Next.js pour la navigation réelle
+    alert(`Action: ${type === 'page' ? 'Naviguer vers' : 'Exécuter'} - ${destination}`);
+    // toast.info(`Navigating to ${destination}`); // Exemple avec toast
+  }, []);
+  
+  // Fonction pour simuler l'ajout au panier/achat
+  const handleAddToCart = useCallback((productName: string) => {
+    console.log(`Produit ajouté au panier : ${productName}`);
+    // Logique d'ajout au panier
+    alert(`"${productName}" a été ajouté au panier !`);
+    // toast.success(`"${productName}" added to cart!`);
+  }, []);
+
+  // Fonction pour simuler l'ajout aux favoris
+  const handleToggleFavorite = useCallback((productName: string) => {
+    console.log(`Basculement des favoris pour : ${productName}`);
+    // Logique de basculement des favoris
+    alert(`Basculement de l'état de favori pour "${productName}".`);
+    // toast.warning(`Favorite status toggled for "${productName}".`);
+  }, []);
+
+  // Fonction pour gérer la soumission du formulaire de commande personnalisée
+  const handleCustomOrderSubmit = useCallback(async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsCustomOrderSubmitting(true);
+    
+    console.log("Tentative de soumission de la commande personnalisée:", customOrderForm);
+
+    // *Implémentation de la validation minimale*
+    if (!customOrderForm.name || !customOrderForm.email || !customOrderForm.description) {
+      alert("Veuillez remplir au moins le Nom, l'Email et la Description.");
+      // toast.error("Please fill in Name, Email, and Description.");
+      setIsCustomOrderSubmitting(false);
+      return;
+    }
+
+    // *Simulation d'un appel API/backend*
+    await new Promise(resolve => setTimeout(resolve, 1500)); // Délai de 1.5s pour la simulation
+
+    setIsCustomOrderSubmitting(false);
+    
+    // Réinitialiser le formulaire après succès (simulé)
+    setCustomOrderForm({
+      category: "",
+      description: "",
+      materials: "",
+      dimensions: "",
+      deadline: "",
+      name: "",
+      email: "",
+      phone: ""
+    });
+
+    alert("Votre demande de commande personnalisée a été envoyée avec succès ! Un artisan vous contactera bientôt.");
+    // toast.success("Custom order request sent successfully!");
+
+  }, [customOrderForm]); // Dépendance du formulaire pour la soumission
 
   const filteredProducts = selectedCategory === "Tous" 
     ? featuredProducts 
@@ -291,6 +360,7 @@ export default function Artisanat() {
 
   return (
     <div className="min-h-screen bg-background">
+      
       {/* Hero Section */}
       <section className="relative h-[80vh] overflow-hidden bg-gradient-to-br from-gbeto-surface via-background to-gbeto-surface">
         <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-20"></div>
@@ -306,11 +376,19 @@ export default function Artisanat() {
               Découvrez l'héritage artistique béninois à travers des créations authentiques, réalisées par des maîtres artisans qui perpétuent les traditions ancestrales.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground">
+              <Button 
+                size="lg" 
+                className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground"
+                onClick={() => handleNavigation("Section Créations Exceptionnelles", 'page')} // ACTION AJOUTÉE
+              >
                 Explorer la Collection
                 <Crown className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline">
+              <Button 
+                size="lg" 
+                variant="outline"
+                onClick={() => handleNavigation("Section Nos Maîtres Artisans", 'page')} // ACTION AJOUTÉE
+              >
                 Rencontrer les Artisans
                 <Users className="ml-2 h-5 w-5" />
               </Button>
@@ -376,7 +454,12 @@ export default function Artisanat() {
                     {artisan.bio}
                   </p>
 
-                  <Button size="sm" variant="outline" className="w-full">
+                  <Button 
+                    size="sm" 
+                    variant="outline" 
+                    className="w-full"
+                    onClick={() => handleNavigation(`Profil de ${artisan.name}`, 'page')} // ACTION AJOUTÉE
+                  >
                     Voir le Profil
                   </Button>
                 </CardContent>
@@ -400,7 +483,13 @@ export default function Artisanat() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {craftCategories.map((category, index) => (
-              <Card key={category.id} className="group hover:shadow-xl transition-all duration-300 cursor-pointer animate-slide-up" style={{animationDelay: `${index * 150}ms`}}>
+              // Le Card lui-même pourrait être cliquable pour une action plus large
+              <Card 
+                key={category.id} 
+                className="group hover:shadow-xl transition-all duration-300 cursor-pointer animate-slide-up" 
+                style={{animationDelay: `${index * 150}ms`}}
+                // onClick={() => handleNavigation(`Page Catégorie: ${category.name}`, 'page')}
+              >
                 <div className="relative overflow-hidden">
                   <img 
                     src={category.image} 
@@ -432,7 +521,12 @@ export default function Artisanat() {
                     </div>
                   </div>
 
-                  <Button size="sm" variant="outline" className="w-full group-hover:bg-gbeto-gold group-hover:text-gbeto-gold-foreground group-hover:border-gbeto-gold transition-colors">
+                  <Button 
+                    size="sm" 
+                    variant="outline" 
+                    className="w-full group-hover:bg-gbeto-gold group-hover:text-gbeto-gold-foreground group-hover:border-gbeto-gold transition-colors"
+                    onClick={() => handleNavigation(`Liste des créations de la catégorie ${category.name}`, 'page')} // ACTION AJOUTÉE
+                  >
                     Voir les Créations
                   </Button>
                 </CardContent>
@@ -453,7 +547,7 @@ export default function Artisanat() {
               Pièces uniques et authentiques, certifiées par nos maîtres artisans
             </p>
 
-            {/* Category Filter */}
+            {/* Category Filter - Le filtre fonctionne déjà via le state `selectedCategory` */}
             <div className="flex flex-wrap justify-center gap-2">
               {["Tous", ...craftCategories.map(cat => cat.name)].map((category) => (
                 <Button
@@ -471,12 +565,18 @@ export default function Artisanat() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {filteredProducts.map((product, index) => (
-              <Card key={product.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden animate-scale-in" style={{animationDelay: `${index * 150}ms`}}>
+              <Card 
+                key={product.id} 
+                className="group hover:shadow-xl transition-all duration-300 overflow-hidden animate-scale-in" 
+                style={{animationDelay: `${index * 150}ms`}}
+              >
                 <div className="relative overflow-hidden">
                   <img 
                     src={product.image} 
                     alt={product.name}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    // Rendre l'image cliquable pour voir les détails du produit
+                    onClick={() => handleNavigation(`Détails du produit: ${product.name}`, 'page')} // ACTION AJOUTÉE
                   />
                   {product.certification && (
                     <Badge className="absolute top-2 left-2 bg-gbeto-gold text-gbeto-gold-foreground text-xs">
@@ -490,14 +590,22 @@ export default function Artisanat() {
                     </Badge>
                   )}
                   <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Button size="sm" variant="ghost" className="h-6 w-6 p-0 bg-white/80 hover:bg-white">
+                    <Button 
+                      size="sm" 
+                      variant="ghost" 
+                      className="h-6 w-6 p-0 bg-white/80 hover:bg-white"
+                      onClick={() => handleToggleFavorite(product.name)} // ACTION AJOUTÉE
+                    >
                       <Heart className="h-3 w-3" />
                     </Button>
                   </div>
                 </div>
                 
                 <CardContent className="p-4">
-                  <h3 className="font-semibold text-foreground mb-1 group-hover:text-gbeto-gold transition-colors line-clamp-1">
+                  <h3 
+                    className="font-semibold text-foreground mb-1 group-hover:text-gbeto-gold transition-colors line-clamp-1 cursor-pointer"
+                    onClick={() => handleNavigation(`Détails du produit: ${product.name}`, 'page')} // ACTION AJOUTÉE
+                  >
                     {product.name}
                   </h3>
                   <p className="text-xs text-muted-foreground mb-2">
@@ -540,6 +648,7 @@ export default function Artisanat() {
                       size="sm" 
                       className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground"
                       disabled={product.inStock === 0}
+                      onClick={() => handleAddToCart(product.name)} // ACTION AJOUTÉE
                     >
                       <ShoppingCart className="h-3 w-3 mr-1" />
                       Acheter
@@ -558,6 +667,7 @@ export default function Artisanat() {
           <div className="max-w-6xl mx-auto">
             <Tabs defaultValue="process" className="w-full">
               <TabsList className="grid w-full grid-cols-3">
+                {/* Les boutons de TabsList fonctionnent déjà en changeant l'état de la tab */}
                 <TabsTrigger value="process">Processus de Création</TabsTrigger>
                 <TabsTrigger value="authenticity">Authenticité</TabsTrigger>
                 <TabsTrigger value="custom">Commandes Personnalisées</TabsTrigger>
@@ -602,6 +712,7 @@ export default function Artisanat() {
                     <Button 
                       size="sm" 
                       className="absolute inset-0 m-auto w-12 h-12 rounded-full bg-gbeto-gold/90 hover:bg-gbeto-gold text-gbeto-gold-foreground"
+                      onClick={() => handleNavigation("Lancement de la vidéo de processus", 'action')} // ACTION AJOUTÉE
                     >
                       <Play className="h-4 w-4" />
                     </Button>
@@ -624,13 +735,24 @@ export default function Artisanat() {
                         { icon: CheckCircle, title: "Certificat d'Origine", desc: "Traçabilité complète de la pièce" },
                         { icon: Crown, title: "Signature Artisan", desc: "Identification unique de l'artisan" },
                         { icon: Award, title: "Label Qualité", desc: "Respect des standards artisanaux" },
-                        { icon: Download, title: "Documentation", desc: "Histoire et techniques utilisées" }
+                        { icon: Download, title: "Documentation", desc: "Histoire et techniques utilisées", isDownload: true } // Ajout d'un flag pour le bouton
                       ].map((item, index) => (
                         <div key={index} className="flex items-start space-x-3">
                           <item.icon className="h-6 w-6 text-gbeto-gold mt-1" />
                           <div>
                             <h4 className="font-semibold text-foreground">{item.title}</h4>
                             <p className="text-sm text-muted-foreground">{item.desc}</p>
+                            {item.isDownload && (
+                              <Button 
+                                variant="link" 
+                                size="sm" 
+                                className="pl-0 mt-1 text-gbeto-gold"
+                                onClick={() => handleNavigation("Téléchargement de la documentation", 'action')} // ACTION AJOUTÉE
+                              >
+                                Télécharger
+                                <Download className="ml-1 h-3 w-3" />
+                              </Button>
+                            )}
                           </div>
                         </div>
                       ))}
@@ -648,7 +770,8 @@ export default function Artisanat() {
               </TabsContent>
               
               <TabsContent value="custom" className="mt-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Formulaire de commande personnalisée */}
+                <form onSubmit={handleCustomOrderSubmit} className="grid grid-cols-1 lg:grid-cols-2 gap-8"> {/* FORM AJOUTÉ */}
                   <div>
                     <h3 className="text-2xl font-playfair font-bold text-foreground mb-4">
                       Commandes Personnalisées
@@ -658,6 +781,7 @@ export default function Artisanat() {
                     </p>
                     
                     <div className="space-y-4">
+                      {/* ... Champs de formulaire existants ... */}
                       <div>
                         <label className="text-sm font-medium mb-2 block">Catégorie souhaitée</label>
                         <Select value={customOrderForm.category} onValueChange={(value) => setCustomOrderForm({...customOrderForm, category: value})}>
@@ -681,6 +805,7 @@ export default function Artisanat() {
                           value={customOrderForm.description}
                           onChange={(e) => setCustomOrderForm({...customOrderForm, description: e.target.value})}
                           rows={4}
+                          required // AJOUTÉ
                         />
                       </div>
 
@@ -721,12 +846,14 @@ export default function Artisanat() {
                         placeholder="Nom complet"
                         value={customOrderForm.name}
                         onChange={(e) => setCustomOrderForm({...customOrderForm, name: e.target.value})}
+                        required // AJOUTÉ
                       />
                       <Input 
                         type="email"
                         placeholder="Email"
                         value={customOrderForm.email}
                         onChange={(e) => setCustomOrderForm({...customOrderForm, email: e.target.value})}
+                        required // AJOUTÉ
                       />
                       <Input 
                         placeholder="Téléphone"
@@ -744,13 +871,17 @@ export default function Artisanat() {
                         </ul>
                       </div>
 
-                      <Button className="w-full bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground">
-                        Envoyer la Demande
+                      <Button 
+                        type="submit" // Type 'submit' pour déclencher le onSubmit du formulaire
+                        className="w-full bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground"
+                        disabled={isCustomOrderSubmitting} // Désactiver pendant la soumission
+                      >
+                        {isCustomOrderSubmitting ? 'Envoi en cours...' : 'Envoyer la Demande'}
                         <ChevronRight className="ml-2 h-4 w-4" />
                       </Button>
                     </div>
                   </div>
-                </div>
+                </form>
               </TabsContent>
             </Tabs>
           </div>

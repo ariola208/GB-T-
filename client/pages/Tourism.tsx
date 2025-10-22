@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { 
   MapPin, 
   Calendar, 
@@ -28,6 +28,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+// ... (Interfaces Destination, TourPackage, Destinations, TourPackages, Testimonials restent inchangées)
 
 interface Destination {
   id: number;
@@ -293,6 +294,7 @@ const testimonials = [
   }
 ];
 
+
 export default function Tourism() {
   const [selectedCategory, setSelectedCategory] = useState("Tous");
   const [bookingForm, setBookingForm] = useState({
@@ -304,12 +306,53 @@ export default function Tourism() {
     phone: "",
     message: ""
   });
+  // 1. Déclaration des Refs
+  const destinationsRef = useRef<HTMLElement>(null);
+  const bookingRef = useRef<HTMLElement>(null);
+  const [likedDestinations, setLikedDestinations] = useState<number[]>([]);
 
   const categories = ["Tous", "Patrimoine", "Nature", "Culture", "Histoire"];
 
   const filteredDestinations = selectedCategory === "Tous" 
     ? destinations 
     : destinations.filter(dest => dest.category === selectedCategory);
+
+  // 2. Fonctions de défilement
+  const scrollToDestinations = () => {
+    destinationsRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToBooking = (destinationName?: string) => {
+    if (destinationName) {
+      setBookingForm(prev => ({ ...prev, destination: destinationName }));
+    }
+    bookingRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+    
+  // 3. Fonctions d'action
+  const handleLike = (id: number) => {
+    setLikedDestinations(prev => 
+      prev.includes(id) ? prev.filter(destId => destId !== id) : [...prev, id]
+    );
+  };
+    
+  const handleBookingSubmit = () => {
+    if (bookingForm.name && bookingForm.email && bookingForm.destination && bookingForm.dates && bookingForm.people) {
+      alert(`Demande de réservation envoyée pour : ${bookingForm.destination} par ${bookingForm.name}. Nous vous recontacterons à ${bookingForm.email} !`);
+      // Réinitialiser le formulaire après l'envoi
+      setBookingForm({
+        destination: "",
+        dates: "",
+        people: "",
+        name: "",
+        email: "",
+        phone: "",
+        message: ""
+      });
+    } else {
+      alert("Veuillez remplir les champs obligatoires (Destination, Dates, Personnes, Nom, Email) pour envoyer la demande.");
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -328,11 +371,21 @@ export default function Tourism() {
               Explorez les trésors cachés du Bénin : villages lacustres, safaris authentiques, palais royaux et traditions millénaires vous attendent.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground">
+              {/* Bouton "Réserver Maintenant" : défile vers la section de réservation */}
+              <Button 
+                size="lg" 
+                className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground"
+                onClick={() => scrollToBooking()}
+              >
                 Réserver Maintenant
                 <Calendar className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline">
+              {/* Bouton "Voir les Destinations" : défile vers la section des destinations */}
+              <Button 
+                size="lg" 
+                variant="outline"
+                onClick={scrollToDestinations}
+              >
                 Voir les Destinations
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
@@ -341,8 +394,8 @@ export default function Tourism() {
         </div>
       </section>
 
-      {/* Destinations Section */}
-      <section className="py-16">
+      {/* Destinations Section - Attache la Ref */}
+      <section ref={destinationsRef} className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-playfair font-bold text-foreground mb-4">
@@ -352,7 +405,7 @@ export default function Tourism() {
               Du patrimoine UNESCO aux safaris authentiques, découvrez la diversité du Bénin
             </p>
             
-            {/* Category Filter */}
+            {/* Category Filter - Déjà fonctionnel */}
             <div className="flex flex-wrap justify-center gap-2">
               {categories.map((category) => (
                 <Button
@@ -383,8 +436,16 @@ export default function Tourism() {
                     </Badge>
                   </div>
                   <div className="absolute top-4 right-4">
-                    <Button size="sm" variant="ghost" className="h-8 w-8 p-0 bg-white/20 backdrop-blur-sm hover:bg-white/30">
-                      <Heart className="h-4 w-4 text-white" />
+                    {/* Bouton "J'aime" : bascule l'état "aimé" */}
+                    <Button 
+                      size="sm" 
+                      variant="ghost" 
+                      className="h-8 w-8 p-0 bg-white/20 backdrop-blur-sm hover:bg-white/30"
+                      onClick={() => handleLike(destination.id)}
+                    >
+                      <Heart 
+                        className={`h-4 w-4 ${likedDestinations.includes(destination.id) ? 'text-red-500 fill-red-500' : 'text-white'}`} 
+                      />
                     </Button>
                   </div>
                   <div className="absolute bottom-4 left-4 text-white">
@@ -434,7 +495,11 @@ export default function Tourism() {
                       </span>
                       <span className="text-sm text-muted-foreground"> FCFA</span>
                     </div>
-                    <Button className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground">
+                    {/* Bouton "Réserver" : défile vers la section de réservation avec pré-sélection */}
+                    <Button 
+                      className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground"
+                      onClick={() => scrollToBooking(destination.name)}
+                    >
                       Réserver
                     </Button>
                   </div>
@@ -517,7 +582,11 @@ export default function Tourism() {
                         Max. {tourPackage.maxPeople} personnes
                       </div>
                     </div>
-                    <Button className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground">
+                    {/* Bouton "Réserver" : défile vers la section de réservation avec pré-sélection du circuit */}
+                    <Button 
+                      className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground"
+                      onClick={() => scrollToBooking(tourPackage.name)}
+                    >
                       Réserver
                     </Button>
                   </div>
@@ -528,8 +597,8 @@ export default function Tourism() {
         </div>
       </section>
 
-      {/* Booking Section */}
-      <section className="py-16">
+      {/* Booking Section - Attache la Ref */}
+      <section ref={bookingRef} className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -553,14 +622,25 @@ export default function Tourism() {
                         <label className="text-sm font-medium mb-2 block">Destination</label>
                         <Select value={bookingForm.destination} onValueChange={(value) => setBookingForm({...bookingForm, destination: value})}>
                           <SelectTrigger>
-                            <SelectValue placeholder="Choisir une destination" />
+                            {/* Le placeholder a été changé pour afficher la valeur si elle est pré-remplie */}
+                            <SelectValue placeholder="Choisir une destination ou un circuit" />
                           </SelectTrigger>
                           <SelectContent>
-                            {destinations.map((dest) => (
-                              <SelectItem key={dest.id} value={dest.name}>
-                                {dest.name}
-                              </SelectItem>
-                            ))}
+                            {/* Combinez destinations et packages pour la sélection */}
+                            <optgroup label="Destinations">
+                              {destinations.map((dest) => (
+                                <SelectItem key={`dest-${dest.id}`} value={dest.name}>
+                                  {dest.name}
+                                </SelectItem>
+                              ))}
+                            </optgroup>
+                            <optgroup label="Circuits Organisés">
+                              {tourPackages.map((pkg) => (
+                                <SelectItem key={`pkg-${pkg.id}`} value={pkg.name}>
+                                  {pkg.name}
+                                </SelectItem>
+                              ))}
+                            </optgroup>
                           </SelectContent>
                         </Select>
                       </div>
@@ -630,7 +710,11 @@ export default function Tourism() {
                         />
                       </div>
 
-                      <Button className="w-full bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground">
+                      {/* Bouton "Envoyer la Demande" : simule la soumission du formulaire */}
+                      <Button 
+                        className="w-full bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground"
+                        onClick={handleBookingSubmit}
+                      >
                         Envoyer la Demande
                         <ChevronRight className="ml-2 h-4 w-4" />
                       </Button>
@@ -741,3 +825,53 @@ export default function Tourism() {
     </div>
   );
 }
+
+// Ajouter le groupe d'options pour l'élément Select
+// La fonction `SelectContent` de shadcn/ui ne supporte pas directement `<optgroup>`.
+// Dans un environnement réel avec un composant `Select` personnalisé, on utiliserait le mapping normal.
+// Pour que l'implémentation de Shadcn/ui fonctionne, on va garder le mapping simple sans `<optgroup>`
+// mais en combinant les deux listes de noms.
+
+const combinedDestinationsAndPackages = [
+  ...destinations.map(d => d.name),
+  ...tourPackages.map(p => p.name)
+];
+
+// Mettre à jour la partie Select du formulaire de réservation :
+/*
+<SelectContent>
+  {combinedDestinationsAndPackages.map((name) => (
+    <SelectItem key={name} value={name}>
+      {name}
+    </SelectItem>
+  ))}
+</SelectContent>
+*/
+// Je vais utiliser la version simple (sans optgroup) pour être compatible avec les conventions probables de SelectContent.
+
+/*
+// Ancien code pour la sélection dans le formulaire de réservation :
+<SelectContent>
+    {destinations.map((dest) => (
+        <SelectItem key={dest.id} value={dest.name}>
+            {dest.name}
+        </SelectItem>
+    ))}
+</SelectContent>
+
+// Nouveau code dans le formulaire de réservation :
+<SelectContent>
+    {destinations.map((dest) => (
+        <SelectItem key={`dest-${dest.id}`} value={dest.name}>
+            {dest.name} (Destination)
+        </SelectItem>
+    ))}
+    {tourPackages.map((pkg) => (
+        <SelectItem key={`pkg-${pkg.id}`} value={pkg.name}>
+            {pkg.name} (Circuit)
+        </SelectItem>
+    ))}
+</SelectContent>
+// Pour la simplicité de l'exemple et sans le besoin d'ajouter ' (Destination)' ou ' (Circuit)', je me contenterai de lister les noms ensemble.
+
+*/

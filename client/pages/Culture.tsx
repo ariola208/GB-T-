@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { 
-  Crown, 
-  Calendar, 
-  Music, 
-  Book, 
-  Camera, 
-  MapPin, 
+import {
+  Crown,
+  Calendar,
+  Music,
+  Book,
+  Camera,
+  MapPin,
   Star,
   Play,
   Clock,
@@ -266,6 +266,12 @@ export default function Culture() {
   const [selectedPeriod, setSelectedPeriod] = useState(0);
   const [selectedTab, setSelectedTab] = useState("histoire");
 
+  // Nouvelle fonction pour simuler l'action d'un bouton
+  const handleButtonClick = (action: string) => {
+    alert(`Action déclenchée : ${action}`);
+    console.log(`Bouton cliqué : ${action}`);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -283,11 +289,27 @@ export default function Culture() {
               Plongez dans la richesse culturelle du Bénin : des royaumes anciens aux traditions vivantes, découvrez un patrimoine exceptionnel reconnu par l'UNESCO.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-yellow-900">
+              {/* Bouton Hero 1 : Ajouter onClick */}
+              <Button 
+                size="lg" 
+                className="bg-yellow-500 hover:bg-yellow-600 text-yellow-900"
+                onClick={() => {
+                  setSelectedTab("histoire");
+                  handleButtonClick("Naviguer vers l'onglet Histoire");
+                }}
+              >
                 Explorer l'Histoire
                 <Crown className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline">
+              {/* Bouton Hero 2 : Ajouter onClick */}
+              <Button 
+                size="lg" 
+                variant="outline"
+                onClick={() => {
+                  setSelectedTab("festivals");
+                  handleButtonClick("Naviguer vers l'onglet Festivals");
+                }}
+              >
                 Festivals et Traditions
                 <Calendar className="ml-2 h-5 w-5" />
               </Button>
@@ -302,6 +324,7 @@ export default function Culture() {
           <div className="max-w-6xl mx-auto">
             <Tabs value={selectedTab} onValueChange={setSelectedTab} className="w-full">
               <TabsList className="grid w-full grid-cols-5">
+                {/* Les TabsTrigger fonctionnent déjà via onValueChange={setSelectedTab} */}
                 <TabsTrigger value="histoire">Histoire</TabsTrigger>
                 <TabsTrigger value="festivals">Festivals</TabsTrigger>
                 <TabsTrigger value="patrimoine">Patrimoine</TabsTrigger>
@@ -320,7 +343,7 @@ export default function Culture() {
                   </p>
                 </div>
 
-                {/* Timeline Navigation */}
+                {/* Timeline Navigation - Les boutons sont déjà fonctionnels */}
                 <div className="flex flex-wrap gap-2 mb-8">
                   {historicalPeriods.map((period, index) => (
                     <Button
@@ -444,8 +467,12 @@ export default function Culture() {
                             ))}
                           </div>
                         </div>
-
-                        <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-yellow-900">
+                        
+                        {/* Bouton Festivals : Ajouter onClick */}
+                        <Button 
+                          className="w-full bg-yellow-500 hover:bg-yellow-600 text-yellow-900"
+                          onClick={() => handleButtonClick(`Programmer la visite pour le festival : ${festival.name}`)}
+                        >
                           Programmer ma Visite
                           <Calendar className="ml-2 h-4 w-4" />
                         </Button>
@@ -502,12 +529,14 @@ export default function Culture() {
                             {heritage.significance}
                           </p>
                         </div>
-
+                        
+                        {/* Bouton Patrimoine : Ajouter onClick */}
                         <Button 
                           size="sm" 
                           variant="outline" 
                           className="w-full"
                           disabled={!heritage.visitable}
+                          onClick={() => handleButtonClick(heritage.visitable ? `Visiter : ${heritage.name}` : `En Savoir Plus : ${heritage.name}`)}
                         >
                           {heritage.visitable ? "Visiter" : "En Savoir Plus"}
                         </Button>
@@ -583,11 +612,19 @@ export default function Culture() {
                           </div>
 
                           <div className="flex gap-4 mt-6">
-                            <Button className="bg-yellow-500 hover:bg-yellow-600 text-yellow-900">
+                            {/* Bouton Arts 1 : Ajouter onClick */}
+                            <Button 
+                              className="bg-yellow-500 hover:bg-yellow-600 text-yellow-900"
+                              onClick={() => handleButtonClick(`Voir Démonstration pour : ${art.name}`)}
+                            >
                               <Play className="mr-2 h-4 w-4" />
                               Voir Démonstration
                             </Button>
-                            <Button variant="outline">
+                            {/* Bouton Arts 2 : Ajouter onClick */}
+                            <Button 
+                              variant="outline"
+                              onClick={() => handleButtonClick(`Rencontrer les Artistes pour : ${art.name}`)}
+                            >
                               <Users className="mr-2 h-4 w-4" />
                               Rencontrer les Artistes
                             </Button>
@@ -725,7 +762,11 @@ export default function Culture() {
                           </ul>
                         </div>
 
-                        <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-yellow-900">
+                        {/* Bouton Expériences : Ajouter onClick */}
+                        <Button 
+                          className="w-full bg-yellow-500 hover:bg-yellow-600 text-yellow-900"
+                          onClick={() => handleButtonClick(`Réserver l'Expérience : ${experience.title}`)}
+                        >
                           Réserver l'Expérience
                           <ChevronRight className="ml-2 h-4 w-4" />
                         </Button>
