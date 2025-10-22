@@ -11,6 +11,8 @@ import Layout from "./components/Layout";
 import { CartProvider } from "./contexts/CartContext";
 import { WishlistProvider } from "./contexts/WishlistContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
+
+// Importations des pages existantes
 import Index from "./pages/Index";
 import Shop from "./pages/Shop";
 import Tourism from "./pages/Tourism";
@@ -18,6 +20,9 @@ import Artisanat from "./pages/Artisanat";
 import Culture from "./pages/Culture";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+
+// NOUVEL IMPORT : Importation du composant d'inscription (Register.tsx)
+import Register from "./pages/Register";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +52,10 @@ const App = () => {
                     <Route path="/artisanat" element={<Artisanat />} />
                     <Route path="/culture" element={<Culture />} />
                     <Route path="/about" element={<About />} />
+                    
+                    {/* NOUVELLE ROUTE : Route pour le formulaire d'inscription */}
+                    <Route path="/register" element={<Register />} />
+                    
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </Layout>
