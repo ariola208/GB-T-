@@ -21,9 +21,8 @@ import Culture from "./pages/Culture";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
-// NOUVEL IMPORT : Importation du composant de connexion (Login.tsx)
+// Importation des composants d'authentification
 import Login from "./pages/Login";
-// Importation du composant d'inscription (Register.tsx)
 import Register from "./pages/Register";
 
 const queryClient = new QueryClient();
@@ -54,12 +53,8 @@ const App = () => {
                     <Route path="/artisanat" element={<Artisanat />} />
                     <Route path="/culture" element={<Culture />} />
                     <Route path="/about" element={<About />} />
-                    
-                    {/* NOUVELLE ROUTE : Route pour le formulaire de connexion */}
                     <Route path="/login" element={<Login />} />
-                    {/* ROUTE EXISTANTE : Route pour le formulaire d'inscription */}
                     <Route path="/register" element={<Register />} />
-                    
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </Layout>

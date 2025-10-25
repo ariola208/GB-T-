@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"; // Retrait de BrowserRouter ici
+import { Link } from "react-router-dom";
 import { LogIn, Mail, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { toast } from "sonner"; // Utilisation de Sonner pour les notifications
+import { toast } from "sonner";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-// NOTE IMPORTANTE: L'API est sur le port 3001, selon votre configuration.
 const API_LOGIN_URL = 'http://localhost:3001/api/login';
 
 export default function Login() {
@@ -16,6 +16,7 @@ export default function Login() {
     password: "",
   });
   const [isLoading, setIsLoading] = useState(false);
+  const { t } = useLanguage();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -28,9 +29,8 @@ export default function Login() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Vérification basique
     if (!formData.email || !formData.password) {
-        toast.error("Champs requis", {
+        toast.error(t('required_fields'), {
             description: "Veuillez entrer votre email et votre mot de passe.",
         });
         return;
@@ -50,15 +50,20 @@ export default function Login() {
       const data = await response.json();
 
       if (response.ok) {
-        // Enregistrement du token (à implémenter)
-        // localStorage.setItem('token', data.token); 
+        // Stocker le token et les informations utilisateur
+        localStorage.setItem('token', data.token);
+        if (data.user) {
+          localStorage.setItem('user', JSON.stringify(data.user));
+        }
 
-        toast.success("Connexion réussie !", {
-          description: data.message || `Bienvenue, vous êtes connecté.`,
+        toast.success(t('connection_success'), {
+          description: data.message || `${t('welcome')}, vous êtes connecté.`,
         });
 
-        // Simuler une redirection vers la page d'accueil ou le tableau de bord
-        // history.push('/'); 
+        // Redirection après un court délai
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 1500);
       } else {
         toast.error("Échec de la connexion", {
           description: data.error || 'Veuillez vérifier vos identifiants.',
@@ -66,7 +71,7 @@ export default function Login() {
       }
     } catch (err) {
       console.error("Erreur de connexion:", err);
-      toast.error("Erreur Serveur", {
+      toast.error(t('server_error'), {
         description: "Impossible de contacter le serveur. Assurez-vous que l'API Node.js est lancée sur le port 3001.",
       });
     } finally {
@@ -80,10 +85,10 @@ export default function Login() {
         <CardHeader className="text-center">
           <LogIn className="h-10 w-10 text-gbeto-gold mx-auto mb-2" />
           <CardTitle className="text-3xl font-playfair font-bold text-foreground">
-            Connectez-vous à Danxomɛ
+            {t('login.title')}
           </CardTitle>
           <p className="text-sm text-muted-foreground mt-2">
-            Accédez à votre compte pour continuer votre exploration.
+            {t('login.subtitle')}
           </p>
         </CardHeader>
         <CardContent>
@@ -91,7 +96,7 @@ export default function Login() {
             
             {/* Champ Email */}
             <div className="space-y-2">
-              <Label htmlFor="email">Adresse Email</Label>
+              <Label htmlFor="email">{t('login.email')}</Label>
               <div className="relative">
                 <Input
                   id="email"
@@ -108,7 +113,7 @@ export default function Login() {
 
             {/* Champ Mot de passe */}
             <div className="space-y-2">
-              <Label htmlFor="password">Mot de passe</Label>
+              <Label htmlFor="password">{t('login.password')}</Label>
               <div className="relative">
                 <Input
                   id="password"
@@ -123,7 +128,7 @@ export default function Login() {
               </div>
               <p className="text-right text-xs">
                 <Link to="/forgot-password" className="hover:text-gbeto-gold text-muted-foreground/80 transition-colors">
-                    Mot de passe oublié ?
+                  {t('login.forgot_password')}
                 </Link>
               </p>
             </div>
@@ -134,14 +139,14 @@ export default function Login() {
               className="w-full bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground transition-all duration-300 font-semibold py-3"
               disabled={isLoading}
             >
-              {isLoading ? "Connexion en cours..." : "Se connecter"}
+              {isLoading ? t('login.loading') : t('login.submit')}
             </Button>
             
             {/* Lien vers l'inscription */}
             <div className="text-center text-sm text-muted-foreground pt-4">
-              Vous n'avez pas de compte ?{" "}
+              {t('login.no_account')}{" "}
               <Link to="/register" className="text-gbeto-gold hover:text-gbeto-gold/80 font-semibold transition-colors">
-                S'inscrire
+                {t('register')}
               </Link>
             </div>
           </form>

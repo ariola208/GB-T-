@@ -6,9 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { toast } from "sonner"; // Utilisation de Sonner pour les notifications
+import { toast } from "sonner";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-// NOTE IMPORTANTE: L'API est sur le port 3001, selon votre code.
 const API_REGISTER_URL = 'http://localhost:3001/api/register';
 
 export default function Register() {
@@ -19,6 +19,7 @@ export default function Register() {
     isArtisan: false,
   });
   const [isLoading, setIsLoading] = useState(false);
+  const { t } = useLanguage();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value, type, checked } = e.target;
@@ -28,7 +29,6 @@ export default function Register() {
     }));
   };
   
-  // Gestionnaire pour la checkbox
   const handleArtisanChange = (checked: boolean) => {
       setFormData((prev) => ({ ...prev, isArtisan: checked }));
   };
@@ -36,7 +36,6 @@ export default function Register() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Vérification basique des champs
     if (!formData.email || formData.password.length < 6) {
         toast.error("Veuillez vérifier les champs", {
             description: "L'email est requis et le mot de passe doit contenir au moins 6 caractères.",
@@ -52,7 +51,6 @@ export default function Register() {
         headers: {
           'Content-Type': 'application/json',
         },
-        // Envoi de toutes les données du formulaire, y compris isArtisan (si le backend le gère)
         body: JSON.stringify({
             name: formData.name,
             email: formData.email,
@@ -64,12 +62,15 @@ export default function Register() {
       const data = await response.json();
 
       if (response.ok) {
-        toast.success("Inscription réussie !", {
-          description: data.message || `Bienvenue ${formData.name}. Vous pouvez maintenant vous connecter.`,
+        toast.success(t('registration_success'), {
+          description: data.message || `${t('welcome')} ${formData.name}. Vous pouvez maintenant vous connecter.`,
         });
-        // Réinitialiser le formulaire
         setFormData({ name: '', email: '', password: '', isArtisan: false });
-        // Envisager une redirection ici vers /login
+        
+        // Redirection vers la page de connexion
+        setTimeout(() => {
+          window.location.href = '/login';
+        }, 2000);
       } else {
         toast.error("Échec de l'inscription", {
           description: data.error || 'Erreur inconnue lors de l\'inscription.',
@@ -77,7 +78,7 @@ export default function Register() {
       }
     } catch (err) {
       console.error("Erreur d'enregistrement:", err);
-      toast.error("Erreur Serveur", {
+      toast.error(t('server_error'), {
         description: "Impossible de contacter le serveur. Assurez-vous que l'API Node.js est lancée sur le port 3001.",
       });
     } finally {
@@ -91,10 +92,10 @@ export default function Register() {
         <CardHeader className="text-center">
           <UserPlus className="h-10 w-10 text-gbeto-gold mx-auto mb-2" />
           <CardTitle className="text-3xl font-playfair font-bold text-foreground">
-            Créer un compte Danxomɛ
+            {t('register.title')}
           </CardTitle>
           <p className="text-sm text-muted-foreground mt-2">
-            Rejoignez notre communauté d'acheteurs passionnés ou d'artisans.
+            {t('register.subtitle')}
           </p>
         </CardHeader>
         <CardContent>
@@ -102,7 +103,7 @@ export default function Register() {
             
             {/* Champ Nom complet */}
             <div className="space-y-2">
-              <Label htmlFor="name">Nom Complet (Optionnel)</Label>
+              <Label htmlFor="name">{t('register.name')}</Label>
               <div className="relative">
                 <Input
                   id="name"
@@ -118,7 +119,7 @@ export default function Register() {
 
             {/* Champ Email */}
             <div className="space-y-2">
-              <Label htmlFor="email">Adresse Email *</Label>
+              <Label htmlFor="email">{t('register.email')}</Label>
               <div className="relative">
                 <Input
                   id="email"
@@ -135,7 +136,7 @@ export default function Register() {
 
             {/* Champ Mot de passe */}
             <div className="space-y-2">
-              <Label htmlFor="password">Mot de passe *</Label>
+              <Label htmlFor="password">{t('register.password')}</Label>
               <div className="relative">
                 <Input
                   id="password"
@@ -160,7 +161,7 @@ export default function Register() {
                 className="data-[state=checked]:bg-gbeto-gold data-[state=checked]:border-gbeto-gold border-gray-400"
               />
               <Label htmlFor="isArtisan" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center">
-                Je suis un Artisan/Partenaire (accès au tableau de bord vendeur) <Crown className="ml-2 h-4 w-4 text-gbeto-gold" />
+                {t('register.artisan')} <Crown className="ml-2 h-4 w-4 text-gbeto-gold" />
               </Label>
             </div>
 
@@ -170,14 +171,14 @@ export default function Register() {
               className="w-full bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground transition-all duration-300 font-semibold py-3"
               disabled={isLoading}
             >
-              {isLoading ? "Inscription en cours..." : "S'inscrire"}
+              {isLoading ? t('register.loading') : t('register.submit')}
             </Button>
             
             {/* Lien vers la connexion */}
             <div className="text-center text-sm text-muted-foreground">
-              Vous avez déjà un compte ?{" "}
+              {t('register.has_account')}{" "}
               <Link to="/login" className="text-gbeto-gold hover:text-gbeto-gold/80 font-semibold transition-colors">
-                Se connecter
+                {t('login')}
               </Link>
             </div>
           </form>

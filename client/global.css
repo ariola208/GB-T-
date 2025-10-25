@@ -65,28 +65,38 @@
     --popover-foreground: 0 0% 4%;
 
     --primary: 0 0% 4%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 0 0% 95%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 4%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 4%;
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 96%;
-    --ring: 0 0% 4%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
 
-    --gbeto-gold: 45 85% 45%;
-    --gbeto-gold-foreground: 0 0% 100%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 4%;
+    --sidebar-primary: 0 0% 4%;
+    --sidebar-primary-foreground: 0 0% 95%;
+    --sidebar-accent: 0 0% 90%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 89.8%;
+    --sidebar-ring: 0 0% 3.9%;
+
+    /* Danxomɛ custom colors */
+    --gbeto-gold: 45 85% 50%;
+    --gbeto-gold-foreground: 0 0% 98%;
     --gbeto-surface: 0 0% 98%;
-    --gbeto-surface-hover: 0 0% 96%;
+    --gbeto-surface-hover: 0 0% 95%;
   }
 }
 
@@ -94,16 +104,36 @@
   * {
     @apply border-border;
   }
-
+  
   body {
+    /* Utilisation de la police Inter par défaut, avec Playfair pour les titres via des classes Tailwind */
     @apply bg-background text-foreground font-inter;
+    /* Ajout du lissage du défilement pour un meilleur UX */
+    scroll-behavior: smooth;
   }
 
-  .font-inter {
-    font-family: 'Inter', sans-serif;
+  /* Styles pour tous les liens (y compris ceux de react-router-dom) */
+  a {
+    @apply transition-colors duration-200 ease-in-out;
   }
+}
 
-  .font-playfair {
-    font-family: 'Playfair Display', serif;
-  }
+/* -------------------------------------------------------------------------- */
+/* Animations                                 */
+/* -------------------------------------------------------------------------- */
+@layer utilities {
+    .animate-fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
