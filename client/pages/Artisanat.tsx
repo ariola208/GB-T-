@@ -705,7 +705,7 @@ export default function Artisanat() {
                   
                   <div className="relative">
                     <img 
-                      src="/placeholder.svg" 
+                      src="/placeholder.svg/https://youtu.be/_APKQYnvsJQ?si=RfCJ7cib6NmYdkXs" 
                       alt="Processus artisanal"
                       className="w-full h-64 object-cover rounded-lg"
                     />
