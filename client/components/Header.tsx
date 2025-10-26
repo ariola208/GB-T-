@@ -63,7 +63,8 @@ export default function Header() {
             </div>
           </Link>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          {/* CHANGEMENT ICI : space-x-8 remplacé par space-x-4 */}
+          <nav className="hidden md:flex items-center space-x-4">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -75,7 +76,7 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex flex-1 max-w-md mx-8">
+          <div className="hidden lg:flex flex-1 max-w-md">
             <form onSubmit={handleSearch} className="relative w-full">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input

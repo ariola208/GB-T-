@@ -136,7 +136,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gbeto-gold/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm mb-4 md:mb-0">
-            © 2024 Danxomɛ. Tous droits réservés.
+            © 2024 Danxomɛ. Tous droits réservés. MADE BY DORÉGO
           </p>
           <div className="flex space-x-6 text-sm">
             <Link to="/privacy" className="text-muted-foreground hover:text-gbeto-gold transition-colors">
