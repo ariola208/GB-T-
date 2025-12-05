@@ -25,13 +25,28 @@ export default function Footer() {
               Explorez nos produits authentiques et vivez une expérience unique.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-gbeto-gold transition-colors">
+              <a 
+                href="https://www.facebook.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-gbeto-gold transition-colors"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-gbeto-gold transition-colors">
+              <a 
+                href="https://twitter.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-gbeto-gold transition-colors"
+              >
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-gbeto-gold transition-colors">
+              <a 
+                href="https://www.instagram.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-gbeto-gold transition-colors"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -120,13 +135,13 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-gbeto-gold" />
                 <span className="text-muted-foreground text-sm">
-                  +229 XX XX XX XX
+                  +229 54 06 94 54
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-gbeto-gold" />
                 <span className="text-muted-foreground text-sm">
-                  contact@danxome.com
+                  amoussoukpeviariola4@gmail.com
                 </span>
               </div>
             </div>

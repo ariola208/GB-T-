@@ -79,7 +79,7 @@ const teamMembers: TeamMember[] = [
     name: "Amoussoukpevi Mafoya",
     position: "Directeur Artisanat & Culture",
     description: "Guide touristique expert avec 15 ans d'expérience, Mafoya développe nos circuits et expériences culturelles immersives.",
-    image: "/placeholder.svg",
+    image: "/placeholder.svg/maf.png",
     expertise: ["Tourisme culturel", "Circuits authentiques", "Hospitalité béninoise"],
     email: "mafoyaamoussoukpevi691@gmail.com"
   },
