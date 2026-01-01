@@ -85,9 +85,9 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 4,
-    name: "Fatimah YAROU",
-    position: "Responsable E-commerce",
-    description: "Spécialiste du commerce digital, Fatimah optimise l'expérience d'achat en ligne et gère la logistique internationale.",
+    name: "Irfane",
+    position: "Responsable graphique",
+    description: "Spécialiste du graphisme digital,Irfane optimise l'expérience d'achat en ligne et gère la logistique internationale.",
     image: "/placeholder.svg",
     expertise: ["E-commerce", "Logistique", "Expérience client"],
     email: "fatimah@gbeto.bj"
