@@ -1,12 +1,28 @@
-/**
- * Shared code between client and server
- * Useful to share types between client and server
- * and/or small pure JS functions that can be used on both client and server
- */
+// client/src/api/client.ts
+import { 
+  API_ROUTES, 
+  AuthResponse, 
+  LoginRequest, 
+  RegisterRequest,
+  createApiError,
+  isValidEmail 
+} from '../../shared/api';
 
-/**
- * Example response type for /api/demo
- */
-export interface DemoResponse {
-  message: string;
+export async function loginUser(data: LoginRequest): Promise<AuthResponse> {
+  if (!isValidEmail(data.email)) {
+    throw createApiError('Email invalide', 'INVALID_EMAIL');
+  }
+
+  const response = await fetch(API_ROUTES.LOGIN, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    const error = await response.json();
+    throw error;
+  }
+
+  return response.json();
 }

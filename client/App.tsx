@@ -21,9 +21,15 @@ import Culture from "./pages/Culture";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
-// Importation des composants d'authentification
+// Importations des composants d'authentification
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+
+// Importations des nouvelles pages
+import FAQ from "./pages/FAQ";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
+import Cookies from "./pages/Cookies";
 
 const queryClient = new QueryClient();
 
@@ -47,14 +53,25 @@ const App = () => {
               <BrowserRouter>
                 <Layout>
                   <Routes>
+                    {/* Pages principales */}
                     <Route path="/" element={<Index />} />
                     <Route path="/shop" element={<Shop />} />
                     <Route path="/tourism" element={<Tourism />} />
                     <Route path="/artisanat" element={<Artisanat />} />
                     <Route path="/culture" element={<Culture />} />
                     <Route path="/about" element={<About />} />
+                    
+                    {/* Pages d'authentification */}
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+                    
+                    {/* Nouvelles pages informatives */}
+                    <Route path="/faq" element={<FAQ />} />
+                    <Route path="/privacy" element={<PrivacyPolicy />} />
+                    <Route path="/terms" element={<TermsOfUse />} />
+                    <Route path="/cookies" element={<Cookies />} />
+                    
+                    {/* Page 404 - doit être en dernier */}
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </Layout>

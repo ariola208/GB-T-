@@ -52,7 +52,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Navigation Rapide */}
           <div>
             <h3 className="font-playfair font-semibold text-foreground mb-4 text-lg">
               Navigation Rapide
@@ -83,20 +83,20 @@ export default function Footer() {
                   {t('culture')}
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          {/* Customer Service */}
-          <div>
-            <h3 className="font-playfair font-semibold text-foreground mb-4 text-lg">
-              Service Client
-            </h3>
-            <ul className="space-y-2">
               <li>
                 <Link to="/about" className="text-muted-foreground hover:text-gbeto-gold transition-colors text-sm">
                   {t('about')}
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* Service Client */}
+          <div>
+            <h3 className="font-playfair font-semibold text-foreground mb-4 text-lg">
+              Service Client
+            </h3>
+            <ul className="space-y-2">
               <li>
                 <Link to="/contact" className="text-muted-foreground hover:text-gbeto-gold transition-colors text-sm">
                   Contact
@@ -115,6 +115,21 @@ export default function Footer() {
               <li>
                 <Link to="/returns" className="text-muted-foreground hover:text-gbeto-gold transition-colors text-sm">
                   Retours
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacy" className="text-muted-foreground hover:text-gbeto-gold transition-colors text-sm">
+                  Confidentialité
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms" className="text-muted-foreground hover:text-gbeto-gold transition-colors text-sm">
+                  Conditions
+                </Link>
+              </li>
+              <li>
+                <Link to="/cookies" className="text-muted-foreground hover:text-gbeto-gold transition-colors text-sm">
+                  Cookies
                 </Link>
               </li>
             </ul>
@@ -145,6 +160,14 @@ export default function Footer() {
                 </span>
               </div>
             </div>
+
+            {/* Heures d'ouverture (optionnel) */}
+            <div className="mt-4 pt-4 border-t border-gbeto-gold/10">
+              <p className="text-xs text-muted-foreground">
+                Lun - Ven: 9h - 18h<br />
+                Sam: 9h - 13h
+              </p>
+            </div>
           </div>
         </div>
 
@@ -153,17 +176,36 @@ export default function Footer() {
           <p className="text-muted-foreground text-sm mb-4 md:mb-0">
             © 2024 Danxomɛ. Tous droits réservés. MADE BY DORÉGO🥷🥷
           </p>
-          <div className="flex space-x-6 text-sm">
+          
+          {/* Liens légaux - Version compacte pour le footer */}
+          <div className="flex flex-wrap justify-center gap-4 text-xs">
             <Link to="/privacy" className="text-muted-foreground hover:text-gbeto-gold transition-colors">
-              Politique de confidentialité
+              Confidentialité
             </Link>
+            <span className="text-gbeto-gold/30">•</span>
             <Link to="/terms" className="text-muted-foreground hover:text-gbeto-gold transition-colors">
-              Conditions d'utilisation
+              Conditions
             </Link>
+            <span className="text-gbeto-gold/30">•</span>
             <Link to="/cookies" className="text-muted-foreground hover:text-gbeto-gold transition-colors">
               Cookies
             </Link>
+            <span className="text-gbeto-gold/30">•</span>
+            <Link to="/faq" className="text-muted-foreground hover:text-gbeto-gold transition-colors">
+              FAQ
+            </Link>
+            <span className="text-gbeto-gold/30">•</span>
+            <Link to="/contact" className="text-muted-foreground hover:text-gbeto-gold transition-colors">
+              Contact
+            </Link>
           </div>
+        </div>
+
+        {/* Badge de certification (optionnel) */}
+        <div className="mt-6 text-center">
+          <p className="text-xs text-muted-foreground">
+            Site sécurisé • Paiement 100% sécurisé • Livraison dans tout le Bénin
+          </p>
         </div>
       </div>
     </footer>
