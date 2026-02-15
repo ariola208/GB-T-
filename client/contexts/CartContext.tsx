@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import { useLanguage } from './LanguageContext';
 
 export interface Product {
   id: number;
@@ -137,20 +138,25 @@ interface CartContextType {
   toggleCart: () => void;
   openCart: () => void;
   closeCart: () => void;
+  getCartMessage: (action: 'added' | 'removed' | 'updated' | 'cleared', productName?: string) => string;
+  getCartSummary: () => { subtotal: string; shipping: string; total: string; };
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(cartReducer, initialState);
+  const { language, t } = useLanguage();
 
   // Load cart from localStorage on mount
   useEffect(() => {
-    const savedCart = localStorage.getItem('gbeto-cart');
+    const savedCart = localStorage.getItem('danxome-cart');
     if (savedCart) {
       try {
         const parsedCart = JSON.parse(savedCart);
         if (parsedCart.items && Array.isArray(parsedCart.items)) {
+          // Clear existing items first to avoid duplicates
+          dispatch({ type: 'CLEAR_CART' });
           parsedCart.items.forEach((item: CartItem) => {
             dispatch({ type: 'ADD_ITEM', payload: item });
           });
@@ -163,7 +169,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   // Save cart to localStorage when cart changes
   useEffect(() => {
-    localStorage.setItem('gbeto-cart', JSON.stringify({
+    localStorage.setItem('danxome-cart', JSON.stringify({
       items: state.items,
       total: state.total,
       itemCount: state.itemCount
@@ -198,6 +204,43 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     dispatch({ type: 'CLOSE_CART' });
   };
 
+  const getCartMessage = (action: 'added' | 'removed' | 'updated' | 'cleared', productName?: string): string => {
+    const messages = {
+      fr: {
+        added: productName ? `${productName} a été ajouté au panier` : 'Article ajouté au panier',
+        removed: productName ? `${productName} a été retiré du panier` : 'Article retiré du panier',
+        updated: 'Quantité mise à jour',
+        cleared: 'Panier vidé'
+      },
+      en: {
+        added: productName ? `${productName} has been added to cart` : 'Item added to cart',
+        removed: productName ? `${productName} has been removed from cart` : 'Item removed from cart',
+        updated: 'Quantity updated',
+        cleared: 'Cart cleared'
+      }
+    };
+    return messages[language][action];
+  };
+
+  const getCartSummary = () => {
+    const shipping = state.total > 50 ? 0 : 5.90;
+    const subtotal = state.total;
+    const total = subtotal + shipping;
+
+    const formatPrice = (price: number) => {
+      return new Intl.NumberFormat(language === 'fr' ? 'fr-FR' : 'en-US', {
+        style: 'currency',
+        currency: 'EUR'
+      }).format(price);
+    };
+
+    return {
+      subtotal: formatPrice(subtotal),
+      shipping: shipping === 0 ? t('cart.free') : formatPrice(shipping),
+      total: formatPrice(total)
+    };
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -209,6 +252,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         toggleCart,
         openCart,
         closeCart,
+        getCartMessage,
+        getCartSummary,
       }}
     >
       {children}

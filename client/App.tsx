@@ -30,6 +30,11 @@ import FAQ from "./pages/FAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import Cookies from "./pages/Cookies";
+import Contact from "./pages/Contact";
+
+// Importations des nouvelles pages livraison et retours
+import Livraison from "./pages/Livraison";
+import Retours from "./pages/Retours";
 
 const queryClient = new QueryClient();
 
@@ -70,6 +75,11 @@ const App = () => {
                     <Route path="/privacy" element={<PrivacyPolicy />} />
                     <Route path="/terms" element={<TermsOfUse />} />
                     <Route path="/cookies" element={<Cookies />} />
+                    <Route path="/contact" element={<Contact />} />
+                    
+                    {/* Pages Livraison et Retours */}
+                    <Route path="/livraison" element={<Livraison />} />
+                    <Route path="/retours" element={<Retours />} />
                     
                     {/* Page 404 - doit être en dernier */}
                     <Route path="*" element={<NotFound />} />

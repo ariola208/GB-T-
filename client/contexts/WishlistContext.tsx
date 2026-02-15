@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import { Product } from './CartContext';
+import { useLanguage } from './LanguageContext';
 
 export interface WishlistState {
   items: Product[];
@@ -76,20 +77,24 @@ interface WishlistContextType {
   toggleItem: (product: Product) => void;
   isInWishlist: (productId: number) => boolean;
   clearWishlist: () => void;
+  getWishlistMessage: (action: 'added' | 'removed' | 'cleared') => string;
 }
 
 const WishlistContext = createContext<WishlistContextType | undefined>(undefined);
 
 export function WishlistProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(wishlistReducer, initialState);
+  const { language } = useLanguage();
 
   // Load wishlist from localStorage on mount
   useEffect(() => {
-    const savedWishlist = localStorage.getItem('gbeto-wishlist');
+    const savedWishlist = localStorage.getItem('danxome-wishlist');
     if (savedWishlist) {
       try {
         const parsedWishlist = JSON.parse(savedWishlist);
         if (parsedWishlist.items && Array.isArray(parsedWishlist.items)) {
+          // Clear existing items first to avoid duplicates
+          dispatch({ type: 'CLEAR_WISHLIST' });
           parsedWishlist.items.forEach((item: Product) => {
             dispatch({ type: 'ADD_ITEM', payload: item });
           });
@@ -102,7 +107,7 @@ export function WishlistProvider({ children }: { children: React.ReactNode }) {
 
   // Save wishlist to localStorage when wishlist changes
   useEffect(() => {
-    localStorage.setItem('gbeto-wishlist', JSON.stringify({
+    localStorage.setItem('danxome-wishlist', JSON.stringify({
       items: state.items,
       itemCount: state.itemCount
     }));
@@ -128,6 +133,22 @@ export function WishlistProvider({ children }: { children: React.ReactNode }) {
     dispatch({ type: 'CLEAR_WISHLIST' });
   };
 
+  const getWishlistMessage = (action: 'added' | 'removed' | 'cleared'): string => {
+    const messages = {
+      fr: {
+        added: 'ajouté aux favoris',
+        removed: 'retiré des favoris',
+        cleared: 'Liste de favoris vidée'
+      },
+      en: {
+        added: 'added to wishlist',
+        removed: 'removed from wishlist',
+        cleared: 'Wishlist cleared'
+      }
+    };
+    return messages[language][action];
+  };
+
   return (
     <WishlistContext.Provider
       value={{
@@ -137,6 +158,7 @@ export function WishlistProvider({ children }: { children: React.ReactNode }) {
         toggleItem,
         isInWishlist,
         clearWishlist,
+        getWishlistMessage,
       }}
     >
       {children}
