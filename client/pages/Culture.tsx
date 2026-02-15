@@ -71,6 +71,7 @@ interface TraditionalArt {
   techniques: string[];
 }
 
+// CORRECTION 1: Chemins corrigés pour les images (sans "public/" au début)
 const historicalPeriods: HistoricalPeriod[] = [
   {
     id: 1,
@@ -84,6 +85,7 @@ const historicalPeriods: HistoricalPeriod[] = [
       "Pratiques du vodoun bien développées",
       "Système politique très organisé"
     ],
+    // CORRECTION: Enlever "public/" du chemin
     image: "/placeholder.svg/Royaume du Dahomey.jpeg",
     rulers: ["Houegbadja", "Akaba", "Wegbaja", "Agadja", "Tegbesu", "Kpengla", "Agonglo", "Gezo", "Glele", "Béhanzin"]
   },
@@ -99,6 +101,7 @@ const historicalPeriods: HistoricalPeriod[] = [
       "Préservation du patrimoine culturel",
       "Émergence d'une élite intellectuelle"
     ],
+    // CORRECTION: Enlever "public/" du chemin
     image: "/placeholder.svg/Période Coloniale.jpeg"
   },
   {
@@ -113,6 +116,7 @@ const historicalPeriods: HistoricalPeriod[] = [
       "Renaissance culturelle",
       "Promotion du patrimoine mondial"
     ],
+    // CORRECTION: Enlever "public/" du chemin
     image: "/placeholder.svg/Bénin Moderne.jpeg"
   }
 ];
@@ -125,31 +129,31 @@ const festivals: Festival[] = [
     location: "Ouidah",
     description: "Célébration de la religion vodoun, patrimoine spirituel ancestral du Bénin",
     traditions: ["Cérémonies rituelles", "Danses sacrées", "Offrandes aux divinités", "Processions religieuses"],
-    image: "/placeholder.svg",
+    image: "/placeholder.svg/voodoo.jpeg",
     duration: "3 jours",
     significance: "Reconnaissance officielle du vodoun comme religion",
     activities: ["Rituels au temple des pythons", "Danse des masques Egungun", "Bénédictions collectives"]
   },
   {
     id: 2,
-    name: "Festival des Masques Gèlèdè",
-    date: "Mars-Avril",
-    location: "Pobè, Kétou",
-    description: "Célébration de l'art Gèlèdè, inscrit au patrimoine UNESCO",
-    traditions: ["Danses masquées", "Chants traditionnels", "Narrations épiques", "Concours artistiques"],
-    image: "/placeholder.svg",
-    duration: "2 semaines",
-    significance: "Honorer la puissance créatrice des femmes",
-    activities: ["Spectacles de masques", "Ateliers de sculpture", "Contes traditionnels"]
+    name: "We Love Eya",
+    date: "Décembre",
+    location: "Cotnou",
+    description: "Événement consacré aux musiques urbaines et à l'afrobeat, organisé à Cotonou, au Bénin, depuis 2022.",
+    traditions: ["Danses", "Chants", "Artistes", "Urbain"],
+    image: "/placeholder.svg/wle.jpeg",
+    duration: "2 jours",
+    significance: "Honorer la musique africaines",
+    activities: ["Spectacles", "Ateliers", "Jeux"]
   },
   {
     id: 3,
-    name: "Festival Abomey",
-    date: "Décembre",
-    location: "Abomey",
-    description: "Célébration de l'héritage royal et des traditions du royaume du Dahomey",
+    name: "Festival des Masques",
+    date: "Août",
+    location: "Porto-Novo",
+    description: "Célébration traditionnelle des masques, avec une seconde édition tenue en août 2025.",
     traditions: ["Danses royales", "Récits historiques", "Artisanat traditionnel", "Gastronomie royale"],
-    image: "/placeholder.svg",
+    image: "/placeholder.svg/fm.jpeg",
     duration: "5 jours",
     significance: "Préservation de la mémoire royale",
     activities: ["Reconstitution historique", "Exposition d'art royal", "Concours de tambours"]
@@ -161,7 +165,7 @@ const festivals: Festival[] = [
     location: "Nord Bénin",
     description: "Célébration des premières récoltes et remerciement aux ancêtres",
     traditions: ["Récolte cérémonielle", "Danses agraires", "Bénédiction des terres", "Festins communautaires"],
-    image: "/placeholder.svg",
+    image: "/placeholder.svg/yam.jpeg",
     duration: "1 semaine",
     significance: "Gratitude pour les récoltes abondantes",
     activities: ["Concours d'ignames", "Danses traditionnelles", "Marchés spéciaux"]
@@ -174,7 +178,7 @@ const culturalHeritage: CulturalHeritage[] = [
     name: "Palais Royaux d'Abomey",
     category: "Architecture",
     description: "Ensemble de palais des rois du Dahomey, témoins de 300 ans d'histoire",
-    image: "/placeholder.svg",
+    image: "/placeholder.svg/azin.jpeg",
     location: "Abomey",
     unescoStatus: true,
     significance: "Symbole de la puissance du royaume du Dahomey",
@@ -185,7 +189,7 @@ const culturalHeritage: CulturalHeritage[] = [
     name: "Art Gèlèdè",
     category: "Arts performatifs",
     description: "Tradition spectaculaire combinant masques, costumes, chants et danses",
-    image: "/placeholder.svg",
+    image: "/placeholder.svg/Afrocentric Artistry.jpeg",
     location: "Pobè, Kétou",
     unescoStatus: true,
     significance: "Expression de la sagesse et du pouvoir créateur féminin",
@@ -196,7 +200,7 @@ const culturalHeritage: CulturalHeritage[] = [
     name: "Route de l'Esclave",
     category: "Mémoire historique",
     description: "Vestiges du commerce triangulaire et mémorial de la traite",
-    image: "/placeholder.svg",
+    image: "/placeholder.svg/oui.jpeg",
     location: "Ouidah",
     unescoStatus: false,
     significance: "Lieu de mémoire de la traite négrière",
@@ -204,11 +208,11 @@ const culturalHeritage: CulturalHeritage[] = [
   },
   {
     id: 4,
-    name: "Forêt Sacrée d'Osun",
+    name: "Forêt Sacrée de Kpassè",
     category: "Nature sacrée",
-    description: "Forêt sacrée dédiée à la déesse Osun, lieu de culte vodoun",
-    image: "/placeholder.svg",
-    location: "Zou",
+    description: "La forêt sacrée de Kpassè constitue un îlot forestier à Ouidah, un centre important du vaudou dans le sud du Bénin.",
+    image: "/placeholder.svg/kpassè.jpeg",
+    location: "Ouidah",
     unescoStatus: false,
     significance: "Sanctuaire spirituel du vodoun",
     visitable: true
@@ -272,6 +276,20 @@ export default function Culture() {
     console.log(`Bouton cliqué : ${action}`);
   };
 
+  // CORRECTION 2: Fonction pour gérer les erreurs de chargement d'images
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    target.style.display = 'none';
+    // Ajouter un message de fallback
+    const parent = target.parentElement;
+    if (parent) {
+      const fallback = document.createElement('div');
+      fallback.className = 'w-full h-full bg-gray-200 flex items-center justify-center';
+      fallback.innerHTML = '<span class="text-gray-500">Image non disponible</span>';
+      parent.appendChild(fallback);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -289,7 +307,6 @@ export default function Culture() {
               Plongez dans la richesse culturelle du Bénin : des royaumes anciens aux traditions vivantes, découvrez un patrimoine exceptionnel reconnu par l'UNESCO.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              {/* Bouton Hero 1 : Ajouter onClick */}
               <Button 
                 size="lg" 
                 className="bg-yellow-500 hover:bg-yellow-600 text-yellow-900"
@@ -301,7 +318,6 @@ export default function Culture() {
                 Explorer l'Histoire
                 <Crown className="ml-2 h-5 w-5" />
               </Button>
-              {/* Bouton Hero 2 : Ajouter onClick */}
               <Button 
                 size="lg" 
                 variant="outline"
@@ -324,7 +340,6 @@ export default function Culture() {
           <div className="max-w-6xl mx-auto">
             <Tabs value={selectedTab} onValueChange={setSelectedTab} className="w-full">
               <TabsList className="grid w-full grid-cols-5">
-                {/* Les TabsTrigger fonctionnent déjà via onValueChange={setSelectedTab} */}
                 <TabsTrigger value="histoire">Histoire</TabsTrigger>
                 <TabsTrigger value="festivals">Festivals</TabsTrigger>
                 <TabsTrigger value="patrimoine">Patrimoine</TabsTrigger>
@@ -343,7 +358,6 @@ export default function Culture() {
                   </p>
                 </div>
 
-                {/* Timeline Navigation - Les boutons sont déjà fonctionnels */}
                 <div className="flex flex-wrap gap-2 mb-8">
                   {historicalPeriods.map((period, index) => (
                     <Button
@@ -357,7 +371,6 @@ export default function Culture() {
                   ))}
                 </div>
 
-                {/* Selected Period Content */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   <div>
                     <div className="flex items-center mb-4">
@@ -397,9 +410,15 @@ export default function Culture() {
                     )}
                   </div>
                   
+                  {/* CORRECTION 3: Remplacer le div gris par une balise img */}
                   <div className="relative">
-                    <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-                      <span className="text-gray-500">Image: {historicalPeriods[selectedPeriod].name}</span>
+                    <div className="w-full h-64 bg-gray-200 rounded-lg overflow-hidden">
+                      <img 
+                        src={historicalPeriods[selectedPeriod].image} 
+                        alt={historicalPeriods[selectedPeriod].name}
+                        className="w-full h-full object-cover"
+                        onError={handleImageError}
+                      />
                     </div>
                     <div className="absolute bottom-4 left-4 bg-black/60 text-white p-2 rounded">
                       <span className="text-sm">{historicalPeriods[selectedPeriod].period}</span>
@@ -420,11 +439,17 @@ export default function Culture() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {festivals.map((festival, index) => (
+                  {festivals.map((festival) => (
                     <Card key={festival.id} className="group hover:shadow-xl transition-all duration-300">
                       <div className="relative overflow-hidden">
-                        <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
-                          <span className="text-gray-500">Image: {festival.name}</span>
+                        {/* CORRECTION 4: Remplacer le div gris par une balise img */}
+                        <div className="w-full h-48 bg-gray-200">
+                          <img 
+                            src={festival.image} 
+                            alt={festival.name}
+                            className="w-full h-full object-cover"
+                            onError={handleImageError}
+                          />
                         </div>
                         <div className="absolute top-4 left-4">
                           <Badge className="bg-yellow-500 text-yellow-900">
@@ -468,7 +493,6 @@ export default function Culture() {
                           </div>
                         </div>
                         
-                        {/* Bouton Festivals : Ajouter onClick */}
                         <Button 
                           className="w-full bg-yellow-500 hover:bg-yellow-600 text-yellow-900"
                           onClick={() => handleButtonClick(`Programmer la visite pour le festival : ${festival.name}`)}
@@ -494,11 +518,17 @@ export default function Culture() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {culturalHeritage.map((heritage, index) => (
+                  {culturalHeritage.map((heritage) => (
                     <Card key={heritage.id} className="group hover:shadow-xl transition-all duration-300">
                       <div className="relative overflow-hidden">
-                        <div className="w-full h-40 bg-gray-200 flex items-center justify-center">
-                          <span className="text-gray-500 text-sm">Image: {heritage.name}</span>
+                        {/* CORRECTION 5: Remplacer le div gris par une balise img */}
+                        <div className="w-full h-40 bg-gray-200">
+                          <img 
+                            src={heritage.image} 
+                            alt={heritage.name}
+                            className="w-full h-full object-cover"
+                            onError={handleImageError}
+                          />
                         </div>
                         {heritage.unescoStatus && (
                           <Badge className="absolute top-2 left-2 bg-yellow-500 text-yellow-900 text-xs">
@@ -530,7 +560,6 @@ export default function Culture() {
                           </p>
                         </div>
                         
-                        {/* Bouton Patrimoine : Ajouter onClick */}
                         <Button 
                           size="sm" 
                           variant="outline" 
@@ -558,12 +587,18 @@ export default function Culture() {
                 </div>
 
                 <div className="space-y-8">
-                  {traditionalArts.map((art, index) => (
+                  {traditionalArts.map((art) => (
                     <Card key={art.id} className="overflow-hidden">
                       <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
                         <div className="relative">
-                          <div className="w-full h-48 lg:h-full bg-gray-200 flex items-center justify-center">
-                            <span className="text-gray-500">Image: {art.name}</span>
+                          {/* CORRECTION 6: Remplacer le div gris par une balise img */}
+                          <div className="w-full h-48 lg:h-full bg-gray-200">
+                            <img 
+                              src={art.image} 
+                              alt={art.name}
+                              className="w-full h-full object-cover"
+                              onError={handleImageError}
+                            />
                           </div>
                           <div className="absolute bottom-4 left-4">
                             <Badge className="bg-yellow-500 text-yellow-900">
@@ -612,7 +647,6 @@ export default function Culture() {
                           </div>
 
                           <div className="flex gap-4 mt-6">
-                            {/* Bouton Arts 1 : Ajouter onClick */}
                             <Button 
                               className="bg-yellow-500 hover:bg-yellow-600 text-yellow-900"
                               onClick={() => handleButtonClick(`Voir Démonstration pour : ${art.name}`)}
@@ -620,7 +654,6 @@ export default function Culture() {
                               <Play className="mr-2 h-4 w-4" />
                               Voir Démonstration
                             </Button>
-                            {/* Bouton Arts 2 : Ajouter onClick */}
                             <Button 
                               variant="outline"
                               onClick={() => handleButtonClick(`Rencontrer les Artistes pour : ${art.name}`)}
@@ -657,7 +690,8 @@ export default function Culture() {
                       location: "Ouidah",
                       price: "35000 FCFA",
                       includes: ["Cérémonie d'accueil", "Visite des temples", "Rencontre avec un prêtre", "Bénédiction traditionnelle"],
-                      icon: Crown
+                      icon: Crown,
+                      image: "/placeholder.svg"
                     },
                     {
                       title: "Atelier d'Artisanat Royal",
@@ -667,7 +701,8 @@ export default function Culture() {
                       location: "Abomey",
                       price: "25000 FCFA",
                       includes: ["Atelier pratique", "Matériaux fournis", "Œuvre à emporter", "Certificat d'apprentissage"],
-                      icon: Hammer
+                      icon: Hammer,
+                      image: "/placeholder.svg"
                     },
                     {
                       title: "Immersion Musicale",
@@ -677,7 +712,8 @@ export default function Culture() {
                       location: "Porto-Novo",
                       price: "18000 FCFA",
                       includes: ["Cours de percussion", "Danse traditionnelle", "Instruments inclus", "Spectacle final"],
-                      icon: Drum
+                      icon: Drum,
+                      image: "/placeholder.svg"
                     },
                     {
                       title: "Contes sous les Étoiles",
@@ -687,7 +723,8 @@ export default function Culture() {
                       location: "Village traditionnel",
                       price: "12000 FCFA",
                       includes: ["Contes épiques", "Boissons traditionnelles", "Feu de camp", "Interaction groupe"],
-                      icon: Book
+                      icon: Book,
+                      image: "/placeholder.svg"
                     },
                     {
                       title: "Cuisine Royale",
@@ -697,7 +734,8 @@ export default function Culture() {
                       location: "Abomey",
                       price: "30000 FCFA",
                       includes: ["Ingrédients locaux", "Recettes traditionnelles", "Repas complet", "Livre de recettes"],
-                      icon: Heart
+                      icon: Heart,
+                      image: "/placeholder.svg"
                     },
                     {
                       title: "Randonnée Culturelle",
@@ -707,13 +745,20 @@ export default function Culture() {
                       location: "Montagnes de l'Atacora",
                       price: "40000 FCFA",
                       includes: ["Guide expert", "Transport", "Déjeuner", "Rencontres villageoises"],
-                      icon: MapPin
+                      icon: MapPin,
+                      image: "/placeholder.svg"
                     }
                   ].map((experience, index) => (
                     <Card key={index} className="group hover:shadow-xl transition-all duration-300">
                       <div className="relative overflow-hidden">
-                        <div className="w-full h-40 bg-gray-200 flex items-center justify-center">
-                          <span className="text-gray-500 text-sm">Image: {experience.title}</span>
+                        {/* CORRECTION 7: Remplacer le div gris par une balise img */}
+                        <div className="w-full h-40 bg-gray-200">
+                          <img 
+                            src={experience.image} 
+                            alt={experience.title}
+                            className="w-full h-full object-cover"
+                            onError={handleImageError}
+                          />
                         </div>
                         <div className="absolute top-4 left-4">
                           <div className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center">
@@ -762,7 +807,6 @@ export default function Culture() {
                           </ul>
                         </div>
 
-                        {/* Bouton Expériences : Ajouter onClick */}
                         <Button 
                           className="w-full bg-yellow-500 hover:bg-yellow-600 text-yellow-900"
                           onClick={() => handleButtonClick(`Réserver l'Expérience : ${experience.title}`)}
@@ -780,41 +824,190 @@ export default function Culture() {
         </div>
       </section>
 
-      {/* Cultural Calendar */}
-      <section className="py-16 bg-yellow-50">
+      {/* Cultural Calendar - Version Améliorée */}
+      <section className="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-yellow-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          {/* En-tête décoratif */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center p-3 bg-yellow-500/10 rounded-full mb-6">
+              <Calendar className="h-8 w-8 text-yellow-600" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 relative inline-block">
               Calendrier Culturel 2024
+              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-yellow-500 rounded-full"></div>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Ne manquez aucun événement culturel majeur du Bénin
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-6">
+              Planifiez votre voyage au rythme des célébrations et traditions béninoises
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Grille du calendrier améliorée */}
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { month: "Janvier", events: ["Fête du Vodoun (10)", "Festival Kaba (25)"] },
-                { month: "Mars", events: ["Festival Gèlèdè", "Semaine Culturelle"] },
-                { month: "Mai", events: ["Fête des Mères", "Festival Artisanal"] },
-                { month: "Août", events: ["Indépendance (1)", "Fête des Ignames"] },
-                { month: "Octobre", events: ["Festival Abomey", "Semaine du Patrimoine"] },
-                { month: "Décembre", events: ["Festival des Arts", "Célébrations Royales"] }
+                { 
+                  month: "Janvier", 
+                  events: ["Fête du Vodoun (10 Janvier)", "Festival International du Kaba"], 
+                  color: "from-amber-500 to-yellow-500",
+                  icon: "🎭",
+                  highlight: "Fête du Vodoun"
+                },
+                { 
+                  month: "Février", 
+                  events: ["Festival des Arts de Cotonou", "Carnaval de Porto-Novo"], 
+                  color: "from-red-500 to-pink-500",
+                  icon: "🎪",
+                  highlight: "Carnaval"
+                },
+                { 
+                  month: "Mars", 
+                  events: ["Festival Gèlèdé", "Semaine des Cultures Urbaines"], 
+                  color: "from-purple-500 to-indigo-500",
+                  icon: "🎨",
+                  highlight: "Festival Gèlèdé"
+                },
+                { 
+                  month: "Avril", 
+                  events: ["Fête des Traditions Orales", "Exposition d'Art Contemporain"], 
+                  color: "from-green-500 to-emerald-500",
+                  icon: "📖",
+                  highlight: "Traditions Orales"
+                },
+                { 
+                  month: "Mai", 
+                  events: ["Fête des Mères Traditionnelle", "Festival Artisanal"], 
+                  color: "from-pink-500 to-rose-500",
+                  icon: "🌸",
+                  highlight: "Fête des Mères"
+                },
+                { 
+                  month: "Juin", 
+                  events: ["Festival de Danse Zinli", "Journées du Patrimoine"], 
+                  color: "from-blue-500 to-cyan-500",
+                  icon: "💃",
+                  highlight: "Danse Zinli"
+                },
+                { 
+                  month: "Juillet", 
+                  events: ["Festival de l'Indépendance", "Semaine du Cinéma Béninois"], 
+                  color: "from-yellow-500 to-orange-500",
+                  icon: "🎬",
+                  highlight: "Indépendance"
+                },
+                { 
+                  month: "Août", 
+                  events: ["Fête des Ignames", "Festival des Masques"], 
+                  color: "from-orange-500 to-red-500",
+                  icon: "🌽",
+                  highlight: "Fête des Ignames"
+                },
+                { 
+                  month: "Septembre", 
+                  events: ["Festival Abomey", "Rencontres Musicales"], 
+                  color: "from-teal-500 to-green-500",
+                  icon: "🥁",
+                  highlight: "Festival Abomey"
+                },
+                { 
+                  month: "Octobre", 
+                  events: ["Semaine du Patrimoine", "Festival des Saveurs"], 
+                  color: "from-amber-500 to-orange-500",
+                  icon: "🍲",
+                  highlight: "Patrimoine"
+                },
+                { 
+                  month: "Novembre", 
+                  events: ["Festival du Vodoun (Novembre)", "Salon du Livre"], 
+                  color: "from-violet-500 to-purple-500",
+                  icon: "📚",
+                  highlight: "Salon du Livre"
+                },
+                { 
+                  month: "Décembre", 
+                  events: ["We Love Eya", "Célébrations de Fin d'Année"], 
+                  color: "from-indigo-500 to-blue-500",
+                  icon: "🎉",
+                  highlight: "We Love Eya"
+                }
               ].map((period, index) => (
-                <Card key={index} className="text-center">
-                  <CardContent className="p-4">
-                    <h3 className="font-semibold text-foreground mb-3">{period.month}</h3>
-                    <div className="space-y-2">
+                <Card 
+                  key={index} 
+                  className="group relative overflow-hidden border-2 hover:border-yellow-500 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                >
+                  {/* Dégradé d'arrière-plan */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${period.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+                  
+                  <CardContent className="p-6">
+                    {/* En-tête du mois avec icône */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${period.color} flex items-center justify-center text-2xl shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
+                          {period.icon}
+                        </div>
+                        <h3 className="text-2xl font-bold text-foreground">{period.month}</h3>
+                      </div>
+                      <Badge variant="outline" className="text-xs">
+                        {period.events.length} événements
+                      </Badge>
+                    </div>
+
+                    {/* Liste des événements */}
+                    <div className="space-y-3 mt-4">
                       {period.events.map((event, idx) => (
-                        <div key={idx} className="text-sm text-muted-foreground p-2 bg-yellow-100 rounded">
-                          {event}
+                        <div 
+                          key={idx} 
+                          className={`p-3 rounded-lg transition-all duration-300 ${
+                            event.includes(period.highlight) 
+                              ? 'bg-yellow-100 border-l-4 border-yellow-500' 
+                              : 'bg-gray-50 hover:bg-yellow-50'
+                          }`}
+                        >
+                          <div className="flex items-center gap-2">
+                            <div className={`w-2 h-2 rounded-full ${
+                              event.includes(period.highlight) ? 'bg-yellow-500' : 'bg-gray-400'
+                            }`}></div>
+                            <span className={`text-sm ${
+                              event.includes(period.highlight) 
+                                ? 'font-semibold text-yellow-800' 
+                                : 'text-muted-foreground'
+                            }`}>
+                              {event}
+                            </span>
+                          </div>
                         </div>
                       ))}
                     </div>
+
+                    {/* Bouton d'action */}
+                    <Button 
+                      variant="ghost" 
+                      className="w-full mt-6 group-hover:bg-yellow-500 group-hover:text-white transition-all duration-300"
+                      onClick={() => handleButtonClick(`Voir détails pour ${period.month}`)}
+                    >
+                      Voir les détails
+                      <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
                   </CardContent>
+
+                  {/* Élément décoratif */}
+                  <div className={`absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-br ${period.color} opacity-10 rounded-tl-full transform translate-x-12 translate-y-12 group-hover:translate-x-8 group-hover:translate-y-8 transition-transform duration-500`}></div>
                 </Card>
               ))}
+            </div>
+          </div>
+
+          {/* Section d'information supplémentaire */}
+          <div className="mt-16 text-center">
+            <div className="inline-flex items-center gap-4 bg-white px-8 py-4 rounded-full shadow-lg">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <span className="text-sm font-medium text-foreground">Événement majeur</span>
+              </div>
+              <div className="w-px h-6 bg-gray-300"></div>
+              <div className="flex items-center gap-2">
+                <Calendar className="h-4 w-4 text-yellow-500" />
+                <span className="text-sm text-muted-foreground">Calendrier mis à jour régulièrement</span>
+              </div>
             </div>
           </div>
         </div>
