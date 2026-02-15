@@ -11,6 +11,7 @@ import Layout from "./components/Layout";
 import { CartProvider } from "./contexts/CartContext";
 import { WishlistProvider } from "./contexts/WishlistContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { AuthProvider } from "./contexts/AuthContext";
 
 // Importations des pages existantes
 import Index from "./pages/Index";
@@ -24,6 +25,9 @@ import NotFound from "./pages/NotFound";
 // Importations des composants d'authentification
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+
+// Importation de la page de profil
+import Profile from "./pages/Profile";
 
 // Importations des nouvelles pages
 import FAQ from "./pages/FAQ";
@@ -51,43 +55,48 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <LanguageProvider>
-          <CartProvider>
-            <WishlistProvider>
-              <Toaster />
-              <Sonner />
-              <BrowserRouter>
-                <Layout>
-                  <Routes>
-                    {/* Pages principales */}
-                    <Route path="/" element={<Index />} />
-                    <Route path="/shop" element={<Shop />} />
-                    <Route path="/tourism" element={<Tourism />} />
-                    <Route path="/artisanat" element={<Artisanat />} />
-                    <Route path="/culture" element={<Culture />} />
-                    <Route path="/about" element={<About />} />
-                    
-                    {/* Pages d'authentification */}
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    
-                    {/* Nouvelles pages informatives */}
-                    <Route path="/faq" element={<FAQ />} />
-                    <Route path="/privacy" element={<PrivacyPolicy />} />
-                    <Route path="/terms" element={<TermsOfUse />} />
-                    <Route path="/cookies" element={<Cookies />} />
-                    <Route path="/contact" element={<Contact />} />
-                    
-                    {/* Pages Livraison et Retours */}
-                    <Route path="/livraison" element={<Livraison />} />
-                    <Route path="/retours" element={<Retours />} />
-                    
-                    {/* Page 404 - doit être en dernier */}
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
-                </Layout>
-              </BrowserRouter>
-            </WishlistProvider>
-          </CartProvider>
+          <AuthProvider>
+            <CartProvider>
+              <WishlistProvider>
+                <Toaster />
+                <Sonner />
+                <BrowserRouter>
+                  <Layout>
+                    <Routes>
+                      {/* Pages principales */}
+                      <Route path="/" element={<Index />} />
+                      <Route path="/shop" element={<Shop />} />
+                      <Route path="/tourism" element={<Tourism />} />
+                      <Route path="/artisanat" element={<Artisanat />} />
+                      <Route path="/culture" element={<Culture />} />
+                      <Route path="/about" element={<About />} />
+                      
+                      {/* Pages d'authentification */}
+                      <Route path="/login" element={<Login />} />
+                      <Route path="/register" element={<Register />} />
+                      
+                      {/* Page de profil */}
+                      <Route path="/profile" element={<Profile />} />
+                      
+                      {/* Nouvelles pages informatives */}
+                      <Route path="/faq" element={<FAQ />} />
+                      <Route path="/privacy" element={<PrivacyPolicy />} />
+                      <Route path="/terms" element={<TermsOfUse />} />
+                      <Route path="/cookies" element={<Cookies />} />
+                      <Route path="/contact" element={<Contact />} />
+                      
+                      {/* Pages Livraison et Retours */}
+                      <Route path="/livraison" element={<Livraison />} />
+                      <Route path="/retours" element={<Retours />} />
+                      
+                      {/* Page 404 - doit être en dernier */}
+                      <Route path="*" element={<NotFound />} />
+                    </Routes>
+                  </Layout>
+                </BrowserRouter>
+              </WishlistProvider>
+            </CartProvider>
+          </AuthProvider>
         </LanguageProvider>
       </TooltipProvider>
     </QueryClientProvider>

@@ -1,12 +1,21 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Search, ShoppingCart, User, Globe, Menu, X, Heart } from "lucide-react";
+import { Search, ShoppingCart, User, Globe, Menu, X, Heart, LogOut, Settings, UserCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useCart } from "@/contexts/CartContext";
 import { useWishlist } from "@/contexts/WishlistContext";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useAuth } from "@/contexts/AuthContext";
 import Cart from "./Cart";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,14 +23,29 @@ export default function Header() {
   const navigate = useNavigate();
   const { state: cartState, toggleCart } = useCart();
   const { state: wishlistState } = useWishlist();
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
+  const { user, isAuthenticated, logout } = useAuth();
 
   const navigation = [
-    { name: "E-commerce", href: "/shop" },
-    { name: "Tourisme", href: "/tourism" },
-    { name: "Artisanat", href: "/artisanat" },
-    { name: "Culture", href: "/culture" },
-    { name: "À propos", href: "/about" },
+    { name: t('nav.ecommerce'), href: "/shop" },
+    { name: t('nav.tourism'), href: "/tourism" },
+    { name: t('nav.artisanat'), href: "/artisanat" },
+    { name: t('nav.culture'), href: "/culture" },
+    { name: t('nav.about'), href: "/about" },
+  ];
+
+  const languages = [
+    { code: 'fr', name: 'Français', flag: '🇫🇷' },
+    { code: 'en', name: 'English', flag: '🇬🇧' },
+    { code: 'es', name: 'Español', flag: '🇪🇸' },
+    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+    { code: 'it', name: 'Italiano', flag: '🇮🇹' },
+    { code: 'pt', name: 'Português', flag: '🇵🇹' },
+    { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
+    { code: 'zh', name: '中文', flag: '🇨🇳' },
+    { code: 'ja', name: '日本語', flag: '🇯🇵' },
+    { code: 'ar', name: 'العربية', flag: '🇸🇦' },
+    { code: 'ru', name: 'Русский', flag: '🇷🇺' },
   ];
 
   const handleSearch = (e: React.FormEvent) => {
@@ -39,12 +63,13 @@ export default function Header() {
     }
   };
 
-  const toggleLanguage = () => {
-    setLanguage(language === "fr" ? "en" : "fr");
+  const handleLogout = () => {
+    logout();
+    navigate('/');
   };
 
-  const getLanguageLabel = () => {
-    return language === "fr" ? "EN" : "FR";
+  const getCurrentLanguageFlag = () => {
+    return languages.find(lang => lang.code === language)?.flag || '🇫🇷';
   };
 
   return (
@@ -63,11 +88,10 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* CHANGEMENT ICI : space-x-8 remplacé par space-x-4 */}
           <nav className="hidden md:flex items-center space-x-4">
             {navigation.map((item) => (
               <Link
-                key={item.name}
+                key={item.href}
                 to={item.href}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
               >
@@ -81,7 +105,7 @@ export default function Header() {
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 type="search"
-                placeholder="Rechercher des produits, destinations..."
+                placeholder={t('search.placeholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
@@ -91,16 +115,32 @@ export default function Header() {
           </div>
 
           <div className="flex items-center space-x-2">
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="hidden sm:flex"
-              onClick={toggleLanguage}
-            >
-              <Globe className="h-4 w-4 mr-1" />
-              {getLanguageLabel()}
-            </Button>
+            {/* Menu langue */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="hidden sm:flex">
+                  <Globe className="h-4 w-4 mr-1" />
+                  <span className="mr-1">{getCurrentLanguageFlag()}</span>
+                  {language.toUpperCase()}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48 max-h-96 overflow-y-auto">
+                <DropdownMenuLabel>Changer la langue</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                {languages.map((lang) => (
+                  <DropdownMenuItem
+                    key={lang.code}
+                    onClick={() => setLanguage(lang.code as any)}
+                    className={language === lang.code ? 'bg-accent' : ''}
+                  >
+                    <span className="mr-2">{lang.flag}</span>
+                    {lang.name}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
 
+            {/* Wishlist */}
             <Button
               variant="ghost"
               size="sm"
@@ -115,6 +155,7 @@ export default function Header() {
               )}
             </Button>
 
+            {/* Cart */}
             <Button
               variant="ghost"
               size="sm"
@@ -129,10 +170,69 @@ export default function Header() {
               )}
             </Button>
 
-            <Button variant="ghost" size="sm">
-              <User className="h-5 w-5" />
-            </Button>
+            {/* Menu utilisateur */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="relative">
+                  {isAuthenticated && user ? (
+                    <div className="flex items-center">
+                      <div className="h-8 w-8 rounded-full bg-gradient-to-br from-[#7c3aed] to-[#5b21b6] flex items-center justify-center text-white font-semibold">
+                        {user.name.charAt(0).toUpperCase()}
+                      </div>
+                    </div>
+                  ) : (
+                    <User className="h-5 w-5" />
+                  )}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                {isAuthenticated ? (
+                  <>
+                    <DropdownMenuLabel>
+                      <div className="flex flex-col space-y-1">
+                        <p className="text-sm font-medium">{user?.name}</p>
+                        <p className="text-xs text-muted-foreground">{user?.email}</p>
+                      </div>
+                    </DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={() => navigate('/profile')}>
+                      <UserCircle className="mr-2 h-4 w-4" />
+                      <span>{t('button.profile')}</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => navigate('/profile?tab=orders')}>
+                      <ShoppingCart className="mr-2 h-4 w-4" />
+                      <span>{t('button.orders')}</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => navigate('/profile?tab=wishlist')}>
+                      <Heart className="mr-2 h-4 w-4" />
+                      <span>{t('button.wishlist')}</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => navigate('/profile?tab=settings')}>
+                      <Settings className="mr-2 h-4 w-4" />
+                      <span>{t('button.settings')}</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={handleLogout}>
+                      <LogOut className="mr-2 h-4 w-4" />
+                      <span>{t('button.logout')}</span>
+                    </DropdownMenuItem>
+                  </>
+                ) : (
+                  <>
+                    <DropdownMenuItem onClick={() => navigate('/login')}>
+                      <User className="mr-2 h-4 w-4" />
+                      <span>{t('button.login')}</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => navigate('/register')}>
+                      <UserCircle className="mr-2 h-4 w-4" />
+                      <span>{t('button.register')}</span>
+                    </DropdownMenuItem>
+                  </>
+                )}
+              </DropdownMenuContent>
+            </DropdownMenu>
 
+            {/* Menu mobile */}
             <Button
               variant="ghost"
               size="sm"
@@ -148,6 +248,7 @@ export default function Header() {
           </div>
         </div>
 
+        {/* Menu mobile déroulant */}
         {isMenuOpen && (
           <div className="md:hidden border-t border-border bg-background">
             <div className="px-4 py-4 space-y-4">
@@ -155,7 +256,7 @@ export default function Header() {
                 <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
                   type="search"
-                  placeholder="Rechercher..."
+                  placeholder={t('search.mobile.placeholder')}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyDown={handleKeyDown}
@@ -166,7 +267,7 @@ export default function Header() {
               <nav className="space-y-2">
                 {navigation.map((item) => (
                   <Link
-                    key={item.name}
+                    key={item.href}
                     to={item.href}
                     className="block px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-gbeto-surface-hover rounded-md transition-colors"
                     onClick={() => setIsMenuOpen(false)}
@@ -175,13 +276,31 @@ export default function Header() {
                   </Link>
                 ))}
                 
-                <button
-                  onClick={toggleLanguage}
-                  className="w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-gbeto-surface-hover rounded-md transition-colors"
-                >
-                  <Globe className="h-4 w-4 inline mr-2" />
-                  {language === "fr" ? "Switch to English" : "Passer en Français"}
-                </button>
+                <div className="px-4 py-2">
+                  <p className="text-sm font-medium text-muted-foreground mb-2">
+                    <Globe className="h-4 w-4 inline mr-2" />
+                    Langue
+                  </p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          setLanguage(lang.code as any);
+                          setIsMenuOpen(false);
+                        }}
+                        className={`flex items-center space-x-2 px-3 py-2 text-sm rounded-md transition-colors ${
+                          language === lang.code 
+                            ? 'bg-gbeto-gold text-gbeto-gold-foreground' 
+                            : 'text-muted-foreground hover:text-foreground hover:bg-gbeto-surface-hover'
+                        }`}
+                      >
+                        <span>{lang.flag}</span>
+                        <span>{lang.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </nav>
             </div>
           </div>

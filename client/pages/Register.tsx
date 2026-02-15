@@ -1,85 +1,58 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { UserPlus, Mail, Lock, User, Crown } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
-import { toast } from "sonner";
+import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-const API_REGISTER_URL = 'http://localhost:3001/api/register';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { toast } from "@/components/ui/use-toast";
+import { User, Mail, Lock, UserPlus } from "lucide-react";
 
 export default function Register() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    isArtisan: false,
-  });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const { register } = useAuth();
   const { t } = useLanguage();
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [id]: type === "checkbox" ? checked : value,
-    }));
-  };
-  
-  const handleArtisanChange = (checked: boolean) => {
-      setFormData((prev) => ({ ...prev, isArtisan: checked }));
-  };
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.email || formData.password.length < 6) {
-        toast.error("Veuillez vérifier les champs", {
-            description: "L'email est requis et le mot de passe doit contenir au moins 6 caractères.",
-        });
-        return;
+    if (password !== confirmPassword) {
+      toast({
+        title: "Erreur",
+        description: "Les mots de passe ne correspondent pas",
+        variant: "destructive",
+      });
+      return;
     }
 
     setIsLoading(true);
 
     try {
-      const response = await fetch(API_REGISTER_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            password: formData.password,
-            isArtisan: formData.isArtisan,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        toast.success(t('registration_success'), {
-          description: data.message || `${t('welcome')} ${formData.name}. Vous pouvez maintenant vous connecter.`,
+      const success = await register(name, email, password);
+      if (success) {
+        toast({
+          title: "Inscription réussie",
+          description: "Bienvenue sur D anxomɛ !",
         });
-        setFormData({ name: '', email: '', password: '', isArtisan: false });
-        
-        // Redirection vers la page de connexion
-        setTimeout(() => {
-          window.location.href = '/login';
-        }, 2000);
+        navigate("/");
       } else {
-        toast.error("Échec de l'inscription", {
-          description: data.error || 'Erreur inconnue lors de l\'inscription.',
+        toast({
+          title: "Erreur d'inscription",
+          description: "Cet email est déjà utilisé",
+          variant: "destructive",
         });
       }
-    } catch (err) {
-      console.error("Erreur d'enregistrement:", err);
-      toast.error(t('server_error'), {
-        description: "Impossible de contacter le serveur. Assurez-vous que l'API Node.js est lancée sur le port 3001.",
+    } catch (error) {
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue",
+        variant: "destructive",
       });
     } finally {
       setIsLoading(false);
@@ -87,102 +60,87 @@ export default function Register() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-[calc(100vh-100px)] bg-gbeto-surface p-4">
-      <Card className="w-full max-w-lg bg-background shadow-2xl border-gbeto-gold/50 animate-fade-in">
-        <CardHeader className="text-center">
-          <UserPlus className="h-10 w-10 text-gbeto-gold mx-auto mb-2" />
-          <CardTitle className="text-3xl font-playfair font-bold text-foreground">
-            {t('register.title')}
-          </CardTitle>
-          <p className="text-sm text-muted-foreground mt-2">
-            {t('register.subtitle')}
-          </p>
+    <div className="min-h-[80vh] flex items-center justify-center px-4">
+      <Card className="w-full max-w-md">
+        <CardHeader className="space-y-1">
+          <CardTitle className="text-2xl text-center">{t('auth.register.title')}</CardTitle>
+          <CardDescription className="text-center">
+            {t('auth.register.subtitle')}
+          </CardDescription>
         </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            
-            {/* Champ Nom complet */}
+        <form onSubmit={handleSubmit}>
+          <CardContent className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="name">{t('register.name')}</Label>
+              <Label htmlFor="name">{t('auth.register.name')}</Label>
               <div className="relative">
+                <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   id="name"
-                  type="text"
-                  placeholder="Ex: Kofi Adjaho"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="pl-10 focus:ring-gbeto-gold focus:border-gbeto-gold transition-colors"
+                  placeholder="Jean Dupont"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="pl-10"
+                  required
                 />
-                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               </div>
             </div>
-
-            {/* Champ Email */}
             <div className="space-y-2">
-              <Label htmlFor="email">{t('register.email')}</Label>
+              <Label htmlFor="email">{t('auth.register.email')}</Label>
               <div className="relative">
+                <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   id="email"
                   type="email"
-                  placeholder="votre.email@exemple.com"
-                  value={formData.email}
-                  onChange={handleChange}
+                  placeholder="exemple@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="pl-10"
                   required
-                  className="pl-10 focus:ring-gbeto-gold focus:border-gbeto-gold transition-colors"
                 />
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               </div>
             </div>
-
-            {/* Champ Mot de passe */}
             <div className="space-y-2">
-              <Label htmlFor="password">{t('register.password')}</Label>
+              <Label htmlFor="password">{t('auth.register.password')}</Label>
               <div className="relative">
+                <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   id="password"
                   type="password"
-                  placeholder="Minimum 6 caractères"
-                  value={formData.password}
-                  onChange={handleChange}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="pl-10"
                   required
-                  className="pl-10 focus:ring-gbeto-gold focus:border-gbeto-gold transition-colors"
-                  minLength={6}
                 />
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               </div>
             </div>
-            
-            {/* Option Artisan */}
-            <div className="flex items-center space-x-2 pt-2">
-              <Checkbox
-                id="isArtisan"
-                checked={formData.isArtisan}
-                onCheckedChange={handleArtisanChange}
-                className="data-[state=checked]:bg-gbeto-gold data-[state=checked]:border-gbeto-gold border-gray-400"
-              />
-              <Label htmlFor="isArtisan" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center">
-                {t('register.artisan')} <Crown className="ml-2 h-4 w-4 text-gbeto-gold" />
-              </Label>
+            <div className="space-y-2">
+              <Label htmlFor="confirmPassword">{t('auth.register.confirmPassword')}</Label>
+              <div className="relative">
+                <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                <Input
+                  id="confirmPassword"
+                  type="password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  className="pl-10"
+                  required
+                />
+              </div>
             </div>
-
-            {/* Bouton de soumission */}
-            <Button 
-              type="submit" 
-              className="w-full bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground transition-all duration-300 font-semibold py-3"
-              disabled={isLoading}
-            >
-              {isLoading ? t('register.loading') : t('register.submit')}
+          </CardContent>
+          <CardFooter className="flex flex-col space-y-4">
+            <Button type="submit" className="w-full" disabled={isLoading}>
+              <UserPlus className="mr-2 h-4 w-4" />
+              {isLoading ? "Inscription..." : t('button.register')}
             </Button>
-            
-            {/* Lien vers la connexion */}
-            <div className="text-center text-sm text-muted-foreground">
-              {t('register.has_account')}{" "}
-              <Link to="/login" className="text-gbeto-gold hover:text-gbeto-gold/80 font-semibold transition-colors">
-                {t('login')}
+            <p className="text-sm text-muted-foreground text-center">
+              {t('auth.register.haveAccount')}{" "}
+              <Link to="/login" className="text-primary hover:underline">
+                {t('auth.register.loginLink')}
               </Link>
-            </div>
-          </form>
-        </CardContent>
+            </p>
+          </CardFooter>
+        </form>
       </Card>
     </div>
   );
