@@ -9,7 +9,7 @@ const TermsOfUse = () => {
   const sections = [
     {
       title: "1. Acceptation des conditions",
-      content: "En accédant ou en utilisant la plateforme Maroc Marketplace, vous acceptez d'être lié par ces conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser nos services."
+      content: "En accédant ou en utilisant la plateforme Danxomɛ, vous acceptez d'être lié par ces conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser nos services."
     },
     {
       title: "2. Éligibilité",
@@ -72,7 +72,7 @@ const TermsOfUse = () => {
           <AlertTitle className="text-yellow-600 dark:text-yellow-400">Information importante</AlertTitle>
           <AlertDescription className="text-yellow-700 dark:text-yellow-300">
             Veuillez lire attentivement ces conditions d'utilisation avant d'utiliser nos services. 
-            Elles constituent un accord légal entre vous et Maroc Marketplace.
+            Elles constituent un accord légal entre vous et Danxomɛ.
           </AlertDescription>
         </Alert>
 
@@ -112,7 +112,7 @@ const TermsOfUse = () => {
           </CardHeader>
           <CardContent>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              Dans toute la mesure permise par la loi, Maroc Marketplace ne sera pas responsable des dommages 
+              Dans toute la mesure permise par la loi, Danxomɛ ne sera pas responsable des dommages 
               indirects, accessoires ou consécutifs découlant de l'utilisation ou de l'impossibilité d'utiliser nos services.
             </p>
             <div className="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg">
