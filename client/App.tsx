@@ -12,6 +12,7 @@ import { CartProvider } from "./contexts/CartContext";
 import { WishlistProvider } from "./contexts/WishlistContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { AuthProvider } from "./contexts/AuthContext";
+import { ThemeProvider } from "./contexts/ThemeContext"; // Ajout du ThemeProvider
 
 // Importations des pages existantes
 import Index from "./pages/Index";
@@ -52,70 +53,74 @@ import Artisans from "./pages/Artisans";
 const queryClient = new QueryClient();
 
 if (typeof window !== "undefined") {
-  document.documentElement.classList.add("dark");
+  // Ne pas forcer le mode sombre ici, laisser le ThemeProvider gérer ça
+  // document.documentElement.classList.add("dark");
 }
 
 const App = () => {
   useEffect(() => {
-    document.documentElement.classList.add("dark");
+    // Ne pas forcer le mode sombre ici non plus
+    // document.documentElement.classList.add("dark");
   }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <LanguageProvider>
-          <AuthProvider>
-            <CartProvider>
-              <WishlistProvider>
-                <Toaster />
-                <Sonner />
-                <BrowserRouter>
-                  <Layout>
-                    <Routes>
-                      {/* Pages principales */}
-                      <Route path="/" element={<Index />} />
-                      <Route path="/shop" element={<Shop />} />
-                      <Route path="/tourism" element={<Tourism />} />
-                      <Route path="/artisanat" element={<Artisanat />} />
-                      <Route path="/culture" element={<Culture />} />
-                      <Route path="/about" element={<About />} />
-                      
-                      {/* Pages d'authentification */}
-                      <Route path="/login" element={<Login />} />
-                      <Route path="/register" element={<Register />} />
-                      
-                      {/* Page de profil */}
-                      <Route path="/profile" element={<Profile />} />
-                      
-                      {/* Nouvelles pages informatives */}
-                      <Route path="/faq" element={<FAQ />} />
-                      <Route path="/privacy" element={<PrivacyPolicy />} />
-                      <Route path="/terms" element={<TermsOfUse />} />
-                      <Route path="/cookies" element={<Cookies />} />
-                      <Route path="/contact" element={<Contact />} />
-                      
-                      {/* Pages Livraison et Retours */}
-                      <Route path="/livraison" element={<Livraison />} />
-                      <Route path="/retours" element={<Retours />} />
-                      
-                      {/* Nouvelles pages demandées */}
-                      <Route path="/vetements" element={<Vetements />} />
-                      <Route path="/gastronomie" element={<Gastronomie />} />
-                      <Route path="/promotions" element={<Promotions />} />
-                      <Route path="/circuits-tourisme" element={<CircuitsTourisme />} />
-                      <Route path="/restauration" element={<Restauration />} />
-                      <Route path="/impact" element={<ImpactDurable />} />
-                      <Route path="/artisans" element={<Artisans />} />
-                      
-                      {/* Page 404 - doit être en dernier */}
-                      <Route path="*" element={<NotFound />} />
-                    </Routes>
-                  </Layout>
-                </BrowserRouter>
-              </WishlistProvider>
-            </CartProvider>
-          </AuthProvider>
-        </LanguageProvider>
+        <ThemeProvider> {/* Ajout du ThemeProvider */}
+          <LanguageProvider>
+            <AuthProvider>
+              <CartProvider>
+                <WishlistProvider>
+                  <Toaster />
+                  <Sonner />
+                  <BrowserRouter>
+                    <Layout>
+                      <Routes>
+                        {/* Pages principales */}
+                        <Route path="/" element={<Index />} />
+                        <Route path="/shop" element={<Shop />} />
+                        <Route path="/tourism" element={<Tourism />} />
+                        <Route path="/artisanat" element={<Artisanat />} />
+                        <Route path="/culture" element={<Culture />} />
+                        <Route path="/about" element={<About />} />
+                        
+                        {/* Pages d'authentification */}
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/register" element={<Register />} />
+                        
+                        {/* Page de profil */}
+                        <Route path="/profile" element={<Profile />} />
+                        
+                        {/* Nouvelles pages informatives */}
+                        <Route path="/faq" element={<FAQ />} />
+                        <Route path="/privacy" element={<PrivacyPolicy />} />
+                        <Route path="/terms" element={<TermsOfUse />} />
+                        <Route path="/cookies" element={<Cookies />} />
+                        <Route path="/contact" element={<Contact />} />
+                        
+                        {/* Pages Livraison et Retours */}
+                        <Route path="/livraison" element={<Livraison />} />
+                        <Route path="/retours" element={<Retours />} />
+                        
+                        {/* Nouvelles pages demandées */}
+                        <Route path="/vetements" element={<Vetements />} />
+                        <Route path="/gastronomie" element={<Gastronomie />} />
+                        <Route path="/promotions" element={<Promotions />} />
+                        <Route path="/circuits-tourisme" element={<CircuitsTourisme />} />
+                        <Route path="/restauration" element={<Restauration />} />
+                        <Route path="/impact" element={<ImpactDurable />} />
+                        <Route path="/artisans" element={<Artisans />} />
+                        
+                        {/* Page 404 - doit être en dernier */}
+                        <Route path="*" element={<NotFound />} />
+                      </Routes>
+                    </Layout>
+                  </BrowserRouter>
+                </WishlistProvider>
+              </CartProvider>
+            </AuthProvider>
+          </LanguageProvider>
+        </ThemeProvider> {/* Fermeture du ThemeProvider */}
       </TooltipProvider>
     </QueryClientProvider>
   );
