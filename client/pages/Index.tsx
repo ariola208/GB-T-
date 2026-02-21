@@ -51,12 +51,12 @@ export default function Index() {
   ];
 
   const categories = [
-    { name: "Artisanat", icon: Crown, count: "250+ produits", color: "bg-gbeto-gold" },
-    { name: "Vêtements", icon: ShoppingBag, count: "180+ articles", color: "bg-primary" },
-    { name: "Gastronomie", icon: Heart, count: "120+ spécialités", color: "bg-gbeto-gold" },
-    { name: "Tourisme", icon: Palmtree, count: "50+ destinations", color: "bg-primary" },
-    { name: "Culture", icon: Camera, count: "30+ expériences", color: "bg-gbeto-gold" },
-    { name: "Monuments", icon: MapPin, count: "25+ sites", color: "bg-primary" }
+    { name: "Artisanat", icon: Crown, count: "250+ produits", color: "bg-gbeto-gold", link: "/artisanat" },
+    { name: "Vêtements", icon: ShoppingBag, count: "180+ articles", color: "bg-primary", link: "/vetements" },
+    { name: "Gastronomie", icon: Heart, count: "120+ spécialités", color: "bg-gbeto-gold", link: "/gastronomie" },
+    { name: "Tourisme", icon: Palmtree, count: "50+ destinations", color: "bg-primary", link: "/circuits-tourisme" },
+    { name: "Culture", icon: Camera, count: "30+ expériences", color: "bg-gbeto-gold", link: "/culture" },
+    { name: "Restauration", icon: MapPin, count: "25+ restaurants", color: "bg-primary", link: "/restauration" }
   ];
 
   const featuredProducts = [
@@ -166,7 +166,7 @@ export default function Index() {
     originalPrice: product.originalPrice,
     image: product.image,
     category: product.badge,
-    inStock: 50, // Valeur par défaut
+    inStock: 50,
     rating: product.rating,
     reviews: product.reviews
   });
@@ -177,7 +177,6 @@ export default function Index() {
   };
   
   const productCategories = ["Tous", "Artisanat", "Vêtements", "Tourisme", "Gastronomie"];
-
 
   return (
     <div className="min-h-screen">
@@ -197,7 +196,7 @@ export default function Index() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground transition-transform hover:scale-105 active:scale-95 duration-300" asChild>
-                <Link to={currentSlide === 0 ? "/shop" : currentSlide === 1 ? "/artisanat" : "/tourism"}>
+                <Link to={currentSlide === 0 ? "/shop" : currentSlide === 1 ? "/artisanat" : "/circuits-tourisme"}>
                   {heroSlides[currentSlide].cta}
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -245,7 +244,7 @@ export default function Index() {
                 className="group hover:scale-105 transition-all duration-300 cursor-pointer animate-slide-up hover:shadow-lg hover:shadow-gbeto-gold/20" 
                 style={{animationDelay: `${index * 100}ms`}}
               >
-                <Link to={`/${category.name.toLowerCase().replace(/\s/g, "")}`} className="block">
+                <Link to={category.link} className="block">
                   <CardContent className="p-6 text-center">
                     <div className={`w-12 h-12 ${category.color} rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
                       <category.icon className="h-6 w-6 text-background" />
@@ -275,168 +274,166 @@ export default function Index() {
           </div>
           
           <Tabs defaultValue="Tous" className="w-full">
-                <div className="flex justify-start overflow-x-auto pb-4">
-                    <TabsList className="bg-gbeto-surface/50 border border-gbeto-surface/80">
-                        {productCategories.map(category => (
-                            <TabsTrigger key={category} value={category} className="data-[state=active]:bg-gbeto-gold data-[state=active]:text-gbeto-gold-foreground transition-colors duration-200">
-                                {category}
-                            </TabsTrigger>
-                        ))}
-                    </TabsList>
-                </div>
-
-                <TabsContent value="Tous" className="mt-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {getProductsByCategory("Tous").map((product, index) => (
-                            <Card 
-                                key={product.id} 
-                                className="group hover:shadow-xl transition-all duration-300 animate-scale-in hover:shadow-gbeto-gold/30" 
-                                style={{animationDelay: `${index * 150}ms`}}
-                            >
-                                <div className="relative overflow-hidden rounded-t-lg">
-                                    <img
-                                        src={product.image}
-                                        alt={product.name}
-                                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                                    />
-                                    {product.isNew && (
-                                        <Badge className="absolute top-2 left-2 bg-gbeto-gold text-gbeto-gold-foreground">
-                                            Nouveau
-                                        </Badge>
-                                    )}
-                                    <Badge variant="secondary" className="absolute top-2 right-2 bg-black/50 text-white">
-                                        {product.badge}
-                                    </Badge>
-                                    <Button
-                                        size="sm"
-                                        variant="ghost"
-                                        className="absolute top-2 right-12 opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 hover:bg-white h-8 w-8 p-0"
-                                        onClick={() => toggleWishlist(getProductContextData(product))}
-                                        aria-label="Add to wishlist"
-                                    >
-                                        <Heart className={`h-4 w-4 ${isInWishlist(product.id) ? 'fill-red-500 text-red-500' : 'text-muted-foreground'}`} />
-                                    </Button>
-                                </div>
-                                <CardContent className="p-4">
-                                    <h3 className="font-semibold text-foreground mb-2 group-hover:text-gbeto-gold transition-colors">
-                                        {product.name}
-                                    </h3>
-                                    <div className="flex items-center mb-2">
-                                        <div className="flex items-center">
-                                            {[...Array(5)].map((_, i) => (
-                                                <Star
-                                                    key={i}
-                                                    className={`h-4 w-4 ${i < Math.floor(product.rating) ? 'text-gbeto-gold fill-current' : 'text-muted-foreground'}`}
-                                                />
-                                            ))}
-                                        </div>
-                                        <span className="text-sm text-muted-foreground ml-2">
-                                            ({product.reviews})
-                                        </span>
-                                    </div>
-                                    <div className="flex items-center justify-between">
-                                        <div>
-                                            <span className="text-lg font-bold text-foreground">
-                                                {product.price.toLocaleString()} FCFA
-                                            </span>
-                                            {product.originalPrice && (
-                                                <span className="text-sm text-muted-foreground line-through ml-2">
-                                                    {product.originalPrice.toLocaleString()} FCFA
-                                                </span>
-                                            )}
-                                        </div>
-                                        <Button
-                                            size="sm"
-                                            className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground transition-transform hover:scale-105 active:scale-95 duration-300"
-                                            onClick={() => addToCart(getProductContextData(product))}
-                                        >
-                                            <ShoppingBag className="h-4 w-4" />
-                                        </Button>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        ))}
-                    </div>
-                </TabsContent>
-
-                {/* Utilisation d'un seul TabsContent pour simplifier la structure, 
-                   les autres catégories peuvent utiliser le même code pour afficher leurs produits */}
-                {productCategories.filter(c => c !== "Tous").map(category => (
-                    <TabsContent key={`content-${category}`} value={category} className="mt-6">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {getProductsByCategory(category).map((product, index) => (
-                                <Card 
-                                    key={product.id} 
-                                    className="group hover:shadow-xl transition-all duration-300 animate-scale-in hover:shadow-gbeto-gold/30" 
-                                    style={{animationDelay: `${index * 150}ms`}}
-                                >
-                                    <div className="relative overflow-hidden rounded-t-lg">
-                                        <img
-                                            src={product.image}
-                                            alt={product.name}
-                                            className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                                        />
-                                        {product.isNew && (
-                                            <Badge className="absolute top-2 left-2 bg-gbeto-gold text-gbeto-gold-foreground">
-                                                Nouveau
-                                            </Badge>
-                                        )}
-                                        <Badge variant="secondary" className="absolute top-2 right-2 bg-black/50 text-white">
-                                            {product.badge}
-                                        </Badge>
-                                        <Button
-                                            size="sm"
-                                            variant="ghost"
-                                            className="absolute top-2 right-12 opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 hover:bg-white h-8 w-8 p-0"
-                                            onClick={() => toggleWishlist(getProductContextData(product))}
-                                            aria-label="Add to wishlist"
-                                        >
-                                            <Heart className={`h-4 w-4 ${isInWishlist(product.id) ? 'fill-red-500 text-red-500' : 'text-muted-foreground'}`} />
-                                        </Button>
-                                    </div>
-                                    <CardContent className="p-4">
-                                        <h3 className="font-semibold text-foreground mb-2 group-hover:text-gbeto-gold transition-colors">
-                                            {product.name}
-                                        </h3>
-                                        <div className="flex items-center mb-2">
-                                            <div className="flex items-center">
-                                                {[...Array(5)].map((_, i) => (
-                                                    <Star
-                                                        key={i}
-                                                        className={`h-4 w-4 ${i < Math.floor(product.rating) ? 'text-gbeto-gold fill-current' : 'text-muted-foreground'}`}
-                                                    />
-                                                ))}
-                                            </div>
-                                            <span className="text-sm text-muted-foreground ml-2">
-                                                ({product.reviews})
-                                            </span>
-                                        </div>
-                                        <div className="flex items-center justify-between">
-                                            <div>
-                                                <span className="text-lg font-bold text-foreground">
-                                                    {product.price.toLocaleString()} FCFA
-                                                </span>
-                                                {product.originalPrice && (
-                                                    <span className="text-sm text-muted-foreground line-through ml-2">
-                                                        {product.originalPrice.toLocaleString()} FCFA
-                                                    </span>
-                                                )}
-                                            </div>
-                                            <Button
-                                                size="sm"
-                                                className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground transition-transform hover:scale-105 active:scale-95 duration-300"
-                                                onClick={() => addToCart(getProductContextData(product))}
-                                            >
-                                                <ShoppingBag className="h-4 w-4" />
-                                            </Button>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
-                    </TabsContent>
+            <div className="flex justify-start overflow-x-auto pb-4">
+              <TabsList className="bg-gbeto-surface/50 border border-gbeto-surface/80">
+                {productCategories.map(category => (
+                  <TabsTrigger key={category} value={category} className="data-[state=active]:bg-gbeto-gold data-[state=active]:text-gbeto-gold-foreground transition-colors duration-200">
+                    {category}
+                  </TabsTrigger>
                 ))}
-            </Tabs>
+              </TabsList>
+            </div>
+
+            <TabsContent value="Tous" className="mt-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {getProductsByCategory("Tous").map((product, index) => (
+                  <Card 
+                    key={product.id} 
+                    className="group hover:shadow-xl transition-all duration-300 animate-scale-in hover:shadow-gbeto-gold/30" 
+                    style={{animationDelay: `${index * 150}ms`}}
+                  >
+                    <div className="relative overflow-hidden rounded-t-lg">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                      {product.isNew && (
+                        <Badge className="absolute top-2 left-2 bg-gbeto-gold text-gbeto-gold-foreground">
+                          Nouveau
+                        </Badge>
+                      )}
+                      <Badge variant="secondary" className="absolute top-2 right-2 bg-black/50 text-white">
+                        {product.badge}
+                      </Badge>
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        className="absolute top-2 right-12 opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 hover:bg-white h-8 w-8 p-0"
+                        onClick={() => toggleWishlist(getProductContextData(product))}
+                        aria-label="Add to wishlist"
+                      >
+                        <Heart className={`h-4 w-4 ${isInWishlist(product.id) ? 'fill-red-500 text-red-500' : 'text-muted-foreground'}`} />
+                      </Button>
+                    </div>
+                    <CardContent className="p-4">
+                      <h3 className="font-semibold text-foreground mb-2 group-hover:text-gbeto-gold transition-colors">
+                        {product.name}
+                      </h3>
+                      <div className="flex items-center mb-2">
+                        <div className="flex items-center">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className={`h-4 w-4 ${i < Math.floor(product.rating) ? 'text-gbeto-gold fill-current' : 'text-muted-foreground'}`}
+                            />
+                          ))}
+                        </div>
+                        <span className="text-sm text-muted-foreground ml-2">
+                          ({product.reviews})
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <span className="text-lg font-bold text-foreground">
+                            {product.price.toLocaleString()} FCFA
+                          </span>
+                          {product.originalPrice && (
+                            <span className="text-sm text-muted-foreground line-through ml-2">
+                              {product.originalPrice.toLocaleString()} FCFA
+                            </span>
+                          )}
+                        </div>
+                        <Button
+                          size="sm"
+                          className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground transition-transform hover:scale-105 active:scale-95 duration-300"
+                          onClick={() => addToCart(getProductContextData(product))}
+                        >
+                          <ShoppingBag className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            {productCategories.filter(c => c !== "Tous").map(category => (
+              <TabsContent key={`content-${category}`} value={category} className="mt-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {getProductsByCategory(category).map((product, index) => (
+                    <Card 
+                      key={product.id} 
+                      className="group hover:shadow-xl transition-all duration-300 animate-scale-in hover:shadow-gbeto-gold/30" 
+                      style={{animationDelay: `${index * 150}ms`}}
+                    >
+                      <div className="relative overflow-hidden rounded-t-lg">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        {product.isNew && (
+                          <Badge className="absolute top-2 left-2 bg-gbeto-gold text-gbeto-gold-foreground">
+                            Nouveau
+                          </Badge>
+                        )}
+                        <Badge variant="secondary" className="absolute top-2 right-2 bg-black/50 text-white">
+                          {product.badge}
+                        </Badge>
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          className="absolute top-2 right-12 opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 hover:bg-white h-8 w-8 p-0"
+                          onClick={() => toggleWishlist(getProductContextData(product))}
+                          aria-label="Add to wishlist"
+                        >
+                          <Heart className={`h-4 w-4 ${isInWishlist(product.id) ? 'fill-red-500 text-red-500' : 'text-muted-foreground'}`} />
+                        </Button>
+                      </div>
+                      <CardContent className="p-4">
+                        <h3 className="font-semibold text-foreground mb-2 group-hover:text-gbeto-gold transition-colors">
+                          {product.name}
+                        </h3>
+                        <div className="flex items-center mb-2">
+                          <div className="flex items-center">
+                            {[...Array(5)].map((_, i) => (
+                              <Star
+                                key={i}
+                                className={`h-4 w-4 ${i < Math.floor(product.rating) ? 'text-gbeto-gold fill-current' : 'text-muted-foreground'}`}
+                              />
+                            ))}
+                          </div>
+                          <span className="text-sm text-muted-foreground ml-2">
+                            ({product.reviews})
+                          </span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <span className="text-lg font-bold text-foreground">
+                              {product.price.toLocaleString()} FCFA
+                            </span>
+                            {product.originalPrice && (
+                              <span className="text-sm text-muted-foreground line-through ml-2">
+                                {product.originalPrice.toLocaleString()} FCFA
+                              </span>
+                            )}
+                          </div>
+                          <Button
+                            size="sm"
+                            className="bg-gbeto-gold hover:bg-gbeto-gold/90 text-gbeto-gold-foreground transition-transform hover:scale-105 active:scale-95 duration-300"
+                            onClick={() => addToCart(getProductContextData(product))}
+                          >
+                            <ShoppingBag className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </TabsContent>
+            ))}
+          </Tabs>
         </div>
       </section>
 
@@ -500,7 +497,7 @@ export default function Index() {
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="transition-transform hover:scale-105 active:scale-95 duration-300" asChild>
-              <Link to="/tourism">
+              <Link to="/circuits-tourisme">
                 Explorer le Tourisme
                 <MapPin className="ml-2 h-5 w-5" />
               </Link>
@@ -511,70 +508,67 @@ export default function Index() {
       
       {/* PIED DE PAGE (FOOTER) */}
       <footer className="bg-black text-primary-foreground py-8"> 
-          <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-5 gap-6">
-              
-              {/* Colonne 1 : Logo et Contact */}
-              <div className="col-span-2 md:col-span-1">
-                  <h4 className="text-xl font-playfair font-bold text-gbeto-gold mb-3">Danxomɛ</h4>
-                  <p className="text-xs opacity-70 mb-3">
-                      L'authenticité du Bénin, livrée chez vous.
-                  </p>
-                  <p className="text-xs opacity-70">
-                      **Contact :** info@danxome.bj
-                  </p>
-                  <div className="flex space-x-3 mt-3">
-                      {/* CORRECTION : Envelopper l'icône dans une balise Link complète */}
-                      <Link to="/social/facebook" className="hover:text-gbeto-gold transition-colors" aria-label="Facebook">
-                          <Users className="h-4 w-4" />
-                      </Link>
-                      {/* CORRECTION : Envelopper l'icône dans une balise Link complète */}
-                      <Link to="/social/instagram" className="hover:text-gbeto-gold transition-colors" aria-label="Instagram">
-                          <Camera className="h-4 w-4" />
-                      </Link>
-                  </div>
-              </div>
-
-              {/* Colonne 2 : Liens Rapides */}
-              <div>
-                  <h5 className="font-semibold mb-3 text-gbeto-gold text-sm">Acheter</h5>
-                  <ul className="space-y-1 text-xs opacity-70">
-                      <li><Link to="/shop/artisanat" className="hover:text-gbeto-gold transition-colors">Artisanat</Link></li>
-                      <li><Link to="/shop/vetements" className="hover:text-gbeto-gold transition-colors">Vêtements & Textile</Link></li>
-                      <li><Link to="/shop/gastronomie" className="hover:text-gbeto-gold transition-colors">Gastronomie Locale</Link></li>
-                      <li><Link to="/shop" className="hover:text-gbeto-gold transition-colors">Promotions</Link></li>
-                  </ul>
-              </div>
-
-              {/* Colonne 3 : Tourisme & Culture */}
-              <div>
-                  <h5 className="font-semibold mb-3 text-gbeto-gold text-sm">Découvrir</h5>
-                  <ul className="space-y-1 text-xs opacity-70">
-                      <li><Link to="/tourism" className="hover:text-gbeto-gold transition-colors">Circuits Tourisme</Link></li>
-                      <li><Link to="/restauration" className="hover:text-gbeto-gold transition-colors">Restauration</Link></li>
-                      <li><Link to="/impact" className="hover:text-gbeto-gold transition-colors">Impact Durable</Link></li>
-                      <li><Link to="/artisan/spotlight" className="hover:text-gbeto-gold transition-colors">Artisans</Link></li>
-                  </ul>
-              </div>
-
-              {/* Colonne 4 : Support */}
-              <div>
-                  <h5 className="font-semibold mb-3 text-gbeto-gold text-sm">Support</h5>
-                  <ul className="space-y-1 text-xs opacity-70">
-                      {/* Lien d'inscription conservé */}
-                      <li><Link to="/register" className="hover:text-gbeto-gold transition-colors">S'inscrire</Link></li>
-                      <li><Link to="/faq" className="hover:text-gbeto-gold transition-colors">FAQ</Link></li>
-                      <li><Link to="/shipping" className="hover:text-gbeto-gold transition-colors">Livraison & Retours</Link></li>
-                      <li><Link to="/terms" className="hover:text-gbeto-gold transition-colors">Conditions Générales</Link></li>
-                      <li><Link to="/privacy" className="hover:text-gbeto-gold transition-colors">Politique de Confidentialité</Link></li>
-                  </ul>
-              </div>
+        <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-5 gap-6">
+          
+          {/* Colonne 1 : Logo et Contact */}
+          <div className="col-span-2 md:col-span-1">
+            <h4 className="text-xl font-playfair font-bold text-gbeto-gold mb-3">Danxomɛ</h4>
+            <p className="text-xs opacity-70 mb-3">
+              L'authenticité du Bénin, livrée chez vous.
+            </p>
+            <p className="text-xs opacity-70">
+              **Contact :** info@danxome.bj
+            </p>
+            <div className="flex space-x-3 mt-3">
+              <Link to="/social/facebook" className="hover:text-gbeto-gold transition-colors" aria-label="Facebook">
+                <Users className="h-4 w-4" />
+              </Link>
+              <Link to="/social/instagram" className="hover:text-gbeto-gold transition-colors" aria-label="Instagram">
+                <Camera className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
 
-          <div className="container mx-auto px-4 border-t border-primary-foreground/20 mt-6 pt-4 text-center">
-              <p className="text-xs opacity-60">
-                  © {new Date().getFullYear()} Danxomɛ. Tous droits réservés. Propulsé par la culture béninoise.
-              </p>
+          {/* Colonne 2 : Liens Rapides - Acheter */}
+          <div>
+            <h5 className="font-semibold mb-3 text-gbeto-gold text-sm">Acheter</h5>
+            <ul className="space-y-1 text-xs opacity-70">
+              <li><Link to="/artisanat" className="hover:text-gbeto-gold transition-colors">Artisanat</Link></li>
+              <li><Link to="/vetements" className="hover:text-gbeto-gold transition-colors">Vêtements & Textile</Link></li>
+              <li><Link to="/gastronomie" className="hover:text-gbeto-gold transition-colors">Gastronomie Locale</Link></li>
+              <li><Link to="/promotions" className="hover:text-gbeto-gold transition-colors">Promotions</Link></li>
+            </ul>
           </div>
+
+          {/* Colonne 3 : Tourisme & Culture - Découvrir */}
+          <div>
+            <h5 className="font-semibold mb-3 text-gbeto-gold text-sm">Découvrir</h5>
+            <ul className="space-y-1 text-xs opacity-70">
+              <li><Link to="/circuits-tourisme" className="hover:text-gbeto-gold transition-colors">Circuits Tourisme</Link></li>
+              <li><Link to="/restauration" className="hover:text-gbeto-gold transition-colors">Restauration</Link></li>
+              <li><Link to="/impact" className="hover:text-gbeto-gold transition-colors">Impact Durable</Link></li>
+              <li><Link to="/artisans" className="hover:text-gbeto-gold transition-colors">Artisans</Link></li>
+            </ul>
+          </div>
+
+          {/* Colonne 4 : Support */}
+          <div>
+            <h5 className="font-semibold mb-3 text-gbeto-gold text-sm">Support</h5>
+            <ul className="space-y-1 text-xs opacity-70">
+              <li><Link to="/register" className="hover:text-gbeto-gold transition-colors">S'inscrire</Link></li>
+              <li><Link to="/faq" className="hover:text-gbeto-gold transition-colors">FAQ</Link></li>
+              <li><Link to="/livraison" className="hover:text-gbeto-gold transition-colors">Livraison & Retours</Link></li>
+              <li><Link to="/terms" className="hover:text-gbeto-gold transition-colors">Conditions Générales</Link></li>
+              <li><Link to="/privacy" className="hover:text-gbeto-gold transition-colors">Politique de Confidentialité</Link></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 border-t border-primary-foreground/20 mt-6 pt-4 text-center">
+          <p className="text-xs opacity-60">
+            © {new Date().getFullYear()} Danxomɛ. Tous droits réservés. Propulsé par la culture béninoise.
+          </p>
+        </div>
       </footer>
     </div>
   );

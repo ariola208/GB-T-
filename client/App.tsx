@@ -40,6 +40,15 @@ import Contact from "./pages/Contact";
 import Livraison from "./pages/Livraison";
 import Retours from "./pages/Retours";
 
+// Importations des nouvelles pages demandées
+import Vetements from "./pages/Vetements";
+import Gastronomie from "./pages/Gastronomie";
+import Promotions from "./pages/Promotions";
+import CircuitsTourisme from "./pages/CircuitsTourisme";
+import Restauration from "./pages/Restauration";
+import ImpactDurable from "./pages/ImpactDurable";
+import Artisans from "./pages/Artisans";
+
 const queryClient = new QueryClient();
 
 if (typeof window !== "undefined") {
@@ -88,6 +97,15 @@ const App = () => {
                       {/* Pages Livraison et Retours */}
                       <Route path="/livraison" element={<Livraison />} />
                       <Route path="/retours" element={<Retours />} />
+                      
+                      {/* Nouvelles pages demandées */}
+                      <Route path="/vetements" element={<Vetements />} />
+                      <Route path="/gastronomie" element={<Gastronomie />} />
+                      <Route path="/promotions" element={<Promotions />} />
+                      <Route path="/circuits-tourisme" element={<CircuitsTourisme />} />
+                      <Route path="/restauration" element={<Restauration />} />
+                      <Route path="/impact" element={<ImpactDurable />} />
+                      <Route path="/artisans" element={<Artisans />} />
                       
                       {/* Page 404 - doit être en dernier */}
                       <Route path="*" element={<NotFound />} />
