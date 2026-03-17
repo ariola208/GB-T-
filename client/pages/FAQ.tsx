@@ -25,8 +25,8 @@ const FAQ = () => {
       icon: '🏠',
       questions: [
         {
-          question: 'Qu\'est-ce que Maroc Marketplace ?',
-          answer: 'Maroc Marketplace est une plateforme de e-commerce dédiée à l\'artisanat, au tourisme et à la culture marocaine. Nous connectons les artisans locaux, les prestataires touristiques et les passionnés de culture avec des clients du monde entier.'
+          question: 'Qu\'est-ce que Danxomɛ Marketplace ?',
+          answer: 'Danxomɛ Marketplace est une plateforme de e-commerce dédiée à l\'artisanat, au tourisme et à la culture marocaine. Nous connectons les artisans locaux, les prestataires touristiques et les passionnés de culture avec des clients du monde entier.'
         },
         {
           question: 'Comment puis-je créer un compte ?',
@@ -45,7 +45,7 @@ const FAQ = () => {
       questions: [
         {
           question: 'Quels sont les délais de livraison ?',
-          answer: 'Les délais de livraison varient selon votre localisation : 2-3 jours ouvrables au Maroc, 5-7 jours pour l\'Europe, et 7-10 jours pour le reste du monde. Les articles artisanaux peuvent nécessiter un délai supplémentaire de fabrication.'
+          answer: 'Les délais de livraison varient selon votre localisation : 2-3 jours ouvrables au Bénin, 5-7 jours pour l\'Europe, et 7-10 jours pour le reste du monde. Les articles artisanaux peuvent nécessiter un délai supplémentaire de fabrication.'
         },
         {
           question: 'Comment suivre ma commande ?',
