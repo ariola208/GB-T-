@@ -8,6 +8,91 @@ import {
   isValidEmail 
 } from '../../shared/api';
 
+// Configuration commune pour les requêtes fetch
+const DEFAULT_HEADERS = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+} as const;
+
+// Types d'erreurs prédéfinis
+const ERROR_TYPES = {
+  INVALID_EMAIL: { code: 'INVALID_EMAIL', message: 'Email invalide' },
+  NETWORK: { code: 'NETWORK_ERROR', message: 'Erreur réseau ou serveur indisponible' },
+  LOGIN: { code: 'LOGIN_FAILED', message: 'Erreur lors de la connexion' },
+  REGISTER: { code: 'REGISTER_FAILED', message: "Erreur lors de l'inscription" },
+  REFRESH: { code: 'REFRESH_FAILED', message: 'Erreur lors du rafraîchissement du token' },
+  LOGOUT: { code: 'LOGOUT_FAILED', message: 'Erreur lors de la déconnexion' }
+} as const;
+
+/**
+ * Fonction utilitaire pour effectuer des requêtes authentifiées
+ */
+async function authenticatedRequest<T>(
+  url: string, 
+  options: RequestInit = {},
+  token?: string
+): Promise<T> {
+  const headers = {
+    ...DEFAULT_HEADERS,
+    ...(token && { Authorization: `Bearer ${token}` }),
+    ...options.headers
+  };
+
+  const response = await fetch(url, {
+    ...options,
+    headers
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw createApiError(
+      errorData.message || 'Erreur lors de la requête',
+      errorData.code || 'REQUEST_FAILED',
+      response.status
+    );
+  }
+
+  // Si le statut est 204 (No Content), retourner undefined
+  if (response.status === 204) {
+    return undefined as T;
+  }
+
+  return await response.json();
+}
+
+/**
+ * Fonction utilitaire pour les requêtes POST
+ */
+async function postRequest<T>(
+  url: string, 
+  body: unknown, 
+  token?: string
+): Promise<T> {
+  return authenticatedRequest<T>(url, {
+    method: 'POST',
+    body: JSON.stringify(body)
+  }, token);
+}
+
+/**
+ * Valide l'email et lance une erreur si invalide
+ */
+function validateEmail(email: string): void {
+  if (!isValidEmail(email)) {
+    throw createApiError(ERROR_TYPES.INVALID_EMAIL.message, ERROR_TYPES.INVALID_EMAIL.code);
+  }
+}
+
+/**
+ * Gère les erreurs génériques
+ */
+function handleGenericError(error: unknown): never {
+  if (error && typeof error === 'object' && 'code' in error) {
+    throw error;
+  }
+  throw createApiError(ERROR_TYPES.NETWORK.message, ERROR_TYPES.NETWORK.code);
+}
+
 /**
  * Authentifie un utilisateur avec ses identifiants
  * @param data - Les informations de connexion (email, mot de passe)
@@ -15,45 +100,15 @@ import {
  * @throws {Error} Si l'email est invalide ou si la requête échoue
  */
 export async function loginUser(data: LoginRequest): Promise<AuthResponse> {
-  // Validation de l'email
-  if (!isValidEmail(data.email)) {
-    throw createApiError('Email invalide', 'INVALID_EMAIL');
-  }
-
+  validateEmail(data.email);
+  
   try {
-    const response = await fetch(API_ROUTES.LOGIN, {
-      method: 'POST',
-      headers: { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(data),
-    });
-
-    // Gestion des erreurs HTTP
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      throw createApiError(
-        errorData.message || 'Erreur lors de la connexion',
-        errorData.code || 'LOGIN_FAILED',
-        response.status
-      );
-    }
-
-    // Retourne les données de la réponse
-    return await response.json();
-    
+    return await postRequest<AuthResponse>(API_ROUTES.LOGIN, data);
   } catch (error) {
-    // Si l'erreur est déjà une ApiError, on la propage
     if (error && typeof error === 'object' && 'code' in error) {
       throw error;
     }
-    
-    // Sinon, on crée une erreur générique
-    throw createApiError(
-      'Erreur réseau ou serveur indisponible',
-      'NETWORK_ERROR'
-    );
+    throw createApiError(ERROR_TYPES.LOGIN.message, ERROR_TYPES.LOGIN.code);
   }
 }
 
@@ -63,41 +118,15 @@ export async function loginUser(data: LoginRequest): Promise<AuthResponse> {
  * @returns Promise contenant la réponse d'authentification
  */
 export async function registerUser(data: RegisterRequest): Promise<AuthResponse> {
-  // Validation de l'email
-  if (!isValidEmail(data.email)) {
-    throw createApiError('Email invalide', 'INVALID_EMAIL');
-  }
-
+  validateEmail(data.email);
+  
   try {
-    const response = await fetch(API_ROUTES.REGISTER, {
-      method: 'POST',
-      headers: { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(data),
-    });
-
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      throw createApiError(
-        errorData.message || 'Erreur lors de l\'inscription',
-        errorData.code || 'REGISTER_FAILED',
-        response.status
-      );
-    }
-
-    return await response.json();
-    
+    return await postRequest<AuthResponse>(API_ROUTES.REGISTER, data);
   } catch (error) {
     if (error && typeof error === 'object' && 'code' in error) {
       throw error;
     }
-    
-    throw createApiError(
-      'Erreur réseau ou serveur indisponible',
-      'NETWORK_ERROR'
-    );
+    throw createApiError(ERROR_TYPES.REGISTER.message, ERROR_TYPES.REGISTER.code);
   }
 }
 
@@ -108,30 +137,9 @@ export async function registerUser(data: RegisterRequest): Promise<AuthResponse>
  */
 export async function refreshToken(refreshToken: string): Promise<{ token: string }> {
   try {
-    const response = await fetch(API_ROUTES.REFRESH_TOKEN, {
-      method: 'POST',
-      headers: { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({ refreshToken }),
-    });
-
-    if (!response.ok) {
-      throw createApiError(
-        'Erreur lors du rafraîchissement du token',
-        'REFRESH_FAILED',
-        response.status
-      );
-    }
-
-    return await response.json();
-    
+    return await postRequest<{ token: string }>(API_ROUTES.REFRESH_TOKEN, { refreshToken });
   } catch (error) {
-    throw createApiError(
-      'Erreur réseau ou serveur indisponible',
-      'NETWORK_ERROR'
-    );
+    throw createApiError(ERROR_TYPES.REFRESH.message, ERROR_TYPES.REFRESH.code);
   }
 }
 
@@ -141,29 +149,9 @@ export async function refreshToken(refreshToken: string): Promise<{ token: strin
  */
 export async function logoutUser(token: string): Promise<void> {
   try {
-    const response = await fetch(API_ROUTES.LOGOUT, {
-      method: 'POST',
-      headers: { 
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-    });
-
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      throw createApiError(
-        errorData.message || 'Erreur lors de la déconnexion',
-        errorData.code || 'LOGOUT_FAILED',
-        response.status
-      );
-    }
-    
+    await authenticatedRequest(API_ROUTES.LOGOUT, { method: 'POST' }, token);
   } catch (error) {
-    throw createApiError(
-      'Erreur réseau ou serveur indisponible',
-      'NETWORK_ERROR'
-    );
+    throw createApiError(ERROR_TYPES.LOGOUT.message, ERROR_TYPES.LOGOUT.code);
   }
 }
 

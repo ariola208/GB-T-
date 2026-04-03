@@ -39,12 +39,12 @@ export const AuthController = {
 
       const user = await UserModel.findByEmail(email);
       if (!user) {
-        return res.status(401).json({ error: 'Email ou mot de passe incorrect' });
+        return res.status(401).json({ error: 'Email ou mot de passe éronné' });
       }
 
       const isValid = await UserModel.validatePassword(user, password);
       if (!isValid) {
-        return res.status(401).json({ error: 'Email ou mot de passe incorrect' });
+        return res.status(401).json({ error: 'Email ou mot de passe éronné' });
       }
 
       const token = generateToken(user.id);

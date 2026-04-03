@@ -20,5 +20,5 @@ export function authenticateToken(req, res, next) {
 }
 
 export function generateToken(userId) {
-  return jwt.sign({ userId }, JWT_SECRET, { expiresIn: '24h' });
+  return jwt.sign({ userId }, JWT_SECRET, { expiresIn: '72h' });
 }
