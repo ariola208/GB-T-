@@ -1,7 +1,0 @@
-ignoredBuiltDependencies:
-  - esbuild
-
-onlyBuiltDependencies:
-  - '@swc/core'
-  - better-sqlite3
-  - sqlite3
