@@ -54,3 +54,16 @@ npm run dev
 
 # Construire pour la production
 npm run build
+---
+# Voir la taille du build
+du -sh dist/
+
+# Tester en local
+npm run preview
+
+# Déployer (exemple avec Vercel)
+vercel --prod
+
+# Ou Netlify
+netlify deploy --prod --dir=dist
+---
