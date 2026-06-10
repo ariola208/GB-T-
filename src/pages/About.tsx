@@ -63,11 +63,11 @@ const stats = [
 
 const team = [
   {
-    name: "Koffi Agossou",
+    name: "Amoussoukpevi Ariola",
     role: "Fondateur & CEO",
     bio: "Passionné par le Bénin depuis 20 ans, Koffi a créé Bénin Tourisme pour partager les trésors de son pays natal.",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200",
-    social: { linkedin: "#", twitter: "#" },
+    avatar: "src/pages/placeholder/harry.jpeg",
+    social: { instagram: "#", twitter: "#" },
   },
   {
     name: "Sophie Mènou",
@@ -123,7 +123,7 @@ const values = [
     description: "Nous visons l'excellence dans chaque détail, de la conception des circuits à l'accompagnement sur place.",
   },
   {
-    icon: Users,
+    icon: Users,,
     title: "Authenticité",
     description: "Nous créons des expériences authentiques qui vous connectent véritablement à la culture béninoise.",
   },
