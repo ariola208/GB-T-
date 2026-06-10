@@ -1,99 +1,101 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-
-const navLinks = [
-  { name: "Accueil", path: "/" },
-  { name: "Destinations", path: "/destinations" },
-  { name: "Culture", path: "/culture" },
-  { name: "À propos", path: "/about" },
-  { name: "Contact", path: "/contact" },
-];
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Menu, X, User, LogOut, LogIn } from "lucide-react";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const userData = localStorage.getItem("user");
+    if (token && userData) {
+      setIsLoggedIn(true);
+      setUser(JSON.parse(userData));
+    }
+    window.addEventListener("scroll", () => setIsScrolled(window.scrollY > 50));
+    return () => window.removeEventListener("scroll", () => setIsScrolled(window.scrollY > 50));
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    setIsLoggedIn(false);
+    setUser(null);
+    navigate("/");
+  };
+
+  const navLinks = [
+    { name: "Accueil", path: "/" },
+    { name: "Destinations", path: "/destinations" },
+    { name: "Culture", path: "/culture" },
+    { name: "Services", path: "/services" },
+    { name: "Blog", path: "/blog" },
+    { name: "Galerie", path: "/gallery" },
+    { name: "FAQ", path: "/faq" },
+    { name: "À propos", path: "/about" },
+    { name: "Contact", path: "/contact" },
+  ];
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
-    >
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="font-heading text-2xl font-bold tracking-tight text-foreground">
-          BÉNIN
-        </Link>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-transparent"}`}>
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex justify-between items-center h-16">
+          <Link to="/" className="font-heading font-bold text-xl">Bénin Tourisme</Link>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`font-body text-sm tracking-widest uppercase transition-colors duration-300 ${
-                location.pathname === link.path
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+          <div className="hidden md:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <Link key={link.path} to={link.path} className="text-sm hover:text-primary transition">{link.name}</Link>
+            ))}
+          </div>
+
+          <div className="hidden md:flex items-center gap-3">
+            {isLoggedIn ? (
+              <>
+                <Link to="/profile" className="flex items-center gap-1 text-sm hover:text-primary transition">
+                  <User className="w-4 h-4" />
+                  {user?.name?.split(' ')[0]}
+                </Link>
+                <button onClick={handleLogout} className="text-sm text-red-500 hover:text-red-600 transition">
+                  <LogOut className="w-4 h-4" />
+                </button>
+              </>
+            ) : (
+              <Link to="/login" className="flex items-center gap-1 text-sm hover:text-primary transition">
+                <LogIn className="w-4 h-4" />
+                Connexion
+              </Link>
+            )}
+          </div>
+
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2">
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          aria-label="Toggle menu"
-        >
-          <motion.span
-            animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-            className="block w-6 h-0.5 bg-foreground"
-          />
-          <motion.span
-            animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-            className="block w-6 h-0.5 bg-foreground"
-          />
-          <motion.span
-            animate={isOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-            className="block w-6 h-0.5 bg-foreground"
-          />
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden overflow-hidden bg-background border-t border-border"
-          >
-            <div className="flex flex-col px-6 py-4 gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`font-body text-sm tracking-widest uppercase ${
-                    location.pathname === link.path
-                      ? "text-foreground"
-                      : "text-muted-foreground"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
+          <div className="md:hidden py-4 border-t">
+            {navLinks.map((link) => (
+              <Link key={link.path} to={link.path} onClick={() => setIsOpen(false)} className="block py-2 text-sm hover:text-primary transition">
+                {link.name}
+              </Link>
+            ))}
+            {isLoggedIn ? (
+              <>
+                <Link to="/profile" onClick={() => setIsOpen(false)} className="block py-2 text-sm hover:text-primary transition">Mon profil</Link>
+                <button onClick={() => { handleLogout(); setIsOpen(false); }} className="block py-2 text-sm text-red-500">Déconnexion</button>
+              </>
+            ) : (
+              <Link to="/login" onClick={() => setIsOpen(false)} className="block py-2 text-sm hover:text-primary transition">Connexion</Link>
+            )}
+          </div>
         )}
-      </AnimatePresence>
-    </motion.nav>
+      </div>
+    </nav>
   );
 };
 
