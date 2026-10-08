@@ -17,8 +17,9 @@ const Navbar = () => {
       setIsLoggedIn(true);
       setUser(JSON.parse(userData));
     }
-    window.addEventListener("scroll", () => setIsScrolled(window.scrollY > 50));
-    return () => window.removeEventListener("scroll", () => setIsScrolled(window.scrollY > 50));
+    const onScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const handleLogout = () => {

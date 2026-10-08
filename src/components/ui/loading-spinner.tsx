@@ -3,16 +3,17 @@ import { cn } from "@/lib/utils";
 interface LoadingSpinnerProps {
   className?: string;
   size?: "sm" | "md" | "lg";
+  fullScreen?: boolean;
 }
 
-export const LoadingSpinner = ({ className, size = "md" }: LoadingSpinnerProps) => {
+export const LoadingSpinner = ({ className, size = "md", fullScreen = false }: LoadingSpinnerProps) => {
   const sizeClasses = {
-    sm: "h-4 w-4 border-2",
-    md: "h-8 w-8 border-3",
-    lg: "h-12 w-12 border-4",
+    sm: "h-6 w-6 border-2",
+    md: "h-12 w-12 border-4",
+    lg: "h-16 w-16 border-4",
   };
 
-  return (
+  const spinner = (
     <div
       className={cn(
         "animate-spin rounded-full border-primary border-t-transparent",
@@ -21,4 +22,7 @@ export const LoadingSpinner = ({ className, size = "md" }: LoadingSpinnerProps) 
       )}
     />
   );
+
+  if (!fullScreen) return spinner;
+  return <div className="flex h-screen w-full items-center justify-center">{spinner}</div>;
 };

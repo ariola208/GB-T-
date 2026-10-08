@@ -6,7 +6,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { lazy, Suspense } from "react";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
 
-// Lazy load all pages for optimal performance
 const Index = lazy(() => import("./pages/Index"));
 const Destinations = lazy(() => import("./pages/Destinations"));
 const Culture = lazy(() => import("./pages/Culture"));
@@ -17,6 +16,7 @@ const Services = lazy(() => import("./pages/Services"));
 const Blog = lazy(() => import("./pages/Blog"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const Faq = lazy(() => import("./pages/Faq"));
+const Login = lazy(() => import("./pages/Login"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -40,6 +40,7 @@ const routes = [
   { path: "/blog", element: Blog },
   { path: "/gallery", element: Gallery },
   { path: "/faq", element: Faq },
+  { path: "/login", element: Login },
   { path: "*", element: NotFound },
 ];
 
@@ -49,7 +50,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Suspense fallback={<LoadingSpinner size="lg" />}>
+        <Suspense fallback={<LoadingSpinner size="lg" fullScreen />}>
           <Routes>
             {routes.map(({ path, element: Element }) => (
               <Route key={path} path={path} element={<Element />} />
