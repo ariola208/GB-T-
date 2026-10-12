@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "destinations": "Destinations",
+    "culture": "Culture",
+    "services": "Services",
+    "blog": "Blog",
+    "gallery": "Galerie",
+    "faq": "FAQ",
+    "about": "À propos",
+    "contact": "Contact",
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "profile": "Mon profil"
+  },
+  "common": {
+    "language": "Langue",
+    "theme_light": "Passer en mode clair",
+    "theme_dark": "Passer en mode sombre",
+    "listen": "Écouter",
+    "loading": "Chargement...",
+    "translation_partial": "Traduction en cours"
+  }
+}

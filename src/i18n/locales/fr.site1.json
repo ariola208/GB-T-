@@ -1,0 +1,220 @@
+{
+  "about": {
+    "hero_badge": "Notre histoire",
+    "hero_title": "À propos de nous",
+    "hero_subtitle": "Une équipe de passionnés qui œuvre pour vous faire découvrir le Bénin authentique depuis plus de 15 ans",
+    "stats": [
+      "Années d'expérience",
+      "Voyageurs satisfaits",
+      "Partenaires locaux",
+      "Satisfaction client",
+      "Support client",
+      "Destinations"
+    ],
+    "tabs": {
+      "mission": "Mission",
+      "vision": "Vision",
+      "values": "Valeurs"
+    },
+    "mission": {
+      "badge": "Ce qui nous anime",
+      "title": "Faire découvrir le Bénin authentique",
+      "text": "LEGBAH est né d'une passion profonde pour ce pays extraordinaire. Notre mission est de créer des ponts entre les voyageurs curieux et les communautés locales, de révéler la richesse culturelle et naturelle du Bénin, et de contribuer à un tourisme durable qui profite à tous.",
+      "cta": "Découvrir nos circuits"
+    },
+    "vision": {
+      "badge": "Où nous allons",
+      "title": "Devenir la référence du tourisme durable",
+      "points": [
+        "Accompagner 100 000 voyageurs par an",
+        "Créer 500 emplois directs",
+        "Planter 10 000 arbres"
+      ]
+    },
+    "values": [
+      {
+        "title": "Passion",
+        "description": "Nous aimons profondément le Bénin et sa culture."
+      },
+      {
+        "title": "Durabilité",
+        "description": "Un tourisme responsable qui préserve l'environnement."
+      },
+      {
+        "title": "Excellence",
+        "description": "Nous visons l'excellence dans chaque détail."
+      },
+      {
+        "title": "Authenticité",
+        "description": "Des expériences authentiques qui vous connectent à la culture."
+      }
+    ],
+    "journey": {
+      "badge": "Notre parcours",
+      "title": "Une histoire de passion"
+    },
+    "milestones": [
+      {
+        "title": "Création",
+        "description": "Naissance de LEGBAH"
+      },
+      {
+        "title": "Expansion",
+        "description": "Ouverture du bureau à Cotonou"
+      },
+      {
+        "title": "1er Prix",
+        "description": "Meilleur tour-opérateur local"
+      },
+      {
+        "title": "10K voyageurs",
+        "description": "Plus de 10 000 voyageurs"
+      },
+      {
+        "title": "Digitalisation",
+        "description": "Lancement de la plateforme"
+      },
+      {
+        "title": "50K voyageurs",
+        "description": "50 000 explorateurs"
+      }
+    ],
+    "team": {
+      "badge": "Notre équipe",
+      "title": "Les visages derrière LEGBAH",
+      "subtitle": "Une équipe multiculturelle unie par une même passion : vous faire aimer le Bénin"
+    },
+    "members": [
+      {
+        "role": "Fondateur & CEO",
+        "bio": "Passionné par le Bénin depuis 20 ans, a créé LEGBAH pour partager les trésors de son pays natal."
+      },
+      {
+        "role": "Directrice des opérations",
+        "bio": "Experte en tourisme durable, Sophie veille à ce que chaque voyage ait un impact positif."
+      },
+      {
+        "role": "Guide en chef",
+        "bio": "Historien de formation, Marc connaît chaque recoin du Bénin."
+      },
+      {
+        "role": "Responsable culture",
+        "bio": "Anthropologue, Amina crée des expériences immersives."
+      },
+      {
+        "role": "Responsable logistique",
+        "bio": "David s'assure que chaque détail de votre voyage soit parfait."
+      },
+      {
+        "role": "Service client",
+        "bio": "Toujours disponible, Grace est votre contact privilégié."
+      }
+    ],
+    "office": {
+      "badge": "Nos bureaux",
+      "title": "Venez nous rencontrer",
+      "button": "Nous contacter"
+    },
+    "cta": {
+      "title": "Prêt à vivre l'expérience LEGBAH ?",
+      "text": "Rejoignez les milliers de voyageurs qui nous ont fait confiance",
+      "button": "Explorer les destinations"
+    }
+  },
+  "blog": {
+    "badge": "Blog & Actualités",
+    "title": "Le Blog LEGBAH",
+    "subtitle": "Conseils, récits et inspirations pour votre voyage au Bénin",
+    "search": "Rechercher un article...",
+    "featured": "Article en vedette",
+    "read_article": "Lire l'article",
+    "read": "Lire",
+    "trending_title": "Articles tendance",
+    "newsletter_title": "Newsletter",
+    "newsletter_text": "Recevez nos derniers articles et conseils de voyage",
+    "email_ph": "Votre email",
+    "subscribe": "S'abonner",
+    "tags_title": "Tags populaires",
+    "categories_title": "Catégories",
+    "no_result": "Aucun article trouvé",
+    "help_title": "Une question sur votre voyage ?",
+    "help_text": "Notre équipe d'experts est là pour vous conseiller",
+    "contact": "Contactez-nous",
+    "min": "min",
+    "categories": {
+      "all": "Tous",
+      "voyage": "Voyage",
+      "culture": "Culture",
+      "gastronomie": "Gastronomie",
+      "photographie": "Photographie",
+      "artisanat": "Artisanat",
+      "itineraires": "Itinéraires"
+    },
+    "tags": [
+      "Voyage",
+      "Culture",
+      "Vodoun",
+      "Safari",
+      "Photo",
+      "Gastronomie",
+      "Artisanat",
+      "Plage",
+      "UNESCO",
+      "Tradition"
+    ],
+    "posts": [
+      {
+        "title": "10 expériences incontournables au Bénin",
+        "excerpt": "Des palais royaux d'Abomey aux plages de Grand-Popo, découvrez les expériences qui rendront votre voyage inoubliable."
+      },
+      {
+        "title": "Guide complet du Vodoun : histoire et traditions",
+        "excerpt": "Plongez au cœur de la spiritualité béninoise et découvrez les secrets de cette religion ancestrale."
+      },
+      {
+        "title": "Safari photo au Parc de la Pendjari",
+        "excerpt": "Conseils et astuces pour réussir vos photos de safari dans l'un des plus beaux parcs d'Afrique de l'Ouest."
+      },
+      {
+        "title": "La gastronomie béninoise : un voyage culinaire",
+        "excerpt": "De la pâte rouge au poulet braisé, explorez les saveurs authentiques de la cuisine béninoise."
+      },
+      {
+        "title": "Rencontre avec les artisans d'Abomey",
+        "excerpt": "Les appliqués d'Abomey sont mondialement reconnus. Découvrez les secrets de fabrication de ces tapisseries royales."
+      },
+      {
+        "title": "Itinéraire de 7 jours pour découvrir le Bénin",
+        "excerpt": "Un circuit complet pour ne rien manquer des merveilles du Bénin en une semaine."
+      }
+    ]
+  },
+  "gallery": {
+    "badge": "Galerie",
+    "title": "Le Bénin en images",
+    "subtitle": "Découvrez la beauté du Bénin à travers notre collection de photos",
+    "categories": {
+      "all": "Toutes",
+      "landscapes": "Paysages",
+      "culture": "Culture",
+      "wildlife": "Faune",
+      "cities": "Villes",
+      "beaches": "Plages",
+      "traditions": "Traditions"
+    },
+    "items": [
+      "Ganvié",
+      "Porte du Non-Retour",
+      "Palais Royaux",
+      "Éléphants",
+      "Cotonou",
+      "Grand-Popo",
+      "Marché",
+      "Collines",
+      "Pirogues",
+      "Cérémonie",
+      "Bas-reliefs",
+      "Lion"
+    ]
+  }
+}

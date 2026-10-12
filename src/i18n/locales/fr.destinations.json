@@ -1,0 +1,201 @@
+{
+  "destinations": {
+    "badge": "Explorez le Bénin",
+    "title": "Destinations",
+    "subtitle": "Des cités lacustres aux parcs nationaux, découvrez la diversité exceptionnelle du Bénin",
+    "search": "Rechercher une destination...",
+    "found": "{{count}} destination(s) trouvée(s)",
+    "found_sub": "Explorez les merveilles du Bénin",
+    "none": "Aucune destination ne correspond à votre recherche",
+    "featured": "En vedette",
+    "trending": "Tendance",
+    "discover": "Découvrir",
+    "days_range": "{{range}} jours",
+    "free": "Libre",
+    "reviews": "{{count}} avis",
+    "per_night": "/nuit",
+    "free_label": "Gratuit",
+    "region": "Région",
+    "climate": "Climat",
+    "location": "Localisation",
+    "temperature": "Température",
+    "best_time": "Meilleure période",
+    "duration": "Durée recommandée",
+    "book_now": "Réserver maintenant",
+    "book": "Réserver",
+    "share": "Partager",
+    "link_copied": "Lien copié",
+    "close": "Fermer",
+    "tabs": {
+      "overview": "Aperçu",
+      "highlights": "Points forts",
+      "activities": "Activités",
+      "accommodations": "Hébergements",
+      "info": "Infos pratiques"
+    },
+    "categories": {
+      "all": "Tous",
+      "culture": "Culture",
+      "nature": "Nature",
+      "plage": "Plage",
+      "ville": "Ville",
+      "historique": "Historique"
+    },
+    "cta_title": "Vous ne trouvez pas votre bonheur ?",
+    "cta_text": "Nous créons des itinéraires sur mesure selon vos envies. Parlez-nous de votre projet !",
+    "cta_button": "Créer mon voyage personnalisé",
+    "amenities": {
+      "wifi": "WiFi",
+      "restaurant": "Restaurant",
+      "ac": "Climatisation",
+      "lakeview": "Vue sur le lac",
+      "homemeal": "Repas maison",
+      "terrace": "Terrasse",
+      "privatepirogue": "Pirogue privée",
+      "pool": "Piscine",
+      "privateguide": "Guide privé",
+      "tents": "Tentes équipées",
+      "showers": "Douches",
+      "campfire": "Feu de camp",
+      "privatebeach": "Plage privée",
+      "spa": "Spa"
+    },
+    "acc_types": {
+      "hotel": "Hôtel",
+      "hotel3": "Hôtel 3*",
+      "hotel4": "Hôtel 4*",
+      "guesthouse": "Maison d'hôtes",
+      "lodge": "Lodge",
+      "camping": "Camping",
+      "inn": "Auberge"
+    },
+    "items": [
+      {
+        "description": "La Venise de l'Afrique, village lacustre unique au monde",
+        "longDescription": "Ganvié est un village lacustre exceptionnel situé sur le lac Nokoué. Avec ses 30 000 habitants vivant dans des maisons sur pilotis, c'est la plus grande cité lacustre d'Afrique. La vie s'organise entièrement sur l'eau : marchés flottants, écoles, lieux de culte. Les habitants se déplacent en pirogue dans un ballet fascinant.",
+        "bestTime": "Novembre à Février",
+        "highlights": [
+          "Village lacustre emblématique",
+          "Marché flottant",
+          "Musée de Ganvié",
+          "Pêche traditionnelle",
+          "Artisanat local"
+        ],
+        "activities": [
+          "Tour en pirogue",
+          "Visite du marché flottant",
+          "Atelier artisanat"
+        ]
+      },
+      {
+        "description": "L'un des derniers grands sanctuaires de faune sauvage en Afrique de l'Ouest",
+        "longDescription": "Le Parc National de la Pendjari est un joyau de la conservation en Afrique de l'Ouest. Sur 275 000 hectares, il abrite une faune exceptionnelle : lions, éléphants, buffles, hippopotames, guépards et plus de 300 espèces d'oiseaux. La cascade de Tanougou et les montagnes de l'Atacora ajoutent à la beauté des lieux.",
+        "bestTime": "Décembre à Mars",
+        "highlights": [
+          "Safari photo",
+          "Observation des lions",
+          "Cascade de Tanougou",
+          "Observation des oiseaux",
+          "Camping sauvage"
+        ],
+        "activities": [
+          "Safari guidé",
+          "Safari photo",
+          "Randonnée à Tanougou"
+        ]
+      },
+      {
+        "description": "Cœur spirituel du vodoun et mémoire de la traite négrière",
+        "longDescription": "Ouidah est une ville chargée d'histoire. La Route des Esclaves et la Porte du Non-Retour témoignent de la tragédie de la traite négrière. La ville est aussi le berceau du vodoun, avec le Temple des Pythons et la Forêt Sacrée de Kpassè. Chaque année, le 10 janvier, la Fête Nationale du Vodoun attire des milliers de pèlerins.",
+        "bestTime": "Janvier, Octobre-Décembre",
+        "highlights": [
+          "Porte du Non-Retour",
+          "Route des Esclaves",
+          "Temple des Pythons",
+          "Forêt Sacrée de Kpassè",
+          "Musée d'Histoire"
+        ],
+        "activities": [
+          "Visite historique",
+          "Cérémonie vodoun",
+          "Musée de Ouidah"
+        ]
+      },
+      {
+        "description": "Les palais royaux du Dahomey, classés au patrimoine mondial",
+        "longDescription": "Abomey fut la capitale du puissant Royaume du Dahomey pendant près de 300 ans. Les palais royaux, classés au patrimoine mondial de l'UNESCO, sont ornés de bas-reliefs exceptionnels qui racontent l'histoire du royaume. Le musée historique abrite des trésors inestimables : trônes, armes, objets rituels.",
+        "bestTime": "Novembre à Février",
+        "highlights": [
+          "Palais royaux UNESCO",
+          "Musée historique",
+          "Bas-reliefs",
+          "Artisanat des appliqués"
+        ],
+        "activities": [
+          "Visite des palais",
+          "Atelier d'appliqués"
+        ]
+      },
+      {
+        "description": "Plages de sable fin, pêche traditionnelle et ambiance décontractée",
+        "longDescription": "Grand-Popo est une station balnéaire paisible où le fleuve Mono rencontre l'océan Atlantique. Ses longues plages bordées de cocotiers invitent à la détente. Le village de pêcheurs conserve ses traditions. La Bouche du Roy offre des paysages magnifiques.",
+        "bestTime": "Novembre à Mars",
+        "highlights": [
+          "Plages de sable fin",
+          "Bouche du Roy",
+          "Pêche traditionnelle",
+          "Couchers de soleil"
+        ],
+        "activities": [
+          "Baignade",
+          "Pirogue sur le Mono"
+        ]
+      },
+      {
+        "description": "La vibrante capitale économique, entre tradition et modernité",
+        "longDescription": "Cotonou est le cœur battant du Bénin. Cette ville dynamique mêle modernité et traditions. Le marché Dantokpa, l'un des plus grands d'Afrique de l'Ouest, est une immersion totale dans la vie locale. La Place de l'Étoile Rouge, la cathédrale Notre-Dame et la plage de Fidjrossè sont autant de lieux à découvrir.",
+        "bestTime": "Toute l'année",
+        "highlights": [
+          "Marché Dantokpa",
+          "Place de l'Étoile Rouge",
+          "Plage de Fidjrossè",
+          "Fondation Zinsou"
+        ],
+        "activities": [
+          "Visite de Dantokpa",
+          "Art contemporain"
+        ]
+      },
+      {
+        "description": "Porte d'entrée du pays Somba et de ses tatas",
+        "longDescription": "Natitingou est la principale ville du pays Somba, réputée pour ses habitations traditionnelles uniques : les tatas. Ces forteresses miniatures en terre crue ressemblent à de petits châteaux. La région offre des paysages magnifiques de collines et de vallées.",
+        "bestTime": "Novembre à Février",
+        "highlights": [
+          "Tatas Somba",
+          "Cascades de Kota",
+          "Montagnes de l'Atacora",
+          "Artisanat local"
+        ],
+        "activities": [
+          "Visite des tatas",
+          "Randonnée"
+        ]
+      },
+      {
+        "description": "La capitale administrative, riche d'histoire et de traditions",
+        "longDescription": "Porto-Novo, la capitale du Bénin, est une ville au riche patrimoine historique. Le Musée Honmè (ancien palais royal), la Grande Mosquée de style afro-brésilien et le Jardin des Plantes et de la Nature sont autant de sites à découvrir.",
+        "bestTime": "Novembre à Février",
+        "highlights": [
+          "Musée Honmè",
+          "Grande Mosquée",
+          "Jardin des Plantes",
+          "Palais du Gouverneur"
+        ],
+        "activities": [
+          "Visite du Musée Honmè",
+          "Tour de ville"
+        ]
+      }
+    ]
+  }
+}

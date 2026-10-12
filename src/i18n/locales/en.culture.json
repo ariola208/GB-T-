@@ -1,0 +1,153 @@
+{
+  "culture": {
+    "hero_badge": "Discover the soul of Benin",
+    "hero_title_1": "Culture &",
+    "hero_title_2": "Traditions",
+    "hero_subtitle": "Dive into the age-old traditions that make Benin so rich",
+    "hero_cta": "Explore the traditions",
+    "intro_badge": "Our heritage",
+    "intro_title": "An exceptional cultural heritage",
+    "intro_text": "Benin is a crossroads of civilizations where ancestral traditions blend with contemporary expression. From the royal palaces of Abomey to the vodun ceremonies of Ouidah, through colorful markets and vibrant festivals, every corner of the country tells a fascinating story.",
+    "key_traditions": "Key traditions",
+    "gallery": "Photo gallery",
+    "events_badge": "Cultural calendar",
+    "events_title": "Events not to be missed",
+    "events_text": "Plan your trip to coincide with these unique celebrations",
+    "register": "Sign up",
+    "participants": "{{count}} participants",
+    "testimonials_badge": "Testimonials",
+    "testimonials_title": "What our travelers say",
+    "testimonials_text": "Authentic experiences lived by our community",
+    "newsletter_title": "Get our free cultural guide",
+    "newsletter_text": "Sign up to receive our ebook “Cultural Treasures of Benin” and our monthly newsletter",
+    "email_ph": "Your email",
+    "download": "Download",
+    "newsletter_note": "Free • 50+ pages • Updated every month",
+    "stat_labels": {
+      "temples": "Temples",
+      "practitioners": "Practitioners",
+      "ceremonies": "Ceremonies",
+      "communities": "Communities",
+      "artisans": "Artisans",
+      "festivals": "Festivals",
+      "recipes": "Recipes",
+      "restaurants": "Restaurants",
+      "markets": "Markets",
+      "workshops": "Workshops",
+      "cooperatives": "Cooperatives",
+      "instruments": "Instruments",
+      "troupes": "Troupes",
+      "participants": "Participants",
+      "events": "Events"
+    },
+    "categories": [
+      {
+        "title": "Vodun",
+        "subtitle": "Ancestral spirituality",
+        "longDescription": "A traditional religion born in Benin, vodun is much more than a belief: it is a way of life, a philosophy and a sacred bond with the ancestors and the forces of nature. The vodun pantheon counts hundreds of deities, each linked to natural elements or aspects of human life. Ceremonies, driven by sacred drums, are moments of intense communion. Every year on January 10, the National Vodun Festival draws thousands of followers and curious visitors to Ouidah.",
+        "traditions": [
+          "Vodun Festival (January 10)",
+          "Ancestor worship",
+          "Egungun ceremonies",
+          "Fâ divination"
+        ]
+      },
+      {
+        "title": "The Gèlèdè",
+        "subtitle": "UNESCO heritage",
+        "longDescription": "The Gèlèdè masks, inscribed on UNESCO's Intangible Cultural Heritage list since 2008, are ritual performances celebrating feminine power and the wisdom of ancestral mothers. The masks, true works of art, are carved in wood and richly decorated. Dancers wear these imposing masks and perform complex choreographies to the sound of drums, in a hypnotic show that can last a whole day.",
+        "traditions": [
+          "Efe ceremony (night)",
+          "Gèlèdè ceremony (day)",
+          "Satirical songs",
+          "Acrobatic dances"
+        ]
+      },
+      {
+        "title": "Gastronomy",
+        "subtitle": "Authentic flavors",
+        "longDescription": "From red pâte to grilled chicken, via amiwo and tchoukoutou (millet beer), Beninese cuisine reflects the cultural diversity of the country. Colorful markets overflow with fresh produce: yams, cassava, corn, chili peppers, lake fish. The sauces, the true signature of the cooks, can simmer for hours. Don't miss akassa (fermented corn paste), wô or atchomon.",
+        "traditions": [
+          "Red pâte",
+          "Grilled chicken",
+          "Amiwo",
+          "Tchoukoutou",
+          "Akassa"
+        ]
+      },
+      {
+        "title": "Crafts",
+        "subtitle": "Ancestral know-how",
+        "longDescription": "Beninese artisans excel in bronze work, pottery, weaving and wood carving. Founders use the lost-wax technique inherited from the old kingdoms. The appliqués of Abomey, royal tapestries that tell the story of the Kingdom of Dahomey, are famous worldwide. Every object tells a story, carries a message and passes on a tradition.",
+        "traditions": [
+          "Lost-wax bronze",
+          "Abomey appliqués",
+          "Pottery",
+          "Northern weaving"
+        ]
+      },
+      {
+        "title": "Music & Dance",
+        "subtitle": "Rhythm in the blood",
+        "longDescription": "Beninese music is a kaleidoscope of rhythms and traditions. Each region has developed its own musical language, instruments and dances. Drums are at the heart of social and spiritual life, and the talking drum reproduces the intonations of the Fon language. Today, artists like Angélique Kidjo make Beninese music shine around the world.",
+        "traditions": [
+          "Zinli",
+          "Tchinkounmè",
+          "Modern agbadja",
+          "Talking drums"
+        ]
+      },
+      {
+        "title": "Traditional Festivals",
+        "subtitle": "Ancestral celebrations",
+        "longDescription": "The Beninese calendar is punctuated by many traditional festivals that celebrate harvests, honor deities or commemorate historic events. Every celebration is unique and involves the whole community. Visitors are often invited to take part, in an atmosphere of sharing and unmatched friendliness.",
+        "traditions": [
+          "Yam festival",
+          "Nonvitcha",
+          "Convent exit",
+          "Vodun Festival"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "title": "Vodun Festival",
+        "date": "January 10",
+        "location": "Ouidah",
+        "category": "Religion"
+      },
+      {
+        "title": "Gèlèdè Masks Festival",
+        "date": "March",
+        "location": "Ketou",
+        "category": "Dance"
+      },
+      {
+        "title": "Yam Festival",
+        "date": "August",
+        "location": "Savalou",
+        "category": "Tradition"
+      },
+      {
+        "title": "Ouidah Jazz Festival",
+        "date": "September",
+        "location": "Ouidah",
+        "category": "Music"
+      }
+    ],
+    "testimonials": [
+      {
+        "role": "Cultural guide",
+        "content": "Taking part in the vodun ceremonies was a transformative experience. The power of the drums, the energy of the dancers, the fervor of the faithful: a total immersion in a living spirituality."
+      },
+      {
+        "role": "Ethnologist",
+        "content": "The appliqués of Abomey are masterpieces that tell the story of Dahomey. Every motif has a precise meaning. It is fascinating to see these artisans carry on a centuries-old craft."
+      },
+      {
+        "role": "Chef",
+        "content": "Beninese cuisine is a discovery with every bite. The sauces are complex, the spices perfectly balanced. I took cooking classes in Cotonou, an unforgettable experience!"
+      }
+    ]
+  }
+}

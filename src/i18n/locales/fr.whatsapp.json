@@ -1,0 +1,9 @@
+{
+  "whatsapp": {
+    "label": "Écrivez-nous sur WhatsApp",
+    "greeting": "Bonjour LEGBAH, j'aimerais avoir des informations pour organiser un voyage."
+  },
+  "destinations": {
+    "wa_message": "Bonjour LEGBAH, je souhaite réserver un séjour : {{name}}. Pouvez-vous me renseigner sur les dates et les tarifs ?"
+  }
+}

@@ -1,163 +1,393 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
-  MapPin, Calendar, Users, Star, Heart, Share2, Filter, Search, ChevronRight,
-  Clock, DollarSign, Camera, Compass, TrendingUp, Award, Shield, Building2,
-  TreePine, Waves, Landmark, ArrowRight, X, ChevronLeft, Check, ThumbsUp,
-  Sun, Moon, CloudRain, Thermometer, Wifi, Coffee, Utensils, Car, Hotel, Phone, Mail
+  MapPin, Calendar, Star, Heart, Share2, Search, ChevronRight, Clock, Compass,
+  Landmark, TreePine, Waves, Building2, ArrowRight, X, Check, Sun, Thermometer,
+  Hotel, LayoutGrid, List as ListIcon,
 } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
-import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
-import { Input } from "../components/ui/input";
+import { useToast } from "../hooks/use-toast";
+import { FALLBACK } from "@/lib/localImages";
+import { waLink } from "@/lib/whatsapp";
 
-const destinationsData = [
-  { id: 1, name: "Ganvié", slug: "ganvie", region: "Atlantique", category: "culture", description: "La Venise de l'Afrique, village lacustre unique au monde", longDescription: "Ganvié est un village lacustre exceptionnel situé sur le lac Nokoué. Avec ses 30 000 habitants vivant dans des maisons sur pilotis, c'est la plus grande cité lacustre d'Afrique. La vie s'organise entièrement sur l'eau : marchés flottants, écoles, lieux de culte. Classé au patrimoine mondial de l'UNESCO, Ganvié offre une expérience unique au monde.", image: "https://images.unsplash.com/photo-1590080669915-3d4e68d2e20f?w=800", rating: 4.8, reviews: 1234, duration: "1-2 jours", priceLevel: 2, featured: true, trending: true, bestTime: "Novembre à Février", temperature: "25-32°C", highlights: ["Village lacustre UNESCO", "Marché flottant", "Musée de Ganvié", "Pêche traditionnelle", "Artisanat local"], activities: [{ name: "Tour en pirogue", duration: "2h", price: 15, icon: "Compass" }, { name: "Visite du marché flottant", duration: "2h", price: 10, icon: "ShoppingBag" }, { name: "Atelier artisanat", duration: "2h", price: 20, icon: "Palette" }], accommodations: [{ name: "Hotel Lac Nokoué", type: "Hôtel", price: 75, rating: 4.5, amenities: ["WiFi", "Restaurant", "Climatisation", "Vue lac"] }, { name: "Chez Thérèse", type: "Maison d'hôtes", price: 35, rating: 4.8, amenities: ["WiFi", "Repas maison", "Terrasse", "Pirogue privée"] }] },
-  { id: 2, name: "Parc National de la Pendjari", slug: "parc-pendjari", region: "Atacora", category: "nature", description: "L'un des derniers grands sanctuaires de faune sauvage en Afrique de l'Ouest", longDescription: "Le Parc National de la Pendjari est un joyau de la conservation en Afrique de l'Ouest. Sur 275 000 hectares, ce parc abrite une faune exceptionnelle : lions, éléphants, buffles, hippopotames, guépards, et plus de 300 espèces d'oiseaux. Les safaris offrent des rencontres inoubliables avec la grande faune africaine. La cascade de Tanougou et les montagnes de l'Atacora ajoutent à la beauté des lieux.", image: "https://images.unsplash.com/photo-1547970810-dc1e93b62d48?w=800", rating: 4.9, reviews: 856, duration: "3-5 jours", priceLevel: 3, featured: true, trending: false, bestTime: "Décembre à Mars", temperature: "18-35°C", highlights: ["Safari photo", "Observation des lions", "Cascade de Tanougou", "Bird watching", "Camping sauvage"], activities: [{ name: "Safari guidé", duration: "4h", price: 50, icon: "Car" }, { name: "Safari photo", duration: "6h", price: 80, icon: "Camera" }, { name: "Randonnée Tanougou", duration: "3h", price: 25, icon: "TreePine" }], accommodations: [{ name: "Pendjari Lodge", type: "Lodge", price: 120, rating: 4.7, amenities: ["WiFi", "Restaurant", "Piscine", "Guide privé"] }, { name: "Campement Tanougou", type: "Camping", price: 30, rating: 4.5, amenities: ["Tentes équipées", "Douches", "Feu de camp"] }] },
-  { id: 3, name: "Ouidah", slug: "ouidah", region: "Atlantique", category: "historique", description: "Cœur spirituel du vodoun et mémoire de la traite négrière", longDescription: "Ouidah est une ville chargée d'histoire. La Route des Esclaves et la Porte du Non-Retour témoignent de la tragédie de la traite négrière. La ville est aussi le berceau du vodoun, avec le Temple des Pythons et la Forêt Sacrée de Kpassè. Chaque année, le 10 janvier, la Fête Nationale du Vodoun attire des milliers de pèlerins.", image: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800", rating: 4.7, reviews: 2100, duration: "2-3 jours", priceLevel: 2, featured: true, trending: true, bestTime: "Janvier, Octobre-Décembre", temperature: "24-31°C", highlights: ["Porte du Non-Retour", "Route des Esclaves", "Temple des Pythons", "Forêt Sacrée de Kpassè", "Musée d'Histoire"], activities: [{ name: "Visite historique", duration: "3h", price: 25, icon: "Landmark" }, { name: "Cérémonie vodoun", duration: "2h", price: 30, icon: "Users" }, { name: "Musée de Ouidah", duration: "2h", price: 10, icon: "Info" }], accommodations: [{ name: "Hotel Diaspora", type: "Hôtel", price: 60, rating: 4.3, amenities: ["WiFi", "Restaurant", "Piscine", "Climatisation"] }] },
-  { id: 4, name: "Abomey", slug: "abomey", region: "Zou", category: "historique", description: "Les palais royaux du Dahomey, classés au patrimoine mondial", longDescription: "Abomey fut la capitale du puissant Royaume du Dahomey pendant près de 300 ans. Les palais royaux, classés au patrimoine mondial de l'UNESCO, sont ornés de bas-reliefs exceptionnels qui racontent l'histoire du royaume. Le musée historique abrite des trésors inestimables : trônes, armes, objets rituels.", image: "https://images.unsplash.com/photo-1589308078059-be3c3044eccc?w=800", rating: 4.6, reviews: 945, duration: "1-2 jours", priceLevel: 2, featured: false, trending: false, bestTime: "Novembre à Février", temperature: "22-33°C", highlights: ["Palais royaux UNESCO", "Musée historique", "Bas-reliefs", "Artisanat des appliqués"], activities: [{ name: "Visite des palais", duration: "2h", price: 15, icon: "Landmark" }, { name: "Atelier appliqués", duration: "2h", price: 25, icon: "Palette" }], accommodations: [{ name: "Hotel Abomey", type: "Hôtel", price: 50, rating: 4.2, amenities: ["WiFi", "Restaurant", "Climatisation"] }] },
-  { id: 5, name: "Grand-Popo", slug: "grand-popo", region: "Mono", category: "plage", description: "Plages de sable fin, pêche traditionnelle et ambiance décontractée", longDescription: "Grand-Popo est une station balnéaire paisible où le fleuve Mono rencontre l'océan Atlantique. Ses longues plages bordées de cocotiers invitent à la détente. Le village de pêcheurs conserve ses traditions. La bouche du Roy offre des paysages magnifiques.", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800", rating: 4.5, reviews: 678, duration: "2-4 jours", priceLevel: 2, featured: false, trending: false, bestTime: "Novembre à Mars", temperature: "24-31°C", highlights: ["Plages de sable fin", "Bouche du Roy", "Pêche traditionnelle", "Couchers de soleil"], activities: [{ name: "Baignade", duration: "Libre", price: 0, icon: "Waves" }, { name: "Pirogue sur le Mono", duration: "2h", price: 15, icon: "Compass" }], accommodations: [{ name: "Auberge de Grand-Popo", type: "Auberge", price: 40, rating: 4.4, amenities: ["WiFi", "Restaurant", "Plage privée"] }] },
-  { id: 6, name: "Cotonou", slug: "cotonou", region: "Littoral", category: "ville", description: "La vibrante capitale économique, entre tradition et modernité", longDescription: "Cotonou est le cœur battant du Bénin. Cette ville dynamique mêle modernité et traditions. Le marché Dantokpa, l'un des plus grands d'Afrique de l'Ouest, est une immersion totale dans la vie locale. La Place de l'Étoile Rouge, la cathédrale Notre-Dame, la plage de Fidjrossè sont autant de lieux à découvrir.", image: "https://images.unsplash.com/photo-1511735111819-9a3f7709049c?w=800", rating: 4.2, reviews: 3400, duration: "2-3 jours", priceLevel: 3, featured: false, trending: true, bestTime: "Toute l'année", temperature: "24-31°C", highlights: ["Marché Dantokpa", "Place de l'Étoile Rouge", "Plage de Fidjrossè", "Fondation Zinsou"], activities: [{ name: "Visite de Dantokpa", duration: "3h", price: 15, icon: "Compass" }, { name: "Art contemporain", duration: "2h", price: 10, icon: "Palette" }], accommodations: [{ name: "Benin Marina Hotel", type: "Hôtel 4*", price: 120, rating: 4.5, amenities: ["WiFi", "Piscine", "Restaurant", "Spa"] }, { name: "Hotel du Port", type: "Hôtel 3*", price: 70, rating: 4.2, amenities: ["WiFi", "Restaurant", "Climatisation"] }] },
-  { id: 7, name: "Natitingou", slug: "natitingou", region: "Atacora", category: "nature", description: "Porte d'entrée du pays Somba et de ses tatas", longDescription: "Natitingou est la principale ville du pays Somba, réputée pour ses habitations traditionnelles uniques : les tatas. Ces forteresses miniatures en terre crue ressemblent à de petits châteaux. La région offre des paysages magnifiques de collines et de vallées.", image: "https://images.unsplash.com/photo-1590080669915-3d4e68d2e20f?w=800", rating: 4.6, reviews: 423, duration: "2-3 jours", priceLevel: 2, featured: false, trending: false, bestTime: "Novembre à Février", temperature: "18-33°C", highlights: ["Tatas Somba", "Cascades de Kota", "Montagnes de l'Atacora", "Artisanat local"], activities: [{ name: "Visite des tatas", duration: "3h", price: 20, icon: "Home" }, { name: "Randonnée", duration: "4h", price: 25, icon: "Mountain" }], accommodations: [{ name: "Hotel Tata Somba", type: "Hôtel", price: 55, rating: 4.3, amenities: ["WiFi", "Restaurant", "Climatisation"] }] },
-  { id: 8, name: "Porto-Novo", slug: "porto-novo", region: "Ouémé", category: "culture", description: "La capitale administrative, riche d'histoire et de traditions", longDescription: "Porto-Novo, la capitale du Bénin, est une ville au riche patrimoine historique. Le Musée Honmè (ancien palais royal), la Grande Mosquée de style afro-brésilien, le Jardin des Plantes et de la Nature sont autant de sites à découvrir.", image: "https://images.unsplash.com/photo-1589308078059-be3c3044eccc?w=800", rating: 4.4, reviews: 567, duration: "1-2 jours", priceLevel: 2, featured: false, trending: false, bestTime: "Novembre à Février", temperature: "24-31°C", highlights: ["Musée Honmè", "Grande Mosquée", "Jardin des Plantes", "Palais du Gouverneur"], activities: [{ name: "Visite Musée Honmè", duration: "2h", price: 10, icon: "Landmark" }, { name: "Tour de ville", duration: "3h", price: 20, icon: "Compass" }], accommodations: [{ name: "Hotel Beaurivage", type: "Hôtel", price: 65, rating: 4.3, amenities: ["WiFi", "Restaurant", "Piscine"] }] }
+const local = import.meta.glob("./placeholder/*.{jpeg,jpg,png}", {
+  eager: true,
+  query: "?url",
+  import: "default",
+}) as Record<string, string>;
+const norm = (s: string) => s.normalize("NFC");
+const img = (name: string, fallback: string) => {
+  const k = Object.keys(local).find((x) => norm(x) === norm(`./placeholder/${name}`));
+  return k ? local[k] : fallback;
+};
+
+type Acc = { name: string; type: string; price: number; rating: number; amenities: string[] };
+type Dest = {
+  id: number; slug: string; name: string; region: string; category: string; image: string;
+  rating: number; reviews: number; days: string; priceLevel: number; featured: boolean;
+  trending: boolean; temperature: string; activityMeta: { price: number; hours: number }[];
+  accommodations: Acc[];
+};
+
+const destinations: Dest[] = [
+  { id: 1, slug: "ganvie", name: "Ganvié", region: "Atlantique", category: "culture", image: img("ganvié.jpeg", FALLBACK), rating: 4.8, reviews: 1234, days: "1-2", priceLevel: 2, featured: true, trending: true, temperature: "25-32°C",
+    activityMeta: [{ price: 15, hours: 2 }, { price: 10, hours: 2 }, { price: 20, hours: 2 }],
+    accommodations: [{ name: "Hotel Lac Nokoué", type: "hotel", price: 75, rating: 4.5, amenities: ["wifi", "restaurant", "ac", "lakeview"] }, { name: "Chez Thérèse", type: "guesthouse", price: 35, rating: 4.8, amenities: ["wifi", "homemeal", "terrace", "privatepirogue"] }] },
+  { id: 2, slug: "parc-pendjari", name: "Parc National de la Pendjari", region: "Atacora", category: "nature", image: img("pendjari.jpeg", FALLBACK), rating: 4.9, reviews: 856, days: "3-5", priceLevel: 3, featured: true, trending: false, temperature: "18-35°C",
+    activityMeta: [{ price: 50, hours: 4 }, { price: 80, hours: 6 }, { price: 25, hours: 3 }],
+    accommodations: [{ name: "Pendjari Lodge", type: "lodge", price: 120, rating: 4.7, amenities: ["wifi", "restaurant", "pool", "privateguide"] }, { name: "Campement Tanougou", type: "camping", price: 30, rating: 4.5, amenities: ["tents", "showers", "campfire"] }] },
+  { id: 3, slug: "ouidah", name: "Ouidah", region: "Atlantique", category: "historique", image: img("ouidah.jpeg", FALLBACK), rating: 4.7, reviews: 2100, days: "2-3", priceLevel: 2, featured: true, trending: true, temperature: "24-31°C",
+    activityMeta: [{ price: 25, hours: 3 }, { price: 30, hours: 2 }, { price: 10, hours: 2 }],
+    accommodations: [{ name: "Hotel Diaspora", type: "hotel", price: 60, rating: 4.3, amenities: ["wifi", "restaurant", "pool", "ac"] }] },
+  { id: 4, slug: "abomey", name: "Abomey", region: "Zou", category: "historique", image: img("abomey.jpeg", FALLBACK), rating: 4.6, reviews: 945, days: "1-2", priceLevel: 2, featured: false, trending: false, temperature: "22-33°C",
+    activityMeta: [{ price: 15, hours: 2 }, { price: 25, hours: 2 }],
+    accommodations: [{ name: "Hotel Abomey", type: "hotel", price: 50, rating: 4.2, amenities: ["wifi", "restaurant", "ac"] }] },
+  { id: 5, slug: "grand-popo", name: "Grand-Popo", region: "Mono", category: "plage", image: img("grandpopo.jpeg", FALLBACK), rating: 4.5, reviews: 678, days: "2-4", priceLevel: 2, featured: false, trending: false, temperature: "24-31°C",
+    activityMeta: [{ price: 0, hours: 0 }, { price: 15, hours: 2 }],
+    accommodations: [{ name: "Auberge de Grand-Popo", type: "inn", price: 40, rating: 4.4, amenities: ["wifi", "restaurant", "privatebeach"] }] },
+  { id: 6, slug: "cotonou", name: "Cotonou", region: "Littoral", category: "ville", image: img("cotonou.jpeg", FALLBACK), rating: 4.2, reviews: 3400, days: "2-3", priceLevel: 3, featured: false, trending: true, temperature: "24-31°C",
+    activityMeta: [{ price: 15, hours: 3 }, { price: 10, hours: 2 }],
+    accommodations: [{ name: "Benin Marina Hotel", type: "hotel4", price: 120, rating: 4.5, amenities: ["wifi", "pool", "restaurant", "spa"] }, { name: "Hotel du Port", type: "hotel3", price: 70, rating: 4.2, amenities: ["wifi", "restaurant", "ac"] }] },
+  { id: 7, slug: "natitingou", name: "Natitingou", region: "Atacora", category: "nature", image: img("natitingou.jpeg", FALLBACK), rating: 4.6, reviews: 423, days: "2-3", priceLevel: 2, featured: false, trending: false, temperature: "18-33°C",
+    activityMeta: [{ price: 20, hours: 3 }, { price: 25, hours: 4 }],
+    accommodations: [{ name: "Hotel Tata Somba", type: "hotel", price: 55, rating: 4.3, amenities: ["wifi", "restaurant", "ac"] }] },
+  { id: 8, slug: "porto-novo", name: "Porto-Novo", region: "Ouémé", category: "culture", image: img("portonovo.jpeg", FALLBACK), rating: 4.4, reviews: 567, days: "1-2", priceLevel: 2, featured: false, trending: false, temperature: "24-31°C",
+    activityMeta: [{ price: 10, hours: 2 }, { price: 20, hours: 3 }],
+    accommodations: [{ name: "Hotel Beaurivage", type: "hotel", price: 65, rating: 4.3, amenities: ["wifi", "restaurant", "pool"] }] },
 ];
 
 const categories = [
-  { name: "Tous", value: "all", icon: Compass },
-  { name: "Culture", value: "culture", icon: Landmark },
-  { name: "Nature", value: "nature", icon: TreePine },
-  { name: "Plage", value: "plage", icon: Waves },
-  { name: "Ville", value: "ville", icon: Building2 },
-  { name: "Historique", value: "historique", icon: Calendar }
+  { value: "all", icon: Compass },
+  { value: "culture", icon: Landmark },
+  { value: "nature", icon: TreePine },
+  { value: "plage", icon: Waves },
+  { value: "ville", icon: Building2 },
+  { value: "historique", icon: Calendar },
 ];
 
+const catIcon: Record<string, typeof Compass> = {
+  culture: Landmark, nature: TreePine, plage: Waves, ville: Building2, historique: Calendar,
+};
+
+type ItemText = {
+  description: string; longDescription: string; bestTime: string;
+  highlights: string[]; activities: string[];
+};
+const TAB_IDS = ["overview", "highlights", "activities", "accommodations", "info"];
+
 const Destinations = () => {
-  const [selectedDestination, setSelectedDestination] = useState(null);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("all");
-  const [likedDestinations, setLikedDestinations] = useState([]);
-  const [viewMode, setViewMode] = useState("grid");
+  const { t } = useTranslation();
+  const { toast } = useToast();
   const heroRef = useRef(null);
+  const [selected, setSelected] = useState<Dest | null>(null);
+  const [tab, setTab] = useState("overview");
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState("all");
+  const [view, setView] = useState<"grid" | "list">("grid");
+  const [liked, setLiked] = useState<number[]>(() => {
+    try { return JSON.parse(localStorage.getItem("fav_destinations") || "[]"); } catch { return []; }
+  });
+
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const heroOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
 
-  const filteredDestinations = destinationsData.filter(d => {
-    const matchesSearch = d.name.toLowerCase().includes(searchQuery.toLowerCase()) || d.description.toLowerCase().includes(searchQuery.toLowerCase()) || d.region.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === "all" || d.category === selectedCategory;
-    return matchesSearch && matchesCategory;
+  const items = t("destinations.items", { returnObjects: true }) as unknown;
+  const texts: ItemText[] = Array.isArray(items) ? (items as ItemText[]) : [];
+  const tx = (d: Dest): ItemText =>
+    texts[d.id - 1] ?? { description: "", longDescription: "", bestTime: "", highlights: [], activities: [] };
+
+  const filtered = destinations.filter((d) => {
+    const q = query.trim().toLowerCase();
+    const txt = tx(d);
+    const hit = !q || d.name.toLowerCase().includes(q) || d.region.toLowerCase().includes(q) || txt.description.toLowerCase().includes(q);
+    return hit && (category === "all" || d.category === category);
   });
 
-  const toggleLike = (id) => setLikedDestinations(prev => prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]);
+  useEffect(() => {
+    try { localStorage.setItem("fav_destinations", JSON.stringify(liked)); } catch { /* ignore */ }
+  }, [liked]);
 
-  const getPriceLevelIcon = (level) => Array.from({ length: 5 }).map((_, i) => (<DollarSign key={i} className={`w-3 h-3 ${i < level ? "text-primary" : "text-muted"}`} />));
+  // Échap pour fermer + blocage du scroll derrière la fenêtre
+  useEffect(() => {
+    if (!selected) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setSelected(null);
+    window.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { window.removeEventListener("keydown", onKey); document.body.style.overflow = prev; };
+  }, [selected]);
 
-  const getCategoryIcon = (category) => {
-    const icons = { culture: Landmark, nature: TreePine, plage: Waves, ville: Building2, historique: Calendar };
-    const Icon = icons[category] || Compass;
-    return <Icon className="w-4 h-4" />;
+  const open = (d: Dest) => { setTab("overview"); setSelected(d); };
+  const toggleLike = (id: number) => setLiked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]));
+
+  const share = async (d: Dest) => {
+    const url = `${window.location.origin}/destinations`;
+    if (navigator.share) {
+      try { await navigator.share({ title: d.name, url }); } catch { /* annulé */ }
+    } else {
+      try { await navigator.clipboard.writeText(url); toast({ title: t("destinations.link_copied") }); } catch { /* ignore */ }
+    }
   };
 
+  const euros = (level: number) => (
+    <span className="text-sm tracking-tight" aria-hidden>
+      <span className="font-semibold">{"€".repeat(level)}</span>
+      <span className="text-muted-foreground/40">{"€".repeat(Math.max(0, 4 - level))}</span>
+    </span>
+  );
+
+  const dur = (d: Dest) => t("destinations.days_range", { range: d.days });
+
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="flex min-h-screen flex-col bg-background">
       <Navbar />
       <main className="flex-1">
         <section ref={heroRef} className="relative h-[60vh] overflow-hidden">
           <motion.div style={{ opacity: heroOpacity }} className="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1590080669915-3d4e68d2e20f?w=1920" className="w-full h-full object-cover" />
+            <img src={img("abomey.jpeg", FALLBACK)} alt="" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background" />
           </motion.div>
-          <div className="absolute inset-0 flex items-center justify-center text-center text-white z-10">
+          <div className="absolute inset-0 z-10 flex items-center justify-center pt-16 text-center text-white">
             <div className="px-6">
-              <Badge className="mb-6 bg-white/20 text-white border-white/30 backdrop-blur-sm">Explorez le Bénin</Badge>
-              <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6">Destinations</h1>
-              <p className="text-xl max-w-2xl mx-auto mb-8">Des cités lacustres aux parcs nationaux, découvrez la diversité exceptionnelle du Bénin</p>
-              <div className="relative max-w-xl mx-auto">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input type="text" placeholder="Rechercher une destination..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="w-full pl-12 pr-4 py-3 bg-white text-black rounded-xl focus:outline-none focus:ring-2 focus:ring-primary" />
+              <Badge className="mb-6 border-white/30 bg-white/20 text-white backdrop-blur-sm">{t("destinations.badge")}</Badge>
+              <h1 className="mb-6 font-heading text-5xl font-bold md:text-7xl">{t("destinations.title")}</h1>
+              <p className="mx-auto mb-8 max-w-2xl text-xl">{t("destinations.subtitle")}</p>
+              <div className="relative mx-auto max-w-xl">
+                <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder={t("destinations.search")}
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  className="w-full rounded-xl bg-white py-3 pl-12 pr-4 text-black focus:outline-none focus:ring-2 focus:ring-white/60"
+                />
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-8 bg-background border-b sticky top-20 z-30">
+        <section className="sticky top-20 z-30 border-b bg-background/95 py-6 backdrop-blur-sm">
           <div className="container mx-auto px-6">
-            <div className="flex flex-wrap gap-2 justify-center">
-              {categories.map(cat => (<Button key={cat.value} variant={selectedCategory === cat.value ? "default" : "outline"} size="sm" onClick={() => setSelectedCategory(cat.value)} className="gap-2"><cat.icon className="w-4 h-4" />{cat.name}</Button>))}
+            <div className="flex flex-wrap justify-center gap-2">
+              {categories.map((c) => (
+                <Button key={c.value} variant={category === c.value ? "default" : "outline"} size="sm" onClick={() => setCategory(c.value)} className="gap-2">
+                  <c.icon className="h-4 w-4" />
+                  {t(`destinations.categories.${c.value}`)}
+                </Button>
+              ))}
             </div>
           </div>
         </section>
 
         <section className="py-12">
           <div className="container mx-auto px-6">
-            <div className="flex justify-between items-center mb-8">
-              <div><h2 className="font-heading text-2xl font-bold">{filteredDestinations.length} destination(s) trouvée(s)</h2><p className="text-muted-foreground">Explorez les merveilles du Bénin</p></div>
-              <div className="flex gap-2"><Button variant={viewMode === "grid" ? "default" : "outline"} size="icon" onClick={() => setViewMode("grid")}><Grid3x3 className="w-4 h-4" /></Button><Button variant={viewMode === "list" ? "default" : "outline"} size="icon" onClick={() => setViewMode("list")}><List className="w-4 h-4" /></Button></div>
+            <div className="mb-8 flex items-center justify-between">
+              <div>
+                <h2 className="font-heading text-2xl font-bold">{t("destinations.found", { count: filtered.length })}</h2>
+                <p className="text-muted-foreground">{t("destinations.found_sub")}</p>
+              </div>
+              <div className="flex gap-2">
+                <Button variant={view === "grid" ? "default" : "outline"} size="icon" onClick={() => setView("grid")} aria-label="grid"><LayoutGrid className="h-4 w-4" /></Button>
+                <Button variant={view === "list" ? "default" : "outline"} size="icon" onClick={() => setView("list")} aria-label="list"><ListIcon className="h-4 w-4" /></Button>
+              </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {filteredDestinations.map(dest => (
-                <Card key={dest.id} className="overflow-hidden hover:shadow-xl transition-all group cursor-pointer" onClick={() => setSelectedDestination(dest)}>
-                  <div className="relative h-56 overflow-hidden">
-                    <img src={dest.image} className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-                    <div className="absolute top-3 left-3 flex gap-2">{dest.featured && <Badge className="bg-primary">En vedette</Badge>}{dest.trending && <Badge className="bg-orange-500">Tendance</Badge>}</div>
-                    <Button size="icon" variant="ghost" className="absolute top-3 right-3 bg-black/50 hover:bg-black/70 text-white" onClick={(e) => { e.stopPropagation(); toggleLike(dest.id); }}><Heart className={`w-4 h-4 ${likedDestinations.includes(dest.id) ? "fill-red-500 text-red-500" : ""}`} /></Button>
-                    <div className="absolute bottom-3 left-3 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm flex items-center gap-1"><MapPin className="w-3 h-3" />{dest.region}</div>
-                    <div className="absolute bottom-3 right-3 bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full text-white text-xs flex items-center gap-1">{getCategoryIcon(dest.category)}<span className="capitalize">{dest.category}</span></div>
-                  </div>
-                  <CardContent className="p-4">
-                    <div className="flex justify-between items-start mb-2"><h3 className="font-heading text-xl font-bold">{dest.name}</h3><div className="flex items-center gap-1"><Star className="w-4 h-4 fill-yellow-500 text-yellow-500" /><span className="text-sm font-medium">{dest.rating}</span><span className="text-xs text-muted-foreground">({dest.reviews})</span></div></div>
-                    <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{dest.description}</p>
-                    <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3"><span className="flex items-center gap-1"><Clock className="w-3 h-3" />{dest.duration}</span><span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{dest.bestTime}</span></div>
-                    <div className="flex items-center justify-between mt-3 pt-3 border-t"><div className="flex items-center gap-1">{getPriceLevelIcon(dest.priceLevel)}</div><Button variant="ghost" size="sm" className="group-hover:text-primary" onClick={() => setSelectedDestination(dest)}>Découvrir <ChevronRight className="w-4 h-4 ml-1" /></Button></div>
-                  </CardContent>
-                </Card>
-              ))}
+
+            {filtered.length === 0 && <p className="py-16 text-center text-muted-foreground">{t("destinations.none")}</p>}
+
+            <div className={view === "grid" ? "grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" : "grid grid-cols-1 gap-6"}>
+              {filtered.map((d) => {
+                const CatIcon = catIcon[d.category] ?? Compass;
+                return (
+                  <Card key={d.id} className={`group cursor-pointer overflow-hidden ${view === "list" ? "flex flex-col sm:flex-row" : ""}`} onClick={() => open(d)}>
+                    <div className={`relative overflow-hidden ${view === "list" ? "h-56 sm:h-auto sm:w-80 sm:shrink-0" : "h-56"}`}>
+                      <img src={d.image} alt={d.name} loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+                      <div className="absolute left-3 top-3 flex gap-2">
+                        {d.featured && <Badge>{t("destinations.featured")}</Badge>}
+                        {d.trending && <Badge className="bg-orange-500 text-white">{t("destinations.trending")}</Badge>}
+                      </div>
+                      <Button size="icon" variant="ghost" aria-label="like"
+                        className="absolute right-3 top-3 bg-black/50 text-white hover:bg-black/70"
+                        onClick={(e) => { e.stopPropagation(); toggleLike(d.id); }}>
+                        <Heart className={`h-4 w-4 ${liked.includes(d.id) ? "fill-red-500 text-red-500" : ""}`} />
+                      </Button>
+                      <div className="absolute bottom-3 left-3 flex items-center gap-1 rounded-full bg-black/50 px-3 py-1 text-sm text-white backdrop-blur-sm">
+                        <MapPin className="h-3 w-3" />{d.region}
+                      </div>
+                      <div className="absolute bottom-3 right-3 flex items-center gap-1 rounded-full bg-black/50 px-2 py-1 text-xs text-white backdrop-blur-sm">
+                        <CatIcon className="h-3 w-3" />{t(`destinations.categories.${d.category}`)}
+                      </div>
+                    </div>
+                    <CardContent className="flex flex-1 flex-col p-4">
+                      <div className="mb-2 flex items-start justify-between gap-2">
+                        <h3 className="font-heading text-xl font-bold">{d.name}</h3>
+                        <div className="flex shrink-0 items-center gap-1">
+                          <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" />
+                          <span className="text-sm font-medium">{d.rating}</span>
+                          <span className="text-xs text-muted-foreground">({d.reviews})</span>
+                        </div>
+                      </div>
+                      <p className="mb-3 line-clamp-2 text-sm text-muted-foreground">{tx(d).description}</p>
+                      <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+                        <span className="flex items-center gap-1"><Clock className="h-3 w-3" />{dur(d)}</span>
+                        <span className="flex items-center gap-1"><Calendar className="h-3 w-3" />{tx(d).bestTime}</span>
+                      </div>
+                      <div className="mt-auto flex items-center justify-between border-t pt-3">
+                        {euros(d.priceLevel)}
+                        <Button variant="ghost" size="sm">{t("destinations.discover")}<ChevronRight className="ml-1 h-4 w-4" /></Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        <section className="py-16 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
+        <section className="bg-gradient-to-r from-foreground/10 via-foreground/5 to-foreground/10 py-16">
           <div className="container mx-auto px-6 text-center">
-            <Compass className="w-16 h-16 mx-auto mb-6 text-primary" />
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Vous ne trouvez pas votre bonheur ?</h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">Nous créons des itinéraires sur mesure selon vos envies. Parlez-nous de votre projet !</p>
-            <Button size="lg" asChild><Link to="/contact">Créer mon voyage personnalisé <ArrowRight className="w-4 h-4 ml-2" /></Link></Button>
+            <Compass className="mx-auto mb-6 h-16 w-16" />
+            <h2 className="mb-4 font-heading text-3xl font-bold md:text-4xl">{t("destinations.cta_title")}</h2>
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">{t("destinations.cta_text")}</p>
+            <Button size="lg" asChild>
+              <Link to="/contact">{t("destinations.cta_button")}<ArrowRight className="ml-2 h-4 w-4" /></Link>
+            </Button>
           </div>
         </section>
       </main>
       <Footer />
 
-      {selectedDestination && (
-        <div className="fixed inset-0 z-50 overflow-y-auto">
-          <div className="absolute inset-0 bg-black/80" onClick={() => setSelectedDestination(null)} />
-          <div className="relative min-h-screen flex items-center justify-center p-4">
-            <div className="bg-background rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto">
-              <div className="sticky top-0 bg-background border-b p-4 flex justify-between items-center"><h3 className="font-heading text-2xl font-bold">{selectedDestination.name}</h3><Button variant="ghost" size="icon" onClick={() => setSelectedDestination(null)}><X className="w-5 h-5" /></Button></div>
-              <div className="p-6">
-                <img src={selectedDestination.image} className="w-full h-80 object-cover rounded-xl mb-6" />
-                <Tabs defaultValue="overview" className="space-y-6">
-                  <TabsList className="grid w-full grid-cols-5"><TabsTrigger value="overview">Aperçu</TabsTrigger><TabsTrigger value="highlights">Points forts</TabsTrigger><TabsTrigger value="activities">Activités</TabsTrigger><TabsTrigger value="accommodations">Hébergements</TabsTrigger><TabsTrigger value="info">Infos pratiques</TabsTrigger></TabsList>
-                  <TabsContent value="overview"><p className="text-muted-foreground leading-relaxed">{selectedDestination.longDescription}</p><div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6"><div className="text-center p-4 bg-muted/30 rounded-lg"><Calendar className="w-6 h-6 mx-auto mb-2 text-primary" /><p className="font-bold">{selectedDestination.bestTime}</p><p className="text-xs text-muted-foreground">Meilleure période</p></div><div className="text-center p-4 bg-muted/30 rounded-lg"><Thermometer className="w-6 h-6 mx-auto mb-2 text-primary" /><p className="font-bold">{selectedDestination.temperature}</p><p className="text-xs text-muted-foreground">Température</p></div><div className="text-center p-4 bg-muted/30 rounded-lg"><Clock className="w-6 h-6 mx-auto mb-2 text-primary" /><p className="font-bold">{selectedDestination.duration}</p><p className="text-xs text-muted-foreground">Durée recommandée</p></div><div className="text-center p-4 bg-muted/30 rounded-lg"><Star className="w-6 h-6 mx-auto mb-2 text-primary" /><p className="font-bold">{selectedDestination.rating}/5</p><p className="text-xs text-muted-foreground">{selectedDestination.reviews} avis</p></div></div></TabsContent>
-                  <TabsContent value="highlights"><div className="grid grid-cols-2 gap-3">{selectedDestination.highlights.map((h, i) => (<div key={i} className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg"><Check className="w-5 h-5 text-green-500" /><span>{h}</span></div>))}</div></TabsContent>
-                  <TabsContent value="activities"><div className="space-y-3">{selectedDestination.activities.map((a, i) => (<Card key={i}><CardContent className="p-4 flex justify-between items-center"><div><p className="font-medium">{a.name}</p><p className="text-sm text-muted-foreground">{a.duration}</p></div><div className="text-right"><p className="font-bold text-primary">{a.price}€</p><Button variant="link" size="sm" className="p-0">Réserver</Button></div></CardContent></Card>))}</div></TabsContent>
-                  <TabsContent value="accommodations"><div className="space-y-3">{selectedDestination.accommodations.map((a, i) => (<Card key={i}><CardContent className="p-4"><div className="flex gap-4"><div className="w-24 h-24 bg-muted/30 rounded-lg flex items-center justify-center"><Hotel className="w-8 h-8 text-primary" /></div><div className="flex-1"><div className="flex justify-between"><div><p className="font-bold">{a.name}</p><p className="text-sm text-muted-foreground">{a.type}</p></div><div className="text-right"><p className="font-bold text-primary">{a.price}€<span className="text-xs font-normal">/nuit</span></p><div className="flex items-center gap-1"><Star className="w-3 h-3 fill-yellow-500" /><span className="text-sm">{a.rating}</span></div></div></div><div className="flex flex-wrap gap-2 mt-2">{a.amenities.map((am, j) => (<Badge key={j} variant="outline" className="text-xs">{am}</Badge>))}</div></div></div></CardContent></Card>))}</div></TabsContent>
-                  <TabsContent value="info"><div className="grid grid-cols-1 md:grid-cols-2 gap-6"><Card><CardContent className="p-4"><h4 className="font-bold mb-3 flex items-center gap-2"><Sun className="w-4 h-4 text-primary" />Meilleure période</h4><p>{selectedDestination.bestTime}</p></CardContent></Card><Card><CardContent className="p-4"><h4 className="font-bold mb-3 flex items-center gap-2"><Thermometer className="w-4 h-4 text-primary" />Climat</h4><p>Température: {selectedDestination.temperature}</p></CardContent></Card><Card><CardContent className="p-4"><h4 className="font-bold mb-3 flex items-center gap-2"><Clock className="w-4 h-4 text-primary" />Durée recommandée</h4><p>{selectedDestination.duration}</p></CardContent></Card><Card><CardContent className="p-4"><h4 className="font-bold mb-3 flex items-center gap-2"><MapPin className="w-4 h-4 text-primary" />Localisation</h4><p>Région: {selectedDestination.region}</p></CardContent></Card></div></TabsContent>
-                </Tabs>
-                <div className="flex gap-3 mt-6 pt-6 border-t"><Button className="flex-1" asChild><Link to="/contact">Réserver maintenant <ArrowRight className="w-4 h-4 ml-2" /></Link></Button><Button variant="outline"><Share2 className="w-4 h-4 mr-2" />Partager</Button></div>
+      <AnimatePresence>
+        {selected && (
+          <motion.div key="modal" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+            <div className="absolute inset-0 bg-black/80" onClick={() => setSelected(null)} />
+            <motion.div initial={{ opacity: 0, y: 30, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 30 }}
+              className="relative max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-2xl bg-background">
+              <div className="sticky top-0 z-10 flex items-center justify-between border-b bg-background p-4">
+                <h3 className="font-heading text-2xl font-bold">{selected.name}</h3>
+                <Button variant="ghost" size="icon" onClick={() => setSelected(null)} aria-label={t("destinations.close")}><X className="h-5 w-5" /></Button>
               </div>
-            </div>
-          </div>
-        </div>
-      )}
+
+              <div className="p-6">
+                <img src={selected.image} alt={selected.name} className="mb-6 h-80 w-full rounded-xl object-cover" />
+
+                <div className="mb-6 flex flex-wrap gap-2 border-b border-border">
+                  {TAB_IDS.map((k) => (
+                    <button key={k} onClick={() => setTab(k)}
+                      className={`-mb-px border-b-2 px-4 py-2 text-sm font-medium transition-colors ${tab === k ? "border-foreground text-foreground" : "border-transparent text-muted-foreground hover:text-foreground"}`}>
+                      {t(`destinations.tabs.${k}`)}
+                    </button>
+                  ))}
+                </div>
+
+                {tab === "overview" && (
+                  <div>
+                    <p className="leading-relaxed text-muted-foreground">{tx(selected).longDescription}</p>
+                    <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
+                      {[
+                        { icon: Calendar, value: tx(selected).bestTime, label: t("destinations.best_time") },
+                        { icon: Thermometer, value: selected.temperature, label: t("destinations.temperature") },
+                        { icon: Clock, value: dur(selected), label: t("destinations.duration") },
+                        { icon: Star, value: `${selected.rating}/5`, label: t("destinations.reviews", { count: selected.reviews }) },
+                      ].map((s, i) => (
+                        <div key={i} className="rounded-lg bg-muted/40 p-4 text-center">
+                          <s.icon className="mx-auto mb-2 h-6 w-6" />
+                          <p className="font-bold">{s.value}</p>
+                          <p className="text-xs text-muted-foreground">{s.label}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {tab === "highlights" && (
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    {tx(selected).highlights.map((h, i) => (
+                      <div key={i} className="flex items-center gap-3 rounded-lg bg-muted/40 p-3"><Check className="h-5 w-5 text-foreground" /><span>{h}</span></div>
+                    ))}
+                  </div>
+                )}
+
+                {tab === "activities" && (
+                  <div className="space-y-3">
+                    {selected.activityMeta.map((a, i) => (
+                      <Card key={i} flat>
+                        <CardContent className="flex items-center justify-between p-4">
+                          <div>
+                            <p className="font-medium">{tx(selected).activities[i]}</p>
+                            <p className="text-sm text-muted-foreground">{a.hours === 0 ? t("destinations.free") : `${a.hours}h`}</p>
+                          </div>
+                          <div className="text-right">
+                            <p className="font-bold">{a.price === 0 ? t("destinations.free_label") : `${a.price}€`}</p>
+                            <Button variant="link" size="sm" className="p-0" asChild><Link to="/contact">{t("destinations.book")}</Link></Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                )}
+
+                {tab === "accommodations" && (
+                  <div className="space-y-3">
+                    {selected.accommodations.map((a, i) => (
+                      <Card key={i} flat>
+                        <CardContent className="flex gap-4 p-4">
+                          <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-lg bg-muted/40"><Hotel className="h-8 w-8" /></div>
+                          <div className="flex-1">
+                            <div className="flex justify-between gap-2">
+                              <div>
+                                <p className="font-bold">{a.name}</p>
+                                <p className="text-sm text-muted-foreground">{t(`destinations.acc_types.${a.type}`)}</p>
+                              </div>
+                              <div className="text-right">
+                                <p className="font-bold">{a.price}€<span className="text-xs font-normal text-muted-foreground">{t("destinations.per_night")}</span></p>
+                                <div className="flex items-center justify-end gap-1"><Star className="h-3 w-3 fill-yellow-500 text-yellow-500" /><span className="text-sm">{a.rating}</span></div>
+                              </div>
+                            </div>
+                            <div className="mt-2 flex flex-wrap gap-2">
+                              {a.amenities.map((am) => (<Badge key={am} variant="outline" className="text-xs">{t(`destinations.amenities.${am}`)}</Badge>))}
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                )}
+
+                {tab === "info" && (
+                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                    {[
+                      { icon: Sun, title: t("destinations.best_time"), value: tx(selected).bestTime },
+                      { icon: Thermometer, title: t("destinations.climate"), value: `${t("destinations.temperature")} : ${selected.temperature}` },
+                      { icon: Clock, title: t("destinations.duration"), value: dur(selected) },
+                      { icon: MapPin, title: t("destinations.location"), value: `${t("destinations.region")} : ${selected.region}` },
+                    ].map((b, i) => (
+                      <Card key={i} flat>
+                        <CardContent className="p-4">
+                          <h4 className="mb-3 flex items-center gap-2 font-bold"><b.icon className="h-4 w-4" />{b.title}</h4>
+                          <p>{b.value}</p>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                )}
+
+                <div className="mt-6 flex gap-3 border-t pt-6">
+                  <Button className="flex-1" asChild><a href={waLink(t("destinations.wa_message", { name: selected.name }))} target="_blank" rel="noopener noreferrer">{t("destinations.book_now")}<ArrowRight className="ml-2 h-4 w-4" /></a></Button>
+                  <Button variant="outline" onClick={() => share(selected)}><Share2 className="mr-2 h-4 w-4" />{t("destinations.share")}</Button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
-
-const Grid3x3 = ({ className }) => <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>;
-const List = ({ className }) => <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>;
 
 export default Destinations;

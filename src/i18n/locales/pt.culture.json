@@ -1,0 +1,153 @@
+{
+  "culture": {
+    "hero_badge": "Descubra a alma do Benim",
+    "hero_title_1": "Cultura &",
+    "hero_title_2": "Tradições",
+    "hero_subtitle": "Mergulhe no coração das tradições milenares que fazem a riqueza do Benim",
+    "hero_cta": "Explorar as tradições",
+    "intro_badge": "O nosso património",
+    "intro_title": "Um património cultural excecional",
+    "intro_text": "O Benim é uma encruzilhada de civilizações onde se misturam tradições ancestrais e expressões contemporâneas. Dos palácios reais de Abomey às cerimónias vodum de Ouidah, passando pelos mercados coloridos e pelos festivais vibrantes, cada canto do país conta uma história fascinante.",
+    "key_traditions": "Tradições principais",
+    "gallery": "Galeria de fotos",
+    "events_badge": "Agenda cultural",
+    "events_title": "Eventos a não perder",
+    "events_text": "Planeie a sua viagem para coincidir com estas celebrações únicas",
+    "register": "Inscrever-se",
+    "participants": "{{count}} participantes",
+    "testimonials_badge": "Testemunhos",
+    "testimonials_title": "O que dizem os nossos viajantes",
+    "testimonials_text": "Experiências autênticas vividas pela nossa comunidade",
+    "newsletter_title": "Receba o nosso guia cultural gratuito",
+    "newsletter_text": "Inscreva-se para receber o nosso ebook «Tesouros culturais do Benim» e a nossa newsletter mensal",
+    "email_ph": "O seu email",
+    "download": "Descarregar",
+    "newsletter_note": "Grátis • Mais de 50 páginas • Atualizado todos os meses",
+    "stat_labels": {
+      "temples": "Templos",
+      "practitioners": "Praticantes",
+      "ceremonies": "Cerimónias",
+      "communities": "Comunidades",
+      "artisans": "Artesãos",
+      "festivals": "Festivais",
+      "recipes": "Receitas",
+      "restaurants": "Restaurantes",
+      "markets": "Mercados",
+      "workshops": "Oficinas",
+      "cooperatives": "Cooperativas",
+      "instruments": "Instrumentos",
+      "troupes": "Grupos",
+      "participants": "Participantes",
+      "events": "Eventos"
+    },
+    "categories": [
+      {
+        "title": "O Vodum",
+        "subtitle": "Espiritualidade ancestral",
+        "longDescription": "Religião tradicional nascida no Benim, o vodum é muito mais do que uma crença: é um modo de vida, uma filosofia e um laço sagrado com os antepassados e as forças da natureza. O panteão vodum conta centenas de divindades, cada uma associada a elementos naturais ou a aspetos da vida humana. As cerimónias, ritmadas por tambores sagrados, são momentos de comunhão intensa. Todos os anos, a 10 de janeiro, a Festa Nacional do Vodum atrai milhares de fiéis e curiosos a Ouidah.",
+        "traditions": [
+          "Festa do Vodum (10 de janeiro)",
+          "Culto dos antepassados",
+          "Cerimónias Egungun",
+          "Consulta do Fá"
+        ]
+      },
+      {
+        "title": "Os Gèlèdè",
+        "subtitle": "Património da UNESCO",
+        "longDescription": "As máscaras Gèlèdè, inscritas no património cultural imaterial da UNESCO desde 2008, são espetáculos rituais que celebram o poder feminino e a sabedoria das mães ancestrais. As máscaras, verdadeiras obras de arte, são esculpidas em madeira e ricamente decoradas. Os dançarinos usam estas máscaras imponentes e executam coreografias complexas ao som dos tambores, num espetáculo hipnótico que pode durar um dia inteiro.",
+        "traditions": [
+          "Cerimónia Efe (noite)",
+          "Cerimónia Gèlèdè (dia)",
+          "Cantos satíricos",
+          "Danças acrobáticas"
+        ]
+      },
+      {
+        "title": "A Gastronomia",
+        "subtitle": "Sabores autênticos",
+        "longDescription": "Da pâte vermelha ao frango grelhado, passando pelo amiwo e pelo tchoukoutou (cerveja de milho-miúdo), a cozinha beninense reflete a diversidade cultural do país. Os mercados coloridos transbordam de produtos frescos: inhame, mandioca, milho, malaguetas, peixe do lago. Os molhos, verdadeiras assinaturas das cozinheiras, podem cozinhar durante horas. Não perca o akassa (massa de milho fermentada), o wô ou o atchomon.",
+        "traditions": [
+          "Pâte vermelha",
+          "Frango grelhado",
+          "Amiwo",
+          "Tchoukoutou",
+          "Akassa"
+        ]
+      },
+      {
+        "title": "O Artesanato",
+        "subtitle": "Saber-fazer ancestral",
+        "longDescription": "Os artesãos beninenses distinguem-se no trabalho do bronze, na olaria, na tecelagem e na escultura em madeira. Os fundidores usam a técnica da cera perdida, herdada dos antigos reinos. Os appliqués de Abomey, tapeçarias reais que contam a história do reino do Daomé, são mundialmente reconhecidos. Cada objeto conta uma história, transmite uma mensagem, perpetua uma tradição.",
+        "traditions": [
+          "Bronze de cera perdida",
+          "Appliqués de Abomey",
+          "Olaria",
+          "Tecelagem do Norte"
+        ]
+      },
+      {
+        "title": "Música & Dança",
+        "subtitle": "O ritmo no sangue",
+        "longDescription": "A música beninense é um caleidoscópio de ritmos e tradições. Cada região desenvolveu a sua própria linguagem musical, os seus instrumentos e as suas danças. Os tambores estão no centro da vida social e espiritual, e o tambor falante reproduz as entoações da língua fon. Hoje, artistas como Angélique Kidjo fazem brilhar a música beninense no mundo inteiro.",
+        "traditions": [
+          "Zinli",
+          "Tchinkounmè",
+          "Agbadja moderno",
+          "Tambores falantes"
+        ]
+      },
+      {
+        "title": "Festas Tradicionais",
+        "subtitle": "Celebrações ancestrais",
+        "longDescription": "O calendário beninense é marcado por numerosas festas tradicionais que celebram as colheitas, honram as divindades ou comemoram acontecimentos históricos. Cada celebração é única e mobiliza toda a comunidade. Os visitantes são muitas vezes convidados a participar, num ambiente de partilha e convívio inigualável.",
+        "traditions": [
+          "Festa do inhame",
+          "Nonvitcha",
+          "Saída do convento",
+          "Festa do Vodum"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "title": "Festa do Vodum",
+        "date": "10 de janeiro",
+        "location": "Ouidah",
+        "category": "Religião"
+      },
+      {
+        "title": "Festival das Máscaras Gèlèdè",
+        "date": "Março",
+        "location": "Ketou",
+        "category": "Dança"
+      },
+      {
+        "title": "Festa do Inhame",
+        "date": "Agosto",
+        "location": "Savalou",
+        "category": "Tradição"
+      },
+      {
+        "title": "Festival de Jazz de Ouidah",
+        "date": "Setembro",
+        "location": "Ouidah",
+        "category": "Música"
+      }
+    ],
+    "testimonials": [
+      {
+        "role": "Guia cultural",
+        "content": "Participar nas cerimónias vodum foi uma experiência transformadora. A força dos tambores, a energia dos dançarinos, o fervor dos fiéis: é uma imersão total numa espiritualidade viva."
+      },
+      {
+        "role": "Etnóloga",
+        "content": "Os appliqués de Abomey são obras-primas que contam a história do Daomé. Cada motivo tem um significado preciso. É fascinante ver estes artesãos perpetuarem um saber-fazer secular."
+      },
+      {
+        "role": "Chef de cozinha",
+        "content": "A cozinha beninense é uma descoberta a cada garfada. Os molhos são complexos, as especiarias perfeitamente doseadas. Fiz aulas de culinária em Cotonou, uma experiência inesquecível!"
+      }
+    ]
+  }
+}

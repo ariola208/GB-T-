@@ -1,0 +1,71 @@
+{
+  "profile": {
+    "loading": "Chargement du profil...",
+    "error_title": "Impossible de charger votre profil",
+    "error_text": "Le serveur ne répond pas ou a renvoyé une erreur. Vérifiez que le backend est lancé (port 5000), puis réessayez.",
+    "retry": "Réessayer",
+    "login_again": "Se reconnecter",
+    "not_set": "Non renseigné",
+    "member_since": "Membre depuis",
+    "edit": "Modifier",
+    "logout": "Déconnexion",
+    "logged_out_title": "Déconnecté",
+    "logged_out_desc": "À bientôt !",
+    "stats": {
+      "trips": "Voyages",
+      "reviews": "Avis",
+      "favorites": "Favoris",
+      "points": "Points"
+    },
+    "tabs": {
+      "trips": "Voyages",
+      "favorites": "Favoris",
+      "reviews": "Avis",
+      "profile": "Profil"
+    },
+    "status": {
+      "upcoming": "À venir",
+      "confirmed": "Confirmé",
+      "completed": "Terminé",
+      "cancelled": "Annulé"
+    },
+    "no_trips": "Aucun voyage pour le moment",
+    "explore": "Explorer",
+    "travelers": "{{count}} voyageur(s)",
+    "manage": "Gérer la réservation",
+    "no_favorites": "Aucun favori",
+    "discover": "Découvrir",
+    "details": "Voir détails",
+    "no_reviews": "Pas encore d'avis",
+    "personal_info": "Informations personnelles",
+    "name": "Nom complet",
+    "email": "Email",
+    "phone": "Téléphone",
+    "location": "Localisation",
+    "bio": "Bio",
+    "no_bio": "Aucune bio",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "security": "Sécurité",
+    "change_password": "Changer le mot de passe",
+    "current_password": "Mot de passe actuel",
+    "new_password": "Nouveau mot de passe",
+    "confirm_password": "Confirmer",
+    "modify": "Modifier",
+    "help_title": "Besoin d'aide ?",
+    "help_text": "Notre équipe est disponible 24/7.",
+    "contact_support": "Contacter le support",
+    "pw_mismatch": "Les mots de passe ne correspondent pas",
+    "pw_short": "Le mot de passe doit contenir au moins 8 caractères",
+    "server_error": "Erreur serveur",
+    "toast": {
+      "success": "Succès",
+      "error": "Erreur",
+      "updated": "Profil mis à jour",
+      "update_failed": "Impossible de mettre à jour",
+      "pw_changed": "Mot de passe modifié",
+      "fav_removed": "Retiré des favoris",
+      "fav_failed": "Impossible de retirer"
+    }
+  }
+}

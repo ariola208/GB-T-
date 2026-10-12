@@ -12,7 +12,7 @@ if (!process.env.JWT_SECRET) {
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const origins = (process.env.CORS_ORIGINS || '').split(',').filter(Boolean);
+const origins = (process.env.CORS_ORIGINS || 'http://localhost:8080,http://localhost:5173').split(',').filter(Boolean);
 
 app.use(cors({ origin: origins, credentials: true }));
 app.use(express.json());

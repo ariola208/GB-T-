@@ -1,0 +1,71 @@
+{
+  "profile": {
+    "loading": "Loading profile...",
+    "error_title": "Unable to load your profile",
+    "error_text": "The server is not responding or returned an error. Check that the backend is running (port 5000), then try again.",
+    "retry": "Try again",
+    "login_again": "Log in again",
+    "not_set": "Not set",
+    "member_since": "Member since",
+    "edit": "Edit",
+    "logout": "Log out",
+    "logged_out_title": "Logged out",
+    "logged_out_desc": "See you soon!",
+    "stats": {
+      "trips": "Trips",
+      "reviews": "Reviews",
+      "favorites": "Favorites",
+      "points": "Points"
+    },
+    "tabs": {
+      "trips": "Trips",
+      "favorites": "Favorites",
+      "reviews": "Reviews",
+      "profile": "Profile"
+    },
+    "status": {
+      "upcoming": "Upcoming",
+      "confirmed": "Confirmed",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "no_trips": "No trips yet",
+    "explore": "Explore",
+    "travelers": "{{count}} traveler(s)",
+    "manage": "Manage booking",
+    "no_favorites": "No favorites",
+    "discover": "Discover",
+    "details": "View details",
+    "no_reviews": "No reviews yet",
+    "personal_info": "Personal information",
+    "name": "Full name",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "bio": "Bio",
+    "no_bio": "No bio",
+    "save": "Save",
+    "cancel": "Cancel",
+    "security": "Security",
+    "change_password": "Change password",
+    "current_password": "Current password",
+    "new_password": "New password",
+    "confirm_password": "Confirm",
+    "modify": "Update",
+    "help_title": "Need help?",
+    "help_text": "Our team is available 24/7.",
+    "contact_support": "Contact support",
+    "pw_mismatch": "Passwords do not match",
+    "pw_short": "Password must be at least 8 characters",
+    "server_error": "Server error",
+    "toast": {
+      "success": "Success",
+      "error": "Error",
+      "updated": "Profile updated",
+      "update_failed": "Unable to update",
+      "pw_changed": "Password changed",
+      "fav_removed": "Removed from favorites",
+      "fav_failed": "Unable to remove"
+    }
+  }
+}

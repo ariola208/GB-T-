@@ -1,57 +1,63 @@
-import { useEffect, useRef, useState } from "react";
-import { Globe } from "lucide-react";
+import { Check, ChevronDown, Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { LANGUAGES } from "@/i18n";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const LanguageSwitcher = () => {
   const { i18n, t } = useTranslation();
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const onClick = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    };
-    document.addEventListener("mousedown", onClick);
-    return () => document.removeEventListener("mousedown", onClick);
-  }, []);
-
-  const current = LANGUAGES.find((l) => i18n.language?.startsWith(l.code)) || LANGUAGES[0];
+  const code = (i18n.resolvedLanguage || i18n.language || "fr").split("-")[0];
+  const current = LANGUAGES.find((l) => l.code === code) || LANGUAGES[0];
 
   return (
-    <div ref={ref} className="relative">
-      <button
-        type="button"
-        onClick={() => setOpen(!open)}
+    <DropdownMenu>
+      <DropdownMenuTrigger
         aria-label={t("common.language")}
-        aria-expanded={open}
-        className="h-9 px-3 inline-flex items-center gap-2 border border-border text-xs uppercase tracking-widest hover:bg-foreground hover:text-background transition-colors duration-300"
+        className="group inline-flex h-9 items-center gap-1.5 rounded-full border [border-color:color-mix(in_srgb,currentColor_25%,transparent)] px-2.5 text-xs font-medium uppercase tracking-wider outline-none transition hover:[border-color:color-mix(in_srgb,currentColor_55%,transparent)] hover:[background:color-mix(in_srgb,currentColor_12%,transparent)]"
       >
-        <Globe className="w-4 h-4" />
-        {current.code}
-      </button>
-      {open && (
-        <ul className="absolute right-0 mt-2 w-48 bg-background border border-border shadow-dramatic z-50">
-          {LANGUAGES.map((l) => (
-            <li key={l.code}>
-              <button
-                type="button"
-                onClick={() => {
-                  i18n.changeLanguage(l.code);
-                  setOpen(false);
-                }}
-                className={`w-full text-left px-4 py-2 text-sm flex justify-between items-center hover:bg-foreground hover:text-background transition-colors ${
-                  current.code === l.code ? "font-bold" : ""
-                }`}
-              >
-                <span>{l.label}</span>
-                {!l.complete && <span className="text-[10px] opacity-60">{t("common.translation_partial")}</span>}
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+        <Globe className="h-4 w-4 transition-transform duration-500 group-hover:rotate-[20deg]" />
+        <span className="text-base leading-none">{current.flag}</span>
+        <span className="hidden sm:inline">{current.code}</span>
+        <ChevronDown className="h-3 w-3 opacity-60 transition-transform group-data-[state=open]:rotate-180" />
+      </DropdownMenuTrigger>
+
+      <DropdownMenuContent align="end" className="w-60 rounded-2xl p-2">
+        <DropdownMenuLabel className="flex items-center gap-2 px-2 pb-1 text-xs uppercase tracking-widest text-muted-foreground">
+          <Globe className="h-3.5 w-3.5" />
+          {t("common.language")}
+        </DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        {LANGUAGES.map((l) => {
+          const active = l.code === current.code;
+          return (
+            <DropdownMenuItem
+              key={l.code}
+              onClick={() => i18n.changeLanguage(l.code)}
+              className={`flex cursor-pointer items-center gap-3 rounded-xl px-3 py-2.5 ${
+                active ? "bg-muted font-semibold" : ""
+              }`}
+            >
+              <span className="text-xl leading-none">{l.flag}</span>
+              <span className="flex-1">
+                {l.label}
+                {!l.complete && (
+                  <span className="ml-2 rounded-full border border-border px-1.5 py-0.5 text-[9px] font-normal uppercase tracking-wide text-muted-foreground">
+                    {t("common.translation_partial")}
+                  </span>
+                )}
+              </span>
+              {active && <Check className="h-4 w-4" />}
+            </DropdownMenuItem>
+          );
+        })}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 

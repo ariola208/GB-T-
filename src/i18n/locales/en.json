@@ -11,7 +11,10 @@
     "contact": "Contact",
     "login": "Log in",
     "logout": "Log out",
-    "profile": "My profile"
+    "profile": "My profile",
+    "soul": "Soul of Benin",
+    "planner": "Plan your trip",
+    "ame": "Soul of Benin"
   },
   "common": {
     "language": "Language",
@@ -20,5 +23,317 @@
     "listen": "Listen",
     "loading": "Loading...",
     "translation_partial": "Translation in progress"
+  },
+  "soul": {
+    "hero_badge": "Living culture",
+    "hero_title": "Soul of Benin",
+    "hero_subtitle": "History, languages and stories: discover Benin through the people who keep it alive.",
+    "hero_note": "Content is being reviewed with historians and speakers. Unvalidated items are flagged.",
+    "anchors": {
+      "heritage": "Heritage",
+      "languages": "Languages",
+      "stories": "Stories"
+    },
+    "heritage": {
+      "badge": "Heritage retold",
+      "title": "Three places, three memories",
+      "intro": "Choose a site and browse its timeline.",
+      "timeline": "Timeline",
+      "sources": "Sources",
+      "tabs": {
+        "abomey": "Abomey",
+        "ouidah": "Ouidah",
+        "portonovo": "Porto-Novo"
+      },
+      "sites": {
+        "abomey": {
+          "intro": "Capital of the Kingdom of Dahomey, Abomey preserves the palaces of its kings, listed as a UNESCO World Heritage Site.",
+          "source": "UNESCO (Royal Palaces of Abomey); Historical Museum of Abomey. To be completed with academic sources.",
+          "events": [
+            {
+              "year": "17th century",
+              "title": "Birth of the kingdom",
+              "text": "The Kingdom of Dahomey took shape around Abomey. King Houégbadja is often associated with this founding period."
+            },
+            {
+              "year": "1724–1727",
+              "title": "Opening to the coast",
+              "text": "Under King Agadja, Dahomey conquered Allada and then Ouidah, gaining direct access to Atlantic trade."
+            },
+            {
+              "year": "1818–1858",
+              "title": "The reign of Ghézo",
+              "text": "Ghézo consolidated the state and the army. His reign is one of the most powerful in the kingdom's history."
+            },
+            {
+              "year": "1892–1894",
+              "title": "The Franco-Dahomean wars",
+              "text": "King Béhanzin resisted the French colonial army. He surrendered in 1894 and was exiled to Martinique."
+            },
+            {
+              "year": "1985",
+              "title": "UNESCO listing",
+              "text": "The Royal Palaces of Abomey were inscribed on the World Heritage List."
+            },
+            {
+              "year": "2021",
+              "title": "Return of royal treasures",
+              "text": "France returned 26 works to Benin that had been taken in the 1892 looting."
+            }
+          ]
+        },
+        "ouidah": {
+          "intro": "Once a major port of the Atlantic slave trade, Ouidah is now a place of remembrance and the city of Vodun.",
+          "source": "UNESCO (The Slave Route project); history books on the Atlantic slave trade. To be completed.",
+          "events": [
+            {
+              "year": "1721",
+              "title": "The Portuguese fort",
+              "text": "The São João Baptista de Ajudá fort was established in Ouidah. It now houses a history museum."
+            },
+            {
+              "year": "1727",
+              "title": "Conquest by Dahomey",
+              "text": "Ouidah, in the Hueda kingdom, was conquered by Dahomey under King Agadja."
+            },
+            {
+              "year": "1992–1993",
+              "title": "Ouidah 92",
+              "text": "First major festival devoted to Vodun cultures and religions."
+            },
+            {
+              "year": "1994",
+              "title": "The Slave Route",
+              "text": "UNESCO's \"The Slave Route\" project was launched in Ouidah."
+            },
+            {
+              "year": "1995",
+              "title": "The Door of No Return",
+              "text": "The monument was inaugurated at the end of the route taken by captives to the beach."
+            },
+            {
+              "year": "1996",
+              "title": "10 January",
+              "text": "The national Vodun festival was established in Benin."
+            }
+          ]
+        },
+        "portonovo": {
+          "intro": "Official capital of Benin, Porto-Novo is known for its museums and Afro-Brazilian heritage.",
+          "source": "Honmè Museum; Da Silva Museum; Alexandre Sènou Adandé Ethnographic Museum. To be completed.",
+          "events": [
+            {
+              "year": "16th–17th century",
+              "title": "Hogbonou",
+              "text": "The city developed under the name Hogbonou, then the Portuguese called it Porto-Novo."
+            },
+            {
+              "year": "1863",
+              "title": "The French protectorate",
+              "text": "King Sodji signed a protectorate treaty with France."
+            },
+            {
+              "year": "1900",
+              "title": "Capital of colonial Dahomey",
+              "text": "Porto-Novo became the capital of the Dahomey colony."
+            },
+            {
+              "year": "1960",
+              "title": "Independence",
+              "text": "Dahomey became independent on 1 August. Porto-Novo remains the official capital, while Cotonou hosts the seat of government."
+            }
+          ]
+        }
+      },
+      "media": {
+        "title": "Resources coming soon",
+        "intro": "This content is being prepared with local partners.",
+        "status": "Coming soon",
+        "items": [
+          {
+            "title": "Photographs",
+            "text": "Royalty-free images of the sites, with credits."
+          },
+          {
+            "title": "Testimonies",
+            "text": "Voices of guides, craftspeople and keepers of memory."
+          },
+          {
+            "title": "Maps",
+            "text": "Maps of historic routes and places of remembrance."
+          },
+          {
+            "title": "Audio",
+            "text": "Recordings of stories and songs, with the consent of the people concerned."
+          }
+        ]
+      }
+    },
+    "languages": {
+      "badge": "Languages",
+      "title": "A few words to get started",
+      "intro": "Greetings and useful phrases in Benin's languages.",
+      "banner": "\"Draft\" translations must be validated by a native speaker. Only those marked \"validated\" are guaranteed.",
+      "names": {
+        "fon": "Fon",
+        "yoruba": "Yoruba"
+      },
+      "all": "All",
+      "categories": {
+        "greetings": "Greetings",
+        "politeness": "Politeness",
+        "market": "Market"
+      },
+      "search": "Search a phrase…",
+      "validated_count": "{{ok}}/{{total}} validated",
+      "validated": "Validated",
+      "draft": "Draft",
+      "pending": "Coming soon",
+      "pron": "Pronunciation",
+      "pron_pending": "coming soon",
+      "audio_soon": "Audio coming soon",
+      "context": "Context",
+      "copy": "Copy",
+      "none": "No phrase found."
+    },
+    "stories": {
+      "badge": "Stories",
+      "title": "Stories to read and understand",
+      "intro": "Five entries to better understand what you will see on site.",
+      "review": "This story touches on living religious practices. It is being reviewed with practitioners and specialists.",
+      "respect_title": "Visit respectfully",
+      "respect": [
+        "Always ask permission before photographing or filming a ceremony or a person.",
+        "Follow the instructions of guides and site managers.",
+        "Do not touch sacred objects or enter restricted areas.",
+        "A contribution or gift is often expected: ask your guide."
+      ],
+      "cards": [
+        {
+          "title": "Béhanzin",
+          "summary": "The last sovereign king of Dahomey.",
+          "chapters": [
+            {
+              "title": "The king",
+              "text": "Béhanzin reigned from 1889 to 1894, when France was extending its hold on the coast."
+            },
+            {
+              "title": "Resistance",
+              "text": "Between 1892 and 1894, his army fought French colonial troops in the Franco-Dahomean wars."
+            },
+            {
+              "title": "Exile",
+              "text": "Defeated, he was deported to Martinique, then to Algeria, where he died in 1906."
+            }
+          ]
+        },
+        {
+          "title": "The Abomey appliqués",
+          "summary": "Fabrics that tell the story of the kings.",
+          "chapters": [
+            {
+              "title": "A court art",
+              "text": "Appliqués are cloths decorated with cut-out motifs sewn on, telling key episodes of the reigns."
+            },
+            {
+              "title": "The emblems",
+              "text": "Each king is associated with an animal: the buffalo for Ghézo, the lion for Glèlè, the shark for Béhanzin."
+            },
+            {
+              "title": "Today",
+              "text": "Craftspeople in Abomey keep this art alive and offer pieces to visitors."
+            }
+          ]
+        },
+        {
+          "title": "10 January",
+          "summary": "The national Vodun day.",
+          "chapters": [
+            {
+              "title": "A national holiday",
+              "text": "Established in 1996, it recognises Vodun as part of the country's cultural and spiritual heritage."
+            },
+            {
+              "title": "Ouidah on that day",
+              "text": "The town hosts ceremonies, dances and processions, bringing together practitioners and visitors."
+            },
+            {
+              "title": "Attending",
+              "text": "Ceremonies are not a show: find out about the rules to respect."
+            }
+          ]
+        },
+        {
+          "title": "Blacksmiths and founders",
+          "summary": "Metalworking, an ancient skill.",
+          "chapters": [
+            {
+              "title": "The craft",
+              "text": "In Abomey, craftspeople cast brass and bronze using the lost-wax method to make figures."
+            },
+            {
+              "title": "Gu (Ogou)",
+              "text": "In the Vodun tradition, iron and the forge are associated with the deity Gu, also called Ogou."
+            },
+            {
+              "title": "Meeting the craftspeople",
+              "text": "Visiting a workshop helps you understand the steps of the work and directly supports the craftspeople."
+            }
+          ]
+        },
+        {
+          "title": "Vodun, a living religion",
+          "summary": "Beyond the clichés.",
+          "chapters": [
+            {
+              "title": "What it is",
+              "text": "Vodun is a set of beliefs and practices originating in the region. It is practised by many Beninese people."
+            },
+            {
+              "title": "What it is not",
+              "text": "It is not reduced to the \"black magic\" or \"voodoo\" of films, which are caricatures."
+            },
+            {
+              "title": "In practice",
+              "text": "To attend a ceremony, go through a local guide and follow the instructions."
+            }
+          ]
+        }
+      ]
+    },
+    "contribute": {
+      "title": "Do you know this subject?",
+      "text": "Historians, speakers, craftspeople: help us correct and complete this content.",
+      "message": "Hello, I would like to contribute to the \"Soul of Benin\" page.",
+      "button": "Contribute on WhatsApp"
+    }
+  },
+  "planner": {
+    "title": "Plan my trip",
+    "subtitle": "Drag places into your days: distances, times and budget are calculated for you.",
+    "reset": "Clear all",
+    "demo_note": "Demo data: approximate places and coordinates, estimated prices (FCFA per person), travel times calculated in a straight line with a road factor.",
+    "all": "All",
+    "night": "1 night",
+    "add_to_day": "Add to day {{n}}",
+    "day": "Day {{n}}",
+    "activities": "activity(ies)",
+    "night_short": "night",
+    "drop_here": "Drop a place here",
+    "on_site": "On site",
+    "travel": "travel",
+    "free": "free",
+    "budget": "Estimated budget (per person)",
+    "estimate": "Estimate, not a contractual price.",
+    "versions": "Three versions of the trip:",
+    "relief": "3D relief",
+    "relief_on": "3D relief: on",
+    "quote": "Request a quote",
+    "copied": "Link copied",
+    "copy_link": "Copy link",
+    "w_too_many": "Busy day: {{n}} activities. Consider moving \"{{name}}\" to the next day.",
+    "w_too_long": "A {{h}} programme for a {{max}} day: too busy.",
+    "w_no_meal": "Less than 1h30 left for meals and breaks.",
+    "w_long_leg": "Long journey (~{{h}}) between \"{{from}}\" and \"{{to}}\"."
   }
 }

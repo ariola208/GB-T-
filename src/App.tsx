@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { lazy, Suspense } from "react";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const Index = lazy(() => import("./pages/Index"));
 const Destinations = lazy(() => import("./pages/Destinations"));
@@ -16,6 +17,8 @@ const Services = lazy(() => import("./pages/Services"));
 const Blog = lazy(() => import("./pages/Blog"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const Faq = lazy(() => import("./pages/Faq"));
+const Soul = lazy(() => import("./pages/Soul"));
+const Planner = lazy(() => import("./pages/Planner"));
 const Login = lazy(() => import("./pages/Login"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -41,6 +44,8 @@ const routes = [
   { path: "/gallery", element: Gallery },
   { path: "/faq", element: Faq },
   { path: "/login", element: Login },
+  { path: "/ame-du-benin", element: Soul },
+  { path: "/planifier", element: Planner },
   { path: "*", element: NotFound },
 ];
 
@@ -49,6 +54,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <FloatingWhatsApp />
       <BrowserRouter>
         <Suspense fallback={<LoadingSpinner size="lg" fullScreen />}>
           <Routes>

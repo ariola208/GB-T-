@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "more": "More",
+    "search": "Search",
+    "search_placeholder": "Go to a page...",
+    "no_result": "No results",
+    "my_account": "My account",
+    "my_trips": "My trips",
+    "favorites": "My favorites"
+  },
+  "home": {
+    "why_title": "Why travel with us?",
+    "why_subtitle": "A local team, safe tours and experiences designed for you.",
+    "experts_title": "Local experts",
+    "experts_desc": "Passionate guides who know every corner of Benin.",
+    "safe_title": "Safe travel",
+    "safe_desc": "Vetted partners, 24/7 assistance and insurance included.",
+    "custom_title": "Tailor-made",
+    "custom_desc": "Every itinerary is adapted to your wishes and your budget."
+  }
+}

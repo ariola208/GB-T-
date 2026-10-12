@@ -1,19 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
-  Plane,
-  Hotel,
-  Car,
-  Users,
-  Camera,
-  Utensils,
-  Shield,
-  Headphones,
-  Map,
-  Calendar,
-  CreditCard,
-  ChevronRight,
-  Check,
+  Plane, Hotel, Users, Camera, Utensils, Shield, Headphones, Map,
+  Calendar, CreditCard, ChevronRight, Check,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -23,246 +13,158 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
-const services = [
-  {
-    icon: Plane,
-    title: "Vols & Transport",
-    description: "Réservation de vols internationaux et transport local avec chauffeurs privés.",
-    features: ["Vols directs", "Transferts aéroport", "Véhicules climatisés"],
-    price: "À partir de 50€",
-    popular: true,
-  },
-  {
-    icon: Hotel,
-    title: "Hébergement",
-    description: "Sélection d'hôtels, lodges et hébergements traditionnels de qualité.",
-    features: ["Hôtels 3-5 étoiles", "Lodges écologiques", "Chez l'habitant"],
-    price: "À partir de 30€/nuit",
-  },
-  {
-    icon: Map,
-    title: "Guides Locaux",
-    description: "Guides francophones passionnés pour des visites authentiques.",
-    features: ["Guides certifiés", "Visites personnalisées", "Toutes les régions"],
-    price: "À partir de 40€/jour",
-    popular: true,
-  },
-  {
-    icon: Users,
-    title: "Voyages en Groupe",
-    description: "Circuits organisés pour groupes, associations et entreprises.",
-    features: ["Tarifs dégressifs", "Programme sur mesure", "Accompagnateur dédié"],
-    price: "Sur devis",
-  },
-  {
-    icon: Camera,
-    title: "Tours Photo",
-    description: "Excursions photo avec photographes professionnels locaux.",
-    features: ["Coaching photo", "Meilleurs spots", "Matériel disponible"],
-    price: "À partir de 60€",
-  },
-  {
-    icon: Utensils,
-    title: "Expériences Culinaires",
-    description: "Cours de cuisine, dégustations et repas chez l'habitant.",
-    features: ["Cours de cuisine", "Marchés locaux", "Repas traditionnels"],
-    price: "À partir de 25€",
-  },
-];
+type Item = { title: string; description: string; features: string[]; price: string };
+type Pack = { name: string; price: string; duration: string; features: string[] };
+type Guarantee = { title: string; desc: string };
 
-const packages = [
-  {
-    name: "Essentiel",
-    price: "499€",
-    duration: "5 jours",
-    features: [
-      "Hébergement 3*",
-      "Petit-déjeuner inclus",
-      "Guide local 2 jours",
-      "Transferts aéroport",
-      "Assurance voyage",
-    ],
-  },
-  {
-    name: "Confort",
-    price: "899€",
-    duration: "7 jours",
-    features: [
-      "Hébergement 4*",
-      "Pension complète",
-      "Guide privé 4 jours",
-      "Transferts inclus",
-      "Assurance premium",
-      "Activités incluses",
-    ],
-    recommended: true,
-  },
-  {
-    name: "Luxe",
-    price: "1499€",
-    duration: "10 jours",
-    features: [
-      "Hébergement 5* / Lodge",
-      "Pension complète",
-      "Guide privé tout le séjour",
-      "Véhicule privé",
-      "Assurance tous risques",
-      "Toutes activités incluses",
-      "Spa & Bien-être",
-    ],
-  },
-];
+const serviceIcons = [Plane, Hotel, Map, Users, Camera, Utensils];
+const popularIdx = [0, 2];
+const guaranteeIcons = [Shield, Headphones, CreditCard, Users];
+
+const asArray = <T,>(v: unknown): T[] => (Array.isArray(v) ? (v as T[]) : []);
 
 const Services = () => {
+  const { t } = useTranslation();
+  const items = asArray<Item>(t("services.items", { returnObjects: true }));
+  const packages = asArray<Pack>(t("services.packages", { returnObjects: true }));
+  const guarantees = asArray<Guarantee>(t("services.guarantees", { returnObjects: true }));
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col">
       <Navbar />
-      <main className="flex-1 pt-20">
+      <main className="flex-1 pt-24">
         <PageHeader
-          subtitle="Nos Services"
-          title="Des prestations sur mesure"
-          description="De la réservation de vols aux excursions personnalisées, nous nous occupons de tout pour vous offrir un voyage inoubliable au Bénin."
+          subtitle={t("services.subtitle")}
+          title={t("services.title")}
+          description={t("services.description")}
           variant="centered"
         />
 
-        {/* Services Grid */}
-        <section className="py-16 bg-muted/30">
+        <section className="bg-muted/30 py-16">
           <div className="container mx-auto px-6">
             <motion.div
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
             >
-              {services.map((service, i) => (
-                <motion.div key={i} variants={fadeInUp}>
-                  <Card className="relative h-full hover:shadow-lg transition-shadow">
-                    {service.popular && (
-                      <Badge className="absolute -top-3 left-4 bg-primary">
-                        Populaire
-                      </Badge>
-                    )}
-                    <CardHeader>
-                      <div className="p-3 bg-primary/10 rounded-lg inline-block mb-4">
-                        <service.icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <CardTitle className="flex items-center justify-between">
-                        {service.title}
-                        <span className="text-sm font-normal text-primary">
-                          {service.price}
-                        </span>
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground mb-4">
-                        {service.description}
-                      </p>
-                      <ul className="space-y-2">
-                        {service.features.map((feature, j) => (
-                          <li key={j} className="flex items-center gap-2 text-sm">
-                            <Check className="w-4 h-4 text-green-500" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                      <Button variant="link" className="mt-4 p-0" asChild>
-                        <Link to="/contact" className="flex items-center gap-1">
-                          Réserver
-                          <ChevronRight className="w-4 h-4" />
-                        </Link>
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
+              {items.map((service, i) => {
+                const Icon = serviceIcons[i] ?? Plane;
+                return (
+                  <motion.div key={i} variants={fadeInUp}>
+                    <Card className="relative h-full">
+                      {popularIdx.includes(i) && (
+                        <Badge className="absolute -top-3 left-4">{t("services.popular")}</Badge>
+                      )}
+                      <CardHeader>
+                        <div className="mb-4 inline-block rounded-lg bg-foreground/5 p-3">
+                          <Icon className="h-6 w-6" />
+                        </div>
+                        <CardTitle className="flex items-center justify-between gap-2">
+                          {service.title}
+                          <span className="text-sm font-normal text-muted-foreground">{service.price}</span>
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="mb-4 text-muted-foreground">{service.description}</p>
+                        <ul className="space-y-2">
+                          {service.features.map((f, j) => (
+                            <li key={j} className="flex items-center gap-2 text-sm">
+                              <Check className="h-4 w-4" />
+                              {f}
+                            </li>
+                          ))}
+                        </ul>
+                        <Button variant="link" className="mt-4 p-0" asChild>
+                          <Link to="/contact" className="flex items-center gap-1">
+                            {t("services.book")}
+                            <ChevronRight className="h-4 w-4" />
+                          </Link>
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                );
+              })}
             </motion.div>
           </div>
         </section>
 
-        {/* Packages */}
         <section className="py-20">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="mb-12 text-center"
             >
-              <h2 className="font-heading text-4xl font-bold mb-4">
-                Nos forfaits tout compris
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Choisissez le forfait qui correspond le mieux à vos envies et votre budget
-              </p>
+              <h2 className="mb-4 font-heading text-4xl font-bold">{t("services.packages_title")}</h2>
+              <p className="mx-auto max-w-2xl text-muted-foreground">{t("services.packages_text")}</p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {packages.map((pkg, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                >
-                  <Card className={`relative h-full ${pkg.recommended ? "border-primary shadow-lg" : ""}`}>
-                    {pkg.recommended && (
-                      <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary">
-                        Recommandé
-                      </Badge>
-                    )}
-                    <CardHeader className="text-center">
-                      <CardTitle className="text-2xl">{pkg.name}</CardTitle>
-                      <div className="mt-4">
-                        <span className="font-heading text-4xl font-bold">{pkg.price}</span>
-                        <span className="text-muted-foreground"> / personne</span>
-                      </div>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        <Calendar className="w-4 h-4 inline mr-1" />
-                        {pkg.duration}
-                      </p>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="space-y-3 mb-6">
-                        {pkg.features.map((feature, j) => (
-                          <li key={j} className="flex items-center gap-2">
-                            <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
-                            <span className="text-sm">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <Button className="w-full" variant={pkg.recommended ? "default" : "outline"} asChild>
-                        <Link to="/contact">
-                          Choisir ce forfait
-                        </Link>
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              {packages.map((pkg, i) => {
+                const recommended = i === 1;
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <Card className={`relative h-full ${recommended ? "border-2 border-foreground shadow-dramatic" : ""}`}>
+                      {recommended && (
+                        <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">{t("services.recommended")}</Badge>
+                      )}
+                      <CardHeader className="text-center">
+                        <CardTitle className="text-2xl">{pkg.name}</CardTitle>
+                        <div className="mt-4">
+                          <span className="font-heading text-4xl font-bold">{pkg.price}</span>
+                          <span className="text-muted-foreground"> {t("services.per_person")}</span>
+                        </div>
+                        <p className="mt-1 text-sm text-muted-foreground">
+                          <Calendar className="mr-1 inline h-4 w-4" />
+                          {pkg.duration}
+                        </p>
+                      </CardHeader>
+                      <CardContent>
+                        <ul className="mb-6 space-y-3">
+                          {pkg.features.map((f, j) => (
+                            <li key={j} className="flex items-center gap-2">
+                              <Check className="h-4 w-4 flex-shrink-0" />
+                              <span className="text-sm">{f}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <Button className="w-full" variant={recommended ? "default" : "outline"} asChild>
+                          <Link to="/contact">{t("services.choose")}</Link>
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        {/* Garanties */}
-        <section className="py-16 bg-muted/30">
+        <section className="bg-muted/30 py-16">
           <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {[
-                { icon: Shield, title: "Paiement sécurisé", desc: "Transactions 100% sécurisées" },
-                { icon: Headphones, title: "Support 24/7", desc: "Assistance à tout moment" },
-                { icon: CreditCard, title: "Annulation flexible", desc: "Remboursement jusqu'à 30j" },
-                { icon: Users, title: "Experts locaux", desc: "Équipe passionnée et certifiée" },
-              ].map((item, i) => (
-                <div key={i} className="text-center">
-                  <div className="inline-flex p-4 bg-primary/10 rounded-full mb-4">
-                    <item.icon className="w-6 h-6 text-primary" />
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+              {guarantees.map((g, i) => {
+                const Icon = guaranteeIcons[i] ?? Shield;
+                return (
+                  <div key={i} className="text-center">
+                    <div className="mb-4 inline-flex rounded-full bg-foreground/5 p-4">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <h4 className="mb-2 font-bold">{g.title}</h4>
+                    <p className="text-sm text-muted-foreground">{g.desc}</p>
                   </div>
-                  <h4 className="font-bold mb-2">{item.title}</h4>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

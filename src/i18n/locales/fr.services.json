@@ -1,0 +1,135 @@
+{
+  "services": {
+    "subtitle": "Nos Services",
+    "title": "Des prestations sur mesure",
+    "description": "De la réservation de vols aux excursions personnalisées, nous nous occupons de tout pour vous offrir un voyage inoubliable au Bénin.",
+    "popular": "Populaire",
+    "recommended": "Recommandé",
+    "book": "Réserver",
+    "choose": "Choisir ce forfait",
+    "per_person": "/ personne",
+    "packages_title": "Nos forfaits tout compris",
+    "packages_text": "Choisissez le forfait qui correspond le mieux à vos envies et à votre budget",
+    "items": [
+      {
+        "title": "Vols & Transport",
+        "description": "Réservation de vols internationaux et transport local avec chauffeurs privés.",
+        "features": [
+          "Vols directs",
+          "Transferts aéroport",
+          "Véhicules climatisés"
+        ],
+        "price": "À partir de 50€"
+      },
+      {
+        "title": "Hébergement",
+        "description": "Sélection d'hôtels, lodges et hébergements traditionnels de qualité.",
+        "features": [
+          "Hôtels 3-5 étoiles",
+          "Lodges écologiques",
+          "Chez l'habitant"
+        ],
+        "price": "À partir de 30€/nuit"
+      },
+      {
+        "title": "Guides Locaux",
+        "description": "Guides francophones passionnés pour des visites authentiques.",
+        "features": [
+          "Guides certifiés",
+          "Visites personnalisées",
+          "Toutes les régions"
+        ],
+        "price": "À partir de 40€/jour"
+      },
+      {
+        "title": "Voyages en Groupe",
+        "description": "Circuits organisés pour groupes, associations et entreprises.",
+        "features": [
+          "Tarifs dégressifs",
+          "Programme sur mesure",
+          "Accompagnateur dédié"
+        ],
+        "price": "Sur devis"
+      },
+      {
+        "title": "Tours Photo",
+        "description": "Excursions photo avec photographes professionnels locaux.",
+        "features": [
+          "Coaching photo",
+          "Meilleurs spots",
+          "Matériel disponible"
+        ],
+        "price": "À partir de 60€"
+      },
+      {
+        "title": "Expériences Culinaires",
+        "description": "Cours de cuisine, dégustations et repas chez l'habitant.",
+        "features": [
+          "Cours de cuisine",
+          "Marchés locaux",
+          "Repas traditionnels"
+        ],
+        "price": "À partir de 25€"
+      }
+    ],
+    "packages": [
+      {
+        "name": "Essentiel",
+        "price": "499€",
+        "duration": "5 jours",
+        "features": [
+          "Hébergement 3*",
+          "Petit-déjeuner inclus",
+          "Guide local 2 jours",
+          "Transferts aéroport",
+          "Assurance voyage"
+        ]
+      },
+      {
+        "name": "Confort",
+        "price": "899€",
+        "duration": "7 jours",
+        "features": [
+          "Hébergement 4*",
+          "Pension complète",
+          "Guide privé 4 jours",
+          "Transferts inclus",
+          "Assurance premium",
+          "Activités incluses"
+        ]
+      },
+      {
+        "name": "Luxe",
+        "price": "1499€",
+        "duration": "10 jours",
+        "features": [
+          "Hébergement 5* / Lodge",
+          "Pension complète",
+          "Guide privé tout le séjour",
+          "Véhicule privé",
+          "Assurance tous risques",
+          "Toutes activités incluses",
+          "Spa & Bien-être"
+        ]
+      }
+    ],
+    "guarantees": [
+      {
+        "title": "Paiement sécurisé",
+        "desc": "Transactions 100% sécurisées"
+      },
+      {
+        "title": "Support 24/7",
+        "desc": "Assistance à tout moment"
+      },
+      {
+        "title": "Annulation flexible",
+        "desc": "Remboursement jusqu'à 30 jours"
+      },
+      {
+        "title": "Experts locaux",
+        "desc": "Équipe passionnée et certifiée"
+      }
+    ]
+  }
+}

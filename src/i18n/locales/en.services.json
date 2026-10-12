@@ -1,0 +1,135 @@
+{
+  "services": {
+    "subtitle": "Our Services",
+    "title": "Tailor-made services",
+    "description": "From flight booking to personalised excursions, we take care of everything to give you an unforgettable trip to Benin.",
+    "popular": "Popular",
+    "recommended": "Recommended",
+    "book": "Book",
+    "choose": "Choose this package",
+    "per_person": "/ person",
+    "packages_title": "Our all-inclusive packages",
+    "packages_text": "Choose the package that best matches your wishes and budget",
+    "items": [
+      {
+        "title": "Flights & Transport",
+        "description": "International flight booking and local transport with private drivers.",
+        "features": [
+          "Direct flights",
+          "Airport transfers",
+          "Air-conditioned vehicles"
+        ],
+        "price": "From €50"
+      },
+      {
+        "title": "Accommodation",
+        "description": "A selection of quality hotels, lodges and traditional stays.",
+        "features": [
+          "3-5 star hotels",
+          "Eco lodges",
+          "Homestays"
+        ],
+        "price": "From €30/night"
+      },
+      {
+        "title": "Local Guides",
+        "description": "Passionate French- and English-speaking guides for authentic visits.",
+        "features": [
+          "Certified guides",
+          "Personalised visits",
+          "All regions"
+        ],
+        "price": "From €40/day"
+      },
+      {
+        "title": "Group Travel",
+        "description": "Organised tours for groups, associations and companies.",
+        "features": [
+          "Volume discounts",
+          "Custom programme",
+          "Dedicated escort"
+        ],
+        "price": "On quote"
+      },
+      {
+        "title": "Photo Tours",
+        "description": "Photo excursions with professional local photographers.",
+        "features": [
+          "Photo coaching",
+          "Best spots",
+          "Equipment available"
+        ],
+        "price": "From €60"
+      },
+      {
+        "title": "Culinary Experiences",
+        "description": "Cooking classes, tastings and home-cooked meals with local families.",
+        "features": [
+          "Cooking classes",
+          "Local markets",
+          "Traditional meals"
+        ],
+        "price": "From €25"
+      }
+    ],
+    "packages": [
+      {
+        "name": "Essential",
+        "price": "€499",
+        "duration": "5 days",
+        "features": [
+          "3* accommodation",
+          "Breakfast included",
+          "Local guide 2 days",
+          "Airport transfers",
+          "Travel insurance"
+        ]
+      },
+      {
+        "name": "Comfort",
+        "price": "€899",
+        "duration": "7 days",
+        "features": [
+          "4* accommodation",
+          "Full board",
+          "Private guide 4 days",
+          "Transfers included",
+          "Premium insurance",
+          "Activities included"
+        ]
+      },
+      {
+        "name": "Luxury",
+        "price": "€1,499",
+        "duration": "10 days",
+        "features": [
+          "5* / Lodge accommodation",
+          "Full board",
+          "Private guide for the whole stay",
+          "Private vehicle",
+          "Comprehensive insurance",
+          "All activities included",
+          "Spa & Wellness"
+        ]
+      }
+    ],
+    "guarantees": [
+      {
+        "title": "Secure payment",
+        "desc": "100% secure transactions"
+      },
+      {
+        "title": "24/7 support",
+        "desc": "Assistance at any time"
+      },
+      {
+        "title": "Flexible cancellation",
+        "desc": "Refund up to 30 days before"
+      },
+      {
+        "title": "Local experts",
+        "desc": "Passionate and certified team"
+      }
+    ]
+  }
+}

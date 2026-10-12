@@ -1,312 +1,448 @@
-import { useState, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import {
-  User, Mail, Phone, MapPin, Calendar, Camera, LogOut, Settings,
-  Heart, Clock, Compass, Star, Award, Edit3, Save, X, Lock,
-  CheckCircle, XCircle, Trash2, AlertCircle
+  User, Mail, Phone, MapPin, Calendar, LogOut, Heart, Compass, Star, Award,
+  Edit3, Save, X, Lock, Trash2, AlertCircle, RefreshCw,
 } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
-import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
+import { Textarea } from "../components/ui/textarea";
+import { Avatar, AvatarFallback } from "../components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
 import { useToast } from "../hooks/use-toast";
 
-// Service API
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 
-const getAuthHeader = () => ({
-  'Authorization': `Bearer ${localStorage.getItem('token')}`,
-  'Content-Type': 'application/json'
+const authHeaders = () => ({
+  Authorization: `Bearer ${localStorage.getItem("token")}`,
+  "Content-Type": "application/json",
 });
 
+const statusStyle: Record<string, string> = {
+  upcoming: "bg-blue-500",
+  confirmed: "bg-green-500",
+  completed: "bg-gray-500",
+  cancelled: "bg-red-500",
+};
+
+const TAB_IDS = ["trips", "favorites", "reviews", "profile"];
+
 const Profile = () => {
-  const [profile, setProfile] = useState(null);
-  const [trips, setTrips] = useState([]);
-  const [favorites, setFavorites] = useState([]);
-  const [reviews, setReviews] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isEditing, setIsEditing] = useState(false);
-  const [editForm, setEditForm] = useState({ name: '', email: '', phone: '', location: '', bio: '' });
-  const [showPasswordModal, setShowPasswordModal] = useState(false);
-  const [passwordData, setPasswordData] = useState({ currentPassword: '', newPassword: '', confirmPassword: '' });
-  const [passwordError, setPasswordError] = useState('');
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { toast } = useToast();
 
-  // Charger les données
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      navigate('/login');
-      return;
-    }
-    loadProfile();
-  }, []);
+  const [state, setState] = useState<"loading" | "ready" | "error">("loading");
+  const [tab, setTab] = useState("trips");
+  const [profile, setProfile] = useState<any>(null);
+  const [trips, setTrips] = useState<any[]>([]);
+  const [favorites, setFavorites] = useState<any[]>([]);
+  const [reviews, setReviews] = useState<any[]>([]);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editForm, setEditForm] = useState({ name: "", email: "", phone: "", location: "", bio: "" });
+  const [showPassword, setShowPassword] = useState(false);
+  const [pw, setPw] = useState({ currentPassword: "", newPassword: "", confirmPassword: "" });
+  const [pwError, setPwError] = useState("");
 
-  const loadProfile = async () => {
-    setIsLoading(true);
-    try {
-      const [profileRes, tripsRes, favRes, reviewsRes] = await Promise.all([
-        fetch(`${API_URL}/profile/profile`, { headers: getAuthHeader() }),
-        fetch(`${API_URL}/profile/trips`, { headers: getAuthHeader() }),
-        fetch(`${API_URL}/profile/favorites`, { headers: getAuthHeader() }),
-        fetch(`${API_URL}/profile/reviews`, { headers: getAuthHeader() })
-      ]);
+  const fmtDate = (d: string) => new Date(d).toLocaleDateString(i18n.language);
 
-      if (profileRes.ok) setProfile(await profileRes.json());
-      if (tripsRes.ok) setTrips(await tripsRes.json());
-      if (favRes.ok) setFavorites(await favRes.json());
-      if (reviewsRes.ok) setReviews(await reviewsRes.json());
-    } catch (error) {
-      toast({ title: "Erreur", description: "Impossible de charger le profil", variant: "destructive" });
-    } finally {
-      setIsLoading(false);
-    }
+  const clearSession = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
   };
 
-  const handleUpdateProfile = async () => {
+  const load = useCallback(async () => {
+    if (!localStorage.getItem("token")) {
+      navigate("/login");
+      return;
+    }
+    setState("loading");
+    try {
+      const res = await fetch(`${API_URL}/profile/profile`, { headers: authHeaders() });
+      if (res.status === 401 || res.status === 403) {
+        clearSession();
+        navigate("/login");
+        return;
+      }
+      if (!res.ok) throw new Error(String(res.status));
+      setProfile(await res.json());
+      setState("ready");
+
+      // Les listes ne doivent jamais empêcher l'affichage du profil
+      const [tr, fv, rv] = await Promise.allSettled(
+        ["trips", "favorites", "reviews"].map((p) =>
+          fetch(`${API_URL}/profile/${p}`, { headers: authHeaders() }).then((r) => (r.ok ? r.json() : []))
+        )
+      );
+      setTrips(tr.status === "fulfilled" && Array.isArray(tr.value) ? tr.value : []);
+      setFavorites(fv.status === "fulfilled" && Array.isArray(fv.value) ? fv.value : []);
+      setReviews(rv.status === "fulfilled" && Array.isArray(rv.value) ? rv.value : []);
+    } catch {
+      setState("error");
+    }
+  }, [navigate]);
+
+  useEffect(() => {
+    load();
+  }, [load]);
+
+  const startEditing = () => {
+    setEditForm({
+      name: profile?.name || "",
+      email: profile?.email || "",
+      phone: profile?.phone || "",
+      location: profile?.location || "",
+      bio: profile?.bio || "",
+    });
+    setTab("profile");
+    setIsEditing(true);
+  };
+
+  const handleUpdate = async () => {
     try {
       const res = await fetch(`${API_URL}/profile/profile`, {
-        method: 'PUT',
-        headers: getAuthHeader(),
-        body: JSON.stringify(editForm)
+        method: "PUT",
+        headers: authHeaders(),
+        body: JSON.stringify(editForm),
       });
       if (res.ok) {
-        await loadProfile();
+        await load();
         setIsEditing(false);
-        toast({ title: "Succès", description: "Profil mis à jour" });
+        toast({ title: t("profile.toast.success"), description: t("profile.toast.updated") });
+      } else {
+        const data = await res.json().catch(() => ({}));
+        toast({ title: t("profile.toast.error"), description: data.error || t("profile.toast.update_failed"), variant: "destructive" });
       }
-    } catch (error) {
-      toast({ title: "Erreur", description: "Impossible de mettre à jour", variant: "destructive" });
+    } catch {
+      toast({ title: t("profile.toast.error"), description: t("profile.toast.update_failed"), variant: "destructive" });
     }
   };
 
   const handleChangePassword = async () => {
-    if (passwordData.newPassword !== passwordData.confirmPassword) {
-      setPasswordError('Les mots de passe ne correspondent pas');
-      return;
-    }
-    if (passwordData.newPassword.length < 6) {
-      setPasswordError('Le mot de passe doit contenir au moins 6 caractères');
-      return;
-    }
+    if (pw.newPassword !== pw.confirmPassword) return setPwError(t("profile.pw_mismatch"));
+    if (pw.newPassword.length < 8) return setPwError(t("profile.pw_short"));
     try {
       const res = await fetch(`${API_URL}/profile/change-password`, {
-        method: 'PUT',
-        headers: getAuthHeader(),
-        body: JSON.stringify({ currentPassword: passwordData.currentPassword, newPassword: passwordData.newPassword })
+        method: "PUT",
+        headers: authHeaders(),
+        body: JSON.stringify({ currentPassword: pw.currentPassword, newPassword: pw.newPassword }),
       });
       if (res.ok) {
-        setShowPasswordModal(false);
-        setPasswordData({ currentPassword: '', newPassword: '', confirmPassword: '' });
-        toast({ title: "Succès", description: "Mot de passe modifié" });
+        setShowPassword(false);
+        setPw({ currentPassword: "", newPassword: "", confirmPassword: "" });
+        setPwError("");
+        toast({ title: t("profile.toast.success"), description: t("profile.toast.pw_changed") });
       } else {
-        const error = await res.json();
-        setPasswordError(error.error);
+        const data = await res.json().catch(() => ({}));
+        setPwError(data.error || t("profile.server_error"));
       }
-    } catch (error) {
-      setPasswordError('Erreur serveur');
+    } catch {
+      setPwError(t("profile.server_error"));
     }
   };
 
-  const handleRemoveFavorite = async (destinationId) => {
+  const removeFavorite = async (id: number) => {
     try {
-      const res = await fetch(`${API_URL}/profile/favorites/${destinationId}`, {
-        method: 'DELETE',
-        headers: getAuthHeader()
-      });
+      const res = await fetch(`${API_URL}/profile/favorites/${id}`, { method: "DELETE", headers: authHeaders() });
       if (res.ok) {
-        setFavorites(favorites.filter(f => f.id !== destinationId));
-        toast({ title: "Succès", description: "Retiré des favoris" });
+        setFavorites((f) => f.filter((x) => x.id !== id));
+        toast({ title: t("profile.toast.success"), description: t("profile.toast.fav_removed") });
       }
-    } catch (error) {
-      toast({ title: "Erreur", description: "Impossible de retirer", variant: "destructive" });
+    } catch {
+      toast({ title: t("profile.toast.error"), description: t("profile.toast.fav_failed"), variant: "destructive" });
     }
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    navigate('/login');
-    toast({ title: "Déconnecté", description: "À bientôt !" });
+  const logout = () => {
+    clearSession();
+    navigate("/login");
+    toast({ title: t("profile.logged_out_title"), description: t("profile.logged_out_desc") });
   };
 
-  const startEditing = () => {
-    setEditForm({
-      name: profile?.name || '',
-      email: profile?.email || '',
-      phone: profile?.phone || '',
-      location: profile?.location || '',
-      bio: profile?.bio || ''
-    });
-    setIsEditing(true);
-  };
+  const Shell = ({ children }: { children: React.ReactNode }) => (
+    <div className="flex min-h-screen flex-col bg-background">
+      <Navbar />
+      <main className="flex-1 pt-24">{children}</main>
+      <Footer />
+    </div>
+  );
 
-  const getStatusBadge = (status) => {
-    const variants = {
-      upcoming: { label: "À venir", className: "bg-blue-500" },
-      confirmed: { label: "Confirmé", className: "bg-green-500" },
-      completed: { label: "Terminé", className: "bg-gray-500" },
-      cancelled: { label: "Annulé", className: "bg-red-500" }
-    };
-    const v = variants[status] || variants.upcoming;
-    return <Badge className={v.className}>{v.label}</Badge>;
-  };
-
-  if (isLoading) {
+  if (state === "loading") {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center"><div className="h-12 w-12 mx-auto mb-4 animate-spin rounded-full border-4 border-primary border-t-transparent" /><p>Chargement du profil...</p></div>
-      </div>
+      <Shell>
+        <div className="flex min-h-[50vh] flex-col items-center justify-center gap-4">
+          <div className="h-12 w-12 animate-spin rounded-full border-4 border-foreground border-t-transparent" />
+          <p className="text-muted-foreground">{t("profile.loading")}</p>
+        </div>
+      </Shell>
     );
   }
 
-  if (!profile) return null;
+  if (state === "error" || !profile) {
+    return (
+      <Shell>
+        <div className="container mx-auto flex min-h-[50vh] items-center justify-center px-6">
+          <Card flat className="max-w-md text-center">
+            <CardContent className="p-8">
+              <AlertCircle className="mx-auto mb-4 h-12 w-12 text-red-500" />
+              <h1 className="mb-2 font-heading text-2xl font-bold">{t("profile.error_title")}</h1>
+              <p className="mb-6 text-sm text-muted-foreground">{t("profile.error_text")}</p>
+              <div className="flex justify-center gap-3">
+                <Button onClick={load}><RefreshCw className="mr-2 h-4 w-4" />{t("profile.retry")}</Button>
+                <Button variant="outline" onClick={() => { clearSession(); navigate("/login"); }}>{t("profile.login_again")}</Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </Shell>
+    );
+  }
+
+  const initial = (profile.name || "?").charAt(0).toUpperCase();
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <Navbar />
-      <main className="flex-1 pt-20">
-        <div className="container mx-auto px-6 py-8">
-          {/* Header */}
-          <div className="relative mb-12">
-            <div className="h-48 bg-gradient-to-r from-primary/30 via-primary/20 to-primary/5 rounded-2xl" />
-            <div className="flex flex-col md:flex-row items-start md:items-end gap-6 -mt-16 px-6">
-              <Avatar className="w-32 h-32 border-4 border-background">
-                <AvatarFallback className="bg-primary/10 text-3xl">{profile.name?.charAt(0)}</AvatarFallback>
-              </Avatar>
-              <div className="flex-1">
-                <h1 className="font-heading text-3xl font-bold">{profile.name}</h1>
-                <p className="text-muted-foreground flex items-center gap-1 mt-1">
-                  <MapPin className="w-4 h-4" />{profile.location || 'Non renseigné'}
-                  <span className="mx-2">•</span>
-                  <Calendar className="w-4 h-4" />Membre depuis {new Date(profile.joinedDate).toLocaleDateString('fr-FR')}
-                </p>
-              </div>
-              <div className="flex gap-2">
-                <Button variant="outline" size="sm" onClick={startEditing}><Edit3 className="w-4 h-4 mr-2" />Modifier</Button>
-                <Button variant="outline" size="sm" className="text-destructive hover:bg-destructive/10" onClick={handleLogout}><LogOut className="w-4 h-4 mr-2" />Déconnexion</Button>
-              </div>
+    <Shell>
+      <div className="container mx-auto px-6 py-8">
+        {/* En-tête */}
+        <div className="relative mb-12">
+          <div className="h-48 rounded-2xl bg-gradient-to-r from-foreground/20 via-foreground/10 to-foreground/5" />
+          <div className="-mt-16 flex flex-col items-start gap-6 px-6 md:flex-row md:items-end">
+            <Avatar className="h-32 w-32 border-4 border-background">
+              <AvatarFallback className="bg-foreground text-3xl text-background">{initial}</AvatarFallback>
+            </Avatar>
+            <div className="flex-1">
+              <h1 className="font-heading text-3xl font-bold">{profile.name}</h1>
+              <p className="mt-1 flex flex-wrap items-center gap-1 text-muted-foreground">
+                <MapPin className="h-4 w-4" />{profile.location || t("profile.not_set")}
+                <span className="mx-2">•</span>
+                <Calendar className="h-4 w-4" />{t("profile.member_since")} {profile.joinedDate ? fmtDate(profile.joinedDate) : "—"}
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <Button variant="outline" size="sm" onClick={startEditing}><Edit3 className="mr-2 h-4 w-4" />{t("profile.edit")}</Button>
+              <Button variant="outline" size="sm" className="text-destructive" onClick={logout}><LogOut className="mr-2 h-4 w-4" />{t("profile.logout")}</Button>
             </div>
           </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            {[
-              { icon: Compass, label: "Voyages", value: profile.stats?.trips || 0 },
-              { icon: Star, label: "Avis", value: profile.stats?.reviews || 0 },
-              { icon: Heart, label: "Favoris", value: favorites.length },
-              { icon: Award, label: "Points", value: profile.stats?.points || 0 }
-            ].map((stat, i) => (
-              <Card key={i} className="text-center"><CardContent className="p-6"><stat.icon className="w-8 h-8 mx-auto mb-2 text-primary" /><p className="font-heading text-3xl font-bold">{stat.value}</p><p className="text-sm text-muted-foreground">{stat.label}</p></CardContent></Card>
-            ))}
-          </div>
-
-          {/* Tabs */}
-          <Tabs defaultValue="trips" className="space-y-8">
-            <TabsList className="grid w-full max-w-md grid-cols-4">
-              <TabsTrigger value="trips">Voyages</TabsTrigger>
-              <TabsTrigger value="favorites">Favoris</TabsTrigger>
-              <TabsTrigger value="reviews">Avis</TabsTrigger>
-              <TabsTrigger value="profile">Profil</TabsTrigger>
-            </TabsList>
-
-            {/* Trips Tab */}
-            <TabsContent value="trips">
-              {trips.length === 0 ? (
-                <div className="text-center py-12"><Compass className="w-12 h-12 text-muted-foreground mx-auto mb-4" /><p>Aucun voyage pour le moment</p><Button className="mt-4" asChild><Link to="/destinations">Explorer</Link></Button></div>
-              ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {trips.map(trip => (
-                    <Card key={trip.id} className="overflow-hidden">
-                      <img src={trip.image} className="w-full h-48 object-cover" />
-                      <CardContent className="p-4">
-                        <div className="flex justify-between items-start"><h3 className="font-bold text-lg">{trip.destination}</h3>{getStatusBadge(trip.status)}</div>
-                        <p className="text-sm text-muted-foreground mt-2 flex items-center gap-2"><Calendar className="w-4 h-4" />{trip.startDate} - {trip.endDate}</p>
-                        <p className="text-sm"><span className="font-medium">{trip.travelers}</span> voyageur(s)</p>
-                        <p className="font-bold mt-2">{trip.price}€</p>
-                        {trip.status === 'upcoming' && <Button size="sm" className="mt-3 w-full">Gérer la réservation</Button>}
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              )}
-            </TabsContent>
-
-            {/* Favorites Tab */}
-            <TabsContent value="favorites">
-              {favorites.length === 0 ? (
-                <div className="text-center py-12"><Heart className="w-12 h-12 text-muted-foreground mx-auto mb-4" /><p>Aucun favori</p><Button className="mt-4" asChild><Link to="/destinations">Découvrir</Link></Button></div>
-              ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {favorites.map(fav => (
-                    <Card key={fav.id} className="overflow-hidden">
-                      <img src={fav.image} className="w-full h-48 object-cover" />
-                      <CardContent className="p-4">
-                        <div className="flex justify-between items-start"><h3 className="font-bold">{fav.name}</h3><Button size="icon" variant="ghost" className="text-destructive" onClick={() => handleRemoveFavorite(fav.id)}><Trash2 className="w-4 h-4" /></Button></div>
-                        <p className="text-sm text-muted-foreground flex items-center gap-1"><MapPin className="w-3 h-3" />{fav.location}</p>
-                        <div className="flex items-center gap-1 mt-2"><Star className="w-4 h-4 fill-yellow-500 text-yellow-500" /><span>{fav.rating}</span></div>
-                        <Button variant="outline" size="sm" className="mt-3 w-full" asChild><Link to={`/destinations/${fav.slug}`}>Voir détails</Link></Button>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              )}
-            </TabsContent>
-
-            {/* Reviews Tab */}
-            <TabsContent value="reviews">
-              {reviews.length === 0 ? (
-                <div className="text-center py-12"><Star className="w-12 h-12 text-muted-foreground mx-auto mb-4" /><p>Pas encore d'avis</p></div>
-              ) : (
-                <div className="space-y-4">
-                  {reviews.map(review => (
-                    <Card key={review.id}><CardContent className="p-6"><div className="flex justify-between items-start"><div><h3 className="font-bold">{review.destination}</h3><p className="text-sm text-muted-foreground">{new Date(review.date).toLocaleDateString('fr-FR')}</p></div><div className="flex items-center gap-1">{Array(5).fill(0).map((_, i) => (<Star key={i} className={`w-4 h-4 ${i < review.rating ? "fill-yellow-500 text-yellow-500" : "text-muted"}`} />))}</div></div><p className="mt-3 text-muted-foreground">{review.comment}</p></CardContent></Card>
-                  ))}
-                </div>
-              )}
-            </TabsContent>
-
-            {/* Profile Tab */}
-            <TabsContent value="profile">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-2">
-                  <Card><CardHeader className="flex flex-row justify-between items-center"><CardTitle>Informations personnelles</CardTitle><Button variant="outline" size="sm" onClick={startEditing}><Edit3 className="w-4 h-4 mr-2" />Modifier</Button></CardHeader><CardContent>
-                    {isEditing ? (
-                      <form onSubmit={(e) => { e.preventDefault(); handleUpdateProfile(); }} className="space-y-4">
-                        <Input label="Nom complet" value={editForm.name} onChange={(e) => setEditForm({...editForm, name: e.target.value})} required />
-                        <Input label="Email" type="email" value={editForm.email} onChange={(e) => setEditForm({...editForm, email: e.target.value})} required />
-                        <Input label="Téléphone" value={editForm.phone} onChange={(e) => setEditForm({...editForm, phone: e.target.value})} />
-                        <Input label="Localisation" value={editForm.location} onChange={(e) => setEditForm({...editForm, location: e.target.value})} />
-                        <div><label className="text-sm font-medium mb-2 block">Bio</label><textarea className="w-full px-4 py-3 border rounded-lg" rows={4} value={editForm.bio} onChange={(e) => setEditForm({...editForm, bio: e.target.value})} /></div>
-                        <div className="flex gap-2"><Button type="submit"><Save className="w-4 h-4 mr-2" />Enregistrer</Button><Button type="button" variant="outline" onClick={() => setIsEditing(false)}><X className="w-4 h-4 mr-2" />Annuler</Button></div>
-                      </form>
-                    ) : (
-                      <div className="space-y-4"><div className="flex items-center gap-3 py-2 border-b"><User className="w-5 h-5 text-muted-foreground" /><dt className="w-24 text-sm">Nom</dt><dd className="flex-1 font-medium">{profile.name}</dd></div><div className="flex items-center gap-3 py-2 border-b"><Mail className="w-5 h-5 text-muted-foreground" /><dt className="w-24 text-sm">Email</dt><dd className="flex-1 font-medium">{profile.email}</dd></div><div className="flex items-center gap-3 py-2 border-b"><Phone className="w-5 h-5 text-muted-foreground" /><dt className="w-24 text-sm">Téléphone</dt><dd className="flex-1 font-medium">{profile.phone || "Non renseigné"}</dd></div><div className="flex items-center gap-3 py-2 border-b"><MapPin className="w-5 h-5 text-muted-foreground" /><dt className="w-24 text-sm">Localisation</dt><dd className="flex-1 font-medium">{profile.location || "Non renseigné"}</dd></div><div><dt className="text-sm text-muted-foreground mb-2">Bio</dt><dd className="text-muted-foreground">{profile.bio || "Aucune bio"}</dd></div></div>
-                    )}
-                  </CardContent></Card>
-                </div>
-                <div className="space-y-6">
-                  <Card><CardHeader><CardTitle>Sécurité</CardTitle></CardHeader><CardContent><Button variant="outline" className="w-full justify-start" onClick={() => setShowPasswordModal(true)}><Lock className="w-4 h-4 mr-2" />Changer le mot de passe</Button></CardContent></Card>
-                  <Card><CardHeader><CardTitle>Besoin d'aide ?</CardTitle></CardHeader><CardContent><p className="text-sm text-muted-foreground mb-4">Notre équipe est disponible 24/7.</p><Button variant="link" className="p-0" asChild><Link to="/contact">Contacter le support</Link></Button></CardContent></Card>
-                </div>
-              </div>
-            </TabsContent>
-          </Tabs>
         </div>
-      </main>
-      <Footer />
 
-      {/* Password Modal */}
-      {showPasswordModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center"><div className="absolute inset-0 bg-black/80" onClick={() => setShowPasswordModal(false)} /><div className="relative bg-background rounded-2xl p-6 max-w-md w-full"><h3 className="font-heading text-2xl font-bold mb-4">Changer le mot de passe</h3><div className="space-y-4"><Input type="password" placeholder="Mot de passe actuel" value={passwordData.currentPassword} onChange={(e) => setPasswordData({...passwordData, currentPassword: e.target.value})} /><Input type="password" placeholder="Nouveau mot de passe" value={passwordData.newPassword} onChange={(e) => setPasswordData({...passwordData, newPassword: e.target.value})} /><Input type="password" placeholder="Confirmer" value={passwordData.confirmPassword} onChange={(e) => setPasswordData({...passwordData, confirmPassword: e.target.value})} /></div>{passwordError && <p className="text-destructive text-sm mt-2">{passwordError}</p>}<div className="flex gap-3 mt-6"><Button onClick={handleChangePassword} className="flex-1">Modifier</Button><Button variant="outline" onClick={() => setShowPasswordModal(false)}>Annuler</Button></div></div></div>
+        {/* Statistiques */}
+        <div className="mb-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+          {[
+            { icon: Compass, key: "trips", value: profile.stats?.trips || 0 },
+            { icon: Star, key: "reviews", value: profile.stats?.reviews || 0 },
+            { icon: Heart, key: "favorites", value: favorites.length },
+            { icon: Award, key: "points", value: profile.stats?.points || 0 },
+          ].map((s) => (
+            <Card key={s.key} className="text-center">
+              <CardContent className="p-6">
+                <s.icon className="mx-auto mb-2 h-8 w-8" />
+                <p className="font-heading text-3xl font-bold">{s.value}</p>
+                <p className="text-sm text-muted-foreground">{t(`profile.stats.${s.key}`)}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Onglets */}
+        <div className="mb-8 flex flex-wrap gap-2 border-b border-border">
+          {TAB_IDS.map((k) => (
+            <button
+              key={k}
+              onClick={() => setTab(k)}
+              className={`-mb-px border-b-2 px-4 py-2 text-sm font-medium transition-colors ${
+                tab === k ? "border-foreground text-foreground" : "border-transparent text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {t(`profile.tabs.${k}`)}
+            </button>
+          ))}
+        </div>
+
+        {tab === "trips" &&
+          (trips.length === 0 ? (
+            <div className="py-12 text-center">
+              <Compass className="mx-auto mb-4 h-12 w-12 text-muted-foreground" />
+              <p>{t("profile.no_trips")}</p>
+              <Button className="mt-4" asChild><Link to="/destinations">{t("profile.explore")}</Link></Button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              {trips.map((trip) => (
+                <Card key={trip.id} className="overflow-hidden">
+                  {trip.image ? (
+                    <img src={trip.image} alt="" className="h-48 w-full object-cover" />
+                  ) : (
+                    <div className="flex h-48 items-center justify-center bg-muted"><Compass className="h-10 w-10 text-muted-foreground" /></div>
+                  )}
+                  <CardContent className="p-4">
+                    <div className="flex items-start justify-between">
+                      <h3 className="text-lg font-bold">{trip.destination}</h3>
+                      <Badge className={statusStyle[trip.status] || statusStyle.upcoming}>
+                        {t(`profile.status.${statusStyle[trip.status] ? trip.status : "upcoming"}`)}
+                      </Badge>
+                    </div>
+                    <p className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
+                      <Calendar className="h-4 w-4" />{trip.startDate} - {trip.endDate}
+                    </p>
+                    <p className="text-sm">{t("profile.travelers", { count: trip.travelers })}</p>
+                    <p className="mt-2 font-bold">{trip.price}€</p>
+                    {trip.status === "upcoming" && <Button size="sm" className="mt-3 w-full">{t("profile.manage")}</Button>}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ))}
+
+        {tab === "favorites" &&
+          (favorites.length === 0 ? (
+            <div className="py-12 text-center">
+              <Heart className="mx-auto mb-4 h-12 w-12 text-muted-foreground" />
+              <p>{t("profile.no_favorites")}</p>
+              <Button className="mt-4" asChild><Link to="/destinations">{t("profile.discover")}</Link></Button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {favorites.map((fav) => (
+                <Card key={fav.id} className="overflow-hidden">
+                  {fav.image && <img src={fav.image} alt="" className="h-48 w-full object-cover" />}
+                  <CardContent className="p-4">
+                    <div className="flex items-start justify-between">
+                      <h3 className="font-bold">{fav.name}</h3>
+                      <Button size="icon" variant="ghost" className="text-destructive" onClick={() => removeFavorite(fav.id)} aria-label="remove">
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    </div>
+                    <p className="flex items-center gap-1 text-sm text-muted-foreground"><MapPin className="h-3 w-3" />{fav.location}</p>
+                    <div className="mt-2 flex items-center gap-1"><Star className="h-4 w-4 fill-yellow-500 text-yellow-500" /><span>{fav.rating}</span></div>
+                    <Button variant="outline" size="sm" className="mt-3 w-full" asChild>
+                      <Link to="/destinations">{t("profile.details")}</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ))}
+
+        {tab === "reviews" &&
+          (reviews.length === 0 ? (
+            <div className="py-12 text-center">
+              <Star className="mx-auto mb-4 h-12 w-12 text-muted-foreground" />
+              <p>{t("profile.no_reviews")}</p>
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {reviews.map((r) => (
+                <Card key={r.id}>
+                  <CardContent className="p-6">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <h3 className="font-bold">{r.destination}</h3>
+                        <p className="text-sm text-muted-foreground">{fmtDate(r.date)}</p>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <Star key={i} className={`h-4 w-4 ${i < r.rating ? "fill-yellow-500 text-yellow-500" : "text-muted"}`} />
+                        ))}
+                      </div>
+                    </div>
+                    <p className="mt-3 text-muted-foreground">{r.comment}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ))}
+
+        {tab === "profile" && (
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+            <div className="lg:col-span-2">
+              <Card flat>
+                <CardHeader className="flex flex-row items-center justify-between">
+                  <CardTitle>{t("profile.personal_info")}</CardTitle>
+                  {!isEditing && (
+                    <Button variant="outline" size="sm" onClick={startEditing}><Edit3 className="mr-2 h-4 w-4" />{t("profile.edit")}</Button>
+                  )}
+                </CardHeader>
+                <CardContent>
+                  {isEditing ? (
+                    <form onSubmit={(e) => { e.preventDefault(); handleUpdate(); }} className="space-y-4">
+                      <Input label={t("profile.name")} value={editForm.name} onChange={(e) => setEditForm({ ...editForm, name: e.target.value })} required />
+                      <Input label={t("profile.email")} type="email" value={editForm.email} onChange={(e) => setEditForm({ ...editForm, email: e.target.value })} required />
+                      <Input label={t("profile.phone")} value={editForm.phone} onChange={(e) => setEditForm({ ...editForm, phone: e.target.value })} />
+                      <Input label={t("profile.location")} value={editForm.location} onChange={(e) => setEditForm({ ...editForm, location: e.target.value })} />
+                      <Textarea label={t("profile.bio")} rows={4} value={editForm.bio} onChange={(e) => setEditForm({ ...editForm, bio: e.target.value })} />
+                      <div className="flex gap-2">
+                        <Button type="submit"><Save className="mr-2 h-4 w-4" />{t("profile.save")}</Button>
+                        <Button type="button" variant="outline" onClick={() => setIsEditing(false)}><X className="mr-2 h-4 w-4" />{t("profile.cancel")}</Button>
+                      </div>
+                    </form>
+                  ) : (
+                    <dl className="space-y-4">
+                      {[
+                        { icon: User, label: t("profile.name"), value: profile.name },
+                        { icon: Mail, label: t("profile.email"), value: profile.email },
+                        { icon: Phone, label: t("profile.phone"), value: profile.phone || t("profile.not_set") },
+                        { icon: MapPin, label: t("profile.location"), value: profile.location || t("profile.not_set") },
+                      ].map((row) => (
+                        <div key={row.label} className="flex items-center gap-3 border-b py-2">
+                          <row.icon className="h-5 w-5 text-muted-foreground" />
+                          <dt className="w-28 text-sm">{row.label}</dt>
+                          <dd className="flex-1 font-medium">{row.value}</dd>
+                        </div>
+                      ))}
+                      <div>
+                        <dt className="mb-2 text-sm text-muted-foreground">{t("profile.bio")}</dt>
+                        <dd className="text-muted-foreground">{profile.bio || t("profile.no_bio")}</dd>
+                      </div>
+                    </dl>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="space-y-6">
+              <Card flat>
+                <CardHeader><CardTitle>{t("profile.security")}</CardTitle></CardHeader>
+                <CardContent>
+                  <Button variant="outline" className="w-full justify-start" onClick={() => setShowPassword(true)}>
+                    <Lock className="mr-2 h-4 w-4" />{t("profile.change_password")}
+                  </Button>
+                </CardContent>
+              </Card>
+              <Card flat>
+                <CardHeader><CardTitle>{t("profile.help_title")}</CardTitle></CardHeader>
+                <CardContent>
+                  <p className="mb-4 text-sm text-muted-foreground">{t("profile.help_text")}</p>
+                  <Button variant="link" className="p-0" asChild><Link to="/contact">{t("profile.contact_support")}</Link></Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {showPassword && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/80" onClick={() => setShowPassword(false)} />
+          <div className="relative w-full max-w-md rounded-2xl bg-background p-6">
+            <h3 className="mb-4 font-heading text-2xl font-bold">{t("profile.change_password")}</h3>
+            <div className="space-y-4">
+              <Input type="password" placeholder={t("profile.current_password")} value={pw.currentPassword} onChange={(e) => setPw({ ...pw, currentPassword: e.target.value })} />
+              <Input type="password" placeholder={t("profile.new_password")} value={pw.newPassword} onChange={(e) => setPw({ ...pw, newPassword: e.target.value })} />
+              <Input type="password" placeholder={t("profile.confirm_password")} value={pw.confirmPassword} onChange={(e) => setPw({ ...pw, confirmPassword: e.target.value })} />
+            </div>
+            {pwError && <p className="mt-2 text-sm text-destructive">{pwError}</p>}
+            <div className="mt-6 flex gap-3">
+              <Button onClick={handleChangePassword} className="flex-1">{t("profile.modify")}</Button>
+              <Button variant="outline" onClick={() => setShowPassword(false)}>{t("profile.cancel")}</Button>
+            </div>
+          </div>
+        </div>
       )}
-    </div>
+    </Shell>
   );
 };
 

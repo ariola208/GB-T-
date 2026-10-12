@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "more": "Plus",
+    "search": "Rechercher",
+    "search_placeholder": "Aller vers une page...",
+    "no_result": "Aucun résultat",
+    "my_account": "Mon compte",
+    "my_trips": "Mes voyages",
+    "favorites": "Mes favoris"
+  },
+  "home": {
+    "why_title": "Pourquoi voyager avec nous ?",
+    "why_subtitle": "Une équipe locale, des circuits sûrs et des expériences conçues pour vous.",
+    "experts_title": "Experts locaux",
+    "experts_desc": "Des guides passionnés qui connaissent chaque recoin du Bénin.",
+    "safe_title": "Voyage sécurisé",
+    "safe_desc": "Partenaires vérifiés, assistance 24/7 et assurance incluse.",
+    "custom_title": "Sur mesure",
+    "custom_desc": "Chaque itinéraire est adapté à vos envies et à votre budget."
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "hero": {
+    "kicker": "Discover West Africa",
+    "title": "Benin awaits you",
+    "subtitle": "A journey through ancient history, living traditions and breathtaking landscapes.",
+    "explore": "Explore",
+    "plan": "Plan your trip",
+    "alt": "Ganvié, the Venice of Africa, a stilt village on Lake Nokoué, Benin",
+    "scroll": "Scroll",
+    "stats": {
+      "years": "Years of experience",
+      "destinations": "Destinations",
+      "travelers": "Happy travelers"
+    }
+  },
+  "destPreview": {
+    "kicker": "Destinations",
+    "title": "Iconic places",
+    "all": "All destinations",
+    "discover": "Discover",
+    "items": {
+      "abomey": {
+        "title": "Abomey",
+        "subtitle": "Royal Palaces — UNESCO",
+        "description": "The remains of the powerful Kingdom of Dahomey, a World Heritage site."
+      },
+      "ouidah": {
+        "title": "Ouidah",
+        "subtitle": "The Slave Route",
+        "description": "The Door of No Return, a universal place of remembrance facing the ocean."
+      },
+      "pendjari": {
+        "title": "Pendjari",
+        "subtitle": "Safari & Nature",
+        "description": "One of the last great wildlife sanctuaries in West Africa."
+      },
+      "cotonou": {
+        "title": "Cotonou",
+        "subtitle": "Economic Heart",
+        "description": "The vibrant economic capital, between lively markets and modernity."
+      }
+    }
+  },
+  "cultureSection": {
+    "kicker": "Heritage",
+    "title": "Cradle of Vodun",
+    "p1": "Benin is the birthplace of the Vodun religion, a rich and complex spiritual tradition that still shapes daily life. From colorful ceremonies to sacred masks, every aspect of this culture tells a thousand-year-old story.",
+    "p2": "From the annual Vodun festival in Ouidah to the secret temples of the hinterland, discover an intangible heritage of exceptional depth.",
+    "more": "Explore the culture",
+    "alt": "Traditional Vodun masks of Benin",
+    "stats": {
+      "inhabitants": "Inhabitants",
+      "ethnic": "Ethnic groups",
+      "unesco": "UNESCO sites"
+    }
+  },
+  "cta": {
+    "kicker": "Ready for adventure?",
+    "title": "Start your journey in Benin",
+    "text": "Whether you dream of safaris, paradise beaches or cultural discoveries, we create your tailor-made itinerary.",
+    "button": "Contact us",
+    "secondary": "See destinations"
+  },
+  "footer": {
+    "tagline": "Explore Benin, land of culture, history and nature. An unforgettable journey awaits you in the heart of West Africa.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "rights": "All rights reserved."
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Frequently asked questions",
+    "subtitle": "Quickly find answers to your questions about traveling to Benin",
+    "search": "Search a question...",
+    "results": "{{count}} result(s) found",
+    "noresult": "No question found",
+    "contact": {
+      "phone": {
+        "title": "By phone",
+        "hours": "Mon-Fri: 8am-6pm"
+      },
+      "email": {
+        "title": "By email",
+        "reply": "Reply within 24h"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "instant": "Instant chat"
+      }
+    },
+    "notfound": {
+      "title": "Didn't find your answer?",
+      "text": "Our team is here to help. Contact us by email, phone or through our form.",
+      "button": "Contact us"
+    },
+    "categories": [
+      {
+        "id": "general",
+        "name": "General",
+        "questions": [
+          {
+            "q": "What is the best time to visit Benin?",
+            "a": "The best period runs from November to March, during the dry season. Temperatures are pleasant (25-32°C) and roads are passable. It is also the ideal time for safaris in Pendjari Park."
+          },
+          {
+            "q": "Do I need a visa to enter Benin?",
+            "a": "Yes, most nationalities need a visa. You can get it online through the e-Visa system (https://evisa.gouv.bj) or on arrival at Cotonou airport. A tourist visa costs about €50 for 30 days."
+          },
+          {
+            "q": "Which vaccines are recommended?",
+            "a": "Yellow fever vaccination is mandatory. Recommended vaccines include hepatitis A and B, typhoid, meningitis and rabies. Antimalarial treatment is strongly advised."
+          },
+          {
+            "q": "What is the currency in Benin?",
+            "a": "The currency is the CFA franc (XOF). €1 ≈ 655 FCFA. Bank cards are accepted in large hotels, but cash is preferable in rural areas."
+          },
+          {
+            "q": "Which languages are spoken in Benin?",
+            "a": "French is the official language. The most widely spoken local languages are Fon, Yoruba, Adja and Bariba. English is also understood in tourist areas."
+          }
+        ]
+      },
+      {
+        "id": "reservations",
+        "name": "Bookings",
+        "questions": [
+          {
+            "q": "How do I book a tour with LEGBAH?",
+            "a": "You can book directly on our site by choosing your tour and dates, or contact us through the contact form for a personalized quote. A 30% deposit is required at booking."
+          },
+          {
+            "q": "Can I change or cancel my booking?",
+            "a": "Yes, changes are possible subject to availability. Cancellations: more than 60 days before departure: full refund; 30-60 days: 50% withheld; less than 30 days: non-refundable."
+          },
+          {
+            "q": "Do you offer tours for groups?",
+            "a": "Absolutely! We organize tours for groups of any size: families, associations, companies. Volume discounts apply from 6 people."
+          },
+          {
+            "q": "Do prices include international flights?",
+            "a": "Our tours generally do not include international flights unless stated otherwise. We can, however, advise you on the best flight options."
+          }
+        ]
+      },
+      {
+        "id": "voyage",
+        "name": "On the ground",
+        "questions": [
+          {
+            "q": "How do I get around in Benin?",
+            "a": "For organized tours we provide air-conditioned private vehicles with a driver-guide. For independent travelers, options include motorbike taxis (zémidjans), shared taxis, buses, and car rental with a driver."
+          },
+          {
+            "q": "Which types of accommodation do you offer?",
+            "a": "We select quality accommodation: 3-4 star hotels in Cotonou, comfortable lodges near the parks, authentic guesthouses, and sometimes homestays."
+          },
+          {
+            "q": "Is the food safe?",
+            "a": "Yes, we select trusted restaurants. We recommend drinking bottled water and avoiding unwashed raw vegetables and ice cubes."
+          },
+          {
+            "q": "Is there Internet access?",
+            "a": "4G is available in major cities. We provide a local SIM card with data to all our travelers. WiFi is available in most hotels."
+          }
+        ]
+      },
+      {
+        "id": "securite",
+        "name": "Safety",
+        "questions": [
+          {
+            "q": "Is Benin a safe country?",
+            "a": "Yes, Benin is considered one of the safest countries in West Africa. Beninese people are known for their hospitality. As anywhere, stay vigilant in tourist areas."
+          },
+          {
+            "q": "Is travel insurance mandatory?",
+            "a": "Yes, travel insurance including medical repatriation is mandatory to join our tours. We can offer you comprehensive insurance when you book."
+          },
+          {
+            "q": "What should I do in an emergency?",
+            "a": "We provide 24/7 assistance with a local emergency number. Our on-site team can help you in case of a problem. Also keep your embassy's contact details."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "profile": {
+    "loading": "A carregar o perfil...",
+    "error_title": "Não foi possível carregar o seu perfil",
+    "error_text": "O servidor não responde ou devolveu um erro. Verifique se o backend está em execução (porta 5000) e tente novamente.",
+    "retry": "Tentar novamente",
+    "login_again": "Entrar novamente",
+    "not_set": "Não preenchido",
+    "member_since": "Membro desde",
+    "edit": "Editar",
+    "logout": "Sair",
+    "logged_out_title": "Sessão terminada",
+    "logged_out_desc": "Até breve!",
+    "stats": {
+      "trips": "Viagens",
+      "reviews": "Avaliações",
+      "favorites": "Favoritos",
+      "points": "Pontos"
+    },
+    "tabs": {
+      "trips": "Viagens",
+      "favorites": "Favoritos",
+      "reviews": "Avaliações",
+      "profile": "Perfil"
+    },
+    "status": {
+      "upcoming": "Próxima",
+      "confirmed": "Confirmada",
+      "completed": "Concluída",
+      "cancelled": "Cancelada"
+    },
+    "no_trips": "Ainda sem viagens",
+    "explore": "Explorar",
+    "travelers": "{{count}} viajante(s)",
+    "manage": "Gerir a reserva",
+    "no_favorites": "Sem favoritos",
+    "discover": "Descobrir",
+    "details": "Ver detalhes",
+    "no_reviews": "Ainda sem avaliações",
+    "personal_info": "Informações pessoais",
+    "name": "Nome completo",
+    "email": "Email",
+    "phone": "Telefone",
+    "location": "Localização",
+    "bio": "Bio",
+    "no_bio": "Sem bio",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "security": "Segurança",
+    "change_password": "Alterar a palavra-passe",
+    "current_password": "Palavra-passe atual",
+    "new_password": "Nova palavra-passe",
+    "confirm_password": "Confirmar",
+    "modify": "Alterar",
+    "help_title": "Precisa de ajuda?",
+    "help_text": "A nossa equipa está disponível 24/7.",
+    "contact_support": "Contactar o apoio",
+    "pw_mismatch": "As palavras-passe não coincidem",
+    "pw_short": "A palavra-passe deve ter pelo menos 8 caracteres",
+    "server_error": "Erro do servidor",
+    "toast": {
+      "success": "Sucesso",
+      "error": "Erro",
+      "updated": "Perfil atualizado",
+      "update_failed": "Não foi possível atualizar",
+      "pw_changed": "Palavra-passe alterada",
+      "fav_removed": "Removido dos favoritos",
+      "fav_failed": "Não foi possível remover"
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "nav": { "ame": "A alma do Benim" },
+  "ame": {
+    "hero_badge": "Cultura viva",
+    "hero_title": "A alma do Benim",
+    "hero_subtitle": "Histórias, línguas e tradições do Benim, contadas com as pessoas que as guardam.",
+    "hero_note": "Rubrica em construção: os textos precisam de ser revistos por especialistas, as traduções validadas por falantes e as gravações acrescentadas. Os elementos não validados estão assinalados.",
+    "anchors": { "heritage": "O património contado", "languages": "As línguas", "stories": "Os relatos" },
+    "ui": { "prev": "Anterior", "next": "Seguinte", "step": "{{n}} / {{total}}" },
+    "heritage": {
+      "badge": "A · Património",
+      "title": "O património contado",
+      "intro": "Cada local tem uma história que se lê ao longo do tempo. Escolha um lugar e percorra a sua cronologia.",
+      "timeline": "Cronologia",
+      "sources": "Fontes",
+      "tabs": { "abomey": "Abomey", "ouidah": "Ouidah", "portonovo": "Porto-Novo" },
+      "sites": {
+        "abomey": {
+          "intro": "Capital do reino do Daomé, Abomey conserva os palácios de uma dinastia de doze reis. Os baixos-relevos das suas paredes guardavam a memória dos reinados e dos factos marcantes.",
+          "source": "UNESCO, Palácios Reais de Abomey (inscritos em 1985); Museu Histórico de Abomey.",
+          "events": [
+            { "year": "1625–1900", "title": "Uma dinastia de doze reis", "text": "Segundo a UNESCO, doze reis sucedem-se à frente do reino do Daomé. Cada um mandou acrescentar o seu próprio palácio ao recinto real de Abomey." },
+            { "year": "1724–1727", "title": "O acesso à costa", "text": "Sob o rei Agadja, o Daomé conquista Allada e depois Ouidah, em 1727. O reino acede assim à costa e ao comércio atlântico, incluindo o tráfico de escravos." },
+            { "year": "1818–1858", "title": "O reinado de Guézo", "text": "O reinado de Guézo é um dos mais longos da dinastia. O Daomé é então um Estado poderoso e muito organizado." },
+            { "year": "1892–1894", "title": "A guerra franco-daomeana", "text": "A guerra termina com a rendição do rei Béhanzin, exilado na Martinica e depois na Argélia. O reino passa para o domínio colonial francês." },
+            { "year": "1985", "title": "Património Mundial", "text": "Os palácios reais de Abomey são inscritos na Lista do Património Mundial da UNESCO." },
+            { "year": "2021", "title": "O regresso dos tesouros reais", "text": "A França restitui ao Benim vinte e seis obras dos tesouros reais de Abomey, levadas durante a conquista de 1892." }
+          ]
+        },
+        "ouidah": {
+          "intro": "Antigo porto do tráfico atlântico e lugar central das tradições vodum, Ouidah é hoje um lugar de memória e de práticas vivas. A Rota dos Escravos, com cerca de quatro quilómetros, leva à Porta do Não-Retorno, de frente para o oceano.",
+          "source": "UNESCO, projeto «A Rota do Escravo»; Museu de História de Ouidah.",
+          "events": [
+            { "year": "1721", "title": "O forte português", "text": "Portugal funda em Ouidah o forte de São João Baptista de Ajudá. Hoje acolhe o Museu de História de Ouidah." },
+            { "year": "1727", "title": "A conquista daomeana", "text": "O Daomé conquista Ouidah. O porto é então um dos principais pontos de embarque de cativos para as Américas." },
+            { "year": "1994", "title": "A Rota do Escravo", "text": "O projeto da UNESCO «A Rota do Escravo» é lançado em Ouidah, para dar a conhecer a história do tráfico e as suas consequências." },
+            { "year": "1996", "title": "Uma religião reconhecida", "text": "O vodum é oficialmente reconhecido no Benim. O dia 10 de janeiro passa a ser feriado dedicado às religiões endógenas." }
+          ]
+        },
+        "portonovo": {
+          "intro": "Capital oficial do Benim, Porto-Novo é a antiga capital do reino de Hogbonou. O seu património mistura tradições reais, influências afro-brasileiras e herança colonial.",
+          "source": "Museu Honmè (antigo palácio real). Fontes a completar com o museu e os serviços do património.",
+          "events": [
+            { "year": "Séculos XVII–XVIII", "title": "O reino de Hogbonou", "text": "O reino desenvolve-se junto à lagoa. Os mercadores portugueses dão à cidade o nome de «Porto-Novo»." },
+            { "year": "1863", "title": "O protetorado", "text": "O rei Sodji aceita o protetorado da França sobre o seu reino." },
+            { "year": "Hoje", "title": "Uma capital discreta", "text": "Porto-Novo é a capital oficial do país, enquanto Cotonou concentra o governo e a atividade económica. O palácio Honmè, antiga residência real, acolhe um museu." }
+          ]
+        }
+      },
+      "media": {
+        "title": "Fotografias, vozes e mapas",
+        "intro": "Estes conteúdos ainda não estão publicados. Só os acrescentaremos quando os direitos e o consentimento das pessoas envolvidas estiverem reunidos.",
+        "status": "Em breve",
+        "items": [
+          { "title": "Fotografias históricas", "text": "Só publicamos imagens de arquivo quando o autor ou os titulares dos direitos deram o seu acordo, ou quando são livres de direitos." },
+          { "title": "Testemunhos", "text": "Guardiões de locais, guias, artesãos e habitantes: os seus testemunhos serão recolhidos com o seu consentimento. Nenhum testemunho é inventado." },
+          { "title": "Mapas históricos", "text": "Mapas antigos e mapas comentados da região, acompanhados da sua origem e contexto." },
+          { "title": "Gravações áudio", "text": "Relatos orais e cantos, gravados com o acordo das pessoas envolvidas e, no caso de práticas religiosas, dos seus responsáveis." }
+        ]
+      }
+    },
+    "languages": {
+      "badge": "B · Línguas",
+      "title": "Explorador das línguas beninenses",
+      "intro": "Um mini-dicionário para viajar: escolha uma língua e uma situação.",
+      "banner": "As traduções apresentadas são rascunhos. Devem ser validadas por falantes competentes antes de serem consideradas fiáveis. As gravações autênticas serão acrescentadas aos poucos.",
+      "names": { "yo": "Ioruba", "fon": "Fon", "ddn": "Dendi" },
+      "all": "Todas",
+      "categories": { "salutations": "Saudações", "remerciements": "Agradecimentos", "directions": "Direções", "marche": "Mercado", "restaurant": "Restaurante", "politesse": "Cortesia", "culture": "Expressões culturais" },
+      "search": "Pesquisar uma expressão...",
+      "only_available": "Mostrar só as expressões disponíveis",
+      "validated_count": "{{ok}} / {{total}} validadas",
+      "draft": "Rascunho: a validar",
+      "validated": "Validado",
+      "pending": "A preencher com um falante",
+      "pron": "Pronúncia",
+      "pron_pending": "A gravar com um falante",
+      "audio_soon": "Áudio em breve",
+      "context": "Contexto cultural",
+      "copy": "Copiar",
+      "none": "Nenhuma expressão corresponde.",
+      "empty_title": "Ainda sem expressões para esta língua",
+      "empty_text": "Não inventamos traduções. Esta língua será completada com falantes que aceitem rever, corrigir e gravar as expressões."
+    },
+    "stories": {
+      "badge": "C · Relatos",
+      "title": "Relatos culturais",
+      "intro": "Dos reinos aos saberes, percorra as tradições do Benim capítulo a capítulo.",
+      "note": "Estes relatos são sínteses: devem ser revistos com historiadores e especialistas antes da publicação definitiva.",
+      "review": "Texto provisório: este conteúdo deve ser revisto e completado com praticantes, responsáveis de cultos e especialistas antes da publicação definitiva.",
+      "respect_title": "Visitar com respeito",
+      "respect": [
+        "Peça autorização antes de fotografar ou filmar uma cerimónia ou uma pessoa.",
+        "Alguns locais e alguns ritos são reservados aos iniciados: respeite as proibições.",
+        "Faça-se acompanhar por um guia local de confiança.",
+        "Uma cerimónia não é um espetáculo: não se está lá como simples espectador."
+      ],
+      "cards": [
+        { "title": "Os reinos históricos", "summary": "Do litoral ao norte do país, vários reinos moldaram o Benim atual.",
+          "chapters": [
+            { "title": "Allada, Abomey, Porto-Novo", "text": "Segundo muitas tradições, as famílias reais de Allada, do Daomé e de Hogbonou (Porto-Novo) partilham uma origem comum, ligada ao povo aja vindo da região de Tado." },
+            { "title": "Kétou", "text": "Kétou é um antigo reino ioruba. É um dos focos da tradição Gèlèdè." },
+            { "title": "Nikki e o Borgou", "text": "No norte, o reino bariba de Nikki estruturou a região do Borgou. A festa da Gaani, celebrada todos os anos em Nikki, perpetua a sua memória." }
+          ] },
+        { "title": "Béhanzin", "summary": "O último rei soberano do Daomé.",
+          "chapters": [
+            { "title": "O rei", "text": "Béhanzin reina de 1889 a 1894, numa época em que a França estende o seu domínio sobre a costa." },
+            { "title": "A resistência", "text": "O Daomé e a França defrontam-se em 1890 e depois na guerra de 1892-1894. Béhanzin lidera a defesa do seu reino." },
+            { "title": "O exílio", "text": "Rende-se em janeiro de 1894 e é exilado na Martinica e depois na Argélia, onde morre em 1906. Os seus restos mortais são repatriados para o Daomé em 1928." }
+          ] },
+        { "title": "As artes", "summary": "Nas paredes, nos tecidos, sob as máscaras: a história conta-se em imagens.",
+          "chapters": [
+            { "title": "Os baixos-relevos de Abomey", "text": "As paredes dos palácios são ornadas com baixos-relevos em terra colorida. Cada motivo evoca um soberano, um animal-emblema ou um facto marcante." },
+            { "title": "Os appliqués", "text": "Os appliqués são tecidos decorados com motivos recortados e depois cosidos. Em Abomey, celebram os emblemas dos reis." },
+            { "title": "Os Gèlèdè", "text": "Inscritos pela UNESCO no património cultural imaterial, os Gèlèdè são espetáculos de máscaras que homenageiam as mães e o seu poder espiritual. Misturam dança, canto e escultura." }
+          ] },
+        { "title": "As festas tradicionais", "summary": "Momentos em que toda uma comunidade se encontra.",
+          "chapters": [
+            { "title": "O dia 10 de janeiro", "text": "Todos os anos, a festa das religiões endógenas, ou festa do vodum, reúne praticantes e visitantes, nomeadamente em Ouidah." },
+            { "title": "A Gaani", "text": "A Gaani é a grande festa do povo bariba em Nikki. Inclui cerimónias e cavalgadas." },
+            { "title": "Participar com respeito", "text": "Uma festa não é um espetáculo oferecido aos visitantes. Informe-se junto de um guia local, peça autorização antes de filmar e siga as indicações dos organizadores." }
+          ] },
+        { "title": "Ferreiros e fundidores", "summary": "Gestos transmitidos de geração em geração.",
+          "chapters": [
+            { "title": "O metal", "text": "O trabalho do bronze e do latão pela técnica da cera perdida é praticado em várias regiões. O objeto é primeiro modelado em cera e depois revestido de argila antes do vazamento do metal." },
+            { "title": "O têxtil", "text": "Tecelagem, tingimento e appliqué transmitem motivos carregados de sentido. Cada oficina tem os seus códigos." },
+            { "title": "A terra e a fibra", "text": "A olaria e a cestaria fazem parte do quotidiano: conter a água, conservar, transportar. Estes gestos transmitem-se muitas vezes de geração em geração." }
+          ] },
+        { "title": "O vodum", "summary": "Uma religião viva, a abordar com escuta e respeito.",
+          "chapters": [
+            { "title": "Uma religião, não um folclore", "text": "O vodum é uma religião praticada no Benim, no Togo e na região. Organiza a relação entre os humanos, os antepassados e as forças da natureza." },
+            { "title": "Um mundo de divindades", "text": "Na cosmologia fon, Mawu e Lisa estão associados à criação, e muitos vodum zelam por domínios precisos. Legba é considerado o intermediário entre os humanos e as divindades." },
+            { "title": "Uma ligação com a diáspora", "text": "Práticas vindas da África Ocidental assumiram formas próprias no Haiti, em Cuba ou no Brasil, por exemplo o vodu haitiano ou o candomblé." }
+          ] }
+      ]
+    },
+    "contribute": {
+      "title": "Guarda esta memória? Ajude-nos.",
+      "text": "Guardiões de locais, falantes, historiadores, artesãos, praticantes: contacte-nos para validar, corrigir ou enriquecer estes conteúdos.",
+      "button": "Escreva-nos no WhatsApp",
+      "message": "Olá, gostaria de contribuir para a rubrica «A alma do Benim» (tradução, testemunho ou validação de conteúdo)."
+    }
+  }
+}

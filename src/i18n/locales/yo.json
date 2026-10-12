@@ -1,1 +1,309 @@
-{}
+{
+  "nav": {
+    "home": "Ilé",
+    "destinations": "Àwọn ibi ìbẹ̀wò",
+    "culture": "Àṣà",
+    "services": "Àwọn iṣẹ́",
+    "blog": "Bọ́ọ̀gì",
+    "gallery": "Àwòrán",
+    "faq": "Àwọn ìbéèrè",
+    "about": "Nípa wa",
+    "contact": "Kàn sí wa",
+    "login": "Wọlé",
+    "logout": "Jáde",
+    "profile": "Profaili mi",
+    "soul": "Soul of Benin",
+    "planner": "Plan your trip"
+  },
+  "common": {
+    "language": "Èdè",
+    "theme_light": "Yípadà sí ipò ìmọ́lẹ̀",
+    "theme_dark": "Yípadà sí ipò òkùnkùn",
+    "loading": "Ń gbé e wá...",
+    "translation_partial": "Ìtumọ̀ ń lọ lọ́wọ́"
+  },
+  "soul": {
+    "hero_badge": "Culture vivante",
+    "hero_title": "L'âme du Bénin",
+    "hero_subtitle": "Histoire, langues et récits : découvrez le Bénin par ceux qui le font vivre.",
+    "hero_note": "Contenu en cours de relecture avec des historiens et des locuteurs. Les éléments non validés sont signalés.",
+    "anchors": {
+      "heritage": "Patrimoine",
+      "languages": "Langues",
+      "stories": "Récits"
+    },
+    "heritage": {
+      "badge": "Patrimoine raconté",
+      "title": "Trois lieux, trois mémoires",
+      "intro": "Choisissez un site et parcourez sa chronologie.",
+      "timeline": "Chronologie",
+      "sources": "Sources",
+      "tabs": {
+        "abomey": "Abomey",
+        "ouidah": "Ouidah",
+        "portonovo": "Porto-Novo"
+      },
+      "sites": {
+        "abomey": {
+          "intro": "Capitale du royaume du Dahomey, Abomey conserve les palais de ses rois, inscrits au patrimoine mondial de l'UNESCO.",
+          "source": "UNESCO (Palais royaux d'Abomey) ; Musée historique d'Abomey. À compléter par des sources académiques.",
+          "events": [
+            {
+              "year": "XVIIe siècle",
+              "title": "Naissance du royaume",
+              "text": "Le royaume du Dahomey se structure autour d'Abomey. Le roi Houégbadja est souvent associé à cette période de fondation."
+            },
+            {
+              "year": "1724–1727",
+              "title": "L'ouverture sur la côte",
+              "text": "Sous le roi Agadja, le Dahomey conquiert Allada puis Ouidah, et accède directement au commerce atlantique."
+            },
+            {
+              "year": "1818–1858",
+              "title": "Le règne de Ghézo",
+              "text": "Ghézo consolide l'État et l'armée. Son règne est l'un des plus puissants de l'histoire du royaume."
+            },
+            {
+              "year": "1892–1894",
+              "title": "Les guerres franco-dahoméennes",
+              "text": "Le roi Béhanzin résiste à l'armée coloniale française. Il se rend en 1894 et est exilé en Martinique."
+            },
+            {
+              "year": "1985",
+              "title": "Inscription à l'UNESCO",
+              "text": "Les Palais royaux d'Abomey sont inscrits sur la Liste du patrimoine mondial."
+            },
+            {
+              "year": "2021",
+              "title": "Retour de trésors royaux",
+              "text": "La France restitue au Bénin 26 œuvres issues du pillage de 1892."
+            }
+          ]
+        },
+        "ouidah": {
+          "intro": "Ancien port majeur de la traite atlantique, Ouidah est aujourd'hui un lieu de mémoire et la ville du Vodun.",
+          "source": "UNESCO (projet La Route de l'esclave) ; ouvrages d'histoire de la traite atlantique. À compléter.",
+          "events": [
+            {
+              "year": "1721",
+              "title": "Le fort portugais",
+              "text": "Le fort São João Baptista de Ajudá est établi à Ouidah. Il abrite aujourd'hui un musée d'histoire."
+            },
+            {
+              "year": "1727",
+              "title": "La conquête par le Dahomey",
+              "text": "Ouidah, royaume de Hueda, est conquis par le Dahomey du roi Agadja."
+            },
+            {
+              "year": "1992–1993",
+              "title": "Ouidah 92",
+              "text": "Premier grand festival consacré aux cultures et aux religions vodun."
+            },
+            {
+              "year": "1994",
+              "title": "La Route de l'esclave",
+              "text": "Le projet de l'UNESCO « La Route de l'esclave » est lancé à Ouidah."
+            },
+            {
+              "year": "1995",
+              "title": "La Porte du Non-Retour",
+              "text": "Le monument est inauguré au bout de la route empruntée par les captifs jusqu'à la plage."
+            },
+            {
+              "year": "1996",
+              "title": "Le 10 janvier",
+              "text": "La fête nationale du Vodun est instituée au Bénin."
+            }
+          ]
+        },
+        "portonovo": {
+          "intro": "Capitale officielle du Bénin, Porto-Novo est connue pour ses musées et son héritage afro-brésilien.",
+          "source": "Musée Honmè ; Musée Da Silva ; Musée ethnographique Alexandre-Sènou-Adandé. À compléter.",
+          "events": [
+            {
+              "year": "XVIe–XVIIe siècle",
+              "title": "Hogbonou",
+              "text": "La ville se développe sous le nom de Hogbonou, puis les Portugais la nomment Porto-Novo."
+            },
+            {
+              "year": "1863",
+              "title": "Le protectorat français",
+              "text": "Le roi Sodji signe un traité de protectorat avec la France."
+            },
+            {
+              "year": "1900",
+              "title": "Capitale du Dahomey colonial",
+              "text": "Porto-Novo devient la capitale de la colonie du Dahomey."
+            },
+            {
+              "year": "1960",
+              "title": "L'indépendance",
+              "text": "Le Dahomey devient indépendant le 1er août. Porto-Novo reste la capitale officielle, Cotonou abrite le siège du gouvernement."
+            }
+          ]
+        }
+      },
+      "media": {
+        "title": "Ressources à venir",
+        "intro": "Ces contenus sont en préparation avec des partenaires locaux.",
+        "status": "À venir",
+        "items": [
+          {
+            "title": "Photographies",
+            "text": "Images libres de droits des sites, avec leurs crédits."
+          },
+          {
+            "title": "Témoignages",
+            "text": "Paroles de guides, d'artisans et de gardiens de la mémoire."
+          },
+          {
+            "title": "Cartes",
+            "text": "Cartes des circuits historiques et des lieux de mémoire."
+          },
+          {
+            "title": "Audio",
+            "text": "Enregistrements de récits et de chants, avec l'accord des personnes concernées."
+          }
+        ]
+      }
+    },
+    "languages": {
+      "badge": "Langues",
+      "title": "Quelques mots pour commencer",
+      "intro": "Salutations et expressions utiles dans les langues du Bénin.",
+      "banner": "Les traductions « brouillon » doivent être validées par un locuteur natif. Seules celles marquées « validée » sont garanties.",
+      "names": {
+        "fon": "Fon",
+        "yoruba": "Yoruba"
+      },
+      "all": "Toutes",
+      "categories": {
+        "greetings": "Salutations",
+        "politeness": "Politesse",
+        "market": "Marché"
+      },
+      "search": "Rechercher une phrase…",
+      "validated_count": "{{ok}}/{{total}} validées",
+      "validated": "Validée",
+      "draft": "Brouillon",
+      "pending": "À venir",
+      "pron": "Prononciation",
+      "pron_pending": "à venir",
+      "audio_soon": "Audio bientôt",
+      "context": "Contexte",
+      "copy": "Copier",
+      "none": "Aucune phrase trouvée."
+    },
+    "stories": {
+      "badge": "Récits",
+      "title": "Histoires à lire et à comprendre",
+      "intro": "Cinq entrées pour mieux comprendre ce que vous verrez sur place.",
+      "review": "Ce récit touche à des pratiques religieuses vivantes. Il est en cours de relecture avec des praticiens et des spécialistes.",
+      "respect_title": "Visiter avec respect",
+      "respect": [
+        "Demandez toujours la permission avant de photographier ou filmer une cérémonie ou une personne.",
+        "Suivez les consignes des guides et des responsables du lieu.",
+        "Ne touchez pas aux objets sacrés et ne franchissez pas les espaces interdits.",
+        "Une contribution ou un cadeau est souvent attendu : renseignez-vous auprès de votre guide."
+      ],
+      "cards": [
+        {
+          "title": "Béhanzin",
+          "summary": "Le dernier roi souverain du Dahomey.",
+          "chapters": [
+            {
+              "title": "Le roi",
+              "text": "Béhanzin règne de 1889 à 1894, à une époque où la France étend son emprise sur la côte."
+            },
+            {
+              "title": "La résistance",
+              "text": "Entre 1892 et 1894, son armée affronte les troupes coloniales françaises lors des guerres franco-dahoméennes."
+            },
+            {
+              "title": "L'exil",
+              "text": "Vaincu, il est déporté en Martinique, puis en Algérie, où il meurt en 1906."
+            }
+          ]
+        },
+        {
+          "title": "Les appliqués d'Abomey",
+          "summary": "Des tissus qui racontent l'histoire des rois.",
+          "chapters": [
+            {
+              "title": "Un art de cour",
+              "text": "Les appliqués sont des tissus ornés de motifs découpés et cousus, qui racontent des épisodes marquants des règnes."
+            },
+            {
+              "title": "Les emblèmes",
+              "text": "Chaque roi est associé à un animal : le buffle pour Ghézo, le lion pour Glèlè, le requin pour Béhanzin."
+            },
+            {
+              "title": "Aujourd'hui",
+              "text": "Des artisans d'Abomey perpétuent cet art et en proposent aux visiteurs."
+            }
+          ]
+        },
+        {
+          "title": "Le 10 janvier",
+          "summary": "La journée nationale du Vodun.",
+          "chapters": [
+            {
+              "title": "Une fête nationale",
+              "text": "Instituée en 1996, elle reconnaît le Vodun comme patrimoine culturel et spirituel du pays."
+            },
+            {
+              "title": "Ouidah ce jour-là",
+              "text": "La ville accueille cérémonies, danses et processions, et rassemble pratiquants et visiteurs."
+            },
+            {
+              "title": "Y assister",
+              "text": "Les cérémonies ne sont pas un spectacle : informez-vous sur les règles à respecter."
+            }
+          ]
+        },
+        {
+          "title": "Forgerons et fondeurs",
+          "summary": "Le travail du métal, un savoir-faire ancien.",
+          "chapters": [
+            {
+              "title": "Le métier",
+              "text": "À Abomey, des artisans fondent le laiton et le bronze à la cire perdue pour réaliser des figures."
+            },
+            {
+              "title": "Gu (Ogou)",
+              "text": "Dans la tradition vodun, le fer et la forge sont associés à la divinité Gu, aussi appelée Ogou."
+            },
+            {
+              "title": "Rencontrer les artisans",
+              "text": "Visiter un atelier permet de comprendre les étapes du travail et de soutenir directement les artisans."
+            }
+          ]
+        },
+        {
+          "title": "Le Vodun, une religion vivante",
+          "summary": "Au-delà des clichés.",
+          "chapters": [
+            {
+              "title": "Ce que c'est",
+              "text": "Le Vodun est un ensemble de croyances et de pratiques originaires de la région. Il est pratiqué par de nombreux Béninois."
+            },
+            {
+              "title": "Ce que ce n'est pas",
+              "text": "Il ne se résume pas à la « magie noire » ou au « vaudou » des films, qui sont des caricatures."
+            },
+            {
+              "title": "En pratique",
+              "text": "Pour assister à une cérémonie, passez par un guide local et respectez les consignes."
+            }
+          ]
+        }
+      ]
+    },
+    "contribute": {
+      "title": "Vous connaissez ce sujet ?",
+      "text": "Historiens, locuteurs, artisans : aidez-nous à corriger et à compléter ces contenus.",
+      "message": "Bonjour, je souhaite contribuer à la page « L'âme du Bénin ».",
+      "button": "Contribuer sur WhatsApp"
+    }
+  }
+}

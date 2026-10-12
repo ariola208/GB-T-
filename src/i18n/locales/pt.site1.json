@@ -1,0 +1,220 @@
+{
+  "about": {
+    "hero_badge": "A nossa história",
+    "hero_title": "Sobre nós",
+    "hero_subtitle": "Uma equipa de apaixonados que há mais de 15 anos o ajuda a descobrir o Benim autêntico",
+    "stats": [
+      "Anos de experiência",
+      "Viajantes satisfeitos",
+      "Parceiros locais",
+      "Satisfação do cliente",
+      "Apoio ao cliente",
+      "Destinos"
+    ],
+    "tabs": {
+      "mission": "Missão",
+      "vision": "Visão",
+      "values": "Valores"
+    },
+    "mission": {
+      "badge": "O que nos move",
+      "title": "Dar a conhecer o Benim autêntico",
+      "text": "A LEGBAH nasceu de uma paixão profunda por este país extraordinário. A nossa missão é criar pontes entre viajantes curiosos e comunidades locais, revelar a riqueza cultural e natural do Benim e contribuir para um turismo sustentável que beneficie todos.",
+      "cta": "Descobrir os nossos circuitos"
+    },
+    "vision": {
+      "badge": "Para onde vamos",
+      "title": "Tornarmo-nos a referência do turismo sustentável",
+      "points": [
+        "Acompanhar 100 000 viajantes por ano",
+        "Criar 500 empregos diretos",
+        "Plantar 10 000 árvores"
+      ]
+    },
+    "values": [
+      {
+        "title": "Paixão",
+        "description": "Amamos profundamente o Benim e a sua cultura."
+      },
+      {
+        "title": "Sustentabilidade",
+        "description": "Um turismo responsável que preserva o ambiente."
+      },
+      {
+        "title": "Excelência",
+        "description": "Procuramos a excelência em cada detalhe."
+      },
+      {
+        "title": "Autenticidade",
+        "description": "Experiências autênticas que o ligam à cultura."
+      }
+    ],
+    "journey": {
+      "badge": "O nosso percurso",
+      "title": "Uma história de paixão"
+    },
+    "milestones": [
+      {
+        "title": "Fundação",
+        "description": "Nascimento da LEGBAH"
+      },
+      {
+        "title": "Expansão",
+        "description": "Abertura do escritório em Cotonou"
+      },
+      {
+        "title": "1.º Prémio",
+        "description": "Melhor operador turístico local"
+      },
+      {
+        "title": "10K viajantes",
+        "description": "Mais de 10 000 viajantes"
+      },
+      {
+        "title": "Digitalização",
+        "description": "Lançamento da plataforma"
+      },
+      {
+        "title": "50K viajantes",
+        "description": "50 000 exploradores"
+      }
+    ],
+    "team": {
+      "badge": "A nossa equipa",
+      "title": "Os rostos por trás da LEGBAH",
+      "subtitle": "Uma equipa multicultural unida por uma paixão: fazê-lo amar o Benim"
+    },
+    "members": [
+      {
+        "role": "Fundador & CEO",
+        "bio": "Apaixonado pelo Benim há 20 anos, criou a LEGBAH para partilhar os tesouros do seu país natal."
+      },
+      {
+        "role": "Diretora de operações",
+        "bio": "Especialista em turismo sustentável, a Sophie garante que cada viagem tenha um impacto positivo."
+      },
+      {
+        "role": "Guia principal",
+        "bio": "Historiador de formação, o Marc conhece cada canto do Benim."
+      },
+      {
+        "role": "Responsável de cultura",
+        "bio": "Antropóloga, a Amina cria experiências imersivas."
+      },
+      {
+        "role": "Responsável de logística",
+        "bio": "O David garante que cada detalhe da sua viagem seja perfeito."
+      },
+      {
+        "role": "Apoio ao cliente",
+        "bio": "Sempre disponível, a Grace é o seu contacto privilegiado."
+      }
+    ],
+    "office": {
+      "badge": "Os nossos escritórios",
+      "title": "Venha conhecer-nos",
+      "button": "Fale connosco"
+    },
+    "cta": {
+      "title": "Pronto para viver a experiência LEGBAH?",
+      "text": "Junte-se aos milhares de viajantes que confiaram em nós",
+      "button": "Explorar destinos"
+    }
+  },
+  "blog": {
+    "badge": "Blog & Novidades",
+    "title": "O Blog LEGBAH",
+    "subtitle": "Conselhos, relatos e inspiração para a sua viagem ao Benim",
+    "search": "Pesquisar um artigo...",
+    "featured": "Artigo em destaque",
+    "read_article": "Ler o artigo",
+    "read": "Ler",
+    "trending_title": "Artigos em alta",
+    "newsletter_title": "Newsletter",
+    "newsletter_text": "Receba os nossos últimos artigos e conselhos de viagem",
+    "email_ph": "O seu email",
+    "subscribe": "Subscrever",
+    "tags_title": "Tags populares",
+    "categories_title": "Categorias",
+    "no_result": "Nenhum artigo encontrado",
+    "help_title": "Uma dúvida sobre a sua viagem?",
+    "help_text": "A nossa equipa de especialistas está aqui para o aconselhar",
+    "contact": "Fale connosco",
+    "min": "min",
+    "categories": {
+      "all": "Todos",
+      "voyage": "Viagem",
+      "culture": "Cultura",
+      "gastronomie": "Gastronomia",
+      "photographie": "Fotografia",
+      "artisanat": "Artesanato",
+      "itineraires": "Itinerários"
+    },
+    "tags": [
+      "Viagem",
+      "Cultura",
+      "Vodum",
+      "Safari",
+      "Foto",
+      "Gastronomia",
+      "Artesanato",
+      "Praia",
+      "UNESCO",
+      "Tradição"
+    ],
+    "posts": [
+      {
+        "title": "10 experiências imperdíveis no Benim",
+        "excerpt": "Dos palácios reais de Abomey às praias de Grand-Popo, descubra as experiências que tornarão a sua viagem inesquecível."
+      },
+      {
+        "title": "Guia completo do Vodum: história e tradições",
+        "excerpt": "Mergulhe no coração da espiritualidade beninense e descubra os segredos desta religião ancestral."
+      },
+      {
+        "title": "Safari fotográfico no Parque da Pendjari",
+        "excerpt": "Dicas e truques para fotografar com sucesso num dos mais belos parques da África Ocidental."
+      },
+      {
+        "title": "A gastronomia beninense: uma viagem culinária",
+        "excerpt": "Da pâte vermelha ao frango grelhado, explore os sabores autênticos da cozinha beninense."
+      },
+      {
+        "title": "Encontro com os artesãos de Abomey",
+        "excerpt": "Os appliqués de Abomey são mundialmente reconhecidos. Descubra os segredos de fabrico destas tapeçarias reais."
+      },
+      {
+        "title": "Itinerário de 7 dias para descobrir o Benim",
+        "excerpt": "Um circuito completo para não perder nenhuma das maravilhas do Benim numa semana."
+      }
+    ]
+  },
+  "gallery": {
+    "badge": "Galeria",
+    "title": "O Benim em imagens",
+    "subtitle": "Descubra a beleza do Benim através da nossa coleção de fotografias",
+    "categories": {
+      "all": "Todas",
+      "landscapes": "Paisagens",
+      "culture": "Cultura",
+      "wildlife": "Fauna",
+      "cities": "Cidades",
+      "beaches": "Praias",
+      "traditions": "Tradições"
+    },
+    "items": [
+      "Ganvié",
+      "Porta do Não-Retorno",
+      "Palácios Reais",
+      "Elefantes",
+      "Cotonou",
+      "Grand-Popo",
+      "Mercado",
+      "Colinas",
+      "Piroga",
+      "Cerimónia",
+      "Baixos-relevos",
+      "Leão"
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "hero": {
+    "kicker": "Découvrez l'Afrique de l'Ouest",
+    "title": "Le Bénin vous attend",
+    "subtitle": "Un voyage entre histoire millénaire, traditions vivantes et paysages à couper le souffle.",
+    "explore": "Explorer",
+    "plan": "Planifier votre voyage",
+    "alt": "Ganvié, la Venise de l'Afrique, village lacustre sur le lac Nokoué, au Bénin",
+    "scroll": "Défiler",
+    "stats": {
+      "years": "Années d'expérience",
+      "destinations": "Destinations",
+      "travelers": "Voyageurs satisfaits"
+    }
+  },
+  "destPreview": {
+    "kicker": "Destinations",
+    "title": "Lieux emblématiques",
+    "all": "Toutes les destinations",
+    "discover": "Découvrir",
+    "items": {
+      "abomey": {
+        "title": "Abomey",
+        "subtitle": "Palais Royaux — UNESCO",
+        "description": "Les vestiges du puissant Royaume du Dahomey, classés au patrimoine mondial."
+      },
+      "ouidah": {
+        "title": "Ouidah",
+        "subtitle": "La Route de l'Esclave",
+        "description": "La Porte du Non-Retour, un lieu de mémoire universel face à l'océan."
+      },
+      "pendjari": {
+        "title": "Pendjari",
+        "subtitle": "Safari & Nature",
+        "description": "L'un des derniers sanctuaires de faune sauvage en Afrique de l'Ouest."
+      },
+      "cotonou": {
+        "title": "Cotonou",
+        "subtitle": "Cœur Économique",
+        "description": "La vibrante capitale économique, entre marchés animés et modernité."
+      }
+    }
+  },
+  "cultureSection": {
+    "kicker": "Patrimoine",
+    "title": "Berceau du Vodoun",
+    "p1": "Le Bénin est le berceau de la religion vodoun, une tradition spirituelle riche et complexe qui continue de façonner la vie quotidienne. Des cérémonies colorées aux masques sacrés, chaque aspect de cette culture raconte une histoire millénaire.",
+    "p2": "De la fête annuelle du Vodoun à Ouidah aux temples secrets de l'arrière-pays, découvrez un patrimoine immatériel d'une profondeur exceptionnelle.",
+    "more": "Explorer la culture",
+    "alt": "Masques traditionnels vodoun du Bénin",
+    "stats": {
+      "inhabitants": "Habitants",
+      "ethnic": "Ethnies",
+      "unesco": "Sites UNESCO"
+    }
+  },
+  "cta": {
+    "kicker": "Prêt pour l'aventure ?",
+    "title": "Commencez votre voyage au Bénin",
+    "text": "Que vous rêviez de safaris, de plages paradisiaques ou de découvertes culturelles, nous créons votre itinéraire sur mesure.",
+    "button": "Contactez-nous",
+    "secondary": "Voir les destinations"
+  },
+  "footer": {
+    "tagline": "Explorez le Bénin, terre de culture, d'histoire et de nature. Un voyage inoubliable vous attend au cœur de l'Afrique de l'Ouest.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "rights": "Tous droits réservés."
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Foire aux questions",
+    "subtitle": "Trouvez rapidement des réponses à vos questions sur le voyage au Bénin",
+    "search": "Rechercher une question...",
+    "results": "{{count}} résultat(s) trouvé(s)",
+    "noresult": "Aucune question trouvée",
+    "contact": {
+      "phone": {
+        "title": "Par téléphone",
+        "hours": "Lun-Ven : 8h-18h"
+      },
+      "email": {
+        "title": "Par email",
+        "reply": "Réponse sous 24h"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "instant": "Discussion instantanée"
+      }
+    },
+    "notfound": {
+      "title": "Vous n'avez pas trouvé votre réponse ?",
+      "text": "Notre équipe est là pour vous aider. Contactez-nous par email, téléphone ou via notre formulaire.",
+      "button": "Nous contacter"
+    },
+    "categories": [
+      {
+        "id": "general",
+        "name": "Général",
+        "questions": [
+          {
+            "q": "Quelle est la meilleure période pour visiter le Bénin ?",
+            "a": "La meilleure période s'étend de novembre à mars, pendant la saison sèche. Les températures sont agréables (25-32°C) et les routes sont praticables. C'est aussi la période idéale pour les safaris dans le Parc de la Pendjari."
+          },
+          {
+            "q": "Faut-il un visa pour entrer au Bénin ?",
+            "a": "Oui, un visa est nécessaire pour la plupart des nationalités. Vous pouvez l'obtenir en ligne via le système e-Visa (https://evisa.gouv.bj) ou à l'arrivée à l'aéroport de Cotonou. Le visa touriste coûte environ 50€ pour 30 jours."
+          },
+          {
+            "q": "Quels vaccins sont recommandés ?",
+            "a": "La vaccination contre la fièvre jaune est obligatoire. Les vaccins recommandés incluent : hépatite A et B, typhoïde, méningite, et rage. Un traitement antipaludique est fortement conseillé."
+          },
+          {
+            "q": "Quelle est la monnaie au Bénin ?",
+            "a": "La monnaie est le Franc CFA (XOF). 1€ ≈ 655 FCFA. Les cartes bancaires sont acceptées dans les grands hôtels, mais il est préférable d'avoir des espèces pour les zones rurales."
+          },
+          {
+            "q": "Quelles langues parle-t-on au Bénin ?",
+            "a": "Le français est la langue officielle. Les langues locales les plus parlées sont le fon, le yoruba, l'adja et le bariba. Dans les zones touristiques, l'anglais est également compris."
+          }
+        ]
+      },
+      {
+        "id": "reservations",
+        "name": "Réservations",
+        "questions": [
+          {
+            "q": "Comment réserver un circuit avec LEGBAH ?",
+            "a": "Vous pouvez réserver directement sur notre site en choisissant votre circuit et vos dates, ou nous contacter via le formulaire de contact pour un devis personnalisé. Un acompte de 30% est demandé à la réservation."
+          },
+          {
+            "q": "Puis-je modifier ou annuler ma réservation ?",
+            "a": "Oui, les modifications sont possibles selon disponibilité. Pour les annulations : plus de 60 jours avant le départ : remboursement intégral ; 30-60 jours : 50% retenu ; moins de 30 jours : non remboursable."
+          },
+          {
+            "q": "Proposez-vous des circuits pour les groupes ?",
+            "a": "Absolument ! Nous organisons des circuits pour groupes de toute taille : familles, associations, entreprises. Des tarifs dégressifs s'appliquent à partir de 6 personnes."
+          },
+          {
+            "q": "Les prix incluent-ils les vols internationaux ?",
+            "a": "Nos circuits n'incluent généralement pas les vols internationaux, sauf mention contraire. Nous pouvons cependant vous conseiller sur les meilleures options de vol."
+          }
+        ]
+      },
+      {
+        "id": "voyage",
+        "name": "Sur place",
+        "questions": [
+          {
+            "q": "Comment se déplacer au Bénin ?",
+            "a": "Pour les circuits organisés, nous fournissons des véhicules privés climatisés avec chauffeur-guide. Pour les voyageurs indépendants, les options incluent : taxis-motos (zémidjans), taxis collectifs, bus, et location de voiture avec chauffeur."
+          },
+          {
+            "q": "Quels types d'hébergement proposez-vous ?",
+            "a": "Nous sélectionnons des hébergements de qualité : hôtels 3-4 étoiles à Cotonou, lodges confortables près des parcs, maisons d'hôtes authentiques, et parfois hébergement chez l'habitant."
+          },
+          {
+            "q": "La nourriture est-elle sûre ?",
+            "a": "Oui, nous sélectionnons des restaurants de confiance. Il est recommandé de boire de l'eau en bouteille, d'éviter les crudités non lavées et les glaçons."
+          },
+          {
+            "q": "Y a-t-il des connexions Internet ?",
+            "a": "La 4G est disponible dans les grandes villes. Nous fournissons une carte SIM locale avec data à tous nos voyageurs. Le WiFi est disponible dans la plupart des hôtels."
+          }
+        ]
+      },
+      {
+        "id": "securite",
+        "name": "Sécurité",
+        "questions": [
+          {
+            "q": "Le Bénin est-il un pays sûr ?",
+            "a": "Oui, le Bénin est considéré comme l'un des pays les plus sûrs d'Afrique de l'Ouest. Les Béninois sont réputés pour leur hospitalité. Comme partout, restez vigilant dans les zones touristiques."
+          },
+          {
+            "q": "Une assurance voyage est-elle obligatoire ?",
+            "a": "Oui, une assurance voyage incluant rapatriement sanitaire est obligatoire pour participer à nos circuits. Nous pouvons vous proposer une assurance complète lors de votre réservation."
+          },
+          {
+            "q": "Que faire en cas d'urgence ?",
+            "a": "Nous fournissons une assistance 24/7 avec un numéro d'urgence local. Notre équipe sur place peut vous aider en cas de problème. Conservez également les coordonnées de votre ambassade."
+          }
+        ]
+      }
+    ]
+  }
+}

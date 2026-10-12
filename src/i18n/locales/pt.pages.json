@@ -1,0 +1,187 @@
+{
+  "hero": {
+    "kicker": "Descubra a África Ocidental",
+    "title": "O Benim espera por si",
+    "subtitle": "Uma viagem entre história milenar, tradições vivas e paisagens de cortar a respiração.",
+    "explore": "Explorar",
+    "plan": "Planear a sua viagem",
+    "alt": "Ganvié, a Veneza de África, aldeia lacustre no lago Nokoué, no Benim",
+    "scroll": "Deslizar",
+    "stats": {
+      "years": "Anos de experiência",
+      "destinations": "Destinos",
+      "travelers": "Viajantes satisfeitos"
+    }
+  },
+  "destPreview": {
+    "kicker": "Destinos",
+    "title": "Lugares emblemáticos",
+    "all": "Todos os destinos",
+    "discover": "Descobrir",
+    "items": {
+      "abomey": {
+        "title": "Abomey",
+        "subtitle": "Palácios Reais — UNESCO",
+        "description": "Os vestígios do poderoso Reino do Daomé, classificados como Património Mundial."
+      },
+      "ouidah": {
+        "title": "Ouidah",
+        "subtitle": "A Rota dos Escravos",
+        "description": "A Porta do Não-Retorno, um lugar de memória universal frente ao oceano."
+      },
+      "pendjari": {
+        "title": "Pendjari",
+        "subtitle": "Safari e Natureza",
+        "description": "Um dos últimos grandes santuários de vida selvagem da África Ocidental."
+      },
+      "cotonou": {
+        "title": "Cotonou",
+        "subtitle": "Coração Económico",
+        "description": "A vibrante capital económica, entre mercados animados e modernidade."
+      }
+    }
+  },
+  "cultureSection": {
+    "kicker": "Património",
+    "title": "Berço do Vodum",
+    "p1": "O Benim é o berço da religião vodum, uma tradição espiritual rica e complexa que continua a moldar a vida quotidiana. Das cerimónias coloridas às máscaras sagradas, cada aspeto desta cultura conta uma história milenar.",
+    "p2": "Da festa anual do Vodum em Ouidah aos templos secretos do interior, descubra um património imaterial de profundidade excecional.",
+    "more": "Explorar a cultura",
+    "alt": "Máscaras tradicionais vodum do Benim",
+    "stats": {
+      "inhabitants": "Habitantes",
+      "ethnic": "Etnias",
+      "unesco": "Sítios UNESCO"
+    }
+  },
+  "cta": {
+    "kicker": "Pronto para a aventura?",
+    "title": "Comece a sua viagem ao Benim",
+    "text": "Quer sonhe com safaris, praias paradisíacas ou descobertas culturais, criamos o seu itinerário por medida.",
+    "button": "Fale connosco",
+    "secondary": "Ver destinos"
+  },
+  "footer": {
+    "tagline": "Explore o Benim, terra de cultura, história e natureza. Uma viagem inesquecível espera por si no coração da África Ocidental.",
+    "navigation": "Navegação",
+    "contact": "Contacto",
+    "rights": "Todos os direitos reservados."
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Perguntas frequentes",
+    "subtitle": "Encontre rapidamente respostas às suas perguntas sobre viajar para o Benim",
+    "search": "Pesquisar uma pergunta...",
+    "results": "{{count}} resultado(s) encontrado(s)",
+    "noresult": "Nenhuma pergunta encontrada",
+    "contact": {
+      "phone": {
+        "title": "Por telefone",
+        "hours": "Seg-Sex: 8h-18h"
+      },
+      "email": {
+        "title": "Por email",
+        "reply": "Resposta em 24h"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "instant": "Conversa instantânea"
+      }
+    },
+    "notfound": {
+      "title": "Não encontrou a sua resposta?",
+      "text": "A nossa equipa está aqui para o ajudar. Contacte-nos por email, telefone ou através do nosso formulário.",
+      "button": "Fale connosco"
+    },
+    "categories": [
+      {
+        "id": "general",
+        "name": "Geral",
+        "questions": [
+          {
+            "q": "Qual é a melhor época para visitar o Benim?",
+            "a": "A melhor época vai de novembro a março, durante a estação seca. As temperaturas são agradáveis (25-32°C) e as estradas são transitáveis. É também a época ideal para safaris no Parque Pendjari."
+          },
+          {
+            "q": "É preciso visto para entrar no Benim?",
+            "a": "Sim, a maioria das nacionalidades precisa de visto. Pode obtê-lo online através do sistema e-Visa (https://evisa.gouv.bj) ou à chegada ao aeroporto de Cotonou. O visto de turista custa cerca de 50 € por 30 dias."
+          },
+          {
+            "q": "Que vacinas são recomendadas?",
+            "a": "A vacinação contra a febre-amarela é obrigatória. As vacinas recomendadas incluem: hepatite A e B, febre tifoide, meningite e raiva. Recomenda-se vivamente um tratamento antipalúdico."
+          },
+          {
+            "q": "Qual é a moeda do Benim?",
+            "a": "A moeda é o franco CFA (XOF). 1 € ≈ 655 FCFA. Os cartões bancários são aceites nos grandes hotéis, mas é preferível ter dinheiro em numerário nas zonas rurais."
+          },
+          {
+            "q": "Que línguas se falam no Benim?",
+            "a": "O francês é a língua oficial. As línguas locais mais faladas são o fon, o iorubá, o adja e o bariba. Nas zonas turísticas, o inglês também é compreendido."
+          }
+        ]
+      },
+      {
+        "id": "reservations",
+        "name": "Reservas",
+        "questions": [
+          {
+            "q": "Como reservar um circuito com a LEGBAH?",
+            "a": "Pode reservar diretamente no nosso site escolhendo o seu circuito e as suas datas, ou contactar-nos através do formulário de contacto para um orçamento personalizado. É pedido um sinal de 30 % no momento da reserva."
+          },
+          {
+            "q": "Posso alterar ou cancelar a minha reserva?",
+            "a": "Sim, as alterações são possíveis consoante a disponibilidade. Para cancelamentos: mais de 60 dias antes da partida: reembolso integral; 30 a 60 dias: 50 % retido; menos de 30 dias: não reembolsável."
+          },
+          {
+            "q": "Propõem circuitos para grupos?",
+            "a": "Claro! Organizamos circuitos para grupos de qualquer dimensão: famílias, associações, empresas. Aplicam-se preços degressivos a partir de 6 pessoas."
+          },
+          {
+            "q": "Os preços incluem voos internacionais?",
+            "a": "Os nossos circuitos geralmente não incluem voos internacionais, salvo indicação em contrário. Podemos, no entanto, aconselhá-lo sobre as melhores opções de voo."
+          }
+        ]
+      },
+      {
+        "id": "voyage",
+        "name": "No local",
+        "questions": [
+          {
+            "q": "Como me deslocar no Benim?",
+            "a": "Nos circuitos organizados, fornecemos veículos privados com ar condicionado e motorista-guia. Para viajantes independentes, as opções incluem: moto-táxis (zémidjans), táxis coletivos, autocarros e aluguer de carro com motorista."
+          },
+          {
+            "q": "Que tipos de alojamento propõem?",
+            "a": "Selecionamos alojamentos de qualidade: hotéis de 3 e 4 estrelas em Cotonou, lodges confortáveis perto dos parques, casas de hóspedes autênticas e, por vezes, alojamento em casa de famílias locais."
+          },
+          {
+            "q": "A comida é segura?",
+            "a": "Sim, selecionamos restaurantes de confiança. Recomenda-se beber água engarrafada e evitar legumes crus mal lavados e cubos de gelo."
+          },
+          {
+            "q": "Há ligação à Internet?",
+            "a": "O 4G está disponível nas grandes cidades. Fornecemos um cartão SIM local com dados a todos os nossos viajantes. O WiFi está disponível na maioria dos hotéis."
+          }
+        ]
+      },
+      {
+        "id": "securite",
+        "name": "Segurança",
+        "questions": [
+          {
+            "q": "O Benim é um país seguro?",
+            "a": "Sim, o Benim é considerado um dos países mais seguros da África Ocidental. Os beninenses são conhecidos pela sua hospitalidade. Como em qualquer lugar, mantenha-se atento nas zonas turísticas."
+          },
+          {
+            "q": "O seguro de viagem é obrigatório?",
+            "a": "Sim, é obrigatório um seguro de viagem que inclua repatriamento sanitário para participar nos nossos circuitos. Podemos propor-lhe um seguro completo no momento da reserva."
+          },
+          {
+            "q": "O que fazer em caso de emergência?",
+            "a": "Asseguramos assistência 24/7 com um número de emergência local. A nossa equipa no local pode ajudá-lo em caso de problema. Guarde também os contactos da sua embaixada."
+          }
+        ]
+      }
+    ]
+  }
+}

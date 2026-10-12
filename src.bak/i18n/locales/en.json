@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Home",
+    "destinations": "Destinations",
+    "culture": "Culture",
+    "services": "Services",
+    "blog": "Blog",
+    "gallery": "Gallery",
+    "faq": "FAQ",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Log in",
+    "logout": "Log out",
+    "profile": "My profile"
+  },
+  "common": {
+    "language": "Language",
+    "theme_light": "Switch to light mode",
+    "theme_dark": "Switch to dark mode",
+    "listen": "Listen",
+    "loading": "Loading...",
+    "translation_partial": "Translation in progress"
+  }
+}

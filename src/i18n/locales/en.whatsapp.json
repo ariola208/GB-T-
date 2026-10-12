@@ -1,0 +1,9 @@
+{
+  "whatsapp": {
+    "label": "Chat with us on WhatsApp",
+    "greeting": "Hello LEGBAH, I would like some information to plan a trip."
+  },
+  "destinations": {
+    "wa_message": "Hello LEGBAH, I would like to book a stay: {{name}}. Could you tell me about dates and prices?"
+  }
+}

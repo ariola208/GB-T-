@@ -1,174 +1,160 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
-import {
-  X,
-  ChevronLeft,
-  ChevronRight,
-  Heart,
-  Download,
-  Share2,
-  Camera,
-  Filter,
-  Grid3x3,
-  Grid2x2,
-} from "lucide-react";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { X, ChevronLeft, ChevronRight, Heart, Download, Share2, Grid3x3, Grid2x2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { localImg, localNames } from "@/lib/localImages";
+import { useToast } from "@/hooks/use-toast";
 
-const categories = ["Toutes", "Paysages", "Culture", "Faune", "Villes", "Plages", "Traditions"];
+type Meta = { cat: string; place?: string; theme?: string };
 
-const galleryImages = [
-  { id: 1, src: "https://images.unsplash.com/photo-1590080669915-3d4e68d2e20f?w=800", category: "Culture", title: "Ganvié", location: "Lac Nokoué" },
-  { id: 2, src: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800", category: "Traditions", title: "Porte du Non-Retour", location: "Ouidah" },
-  { id: 3, src: "https://images.unsplash.com/photo-1589308078059-be3c3044eccc?w=800", category: "Culture", title: "Palais Royaux", location: "Abomey" },
-  { id: 4, src: "https://images.unsplash.com/photo-1547970810-dc1e93b62d48?w=800", category: "Faune", title: "Éléphants", location: "Pendjari" },
-  { id: 5, src: "https://images.unsplash.com/photo-1511735111819-9a3f7709049c?w=800", category: "Villes", title: "Cotonou", location: "Littoral" },
-  { id: 6, src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800", category: "Plages", title: "Grand-Popo", location: "Mono" },
-  { id: 7, src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800", category: "Culture", title: "Marché", location: "Dantokpa" },
-  { id: 8, src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800", category: "Paysages", title: "Collines", location: "Atacora" },
-  { id: 9, src: "https://images.unsplash.com/photo-1590080669915-3d4e68d2e20f?w=800", category: "Culture", title: "Pirogues", location: "Ganvié" },
-  { id: 10, src: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800", category: "Traditions", title: "Cérémonie", location: "Ouidah" },
-  { id: 11, src: "https://images.unsplash.com/photo-1589308078059-be3c3044eccc?w=800", category: "Culture", title: "Bas-reliefs", location: "Abomey" },
-  { id: 12, src: "https://images.unsplash.com/photo-1547970810-dc1e93b62d48?w=800", category: "Faune", title: "Lion", location: "Pendjari" },
-];
+// Légendes = lieu (nom propre) ou thème, déduits du NOM DE FICHIER. Aucune légende inventée.
+const META_RAW: Record<string, Meta> = {
+  "ganvié.jpeg": { cat: "culture", place: "Ganvié" },
+  "pendjari.jpeg": { cat: "wildlife", place: "Pendjari" },
+  "ouidah.jpeg": { cat: "traditions", place: "Ouidah" },
+  "abomey.jpeg": { cat: "culture", place: "Abomey" },
+  "grandpopo.jpeg": { cat: "beaches", place: "Grand-Popo" },
+  "cotonou.jpeg": { cat: "cities", place: "Cotonou" },
+  "natitingou.jpeg": { cat: "landscapes", place: "Natitingou" },
+  "portonovo.jpeg": { cat: "cities", place: "Porto-Novo" },
+  "vodoun_1.jpeg": { cat: "traditions", theme: "vodoun" },
+  "v_1.jpeg": { cat: "traditions", theme: "vodoun" },
+  "vodoun_3.jpeg": { cat: "traditions", theme: "vodoun" },
+  "vodoun_4.jpeg": { cat: "traditions", theme: "vodoun" },
+  "egungun.jpeg": { cat: "traditions", theme: "egungun" },
+  "G_1.jpeg": { cat: "traditions", theme: "gelede" },
+  "G_2.jpeg": { cat: "traditions", theme: "gelede" },
+  "G_3.jpeg": { cat: "traditions", theme: "gelede" },
+  "gastro_1.jpeg": { cat: "culture", theme: "gastronomie" },
+  "gastro_2.jpeg": { cat: "culture", theme: "gastronomie" },
+  "gastro_3.jpeg": { cat: "culture", theme: "gastronomie" },
+  "bask.jpeg": { cat: "culture", theme: "vannerie" },
+  "pot.jpeg": { cat: "culture", theme: "poterie" },
+  "bronze.jpeg": { cat: "culture", theme: "bronze" },
+  "danse.png": { cat: "traditions", theme: "danse" },
+  "tambours.jpeg": { cat: "traditions", theme: "tambours" },
+};
+const META: Record<string, Meta> = Object.fromEntries(
+  Object.entries(META_RAW).map(([k, v]) => [k.normalize("NFC"), v])
+);
+
+type Item = { id: string; src: string; category: string; place?: string; theme?: string; fallback: string };
+
+const ITEMS: Item[] = localNames().map((name) => {
+  const m = META[name];
+  return {
+    id: name,
+    src: localImg(name),
+    category: m?.cat ?? "culture",
+    place: m?.place,
+    theme: m?.theme,
+    fallback: name.replace(/\.[^.]+$/, "").replace(/[_-]+/g, " "),
+  };
+});
+
+const CATEGORY_IDS = ["landscapes", "culture", "wildlife", "cities", "beaches", "traditions"];
 
 const Gallery = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Toutes");
-  const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
+  const { t } = useTranslation();
+  const { toast } = useToast();
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selected, setSelected] = useState<Item | null>(null);
   const [viewMode, setViewMode] = useState<"grid3" | "grid2">("grid3");
-  const [likedImages, setLikedImages] = useState<number[]>([]);
+  const [liked, setLiked] = useState<string[]>([]);
 
-  const filteredImages = selectedCategory === "Toutes" 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === selectedCategory);
+  const titleOf = (i: Item) => i.place ?? (i.theme ? t(`gallery.themes.${i.theme}`) : i.fallback);
+  const present = CATEGORY_IDS.filter((c) => ITEMS.some((i) => i.category === c));
+  const filtered = selectedCategory === "all" ? ITEMS : ITEMS.filter((i) => i.category === selectedCategory);
 
-  const toggleLike = (id: number) => {
-    setLikedImages(prev =>
-      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
-    );
+  const toggleLike = (id: string) => setLiked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]));
+
+  const step = (dir: 1 | -1) => {
+    if (!selected || filtered.length === 0) return;
+    const idx = filtered.findIndex((i) => i.id === selected.id);
+    setSelected(filtered[(idx + dir + filtered.length) % filtered.length]);
   };
 
-  const handlePrevImage = () => {
-    if (!selectedImage) return;
-    const currentIndex = filteredImages.findIndex(img => img.id === selectedImage.id);
-    const prevIndex = currentIndex > 0 ? currentIndex - 1 : filteredImages.length - 1;
-    setSelectedImage(filteredImages[prevIndex]);
+  const share = async (title: string) => {
+    const url = window.location.href;
+    if (navigator.share) {
+      try { await navigator.share({ title, url }); } catch { /* annulé */ }
+    } else {
+      try { await navigator.clipboard.writeText(url); toast({ title: t("destinations.link_copied") }); } catch { /* ignore */ }
+    }
   };
 
-  const handleNextImage = () => {
-    if (!selectedImage) return;
-    const currentIndex = filteredImages.findIndex(img => img.id === selectedImage.id);
-    const nextIndex = currentIndex < filteredImages.length - 1 ? currentIndex + 1 : 0;
-    setSelectedImage(filteredImages[nextIndex]);
-  };
+  useEffect(() => {
+    if (!selected) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelected(null);
+      if (e.key === "ArrowRight") step(1);
+      if (e.key === "ArrowLeft") step(-1);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  });
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="flex min-h-screen flex-col bg-background">
       <Navbar />
-      <main className="flex-1 pt-20">
-        {/* Hero */}
-        <section className="py-16 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
+      <main className="flex-1 pt-24">
+        <section className="bg-gradient-to-r from-foreground/10 via-foreground/5 to-foreground/10 py-16">
           <div className="container mx-auto px-6 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="max-w-3xl mx-auto"
-            >
-              <Badge className="mb-4">Galerie</Badge>
-              <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6">
-                Le Bénin en images
-              </h1>
-              <p className="text-xl text-muted-foreground">
-                Découvrez la beauté du Bénin à travers notre collection de photos
-              </p>
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="mx-auto max-w-3xl">
+              <Badge className="mb-4">{t("gallery.badge")}</Badge>
+              <h1 className="mb-6 font-heading text-5xl font-bold md:text-6xl">{t("gallery.title")}</h1>
+              <p className="text-xl text-muted-foreground">{t("gallery.subtitle")}</p>
             </motion.div>
           </div>
         </section>
 
-        {/* Controls */}
-        <section className="py-8 border-b border-border sticky top-20 bg-background/95 backdrop-blur-sm z-10">
+        <section className="sticky top-20 z-10 border-b border-border bg-background/95 py-6 backdrop-blur-sm">
           <div className="container mx-auto px-6">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div className="flex flex-wrap gap-2">
-                {categories.map((cat) => (
-                  <Button
-                    key={cat}
-                    variant={selectedCategory === cat ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedCategory(cat)}
-                  >
-                    {cat}
+                {["all", ...present].map((c) => (
+                  <Button key={c} variant={selectedCategory === c ? "default" : "outline"} size="sm" onClick={() => setSelectedCategory(c)}>
+                    {t(`gallery.categories.${c}`)}
                   </Button>
                 ))}
               </div>
               <div className="flex gap-2">
-                <Button
-                  variant={viewMode === "grid3" ? "default" : "outline"}
-                  size="icon"
-                  onClick={() => setViewMode("grid3")}
-                >
-                  <Grid3x3 className="w-4 h-4" />
-                </Button>
-                <Button
-                  variant={viewMode === "grid2" ? "default" : "outline"}
-                  size="icon"
-                  onClick={() => setViewMode("grid2")}
-                >
-                  <Grid2x2 className="w-4 h-4" />
-                </Button>
+                <Button variant={viewMode === "grid3" ? "default" : "outline"} size="icon" onClick={() => setViewMode("grid3")} aria-label="grid 3"><Grid3x3 className="h-4 w-4" /></Button>
+                <Button variant={viewMode === "grid2" ? "default" : "outline"} size="icon" onClick={() => setViewMode("grid2")} aria-label="grid 2"><Grid2x2 className="h-4 w-4" /></Button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Gallery Grid */}
         <section className="py-12">
           <div className="container mx-auto px-6">
+            {ITEMS.length === 0 && <p className="py-16 text-center text-muted-foreground">{t("gallery.empty")}</p>}
             <motion.div
+              key={selectedCategory + viewMode}
               variants={staggerContainer}
               initial="hidden"
               animate="visible"
-              className={`grid gap-4 ${
-                viewMode === "grid3" 
-                  ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4" 
-                  : "grid-cols-1 md:grid-cols-2"
-              }`}
+              className={`grid gap-4 ${viewMode === "grid3" ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4" : "grid-cols-1 md:grid-cols-2"}`}
             >
-              {filteredImages.map((image) => (
-                <motion.div
-                  key={image.id}
-                  variants={fadeInUp}
-                  className="relative group cursor-pointer"
-                  onClick={() => setSelectedImage(image)}
-                >
-                  <div className="relative overflow-hidden rounded-lg aspect-square">
-                    <img
-                      src={image.src}
-                      alt={image.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
-                      <div className="p-4 w-full">
-                        <h3 className="text-white font-bold">{image.title}</h3>
-                        <p className="text-white/80 text-sm">{image.location}</p>
-                      </div>
+              {filtered.map((img) => (
+                <motion.div key={img.id} variants={fadeInUp} className="group relative cursor-pointer" onClick={() => setSelected(img)}>
+                  <div className="relative aspect-square overflow-hidden rounded-lg">
+                    <img src={img.src} alt={titleOf(img)} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div className="absolute inset-0 flex items-end bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
+                      <div className="w-full p-4"><h3 className="font-bold text-white">{titleOf(img)}</h3></div>
                     </div>
-                    <Button
-                      size="icon"
-                      variant="ghost"
-                      className="absolute top-3 right-3 bg-black/50 hover:bg-black/70 text-white opacity-0 group-hover:opacity-100 transition-opacity"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        toggleLike(image.id);
-                      }}
-                    >
-                      <Heart className={`w-4 h-4 ${likedImages.includes(image.id) ? "fill-red-500 text-red-500" : ""}`} />
+                    <Button size="icon" variant="ghost" aria-label="like"
+                      className="absolute right-3 top-3 bg-black/50 text-white opacity-0 transition-opacity hover:bg-black/70 group-hover:opacity-100"
+                      onClick={(e) => { e.stopPropagation(); toggleLike(img.id); }}>
+                      <Heart className={`h-4 w-4 ${liked.includes(img.id) ? "fill-red-500 text-red-500" : ""}`} />
                     </Button>
-                    <Badge className="absolute top-3 left-3 bg-black/50 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                      {image.category}
+                    <Badge className="absolute left-3 top-3 bg-black/50 opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
+                      {t(`gallery.categories.${img.category}`)}
                     </Badge>
                   </div>
                 </motion.div>
@@ -179,74 +165,29 @@ const Gallery = () => {
       </main>
       <Footer />
 
-      {/* Lightbox */}
-      {selectedImage && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
-          <div className="absolute inset-0 bg-black/95" onClick={() => setSelectedImage(null)} />
-          
-          <div className="relative z-10 max-w-5xl w-full mx-4">
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.title}
-              className="w-full max-h-[80vh] object-contain rounded-lg"
-            />
-            
-            <div className="absolute top-4 right-4 flex gap-2">
-              <Button
-                size="icon"
-                variant="ghost"
-                className="bg-black/50 text-white hover:bg-black/70"
-                onClick={() => toggleLike(selectedImage.id)}
-              >
-                <Heart className={`w-4 h-4 ${likedImages.includes(selectedImage.id) ? "fill-red-500 text-red-500" : ""}`} />
+      {selected && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/95" onClick={() => setSelected(null)} />
+          <div className="relative z-10 mx-4 w-full max-w-6xl">
+            <img src={selected.src} alt={titleOf(selected)} className="max-h-[80vh] w-full rounded-lg object-contain" />
+            <div className="absolute right-4 top-4 flex gap-2">
+              <Button size="icon" variant="ghost" className="bg-black/50 text-white hover:bg-black/70" onClick={() => toggleLike(selected.id)} aria-label="like">
+                <Heart className={`h-4 w-4 ${liked.includes(selected.id) ? "fill-red-500 text-red-500" : ""}`} />
               </Button>
-              <Button
-                size="icon"
-                variant="ghost"
-                className="bg-black/50 text-white hover:bg-black/70"
-              >
-                <Share2 className="w-4 h-4" />
+              <Button size="icon" variant="ghost" className="bg-black/50 text-white hover:bg-black/70" onClick={() => share(titleOf(selected))} aria-label="share"><Share2 className="h-4 w-4" /></Button>
+              <Button size="icon" variant="ghost" asChild className="bg-black/50 text-white hover:bg-black/70">
+                <a href={selected.src} download aria-label="download"><Download className="h-4 w-4" /></a>
               </Button>
-              <Button
-                size="icon"
-                variant="ghost"
-                className="bg-black/50 text-white hover:bg-black/70"
-              >
-                <Download className="w-4 h-4" />
-              </Button>
-              <Button
-                size="icon"
-                variant="ghost"
-                className="bg-black/50 text-white hover:bg-black/70"
-                onClick={() => setSelectedImage(null)}
-              >
-                <X className="w-4 h-4" />
-              </Button>
+              <Button size="icon" variant="ghost" className="bg-black/50 text-white hover:bg-black/70" onClick={() => setSelected(null)} aria-label="close"><X className="h-4 w-4" /></Button>
             </div>
-
-            <Button
-              size="icon"
-              variant="ghost"
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white hover:bg-black/70"
-              onClick={handlePrevImage}
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </Button>
-            <Button
-              size="icon"
-              variant="ghost"
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white hover:bg-black/70"
-              onClick={handleNextImage}
-            >
-              <ChevronRight className="w-6 h-6" />
-            </Button>
-
+            <Button size="icon" variant="ghost" className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white hover:bg-black/70" onClick={() => step(-1)} aria-label="previous"><ChevronLeft className="h-6 w-6" /></Button>
+            <Button size="icon" variant="ghost" className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white hover:bg-black/70" onClick={() => step(1)} aria-label="next"><ChevronRight className="h-6 w-6" /></Button>
             <div className="absolute bottom-4 left-4 text-white">
-              <h3 className="font-bold text-xl">{selectedImage.title}</h3>
-              <p className="text-white/80">{selectedImage.location}</p>
+              <h3 className="text-xl font-bold">{titleOf(selected)}</h3>
+              <p className="text-white/80">{t(`gallery.categories.${selected.category}`)}</p>
             </div>
-            <div className="absolute bottom-4 right-4 text-white/60 text-sm">
-              {filteredImages.findIndex(img => img.id === selectedImage.id) + 1} / {filteredImages.length}
+            <div className="absolute bottom-4 right-4 text-sm text-white/60">
+              {filtered.findIndex((i) => i.id === selected.id) + 1} / {filtered.length}
             </div>
           </div>
         </div>

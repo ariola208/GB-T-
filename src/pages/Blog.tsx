@@ -1,85 +1,120 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Calendar, Clock, User, Heart, MessageCircle, Share2, Bookmark, Search, TrendingUp, ChevronRight, ArrowRight, Tag, Filter, Eye } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { Calendar, Clock, Heart, MessageCircle, Bookmark, Search, TrendingUp, ChevronRight, ArrowRight, Eye } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
-import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
+import { Avatar, AvatarFallback } from "../components/ui/avatar";
+import { localImg } from "@/lib/localImages";
 import { Input } from "../components/ui/input";
 
-const blogPosts = [
-  { id: 1, title: "10 expériences incontournables au Bénin", excerpt: "Des palais royaux d'Abomey aux plages de Grand-Popo, découvrez les expériences qui rendront votre voyage inoubliable.", image: "https://images.unsplash.com/photo-1590080669915-3d4e68d2e20f?w=800", author: { name: "Sophie Mènou", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" }, date: "2024-03-15", readTime: "8 min", category: "Voyage", likes: 245, comments: 32, featured: true, views: 3421 },
-  { id: 2, title: "Guide complet du Vodoun : histoire et traditions", excerpt: "Plongez au cœur de la spiritualité béninoise et découvrez les secrets de cette religion ancestrale.", image: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800", author: { name: "Marc Hounkpè", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" }, date: "2024-03-10", readTime: "12 min", category: "Culture", likes: 189, comments: 45, trending: true, views: 2856 },
-  { id: 3, title: "Safari photo au Parc de la Pendjari", excerpt: "Conseils et astuces pour réussir vos photos de safari dans l'un des plus beaux parcs d'Afrique de l'Ouest.", image: "https://images.unsplash.com/photo-1547970810-dc1e93b62d48?w=800", author: { name: "Jean Dupont", avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" }, date: "2024-03-05", readTime: "6 min", category: "Photographie", likes: 156, comments: 23, views: 1892 },
-  { id: 4, title: "La gastronomie béninoise : un voyage culinaire", excerpt: "Du pâte rouge au poulet braisé, explorez les saveurs authentiques de la cuisine béninoise.", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800", author: { name: "Amina Yacoubou", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" }, date: "2024-02-28", readTime: "7 min", category: "Gastronomie", likes: 278, comments: 51, trending: true, views: 3124 },
-  { id: 5, title: "Rencontre avec les artisans d'Abomey", excerpt: "Les appliqués d'Abomey sont mondialement reconnus. Découvrez les secrets de fabrication de ces tapisseries royales.", image: "https://images.unsplash.com/photo-1589308078059-be3c3044eccc?w=800", author: { name: "Claire Fontaine", avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" }, date: "2024-02-20", readTime: "5 min", category: "Artisanat", likes: 134, comments: 18, views: 1456 },
-  { id: 6, title: "Itinéraire de 7 jours pour découvrir le Bénin", excerpt: "Un circuit complet pour ne rien manquer des merveilles du Bénin en une semaine.", image: "https://images.unsplash.com/photo-1511735111819-9a3f7709049c?w=800", author: { name: "Sophie Mènou", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" }, date: "2024-02-15", readTime: "10 min", category: "Itinéraires", likes: 312, comments: 67, trending: true, views: 4123 },
+type Post = {
+  id: number; category: string; image: string; date: string; readMin: number;
+  likes: number; comments: number; views: number; featured?: boolean; trending?: boolean;
+  author: { name: string };
+};
+
+const posts: Post[] = [
+  { id: 1, category: "voyage", image: localImg("ganvié.jpeg", "cotonou.jpeg"), author: { name: "Sophie Mènou" }, date: "2024-03-15", readMin: 8, likes: 245, comments: 32, featured: true, views: 3421 },
+  { id: 2, category: "culture", image: localImg("vodoun_1.jpeg", "ouidah.jpeg"), author: { name: "Marc Hounkpè" }, date: "2024-03-10", readMin: 12, likes: 189, comments: 45, trending: true, views: 2856 },
+  { id: 3, category: "photographie", image: localImg("pendjari.jpeg"), author: { name: "Jean Dupont" }, date: "2024-03-05", readMin: 6, likes: 156, comments: 23, views: 1892 },
+  { id: 4, category: "gastronomie", image: localImg("gastro_1.jpeg"), author: { name: "Amina Yacoubou" }, date: "2024-02-28", readMin: 7, likes: 278, comments: 51, trending: true, views: 3124 },
+  { id: 5, category: "artisanat", image: localImg("bask.jpeg", "abomey.jpeg"), author: { name: "Claire Fontaine" }, date: "2024-02-20", readMin: 5, likes: 134, comments: 18, views: 1456 },
+  { id: 6, category: "itineraires", image: localImg("cotonou.jpeg", "portonovo.jpeg"), author: { name: "Sophie Mènou" }, date: "2024-02-15", readMin: 10, likes: 312, comments: 67, trending: true, views: 4123 },
 ];
 
-const categories = ["Tous", "Voyage", "Culture", "Gastronomie", "Photographie", "Artisanat", "Itinéraires"];
+const categoryIds = ["all", "voyage", "culture", "gastronomie", "photographie", "artisanat", "itineraires"];
+const arr = <T,>(v: unknown): T[] => (Array.isArray(v) ? (v as T[]) : []);
 
 const Blog = () => {
+  const { t, i18n } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("Tous");
-  const [likedPosts, setLikedPosts] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [likedPosts, setLikedPosts] = useState<number[]>([]);
 
-  const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === "Tous" || post.category === selectedCategory;
-    return matchesSearch && matchesCategory;
+  const texts = arr<{ title: string; excerpt: string }>(t("blog.posts", { returnObjects: true }));
+  const tags = arr<string>(t("blog.tags", { returnObjects: true }));
+  const tx = (p: Post) => texts[p.id - 1] ?? { title: "", excerpt: "" };
+  const fmt = (d: string) => new Date(d).toLocaleDateString(i18n.language);
+
+  const filtered = posts.filter((p) => {
+    const q = searchQuery.toLowerCase();
+    const { title, excerpt } = tx(p);
+    return (
+      (title.toLowerCase().includes(q) || excerpt.toLowerCase().includes(q)) &&
+      (selectedCategory === "all" || p.category === selectedCategory)
+    );
   });
 
-  const toggleLike = (id) => setLikedPosts(prev => prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]);
+  const toggleLike = (id: number) =>
+    setLikedPosts((prev) => (prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]));
 
-  const featuredPost = blogPosts.find(p => p.featured);
-  const trendingPosts = blogPosts.filter(p => p.trending);
-  const popularTags = ["Voyage", "Culture", "Vodoun", "Safari", "Photo", "Gastronomie", "Artisanat", "Plage", "UNESCO", "Tradition"];
+  const featured = posts.find((p) => p.featured);
+  const trending = posts.filter((p) => p.trending);
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="flex min-h-screen flex-col bg-background">
       <Navbar />
-      <main className="flex-1 pt-20">
-        <section className="py-20 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
+      <main className="flex-1 pt-24">
+        <section className="bg-gradient-to-r from-foreground/10 via-foreground/5 to-foreground/10 py-20">
           <div className="container mx-auto px-6 text-center">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-              <Badge className="mb-4 bg-primary/10 text-primary">Blog & Actualités</Badge>
-              <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6">Le Blog Bénin Tourisme</h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">Conseils, récits et inspirations pour votre voyage au Bénin</p>
-              <div className="relative max-w-xl mx-auto">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                <input type="text" placeholder="Rechercher un article..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="w-full pl-12 pr-4 py-3 bg-background border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary" />
+              <Badge className="mb-4">{t("blog.badge")}</Badge>
+              <h1 className="mb-6 font-heading text-5xl font-bold md:text-6xl">{t("blog.title")}</h1>
+              <p className="mx-auto mb-8 max-w-2xl text-xl text-muted-foreground">{t("blog.subtitle")}</p>
+              <div className="relative mx-auto max-w-xl">
+                <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
+                <input
+                  type="text"
+                  placeholder={t("blog.search")}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full rounded-xl border border-border bg-background py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-ring"
+                />
               </div>
             </motion.div>
           </div>
         </section>
 
-        <section className="py-6 border-b sticky top-16 bg-background/95 backdrop-blur-sm z-20">
+        <section className="sticky top-20 z-20 border-b bg-background/95 py-6 backdrop-blur-sm">
           <div className="container mx-auto px-6">
-            <div className="flex flex-wrap gap-2 justify-center">
-              {categories.map(cat => (<Button key={cat} variant={selectedCategory === cat ? "default" : "outline"} size="sm" onClick={() => setSelectedCategory(cat)}>{cat}</Button>))}
+            <div className="flex flex-wrap justify-center gap-2">
+              {categoryIds.map((c) => (
+                <Button key={c} variant={selectedCategory === c ? "default" : "outline"} size="sm" onClick={() => setSelectedCategory(c)}>
+                  {t(`blog.categories.${c}`)}
+                </Button>
+              ))}
             </div>
           </div>
         </section>
 
-        {featuredPost && (
+        {featured && (
           <section className="py-12">
             <div className="container mx-auto px-6">
-              <div className="relative rounded-2xl overflow-hidden h-[500px] group">
-                <img src={featuredPost.image} className="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end">
-                  <div className="p-8 md:p-12 max-w-3xl">
-                    <Badge className="mb-4 bg-primary">Article en vedette</Badge>
-                    <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">{featuredPost.title}</h2>
-                    <p className="text-white/80 text-lg mb-6 line-clamp-2">{featuredPost.excerpt}</p>
-                    <div className="flex items-center gap-4 text-white/70 text-sm mb-6">
-                      <div className="flex items-center gap-2"><Avatar className="w-8 h-8"><AvatarImage src={featuredPost.author.avatar} /></Avatar><span>{featuredPost.author.name}</span></div>
-                      <span>•</span><span className="flex items-center gap-1"><Calendar className="w-4 h-4" />{new Date(featuredPost.date).toLocaleDateString("fr-FR")}</span>
-                      <span>•</span><span className="flex items-center gap-1"><Clock className="w-4 h-4" />{featuredPost.readTime}</span>
+              <div className="group relative h-[500px] overflow-hidden rounded-2xl">
+                <img src={featured.image} alt="" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+                  <div className="max-w-3xl p-8 md:p-12">
+                    <Badge className="mb-4 bg-white text-black">{t("blog.featured")}</Badge>
+                    <h2 className="mb-4 font-heading text-3xl font-bold text-white md:text-4xl">{tx(featured).title}</h2>
+                    <p className="mb-6 line-clamp-2 text-lg text-white/80">{tx(featured).excerpt}</p>
+                    <div className="mb-6 flex items-center gap-4 text-sm text-white/70">
+                      <div className="flex items-center gap-2">
+                        <Avatar className="h-8 w-8"><AvatarFallback>{featured.author.name[0]}</AvatarFallback></Avatar>
+                        <span>{featured.author.name}</span>
+                      </div>
+                      <span>•</span>
+                      <span className="flex items-center gap-1"><Calendar className="h-4 w-4" />{fmt(featured.date)}</span>
+                      <span>•</span>
+                      <span className="flex items-center gap-1"><Clock className="h-4 w-4" />{featured.readMin} {t("blog.min")}</span>
                     </div>
-                    <Button className="bg-white text-black hover:bg-white/90" asChild><Link to={`/blog/${featuredPost.id}`}>Lire l'article <ArrowRight className="w-4 h-4 ml-2" /></Link></Button>
+                    <Button className="bg-white text-black hover:bg-white/90" asChild>
+                      <Link to={`/blog/${featured.id}`}>{t("blog.read_article")} <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -89,52 +124,116 @@ const Blog = () => {
 
         <section className="py-12">
           <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
               <div className="lg:col-span-2">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {filteredPosts.map(post => (
-                    <Card key={post.id} className="overflow-hidden hover:shadow-xl transition-all group h-full flex flex-col">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  {filtered.map((p) => (
+                    <Card key={p.id} className="group flex h-full flex-col overflow-hidden">
                       <div className="relative h-56 overflow-hidden">
-                        <img src={post.image} className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-                        <Badge className="absolute top-3 left-3">{post.category}</Badge>
-                        <div className="absolute bottom-3 right-3 flex items-center gap-2 bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full text-white text-xs"><Eye className="w-3 h-3" />{post.views}</div>
-                      </div>
-                      <CardContent className="p-4 flex-1 flex flex-col">
-                        <h3 className="font-heading text-xl font-bold mb-2 line-clamp-2">{post.title}</h3>
-                        <p className="text-muted-foreground text-sm mb-3 line-clamp-2">{post.excerpt}</p>
-                        <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                          <div className="flex items-center gap-1"><Avatar className="w-5 h-5"><AvatarImage src={post.author.avatar} /></Avatar><span>{post.author.name}</span></div>
-                          <span>•</span><span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{new Date(post.date).toLocaleDateString("fr-FR")}</span>
+                        <img src={p.image} alt="" className="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+                        <Badge className="absolute left-3 top-3">{t(`blog.categories.${p.category}`)}</Badge>
+                        <div className="absolute bottom-3 right-3 flex items-center gap-2 rounded-full bg-black/50 px-2 py-1 text-xs text-white backdrop-blur-sm">
+                          <Eye className="h-3 w-3" />{p.views}
                         </div>
-                        <div className="flex items-center justify-between mt-auto pt-3 border-t">
-                          <div className="flex items-center gap-3">
-                            <button onClick={() => toggleLike(post.id)} className="flex items-center gap-1 text-sm text-muted-foreground hover:text-red-500 transition"><Heart className={`w-4 h-4 ${likedPosts.includes(post.id) ? "fill-red-500 text-red-500" : ""}`} />{post.likes + (likedPosts.includes(post.id) ? 1 : 0)}</button>
-                            <span className="flex items-center gap-1 text-sm text-muted-foreground"><MessageCircle className="w-4 h-4" />{post.comments}</span>
+                      </div>
+                      <CardContent className="flex flex-1 flex-col p-4">
+                        <h3 className="mb-2 line-clamp-2 font-heading text-xl font-bold">{tx(p).title}</h3>
+                        <p className="mb-3 line-clamp-2 text-sm text-muted-foreground">{tx(p).excerpt}</p>
+                        <div className="mb-3 flex items-center gap-3 text-xs text-muted-foreground">
+                          <div className="flex items-center gap-1">
+                            <Avatar className="h-5 w-5"><AvatarFallback className="text-[10px]">{p.author.name[0]}</AvatarFallback></Avatar>
+                            <span>{p.author.name}</span>
                           </div>
-                          <Button variant="ghost" size="sm" asChild><Link to={`/blog/${post.id}`}>Lire <ChevronRight className="w-4 h-4 ml-1" /></Link></Button>
+                          <span>•</span>
+                          <span className="flex items-center gap-1"><Calendar className="h-3 w-3" />{fmt(p.date)}</span>
+                        </div>
+                        <div className="mt-auto flex items-center justify-between border-t pt-3">
+                          <div className="flex items-center gap-3">
+                            <button onClick={() => toggleLike(p.id)} className="flex items-center gap-1 text-sm text-muted-foreground transition hover:text-red-500">
+                              <Heart className={`h-4 w-4 ${likedPosts.includes(p.id) ? "fill-red-500 text-red-500" : ""}`} />
+                              {p.likes + (likedPosts.includes(p.id) ? 1 : 0)}
+                            </button>
+                            <span className="flex items-center gap-1 text-sm text-muted-foreground"><MessageCircle className="h-4 w-4" />{p.comments}</span>
+                          </div>
+                          <Button variant="ghost" size="sm" asChild>
+                            <Link to={`/blog/${p.id}`}>{t("blog.read")} <ChevronRight className="ml-1 h-4 w-4" /></Link>
+                          </Button>
                         </div>
                       </CardContent>
                     </Card>
                   ))}
                 </div>
-                {filteredPosts.length === 0 && (<div className="text-center py-12"><p className="text-muted-foreground">Aucun article trouvé</p></div>)}
+                {filtered.length === 0 && (
+                  <div className="py-12 text-center"><p className="text-muted-foreground">{t("blog.no_result")}</p></div>
+                )}
               </div>
 
               <div className="space-y-6">
-                <Card><CardContent className="p-6"><h3 className="font-heading text-xl font-bold mb-4 flex items-center gap-2"><TrendingUp className="w-5 h-5 text-primary" />Articles tendance</h3><div className="space-y-4">{trendingPosts.map(post => (<Link key={post.id} to={`/blog/${post.id}`} className="flex gap-3 group"><img src={post.image} className="w-20 h-20 object-cover rounded-lg" /><div><h4 className="font-medium text-sm group-hover:text-primary transition line-clamp-2">{post.title}</h4><p className="text-xs text-muted-foreground mt-1">{post.readTime}</p></div></Link>))}</div></CardContent></Card>
+                <Card flat>
+                  <CardContent className="p-6">
+                    <h3 className="mb-4 flex items-center gap-2 font-heading text-xl font-bold"><TrendingUp className="h-5 w-5" />{t("blog.trending_title")}</h3>
+                    <div className="space-y-4">
+                      {trending.map((p) => (
+                        <Link key={p.id} to={`/blog/${p.id}`} className="group flex gap-3">
+                          <img src={p.image} alt="" className="h-20 w-20 rounded-lg object-cover" />
+                          <div>
+                            <h4 className="line-clamp-2 text-sm font-medium transition group-hover:underline">{tx(p).title}</h4>
+                            <p className="mt-1 text-xs text-muted-foreground">{p.readMin} {t("blog.min")}</p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
 
-                <Card className="bg-gradient-to-r from-primary/10 to-primary/5"><CardContent className="p-6 text-center"><Bookmark className="w-12 h-12 mx-auto mb-4 text-primary" /><h3 className="font-heading text-xl font-bold mb-2">Newsletter</h3><p className="text-sm text-muted-foreground mb-4">Recevez nos derniers articles et conseils de voyage</p><Input placeholder="Votre email" className="mb-3" /><Button className="w-full">S'abonner</Button></CardContent></Card>
+                <Card flat className="bg-muted/40">
+                  <CardContent className="p-6 text-center">
+                    <Bookmark className="mx-auto mb-4 h-12 w-12" />
+                    <h3 className="mb-2 font-heading text-xl font-bold">{t("blog.newsletter_title")}</h3>
+                    <p className="mb-4 text-sm text-muted-foreground">{t("blog.newsletter_text")}</p>
+                    <Input placeholder={t("blog.email_ph")} className="mb-3" />
+                    <Button className="w-full">{t("blog.subscribe")}</Button>
+                  </CardContent>
+                </Card>
 
-                <Card><CardContent className="p-6"><h3 className="font-heading text-xl font-bold mb-4">Tags populaires</h3><div className="flex flex-wrap gap-2">{popularTags.map(tag => (<Badge key={tag} variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition">{tag}</Badge>))}</div></CardContent></Card>
+                <Card flat>
+                  <CardContent className="p-6">
+                    <h3 className="mb-4 font-heading text-xl font-bold">{t("blog.tags_title")}</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {tags.map((tag) => (
+                        <Badge key={tag} variant="outline" className="cursor-pointer transition hover:bg-foreground hover:text-background">{tag}</Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
 
-                <Card><CardContent className="p-6"><h3 className="font-heading text-xl font-bold mb-4">Catégories</h3><div className="space-y-2">{categories.slice(1).map(cat => (<Link key={cat} to="#" className="flex justify-between items-center py-2 border-b hover:text-primary transition"><span>{cat}</span><span className="text-muted-foreground text-sm">{blogPosts.filter(p => p.category === cat).length}</span></Link>))}</div></CardContent></Card>
+                <Card flat>
+                  <CardContent className="p-6">
+                    <h3 className="mb-4 font-heading text-xl font-bold">{t("blog.categories_title")}</h3>
+                    <div className="space-y-2">
+                      {categoryIds.slice(1).map((c) => (
+                        <button key={c} onClick={() => setSelectedCategory(c)} className="flex w-full items-center justify-between border-b py-2 text-left transition hover:opacity-70">
+                          <span>{t(`blog.categories.${c}`)}</span>
+                          <span className="text-sm text-muted-foreground">{posts.filter((p) => p.category === c).length}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-16 bg-muted/30 text-center">
-          <div className="container mx-auto px-6"><MessageCircle className="w-12 h-12 mx-auto mb-4 text-primary" /><h2 className="font-heading text-3xl font-bold mb-4">Une question sur votre voyage ?</h2><p className="text-muted-foreground mb-8">Notre équipe d'experts est là pour vous conseiller</p><Button size="lg" asChild><Link to="/contact">Contactez-nous <ArrowRight className="w-4 h-4 ml-2" /></Link></Button></div>
+        <section className="bg-muted/30 py-16 text-center">
+          <div className="container mx-auto px-6">
+            <MessageCircle className="mx-auto mb-4 h-12 w-12" />
+            <h2 className="mb-4 font-heading text-3xl font-bold">{t("blog.help_title")}</h2>
+            <p className="mb-8 text-muted-foreground">{t("blog.help_text")}</p>
+            <Button size="lg" asChild>
+              <Link to="/contact">{t("blog.contact")} <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            </Button>
+          </div>
         </section>
       </main>
       <Footer />
