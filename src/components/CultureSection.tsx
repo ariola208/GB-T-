@@ -6,10 +6,10 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import cultureImg from "@/assets/culture-voodoo.jpg";
 
+// Sources : estimations ONU (~14,8 M en 2025) ; liste UNESCO du patrimoine mondial (3 sites). À revérifier avant publication.
 const stats = [
-  { value: "12M", key: "inhabitants" },
-  { value: "50+", key: "ethnic" },
-  { value: "2", key: "unesco" },
+  { value: "14M+", key: "inhabitants" },
+  { value: "3", key: "unesco" },
 ];
 
 const CultureSection = () => {
@@ -54,7 +54,7 @@ const CultureSection = () => {
             <p className="mb-6 font-body leading-relaxed text-muted-foreground">{t("cultureSection.p1")}</p>
             <p className="mb-10 font-body leading-relaxed text-muted-foreground">{t("cultureSection.p2")}</p>
 
-            <div className="mb-10 grid grid-cols-3 gap-4">
+            <div className="mb-10 grid grid-cols-2 gap-4">
               {stats.map((s) => (
                 <div
                   key={s.key}

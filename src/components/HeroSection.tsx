@@ -5,11 +5,9 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/hero-benin.jpg";
 
-const stats = [
-  { value: "15+", key: "years" },
-  { value: "45+", key: "destinations" },
-  { value: "50K+", key: "travelers" },
-];
+// Compteurs retirés (ils étaient fictifs). Ajoute ici de vrais chiffres vérifiés si tu en as :
+// { value: "...", key: "years" } (les libellés existent dans hero.stats)
+const stats: { value: string; key: string }[] = [];
 
 const HeroSection = () => {
   const { t } = useTranslation();

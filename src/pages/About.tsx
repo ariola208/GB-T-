@@ -171,30 +171,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className="py-20">
-          <div className="container mx-auto mb-12 px-6 text-center">
-            <Badge className="mb-4">{t("about.team.badge")}</Badge>
-            <h2 className="mb-4 font-heading text-4xl font-bold">{t("about.team.title")}</h2>
-            <p className="mx-auto max-w-2xl text-muted-foreground">{t("about.team.subtitle")}</p>
-          </div>
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {team.map((member, i) => (
-                <Card key={i} className="text-center">
-                  <CardContent className="p-6">
-                    <Avatar className="mx-auto mb-4 h-24 w-24">
-                      
-                      <AvatarFallback>{member.name[0]}</AvatarFallback>
-                    </Avatar>
-                    <h3 className="text-xl font-bold">{member.name}</h3>
-                    <p className="mb-3 text-sm text-muted-foreground">{members[i]?.role}</p>
-                    <p className="text-sm text-muted-foreground">{members[i]?.bio}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Équipe retirée : à remettre avec de vraies personnes */}
 
         <section className="bg-muted/30 py-20">
           <div className="container mx-auto px-6">

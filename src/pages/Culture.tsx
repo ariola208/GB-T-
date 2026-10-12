@@ -269,43 +269,7 @@ const Culture = () => {
         </section>
 
         {/* Témoignages */}
-        <section className="py-20">
-          <div className="container mx-auto px-6">
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12 text-center">
-              <Badge className="mb-4">{t("culture.testimonials_badge")}</Badge>
-              <h2 className="mb-4 font-heading text-4xl font-bold">{t("culture.testimonials_title")}</h2>
-              <p className="mx-auto max-w-2xl text-muted-foreground">{t("culture.testimonials_text")}</p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              {testimonialMeta.map((m, i) => (
-                <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                  <Card className="h-full">
-                    <CardContent className="p-6">
-                      <Quote className="mb-4 h-8 w-8 text-foreground/20" />
-                      <p className="mb-6 leading-relaxed text-muted-foreground">“{reviews[i]?.content}”</p>
-                      <div className="mb-4 flex items-center gap-1">
-                        {Array.from({ length: 5 }).map((_, s) => (
-                          <Star key={s} className={`h-4 w-4 ${s < m.rating ? "fill-yellow-500 text-yellow-500" : "text-muted"}`} />
-                        ))}
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <Avatar>
-                          
-                          <AvatarFallback>{m.name[0]}</AvatarFallback>
-                        </Avatar>
-                        <div>
-                          <p className="font-bold">{m.name}</p>
-                          <p className="text-sm text-muted-foreground">{reviews[i]?.role}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Témoignages retirés : à remettre avec de vrais avis */}
 
         {/* Newsletter */}
         <section className="bg-gradient-to-r from-foreground/10 via-foreground/5 to-foreground/10 py-20">
