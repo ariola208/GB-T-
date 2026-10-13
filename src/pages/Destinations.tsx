@@ -36,28 +36,28 @@ type Dest = {
 };
 
 const destinations: Dest[] = [
-  { id: 1, slug: "ganvie", name: "Ganvié", region: "Atlantique", category: "culture", image: img("ganvié.jpeg", FALLBACK), rating: 4.8, reviews: 1234, days: "1-2", priceLevel: 2, featured: true, trending: true, temperature: "25-32°C",
+  { id: 1, slug: "ganvie", name: "Ganvié", region: "Atlantique", category: "culture", image: img("ganvié.jpeg", FALLBACK), rating: 0, reviews: 0, days: "1-2", priceLevel: 2, featured: true, trending: true, temperature: "25-32°C",
     activityMeta: [{ price: 15, hours: 2 }, { price: 10, hours: 2 }, { price: 20, hours: 2 }],
     accommodations: [{ name: "Hotel Lac Nokoué", type: "hotel", price: 75, rating: 4.5, amenities: ["wifi", "restaurant", "ac", "lakeview"] }, { name: "Chez Thérèse", type: "guesthouse", price: 35, rating: 4.8, amenities: ["wifi", "homemeal", "terrace", "privatepirogue"] }] },
-  { id: 2, slug: "parc-pendjari", name: "Parc National de la Pendjari", region: "Atacora", category: "nature", image: img("pendjari.jpeg", FALLBACK), rating: 4.9, reviews: 856, days: "3-5", priceLevel: 3, featured: true, trending: false, temperature: "18-35°C",
+  { id: 2, slug: "parc-pendjari", name: "Parc National de la Pendjari", region: "Atacora", category: "nature", image: img("pendjari.jpeg", FALLBACK), rating: 0, reviews: 0, days: "3-5", priceLevel: 3, featured: true, trending: false, temperature: "18-35°C",
     activityMeta: [{ price: 50, hours: 4 }, { price: 80, hours: 6 }, { price: 25, hours: 3 }],
     accommodations: [{ name: "Pendjari Lodge", type: "lodge", price: 120, rating: 4.7, amenities: ["wifi", "restaurant", "pool", "privateguide"] }, { name: "Campement Tanougou", type: "camping", price: 30, rating: 4.5, amenities: ["tents", "showers", "campfire"] }] },
-  { id: 3, slug: "ouidah", name: "Ouidah", region: "Atlantique", category: "historique", image: img("ouidah.jpeg", FALLBACK), rating: 4.7, reviews: 2100, days: "2-3", priceLevel: 2, featured: true, trending: true, temperature: "24-31°C",
+  { id: 3, slug: "ouidah", name: "Ouidah", region: "Atlantique", category: "historique", image: img("ouidah.jpeg", FALLBACK), rating: 0, reviews: 0, days: "2-3", priceLevel: 2, featured: true, trending: true, temperature: "24-31°C",
     activityMeta: [{ price: 25, hours: 3 }, { price: 30, hours: 2 }, { price: 10, hours: 2 }],
     accommodations: [{ name: "Hotel Diaspora", type: "hotel", price: 60, rating: 4.3, amenities: ["wifi", "restaurant", "pool", "ac"] }] },
-  { id: 4, slug: "abomey", name: "Abomey", region: "Zou", category: "historique", image: img("abomey.jpeg", FALLBACK), rating: 4.6, reviews: 945, days: "1-2", priceLevel: 2, featured: false, trending: false, temperature: "22-33°C",
+  { id: 4, slug: "abomey", name: "Abomey", region: "Zou", category: "historique", image: img("abomey.jpeg", FALLBACK), rating: 0, reviews: 0, days: "1-2", priceLevel: 2, featured: false, trending: false, temperature: "22-33°C",
     activityMeta: [{ price: 15, hours: 2 }, { price: 25, hours: 2 }],
     accommodations: [{ name: "Hotel Abomey", type: "hotel", price: 50, rating: 4.2, amenities: ["wifi", "restaurant", "ac"] }] },
-  { id: 5, slug: "grand-popo", name: "Grand-Popo", region: "Mono", category: "plage", image: img("grandpopo.jpeg", FALLBACK), rating: 4.5, reviews: 678, days: "2-4", priceLevel: 2, featured: false, trending: false, temperature: "24-31°C",
+  { id: 5, slug: "grand-popo", name: "Grand-Popo", region: "Mono", category: "plage", image: img("grandpopo.jpeg", FALLBACK), rating: 0, reviews: 0, days: "2-4", priceLevel: 2, featured: false, trending: false, temperature: "24-31°C",
     activityMeta: [{ price: 0, hours: 0 }, { price: 15, hours: 2 }],
     accommodations: [{ name: "Auberge de Grand-Popo", type: "inn", price: 40, rating: 4.4, amenities: ["wifi", "restaurant", "privatebeach"] }] },
-  { id: 6, slug: "cotonou", name: "Cotonou", region: "Littoral", category: "ville", image: img("cotonou.jpeg", FALLBACK), rating: 4.2, reviews: 3400, days: "2-3", priceLevel: 3, featured: false, trending: true, temperature: "24-31°C",
+  { id: 6, slug: "cotonou", name: "Cotonou", region: "Littoral", category: "ville", image: img("cotonou.jpeg", FALLBACK), rating: 0, reviews: 0, days: "2-3", priceLevel: 3, featured: false, trending: true, temperature: "24-31°C",
     activityMeta: [{ price: 15, hours: 3 }, { price: 10, hours: 2 }],
     accommodations: [{ name: "Benin Marina Hotel", type: "hotel4", price: 120, rating: 4.5, amenities: ["wifi", "pool", "restaurant", "spa"] }, { name: "Hotel du Port", type: "hotel3", price: 70, rating: 4.2, amenities: ["wifi", "restaurant", "ac"] }] },
-  { id: 7, slug: "natitingou", name: "Natitingou", region: "Atacora", category: "nature", image: img("natitingou.jpeg", FALLBACK), rating: 4.6, reviews: 423, days: "2-3", priceLevel: 2, featured: false, trending: false, temperature: "18-33°C",
+  { id: 7, slug: "natitingou", name: "Natitingou", region: "Atacora", category: "nature", image: img("natitingou.jpeg", FALLBACK), rating: 0, reviews: 0, days: "2-3", priceLevel: 2, featured: false, trending: false, temperature: "18-33°C",
     activityMeta: [{ price: 20, hours: 3 }, { price: 25, hours: 4 }],
     accommodations: [{ name: "Hotel Tata Somba", type: "hotel", price: 55, rating: 4.3, amenities: ["wifi", "restaurant", "ac"] }] },
-  { id: 8, slug: "porto-novo", name: "Porto-Novo", region: "Ouémé", category: "culture", image: img("portonovo.jpeg", FALLBACK), rating: 4.4, reviews: 567, days: "1-2", priceLevel: 2, featured: false, trending: false, temperature: "24-31°C",
+  { id: 8, slug: "porto-novo", name: "Porto-Novo", region: "Ouémé", category: "culture", image: img("portonovo.jpeg", FALLBACK), rating: 0, reviews: 0, days: "1-2", priceLevel: 2, featured: false, trending: false, temperature: "24-31°C",
     activityMeta: [{ price: 10, hours: 2 }, { price: 20, hours: 3 }],
     accommodations: [{ name: "Hotel Beaurivage", type: "hotel", price: 65, rating: 4.3, amenities: ["wifi", "restaurant", "pool"] }] },
 ];
@@ -227,9 +227,9 @@ const Destinations = () => {
                       <div className="mb-2 flex items-start justify-between gap-2">
                         <h3 className="font-heading text-xl font-bold">{d.name}</h3>
                         <div className="flex shrink-0 items-center gap-1">
-                          <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" />
+                          {d.reviews > 0 && (<><Star className="h-4 w-4 fill-yellow-500 text-yellow-500" />
                           <span className="text-sm font-medium">{d.rating}</span>
-                          <span className="text-xs text-muted-foreground">({d.reviews})</span>
+                          <span className="text-xs text-muted-foreground">({d.reviews})</span></>)}
                         </div>
                       </div>
                       <p className="mb-3 line-clamp-2 text-sm text-muted-foreground">{tx(d).description}</p>
@@ -293,7 +293,7 @@ const Destinations = () => {
                         { icon: Calendar, value: tx(selected).bestTime, label: t("destinations.best_time") },
                         { icon: Thermometer, value: selected.temperature, label: t("destinations.temperature") },
                         { icon: Clock, value: dur(selected), label: t("destinations.duration") },
-                        { icon: Star, value: `${selected.rating}/5`, label: t("destinations.reviews", { count: selected.reviews }) },
+                        { icon: Star, value: selected.reviews > 0 ? `${selected.rating}/5` : "—", label: selected.reviews > 0 ? t("destinations.reviews", { count: selected.reviews }) : t("destinations.no_reviews", { defaultValue: "Pas encore d'avis" }) },
                       ].map((s, i) => (
                         <div key={i} className="rounded-lg bg-muted/40 p-4 text-center">
                           <s.icon className="mx-auto mb-2 h-6 w-6" />
@@ -346,7 +346,7 @@ const Destinations = () => {
                               </div>
                               <div className="text-right">
                                 <p className="font-bold">{a.price}€<span className="text-xs font-normal text-muted-foreground">{t("destinations.per_night")}</span></p>
-                                <div className="flex items-center justify-end gap-1"><Star className="h-3 w-3 fill-yellow-500 text-yellow-500" /><span className="text-sm">{a.rating}</span></div>
+                                {/* Note masquée : données non vérifiées */}
                               </div>
                             </div>
                             <div className="mt-2 flex flex-wrap gap-2">

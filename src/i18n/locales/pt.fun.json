@@ -1,0 +1,129 @@
+{
+  "nav": { "map": "Mapa", "quiz": "Quiz", "notebook": "Caderno de viagem", "info": "Informações práticas" },
+  "map": {
+    "badge": "Mapa",
+    "title": "Onde ir no Benim?",
+    "subtitle": "Escolha um lugar para o ver no mapa e estimar a distância a partir de Cotonou.",
+    "list": "Lugares",
+    "distance": "A cerca de {{km}} km de Cotonou em linha reta (a estrada é mais longa).",
+    "start": "Cotonou é o ponto de referência para as distâncias.",
+    "open": "Abrir no Google Maps",
+    "add": "Adicionar ao meu caderno",
+    "added": "No meu caderno",
+    "notebook": "Ver o meu caderno",
+    "offline": "O mapa precisa de ligação à Internet."
+  },
+  "notebook": {
+    "title": "O meu caderno de viagem",
+    "subtitle": "Reúna os seus desejos, ordene-os e envie o seu projeto por WhatsApp.",
+    "empty": "O seu caderno está vazio.",
+    "empty_cta": "Explorar os destinos",
+    "up": "Subir",
+    "down": "Descer",
+    "remove": "Remover",
+    "note_ph": "Uma nota (ex.: 2 noites, visitar o mercado...)",
+    "dates": "Datas previstas",
+    "dates_ph": "Ex.: de 12 a 20 de dezembro",
+    "travelers": "Número de viajantes",
+    "send": "Enviar o meu projeto por WhatsApp",
+    "copy": "Copiar o resumo",
+    "copied": "Resumo copiado",
+    "count": "{{count}} lugar(es) no meu caderno",
+    "stored": "O seu caderno fica guardado apenas neste navegador.",
+    "wa_intro": "Olá, este é o meu projeto de viagem ao Benim:",
+    "wa_dates": "Datas: {{dates}}",
+    "wa_travelers": "Viajantes: {{n}}"
+  },
+  "info": {
+    "title": "Informações práticas",
+    "subtitle": "O essencial para preparar a sua viagem.",
+    "disclaimer": "Informações gerais, a verificar antes da partida junto das fontes oficiais.",
+    "converter": {
+      "title": "Conversor euro / franco CFA",
+      "eur": "Euros (€)",
+      "xof": "Francos CFA (F CFA)",
+      "result": "= {{value}}",
+      "note": "Taxa fixa entre o franco CFA e o euro: 1 € = 655,957 F CFA. As casas de câmbio aplicam as suas próprias margens."
+    },
+    "facts": {
+      "language": { "title": "Línguas", "text": "O francês é a língua oficial. Fon, ioruba, dendi, bariba e outras línguas são faladas consoante a região." },
+      "currency": { "title": "Moeda", "text": "Franco CFA (XOF), indexado ao euro a uma taxa fixa." },
+      "timezone": { "title": "Fuso horário", "text": "UTC+1 todo o ano, sem mudança de hora." },
+      "electricity": { "title": "Eletricidade", "text": "220 V, 50 Hz. Tomadas dos tipos C e E: leve um adaptador, se necessário." },
+      "phone": { "title": "Telefone", "text": "Indicativo internacional: +229." },
+      "driving": { "title": "Trânsito", "text": "Conduz-se pela direita." },
+      "health": { "title": "Saúde", "text": "A vacina contra a febre-amarela é exigida à entrada. Peça conselho a um médico ou a um centro de vacinação antes da partida." },
+      "entry": { "title": "Entrada no país", "text": "As condições de entrada (visto, documentos) podem mudar: verifique-as junto de uma embaixada do Benim ou do site oficial do governo antes de viajar." }
+    },
+    "holidays": {
+      "title": "Principais feriados",
+      "note": "As festas muçulmanas (datas variáveis) e os feriados decretados não estão incluídos: consulte o calendário oficial.",
+      "download": "Adicionar à minha agenda (.ics)",
+      "names": {
+        "newyear": "Ano Novo",
+        "religions": "Dia das religiões endógenas (festa do vodum)",
+        "easterMonday": "Segunda-feira de Páscoa",
+        "labour": "Dia do Trabalhador",
+        "ascension": "Ascensão",
+        "whitMonday": "Segunda-feira de Pentecostes",
+        "independence": "Dia da Independência",
+        "assumption": "Assunção",
+        "allsaints": "Dia de Todos os Santos",
+        "christmas": "Natal"
+      }
+    }
+  },
+  "quiz": {
+    "badge": "Jogos e descobertas",
+    "title": "Quiz",
+    "subtitle": "Encontre a viagem que lhe assenta e depois teste os seus conhecimentos.",
+    "tabs": { "finder": "Encontrar a minha viagem", "culture": "Quiz de cultura" },
+    "finder": {
+      "q1": "O que mais o atrai?",
+      "q2": "E como segunda escolha?",
+      "q3": "De quanto tempo dispõe?",
+      "interests": { "historique": "A história e os monumentos", "nature": "A natureza e os animais", "plage": "A praia e o descanso", "ville": "A vida urbana e os mercados", "culture": "As tradições e a vida local" },
+      "durations": { "short": "Uma estadia curta (1 a 3 dias)", "medium": "Cerca de uma semana", "long": "Mais de uma semana" },
+      "step": "Etapa {{n}} / 3",
+      "back": "Voltar",
+      "restart": "Recomeçar",
+      "result_title": "As nossas ideias para si",
+      "result_note_short": "Para uma estadia curta, privilegiámos os locais perto de Cotonou.",
+      "match1": "Corresponde ao seu primeiro desejo",
+      "match2": "Corresponde ao seu segundo desejo",
+      "match0": "Perto de Cotonou",
+      "see_map": "Ver no mapa",
+      "add": "Adicionar ao caderno",
+      "added": "No meu caderno",
+      "aerial": "≈ {{km}} km de Cotonou em linha reta"
+    },
+    "culture": {
+      "intro": "10 perguntas sobre a história e a cultura do Benim.",
+      "start": "Começar",
+      "question_of": "Pergunta {{n}} / {{total}}",
+      "correct": "Resposta certa!",
+      "wrong": "Não exatamente.",
+      "next": "Pergunta seguinte",
+      "finish": "Ver a minha pontuação",
+      "score": "A sua pontuação: {{score}} / {{total}}",
+      "best": "Melhor pontuação neste dispositivo: {{best}} / {{total}}",
+      "tiers": { "high": "Excelente: conhece muito bem o Benim!", "mid": "Bem jogado: tem boas bases.", "low": "Bela descoberta: a rubrica «A alma do Benim» ensina-lhe mais." },
+      "restart": "Jogar de novo",
+      "share": "Partilhar a minha pontuação",
+      "share_text": "Obtive {{score}}/{{total}} no quiz de cultura do Benim!",
+      "copied": "Texto copiado"
+    },
+    "q": {
+      "unesco": { "q": "Em que ano os palácios reais de Abomey foram inscritos no Património Mundial da UNESCO?", "exp": "Estão inscritos desde 1985." },
+      "exile": { "q": "Que rei do Daomé se rendeu em 1894 antes de ser exilado na Martinica?", "exp": "Béhanzin, exilado na Martinica e depois na Argélia." },
+      "jan10": { "q": "A que é dedicado o dia 10 de janeiro no Benim?", "opts": ["A festa da independência", "O dia das religiões endógenas", "O dia do trabalhador", "O Ano Novo"], "exp": "É o dia das religiões endógenas, também chamado festa do vodum." },
+      "gate": { "q": "Que cidade abriga a Porta do Não-Retorno?", "exp": "Ouidah, no fim da Rota dos Escravos." },
+      "capital": { "q": "Qual é a capital oficial do Benim?", "exp": "Porto-Novo é a capital oficial; Cotonou concentra o governo e a atividade económica." },
+      "bronze": { "q": "Que técnica se usa para fundir o bronze no artesanato beninense?", "opts": ["A tecelagem", "A olaria", "A cera perdida", "A cestaria"], "exp": "A cera perdida: o objeto é modelado em cera, revestido de argila e o metal substitui a cera." },
+      "rename": { "q": "Em que ano o Daomé se tornou oficialmente o Benim?", "exp": "Em 1975." },
+      "currency": { "q": "Que moeda se usa no Benim?", "exp": "O franco CFA (XOF), indexado ao euro a uma taxa fixa." },
+      "gelede": { "q": "Quem homenageiam as máscaras Gèlèdè?", "opts": ["Os caçadores", "As mães", "Os pescadores", "Os reis"], "exp": "Os Gèlèdè homenageiam as mães e o seu poder espiritual." },
+      "fort": { "q": "O forte de São João Baptista de Ajudá, em Ouidah, foi fundado por Portugal em…", "exp": "Em 1721. Hoje acolhe o Museu de História de Ouidah." }
+    }
+  }
+}

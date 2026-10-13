@@ -15,15 +15,14 @@ export type Place = {
   type: PlaceType;
   lat: number;
   lng: number;
-  hours: number;      // durée sur place (0 pour une nuit d'hébergement)
-  price: number;      // FCFA par personne
-  estimated: boolean; // true = estimation, à remplacer par un tarif réel
-  demo: boolean;      // true = donnée de démonstration (coordonnées approximatives)
-  tier?: Tier;        // niveau de gamme pour restaurants et hébergements
+  hours: number;
+  price: number;
+  estimated: boolean;
+  demo: boolean;
+  tier?: Tier;
 };
 
-// ⚠ Données de démonstration : coordonnées approximatives et prix estimés.
-// À remplacer par des données vérifiées avec tes partenaires.
+// Données de démonstration : coordonnées approximatives et prix estimés.
 const d = { estimated: true, demo: true } as const;
 
 export const PLACES: Place[] = [
@@ -49,31 +48,16 @@ export const PLACES: Place[] = [
 ];
 
 export const PRESETS: { key: Tier; label: string; days: string[][] }[] = [
-  {
-    key: "eco",
-    label: "Économique",
-    days: [
-      ["abomey-palais", "abomey-fondeurs", "abomey-resto-eco", "abomey-nuit-eco"],
-      ["ouidah-fort", "ouidah-porte", "ouidah-resto-eco", "ouidah-nuit-eco"],
-      ["dantokpa", "portonovo-honme"],
-    ],
-  },
-  {
-    key: "mid",
-    label: "Équilibré",
-    days: [
-      ["abomey-palais", "abomey-fondeurs", "abomey-resto", "abomey-nuit"],
-      ["ouidah-fort", "ouidah-porte", "ouidah-resto", "ouidah-nuit"],
-      ["ganvie", "dantokpa"],
-    ],
-  },
-  {
-    key: "premium",
-    label: "Premium",
-    days: [
-      ["abomey-palais", "abomey-fondeurs", "abomey-resto-premium", "abomey-nuit-premium"],
-      ["ouidah-fort", "ouidah-porte", "ouidah-resto-premium", "ouidah-nuit-premium"],
-      ["ganvie", "portonovo-honme"],
-    ],
-  },
+  { key: "eco", label: "Économique", days: [
+    ["abomey-palais", "abomey-fondeurs", "abomey-resto-eco", "abomey-nuit-eco"],
+    ["ouidah-fort", "ouidah-porte", "ouidah-resto-eco", "ouidah-nuit-eco"],
+    ["dantokpa", "portonovo-honme"] ] },
+  { key: "mid", label: "Équilibré", days: [
+    ["abomey-palais", "abomey-fondeurs", "abomey-resto", "abomey-nuit"],
+    ["ouidah-fort", "ouidah-porte", "ouidah-resto", "ouidah-nuit"],
+    ["ganvie", "dantokpa"] ] },
+  { key: "premium", label: "Premium", days: [
+    ["abomey-palais", "abomey-fondeurs", "abomey-resto-premium", "abomey-nuit-premium"],
+    ["ouidah-fort", "ouidah-porte", "ouidah-resto-premium", "ouidah-nuit-premium"],
+    ["ganvie", "portonovo-honme"] ] },
 ];

@@ -1,0 +1,129 @@
+{
+  "nav": { "map": "Map", "quiz": "Quiz", "notebook": "Travel notebook", "info": "Practical info" },
+  "map": {
+    "badge": "Map",
+    "title": "Where to go in Benin?",
+    "subtitle": "Pick a place to see it on the map and estimate its distance from Cotonou.",
+    "list": "Places",
+    "distance": "About {{km}} km from Cotonou as the crow flies (the road is longer).",
+    "start": "Cotonou is the reference point for distances.",
+    "open": "Open in Google Maps",
+    "add": "Add to my notebook",
+    "added": "In my notebook",
+    "notebook": "View my notebook",
+    "offline": "The map requires an Internet connection."
+  },
+  "notebook": {
+    "title": "My travel notebook",
+    "subtitle": "Gather your wishes, put them in order, then send your plan by WhatsApp.",
+    "empty": "Your notebook is empty.",
+    "empty_cta": "Explore destinations",
+    "up": "Move up",
+    "down": "Move down",
+    "remove": "Remove",
+    "note_ph": "A note (e.g. 2 nights, visit the market...)",
+    "dates": "Planned dates",
+    "dates_ph": "E.g. December 12 to 20",
+    "travelers": "Number of travelers",
+    "send": "Send my plan by WhatsApp",
+    "copy": "Copy the summary",
+    "copied": "Summary copied",
+    "count": "{{count}} place(s) in my notebook",
+    "stored": "Your notebook is saved in this browser only.",
+    "wa_intro": "Hello, here is my travel plan for Benin:",
+    "wa_dates": "Dates: {{dates}}",
+    "wa_travelers": "Travelers: {{n}}"
+  },
+  "info": {
+    "title": "Practical info",
+    "subtitle": "The essentials to prepare your trip.",
+    "disclaimer": "General information, to be checked before departure with official sources.",
+    "converter": {
+      "title": "Euro / CFA franc converter",
+      "eur": "Euros (€)",
+      "xof": "CFA francs (F CFA)",
+      "result": "= {{value}}",
+      "note": "Fixed rate between the CFA franc and the euro: €1 = 655.957 F CFA. Exchange offices apply their own margins."
+    },
+    "facts": {
+      "language": { "title": "Languages", "text": "French is the official language. Fon, Yoruba, Dendi, Bariba and other languages are spoken depending on the region." },
+      "currency": { "title": "Currency", "text": "CFA franc (XOF), pegged to the euro at a fixed rate." },
+      "timezone": { "title": "Time zone", "text": "UTC+1 all year, with no clock change." },
+      "electricity": { "title": "Electricity", "text": "220 V, 50 Hz. Type C and E sockets: bring an adapter if needed." },
+      "phone": { "title": "Phone", "text": "International dialling code: +229." },
+      "driving": { "title": "Driving", "text": "Traffic drives on the right." },
+      "health": { "title": "Health", "text": "Yellow fever vaccination is required on entry. Ask a doctor or a vaccination centre for advice before departure." },
+      "entry": { "title": "Entering the country", "text": "Entry requirements (visa, documents) can change: check them with a Beninese embassy or the government's official website before travelling." }
+    },
+    "holidays": {
+      "title": "Main public holidays",
+      "note": "Muslim holidays (variable dates) and decreed holidays are not included: check the official calendar.",
+      "download": "Add to my calendar (.ics)",
+      "names": {
+        "newyear": "New Year's Day",
+        "religions": "Day of Indigenous Religions (vodun festival)",
+        "easterMonday": "Easter Monday",
+        "labour": "Labour Day",
+        "ascension": "Ascension",
+        "whitMonday": "Whit Monday",
+        "independence": "Independence Day",
+        "assumption": "Assumption",
+        "allsaints": "All Saints' Day",
+        "christmas": "Christmas"
+      }
+    }
+  },
+  "quiz": {
+    "badge": "Games and discoveries",
+    "title": "Quiz",
+    "subtitle": "Find the trip that suits you, then test your knowledge.",
+    "tabs": { "finder": "Find my trip", "culture": "Culture quiz" },
+    "finder": {
+      "q1": "What attracts you the most?",
+      "q2": "And as a second choice?",
+      "q3": "How much time do you have?",
+      "interests": { "historique": "History and monuments", "nature": "Nature and animals", "plage": "Beach and relaxation", "ville": "City life and markets", "culture": "Traditions and local life" },
+      "durations": { "short": "A short stay (1 to 3 days)", "medium": "About a week", "long": "More than a week" },
+      "step": "Step {{n}} / 3",
+      "back": "Back",
+      "restart": "Start over",
+      "result_title": "Our ideas for you",
+      "result_note_short": "For a short stay, we favoured places close to Cotonou.",
+      "match1": "Matches your first wish",
+      "match2": "Matches your second wish",
+      "match0": "Close to Cotonou",
+      "see_map": "See on the map",
+      "add": "Add to notebook",
+      "added": "In my notebook",
+      "aerial": "≈ {{km}} km from Cotonou as the crow flies"
+    },
+    "culture": {
+      "intro": "10 questions about the history and culture of Benin.",
+      "start": "Start",
+      "question_of": "Question {{n}} / {{total}}",
+      "correct": "Correct!",
+      "wrong": "Not quite.",
+      "next": "Next question",
+      "finish": "See my score",
+      "score": "Your score: {{score}} / {{total}}",
+      "best": "Best score on this device: {{best}} / {{total}}",
+      "tiers": { "high": "Excellent: you know Benin very well!", "mid": "Well played: you have solid foundations.", "low": "A nice discovery: the “Soul of Benin” section will teach you more." },
+      "restart": "Play again",
+      "share": "Share my score",
+      "share_text": "I scored {{score}}/{{total}} on the Benin culture quiz!",
+      "copied": "Text copied"
+    },
+    "q": {
+      "unesco": { "q": "In which year were the Royal Palaces of Abomey inscribed on UNESCO's World Heritage List?", "exp": "They have been inscribed since 1985." },
+      "exile": { "q": "Which king of Dahomey surrendered in 1894 before being exiled to Martinique?", "exp": "Béhanzin, exiled to Martinique and then Algeria." },
+      "jan10": { "q": "What is January 10 dedicated to in Benin?", "opts": ["Independence Day", "The Day of Indigenous Religions", "Labour Day", "New Year's Day"], "exp": "It is the Day of Indigenous Religions, also called the vodun festival." },
+      "gate": { "q": "Which town is home to the Door of No Return?", "exp": "Ouidah, at the end of the Slave Route." },
+      "capital": { "q": "What is the official capital of Benin?", "exp": "Porto-Novo is the official capital; Cotonou concentrates the government and economic activity." },
+      "bronze": { "q": "Which technique is used to cast bronze in Beninese craftsmanship?", "opts": ["Weaving", "Pottery", "Lost-wax casting", "Basketry"], "exp": "Lost wax: the object is modelled in wax, covered in clay, then the metal replaces the wax." },
+      "rename": { "q": "In which year did Dahomey officially become Benin?", "exp": "In 1975." },
+      "currency": { "q": "Which currency is used in Benin?", "exp": "The CFA franc (XOF), pegged to the euro at a fixed rate." },
+      "gelede": { "q": "Whom do the Gelede masks honour?", "opts": ["Hunters", "Mothers", "Fishermen", "Kings"], "exp": "The Gelede honour mothers and their spiritual power." },
+      "fort": { "q": "The fort of São João Baptista de Ajudá in Ouidah was founded by Portugal in…", "exp": "In 1721. It now houses the Ouidah History Museum." }
+    }
+  }
+}

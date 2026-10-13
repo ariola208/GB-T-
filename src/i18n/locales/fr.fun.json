@@ -1,0 +1,129 @@
+{
+  "nav": { "map": "Carte", "quiz": "Quiz", "notebook": "Carnet de voyage", "info": "Infos pratiques" },
+  "map": {
+    "badge": "Carte",
+    "title": "Où aller au Bénin ?",
+    "subtitle": "Choisissez un lieu pour le voir sur la carte et estimer sa distance depuis Cotonou.",
+    "list": "Lieux",
+    "distance": "À environ {{km}} km de Cotonou à vol d'oiseau (la route est plus longue).",
+    "start": "Cotonou est le point de référence pour les distances.",
+    "open": "Ouvrir dans Google Maps",
+    "add": "Ajouter à mon carnet",
+    "added": "Dans mon carnet",
+    "notebook": "Voir mon carnet",
+    "offline": "La carte nécessite une connexion Internet."
+  },
+  "notebook": {
+    "title": "Mon carnet de voyage",
+    "subtitle": "Rassemblez vos envies, ordonnez-les, puis envoyez votre projet par WhatsApp.",
+    "empty": "Votre carnet est vide.",
+    "empty_cta": "Explorer les destinations",
+    "up": "Monter",
+    "down": "Descendre",
+    "remove": "Retirer",
+    "note_ph": "Une note (ex. : 2 nuits, visiter le marché...)",
+    "dates": "Dates envisagées",
+    "dates_ph": "Ex. : du 12 au 20 décembre",
+    "travelers": "Nombre de voyageurs",
+    "send": "Envoyer mon projet par WhatsApp",
+    "copy": "Copier le résumé",
+    "copied": "Résumé copié",
+    "count": "{{count}} lieu(x) dans mon carnet",
+    "stored": "Votre carnet est enregistré uniquement dans ce navigateur.",
+    "wa_intro": "Bonjour, voici mon projet de voyage au Bénin :",
+    "wa_dates": "Dates : {{dates}}",
+    "wa_travelers": "Voyageurs : {{n}}"
+  },
+  "info": {
+    "title": "Infos pratiques",
+    "subtitle": "L'essentiel pour préparer votre voyage.",
+    "disclaimer": "Informations générales, à vérifier avant le départ auprès des sources officielles.",
+    "converter": {
+      "title": "Convertisseur euro / franc CFA",
+      "eur": "Euros (€)",
+      "xof": "Francs CFA (F CFA)",
+      "result": "= {{value}}",
+      "note": "Taux fixe entre le franc CFA et l'euro : 1 € = 655,957 F CFA. Les bureaux de change appliquent leurs propres marges."
+    },
+    "facts": {
+      "language": { "title": "Langues", "text": "Le français est la langue officielle. Le fon, le yoruba, le dendi, le bariba et d'autres langues sont parlées selon les régions." },
+      "currency": { "title": "Monnaie", "text": "Franc CFA (XOF), rattaché à l'euro à taux fixe." },
+      "timezone": { "title": "Fuseau horaire", "text": "UTC+1 toute l'année, sans changement d'heure." },
+      "electricity": { "title": "Électricité", "text": "220 V, 50 Hz. Prises de type C et E : prévoyez un adaptateur si besoin." },
+      "phone": { "title": "Téléphone", "text": "Indicatif international : +229." },
+      "driving": { "title": "Circulation", "text": "On roule à droite." },
+      "health": { "title": "Santé", "text": "La vaccination contre la fièvre jaune est exigée à l'entrée. Demandez conseil à un médecin ou à un centre de vaccination avant le départ." },
+      "entry": { "title": "Entrée dans le pays", "text": "Les conditions d'entrée (visa, documents) peuvent changer : vérifiez-les auprès d'une ambassade du Bénin ou du site officiel du gouvernement avant de partir." }
+    },
+    "holidays": {
+      "title": "Jours fériés principaux",
+      "note": "Les fêtes musulmanes (dates variables) et les jours fériés décrétés ne sont pas inclus : consultez le calendrier officiel.",
+      "download": "Ajouter à mon agenda (.ics)",
+      "names": {
+        "newyear": "Jour de l'An",
+        "religions": "Journée des religions endogènes (fête du vodoun)",
+        "easterMonday": "Lundi de Pâques",
+        "labour": "Fête du travail",
+        "ascension": "Ascension",
+        "whitMonday": "Lundi de Pentecôte",
+        "independence": "Fête de l'indépendance",
+        "assumption": "Assomption",
+        "allsaints": "Toussaint",
+        "christmas": "Noël"
+      }
+    }
+  },
+  "quiz": {
+    "badge": "Jeux et découvertes",
+    "title": "Quiz",
+    "subtitle": "Trouvez le voyage qui vous ressemble, puis testez vos connaissances.",
+    "tabs": { "finder": "Trouver mon voyage", "culture": "Quiz culture" },
+    "finder": {
+      "q1": "Qu'est-ce qui vous attire le plus ?",
+      "q2": "Et en deuxième choix ?",
+      "q3": "Combien de temps avez-vous ?",
+      "interests": { "historique": "L'histoire et les monuments", "nature": "La nature et les animaux", "plage": "La plage et la détente", "ville": "La vie urbaine et les marchés", "culture": "Les traditions et la vie locale" },
+      "durations": { "short": "Un court séjour (1 à 3 jours)", "medium": "Environ une semaine", "long": "Plus d'une semaine" },
+      "step": "Étape {{n}} / 3",
+      "back": "Retour",
+      "restart": "Recommencer",
+      "result_title": "Nos idées pour vous",
+      "result_note_short": "Pour un court séjour, nous avons privilégié les lieux proches de Cotonou.",
+      "match1": "Correspond à votre première envie",
+      "match2": "Correspond à votre deuxième envie",
+      "match0": "Proche de Cotonou",
+      "see_map": "Voir sur la carte",
+      "add": "Ajouter au carnet",
+      "added": "Dans mon carnet",
+      "aerial": "≈ {{km}} km de Cotonou à vol d'oiseau"
+    },
+    "culture": {
+      "intro": "10 questions sur l'histoire et la culture du Bénin.",
+      "start": "Commencer",
+      "question_of": "Question {{n}} / {{total}}",
+      "correct": "Bonne réponse !",
+      "wrong": "Pas tout à fait.",
+      "next": "Question suivante",
+      "finish": "Voir mon score",
+      "score": "Votre score : {{score}} / {{total}}",
+      "best": "Meilleur score sur cet appareil : {{best}} / {{total}}",
+      "tiers": { "high": "Excellent : vous connaissez très bien le Bénin !", "mid": "Bien joué : vous avez de bonnes bases.", "low": "Belle découverte : la rubrique « L'âme du Bénin » vous en apprendra davantage." },
+      "restart": "Rejouer",
+      "share": "Partager mon score",
+      "share_text": "J'ai obtenu {{score}}/{{total}} au quiz culture du Bénin !",
+      "copied": "Texte copié"
+    },
+    "q": {
+      "unesco": { "q": "En quelle année les palais royaux d'Abomey ont-ils été inscrits au patrimoine mondial de l'UNESCO ?", "exp": "Ils sont inscrits depuis 1985." },
+      "exile": { "q": "Quel roi du Dahomey s'est rendu en 1894 avant d'être exilé en Martinique ?", "exp": "Béhanzin, exilé en Martinique puis en Algérie." },
+      "jan10": { "q": "À quoi est consacré le 10 janvier au Bénin ?", "opts": ["La fête de l'indépendance", "La journée des religions endogènes", "La fête du travail", "Le jour de l'An"], "exp": "C'est la journée des religions endogènes, aussi appelée fête du vodoun." },
+      "gate": { "q": "Quelle ville abrite la Porte du Non-Retour ?", "exp": "Ouidah, au bout de la Route des Esclaves." },
+      "capital": { "q": "Quelle est la capitale officielle du Bénin ?", "exp": "Porto-Novo est la capitale officielle ; Cotonou concentre le gouvernement et l'activité économique." },
+      "bronze": { "q": "Quelle technique sert à couler le bronze dans l'artisanat béninois ?", "opts": ["Le tissage", "La poterie", "La cire perdue", "La vannerie"], "exp": "La cire perdue : l'objet est modelé en cire, enveloppé d'argile, puis le métal remplace la cire." },
+      "rename": { "q": "En quelle année le Dahomey est-il devenu officiellement le Bénin ?", "exp": "En 1975." },
+      "currency": { "q": "Quelle monnaie est utilisée au Bénin ?", "exp": "Le franc CFA (XOF), rattaché à l'euro à taux fixe." },
+      "gelede": { "q": "Qui les masques Gèlèdè honorent-ils ?", "opts": ["Les chasseurs", "Les mères", "Les pêcheurs", "Les rois"], "exp": "Les Gèlèdè rendent hommage aux mères et à leur pouvoir spirituel." },
+      "fort": { "q": "Le fort São João Baptista de Ajudá, à Ouidah, a été fondé par le Portugal en…", "exp": "En 1721. Il abrite aujourd'hui le musée d'histoire de Ouidah." }
+    }
+  }
+}

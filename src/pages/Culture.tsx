@@ -53,9 +53,6 @@ const eventMeta = [
 ];
 
 const testimonialMeta = [
-  { name: "Marie-Claire Hounga", rating: 5 },
-  { name: "Thomas Dubois", rating: 5 },
-  { name: "Aïssatou Diallo", rating: 5 },
 ];
 
 const arr = <T,>(v: unknown): T[] => (Array.isArray(v) ? (v as T[]) : []);

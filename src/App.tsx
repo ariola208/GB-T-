@@ -20,6 +20,10 @@ const Faq = lazy(() => import("./pages/Faq"));
 const Soul = lazy(() => import("./pages/Soul"));
 const Planner = lazy(() => import("./pages/Planner"));
 const Login = lazy(() => import("./pages/Login"));
+const Carte = lazy(() => import("./pages/Carte"));
+const Quiz = lazy(() => import("./pages/Quiz"));
+const Carnet = lazy(() => import("./pages/Carnet"));
+const Infos = lazy(() => import("./pages/Infos"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
@@ -46,6 +50,10 @@ const routes = [
   { path: "/login", element: Login },
   { path: "/ame-du-benin", element: Soul },
   { path: "/planifier", element: Planner },
+  { path: "/carte", element: Carte },
+  { path: "/quiz", element: Quiz },
+  { path: "/carnet", element: Carnet },
+  { path: "/infos-pratiques", element: Infos },
   { path: "*", element: NotFound },
 ];
 

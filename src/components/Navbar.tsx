@@ -37,6 +37,10 @@ const mainLinks = [
 ];
 
 const moreLinks = [
+  { key: "map", path: "/carte" },
+  { key: "quiz", path: "/quiz" },
+  { key: "notebook", path: "/carnet" },
+  { key: "info", path: "/infos-pratiques" },
   { key: "services", path: "/services" },
   { key: "gallery", path: "/gallery" },
   { key: "faq", path: "/faq" },
