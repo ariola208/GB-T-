@@ -42,7 +42,8 @@ const About = () => {
   const heroOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
   const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
-  const statLabels = arr<string>(t("about.stats", { returnObjects: true }));
+  // Statistiques retirées (fictives). Pour en remettre de vraies, relis about.stats et statNumbers.
+  const statLabels: string[] = [];
   const points = arr<string>(t("about.vision.points", { returnObjects: true }));
   const values = arr<{ title: string; description: string }>(t("about.values", { returnObjects: true }));
   const milestones = arr<{ title: string; description: string }>(t("about.milestones", { returnObjects: true }));
@@ -151,25 +152,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className="bg-muted/30 py-20">
-          <div className="container mx-auto mb-12 px-6 text-center">
-            <Badge className="mb-4">{t("about.journey.badge")}</Badge>
-            <h2 className="font-heading text-4xl font-bold">{t("about.journey.title")}</h2>
-          </div>
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
-              {milestones.map((m, i) => (
-                <Card key={i}>
-                  <CardContent className="p-4 text-center">
-                    <p className="font-heading text-2xl font-bold">{years[i]}</p>
-                    <p className="font-bold">{m.title}</p>
-                    <p className="text-xs text-muted-foreground">{m.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Chronologie retirée : dates non vérifiées. À remettre avec de vrais jalons. */}
 
         {/* Équipe retirée : à remettre avec de vraies personnes */}
 
