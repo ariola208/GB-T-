@@ -26,176 +26,22 @@
     "share": "Partilhar",
     "link_copied": "Ligação copiada",
     "close": "Fechar",
-    "tabs": {
-      "overview": "Resumo",
-      "highlights": "Destaques",
-      "activities": "Atividades",
-      "accommodations": "Alojamento",
-      "info": "Informações práticas"
-    },
-    "categories": {
-      "all": "Todos",
-      "culture": "Cultura",
-      "nature": "Natureza",
-      "plage": "Praia",
-      "ville": "Cidade",
-      "historique": "Histórico"
-    },
+    "tabs": { "overview": "Resumo", "highlights": "Destaques", "activities": "Atividades", "accommodations": "Alojamento", "info": "Informações práticas" },
+    "categories": { "all": "Todos", "culture": "Cultura", "nature": "Natureza", "plage": "Praia", "ville": "Cidade", "historique": "Histórico" },
     "cta_title": "Não encontra o que procura?",
     "cta_text": "Criamos itinerários à medida dos seus desejos. Fale-nos do seu projeto!",
     "cta_button": "Criar a minha viagem personalizada",
-    "amenities": {
-      "wifi": "WiFi",
-      "restaurant": "Restaurante",
-      "ac": "Ar condicionado",
-      "lakeview": "Vista para o lago",
-      "homemeal": "Refeições caseiras",
-      "terrace": "Esplanada",
-      "privatepirogue": "Piroga privada",
-      "pool": "Piscina",
-      "privateguide": "Guia privado",
-      "tents": "Tendas equipadas",
-      "showers": "Duches",
-      "campfire": "Fogueira",
-      "privatebeach": "Praia privada",
-      "spa": "Spa"
-    },
-    "acc_types": {
-      "hotel": "Hotel",
-      "hotel3": "Hotel 3*",
-      "hotel4": "Hotel 4*",
-      "guesthouse": "Casa de hóspedes",
-      "lodge": "Lodge",
-      "camping": "Campismo",
-      "inn": "Pousada"
-    },
+    "amenities": { "wifi": "WiFi", "restaurant": "Restaurante", "ac": "Ar condicionado", "lakeview": "Vista para o lago", "homemeal": "Refeições caseiras", "terrace": "Esplanada", "privatepirogue": "Piroga privada", "pool": "Piscina", "privateguide": "Guia privado", "tents": "Tendas equipadas", "showers": "Duches", "campfire": "Fogueira", "privatebeach": "Praia privada", "spa": "Spa" },
+    "acc_types": { "hotel": "Hotel", "hotel3": "Hotel 3*", "hotel4": "Hotel 4*", "guesthouse": "Casa de hóspedes", "lodge": "Lodge", "camping": "Campismo", "inn": "Pousada" },
     "items": [
-      {
-        "description": "A Veneza de África, aldeia lacustre única no mundo",
-        "longDescription": "Ganvié é uma aldeia lacustre excecional situada no lago Nokoué. Com 30 000 habitantes que vivem em casas sobre estacas, é a maior cidade lacustre de África. A vida organiza-se inteiramente sobre a água: mercados flutuantes, escolas, locais de culto. Os habitantes deslocam-se de piroga num balé fascinante.",
-        "bestTime": "Novembro a Fevereiro",
-        "highlights": [
-          "Aldeia lacustre emblemática",
-          "Mercado flutuante",
-          "Museu de Ganvié",
-          "Pesca tradicional",
-          "Artesanato local"
-        ],
-        "activities": [
-          "Passeio de piroga",
-          "Visita ao mercado flutuante",
-          "Oficina de artesanato"
-        ]
-      },
-      {
-        "description": "Um dos últimos grandes santuários de vida selvagem da África Ocidental",
-        "longDescription": "O Parque Nacional da Pendjari é uma joia da conservação na África Ocidental. Em 275 000 hectares, abriga uma fauna excecional: leões, elefantes, búfalos, hipopótamos, chitas e mais de 300 espécies de aves. A cascata de Tanougou e as montanhas do Atacora acrescentam beleza ao lugar.",
-        "bestTime": "Dezembro a Março",
-        "highlights": [
-          "Safari fotográfico",
-          "Observação de leões",
-          "Cascata de Tanougou",
-          "Observação de aves",
-          "Campismo selvagem"
-        ],
-        "activities": [
-          "Safari guiado",
-          "Safari fotográfico",
-          "Caminhada em Tanougou"
-        ]
-      },
-      {
-        "description": "Coração espiritual do vodum e memória do tráfico de escravos",
-        "longDescription": "Ouidah é uma cidade carregada de história. A Rota dos Escravos e a Porta do Não-Retorno testemunham a tragédia do tráfico negreiro. A cidade é também o berço do vodum, com o Templo das Pítons e a Floresta Sagrada de Kpassè. Todos os anos, a 10 de janeiro, a Festa Nacional do Vodum atrai milhares de peregrinos.",
-        "bestTime": "Janeiro, Outubro-Dezembro",
-        "highlights": [
-          "Porta do Não-Retorno",
-          "Rota dos Escravos",
-          "Templo das Pítons",
-          "Floresta Sagrada de Kpassè",
-          "Museu de História"
-        ],
-        "activities": [
-          "Visita histórica",
-          "Cerimónia vodum",
-          "Museu de Ouidah"
-        ]
-      },
-      {
-        "description": "Os palácios reais do Daomé, classificados como Património Mundial",
-        "longDescription": "Abomey foi a capital do poderoso Reino do Daomé durante quase 300 anos. Os palácios reais, Património Mundial da UNESCO, estão ornados com baixos-relevos excecionais que contam a história do reino. O museu histórico guarda tesouros inestimáveis: tronos, armas, objetos rituais.",
-        "bestTime": "Novembro a Fevereiro",
-        "highlights": [
-          "Palácios reais UNESCO",
-          "Museu histórico",
-          "Baixos-relevos",
-          "Artesanato de appliqués"
-        ],
-        "activities": [
-          "Visita aos palácios",
-          "Oficina de appliqués"
-        ]
-      },
-      {
-        "description": "Praias de areia fina, pesca tradicional e ambiente descontraído",
-        "longDescription": "Grand-Popo é uma estância balnear tranquila onde o rio Mono encontra o oceano Atlântico. As suas longas praias ladeadas de coqueiros convidam ao descanso. A aldeia de pescadores mantém as suas tradições. A Bouche du Roy oferece paisagens magníficas.",
-        "bestTime": "Novembro a Março",
-        "highlights": [
-          "Praias de areia fina",
-          "Bouche du Roy",
-          "Pesca tradicional",
-          "Pores do sol"
-        ],
-        "activities": [
-          "Banho de mar",
-          "Piroga no Mono"
-        ]
-      },
-      {
-        "description": "A vibrante capital económica, entre tradição e modernidade",
-        "longDescription": "Cotonou é o coração pulsante do Benim. Esta cidade dinâmica mistura modernidade e tradições. O mercado Dantokpa, um dos maiores da África Ocidental, é uma imersão total na vida local. A Place de l'Étoile Rouge, a catedral de Notre-Dame e a praia de Fidjrossè são locais a descobrir.",
-        "bestTime": "Todo o ano",
-        "highlights": [
-          "Mercado Dantokpa",
-          "Place de l'Étoile Rouge",
-          "Praia de Fidjrossè",
-          "Fundação Zinsou"
-        ],
-        "activities": [
-          "Visita ao Dantokpa",
-          "Arte contemporânea"
-        ]
-      },
-      {
-        "description": "Porta de entrada do país Somba e das suas tatas",
-        "longDescription": "Natitingou é a principal cidade do país Somba, famosa pelas suas habitações tradicionais únicas: as tatas. Estas fortalezas em miniatura de terra crua parecem pequenos castelos. A região oferece magníficas paisagens de colinas e vales.",
-        "bestTime": "Novembro a Fevereiro",
-        "highlights": [
-          "Tatas Somba",
-          "Cascatas de Kota",
-          "Montanhas do Atacora",
-          "Artesanato local"
-        ],
-        "activities": [
-          "Visita às tatas",
-          "Caminhada"
-        ]
-      },
-      {
-        "description": "A capital administrativa, rica em história e tradições",
-        "longDescription": "Porto-Novo, a capital do Benim, é uma cidade com um rico património histórico. O Museu Honmè (antigo palácio real), a Grande Mesquita de estilo afro-brasileiro e o Jardim das Plantas e da Natureza são locais a visitar.",
-        "bestTime": "Novembro a Fevereiro",
-        "highlights": [
-          "Museu Honmè",
-          "Grande Mesquita",
-          "Jardim Botânico",
-          "Palácio do Governador"
-        ],
-        "activities": [
-          "Visita ao Museu Honmè",
-          "Passeio pela cidade"
-        ]
-      }
+      { "description": "A Veneza de África, aldeia lacustre única no mundo", "longDescription": "Ganvié é uma aldeia lacustre excecional situada no lago Nokoué. Com 30 000 habitantes que vivem em casas sobre estacas, é a maior cidade lacustre de África. A vida organiza-se inteiramente sobre a água: mercados flutuantes, escolas, locais de culto. Os habitantes deslocam-se de piroga num balé fascinante.", "bestTime": "Novembro a Fevereiro", "highlights": ["Aldeia lacustre emblemática", "Mercado flutuante", "Museu de Ganvié", "Pesca tradicional", "Artesanato local"], "activities": ["Passeio de piroga", "Visita ao mercado flutuante", "Oficina de artesanato"] },
+      { "description": "Um dos últimos grandes santuários de vida selvagem da África Ocidental", "longDescription": "O Parque Nacional da Pendjari é uma joia da conservação na África Ocidental. Em 275 000 hectares, abriga uma fauna excecional: leões, elefantes, búfalos, hipopótamos, chitas e mais de 300 espécies de aves. A cascata de Tanougou e as montanhas do Atacora acrescentam beleza ao lugar.", "bestTime": "Dezembro a Março", "highlights": ["Safari fotográfico", "Observação de leões", "Cascata de Tanougou", "Observação de aves", "Campismo selvagem"], "activities": ["Safari guiado", "Safari fotográfico", "Caminhada em Tanougou"] },
+      { "description": "Coração espiritual do vodum e memória do tráfico de escravos", "longDescription": "Ouidah é uma cidade carregada de história. A Rota dos Escravos e a Porta do Não-Retorno testemunham a tragédia do tráfico negreiro. A cidade é também o berço do vodum, com o Templo das Pítons e a Floresta Sagrada de Kpassè. Todos os anos, a 10 de janeiro, a Festa Nacional do Vodum atrai milhares de peregrinos.", "bestTime": "Janeiro, Outubro-Dezembro", "highlights": ["Porta do Não-Retorno", "Rota dos Escravos", "Templo das Pítons", "Floresta Sagrada de Kpassè", "Museu de História"], "activities": ["Visita histórica", "Cerimónia vodum", "Museu de Ouidah"] },
+      { "description": "Os palácios reais do Daomé, classificados como Património Mundial", "longDescription": "Abomey foi a capital do poderoso Reino do Daomé durante quase 300 anos. Os palácios reais, Património Mundial da UNESCO, estão ornados com baixos-relevos excecionais que contam a história do reino. O museu histórico guarda tesouros inestimáveis: tronos, armas, objetos rituais.", "bestTime": "Novembro a Fevereiro", "highlights": ["Palácios reais UNESCO", "Museu histórico", "Baixos-relevos", "Artesanato de appliqués"], "activities": ["Visita aos palácios", "Oficina de appliqués"] },
+      { "description": "Praias de areia fina, pesca tradicional e ambiente descontraído", "longDescription": "Grand-Popo é uma estância balnear tranquila onde o rio Mono encontra o oceano Atlântico. As suas longas praias ladeadas de coqueiros convidam ao descanso. A aldeia de pescadores mantém as suas tradições. A Bouche du Roy oferece paisagens magníficas.", "bestTime": "Novembro a Março", "highlights": ["Praias de areia fina", "Bouche du Roy", "Pesca tradicional", "Pores do sol"], "activities": ["Banho de mar", "Piroga no Mono"] },
+      { "description": "A vibrante capital económica, entre tradição e modernidade", "longDescription": "Cotonou é o coração pulsante do Benim. Esta cidade dinâmica mistura modernidade e tradições. O mercado Dantokpa, um dos maiores da África Ocidental, é uma imersão total na vida local. A Place de l'Étoile Rouge, a catedral de Notre-Dame e a praia de Fidjrossè são locais a descobrir.", "bestTime": "Todo o ano", "highlights": ["Mercado Dantokpa", "Place de l'Étoile Rouge", "Praia de Fidjrossè", "Fundação Zinsou"], "activities": ["Visita ao Dantokpa", "Arte contemporânea"] },
+      { "description": "Porta de entrada do país Somba e das suas tatas", "longDescription": "Natitingou é a principal cidade do país Somba, famosa pelas suas habitações tradicionais únicas: as tatas. Estas fortalezas em miniatura de terra crua parecem pequenos castelos. A região oferece magníficas paisagens de colinas e vales.", "bestTime": "Novembro a Fevereiro", "highlights": ["Tatas Somba", "Cascatas de Kota", "Montanhas do Atacora", "Artesanato local"], "activities": ["Visita às tatas", "Caminhada"] },
+      { "description": "A capital administrativa, rica em história e tradições", "longDescription": "Porto-Novo, a capital do Benim, é uma cidade com um rico património histórico. O Museu Honmè (antigo palácio real), a Grande Mesquita de estilo afro-brasileiro e o Jardim das Plantas e da Natureza são locais a visitar.", "bestTime": "Novembro a Fevereiro", "highlights": ["Museu Honmè", "Grande Mesquita", "Jardim Botânico", "Palácio do Governador"], "activities": ["Visita ao Museu Honmè", "Passeio pela cidade"] }
     ]
   }
 }

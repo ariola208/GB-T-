@@ -1,5 +1,3 @@
-import { useRouteSeo } from "@/lib/seo";
-import Logo from "@/components/Logo";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -31,7 +29,6 @@ const mainLinks = [
   { key: "destinations", path: "/destinations" },
   { key: "culture", path: "/culture" },
   { key: "ame", path: "/ame-du-benin" },
-  { key: "planner", path: "/planifier" },
   { key: "blog", path: "/blog" },
   { key: "contact", path: "/contact" },
 ];
@@ -120,7 +117,6 @@ const Navbar = () => {
   // Sur l'accueil, tout en haut : texte blanc sur l'image. Sinon : texte normal.
   const overHero = pathname === "/" && !scrolled;
   const tone = overHero ? "text-white" : "text-foreground";
-  useRouteSeo();
   const isMoreActive = moreLinks.some((l) => l.path === pathname);
 
   const LinkItem = ({ link }: { link: { key: string; path: string } }) => {
@@ -166,7 +162,11 @@ const Navbar = () => {
         >
           {/* Logo */}
           <Link to="/" className={`group flex items-center gap-2.5 font-heading text-lg font-bold ${tone}`}>
-            <Logo className="h-6" />
+            <span className="relative flex h-3 w-3">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-current opacity-40" />
+              <span className="relative inline-flex h-3 w-3 rounded-full bg-current transition-transform duration-300 group-hover:scale-125" />
+            </span>
+            Bénin Tourisme
           </Link>
 
           {/* Liens desktop */}
@@ -248,7 +248,7 @@ const Navbar = () => {
       <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
         <SheetContent side="right" className="flex w-[85%] max-w-sm flex-col gap-0 p-0">
           <SheetTitle className="border-b border-border px-6 py-5 font-heading text-xl">
-            <Logo className="h-6" />
+            Bénin Tourisme
           </SheetTitle>
           <div className="flex-1 overflow-y-auto px-3 py-4">
             {allLinks.map((l, i) => (

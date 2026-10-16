@@ -132,9 +132,7 @@ const Blog = () => {
                       <div className="relative h-56 overflow-hidden">
                         <img src={p.image} alt="" className="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
                         <Badge className="absolute left-3 top-3">{t(`blog.categories.${p.category}`)}</Badge>
-                        <div className="absolute bottom-3 right-3 flex items-center gap-2 rounded-full bg-black/50 px-2 py-1 text-xs text-white backdrop-blur-sm">
-                          <Eye className="h-3 w-3" />{p.views}
-                        </div>
+                        
                       </div>
                       <CardContent className="flex flex-1 flex-col p-4">
                         <h3 className="mb-2 line-clamp-2 font-heading text-xl font-bold">{tx(p).title}</h3>
@@ -148,13 +146,7 @@ const Blog = () => {
                           <span className="flex items-center gap-1"><Calendar className="h-3 w-3" />{fmt(p.date)}</span>
                         </div>
                         <div className="mt-auto flex items-center justify-between border-t pt-3">
-                          <div className="flex items-center gap-3">
-                            <button onClick={() => toggleLike(p.id)} className="flex items-center gap-1 text-sm text-muted-foreground transition hover:text-red-500">
-                              <Heart className={`h-4 w-4 ${likedPosts.includes(p.id) ? "fill-red-500 text-red-500" : ""}`} />
-                              {p.likes + (likedPosts.includes(p.id) ? 1 : 0)}
-                            </button>
-                            <span className="flex items-center gap-1 text-sm text-muted-foreground"><MessageCircle className="h-4 w-4" />{p.comments}</span>
-                          </div>
+                          <span />
                           <Button variant="ghost" size="sm" asChild>
                             <Link to={`/blog/${p.id}`}>{t("blog.read")} <ChevronRight className="ml-1 h-4 w-4" /></Link>
                           </Button>
@@ -196,30 +188,9 @@ const Blog = () => {
                   </CardContent>
                 </Card>
 
-                <Card flat>
-                  <CardContent className="p-6">
-                    <h3 className="mb-4 font-heading text-xl font-bold">{t("blog.tags_title")}</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {tags.map((tag) => (
-                        <Badge key={tag} variant="outline" className="cursor-pointer transition hover:bg-foreground hover:text-background">{tag}</Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                
 
-                <Card flat>
-                  <CardContent className="p-6">
-                    <h3 className="mb-4 font-heading text-xl font-bold">{t("blog.categories_title")}</h3>
-                    <div className="space-y-2">
-                      {categoryIds.slice(1).map((c) => (
-                        <button key={c} onClick={() => setSelectedCategory(c)} className="flex w-full items-center justify-between border-b py-2 text-left transition hover:opacity-70">
-                          <span>{t(`blog.categories.${c}`)}</span>
-                          <span className="text-sm text-muted-foreground">{posts.filter((p) => p.category === c).length}</span>
-                        </button>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                
               </div>
             </div>
           </div>

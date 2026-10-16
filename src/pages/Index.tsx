@@ -1,3 +1,4 @@
+import HomeExtras from "@/components/HomeExtras";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Users, Shield, Heart } from "lucide-react";
@@ -7,6 +8,7 @@ import HeroSection from "@/components/HeroSection";
 import DestinationsPreview from "@/components/DestinationsPreview";
 import CultureSection from "@/components/CultureSection";
 import CTASection from "@/components/CTASection";
+import TravelTools from "@/components/TravelTools";
 import { Card } from "@/components/ui/card";
 
 const advantages = [
@@ -24,13 +26,14 @@ const Index = () => {
       <main className="flex-1">
         <HeroSection />
         <DestinationsPreview />
+        <HomeExtras />
 
         <section className="bg-background py-24">
           <div className="container mx-auto px-6">
             <div className="mb-14 text-center">
-              <h2 className="mb-4 font-heading text-4xl md:text-5xl font-bold">{t("home.why_title")}</h2>
+              <h2 className="mb-4 font-heading text-4xl font-bold md:text-5xl">{t("home.why_title")}</h2>
               <p className="mx-auto max-w-2xl text-muted-foreground">{t("home.why_subtitle")}</p>
-              <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-primary via-secondary to-accent" />
+              <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-foreground" />
             </div>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               {advantages.map((a, i) => (
@@ -42,7 +45,7 @@ const Index = () => {
                   transition={{ delay: i * 0.15, duration: 0.7 }}
                 >
                   <Card className="group h-full p-8 text-center">
-                    <div className="mb-6 inline-flex rounded-2xl bg-primary/10 p-5 text-primary transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
+                    <div className="mb-6 inline-flex rounded-2xl bg-muted p-5 transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 group-hover:bg-foreground group-hover:text-background">
                       <a.icon className="h-8 w-8" />
                     </div>
                     <h3 className="mb-3 font-heading text-2xl font-bold">{t(a.title)}</h3>
@@ -54,6 +57,7 @@ const Index = () => {
           </div>
         </section>
 
+        <TravelTools />
         <CultureSection />
         <CTASection />
       </main>

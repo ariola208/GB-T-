@@ -1,0 +1,21 @@
+{
+  "services": {
+    "quote": "Request a quote",
+    "wa_message": "Hello, I would like a quote for: {{name}}.",
+    "cta_title": "Let's talk about your project",
+    "cta_text": "Describe what you have in mind, and we will answer on WhatsApp.",
+    "cta_button": "Write on WhatsApp",
+    "cta_message": "Hello, I would like to organise a trip to Benin. Can you help me?"
+  },
+  "contact": {
+    "wa_intro": "Hello, my name is {{name}}.",
+    "wa_dates": "Travel dates: {{v}}",
+    "wa_travelers": "Travelers: {{v}}",
+    "sent_title": "WhatsApp is opening…",
+    "sent_desc": "Send the pre-filled message to complete your request.",
+    "whatsapp_cta": "Write on WhatsApp",
+    "form_note": "Your message opens in WhatsApp, ready to send.",
+    "location": "Location",
+    "location_value": "Cotonou, Benin"
+  }
+}

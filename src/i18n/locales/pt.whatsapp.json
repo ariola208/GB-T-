@@ -1,9 +1,9 @@
 {
   "whatsapp": {
     "label": "Fale connosco no WhatsApp",
-    "greeting": "Olá LEGBAH, gostaria de obter informações para organizar uma viagem."
+    "greeting": "Olá Bénin Tourisme, gostaria de obter informações para organizar uma viagem."
   },
   "destinations": {
-    "wa_message": "Olá LEGBAH, gostaria de reservar uma estadia: {{name}}. Podem informar-me sobre datas e preços?"
+    "wa_message": "Olá Bénin Tourisme, gostaria de reservar uma estadia: {{name}}. Podem informar-me sobre datas e preços?"
   }
 }

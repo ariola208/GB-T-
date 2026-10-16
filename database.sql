@@ -393,8 +393,8 @@ INSERT INTO activities (destination_id, name, duration_hours, price, icon_name, 
 
 -- Hébergements
 INSERT INTO accommodations (destination_id, name, type, price_per_night, rating, image_url, amenities) VALUES
-(1, 'Hotel Lac Nokoué', 'Hôtel', 75, 4.5, 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400', '["WiFi", "Restaurant", "Climatisation", "Vue lac"]'),
-(1, 'Chez Thérèse', 'Maison d\'hôtes', 35, 4.8, 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400', '["WiFi", "Repas maison", "Terrasse", "Pirogue privée"]'),
+(1, 'Hotel Lac Nokoué', 'Hôtel', 75, 4.5, 'image: "/images/harry.jpeg"', '["WiFi", "Restaurant", "Climatisation", "Vue lac"]'),
+(1, 'Chez Thérèse', 'Maison d\'hôtes', 35, 4.8, 'image: "/images/harry.jpeg"', '["WiFi", "Repas maison", "Terrasse", "Pirogue privée"]'),
 (2, 'Pendjari Lodge', 'Lodge', 120, 4.7, 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400', '["WiFi", "Restaurant", "Piscine", "Guide privé"]'),
 (2, 'Campement Tanougou', 'Camping', 30, 4.5, 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=400', '["Tentes équipées", "Douches", "Feu de camp"]'),
 (3, 'Hotel Diaspora', 'Hôtel', 60, 4.3, 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400', '["WiFi", "Restaurant", "Piscine", "Climatisation"]'),

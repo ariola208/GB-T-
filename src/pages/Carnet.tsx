@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { PLACES } from "@/data/destinations";
+import { PLACES } from "@/data/places";
 import { getFavs, getNotes, getTrip, setFavs, setNotes, setTrip } from "@/lib/carnet";
 import { waLink } from "@/lib/whatsapp";
 import { useToast } from "@/hooks/use-toast";

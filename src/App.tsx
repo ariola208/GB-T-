@@ -6,6 +6,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { lazy, Suspense } from "react";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import WhatsAppBubble from "@/components/WhatsAppBubble";
+import { useAutoTheme } from "@/hooks/useAutoTheme";
 
 const Index = lazy(() => import("./pages/Index"));
 const Destinations = lazy(() => import("./pages/Destinations"));
@@ -18,21 +20,19 @@ const Blog = lazy(() => import("./pages/Blog"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const Faq = lazy(() => import("./pages/Faq"));
 const Soul = lazy(() => import("./pages/Soul"));
-const Planner = lazy(() => import("./pages/Planner"));
 const Login = lazy(() => import("./pages/Login"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const AmeDuBenin = lazy(() => import("./pages/AmeDuBenin"));
+const Planifier = lazy(() => import("./pages/Planifier"));
+const InfosPratiques = lazy(() => import("./pages/InfosPratiques"));
 const Carte = lazy(() => import("./pages/Carte"));
 const Quiz = lazy(() => import("./pages/Quiz"));
 const Carnet = lazy(() => import("./pages/Carnet"));
-const Infos = lazy(() => import("./pages/Infos"));
-const NotFound = lazy(() => import("./pages/NotFound"));
+const Favoris = lazy(() => import("./pages/Favoris"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
-    queries: {
-      staleTime: 1000 * 60 * 5,
-      retry: 1,
-      refetchOnWindowFocus: false,
-    },
+    queries: { staleTime: 1000 * 60 * 5, retry: 1, refetchOnWindowFocus: false },
   },
 });
 
@@ -48,32 +48,39 @@ const routes = [
   { path: "/gallery", element: Gallery },
   { path: "/faq", element: Faq },
   { path: "/login", element: Login },
-  { path: "/ame-du-benin", element: Soul },
-  { path: "/planifier", element: Planner },
+  { path: "/ame-du-benin", element: AmeDuBenin },
+  { path: "/planifier", element: Planifier },
+  { path: "/infos-pratiques", element: InfosPratiques },
   { path: "/carte", element: Carte },
   { path: "/quiz", element: Quiz },
   { path: "/carnet", element: Carnet },
-  { path: "/infos-pratiques", element: Infos },
+  { path: "/favoris", element: Favoris },
+  { path: "/ame-du-benin", element: Soul },
   { path: "*", element: NotFound },
 ];
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
+const App = () => {
+  useAutoTheme();
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
       <FloatingWhatsApp />
-      <BrowserRouter>
-        <Suspense fallback={<LoadingSpinner size="lg" fullScreen />}>
-          <Routes>
-            {routes.map(({ path, element: Element }) => (
-              <Route key={path} path={path} element={<Element />} />
-            ))}
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+        <BrowserRouter>
+          <Suspense fallback={<LoadingSpinner size="lg" fullScreen />}>
+            <Routes>
+              {routes.map(({ path, element: Element }) => (
+                <Route key={path} path={path} element={<Element />} />
+              ))}
+            </Routes>
+          </Suspense>
+          <WhatsAppBubble />
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

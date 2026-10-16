@@ -53,6 +53,9 @@ const eventMeta = [
 ];
 
 const testimonialMeta = [
+  { name: "Marie-Claire Hounga", rating: 5 },
+  { name: "Thomas Dubois", rating: 5 },
+  { name: "Aïssatou Diallo", rating: 5 },
 ];
 
 const arr = <T,>(v: unknown): T[] => (Array.isArray(v) ? (v as T[]) : []);
@@ -85,7 +88,7 @@ const Culture = () => {
       <Navbar />
       <main className="flex-1">
         {/* Hero */}
-        <section ref={heroRef} className="relative h-screen overflow-hidden">
+        <section ref={heroRef} className="relative h-[75vh] min-h-[28rem] overflow-hidden">
           <motion.div style={{ opacity: heroOpacity, scale: heroScale }} className="absolute inset-0">
             <img src={img("vodoun_1.jpeg", img("G_1.jpeg", FALLBACK))} alt="" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-black/55" />
@@ -167,15 +170,6 @@ const Culture = () => {
                     <p className="mb-6 text-xl text-muted-foreground">{txt.subtitle}</p>
                     <p className="mb-8 leading-relaxed text-muted-foreground">{txt.longDescription}</p>
 
-                    <div className="mb-8 grid grid-cols-3 gap-4">
-                      {Object.entries(cat.stats).map(([key, value]) => (
-                        <div key={key} className="rounded-lg bg-muted/40 p-4 text-center">
-                          <p className="font-heading text-2xl font-bold">{value}</p>
-                          <p className="text-xs text-muted-foreground">{t(`culture.stat_labels.${key}`)}</p>
-                        </div>
-                      ))}
-                    </div>
-
                     <h4 className="mb-4 font-bold">{t("culture.key_traditions")}</h4>
                     <div className="flex flex-wrap gap-2">
                       {txt.traditions.map((tr, i) => (
@@ -234,28 +228,16 @@ const Culture = () => {
                       <div className="relative h-48 overflow-hidden">
                         <img src={m.image} alt={e.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
                         <Badge className="absolute left-3 top-3 bg-black/50 backdrop-blur-sm">{e.category}</Badge>
-                        <Button size="icon" variant="ghost" aria-label="like"
-                          className="absolute right-3 top-3 bg-black/50 text-white hover:bg-black/70"
-                          onClick={() => toggleLike(i)}>
-                          <Heart className={`h-4 w-4 ${liked.includes(i) ? "fill-red-500 text-red-500" : ""}`} />
-                        </Button>
+                        
                       </div>
                       <CardContent className="p-4">
                         <h3 className="mb-2 line-clamp-1 font-bold">{e.title}</h3>
                         <div className="space-y-2 text-sm text-muted-foreground">
                           <p className="flex items-center gap-2"><Calendar className="h-4 w-4" />{e.date}</p>
                           <p className="flex items-center gap-2"><MapPin className="h-4 w-4" />{e.location}</p>
-                          <p className="flex items-center gap-2">
-                            <Users className="h-4 w-4" />
-                            {t("culture.participants", { count: m.attendees.toLocaleString(i18n.language) as any })}
-                          </p>
+                          
                         </div>
-                        <Button variant="link" className="mt-4 p-0" asChild>
-                          <Link to="/contact" className="flex items-center gap-1">
-                            {t("culture.register")}
-                            <ChevronRight className="h-4 w-4" />
-                          </Link>
-                        </Button>
+                        
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -265,26 +247,7 @@ const Culture = () => {
           </div>
         </section>
 
-        {/* Témoignages */}
-        {/* Témoignages retirés : à remettre avec de vrais avis */}
-
-        {/* Newsletter */}
-        <section className="bg-gradient-to-r from-foreground/10 via-foreground/5 to-foreground/10 py-20">
-          <div className="container mx-auto px-6 text-center">
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="mx-auto max-w-2xl">
-              <BookOpen className="mx-auto mb-6 h-12 w-12" />
-              <h2 className="mb-4 font-heading text-3xl font-bold">{t("culture.newsletter_title")}</h2>
-              <p className="mb-8 text-muted-foreground">{t("culture.newsletter_text")}</p>
-              <div className="mx-auto flex max-w-md flex-col gap-4 sm:flex-row">
-                <input type="email" placeholder={t("culture.email_ph")}
-                  className="flex-1 rounded-lg border border-border bg-background px-4 py-3 focus:outline-none focus:ring-2 focus:ring-ring" />
-                <Button>{t("culture.download")}<Download className="ml-2 h-4 w-4" /></Button>
-              </div>
-              <p className="mt-4 text-xs text-muted-foreground">{t("culture.newsletter_note")}</p>
-            </motion.div>
-          </div>
-        </section>
-      </main>
+        </main>
       <Footer />
     </div>
   );

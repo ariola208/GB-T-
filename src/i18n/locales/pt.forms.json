@@ -3,56 +3,28 @@
     "hero_title": "Fale connosco",
     "hero_subtitle": "A nossa equipa está aqui para o ajudar a criar a viagem dos seus sonhos ao Benim",
     "features": {
-      "team": {
-        "title": "Equipa local",
-        "desc": "Especialistas apaixonados que conhecem cada canto do Benim"
-      },
-      "certified": {
-        "title": "Certificado",
-        "desc": "Agência autorizada pelo Ministério do Turismo do Benim"
-      },
-      "secure": {
-        "title": "Viagem segura",
-        "desc": "Parceiros verificados e seguro de viagem incluído"
-      }
+      "team": { "title": "Equipa local", "desc": "Especialistas apaixonados que conhecem cada canto do Benim" },
+      "certified": { "title": "Certificado", "desc": "Agência autorizada pelo Ministério do Turismo do Benim" },
+      "secure": { "title": "Viagem segura", "desc": "Parceiros verificados e seguro de viagem incluído" }
     },
     "info_title": "Vamos falar do seu projeto",
     "info_text": "Quer tenha uma dúvida, um pedido de orçamento ou simplesmente queira saber mais, estamos ao seu dispor.",
-    "address": {
-      "title": "Morada",
-      "line1": "Avenue Jean-Paul II",
-      "line2": "Cotonou, Benim"
-    },
-    "phone": {
-      "title": "Telefone"
-    },
-    "email": {
-      "title": "Email"
-    },
-    "hours": {
-      "title": "Horário",
-      "line1": "Seg - Sex: 8h - 18h",
-      "line2": "Sáb: 9h - 15h"
-    },
+    "address": { "title": "Morada", "line1": "Avenue Jean-Paul II", "line2": "Cotonou, Benim" },
+    "phone": { "title": "Telefone" },
+    "email": { "title": "Email" },
+    "hours": { "title": "Horário", "line1": "Seg - Sex: 8h - 18h", "line2": "Sáb: 9h - 15h" },
     "follow": "Siga-nos",
-    "whatsapp": {
-      "title": "WhatsApp",
-      "text": "Prefere conversar diretamente? Contacte-nos pelo WhatsApp!"
-    },
+    "whatsapp": { "title": "WhatsApp", "text": "Prefere conversar diretamente? Contacte-nos pelo WhatsApp!" },
     "form": {
       "title": "Envie-nos uma mensagem",
-      "name": "Nome completo *",
-      "name_ph": "João Silva",
-      "email": "Email *",
-      "email_ph": "joao@email.com",
+      "name": "Nome completo *", "name_ph": "João Silva",
+      "email": "Email *", "email_ph": "joao@email.com",
       "phone": "Telefone",
-      "subject": "Assunto *",
-      "subject_ph": "Pedido de informação",
+      "subject": "Assunto *", "subject_ph": "Pedido de informação",
       "date": "Data da viagem",
       "travelers": "Número de viajantes",
       "budget": "Orçamento estimado",
-      "message": "Mensagem *",
-      "message_ph": "Descreva o seu projeto de viagem, os seus desejos, as suas perguntas...",
+      "message": "Mensagem *", "message_ph": "Descreva o seu projeto de viagem, os seus desejos, as suas perguntas...",
       "required": "* Campos obrigatórios",
       "send": "Enviar mensagem"
     },
@@ -62,10 +34,7 @@
       "subject": "O assunto é obrigatório",
       "message": "A mensagem deve ter pelo menos 10 caracteres"
     },
-    "toast": {
-      "title": "✨ Mensagem enviada com sucesso!",
-      "desc": "A nossa equipa responderá em 24 horas."
-    },
+    "toast": { "title": "✨ Mensagem enviada com sucesso!", "desc": "A nossa equipa responderá em 24 horas." },
     "map_title": "Mapa do Benim"
   },
   "login": {

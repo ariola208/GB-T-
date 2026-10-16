@@ -1,1 +1,694 @@
-{}
+{
+  "nav": {
+    "home": "Xwé",
+    "destinations": "Fi e nɔ yi",
+    "culture": "Kɔnɖo",
+    "services": "Azɔ̌wanu",
+    "blog": "Blogu",
+    "gallery": "Fɔto",
+    "faq": "Nkambi",
+    "about": "Nípa wa",
+    "contact": "Kàn xa mí",
+    "login": "Byɔ",
+    "logout": "Jáde",
+    "profile": "Nɔ mɛ tɔn",
+    "soul": "Benin ɖeɖe",
+    "planner": "Wlan kplé",
+    "ame": "Benin ɖeɖe",
+    "more": "Kpɔ́",
+    "search": "Wlí",
+    "search_placeholder": "Yi fi ɖokpó...",
+    "no_result": "Nǔ ɖokpó ma ɖo",
+    "my_account": "Nɔ mɛ tɔn",
+    "my_trips": "Nǔ e nɔ yi lɛ",
+    "favorites": "Nǔ e yí lɛ",
+    "map": "Carte",
+    "quiz": "Quiz",
+    "notebook": "Carnet de voyage",
+    "info": "Xó lɛ"
+  },
+  "common": {
+    "language": "Gbè",
+    "theme_light": "Yi zǎnzan mɛ",
+    "theme_dark": "Yi zanmɛ mɛ",
+    "listen": "Ɖo to",
+    "loading": "Ń gbé e wá...",
+    "translation_partial": "Gbɛvi ɖo azɔ̌ wà"
+  },
+  "home": {
+    "why_title": "Etɛwu yi xa mí?",
+    "why_subtitle": "Kpɔ́ ɖokpó, circuit ɖagbe kpodo expérience nǔ wɛ.",
+    "experts_title": "Gbèxó lɛ",
+    "experts_desc": "Guide e nɔ kpé Benin bǐ.",
+    "safe_title": "Yi ɖagbe",
+    "safe_desc": "Partenaire ɖagbe, assistance 24/7 kpodo assurance kpo.",
+    "custom_title": "Nǔ wɛ",
+    "custom_desc": "Itinéraire ɖokpó ɖokpó ɖo nǔ wɛ kpodo budget kpo."
+  },
+  "hero": {
+    "kicker": "Mɔ Afrique de l'Ouest",
+    "title": "Benin ɖo nǔ kpé",
+    "subtitle": "Yi xotɛn, kɔnɖo vivante kpodo paysage ɖagbe.",
+    "explore": "Kɛ̀n",
+    "plan": "Wlan yi",
+    "alt": "Ganvié, Afrique Venise, cité lacustre lac Nokoué, Benin",
+    "scroll": "Descente",
+    "stats": { "years": "Xwè expérience", "destinations": "Fi", "travelers": "Mɛ e nɔ yi" }
+  },
+  "destPreview": {
+    "kicker": "Fi e nɔ yi",
+    "title": "Fi ɖagbe",
+    "all": "Fi bǐ",
+    "discover": "Mɔ",
+    "items": {
+      "abomey": { "title": "Abomey", "subtitle": "Palais royaux — UNESCO", "description": "Dahomey aɖɔ̀xɔ́ tɔn, patrimoine mondial." },
+      "ouidah": { "title": "Ouidah", "subtitle": "Route de l'Esclave", "description": "Porte du Non-Retour, lieu mémoire." },
+      "pendjari": { "title": "Pendjari", "subtitle": "Safari & Nature", "description": "Sanctuaire faune sauvage Afrique de l'Ouest." },
+      "cotonou": { "title": "Cotonou", "subtitle": "Cœur économique", "description": "Capitale économique, asì kpodo modernité." }
+    }
+  },
+  "cultureSection": {
+    "kicker": "Kɔnɖo",
+    "title": "Vodoun xwé",
+    "p1": "Benin ɖo vodoun xwé, tradition spirituelle riche kpodo complexe e nɔ kpé vie quotidienne.",
+    "p2": "Sɔ́ fête vodoun Ouidah yì temple secret arrière-pays, mɔ patrimoine immatériel.",
+    "more": "Kɛ̀n kɔnɖo",
+    "alt": "Masque vodoun traditionnel Benin",
+    "stats": { "inhabitants": "Mɛ", "ethnic": "Ethnie", "unesco": "UNESCO" }
+  },
+  "cta": {
+    "kicker": "A ɖo nǔ aventure?",
+    "title": "Bɛ̀ yi ɖò Benin",
+    "text": "Safari, plage alǒ découverte culturelle, mí wà itinéraire nǔ wɛ.",
+    "button": "Kàn xa mí",
+    "secondary": "Kɛ̀n fi"
+  },
+  "footer": {
+    "tagline": "Kɛ̀n Benin, kɔnɖo, xotɛn kpodo nature. Yi ɖagbe ɖò Afrique de l'Ouest.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "rights": "Droit bǐ."
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Nkambi",
+    "subtitle": "Mɔ xó nǔ nkambi yi Benin",
+    "search": "Wlí nkambi...",
+    "results": "{{count}} résultat",
+    "noresult": "Nkambi ɖokpó ma ɖo",
+    "contact": {
+      "phone": { "title": "Téléphone", "hours": "Lun-Ven: 8h-18h" },
+      "email": { "title": "Email", "reply": "Réponse 24h" },
+      "whatsapp": { "title": "WhatsApp", "instant": "Discussion instantanée" }
+    },
+    "notfound": {
+      "title": "Ma mɔ xó?",
+      "text": "Mí kpɔ́ nǔ kpe. Kàn xa mí email, téléphone alǒ formulaire.",
+      "button": "Kàn xa mí"
+    },
+    "categories": [
+      { "id": "general", "name": "Général", "questions": [
+        { "q": "Hwenu ɖagbe nǔ yi Benin?", "a": "Novembre-Mars, saison sèche. Température 25-32°C, route ɖagbe. Safari Pendjari." },
+        { "q": "Visa ɖo na yi Benin?", "a": "Ɛɛ, nationalité 100. e-Visa (https://evisa.gouv.bj) alǒ aéroport Cotonou. 50€ nǔ 30 azǎn." },
+        { "q": "Vaccin ɖe?", "a": "Fièvre jaune obligatoire. Hépatite A/B, typhoïde, méningite, rage. Antipaludique." },
+        { "q": "Monnaie Benin?", "a": "CFA franc (XOF). 1€ ≈ 655 FCFA. Carte ɖò hôtel, cash ɖò rural." },
+        { "q": "Gbè ɖe Benin?", "a": "Français officiel. Fon, yoruba, adja, bariba. Anglais ɖò touristique." }
+      ] },
+      { "id": "reservations", "name": "Réservation", "questions": [
+        { "q": "Wlan circuit kpodo LEGBAH?", "a": "Site alǒ formulaire. Acompte 30%." },
+        { "q": "Modifier alǒ annuler?", "a": "Modification selon disponibilité. +60 azǎn: remboursement; 30-60: 50%; -30: non remboursable." },
+        { "q": "Circuit groupe?", "a": "Ɛɛ, groupe bǐ. Tarif dégressif sɔ́ 6 mɛ." },
+        { "q": "Vol international ɖo?", "a": "Ma ɖo sauf mention. Mí nɔ conseil vol ɖagbe." }
+      ] },
+      { "id": "voyage", "name": "Sur place", "questions": [
+        { "q": "Zɔn ɖò Benin?", "a": "Circuit: véhicule climatisé kpodo chauffeur-guide. Indépendant: zémidjan, taxi, bus, location." },
+        { "q": "Hébergement ɖe?", "a": "Hôtel 3-4 étoile Cotonou, lodge parc, maison d'hôte, chez l'habitant." },
+        { "q": "Nǔɖuɖu ɖagbe?", "a": "Ɛɛ, restaurant ɖagbe. Sìn bouteille, ma crudité, ma glaçon." },
+        { "q": "Internet?", "a": "4G ɖò ville. SIM local kpodo data. WiFi hôtel." }
+      ] },
+      { "id": "securite", "name": "Sécurité", "questions": [
+        { "q": "Benin ɖagbe?", "a": "Ɛɛ, pays sûr Afrique de l'Ouest. Béninois hospitalier. Vigilant ɖò touristique." },
+        { "q": "Assurance obligatoire?", "a": "Ɛɛ, rapatriement sanitaire. Mí nɔ proposer assurance." },
+        { "q": "Urgence?", "a": "Assistance 24/7 kpodo numéro local. Ambassade." }
+      ] }
+    ]
+  },
+  "soul": {
+    "hero_badge": "Kɔnɖo ɖe tɛnmɛ",
+    "hero_title": "Benin ɖeɖe",
+    "hero_subtitle": "Xotɛn, gbè kpodo kɔnɖo: mɔ Benin ɖò mɛ e nɔ kpé nukún do e lɛ e.",
+    "hero_note": "Xó ɖo azɔ̌ wà kpodo ganmɛ lɛ kpodo gbèxó lɛ kpo. Nǔ e ma yí nukún ɖo lɛ e yɔ́n.",
+    "anchors": { "heritage": "Kɔnɖo", "languages": "Gbè", "stories": "Xotɛn" },
+    "heritage": {
+      "badge": "Kɔnɖo xotɛn",
+      "title": "Fi atɔn, xotɛn atɔn",
+      "intro": "Sɔ́ fi ɖokpó, bo zɔn yì xotɛn tɔn mɛ.",
+      "timeline": "Xotɛn",
+      "sources": "Nǔ e xɔ́ntɔn lɛ",
+      "tabs": { "abomey": "Abomey", "ouidah": "Ouidah", "portonovo": "Porto-Novo" },
+      "sites": {
+        "abomey": {
+          "intro": "Dahomey aɖɔ̀xɔ́ tɔn, Abomey nɔ kpé aɖɔ̀xɔ́ xwégbè tɔn lɛ, UNESCO.",
+          "source": "UNESCO (Palais royaux Abomey); Musée historique Abomey.",
+          "events": [
+            { "year": "XVIIe", "title": "Aɖɔ̀xɔ́ jɔ̀", "text": "Dahomey aɖɔ̀xɔ́ ɖo Abomey. Aɖɔ̀xɔ́ Houégbadja." },
+            { "year": "1724–1727", "title": "Xù", "text": "Aɖɔ̀xɔ́ Agadja, Dahomey xɔ Allada kpodo Ouidah." },
+            { "year": "1818–1858", "title": "Ghézo", "text": "Ghézo kpé État kpodo armée." },
+            { "year": "1892–1894", "title": "Aɖu franco-dahoméen", "text": "Béhanzin kpé France. Yì Martinique." },
+            { "year": "1985", "title": "UNESCO", "text": "Palais royaux yí UNESCO." },
+            { "year": "2021", "title": "Nǔ lɛ lɛ́kɔ́", "text": "France lɛ́kɔ́ nǔ 26 Benin." }
+          ]
+        },
+        "ouidah": {
+          "intro": "Xù tɔn Atlantique, Ouidah ɖo xotɛn kpodo vodoun.",
+          "source": "UNESCO (Route de l'esclave); histoire traite atlantique.",
+          "events": [
+            { "year": "1721", "title": "Fort portugais", "text": "Fort São João Baptista de Ajudá. Musée." },
+            { "year": "1727", "title": "Dahomey xɔ", "text": "Ouidah xɔ Dahomey Agadja." },
+            { "year": "1992–1993", "title": "Ouidah 92", "text": "Festival vodoun." },
+            { "year": "1994", "title": "Route de l'esclave", "text": "UNESCO bɛ̀ Ouidah." },
+            { "year": "1995", "title": "Porte du Non-Retour", "text": "Monument." },
+            { "year": "1996", "title": "10 janvier", "text": "Fête nationale Vodun." }
+          ]
+        },
+        "portonovo": {
+          "intro": "Capitale officielle Benin, Porto-Novo ɖo musée kpodo héritage afro-brésilien.",
+          "source": "Musée Honmè; Musée Da Silva; Musée Alexandre-Sènou-Adandé.",
+          "events": [
+            { "year": "XVIe–XVIIe", "title": "Hogbonou", "text": "Aɖɔ̀xɔ́ ɖo Hogbonou, Portugal ylɔ́ Porto-Novo." },
+            { "year": "1863", "title": "Protectorat français", "text": "Aɖɔ̀xɔ́ Sodji yí France." },
+            { "year": "1900", "title": "Capitale Dahomey colonial", "text": "Porto-Novo capitale colonie." },
+            { "year": "1960", "title": "Indépendance", "text": "Dahomey indépendant 1 août. Porto-Novo capitale." }
+          ]
+        }
+      },
+      "media": {
+        "title": "Ressources ɖo na wá",
+        "intro": "Nǔ e lɛ ɔ́ ɖo préparation kpodo partenaire local.",
+        "status": "E ɖo na wá",
+        "items": [
+          { "title": "Fɔto", "text": "Image libre droit, crédit." },
+          { "title": "Xotɛn", "text": "Guide, artisan, gardien mémoire." },
+          { "title": "Carte", "text": "Carte circuit historique kpodo lieu mémoire." },
+          { "title": "Audio", "text": "Xotɛn kpodo hàn, accord mɛ." }
+        ]
+      }
+    },
+    "languages": {
+      "badge": "Gbè",
+      "title": "Xó kpɛvi nǔ bɛ̀",
+      "intro": "Salutation kpodo expression ɖò Benin gbè.",
+      "banner": "Traduction « brouillon » ɖo na yí locuteur natif.",
+      "names": { "fon": "Fon", "yoruba": "Yoruba" },
+      "all": "Bǐ",
+      "categories": { "greetings": "Salutation", "politeness": "Politesse", "market": "Asì" },
+      "search": "Wlí xó...",
+      "validated_count": "{{ok}}/{{total}} validée",
+      "validated": "Validée",
+      "draft": "Brouillon",
+      "pending": "E ɖo na wá",
+      "pron": "Prononciation",
+      "pron_pending": "e ɖo na wá",
+      "audio_soon": "Audio bientôt",
+      "context": "Contexte",
+      "copy": "Kɔ́",
+      "none": "Xó ɖokpó ma ɖo.",
+      "empty_title": "Gbè e ɔ́ ma ɖo xó ɖokpó",
+      "empty_text": "Mí nɔ wlán xó ɖokpó. Gbè e ɔ́ na yí nukún ɖo gbèxó lɛ."
+    },
+    "stories": {
+      "badge": "Xotɛn",
+      "title": "Xotɛn nǔ xà kpodo nǔ mɔ",
+      "intro": "Atɔn nǔ mɔ nǔ e a na mɔ ɖò fi.",
+      "note": "Xotɛn e lɛ ɔ́ ɖo na yí nukún ɖo ganmɛ lɛ kpodo xóɖɔtɔ lɛ kpo.",
+      "review": "Xotɛn e ɔ́ ɖo kɔnɖo religion vivante. Relecture kpodo praticien kpodo spécialiste.",
+      "respect_title": "Yì xa kɔnɖo",
+      "respect": [
+        "Biɔ permission avant fɔto alǒ film cérémonie alǒ mɛ.",
+        "Kpé nukún do guide kpodo responsable.",
+        "Ma kpé objet sacré, ma yì espace interdit.",
+        "Contribution alǒ cadeau ɖo attente: biɔ guide."
+      ],
+      "cards": [
+        { "title": "Aɖɔ̀xɔ́ xotɛn", "summary": "Sɔ́ xù tɔn yì gbè tɔn, aɖɔ̀xɔ́ lɛ e wà Benin.",
+          "chapters": [
+            { "title": "Allada, Abomey, Porto-Novo", "text": "Xotɛn lɛ xó nú, aɖɔ̀xɔ́ xwégbè tɔn Allada, Dahomey kpodo Hogbonou kpo ɖo xotɛn ɖokpó, e nɔ kpa yì Aja mɛ e wá Tado." },
+            { "title": "Kétou", "text": "Kétou ɖo Yoruba aɖɔ̀xɔ́ xotɛn. É ɖo Gèlèdè kɔnɖo tɔn." },
+            { "title": "Nikki kpodo Borgou kpo", "text": "Gbè tɔn, Bariba aɖɔ̀xɔ́ Nikki wà Borgou. Gaani, e nɔ wà ɖò Nikki, nɔ kpé xotɛn tɔn." }
+          ] },
+        { "title": "Béhanzin", "summary": "Aɖɔ̀xɔ́ Dahomey kpé.",
+          "chapters": [
+            { "title": "Aɖɔ̀xɔ́", "text": "Béhanzin ɖu 1889 yì 1894, France ɖo xù." },
+            { "title": "Résistance", "text": "1892-1894, armée kpé France." },
+            { "title": "Exil", "text": "Martinique, Algérie, kú 1906." }
+          ] },
+        { "title": "Azɔ̌wanu lɛ", "summary": "Xwe tɔn, avɔ tɔn, masque tɔn: xotɛn ɖo fɔto mɛ.",
+          "chapters": [
+            { "title": "Bas-reliefs d'Abomey", "text": "Xwe tɔn ɖo bas-reliefs kpodo terra colorée kpo. Motif ɖokpó nɔ xo xotɛn aɖɔ̀xɔ́ ɖokpó." },
+            { "title": "Appliqués", "text": "Appliqués ɖo avɔ e ɖo motif e yí kpɔ́ bo kɔ́. Abomey, é nɔ kpé aɖɔ̀xɔ́ emblème lɛ." },
+            { "title": "Gèlèdè", "text": "UNESCO yí nukún ɖo Gèlèdè. É ɖo masque e nɔ kpé nɔ̀ lɛ kpodo gbɛ̀n tɔn kpo." }
+          ] },
+        { "title": "Fête traditionnelle lɛ", "summary": "Hwenu e kɔnɖo ɖokpó nɔ kpé.",
+          "chapters": [
+            { "title": "10 janvier", "text": "Ɖò xwè ɖokpó ɖokpó, fête vodoun nɔ kpé mɛ e nɔ wà vodoun kpodo mɛ e nɔ wá kɛ̀n kpo, ɖò Ouidah." },
+            { "title": "Gaani", "text": "Gaani ɖo Bariba fête ɖagbe ɖò Nikki." },
+            { "title": "Wà xa kɔnɖo", "text": "Fête ɔ́ ma ɖo spectacle nǔ mɛ e nɔ wá kɛ̀n." }
+          ] },
+        { "title": "Forgeron kpodo fondeur", "summary": "Métal azɔ̌ xotɛn.",
+          "chapters": [
+            { "title": "Métier", "text": "Abomey, artisan fond laiton kpodo bronze cire perdue." },
+            { "title": "Gu (Ogou)", "text": "Vodun, fer kpodo forge ɖo divinité Gu." },
+            { "title": "Mɔ artisan", "text": "Atelier kɛ̀n nǔ azɔ̌ kpodo support artisan." }
+          ] },
+        { "title": "Vodun, kɔnɖo vivante", "summary": "Xó cliché.",
+          "chapters": [
+            { "title": "Nǔ e ɔ́", "text": "Vodun croyance kpodo pratique région. Béninois 1000 nɔ wà." },
+            { "title": "Nǔ e ma ɔ́", "text": "Ma « magie noire » alǒ « vaudou » film." },
+            { "title": "Pratique", "text": "Cérémonie, guide local kpodo consigne." }
+          ] }
+      ]
+    },
+    "contribute": {
+      "title": "A nɔ xotɛn e ɔ́?",
+      "text": "Historien, locuteur, artisan: kpe mí nǔ correction kpodo complétion.",
+      "message": "Bonjour, je souhaite contribuer à la page « L'âme du Bénin ».",
+      "button": "Contribuer WhatsApp"
+    }
+  },
+  "planner": {
+    "title": "Wlan yi tɔn",
+    "subtitle": "Kpé fi ɖò azǎn: distance, hwenu kpodo budget calculé.",
+    "reset": "Ɖe bǐ",
+    "demo_note": "Données démo: fi kpodo coordonnée, prix (FCFA/mɛ), hwenu calculé ligne droite kpodo facteur route.",
+    "all": "Bǐ",
+    "night": "1 nuit",
+    "add_to_day": "Kó azǎn {{n}}",
+    "day": "Azǎn {{n}}",
+    "activities": "azɔ̌",
+    "night_short": "nuit",
+    "drop_here": "Ɖe fi ɖò e",
+    "on_site": "Ɖò fi",
+    "travel": "yi",
+    "free": "libre",
+    "budget": "Budget (mɛ)",
+    "estimate": "Estimation, ma prix contractuel.",
+    "versions": "Version atɔn yi tɔn:",
+    "relief": "Relief 3D",
+    "relief_on": "Relief 3D: ɖo",
+    "quote": "Biɔ devis",
+    "copied": "Lien kɔ́",
+    "copy_link": "Kɔ́ lien",
+    "w_too_many": "Azǎn kpé: {{n}} azɔ̌. Kpé «{{name}}» azǎn e ɖo na wá.",
+    "w_too_long": "Programme {{h}} nǔ azǎn {{max}}: kpé.",
+    "w_no_meal": "Ma 1h30 nǔ nǔɖuɖu kpodo pause.",
+    "w_long_leg": "Yi xó (~{{h}}) «{{from}}» kpodo «{{to}}»."
+  },
+  "profile": {
+    "loading": "Ń gbé profil wá...",
+    "error_title": "Ma kpé profil tɔn",
+    "error_text": "Serveur ma xo alǒ error. Kɛ̀n backend (port 5000), bo bɛ̀.",
+    "retry": "Bɛ̀",
+    "login_again": "Byɔ",
+    "not_set": "Ma ɖo",
+    "member_since": "Membre sɔ́",
+    "edit": "Wlan",
+    "logout": "Jáde",
+    "logged_out_title": "Jáde",
+    "logged_out_desc": "Bɔ̀ nǔ wá!",
+    "stats": { "trips": "Yi", "reviews": "Xó", "favorites": "Nǔ e yí", "points": "Point" },
+    "tabs": { "trips": "Yi", "favorites": "Nǔ e yí", "reviews": "Xó", "profile": "Profil" },
+    "status": { "upcoming": "E ɖo na wá", "confirmed": "Confirmé", "completed": "Kpé", "cancelled": "Annulé" },
+    "no_trips": "Yi ɖokpó ma ɖo",
+    "explore": "Kɛ̀n",
+    "travelers": "{{count}} mɛ",
+    "manage": "Kpé réservation",
+    "no_favorites": "Nǔ e yí ɖokpó ma ɖo",
+    "discover": "Mɔ",
+    "details": "Kɛ̀n détails",
+    "no_reviews": "Xó ɖokpó ma ɖo",
+    "personal_info": "Xó mɛ tɔn",
+    "name": "Nyikɔ",
+    "email": "Email",
+    "phone": "Téléphone",
+    "location": "Fi",
+    "bio": "Bio",
+    "no_bio": "Bio ɖokpó ma ɖo",
+    "save": "Kpé",
+    "cancel": "Annuler",
+    "security": "Sécurité",
+    "change_password": "Wlan password",
+    "current_password": "Password actuel",
+    "new_password": "Password nouveau",
+    "confirm_password": "Confirmer",
+    "modify": "Wlan",
+    "help_title": "A ɖo na kpe?",
+    "help_text": "Mí kpɔ́ 24/7.",
+    "contact_support": "Kàn support",
+    "pw_mismatch": "Password ma kpé",
+    "pw_short": "Password ɖo na 8 caractère",
+    "server_error": "Error serveur",
+    "toast": { "success": "Ɖagbe", "error": "Error", "updated": "Profil wlan", "update_failed": "Ma wlan", "pw_changed": "Password wlan", "fav_removed": "Ɖe favori", "fav_failed": "Ma ɖe" }
+  },
+  "services": {
+    "subtitle": "Azɔ̌wanu lɛ",
+    "title": "Azɔ̌wanu nǔ wɛ",
+    "description": "Sɔ́ vol yì excursion, mí nɔ wà bǐ nǔ yi ɖagbe ɖò Benin.",
+    "popular": "Populaire",
+    "recommended": "Recommandé",
+    "book": "Wlan",
+    "choose": "Sɔ́ forfait e ɔ́",
+    "per_person": "/ mɛ",
+    "packages_title": "Forfait tout compris",
+    "packages_text": "Sɔ́ forfait e ɖo nǔ wɛ kpodo budget kpo",
+    "items": [
+      { "title": "Vol & Transport", "description": "Vol international kpodo transport local kpodo chauffeur privé.", "features": ["Vol direct", "Transfert aéroport", "Véhicule climatisé"], "price": "Sɔ́ 50€" },
+      { "title": "Hébergement", "description": "Hôtel, lodge kpodo hébergement traditionnel ɖagbe.", "features": ["Hôtel 3-5 étoile", "Lodge écologique", "Chez l'habitant"], "price": "Sɔ́ 30€/nuit" },
+      { "title": "Guide local", "description": "Guide francophone passionné nǔ visite authentique.", "features": ["Guide certifié", "Visite personnalisée", "Agbègbè bǐ"], "price": "Sɔ́ 40€/jour" },
+      { "title": "Voyage groupe", "description": "Circuit organisé nǔ groupe, association kpodo entreprise.", "features": ["Tarif dégressif", "Programme sur mesure", "Accompagnateur dédié"], "price": "Sur devis" },
+      { "title": "Tour photo", "description": "Excursion photo kpodo photographe professionnel local.", "features": ["Coaching photo", "Meilleur spot", "Matériel disponible"], "price": "Sɔ́ 60€" },
+      { "title": "Expérience culinaire", "description": "Cours cuisine, dégustation kpodo repas chez l'habitant.", "features": ["Cours cuisine", "Marché local", "Repas traditionnel"], "price": "Sɔ́ 25€" }
+    ],
+    "packages": [
+      { "name": "Essentiel", "price": "499€", "duration": "5 azǎn", "features": ["Hébergement 3*", "Petit-déjeuner", "Guide local 2 azǎn", "Transfert aéroport", "Assurance"] },
+      { "name": "Confort", "price": "899€", "duration": "7 azǎn", "features": ["Hébergement 4*", "Pension complète", "Guide privé 4 azǎn", "Transfert", "Assurance premium", "Activité"] },
+      { "name": "Luxe", "price": "1499€", "duration": "10 azǎn", "features": ["Hébergement 5*/Lodge", "Pension complète", "Guide privé", "Véhicule privé", "Assurance tous risques", "Activité bǐ", "Spa"] }
+    ],
+    "guarantees": [
+      { "title": "Paiement sécurisé", "desc": "Transaction 100% sécurisée" },
+      { "title": "Support 24/7", "desc": "Assistance hwenu bǐ" },
+      { "title": "Annulation flexible", "desc": "Remboursement 30 azǎn" },
+      { "title": "Expert local", "desc": "Kpɔ́ passionné kpodo certifié" }
+    ]
+  },
+  "about": {
+    "hero_badge": "Mí sìn xotɛn",
+    "hero_title": "Nípa wa",
+    "hero_subtitle": "Kpɔ́ ɖokpó e nɔ kpe nǔ mɔ Benin ɖeɖe",
+    "stats": ["Xwè expérience", "Mɛ e nɔ yi", "Partenaire local", "Satisfaction client", "Support client", "Fi"],
+    "tabs": { "mission": "Mission", "vision": "Vision", "values": "Valeur" },
+    "mission": { "badge": "Nǔ e nɔ kpe mí", "title": "Kpe nǔ mɔ Benin ɖeɖe", "text": "LEGBAH jɔ̀ sɔ́ xó ɖagbe nǔ pays e ɔ́. Mí mission: wà pont entre mɛ e nɔ yi kpodo kɔnɖo local kpo, kpe nǔ mɔ Benin richesse culturelle kpodo naturelle, kpodo tourisme durable.", "cta": "Mɔ circuit wa" },
+    "vision": { "badge": "Fi e mí nɔ yi", "title": "Wà référence tourisme durable", "points": ["100 000 mɛ xwè ɖokpó", "500 azɔ̌", "10 000 atín"] },
+    "values": [
+      { "title": "Xó ɖagbe", "description": "Mí nɔ yí Benin kpodo kɔnɖo tɔn kpo." },
+      { "title": "Durabilité", "description": "Tourisme responsable e nɔ kpé environnement." },
+      { "title": "Excellence", "description": "Mí nɔ wà excellence ɖò nǔ bǐ mɛ." },
+      { "title": "Authenticité", "description": "Expérience authentique e nɔ kpe nǔ kɔnɖo." }
+    ],
+    "journey": { "badge": "Mí sìn xotɛn", "title": "Xotɛn xó ɖagbe" },
+    "milestones": [
+      { "title": "Création", "description": "LEGBAH jɔ̀" },
+      { "title": "Expansion", "description": "Bureau Cotonou" },
+      { "title": "1er Prix", "description": "Meilleur tour-opérateur local" },
+      { "title": "10K mɛ", "description": "10 000 mɛ" },
+      { "title": "Digitalisation", "description": "Plateforme" },
+      { "title": "50K mɛ", "description": "50 000 mɛ" }
+    ],
+    "team": { "badge": "Mí sìn kpɔ́", "title": "Mɛ e ɖo LEGBAH", "subtitle": "Kpɔ́ multiculturel kpodo xó ɖagbe: kpe nǔ yí Benin" },
+    "members": [
+      { "role": "Fondateur & CEO", "bio": "Xó ɖagbe Benin 20 xwè, wà LEGBAH nǔ kpe nǔ trésor pays tɔn." },
+      { "role": "Directrice opérations", "bio": "Experte tourisme durable, Sophie nɔ kpé yi bǐ ɖo impact positif." },
+      { "role": "Guide en chef", "bio": "Historien, Marc nɔ kpé Benin bǐ." },
+      { "role": "Responsable culture", "bio": "Anthropologue, Amina nɔ wà expérience immersive." },
+      { "role": "Responsable logistique", "bio": "David nɔ kpé détail yi tɔn bǐ." },
+      { "role": "Service client", "bio": "Grace ɖo hwenu bǐ, ɖo contact tɔn." }
+    ],
+    "office": { "badge": "Mí sìn bureau", "title": "Wá mɔ mí", "button": "Kàn xa mí" },
+    "cta": { "title": "A ɖo nǔ LEGBAH?", "text": "Byɔ 1000 mɛ e nɔ yi kpodo mí", "button": "Kɛ̀n fi" }
+  },
+  "blog": {
+    "badge": "Blogu & Xó",
+    "title": "LEGBAH Blogu",
+    "subtitle": "Conseil, xotɛn kpodo inspiration nǔ yi Benin",
+    "search": "Wlí article...",
+    "featured": "Article ɖagbe",
+    "read_article": "Xà article",
+    "read": "Xà",
+    "trending_title": "Article e nɔ yì",
+    "newsletter_title": "Newsletter",
+    "newsletter_text": "Mɔ article kpodo conseil yi",
+    "email_ph": "Email tɔn",
+    "subscribe": "Wlan",
+    "tags_title": "Tags populaire",
+    "categories_title": "Catégorie",
+    "no_result": "Article ɖokpó ma ɖo",
+    "help_title": "Nkambi yi tɔn?",
+    "help_text": "Mí kpɔ́ expert ɖo nǔ kpe",
+    "contact": "Kàn xa mí",
+    "min": "min",
+    "categories": { "all": "Bǐ", "voyage": "Yi", "culture": "Kɔnɖo", "gastronomie": "Nǔɖuɖu", "photographie": "Fɔto", "artisanat": "Azɔ̌wanu", "itineraires": "Itinéraire" },
+    "tags": ["Yi", "Kɔnɖo", "Vodoun", "Safari", "Fɔto", "Nǔɖuɖu", "Azɔ̌wanu", "Xù", "UNESCO", "Tradition"],
+    "posts": [
+      { "title": "10 expérience ɖagbe ɖò Benin", "excerpt": "Sɔ́ palais Abomey yì plage Grand-Popo, mɔ expérience e nɔ kpe nǔ yi inoubliable." },
+      { "title": "Guide Vodoun: xotɛn kpodo tradition", "excerpt": "Byɔ kɔnɖo Béninois kpodo xotɛn religion e ɔ́." },
+      { "title": "Safari photo Parc Pendjari", "excerpt": "Conseil nǔ fɔto safari ɖò parc ɖagbe Afrique de l'Ouest." },
+      { "title": "Nǔɖuɖu Béninois: yi culinaire", "excerpt": "Sɔ́ pâte rouge yì poulet braisé, mɔ saveur cuisine Béninois." },
+      { "title": "Mɔ artisan Abomey", "excerpt": "Appliqués Abomey yɔ́n gbɛ̀. Mɔ secret fabrication tapisserie royale." },
+      { "title": "Itinéraire 7 azǎn ɖò Benin", "excerpt": "Circuit complet nǔ ma pàdánù merveille Benin ɖò semaine ɖokpó." }
+    ]
+  },
+  "gallery": {
+    "badge": "Fɔto",
+    "title": "Benin ɖò fɔto mɛ",
+    "subtitle": "Mɔ ẹwà Benin ɖò collection fɔto wa",
+    "categories": { "all": "Bǐ", "landscapes": "Paysage", "culture": "Kɔnɖo", "wildlife": "Faune", "cities": "Aɖɔ̀xɔ́", "beaches": "Xù", "traditions": "Tradition" },
+    "items": ["Ganvié", "Porte du Non-Retour", "Palais Royaux", "Éléphants", "Cotonou", "Grand-Popo", "Asì", "Collines", "Pirogues", "Cérémonie", "Bas-reliefs", "Lion"],
+    "empty": "Fɔto ɖokpó ma ɖo.",
+    "themes": { "vodoun": "Vodoun", "egungun": "Egungun", "gelede": "Gèlèdè", "gastronomie": "Nǔɖuɖu", "vannerie": "Vannerie", "poterie": "Poterie", "bronze": "Bronze", "danse": "Danse", "tambours": "Tambour" }
+  },
+  "whatsapp": {
+    "label": "Wlán mí WhatsApp",
+    "greeting": "Bonjour LEGBAH, j'aimerais des informations pour organiser un voyage."
+  },
+  "destinations": {
+    "badge": "Kɛ̀n Benin",
+    "title": "Fi e nɔ yi",
+    "subtitle": "Sɔ́ cité lacustre yì parc national, mɔ Benin diversité",
+    "search": "Wlí fi ɖokpó...",
+    "found": "{{count}} fi e mɔ",
+    "found_sub": "Kɛ̀n Benin nǔ ɖagbe",
+    "none": "Fi ɖokpó ma ɖo",
+    "featured": "E ɖo kpɔ́",
+    "trending": "E nɔ yì",
+    "discover": "Mɔ",
+    "days_range": "{{range}} azǎn",
+    "free": "Ɖagbe",
+    "reviews": "{{count}} xó",
+    "per_night": "/zan",
+    "free_label": "Ɖagbe",
+    "region": "Agbègbè",
+    "climate": "Climat",
+    "location": "Fi",
+    "temperature": "Température",
+    "best_time": "Hwenu ɖagbe",
+    "duration": "Hwenu e ɖo na wà",
+    "book_now": "Wlan",
+    "book": "Wlan",
+    "share": "Xo",
+    "link_copied": "Lien kɔ́",
+    "close": "Kpé",
+    "tabs": { "overview": "Kɛ̀n", "highlights": "Nǔ ɖagbe lɛ", "activities": "Azɔ̌ lɛ", "accommodations": "Xwé lɛ", "info": "Xó lɛ" },
+    "categories": { "all": "Bǐ", "culture": "Kɔnɖo", "nature": "Nature", "plage": "Xù", "ville": "Aɖɔ̀xɔ́", "historique": "Xotɛn" },
+    "cta_title": "A ma mɔ nǔ e ɖo?",
+    "cta_text": "Mí nɔ wà itinéraire nǔ wɛ. Xo mí nǔ wɛ!",
+    "cta_button": "Wà nǔ tɔn",
+    "wa_message": "Bonjour LEGBAH, je souhaite réserver un séjour : {{name}}. Pouvez-vous me renseigner sur les dates et les tarifs ?",
+    "amenities": { "wifi": "WiFi", "restaurant": "Nǔɖuɖu xwé", "ac": "Climatisation", "lakeview": "Kɛ̀n lagune", "homemeal": "Nǔɖuɖu xwé tɔn", "terrace": "Terrasse", "privatepirogue": "Pirogue tɔn", "pool": "Piscine", "privateguide": "Guide tɔn", "tents": "Tente lɛ", "showers": "Douche lɛ", "campfire": "Feu de camp", "privatebeach": "Xù tɔn", "spa": "Spa" },
+    "acc_types": { "hotel": "Hôtel", "hotel3": "Hôtel 3*", "hotel4": "Hôtel 4*", "guesthouse": "Xwé", "lodge": "Lodge", "camping": "Camping", "inn": "Auberge" },
+    "items": [
+      { "description": "Afrique Venise, cité lacustre ɖe tɛnmɛ", "longDescription": "Ganvié ɖo cité lacustre ɖagbe ɖò lac Nokoué. Kpodo mɛ 30 000 e nɔ nɔ xwé ɖò sìn mɛ, é ɖo cité lacustre ɖagbe ɖò Afrique. Xwé ɖo sìn mɛ: asì, école, xwéxɔ́. Mɛ lɛ nɔ zɔn pirogue.", "bestTime": "Novembre à Février", "highlights": ["Cité lacustre", "Asì ɖò sìn mɛ", "Musée Ganvié", "Pêche traditionnelle", "Azɔ̌wanu"], "activities": ["Pirogue", "Asì ɖò sìn mɛ", "Atelier azɔ̌wanu"] },
+      { "description": "Parc National Pendjari, ɖagbe ɖò Afrique de l'Ouest", "longDescription": "Parc National Pendjari ɖo joyau ɖò Afrique de l'Ouest. 275 000 hectares, é ɖo lion, éléphant, buffle, hippopotame, guépard kpodo oiseau 300. Cascade Tanougou kpodo montagne Atacora kpo.", "bestTime": "Décembre à Mars", "highlights": ["Safari photo", "Lion", "Cascade Tanougou", "Oiseau", "Camping"], "activities": ["Safari guidé", "Safari photo", "Randonnée Tanougou"] },
+      { "description": "Ouidah, kɔnɖo vodoun kpodo xotɛn traite", "longDescription": "Ouidah ɖo aɖɔ̀xɔ́ xotɛn. Route des Esclaves kpodo Porte du Non-Retour kpo ɖo xotɛn traite. Aɖɔ̀xɔ́ ɔ́ ɖo vodoun xotɛn, Temple des Pythons kpodo Forêt Sacrée Kpassè. 10 janvier, Fête Nationale du Vodoun nɔ kpé mɛ 1000.", "bestTime": "Janvier, Octobre-Décembre", "highlights": ["Porte du Non-Retour", "Route des Esclaves", "Temple des Pythons", "Forêt Kpassè", "Musée"], "activities": ["Visite xotɛn", "Cérémonie vodoun", "Musée Ouidah"] },
+      { "description": "Palais royaux Dahomey, UNESCO", "longDescription": "Abomey ɖo aɖɔ̀xɔ́ Dahomey 300 xwè. Palais royaux, UNESCO, ɖo bas-reliefs e nɔ xo xotɛn aɖɔ̀xɔ́. Musée ɖo trône, arme, objet rituel.", "bestTime": "Novembre à Février", "highlights": ["Palais UNESCO", "Musée", "Bas-reliefs", "Appliqués"], "activities": ["Palais", "Atelier appliqués"] },
+      { "description": "Grand-Popo, xù kpodo pêche traditionnelle", "longDescription": "Grand-Popo ɖo station balnéaire ɖagbe ɖò Mono kpodo Atlantique kpo. Xù ɖo cocotier. Village pêcheur ɖo tradition. Bouche du Roy ɖo paysage ɖagbe.", "bestTime": "Novembre à Mars", "highlights": ["Xù", "Bouche du Roy", "Pêche", "Coucher de soleil"], "activities": ["Baignade", "Pirogue Mono"] },
+      { "description": "Cotonou, capitale économique", "longDescription": "Cotonou ɖo xó Benin. Aɖɔ̀xɔ́ ɖo modernité kpodo tradition kpo. Marché Dantokpa, ɖagbe ɖò Afrique de l'Ouest, ɖo vie locale. Place de l'Étoile Rouge, cathédrale Notre-Dame, plage Fidjrossè.", "bestTime": "Xwè bǐ", "highlights": ["Marché Dantokpa", "Place Étoile Rouge", "Plage Fidjrossè", "Fondation Zinsou"], "activities": ["Dantokpa", "Art contemporain"] },
+      { "description": "Natitingou, pays Somba kpodo tata", "longDescription": "Natitingou ɖo aɖɔ̀xɔ́ Somba, ɖo xwé traditionnelle: tata. Forteresse ɖo terre crue, ɖo château. Agbègbè ɖo colline kpodo vallée kpo.", "bestTime": "Novembre à Février", "highlights": ["Tata Somba", "Cascade Kota", "Montagne Atacora", "Azɔ̌wanu"], "activities": ["Tata", "Randonnée"] },
+      { "description": "Porto-Novo, capitale administrative", "longDescription": "Porto-Novo, Benin capitale, ɖo patrimoine historique. Musée Honmè, Grande Mosquée afro-brésilienne, Jardin des Plantes.", "bestTime": "Novembre à Février", "highlights": ["Musée Honmè", "Grande Mosquée", "Jardin des Plantes", "Palais Gouverneur"], "activities": ["Musée Honmè", "Tour ville"] }
+    ]
+  },
+  "culture": {
+    "hero_badge": "Mɔ Benin ɖeɖe",
+    "hero_title_1": "Kɔnɖo &",
+    "hero_title_2": "Kɔnɖo xotɛn",
+    "hero_subtitle": "Byɔ kɔnɖo xotɛn e ɖo Benin e mɛ",
+    "hero_cta": "Kɛ̀n kɔnɖo lɛ",
+    "intro_badge": "Mí sìn kɔnɖo",
+    "intro_title": "Kɔnɖo ɖagbe ɖe",
+    "intro_text": "Benin ɖo fi e kɔnɖo xotɛn kpodo kɔnɖo ɖe tɛnmɛ kpo nɔ kpé. Sɔ́ aɖɔ̀xɔ́ Abomey tɔn yì vodoun Ouidah tɔn, kpodo asi kpodo fête kpo, fi ɖokpó ɖokpó nɔ xo xotɛn ɖagbe.",
+    "key_traditions": "Kɔnɖo xotɛn lɛ",
+    "gallery": "Fɔto lɛ",
+    "events_badge": "Kɔnɖo azǎn",
+    "events_title": "Nǔ e ɖo na yí nukún ɖo",
+    "events_text": "Wlan kplé nǔ e nɔ wà ɖò fête e lɛ e",
+    "register": "Wlan",
+    "participants": "{{count}} mɛ",
+    "testimonials_badge": "Xotɛn lɛ",
+    "testimonials_title": "Nǔ e mɛ e nɔ yi lɛ e nɔ xo",
+    "testimonials_text": "Nǔ e jɔ̀ ɖagbe nǔ mɛ e nɔ yi lɛ e",
+    "newsletter_title": "Mɔ mí sìn kɔnɖo xotɛn ɖagbe",
+    "newsletter_text": "Wlan nǔ mɔ ebook « Benin kɔnɖo » kpodo newsletter kpo",
+    "email_ph": "Email tɔn",
+    "download": "Kɔ́",
+    "newsletter_note": "Ɖagbe • 50+ xwe • Xwè ɖokpó ɖokpó",
+    "stat_labels": {
+      "temples": "Xwéxɔ́", "practitioners": "Mɛ e nɔ wà", "ceremonies": "Cérémonie lɛ", "communities": "Kɔnɖo lɛ", "artisans": "Azɔ̌wanu lɛ", "festivals": "Fête lɛ", "recipes": "Nǔɖuɖu lɛ", "restaurants": "Nǔɖuɖu xwé lɛ", "markets": "Asì lɛ", "workshops": "Atelier lɛ", "cooperatives": "Coopérative lɛ", "instruments": "Nǔ e nɔ xo lɛ", "troupes": "Kpɔ́ lɛ", "participants": "Mɛ lɛ", "events": "Nǔ e nɔ wà lɛ"
+    },
+    "categories": [
+      { "title": "Vodoun", "subtitle": "Kɔnɖo xotɛn", "longDescription": "Kɔnɖo e jɔ̀ ɖò Benin, vodoun ɖo nǔ ɖagbe: é ɖo xwé, kɔnɖo kpodo xotɛn kpo. Vodoun pantheon ɖo divinité 100 lɛ. Cérémonie lɛ, kpodo tambour kpo, ɖo communion. Xwè ɖokpó ɖokpó, 10 janvier, Fête Nationale du Vodoun nɔ kpé mɛ 1000 ɖò Ouidah.", "traditions": ["Fête du Vodoun (10 janvier)", "Culte des ancêtres", "Cérémonies Egungun", "Consultation du Fâ"] },
+      { "title": "Gèlèdè", "subtitle": "UNESCO kɔnɖo", "longDescription": "Masque Gèlèdè, UNESCO yí nukún ɖo 2008. Masque lɛ, azɔ̌wanu ɖagbe, ɖo bois kpodo awɔ̀ kpo. Danseur lɛ nɔ kpé masque e lɛ e, bo nɔ wà danse kpodo tambour kpo.", "traditions": ["Cérémonie Efe (zan)", "Cérémonie Gèlèdè (kwɛ̀)", "Hàn satirique lɛ", "Danse acrobatique lɛ"] },
+      { "title": "Nǔɖuɖu", "subtitle": "Nǔ e ɖagbe", "longDescription": "Sɔ́ pâte rouge yì poulet braisé, kpodo amiwo kpodo tchoukoutou kpo. Asì lɛ ɖo nǔ e ɖagbe: igname, manioc, maïs, piment, hwe.", "traditions": ["Pâte rouge", "Poulet braisé", "Amiwo", "Tchoukoutou", "Akassa"] },
+      { "title": "Azɔ̌wanu", "subtitle": "Azɔ̌ xotɛn", "longDescription": "Benin azɔ̌wanu lɛ ɖo bronze, poterie, tissage kpodo bois kpo. Fondeur lɛ nɔ zɔn cire perdue. Appliqués Abomey tɔn, tapisserie royale, yɔ́n ɖò gbɛ̀ mɛ.", "traditions": ["Bronze cire perdue", "Appliqués Abomey", "Poterie", "Tissage Nord"] },
+      { "title": "Hàn & Danse", "subtitle": "Rythme ɖò xó mɛ", "longDescription": "Benin hàn ɖo rythme kpodo kɔnɖo kpo. Tambour lɛ ɖo xwé kpodo kɔnɖo kpo. Lónìí, Angélique Kidjo nɔ kpé Benin hàn ɖò gbɛ̀ mɛ.", "traditions": ["Zinli", "Tchinkounmè", "Agbadja moderne", "Tambours parleurs"] },
+      { "title": "Fête traditionnelle lɛ", "subtitle": "Kɔnɖo fête lɛ", "longDescription": "Benin xwè ɖo fête traditionnelle 100 lɛ. Fête ɖokpó ɖokpó ɖo tɛnmɛ, bo nɔ kpé kɔnɖo bǐ.", "traditions": ["Fête des ignames", "Nonvitcha", "Sortie de couvent", "Fête du Vodoun"] }
+    ],
+    "events": [
+      { "title": "Fête du Vodoun", "date": "10 janvier", "location": "Ouidah", "category": "Kɔnɖo" },
+      { "title": "Festival Masques Gèlèdè", "date": "Mars", "location": "Kétou", "category": "Danse" },
+      { "title": "Fête des Ignames", "date": "Août", "location": "Savalou", "category": "Kɔnɖo" },
+      { "title": "Festival Jazz Ouidah", "date": "Septembre", "location": "Ouidah", "category": "Hàn" }
+    ],
+    "testimonials": [
+      { "role": "Guide culturel", "content": "Wà vodoun cérémonie ɖo nǔ ɖagbe. Tambour kpodo danseur kpodo fidèle kpo: immersion totale ɖò kɔnɖo ɖe tɛnmɛ mɛ." },
+      { "role": "Ethnologue", "content": "Appliqués Abomey tɔn ɖo chef-d'œuvre e nɔ xo Dahomey xotɛn. Motif ɖokpó ɖo sens précis." },
+      { "role": "Cuisinière", "content": "Benin nǔɖuɖu ɖo découverte ɖò nǔ ɖuɖu ɖokpó ɖokpó. Sauce lɛ ɖo complexe, épice lɛ ɖo dosé." }
+    ]
+  },
+  "contact": {
+    "hero_title": "Kàn xa mí",
+    "hero_subtitle": "Mí kpɔ́ ɖo nǔ wà nǔ yi ɖagbe ɖò Benin",
+    "features": {
+      "team": { "title": "Kpɔ́", "desc": "Gbèxó e nɔ kpé Benin bǐ" },
+      "certified": { "title": "Certifié", "desc": "Agence e Ministère du Tourisme du Bénin yí" },
+      "secure": { "title": "Yi ɖagbe", "desc": "Partenaire ɖagbe kpodo assurance kpo" }
+    },
+    "info_title": "Xo mí nǔ wɛ",
+    "info_text": "A ɖo nkambi, devis alǒ nǔ e ɖo na yí, mí ɖo etɛ́.",
+    "address": { "title": "Adresse", "line1": "Avenue Jean-Paul II", "line2": "Cotonou, Bénin" },
+    "phone": { "title": "Téléphone" },
+    "email": { "title": "Email" },
+    "hours": { "title": "Hwenu", "line1": "Lun - Ven : 8h - 18h", "line2": "Sam : 9h - 15h" },
+    "follow": "Kpé mí",
+    "whatsapp": { "title": "WhatsApp", "text": "A ɖo na xo xa mí ɖò WhatsApp!" },
+    "form": {
+      "title": "Wlan mí xó",
+      "name": "Nyikɔ *", "name_ph": "Jean Kouagou",
+      "email": "Email *", "email_ph": "jean@email.com",
+      "phone": "Téléphone", "subject": "Xó *", "subject_ph": "Nkambi",
+      "date": "Azǎn yi", "travelers": "Mɛ e nɔ yi", "budget": "Budget",
+      "message": "Xó *", "message_ph": "Xo nǔ yi tɔn, nǔ e ɖo na yí, nkambi...",
+      "required": "* Nǔ e ɖo na wà", "send": "Wlan xó"
+    },
+    "errors": { "name": "Nyikɔ ɖo na ɖo xó 2", "email": "Email ɖagbe", "subject": "Xó ɖo na ɖo", "message": "Xó ɖo na ɖo xó 10" },
+    "toast": { "title": "✨ Xó yì ɖagbe!", "desc": "Mí na xo ɖò 24h mɛ." },
+    "map_title": "Carte Bénin"
+  },
+  "login": {
+    "title": "Byɔ",
+    "register_title": "Wlan",
+    "subtitle": "Byɔ ɖò nɔ mɛ tɔn",
+    "register_subtitle": "Wlan nɔ mɛ tɔn",
+    "first_name": "Nyikɔ", "last_name": "Xwégbè",
+    "email": "Email", "password": "Password",
+    "phone": "Téléphone (optionnel)",
+    "submit": "Byɔ", "register_submit": "Wlan",
+    "loading": "Ń gbé e wá...",
+    "no_account": "Nɔ mɛ ɖo? Wlan",
+    "has_account": "Nɔ mɛ ɖo? Byɔ",
+    "error": "Nǔ ɖokpó jɔ̀",
+    "server_error": "Serveur ɖokpó ma ɖo",
+    "registered": "Nɔ mɛ wlan! A nɔ byɔ."
+  },
+  "notfound": {
+    "title": "404",
+    "text": "Oups! Page e ɔ́ ma ɖo.",
+    "back": "Lɛ́kɔ́ xwé"
+  },
+  "map": {
+    "badge": "Carte",
+    "title": "Fi e nɔ yi ɖò Benin?",
+    "subtitle": "Sɔ́ fi ɖokpó nǔ kɛ̀n carte kpodo distance sɔ́ Cotonou.",
+    "list": "Fi lɛ",
+    "distance": "{{km}} km sɔ́ Cotonou (route ɖo xó).",
+    "start": "Cotonou ɖo fi nǔ distance.",
+    "open": "Kpé Google Maps",
+    "add": "Kó ɖò carnet",
+    "added": "Ɖò carnet",
+    "notebook": "Kɛ̀n carnet",
+    "offline": "Carte ɖo na Internet."
+  },
+  "notebook": {
+    "title": "Carnet de voyage tɔn",
+    "subtitle": "Kpé nǔ e ɖo na yí, wlan, bo sɛ́ WhatsApp.",
+    "empty": "Carnet tɔn ɖo vidé.",
+    "empty_cta": "Kɛ̀n fi lɛ",
+    "up": "Yi", "down": "Wá", "remove": "Ɖe",
+    "note_ph": "Note (ex.: 2 nuit, kɛ̀n asì...)",
+    "dates": "Azǎn", "dates_ph": "Ex.: 12 yì 20 décembre",
+    "travelers": "Mɛ e nɔ yi",
+    "send": "Sɛ́ WhatsApp",
+    "copy": "Kɔ́ résumé", "copied": "Résumé kɔ́",
+    "count": "{{count}} fi ɖò carnet",
+    "stored": "Carnet tɔn ɖo navigateur e ɔ́ mɛ.",
+    "wa_intro": "Bonjour, projet yi tɔn ɖò Benin:",
+    "wa_dates": "Dates: {{dates}}",
+    "wa_travelers": "Voyageurs: {{n}}"
+  },
+  "info": {
+    "title": "Xó lɛ",
+    "subtitle": "Nǔ e ɖo na wà nǔ yi.",
+    "disclaimer": "Xó général, kɛ̀n source officiel avant yi.",
+    "converter": { "title": "Euro / CFA franc", "eur": "Euro (€)", "xof": "CFA franc (F CFA)", "result": "= {{value}}", "note": "Taux fixe: 1 € = 655,957 F CFA." },
+    "facts": {
+      "language": { "title": "Gbè", "text": "Français ɖo gbè officiel. Fon, yoruba, dendi, bariba kpodo gbè ɖokpó ɖò agbègbè." },
+      "currency": { "title": "Monnaie", "text": "CFA franc (XOF), euro taux fixe." },
+      "timezone": { "title": "Fuseau horaire", "text": "UTC+1 xwè bǐ." },
+      "electricity": { "title": "Électricité", "text": "220 V, 50 Hz. Type C kpodo E: adaptateur." },
+      "phone": { "title": "Téléphone", "text": "Indicatif: +229." },
+      "driving": { "title": "Circulation", "text": "A nɔ zɔn ɖò droite." },
+      "health": { "title": "Santé", "text": "Fièvre jaune vaccination ɖo na. Biɔ médecin avant yi." },
+      "entry": { "title": "Entrée", "text": "Visa, document nɔ yí: kɛ̀n ambassade Bénin alǒ site officiel." }
+    },
+    "holidays": {
+      "title": "Jours fériés",
+      "note": "Fête musulmane kpodo jour décrété kpo ma ɖo: kɛ̀n calendrier officiel.",
+      "download": "Kó agenda (.ics)",
+      "names": { "newyear": "Xwè", "religions": "Jour religions endogènes (fête vodoun)", "easterMonday": "Lundi de Pâques", "labour": "Fête du travail", "ascension": "Ascension", "whitMonday": "Lundi de Pentecôte", "independence": "Fête indépendance", "assumption": "Assomption", "allsaints": "Toussaint", "christmas": "Noël" }
+    }
+  },
+  "quiz": {
+    "badge": "Jeu kpodo découverte",
+    "title": "Quiz",
+    "subtitle": "Mɔ yi e ɖo na yí, bo test connaissance tɔn.",
+    "tabs": { "finder": "Mɔ yi tɔn", "culture": "Quiz culture" },
+    "finder": {
+      "q1": "Etɛ́ ɖo na yí?", "q2": "Etɛ́ ɖò deuxième?", "q3": "Hwenu ɖe?",
+      "interests": { "historique": "Xotɛn kpodo monument", "nature": "Nature kpodo animal", "plage": "Xù kpodo détente", "ville": "Vie urbaine kpodo asì", "culture": "Tradition kpodo vie locale" },
+      "durations": { "short": "Hwenu kpɛvi (1-3 azǎn)", "medium": "Semaine ɖokpó", "long": "Xó semaine ɖokpó" },
+      "step": "Étape {{n}} / 3", "back": "Lɛ́kɔ́", "restart": "Bɛ̀",
+      "result_title": "Nǔ e mí ɖo nǔ wɛ",
+      "result_note_short": "Nǔ hwenu kpɛvi, mí sɔ́ fi e ɖo Cotonou.",
+      "match1": "Nǔ e ɖo na yí kpɔ́", "match2": "Nǔ e ɖo na yí deuxième", "match0": "Cotonou",
+      "see_map": "Kɛ̀n carte", "add": "Kó carnet", "added": "Ɖò carnet",
+      "aerial": "≈ {{km}} km sɔ́ Cotonou"
+    },
+    "culture": {
+      "intro": "10 nkambi xotɛn kpodo kɔnɖo Benin.",
+      "start": "Bɛ̀", "question_of": "Nkambi {{n}} / {{total}}", "correct": "Ɖagbe!", "wrong": "Ma ɖagbe.",
+      "next": "Nkambi e ɖo na wá", "finish": "Kɛ̀n score",
+      "score": "Score: {{score}} / {{total}}", "best": "Score ɖagbe: {{best}} / {{total}}",
+      "tiers": { "high": "Ɖagbe: a nɔ Benin ɖagbe!", "mid": "Ɖagbe: a ɖo base ɖagbe.", "low": "Découverte: « Benin ɖeɖe » na kpé nǔ." },
+      "restart": "Bɛ̀", "share": "Xo score", "share_text": "Score {{score}}/{{total}} quiz culture Benin!", "copied": "Xó kɔ́"
+    },
+    "q": {
+      "unesco": { "q": "Xwè ɖe palais royaux Abomey yí UNESCO?", "exp": "1985." },
+      "exile": { "q": "Aɖɔ̀xɔ́ ɖe Dahomey yì 1894 bo yì Martinique?", "exp": "Béhanzin, yì Martinique kpodo Algérie." },
+      "jan10": { "q": "10 janvier ɖo nǔ ɖe Benin?", "opts": ["Fête indépendance", "Jour religions endogènes", "Fête travail", "Xwè"], "exp": "Jour religions endogènes, fête vodoun." },
+      "gate": { "q": "Aɖɔ̀xɔ́ ɖe ɖo Porte du Non-Retour?", "exp": "Ouidah, Route des Esclaves." },
+      "capital": { "q": "Capitale officielle Benin?", "exp": "Porto-Novo; Cotonou ɖo gouvernement." },
+      "bronze": { "q": "Technique ɖe nǔ bronze Benin?", "opts": ["Tissage", "Poterie", "Cire perdue", "Vannerie"], "exp": "Cire perdue: objet ɖo cire, argile, métal." },
+      "rename": { "q": "Xwè ɖe Dahomey yí Benin?", "exp": "1975." },
+      "currency": { "q": "Monnaie Benin?", "exp": "CFA franc (XOF), euro taux fixe." },
+      "gelede": { "q": "Mɛ ɖe Gèlèdè nɔ kpé?", "opts": ["Chasseur", "Nɔ̀", "Pêcheur", "Aɖɔ̀xɔ́"], "exp": "Gèlèdè nɔ kpé nɔ̀ kpodo gbɛ̀n tɔn." },
+      "fort": { "q": "Fort São João Baptista de Ajudá Ouidah, Portugal xwè ɖe?", "exp": "1721. Musée Ouidah." }
+    }
+  }
+}

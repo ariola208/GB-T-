@@ -42,8 +42,7 @@ const About = () => {
   const heroOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
   const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
-  // Statistiques retirées (fictives). Pour en remettre de vraies, relis about.stats et statNumbers.
-  const statLabels: string[] = [];
+  const statLabels = arr<string>(t("about.stats", { returnObjects: true }));
   const points = arr<string>(t("about.vision.points", { returnObjects: true }));
   const values = arr<{ title: string; description: string }>(t("about.values", { returnObjects: true }));
   const milestones = arr<{ title: string; description: string }>(t("about.milestones", { returnObjects: true }));
@@ -65,29 +64,10 @@ const About = () => {
               <p className="mx-auto max-w-3xl text-xl text-white/90 md:text-2xl">{t("about.hero_subtitle")}</p>
             </motion.div>
           </div>
-          <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} className="absolute -bottom-12 left-0 right-0 z-20">
-            <div className="container mx-auto px-6">
-              <Card flat className="bg-background/95 shadow-xl backdrop-blur-sm">
-                <CardContent className="p-8">
-                  <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
-                    {statLabels.map((label, i) => {
-                      const Icon = statIcons[i] ?? Star;
-                      return (
-                        <div key={i} className="text-center">
-                          <Icon className="mx-auto mb-2 h-6 w-6" />
-                          <p className="font-heading text-3xl font-bold">{statNumbers[i]}</p>
-                          <p className="text-xs text-muted-foreground">{label}</p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </motion.div>
+          
         </section>
 
-        <div className="h-16" />
+        
 
         <section className="py-20">
           <div className="container mx-auto px-6">
@@ -152,9 +132,32 @@ const About = () => {
           </div>
         </section>
 
-        {/* Chronologie retirée : dates non vérifiées. À remettre avec de vrais jalons. */}
+        
 
-        {/* Équipe retirée : à remettre avec de vraies personnes */}
+        <section className="py-20">
+          <div className="container mx-auto mb-12 px-6 text-center">
+            <Badge className="mb-4">{t("about.team.badge")}</Badge>
+            <h2 className="mb-4 font-heading text-4xl font-bold">{t("about.team.title")}</h2>
+            <p className="mx-auto max-w-2xl text-muted-foreground">{t("about.team.subtitle")}</p>
+          </div>
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {team.map((member, i) => (
+                <Card key={i} className="text-center">
+                  <CardContent className="p-6">
+                    <Avatar className="mx-auto mb-4 h-24 w-24">
+                      
+                      <AvatarFallback>{member.name[0]}</AvatarFallback>
+                    </Avatar>
+                    <h3 className="text-xl font-bold">{member.name}</h3>
+                    <p className="mb-3 text-sm text-muted-foreground">{members[i]?.role}</p>
+                    <p className="text-sm text-muted-foreground">{members[i]?.bio}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section className="bg-muted/30 py-20">
           <div className="container mx-auto px-6">

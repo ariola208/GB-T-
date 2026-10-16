@@ -1,0 +1,21 @@
+{
+  "services": {
+    "quote": "Pedir orçamento",
+    "wa_message": "Olá, gostaria de um orçamento para: {{name}}.",
+    "cta_title": "Vamos falar do seu projeto",
+    "cta_text": "Descreva o que tem em mente e respondemos-lhe no WhatsApp.",
+    "cta_button": "Escrever no WhatsApp",
+    "cta_message": "Olá, gostaria de organizar uma viagem ao Benim. Podem ajudar-me?"
+  },
+  "contact": {
+    "wa_intro": "Olá, chamo-me {{name}}.",
+    "wa_dates": "Datas da viagem: {{v}}",
+    "wa_travelers": "Viajantes: {{v}}",
+    "sent_title": "O WhatsApp vai abrir…",
+    "sent_desc": "Envie a mensagem pré-preenchida para concluir o seu pedido.",
+    "whatsapp_cta": "Escrever no WhatsApp",
+    "form_note": "A sua mensagem abre-se no WhatsApp, pronta a enviar.",
+    "location": "Localização",
+    "location_value": "Cotonou, Benim"
+  }
+}

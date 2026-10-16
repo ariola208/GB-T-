@@ -11,24 +11,9 @@
     "logout": "Déconnexion",
     "logged_out_title": "Déconnecté",
     "logged_out_desc": "À bientôt !",
-    "stats": {
-      "trips": "Voyages",
-      "reviews": "Avis",
-      "favorites": "Favoris",
-      "points": "Points"
-    },
-    "tabs": {
-      "trips": "Voyages",
-      "favorites": "Favoris",
-      "reviews": "Avis",
-      "profile": "Profil"
-    },
-    "status": {
-      "upcoming": "À venir",
-      "confirmed": "Confirmé",
-      "completed": "Terminé",
-      "cancelled": "Annulé"
-    },
+    "stats": { "trips": "Voyages", "reviews": "Avis", "favorites": "Favoris", "points": "Points" },
+    "tabs": { "trips": "Voyages", "favorites": "Favoris", "reviews": "Avis", "profile": "Profil" },
+    "status": { "upcoming": "À venir", "confirmed": "Confirmé", "completed": "Terminé", "cancelled": "Annulé" },
     "no_trips": "Aucun voyage pour le moment",
     "explore": "Explorer",
     "travelers": "{{count}} voyageur(s)",

@@ -26,176 +26,22 @@
     "share": "Share",
     "link_copied": "Link copied",
     "close": "Close",
-    "tabs": {
-      "overview": "Overview",
-      "highlights": "Highlights",
-      "activities": "Activities",
-      "accommodations": "Accommodation",
-      "info": "Practical info"
-    },
-    "categories": {
-      "all": "All",
-      "culture": "Culture",
-      "nature": "Nature",
-      "plage": "Beach",
-      "ville": "City",
-      "historique": "Historic"
-    },
+    "tabs": { "overview": "Overview", "highlights": "Highlights", "activities": "Activities", "accommodations": "Accommodation", "info": "Practical info" },
+    "categories": { "all": "All", "culture": "Culture", "nature": "Nature", "plage": "Beach", "ville": "City", "historique": "Historic" },
     "cta_title": "Can't find what you're looking for?",
     "cta_text": "We create tailor-made itineraries based on your wishes. Tell us about your project!",
     "cta_button": "Create my custom trip",
-    "amenities": {
-      "wifi": "WiFi",
-      "restaurant": "Restaurant",
-      "ac": "Air conditioning",
-      "lakeview": "Lake view",
-      "homemeal": "Home-cooked meals",
-      "terrace": "Terrace",
-      "privatepirogue": "Private pirogue",
-      "pool": "Swimming pool",
-      "privateguide": "Private guide",
-      "tents": "Equipped tents",
-      "showers": "Showers",
-      "campfire": "Campfire",
-      "privatebeach": "Private beach",
-      "spa": "Spa"
-    },
-    "acc_types": {
-      "hotel": "Hotel",
-      "hotel3": "3* Hotel",
-      "hotel4": "4* Hotel",
-      "guesthouse": "Guesthouse",
-      "lodge": "Lodge",
-      "camping": "Camping",
-      "inn": "Inn"
-    },
+    "amenities": { "wifi": "WiFi", "restaurant": "Restaurant", "ac": "Air conditioning", "lakeview": "Lake view", "homemeal": "Home-cooked meals", "terrace": "Terrace", "privatepirogue": "Private pirogue", "pool": "Swimming pool", "privateguide": "Private guide", "tents": "Equipped tents", "showers": "Showers", "campfire": "Campfire", "privatebeach": "Private beach", "spa": "Spa" },
+    "acc_types": { "hotel": "Hotel", "hotel3": "3* Hotel", "hotel4": "4* Hotel", "guesthouse": "Guesthouse", "lodge": "Lodge", "camping": "Camping", "inn": "Inn" },
     "items": [
-      {
-        "description": "The Venice of Africa, a unique stilt village on the water",
-        "longDescription": "Ganvié is an exceptional lake village on Lake Nokoué. With 30,000 inhabitants living in stilt houses, it is the largest lake settlement in Africa. Life is organised entirely on the water: floating markets, schools, places of worship. Residents travel by pirogue in a fascinating aquatic ballet.",
-        "bestTime": "November to February",
-        "highlights": [
-          "Iconic stilt village",
-          "Floating market",
-          "Ganvié museum",
-          "Traditional fishing",
-          "Local crafts"
-        ],
-        "activities": [
-          "Pirogue tour",
-          "Floating market visit",
-          "Crafts workshop"
-        ]
-      },
-      {
-        "description": "One of the last great wildlife sanctuaries in West Africa",
-        "longDescription": "Pendjari National Park is a conservation jewel of West Africa. Over 275,000 hectares, it shelters exceptional wildlife: lions, elephants, buffalo, hippos, cheetahs and more than 300 bird species. The Tanougou waterfall and the Atacora mountains add to the beauty of the place.",
-        "bestTime": "December to March",
-        "highlights": [
-          "Photo safari",
-          "Lion watching",
-          "Tanougou waterfall",
-          "Bird watching",
-          "Wild camping"
-        ],
-        "activities": [
-          "Guided safari",
-          "Photo safari",
-          "Tanougou hike"
-        ]
-      },
-      {
-        "description": "Spiritual heart of vodun and memory of the slave trade",
-        "longDescription": "Ouidah is a city steeped in history. The Slave Route and the Door of No Return bear witness to the tragedy of the slave trade. The town is also the cradle of vodun, with the Temple of Pythons and the Sacred Forest of Kpassè. Every January 10, the National Vodun Festival draws thousands of pilgrims.",
-        "bestTime": "January, October-December",
-        "highlights": [
-          "Door of No Return",
-          "Slave Route",
-          "Temple of Pythons",
-          "Sacred Forest of Kpassè",
-          "History museum"
-        ],
-        "activities": [
-          "Historical tour",
-          "Vodun ceremony",
-          "Ouidah museum"
-        ]
-      },
-      {
-        "description": "The royal palaces of Dahomey, a World Heritage site",
-        "longDescription": "Abomey was the capital of the mighty Kingdom of Dahomey for nearly 300 years. The royal palaces, a UNESCO World Heritage site, are adorned with exceptional bas-reliefs that tell the story of the kingdom. The historical museum holds priceless treasures: thrones, weapons, ritual objects.",
-        "bestTime": "November to February",
-        "highlights": [
-          "UNESCO royal palaces",
-          "Historical museum",
-          "Bas-reliefs",
-          "Appliqué crafts"
-        ],
-        "activities": [
-          "Palace tour",
-          "Appliqué workshop"
-        ]
-      },
-      {
-        "description": "Fine sand beaches, traditional fishing and a relaxed atmosphere",
-        "longDescription": "Grand-Popo is a peaceful seaside resort where the Mono river meets the Atlantic Ocean. Its long palm-fringed beaches invite relaxation. The fishing village keeps its traditions. The Bouche du Roy offers magnificent landscapes.",
-        "bestTime": "November to March",
-        "highlights": [
-          "Fine sand beaches",
-          "Bouche du Roy",
-          "Traditional fishing",
-          "Sunsets"
-        ],
-        "activities": [
-          "Swimming",
-          "Pirogue on the Mono"
-        ]
-      },
-      {
-        "description": "The vibrant economic capital, between tradition and modernity",
-        "longDescription": "Cotonou is the beating heart of Benin. This dynamic city blends modernity and tradition. Dantokpa market, one of the largest in West Africa, is a total immersion in local life. Place de l'Étoile Rouge, Notre-Dame cathedral and Fidjrossè beach are all worth discovering.",
-        "bestTime": "All year round",
-        "highlights": [
-          "Dantokpa market",
-          "Place de l'Étoile Rouge",
-          "Fidjrossè beach",
-          "Zinsou Foundation"
-        ],
-        "activities": [
-          "Dantokpa visit",
-          "Contemporary art"
-        ]
-      },
-      {
-        "description": "Gateway to Somba country and its tata houses",
-        "longDescription": "Natitingou is the main town of Somba country, famed for its unique traditional homes: the tatas. These miniature mud fortresses look like small castles. The region offers magnificent landscapes of hills and valleys.",
-        "bestTime": "November to February",
-        "highlights": [
-          "Somba tatas",
-          "Kota waterfalls",
-          "Atacora mountains",
-          "Local crafts"
-        ],
-        "activities": [
-          "Tata visit",
-          "Hiking"
-        ]
-      },
-      {
-        "description": "The administrative capital, rich in history and traditions",
-        "longDescription": "Porto-Novo, the capital of Benin, is a city with a rich historical heritage. The Honmè Museum (former royal palace), the Afro-Brazilian style Great Mosque and the Garden of Plants and Nature are all worth a visit.",
-        "bestTime": "November to February",
-        "highlights": [
-          "Honmè Museum",
-          "Great Mosque",
-          "Botanical garden",
-          "Governor's palace"
-        ],
-        "activities": [
-          "Honmè Museum visit",
-          "City tour"
-        ]
-      }
+      { "description": "The Venice of Africa, a unique stilt village on the water", "longDescription": "Ganvié is an exceptional lake village on Lake Nokoué. With 30,000 inhabitants living in stilt houses, it is the largest lake settlement in Africa. Life is organised entirely on the water: floating markets, schools, places of worship. Residents travel by pirogue in a fascinating aquatic ballet.", "bestTime": "November to February", "highlights": ["Iconic stilt village", "Floating market", "Ganvié museum", "Traditional fishing", "Local crafts"], "activities": ["Pirogue tour", "Floating market visit", "Crafts workshop"] },
+      { "description": "One of the last great wildlife sanctuaries in West Africa", "longDescription": "Pendjari National Park is a conservation jewel of West Africa. Over 275,000 hectares, it shelters exceptional wildlife: lions, elephants, buffalo, hippos, cheetahs and more than 300 bird species. The Tanougou waterfall and the Atacora mountains add to the beauty of the place.", "bestTime": "December to March", "highlights": ["Photo safari", "Lion watching", "Tanougou waterfall", "Bird watching", "Wild camping"], "activities": ["Guided safari", "Photo safari", "Tanougou hike"] },
+      { "description": "Spiritual heart of vodun and memory of the slave trade", "longDescription": "Ouidah is a city steeped in history. The Slave Route and the Door of No Return bear witness to the tragedy of the slave trade. The town is also the cradle of vodun, with the Temple of Pythons and the Sacred Forest of Kpassè. Every January 10, the National Vodun Festival draws thousands of pilgrims.", "bestTime": "January, October-December", "highlights": ["Door of No Return", "Slave Route", "Temple of Pythons", "Sacred Forest of Kpassè", "History museum"], "activities": ["Historical tour", "Vodun ceremony", "Ouidah museum"] },
+      { "description": "The royal palaces of Dahomey, a World Heritage site", "longDescription": "Abomey was the capital of the mighty Kingdom of Dahomey for nearly 300 years. The royal palaces, a UNESCO World Heritage site, are adorned with exceptional bas-reliefs that tell the story of the kingdom. The historical museum holds priceless treasures: thrones, weapons, ritual objects.", "bestTime": "November to February", "highlights": ["UNESCO royal palaces", "Historical museum", "Bas-reliefs", "Appliqué crafts"], "activities": ["Palace tour", "Appliqué workshop"] },
+      { "description": "Fine sand beaches, traditional fishing and a relaxed atmosphere", "longDescription": "Grand-Popo is a peaceful seaside resort where the Mono river meets the Atlantic Ocean. Its long palm-fringed beaches invite relaxation. The fishing village keeps its traditions. The Bouche du Roy offers magnificent landscapes.", "bestTime": "November to March", "highlights": ["Fine sand beaches", "Bouche du Roy", "Traditional fishing", "Sunsets"], "activities": ["Swimming", "Pirogue on the Mono"] },
+      { "description": "The vibrant economic capital, between tradition and modernity", "longDescription": "Cotonou is the beating heart of Benin. This dynamic city blends modernity and tradition. Dantokpa market, one of the largest in West Africa, is a total immersion in local life. Place de l'Étoile Rouge, Notre-Dame cathedral and Fidjrossè beach are all worth discovering.", "bestTime": "All year round", "highlights": ["Dantokpa market", "Place de l'Étoile Rouge", "Fidjrossè beach", "Zinsou Foundation"], "activities": ["Dantokpa visit", "Contemporary art"] },
+      { "description": "Gateway to Somba country and its tata houses", "longDescription": "Natitingou is the main town of Somba country, famed for its unique traditional homes: the tatas. These miniature mud fortresses look like small castles. The region offers magnificent landscapes of hills and valleys.", "bestTime": "November to February", "highlights": ["Somba tatas", "Kota waterfalls", "Atacora mountains", "Local crafts"], "activities": ["Tata visit", "Hiking"] },
+      { "description": "The administrative capital, rich in history and traditions", "longDescription": "Porto-Novo, the capital of Benin, is a city with a rich historical heritage. The Honmè Museum (former royal palace), the Afro-Brazilian style Great Mosque and the Garden of Plants and Nature are all worth a visit.", "bestTime": "November to February", "highlights": ["Honmè Museum", "Great Mosque", "Botanical garden", "Governor's palace"], "activities": ["Honmè Museum visit", "City tour"] }
     ]
   }
 }

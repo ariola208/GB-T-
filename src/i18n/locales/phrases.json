@@ -1,0 +1,38 @@
+{
+  "fon": {
+    "greetings": [
+      { "fr": "Bonjour", "native": "Kúabɔ̀", "pron": "kou-a-bô", "status": "draft" },
+      { "fr": "Comment vas-tu ?", "native": "A fɔ̀n gǎnjí à ?", "pron": "a fon gan-dji a", "status": "draft" },
+      { "fr": "Merci", "native": "Awǎn", "pron": "a-wan", "status": "draft" },
+      { "fr": "Au revoir", "native": "Bɔ̀ nǔ wá", "pron": "bô nou wa", "status": "draft" }
+    ],
+    "politeness": [
+      { "fr": "S'il vous plaît", "native": "Kɛ̀nklɛ́n", "pron": "kèn-klén", "status": "draft" },
+      { "fr": "Excusez-moi", "native": "Kɛ̀n nǔ", "pron": "kèn nou", "status": "draft" },
+      { "fr": "Oui", "native": "Ɛɛn", "pron": "ènn", "status": "draft" },
+      { "fr": "Non", "native": "Ee", "pron": "é", "status": "draft" }
+    ],
+    "market": [
+      { "fr": "Combien ça coûte ?", "native": "Nàwɛ̀ ?", "pron": "na-wè", "status": "draft" },
+      { "fr": "C'est trop cher", "native": "É yì nú hú", "pron": "é yi nou hou", "status": "draft" }
+    ]
+  },
+  "yo": {
+    "greetings": [
+      { "fr": "Bonjour", "native": "Ẹ káàárọ̀", "pron": "é ka-a-rò", "status": "draft" },
+      { "fr": "Comment vas-tu ?", "native": "Báwo ni ?", "pron": "ba-wo ni", "status": "draft" },
+      { "fr": "Merci", "native": "Ẹ ṣé", "pron": "é ché", "status": "draft" },
+      { "fr": "Au revoir", "native": "Ó dàbọ̀", "pron": "o da-bô", "status": "draft" }
+    ],
+    "politeness": [
+      { "fr": "S'il vous plaît", "native": "Jọ̀wọ́", "pron": "djô-wô", "status": "draft" },
+      { "fr": "Excusez-moi", "native": "Ẹ má bínú", "pron": "é ma bi-nou", "status": "draft" },
+      { "fr": "Oui", "native": "Bẹ́ẹ̀ ni", "pron": "bé-è ni", "status": "draft" },
+      { "fr": "Non", "native": "Bẹ́ẹ̀ kọ́", "pron": "bé-è kô", "status": "draft" }
+    ],
+    "market": [
+      { "fr": "Combien ça coûte ?", "native": "Elòó ni ?", "pron": "é-lo-o ni", "status": "draft" },
+      { "fr": "C'est trop cher", "native": "Ó wọ́n jù", "pron": "o won djou", "status": "draft" }
+    ]
+  }
+}

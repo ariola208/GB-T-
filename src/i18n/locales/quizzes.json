@@ -1,0 +1,260 @@
+{
+  "categories": {
+    "culture": { "label": "Culture & traditions", "emoji": "🎭" },
+    "histoire": { "label": "Histoire", "emoji": "🏛️" },
+    "nature": { "label": "Nature & géographie", "emoji": "🌍" },
+    "gastronomie": { "label": "Gastronomie", "emoji": "🍲" },
+    "langues": { "label": "Langues", "emoji": "🗣️" },
+    "arts": { "label": "Arts & artisanat", "emoji": "🎨" }
+  },
+  "questions": [
+    {
+      "cat": "histoire",
+      "level": "easy",
+      "q": "En quelle année les palais royaux d'Abomey ont-ils été inscrits au patrimoine mondial de l'UNESCO ?",
+      "opts": ["1972", "1985", "1990", "2000"],
+      "correct": 1,
+      "exp": "Ils sont inscrits depuis 1985."
+    },
+    {
+      "cat": "histoire",
+      "level": "easy",
+      "q": "Quel roi du Dahomey s'est rendu en 1894 avant d'être exilé en Martinique ?",
+      "opts": ["Ghézo", "Glèlè", "Béhanzin", "Agadja"],
+      "correct": 2,
+      "exp": "Béhanzin, exilé en Martinique puis en Algérie."
+    },
+    {
+      "cat": "histoire",
+      "level": "medium",
+      "q": "Quelle est la capitale officielle du Bénin ?",
+      "opts": ["Cotonou", "Porto-Novo", "Abomey", "Ouidah"],
+      "correct": 1,
+      "exp": "Porto-Novo est la capitale officielle ; Cotonou concentre le gouvernement."
+    },
+    {
+      "cat": "histoire",
+      "level": "medium",
+      "q": "En quelle année le Dahomey est-il devenu officiellement le Bénin ?",
+      "opts": ["1960", "1972", "1975", "1990"],
+      "correct": 2,
+      "exp": "En 1975."
+    },
+    {
+      "cat": "histoire",
+      "level": "hard",
+      "q": "Quel roi est associé au buffle comme emblème royal ?",
+      "opts": ["Ghézo", "Glèlè", "Béhanzin", "Houégbadja"],
+      "correct": 0,
+      "exp": "Ghézo avait le buffle pour emblème."
+    },
+    {
+      "cat": "histoire",
+      "level": "hard",
+      "q": "Le fort São João Baptista de Ajudá, à Ouidah, a été fondé par le Portugal en…",
+      "opts": ["1521", "1721", "1821", "1892"],
+      "correct": 1,
+      "exp": "En 1721. Il abrite aujourd'hui le musée d'histoire de Ouidah."
+    },
+    {
+      "cat": "culture",
+      "level": "easy",
+      "q": "À quoi est consacré le 10 janvier au Bénin ?",
+      "opts": ["La fête de l'indépendance", "La journée des religions endogènes", "La fête du travail", "Le jour de l'An"],
+      "correct": 1,
+      "exp": "C'est la journée des religions endogènes, aussi appelée fête du vodoun."
+    },
+    {
+      "cat": "culture",
+      "level": "easy",
+      "q": "Quelle ville abrite la Porte du Non-Retour ?",
+      "opts": ["Abomey", "Ouidah", "Cotonou", "Porto-Novo"],
+      "correct": 1,
+      "exp": "Ouidah, au bout de la Route des Esclaves."
+    },
+    {
+      "cat": "culture",
+      "level": "medium",
+      "q": "Qui les masques Gèlèdè honorent-ils ?",
+      "opts": ["Les chasseurs", "Les mères", "Les pêcheurs", "Les rois"],
+      "correct": 1,
+      "exp": "Les Gèlèdè rendent hommage aux mères et à leur pouvoir spirituel."
+    },
+    {
+      "cat": "culture",
+      "level": "medium",
+      "q": "Le vodoun est…",
+      "opts": ["Un folklore", "Une religion vivante", "Une danse", "Une langue"],
+      "correct": 1,
+      "exp": "Le vodoun est une religion pratiquée au Bénin, au Togo et dans la région."
+    },
+    {
+      "cat": "culture",
+      "level": "hard",
+      "q": "Quel jour est célébrée la fête nationale du Vodoun ?",
+      "opts": ["1er janvier", "10 janvier", "1er août", "25 décembre"],
+      "correct": 1,
+      "exp": "Le 10 janvier, depuis 1996."
+    },
+    {
+      "cat": "nature",
+      "level": "easy",
+      "q": "Quel parc national est l'un des derniers sanctuaires de faune sauvage en Afrique de l'Ouest ?",
+      "opts": ["Parc de la Pendjari", "Parc de la Boucle du Baoulé", "Parc du Niokolo-Koba", "Parc de Taï"],
+      "correct": 0,
+      "exp": "Le Parc National de la Pendjari, dans l'Atacora."
+    },
+    {
+      "cat": "nature",
+      "level": "easy",
+      "q": "Quelle est la plus grande cité lacustre d'Afrique ?",
+      "opts": ["Ganvié", "Cotonou", "Grand-Popo", "Ouidah"],
+      "correct": 0,
+      "exp": "Ganvié, sur le lac Nokoué, avec 30 000 habitants."
+    },
+    {
+      "cat": "nature",
+      "level": "medium",
+      "q": "Sur quel lac se trouve Ganvié ?",
+      "opts": ["Lac Titicaca", "Lac Nokoué", "Lac Victoria", "Lac Tchad"],
+      "correct": 1,
+      "exp": "Le lac Nokoué, près de Cotonou."
+    },
+    {
+      "cat": "nature",
+      "level": "medium",
+      "q": "Quelle cascade se trouve dans la région de l'Atacora ?",
+      "opts": ["Cascade de Tanougou", "Chutes du Niagara", "Chutes de Kariba", "Cascade de Kota"],
+      "correct": 0,
+      "exp": "La cascade de Tanougou, près de Natitingou."
+    },
+    {
+      "cat": "nature",
+      "level": "hard",
+      "q": "Quelle est la plus haute montagne du Bénin ?",
+      "opts": ["Mont Sokbaro", "Mont Kilimandjaro", "Mont Cameroun", "Mont Atacora"],
+      "correct": 0,
+      "exp": "Le mont Sokbaro (658 m), dans l'Atacora."
+    },
+    {
+      "cat": "gastronomie",
+      "level": "easy",
+      "q": "Quel plat béninois est à base de pâte rouge ?",
+      "opts": ["Le tchoukoutou", "L'amiwo", "La pâte rouge", "L'akassa"],
+      "correct": 2,
+      "exp": "La pâte rouge est un plat traditionnel béninois."
+    },
+    {
+      "cat": "gastronomie",
+      "level": "easy",
+      "q": "Qu'est-ce que le tchoukoutou ?",
+      "opts": ["Une bière de mil", "Un plat de riz", "Un poisson grillé", "Un dessert"],
+      "correct": 0,
+      "exp": "Le tchoukoutou est une bière traditionnelle de mil."
+    },
+    {
+      "cat": "gastronomie",
+      "level": "medium",
+      "q": "L'amiwo est un plat à base de…",
+      "opts": ["Riz et tomate", "Maïs et tomate", "Igname pilée", "Manioc"],
+      "correct": 1,
+      "exp": "L'amiwo est à base de maïs et de tomate."
+    },
+    {
+      "cat": "gastronomie",
+      "level": "medium",
+      "q": "Qu'est-ce que l'akassa ?",
+      "opts": ["Une pâte de maïs fermentée", "Un poisson", "Un légume", "Une boisson"],
+      "correct": 0,
+      "exp": "L'akassa est une pâte de maïs fermentée, souvent servie avec une sauce."
+    },
+    {
+      "cat": "gastronomie",
+      "level": "hard",
+      "q": "Le wô est une purée de…",
+      "opts": ["Igname", "Haricots", "Manioc", "Maïs"],
+      "correct": 1,
+      "exp": "Le wô est une purée de haricots."
+    },
+    {
+      "cat": "langues",
+      "level": "easy",
+      "q": "Quelle est la langue officielle du Bénin ?",
+      "opts": ["L'anglais", "Le français", "Le portugais", "L'espagnol"],
+      "correct": 1,
+      "exp": "Le français est la langue officielle."
+    },
+    {
+      "cat": "langues",
+      "level": "easy",
+      "q": "Comment dit-on 'merci' en fon ?",
+      "opts": ["Awǎn", "Kúabɔ̀", "Ɛɛn", "Nàwɛ̀"],
+      "correct": 0,
+      "exp": "Awǎn = merci en fon."
+    },
+    {
+      "cat": "langues",
+      "level": "medium",
+      "q": "Quelle langue est parlée au nord du Bénin ?",
+      "opts": ["Le fon", "Le yoruba", "Le bariba", "L'anglais"],
+      "correct": 2,
+      "exp": "Le bariba est parlé dans le Borgou, au nord."
+    },
+    {
+      "cat": "langues",
+      "level": "medium",
+      "q": "Comment dit-on 'bonjour' en yoruba ?",
+      "opts": ["Ẹ káàárọ̀", "Awǎn", "Kúabɔ̀", "Bɔ̀ nǔ wá"],
+      "correct": 0,
+      "exp": "Ẹ káàárọ̀ = bonjour en yoruba."
+    },
+    {
+      "cat": "langues",
+      "level": "hard",
+      "q": "Combien de langues nationales le Bénin reconnaît-il environ ?",
+      "opts": ["Environ 5", "Environ 15", "Environ 50", "Environ 100"],
+      "correct": 2,
+      "exp": "Le Bénin compte une cinquantaine de langues nationales."
+    },
+    {
+      "cat": "arts",
+      "level": "easy",
+      "q": "Quelle technique sert à couler le bronze dans l'artisanat béninois ?",
+      "opts": ["Le tissage", "La poterie", "La cire perdue", "La vannerie"],
+      "correct": 2,
+      "exp": "La cire perdue : l'objet est modelé en cire, puis le métal remplace la cire."
+    },
+    {
+      "cat": "arts",
+      "level": "easy",
+      "q": "Les appliqués d'Abomey sont…",
+      "opts": ["Des tissus décorés", "Des sculptures", "Des masques", "Des poteries"],
+      "correct": 0,
+      "exp": "Les appliqués sont des tissus décorés de motifs découpés et cousus."
+    },
+    {
+      "cat": "arts",
+      "level": "medium",
+      "q": "Quel animal est l'emblème du roi Béhanzin ?",
+      "opts": ["Le lion", "Le buffle", "Le requin", "L'éléphant"],
+      "correct": 2,
+      "exp": "Le requin est l'emblème de Béhanzin."
+    },
+    {
+      "cat": "arts",
+      "level": "medium",
+      "q": "Où trouve-t-on les bas-reliefs royaux les plus célèbres du Bénin ?",
+      "opts": ["Ouidah", "Abomey", "Cotonou", "Porto-Novo"],
+      "correct": 1,
+      "exp": "Les bas-reliefs des palais royaux d'Abomey."
+    },
+    {
+      "cat": "arts",
+      "level": "hard",
+      "q": "Quel dieu vodoun est associé au fer et à la forge ?",
+      "opts": ["Legba", "Gu (Ogou)", "Mawu", "Lisa"],
+      "correct": 1,
+      "exp": "Gu, aussi appelé Ogou, est associé au fer et à la forge."
+    }
+  ]
+}

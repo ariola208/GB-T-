@@ -11,24 +11,9 @@
     "logout": "Sair",
     "logged_out_title": "Sessão terminada",
     "logged_out_desc": "Até breve!",
-    "stats": {
-      "trips": "Viagens",
-      "reviews": "Avaliações",
-      "favorites": "Favoritos",
-      "points": "Pontos"
-    },
-    "tabs": {
-      "trips": "Viagens",
-      "favorites": "Favoritos",
-      "reviews": "Avaliações",
-      "profile": "Perfil"
-    },
-    "status": {
-      "upcoming": "Próxima",
-      "confirmed": "Confirmada",
-      "completed": "Concluída",
-      "cancelled": "Cancelada"
-    },
+    "stats": { "trips": "Viagens", "reviews": "Avaliações", "favorites": "Favoritos", "points": "Pontos" },
+    "tabs": { "trips": "Viagens", "favorites": "Favoritos", "reviews": "Avaliações", "profile": "Perfil" },
+    "status": { "upcoming": "Próxima", "confirmed": "Confirmada", "completed": "Concluída", "cancelled": "Cancelada" },
     "no_trips": "Ainda sem viagens",
     "explore": "Explorar",
     "travelers": "{{count}} viajante(s)",

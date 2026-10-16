@@ -1,0 +1,37 @@
+{
+  "home2": {
+    "explore": {
+      "kicker": "Explore by universe",
+      "title": "What makes you travel?",
+      "tiles": {
+        "history": { "title": "History and memory", "text": "Kingdoms, palaces and places of remembrance." },
+        "nature": { "title": "Nature and safari", "text": "Parks, savannas and mountains." },
+        "beach": { "title": "Beaches and lagoons", "text": "Ocean, lagoon and fishing villages." },
+        "city": { "title": "Cities and markets", "text": "Cotonou and Porto-Novo." },
+        "tradition": { "title": "Traditions and arts", "text": "Masks, ceremonies and know-how." }
+      }
+    },
+    "steps": {
+      "kicker": "From dream to departure",
+      "title": "Prepare your trip in 3 steps",
+      "items": [
+        { "title": "Find what you want", "text": "A short quiz to get three destination ideas.", "cta": "Take the quiz" },
+        { "title": "Explore the map", "text": "Locate each place and estimate distances from Cotonou.", "cta": "Open the map" },
+        { "title": "Organise your notebook", "text": "Order your stops and send your plan by WhatsApp.", "cta": "My notebook" }
+      ]
+    },
+    "facts": {
+      "kicker": "Did you know?",
+      "prev": "Previous",
+      "next": "Next",
+      "items": [
+        "Twelve kings succeeded one another in Abomey between 1625 and 1900, according to UNESCO.",
+        "The Slave Route in Ouidah is about four kilometres long and leads to the Door of No Return.",
+        "January 10 is a public holiday dedicated to indigenous religions, also called the vodun festival.",
+        "In 2021, France returned twenty-six works from the royal treasures of Abomey to Benin.",
+        "Ganvié is a lake village built on stilts, on Lake Nokoué.",
+        "The CFA franc is pegged to the euro at a fixed rate: €1 = 655.957 F CFA."
+      ]
+    }
+  }
+}

@@ -3,56 +3,28 @@
     "hero_title": "Contactez-nous",
     "hero_subtitle": "Notre équipe est là pour vous aider à créer le voyage de vos rêves au Bénin",
     "features": {
-      "team": {
-        "title": "Équipe locale",
-        "desc": "Des experts passionnés qui connaissent chaque recoin du Bénin"
-      },
-      "certified": {
-        "title": "Certifié",
-        "desc": "Agence agréée par le Ministère du Tourisme du Bénin"
-      },
-      "secure": {
-        "title": "Voyage sécurisé",
-        "desc": "Partenaires vérifiés et assurance voyage incluse"
-      }
+      "team": { "title": "Équipe locale", "desc": "Des experts passionnés qui connaissent chaque recoin du Bénin" },
+      "certified": { "title": "Certifié", "desc": "Agence agréée par le Ministère du Tourisme du Bénin" },
+      "secure": { "title": "Voyage sécurisé", "desc": "Partenaires vérifiés et assurance voyage incluse" }
     },
     "info_title": "Parlons de votre projet",
     "info_text": "Que vous ayez une question, une demande de devis ou simplement envie d'en savoir plus, nous sommes à votre écoute.",
-    "address": {
-      "title": "Adresse",
-      "line1": "Avenue Jean-Paul II",
-      "line2": "Cotonou, Bénin"
-    },
-    "phone": {
-      "title": "Téléphone"
-    },
-    "email": {
-      "title": "Email"
-    },
-    "hours": {
-      "title": "Horaires",
-      "line1": "Lun - Ven : 8h - 18h",
-      "line2": "Sam : 9h - 15h"
-    },
+    "address": { "title": "Adresse", "line1": "Avenue Jean-Paul II", "line2": "Cotonou, Bénin" },
+    "phone": { "title": "Téléphone" },
+    "email": { "title": "Email" },
+    "hours": { "title": "Horaires", "line1": "Lun - Ven : 8h - 18h", "line2": "Sam : 9h - 15h" },
     "follow": "Suivez-nous",
-    "whatsapp": {
-      "title": "WhatsApp",
-      "text": "Préférez-vous discuter directement ? Contactez-nous sur WhatsApp !"
-    },
+    "whatsapp": { "title": "WhatsApp", "text": "Préférez-vous discuter directement ? Contactez-nous sur WhatsApp !" },
     "form": {
       "title": "Envoyez-nous un message",
-      "name": "Nom complet *",
-      "name_ph": "Jean Kouagou",
-      "email": "Email *",
-      "email_ph": "jean@email.com",
+      "name": "Nom complet *", "name_ph": "Jean Kouagou",
+      "email": "Email *", "email_ph": "jean@email.com",
       "phone": "Téléphone",
-      "subject": "Sujet *",
-      "subject_ph": "Demande d'information",
+      "subject": "Sujet *", "subject_ph": "Demande d'information",
       "date": "Date de voyage",
       "travelers": "Nombre de voyageurs",
       "budget": "Budget estimé",
-      "message": "Message *",
-      "message_ph": "Décrivez votre projet de voyage, vos envies, vos questions...",
+      "message": "Message *", "message_ph": "Décrivez votre projet de voyage, vos envies, vos questions...",
       "required": "* Champs obligatoires",
       "send": "Envoyer le message"
     },
@@ -62,10 +34,7 @@
       "subject": "Le sujet est requis",
       "message": "Le message doit contenir au moins 10 caractères"
     },
-    "toast": {
-      "title": "✨ Message envoyé avec succès !",
-      "desc": "Notre équipe vous répondra dans les 24h."
-    },
+    "toast": { "title": "✨ Message envoyé avec succès !", "desc": "Notre équipe vous répondra dans les 24h." },
     "map_title": "Carte du Bénin"
   },
   "login": {

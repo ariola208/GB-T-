@@ -3,56 +3,28 @@
     "hero_title": "Contact us",
     "hero_subtitle": "Our team is here to help you create the trip of your dreams in Benin",
     "features": {
-      "team": {
-        "title": "Local team",
-        "desc": "Passionate experts who know every corner of Benin"
-      },
-      "certified": {
-        "title": "Certified",
-        "desc": "Agency approved by the Beninese Ministry of Tourism"
-      },
-      "secure": {
-        "title": "Safe travel",
-        "desc": "Vetted partners and travel insurance included"
-      }
+      "team": { "title": "Local team", "desc": "Passionate experts who know every corner of Benin" },
+      "certified": { "title": "Certified", "desc": "Agency approved by the Beninese Ministry of Tourism" },
+      "secure": { "title": "Safe travel", "desc": "Vetted partners and travel insurance included" }
     },
     "info_title": "Let's talk about your project",
     "info_text": "Whether you have a question, a quote request or simply want to know more, we are happy to help.",
-    "address": {
-      "title": "Address",
-      "line1": "Avenue Jean-Paul II",
-      "line2": "Cotonou, Benin"
-    },
-    "phone": {
-      "title": "Phone"
-    },
-    "email": {
-      "title": "Email"
-    },
-    "hours": {
-      "title": "Opening hours",
-      "line1": "Mon - Fri: 8am - 6pm",
-      "line2": "Sat: 9am - 3pm"
-    },
+    "address": { "title": "Address", "line1": "Avenue Jean-Paul II", "line2": "Cotonou, Benin" },
+    "phone": { "title": "Phone" },
+    "email": { "title": "Email" },
+    "hours": { "title": "Opening hours", "line1": "Mon - Fri: 8am - 6pm", "line2": "Sat: 9am - 3pm" },
     "follow": "Follow us",
-    "whatsapp": {
-      "title": "WhatsApp",
-      "text": "Prefer to chat directly? Contact us on WhatsApp!"
-    },
+    "whatsapp": { "title": "WhatsApp", "text": "Prefer to chat directly? Contact us on WhatsApp!" },
     "form": {
       "title": "Send us a message",
-      "name": "Full name *",
-      "name_ph": "John Smith",
-      "email": "Email *",
-      "email_ph": "john@email.com",
+      "name": "Full name *", "name_ph": "John Smith",
+      "email": "Email *", "email_ph": "john@email.com",
       "phone": "Phone",
-      "subject": "Subject *",
-      "subject_ph": "Information request",
+      "subject": "Subject *", "subject_ph": "Information request",
       "date": "Travel date",
       "travelers": "Number of travelers",
       "budget": "Estimated budget",
-      "message": "Message *",
-      "message_ph": "Describe your trip, your wishes, your questions...",
+      "message": "Message *", "message_ph": "Describe your trip, your wishes, your questions...",
       "required": "* Required fields",
       "send": "Send message"
     },
@@ -62,10 +34,7 @@
       "subject": "Subject is required",
       "message": "Message must contain at least 10 characters"
     },
-    "toast": {
-      "title": "✨ Message sent successfully!",
-      "desc": "Our team will reply within 24 hours."
-    },
+    "toast": { "title": "✨ Message sent successfully!", "desc": "Our team will reply within 24 hours." },
     "map_title": "Map of Benin"
   },
   "login": {

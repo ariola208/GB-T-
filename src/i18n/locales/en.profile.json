@@ -11,24 +11,9 @@
     "logout": "Log out",
     "logged_out_title": "Logged out",
     "logged_out_desc": "See you soon!",
-    "stats": {
-      "trips": "Trips",
-      "reviews": "Reviews",
-      "favorites": "Favorites",
-      "points": "Points"
-    },
-    "tabs": {
-      "trips": "Trips",
-      "favorites": "Favorites",
-      "reviews": "Reviews",
-      "profile": "Profile"
-    },
-    "status": {
-      "upcoming": "Upcoming",
-      "confirmed": "Confirmed",
-      "completed": "Completed",
-      "cancelled": "Cancelled"
-    },
+    "stats": { "trips": "Trips", "reviews": "Reviews", "favorites": "Favorites", "points": "Points" },
+    "tabs": { "trips": "Trips", "favorites": "Favorites", "reviews": "Reviews", "profile": "Profile" },
+    "status": { "upcoming": "Upcoming", "confirmed": "Confirmed", "completed": "Completed", "cancelled": "Cancelled" },
     "no_trips": "No trips yet",
     "explore": "Explore",
     "travelers": "{{count}} traveler(s)",

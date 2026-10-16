@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { COTONOU, PLACES, distKm, type Place } from "@/data/destinations";
+import { COTONOU, PLACES, distKm, type Place } from "@/data/places";
 import { getFavs, toggleFav } from "@/lib/carnet";
 
 const Carte = () => {

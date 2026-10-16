@@ -1,0 +1,134 @@
+{
+  "nav": { "soul": "Soul of Benin" },
+  "soul": {
+    "hero_badge": "Living culture",
+    "hero_title": "The Soul of Benin",
+    "hero_subtitle": "Stories, languages and traditions of Benin, told with the people who carry them.",
+    "hero_note": "This section is under construction: every story, translation and recording will be validated by qualified people before being presented as final.",
+    "anchors": { "heritage": "Heritage stories", "languages": "Languages", "stories": "Cultural stories" },
+    "heritage": {
+      "badge": "A · Heritage",
+      "title": "Heritage stories",
+      "intro": "Every site has a story that unfolds over time. Pick a place, then walk through its timeline.",
+      "timeline": "Timeline",
+      "sources": "Sources",
+      "tabs": { "abomey": "Abomey", "ouidah": "Ouidah", "portonovo": "Porto-Novo" },
+      "sites": {
+        "abomey": {
+          "intro": "Capital of the Kingdom of Dahomey, Abomey preserves the palaces of a dynasty of twelve kings. The bas-reliefs on its walls kept the memory of reigns and key events.",
+          "source": "UNESCO, Royal Palaces of Abomey (inscribed in 1985); Historical Museum of Abomey.",
+          "events": [
+            { "year": "1625–1900", "title": "A dynasty of twelve kings", "text": "According to UNESCO, twelve kings succeeded one another at the head of the Kingdom of Dahomey. Each added his own palace within the royal enclosure of Abomey." },
+            { "year": "1724–1727", "title": "Access to the coast", "text": "Under King Agadja, Dahomey conquered Allada, then Ouidah in 1727. The kingdom thus gained access to the coast and to Atlantic trade, including the slave trade." },
+            { "year": "1818–1858", "title": "The reign of Guézo", "text": "Guézo's reign was one of the longest of the dynasty. Dahomey was then a powerful and highly organised state." },
+            { "year": "1892–1894", "title": "The Franco-Dahomean War", "text": "The war ended with the surrender of King Béhanzin, who was exiled to Martinique and then Algeria. The kingdom came under French colonial rule." },
+            { "year": "1985", "title": "World Heritage", "text": "The Royal Palaces of Abomey are inscribed on UNESCO's World Heritage List." },
+            { "year": "2021", "title": "The return of the royal treasures", "text": "France returns to Benin twenty-six works from the royal treasures of Abomey, taken during the 1892 conquest." }
+          ]
+        },
+        "ouidah": {
+          "intro": "A former port of the Atlantic slave trade and a central place of vodun traditions, Ouidah is today a place of memory and living practice. The Slave Route, about four kilometres long, leads to the Door of No Return, facing the ocean.",
+          "source": "UNESCO, The Slave Route project; Ouidah History Museum.",
+          "events": [
+            { "year": "1721", "title": "The Portuguese fort", "text": "Portugal founds the fort of São João Baptista de Ajudá in Ouidah. It now houses the Ouidah History Museum." },
+            { "year": "1727", "title": "The Dahomean conquest", "text": "Dahomey conquers Ouidah. The port is then one of the main embarkation points for captives bound for the Americas." },
+            { "year": "1994", "title": "The Slave Route", "text": "UNESCO's The Slave Route project is launched in Ouidah, to raise awareness of the history of the slave trade and its consequences." },
+            { "year": "1996", "title": "A recognised religion", "text": "Vodun is officially recognised in Benin. January 10 becomes a public holiday dedicated to indigenous religions." }
+          ]
+        },
+        "portonovo": {
+          "intro": "The official capital of Benin, Porto-Novo is the former capital of the Kingdom of Hogbonou. Its heritage blends royal traditions, Afro-Brazilian influences and colonial legacy.",
+          "source": "Honmè Museum (former royal palace). Sources to be completed with the museum and heritage services.",
+          "events": [
+            { "year": "17th–18th centuries", "title": "The Kingdom of Hogbonou", "text": "The kingdom develops along the lagoon. Portuguese merchants give the town the name “Porto-Novo”." },
+            { "year": "1863", "title": "The protectorate", "text": "King Sodji accepts a French protectorate over his kingdom." },
+            { "year": "Today", "title": "A quiet capital", "text": "Porto-Novo is the official capital of the country, while Cotonou concentrates the government and economic activity. The Honmè Palace, a former royal residence, houses a museum." }
+          ]
+        }
+      },
+      "media": {
+        "title": "Photographs, voices and maps",
+        "intro": "These items are being prepared. We will only publish them once the rights and the consent of the people concerned are secured.",
+        "status": "In preparation",
+        "items": [
+          { "title": "Historical photographs", "text": "We only publish archive images when their author or rights holders have agreed, or when they are free of rights." },
+          { "title": "Testimonies", "text": "Site keepers, guides, artisans and residents: their testimonies will be collected with their consent. No testimony is invented." },
+          { "title": "Historical maps", "text": "Old maps and annotated maps of the region, with their origin and context." },
+          { "title": "Audio recordings", "text": "Oral stories and songs, recorded with the agreement of the people concerned and, for religious practices, of their leaders." }
+        ]
+      }
+    },
+    "languages": {
+      "badge": "B · Languages",
+      "title": "Beninese languages explorer",
+      "intro": "A mini phrasebook for travellers: choose a language and a situation.",
+      "banner": "The translations shown are drafts. They must be validated by qualified speakers before being considered reliable. Authentic recordings will be added over time.",
+      "names": { "yo": "Yoruba", "fon": "Fon", "ddn": "Dendi" },
+      "all": "All",
+      "categories": { "salutations": "Greetings", "remerciements": "Thanks", "directions": "Directions", "marche": "Market", "restaurant": "Restaurant", "politesse": "Politeness", "culture": "Cultural expressions" },
+      "search": "Search a phrase...",
+      "validated_count": "{{ok}} / {{total}} validated",
+      "draft": "Draft: to be validated",
+      "validated": "Validated",
+      "pending": "To be provided by a speaker",
+      "pron": "Pronunciation",
+      "pron_pending": "Pronunciation to be provided",
+      "audio_soon": "Audio coming soon",
+      "context": "Cultural context",
+      "copy": "Copy",
+      "copied": "Copied",
+      "none": "No phrase matches."
+    },
+    "stories": {
+      "badge": "C · Stories",
+      "title": "Cultural stories",
+      "intro": "From kingdoms to know-how, explore Benin's traditions chapter by chapter.",
+      "review": "Provisional text: this content must be reviewed and completed with practitioners, religious leaders and specialists before final publication.",
+      "respect_title": "Visiting with respect",
+      "respect": [
+        "Ask permission before photographing or filming a ceremony or a person.",
+        "Some places and rites are reserved for initiates: respect the restrictions.",
+        "Go with a trusted local guide.",
+        "A ceremony is not a show: you are not merely a spectator."
+      ],
+      "cards": [
+        { "title": "Historic kingdoms", "summary": "From the coast to the north, several kingdoms shaped present-day Benin.",
+          "chapters": [
+            { "title": "Allada, Abomey, Porto-Novo", "text": "According to many traditions, the royal families of Allada, Dahomey and Hogbonou (Porto-Novo) share a common origin, linked to the Aja people who came from the Tado region." },
+            { "title": "Kétou", "text": "Kétou is a former Yoruba kingdom. It is one of the centres of the Gelede tradition." },
+            { "title": "Nikki and the Borgou", "text": "In the north, the Bariba kingdom of Nikki shaped the Borgou region. The Gaani festival, held every year in Nikki, keeps its memory alive." }
+          ] },
+        { "title": "The arts", "summary": "On walls, on cloth, behind masks: history is told in images.",
+          "chapters": [
+            { "title": "The bas-reliefs of Abomey", "text": "The palace walls are decorated with coloured earth bas-reliefs. Each motif evokes a ruler, an emblem animal or a key event." },
+            { "title": "Appliqué textiles", "text": "Appliqués are cloths decorated with cut-out motifs that are then sewn on. In Abomey, they celebrate the emblems of the kings." },
+            { "title": "The Gelede", "text": "Inscribed by UNESCO as intangible cultural heritage, the Gelede are mask performances that honour mothers and their spiritual power. They combine dance, song and sculpture." }
+          ] },
+        { "title": "Traditional festivals", "summary": "Moments when a whole community comes together.",
+          "chapters": [
+            { "title": "January 10", "text": "Every year, the festival of indigenous religions, or vodun festival, gathers practitioners and visitors, notably in Ouidah." },
+            { "title": "The Gaani", "text": "The Gaani is the great festival of the Bariba people in Nikki. It includes ceremonies and horse parades." },
+            { "title": "Taking part with respect", "text": "A festival is not a show put on for visitors. Ask a local guide, ask before filming and follow the organisers' instructions." }
+          ] },
+        { "title": "Know-how", "summary": "Skills passed down from generation to generation.",
+          "chapters": [
+            { "title": "Metal", "text": "Lost-wax bronze and brass work is practised in several regions. The object is first modelled in wax, then covered in clay before the metal is poured." },
+            { "title": "Textiles", "text": "Weaving, dyeing and appliqué carry meaningful patterns. Each workshop has its own codes." },
+            { "title": "Clay and fibre", "text": "Pottery and basketry are part of daily life: holding water, storing, carrying. These skills are often passed down from generation to generation." }
+          ] },
+        { "title": "Vodun", "summary": "A living religion, to be approached with listening and respect.",
+          "chapters": [
+            { "title": "A religion, not folklore", "text": "Vodun is a religion practised in Benin, Togo and the wider region. It organises the relationship between humans, ancestors and the forces of nature." },
+            { "title": "A world of deities", "text": "In Fon cosmology, Mawu and Lisa are associated with creation, and many vodun watch over specific domains. Legba is regarded as the intermediary between humans and the deities." },
+            { "title": "A link with the diaspora", "text": "Practices from West Africa took on their own forms in Haiti, Cuba and Brazil, for example Haitian Vodou or Candomblé." }
+          ] }
+      ]
+    },
+    "contribute": {
+      "title": "Do you carry this memory? Help us.",
+      "text": "Site keepers, speakers, historians, artisans, practitioners: contact us to validate, correct or enrich this content.",
+      "button": "Write to us on WhatsApp",
+      "message": "Hello, I would like to contribute to the “Soul of Benin” section (translation, testimony or content validation)."
+    }
+  }
+}

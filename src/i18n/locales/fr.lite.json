@@ -1,0 +1,21 @@
+{
+  "services": {
+    "quote": "Demander un devis",
+    "wa_message": "Bonjour, je souhaite un devis pour : {{name}}.",
+    "cta_title": "Parlons de votre projet",
+    "cta_text": "Décrivez vos envies, nous vous répondons sur WhatsApp.",
+    "cta_button": "Écrire sur WhatsApp",
+    "cta_message": "Bonjour, j'aimerais organiser un voyage au Bénin. Pouvez-vous m'aider ?"
+  },
+  "contact": {
+    "wa_intro": "Bonjour, je m'appelle {{name}}.",
+    "wa_dates": "Dates de voyage : {{v}}",
+    "wa_travelers": "Voyageurs : {{v}}",
+    "sent_title": "WhatsApp s'ouvre…",
+    "sent_desc": "Envoyez le message pré-rempli pour finaliser votre demande.",
+    "whatsapp_cta": "Écrire sur WhatsApp",
+    "form_note": "Votre message s'ouvre dans WhatsApp, prêt à être envoyé.",
+    "location": "Localisation",
+    "location_value": "Cotonou, Bénin"
+  }
+}
