@@ -5,8 +5,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { lazy, Suspense } from "react";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import FloatingActions from "@/components/FloatingActions";
 import WhatsAppBubble from "@/components/WhatsAppBubble";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { useAutoTheme } from "@/hooks/useAutoTheme";
 
 const Index = lazy(() => import("./pages/Index"));
@@ -19,9 +20,9 @@ const Services = lazy(() => import("./pages/Services"));
 const Blog = lazy(() => import("./pages/Blog"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const Faq = lazy(() => import("./pages/Faq"));
-const Soul = lazy(() => import("./pages/Soul"));
 const Login = lazy(() => import("./pages/Login"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const Admin = lazy(() => import("./pages/Admin"));
 const AmeDuBenin = lazy(() => import("./pages/AmeDuBenin"));
 const Planifier = lazy(() => import("./pages/Planifier"));
 const InfosPratiques = lazy(() => import("./pages/InfosPratiques"));
@@ -54,20 +55,18 @@ const routes = [
   { path: "/carte", element: Carte },
   { path: "/quiz", element: Quiz },
   { path: "/carnet", element: Carnet },
+  { path: "/admin", element: Admin },
   { path: "/favoris", element: Favoris },
-  { path: "/ame-du-benin", element: Soul },
   { path: "*", element: NotFound },
 ];
 
 const App = () => {
   useAutoTheme();
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-      <FloatingWhatsApp />
         <BrowserRouter>
           <Suspense fallback={<LoadingSpinner size="lg" fullScreen />}>
             <Routes>
@@ -76,6 +75,8 @@ const App = () => {
               ))}
             </Routes>
           </Suspense>
+          <ScrollProgress />
+          <FloatingActions />
           <WhatsAppBubble />
         </BrowserRouter>
       </TooltipProvider>

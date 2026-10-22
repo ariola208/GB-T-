@@ -1,9 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import {
-  Heart, MapPin, Star, Trash2, ArrowRight, Compass, Dices,
-} from "lucide-react";
+import { Heart, MapPin, Star, Trash2, ArrowRight, Compass, Dices } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
@@ -20,6 +18,7 @@ const Favoris = () => {
       <Navbar />
       <main className="flex-1 pt-32">
         <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 via-background to-background py-16">
+          <div className="pointer-events-none absolute -top-32 right-0 h-72 w-72 rounded-full bg-secondary/20 blur-3xl animate-float" />
           <div className="container mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -49,7 +48,7 @@ const Favoris = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 className="mx-auto max-w-2xl rounded-3xl border border-border bg-card p-12 text-center shadow-dramatic"
               >
-                <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-secondary/20">
+                <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-secondary/20 animate-float">
                   <Heart className="h-10 w-10 text-secondary" />
                 </div>
                 <h2 className="mb-4 font-heading text-3xl font-bold">
@@ -58,33 +57,36 @@ const Favoris = () => {
                 <p className="mb-8 text-muted-foreground">
                   {t("favorites.empty_text", "Explorez nos destinations et cliquez sur le cœur pour les ajouter ici.")}
                 </p>
-                <div className="flex flex-wrap justify-center gap-3">
-                  <Button size="lg" asChild>
-                    <Link to="/destinations">
-                      <Compass className="mr-2 h-4 w-4" />
-                      {t("favorites.explore", "Explorer les destinations")}
-                    </Link>
-                  </Button>
-                </div>
+                <Button size="lg" asChild className="transition-transform hover:scale-105">
+                  <Link to="/destinations">
+                    <Compass className="mr-2 h-4 w-4" />
+                    {t("favorites.explore", "Explorer les destinations")}
+                  </Link>
+                </Button>
               </motion.div>
             ) : (
               <>
                 <div className="mb-8 flex items-center justify-between">
                   <p className="text-muted-foreground">
-                    {t("favorites.count", "{{count}} destination(s) enregistrée(s)", { count: favorites.length })}
+                    {t("favorites.count", "{{count}} destination(s) enregistrée(s)", {
+                      count: favorites.length,
+                    })}
                   </p>
                   <Button
                     variant="ghost"
                     size="sm"
                     onClick={clear}
-                    className="text-destructive hover:text-destructive"
+                    className="text-destructive transition-transform hover:scale-105 hover:text-destructive"
                   >
                     <Trash2 className="mr-2 h-4 w-4" />
                     {t("favorites.clear_all", "Tout supprimer")}
                   </Button>
                 </div>
 
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <motion.div
+                  layout
+                  className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                >
                   <AnimatePresence>
                     {favorites.map((fav) => (
                       <motion.div
@@ -95,7 +97,7 @@ const Favoris = () => {
                         exit={{ opacity: 0, scale: 0.9 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <Card className="group overflow-hidden">
+                        <Card className="group overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-dramatic">
                           <div className="relative h-48 overflow-hidden">
                             {fav.image ? (
                               <img
@@ -111,7 +113,7 @@ const Favoris = () => {
                             <button
                               onClick={() => remove(fav.id)}
                               aria-label="Retirer des favoris"
-                              className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-destructive transition hover:bg-white hover:scale-110"
+                              className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-destructive transition-transform hover:scale-110 hover:bg-white"
                             >
                               <Heart className="h-4 w-4 fill-current" />
                             </button>
@@ -137,10 +139,15 @@ const Favoris = () => {
                                 {fav.description}
                               </p>
                             )}
-                            <Button variant="outline" size="sm" className="w-full" asChild>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="group/btn w-full transition-transform hover:scale-105"
+                              asChild
+                            >
                               <Link to={fav.slug ? `/destinations#${fav.slug}` : "/destinations"}>
                                 {t("favorites.view", "Voir la destination")}
-                                <ArrowRight className="ml-1 h-3 w-3" />
+                                <ArrowRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-1" />
                               </Link>
                             </Button>
                           </CardContent>
@@ -148,23 +155,28 @@ const Favoris = () => {
                       </motion.div>
                     ))}
                   </AnimatePresence>
-                </div>
+                </motion.div>
 
-                <div className="mt-12 rounded-3xl border border-border bg-gradient-to-r from-primary/10 via-secondary/5 to-accent/10 p-8 text-center">
-                  <Dices className="mx-auto mb-4 h-10 w-10 text-secondary" />
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="mt-12 rounded-3xl border border-border bg-gradient-to-r from-primary/10 via-secondary/5 to-accent/10 p-8 text-center"
+                >
+                  <Dices className="mx-auto mb-4 h-10 w-10 text-secondary animate-float" />
                   <h3 className="mb-2 font-heading text-2xl font-bold">
                     {t("favorites.cta_title", "Envie d'explorer plus ?")}
                   </h3>
                   <p className="mb-6 text-muted-foreground">
                     {t("favorites.cta_text", "Découvrez d'autres destinations ou laissez-vous surprendre.")}
                   </p>
-                  <Button asChild>
+                  <Button asChild className="transition-transform hover:scale-105">
                     <Link to="/destinations">
                       {t("favorites.cta_button", "Voir toutes les destinations")}
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
-                </div>
+                </motion.div>
               </>
             )}
           </div>

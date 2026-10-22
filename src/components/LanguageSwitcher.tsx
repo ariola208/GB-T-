@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Check, ChevronDown, Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { LANGUAGES } from "@/i18n";
@@ -12,14 +13,36 @@ import {
 
 const LanguageSwitcher = () => {
   const { i18n, t } = useTranslation();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const code = (i18n.resolvedLanguage || i18n.language || "fr").split("-")[0];
   const current = LANGUAGES.find((l) => l.code === code) || LANGUAGES[0];
+
+  const handleChange = async (newCode: string) => {
+    if (newCode === code) return;
+    await i18n.changeLanguage(newCode);
+    try {
+      localStorage.setItem("lang", newCode);
+    } catch {
+      /* ignore */
+    }
+    document.documentElement.lang = newCode;
+    window.dispatchEvent(new Event("languageChanged"));
+  };
+
+  if (!mounted) {
+    return <span className="inline-block h-9 w-9" />;
+  }
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
         aria-label={t("common.language")}
-        className="group inline-flex h-9 items-center gap-1.5 rounded-full border [border-color:color-mix(in_srgb,currentColor_25%,transparent)] px-2.5 text-xs font-medium uppercase tracking-wider outline-none transition hover:[border-color:color-mix(in_srgb,currentColor_55%,transparent)] hover:[background:color-mix(in_srgb,currentColor_12%,transparent)]"
+        className="group inline-flex h-9 items-center gap-1.5 rounded-full border [border-color:color-mix(in_srgb,currentColor_25%,transparent)] px-2.5 text-xs font-medium uppercase tracking-wider outline-none transition-all hover:scale-105 hover:[border-color:color-mix(in_srgb,currentColor_55%,transparent)] hover:[background:color-mix(in_srgb,currentColor_12%,transparent)]"
       >
         <Globe className="h-4 w-4 transition-transform duration-500 group-hover:rotate-[20deg]" />
         <span className="text-base leading-none">{current.flag}</span>
@@ -38,8 +61,8 @@ const LanguageSwitcher = () => {
           return (
             <DropdownMenuItem
               key={l.code}
-              onClick={() => i18n.changeLanguage(l.code)}
-              className={`flex cursor-pointer items-center gap-3 rounded-xl px-3 py-2.5 ${
+              onClick={() => handleChange(l.code)}
+              className={`flex cursor-pointer items-center gap-3 rounded-xl px-3 py-2.5 transition-all hover:scale-[1.02] ${
                 active ? "bg-muted font-semibold" : ""
               }`}
             >

@@ -1,19 +1,19 @@
 {
-  "name": "benin-tourisme-server",
+  "name": "vodoovista-server",
   "version": "1.0.0",
-  "description": "Backend API for Benin Tourisme",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "node index.js",
+    "start": "node index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "express-rate-limit": "^8.7.1",
-    "jsonwebtoken": "^9.0.0",
-    "mysql2": "^3.6.0"
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.4.0",
+    "mysql2": "^3.11.0"
   }
 }

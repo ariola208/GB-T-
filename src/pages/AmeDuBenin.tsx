@@ -112,10 +112,10 @@ const AmeDuBenin = () => {
                 </h3>
               </div>
               <ul className="space-y-3 text-muted-foreground">
-                <li className="flex gap-3"><span className="mt-1 text-secondary">◆</span><span>Demandez l'autorisation avant de photographier une cérémonie.</span></li>
-                <li className="flex gap-3"><span className="mt-1 text-secondary">◆</span><span>Certains lieux et rites sont réservés aux initiés.</span></li>
-                <li className="flex gap-3"><span className="mt-1 text-secondary">◆</span><span>Faites-vous accompagner par un guide local de confiance.</span></li>
-                <li className="flex gap-3"><span className="mt-1 text-secondary">◆</span><span>Une cérémonie n'est pas un spectacle.</span></li>
+                <li className="flex gap-3"><span className="mt-1 text-secondary">◆</span><span>{t("soul.stories.respect.0")}</span></li>
+                <li className="flex gap-3"><span className="mt-1 text-secondary">◆</span><span>{t("soul.stories.respect.1")}</span></li>
+                <li className="flex gap-3"><span className="mt-1 text-secondary">◆</span><span>{t("soul.stories.respect.2")}</span></li>
+                <li className="flex gap-3"><span className="mt-1 text-secondary">◆</span><span>{t("soul.stories.respect.3")}</span></li>
               </ul>
             </div>
           </div>
@@ -133,7 +133,7 @@ const AmeDuBenin = () => {
               <div className="mt-8 flex justify-center">
                 <Button size="lg" className="gap-2 bg-[#25D366] text-white hover:bg-[#1eb858]" asChild>
                   <a
-                    href={"https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent("Bonjour, je souhaite contribuer à L'âme du Bénin.")}
+                    href={"https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(t("soul.contribute.message"))}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -201,7 +201,7 @@ const SiteTimeline = ({ site }: { site: "abomey" | "ouidah" | "portonovo" }) => 
       <div className="lg:col-span-2">
         <div className="relative border-l-2 border-primary/20 pl-6">
           {events.length === 0 ? (
-            <p className="text-muted-foreground">Chronologie à compléter.</p>
+            <p className="text-muted-foreground">{t("soul.heritage.timeline_empty")}</p>
           ) : (
             events.map((event, i) => {
               const isOpen = openIndex === i;
@@ -366,7 +366,7 @@ const StoriesSection = () => {
   return (
     <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
       {cards.length === 0 ? (
-        <p className="col-span-full text-center text-muted-foreground">Récits à venir.</p>
+        <p className="col-span-full text-center text-muted-foreground">{t("soul.stories.empty")}</p>
       ) : (
         cards.map((card, i) => {
           const isOpen = openCard === i;
@@ -378,11 +378,11 @@ const StoriesSection = () => {
                   <p className="mt-1 text-sm text-muted-foreground">{card.summary}</p>
                 </div>
                 <Badge variant="outline" className="shrink-0 text-[10px]">
-                  {(card.chapters?.length || 0) + " ch."}
+                  {(card.chapters?.length || 0) + " " + t("soul.stories.chapters_short")}
                 </Badge>
               </div>
               <button onClick={() => setOpenCard(isOpen ? null : i)} className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
-                {isOpen ? "Masquer les chapitres" : "Lire les chapitres"}
+                {isOpen ? t("soul.stories.hide_chapters") : t("soul.stories.read_chapters")}
                 <ChevronRight className={"h-4 w-4 transition-transform " + (isOpen ? "rotate-90" : "")} />
               </button>
               {isOpen && (

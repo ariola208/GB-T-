@@ -27,18 +27,6 @@
 | **Nikki** | Borgou | Palais Royal de Nikki, fête de la Gaani |
 | **Grand-Popo** | Mono | Plages, Bouche du Roy |
 
-## 🚀 Technologies utilisées
-
-Ce projet a été créé avec [Lovable](https://lovable.dev/) et utilise :
-
-- **Frontend** : React 18 + TypeScript
-- **Styling** : Tailwind CSS
-- **UI Components** : shadcn/ui
-- **State Management** : React Query + Context API
-- **Routing** : React Router v6
-- **Cartographie** : Leaflet.js / MapLibre
-- **Icons** : Lucide React
-
 ## 📦 Installation locale
 
 ```bash
@@ -67,3 +55,12 @@ vercel --prod
 # Ou Netlify
 netlify deploy --prod --dir=dist
 ---
+👤 Compte admin de test
+
+Le schéma SQL a créé un utilisateur admin :
+
+    Email : admin@legbah.bj
+
+    Mot de passe : password123
+
+Teste la connexion sur /login.

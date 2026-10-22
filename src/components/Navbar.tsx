@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion, useMotionValueEvent, useScroll, useSpring } from "framer-motion";
-import { Menu, Search, User, LogOut, LogIn, ChevronDown } from "lucide-react";
+import { Menu, Search, ChevronDown } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSwitcher from "./LanguageSwitcher";
 import UserMenu from "./UserMenu";
+import Logo from "./Logo";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import {
   CommandDialog,
@@ -89,7 +90,6 @@ const Navbar = () => {
     setSearchOpen(false);
   }, [pathname]);
 
-  // Ctrl+K / ⌘K
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
@@ -114,7 +114,6 @@ const Navbar = () => {
     navigate(path);
   };
 
-  // Sur l'accueil, tout en haut : texte blanc sur l'image. Sinon : texte normal.
   const overHero = pathname === "/" && !scrolled;
   const tone = overHero ? "text-white" : "text-foreground";
   const isMoreActive = moreLinks.some((l) => l.path === pathname);
@@ -154,22 +153,14 @@ const Navbar = () => {
       >
         <nav
           className={`mx-auto flex h-14 max-w-[110rem] items-center justify-between rounded-full px-4 transition-all duration-500 sm:px-6 ${
-            scrolled || pathname !== "/"
-              ? "glass"
-              : "border border-transparent bg-transparent"
+            scrolled || pathname !== "/" ? "glass" : "border border-transparent bg-transparent"
           }`}
           aria-label="Navigation principale"
         >
-          {/* Logo */}
-          <Link to="/" className={`group flex items-center gap-2.5 font-heading text-lg font-bold ${tone}`}>
-            <span className="relative flex h-3 w-3">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-current opacity-40" />
-              <span className="relative inline-flex h-3 w-3 rounded-full bg-current transition-transform duration-300 group-hover:scale-125" />
-            </span>
-            Bénin Tourisme
+          <Link to="/" className={`group flex items-center gap-2.5 ${tone}`}>
+            <Logo className="h-7" />
           </Link>
 
-          {/* Liens desktop */}
           <div className="hidden items-center gap-1 lg:flex">
             {mainLinks.map((l) => (
               <LinkItem key={l.path} link={l} />
@@ -200,7 +191,6 @@ const Navbar = () => {
             </DropdownMenu>
           </div>
 
-          {/* Actions */}
           <div className={`flex items-center gap-2 ${tone}`}>
             <button
               type="button"
@@ -237,18 +227,16 @@ const Navbar = () => {
           </div>
         </nav>
 
-        {/* Barre de progression de lecture */}
         <motion.div
           style={{ scaleX: progress }}
           className="mx-auto mt-1.5 h-0.5 max-w-[104rem] origin-left rounded-full bg-foreground"
         />
       </motion.header>
 
-      {/* Menu mobile */}
       <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
         <SheetContent side="right" className="flex w-[85%] max-w-sm flex-col gap-0 p-0">
-          <SheetTitle className="border-b border-border px-6 py-5 font-heading text-xl">
-            Bénin Tourisme
+          <SheetTitle className="border-b border-border px-6 py-5">
+            <Logo className="h-6" />
           </SheetTitle>
           <div className="flex-1 overflow-y-auto px-3 py-4">
             {allLinks.map((l, i) => (
@@ -292,7 +280,6 @@ const Navbar = () => {
         </SheetContent>
       </Sheet>
 
-      {/* Recherche rapide Ctrl+K */}
       <CommandDialog open={searchOpen} onOpenChange={setSearchOpen}>
         <CommandInput placeholder={t("nav.search_placeholder", "Aller vers une page...")} />
         <CommandList>

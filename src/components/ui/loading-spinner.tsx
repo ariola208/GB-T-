@@ -16,13 +16,15 @@ export const LoadingSpinner = ({ className, size = "md", fullScreen = false }: L
   const spinner = (
     <div
       className={cn(
-        "animate-spin rounded-full border-primary border-t-transparent",
+        "animate-spin rounded-full border-foreground border-t-transparent",
         sizeClasses[size],
         className
       )}
     />
   );
 
-  if (!fullScreen) return spinner;
-  return <div className="flex h-screen w-full items-center justify-center">{spinner}</div>;
+  if (fullScreen) {
+    return <div className="flex h-screen w-full items-center justify-center">{spinner}</div>;
+  }
+  return <div className="flex h-full w-full items-center justify-center p-4">{spinner}</div>;
 };

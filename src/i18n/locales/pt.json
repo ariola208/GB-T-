@@ -1,339 +1,94 @@
 {
   "nav": {
-    "home": "Início",
-    "destinations": "Destinos",
-    "culture": "Cultura",
-    "services": "Serviços",
-    "blog": "Blog",
-    "gallery": "Galeria",
-    "faq": "Perguntas frequentes",
-    "about": "Sobre nós",
-    "contact": "Contacto",
-    "login": "Entrar",
-    "logout": "Sair",
-    "profile": "Meu perfil",
-    "soul": "A alma do Benim",
-    "planner": "Planear viagem",
-    "ame": "A alma do Benim"
+    "home": "Início", "destinations": "Destinos", "culture": "Cultura", "services": "Serviços",
+    "blog": "Blog", "gallery": "Galeria", "faq": "Perguntas frequentes", "about": "Sobre nós",
+    "contact": "Contacto", "login": "Entrar", "logout": "Sair", "profile": "Meu perfil",
+    "soul": "A alma do Benim", "planner": "Planear viagem", "ame": "A alma do Benim",
+    "more": "Mais", "search": "Pesquisar", "search_placeholder": "Ir para uma página...",
+    "no_result": "Sem resultados", "my_account": "A minha conta", "my_trips": "As minhas viagens",
+    "favorites": "Os meus favoritos", "map": "Mapa", "quiz": "Quiz",
+    "notebook": "Caderno de viagem", "info": "Informações práticas"
   },
   "common": {
-    "language": "Idioma",
-    "theme_light": "Mudar para o modo claro",
-    "theme_dark": "Mudar para o modo escuro",
-    "listen": "Ouvir",
-    "loading": "A carregar...",
+    "language": "Idioma", "theme_light": "Mudar para o modo claro",
+    "theme_dark": "Mudar para o modo escuro", "listen": "Ouvir", "loading": "A carregar...",
     "translation_partial": "Tradução em curso"
   },
-  "soul": {
-    "hero_badge": "Cultura viva",
-    "hero_title": "A alma do Benim",
-    "hero_subtitle": "História, línguas e relatos: descubra o Benim através de quem o mantém vivo.",
-    "hero_note": "Conteúdo em revisão com historiadores e falantes. Os elementos não validados são assinalados.",
-    "anchors": {
-      "heritage": "Património",
-      "languages": "Línguas",
-      "stories": "Relatos"
-    },
-    "heritage": {
-      "badge": "Património contado",
-      "title": "Três lugares, três memórias",
-      "intro": "Escolha um local e percorra a sua cronologia.",
-      "timeline": "Cronologia",
-      "sources": "Fontes",
-      "tabs": {
-        "abomey": "Abomé",
-        "ouidah": "Ouidá",
-        "portonovo": "Porto-Novo"
-      },
-      "sites": {
-        "abomey": {
-          "intro": "Capital do reino do Daomé, Abomé conserva os palácios dos seus reis, inscritos no Património Mundial da UNESCO.",
-          "source": "UNESCO (Palácios Reais de Abomé); Museu Histórico de Abomé. A completar com fontes académicas.",
-          "events": [
-            {
-              "year": "Século XVII",
-              "title": "Nascimento do reino",
-              "text": "O reino do Daomé estrutura-se em torno de Abomé. O rei Houégbadja é frequentemente associado a este período de fundação."
-            },
-            {
-              "year": "1724–1727",
-              "title": "A abertura à costa",
-              "text": "Sob o rei Agadja, o Daomé conquista Allada e depois Ouidá, e acede diretamente ao comércio atlântico."
-            },
-            {
-              "year": "1818–1858",
-              "title": "O reinado de Ghézo",
-              "text": "Ghézo consolida o Estado e o exército. O seu reinado é um dos mais poderosos da história do reino."
-            },
-            {
-              "year": "1892–1894",
-              "title": "As guerras franco-daomeanas",
-              "text": "O rei Béhanzin resiste ao exército colonial francês. Rende-se em 1894 e é exilado na Martinica."
-            },
-            {
-              "year": "1985",
-              "title": "Inscrição na UNESCO",
-              "text": "Os Palácios Reais de Abomé são inscritos na Lista do Património Mundial."
-            },
-            {
-              "year": "2021",
-              "title": "Regresso de tesouros reais",
-              "text": "A França devolve ao Benim 26 obras provenientes da pilhagem de 1892."
-            }
-          ]
-        },
-        "ouidah": {
-          "intro": "Antigo grande porto do tráfico atlântico de escravos, Ouidá é hoje um lugar de memória e a cidade do Vodum.",
-          "source": "UNESCO (projeto A Rota do Escravo); obras de história do tráfico atlântico. A completar.",
-          "events": [
-            {
-              "year": "1721",
-              "title": "O forte português",
-              "text": "O forte de São João Baptista de Ajudá é estabelecido em Ouidá. Acolhe hoje um museu de história."
-            },
-            {
-              "year": "1727",
-              "title": "A conquista pelo Daomé",
-              "text": "Ouidá, no reino de Hueda, é conquistada pelo Daomé do rei Agadja."
-            },
-            {
-              "year": "1992–1993",
-              "title": "Ouidah 92",
-              "text": "Primeiro grande festival dedicado às culturas e religiões vodum."
-            },
-            {
-              "year": "1994",
-              "title": "A Rota do Escravo",
-              "text": "O projeto da UNESCO «A Rota do Escravo» é lançado em Ouidá."
-            },
-            {
-              "year": "1995",
-              "title": "A Porta do Não-Retorno",
-              "text": "O monumento é inaugurado no fim do caminho percorrido pelos cativos até à praia."
-            },
-            {
-              "year": "1996",
-              "title": "10 de janeiro",
-              "text": "A festa nacional do Vodum é instituída no Benim."
-            }
-          ]
-        },
-        "portonovo": {
-          "intro": "Capital oficial do Benim, Porto-Novo é conhecida pelos seus museus e pela sua herança afro-brasileira.",
-          "source": "Museu Honmè; Museu Da Silva; Museu Etnográfico Alexandre-Sènou-Adandé. A completar.",
-          "events": [
-            {
-              "year": "Séculos XVI–XVII",
-              "title": "Hogbonou",
-              "text": "A cidade desenvolve-se com o nome de Hogbonou; depois os portugueses chamam-lhe Porto-Novo."
-            },
-            {
-              "year": "1863",
-              "title": "O protetorado francês",
-              "text": "O rei Sodji assina um tratado de protetorado com a França."
-            },
-            {
-              "year": "1900",
-              "title": "Capital do Daomé colonial",
-              "text": "Porto-Novo torna-se a capital da colónia do Daomé."
-            },
-            {
-              "year": "1960",
-              "title": "A independência",
-              "text": "O Daomé torna-se independente a 1 de agosto. Porto-Novo continua a ser a capital oficial; Cotonu acolhe a sede do governo."
-            }
-          ]
-        }
-      },
-      "media": {
-        "title": "Recursos em breve",
-        "intro": "Estes conteúdos estão em preparação com parceiros locais.",
-        "status": "Em breve",
-        "items": [
-          {
-            "title": "Fotografias",
-            "text": "Imagens livres de direitos dos locais, com os respetivos créditos."
-          },
-          {
-            "title": "Testemunhos",
-            "text": "Vozes de guias, artesãos e guardiões da memória."
-          },
-          {
-            "title": "Mapas",
-            "text": "Mapas dos roteiros históricos e dos lugares de memória."
-          },
-          {
-            "title": "Áudio",
-            "text": "Gravações de relatos e cantos, com o consentimento das pessoas envolvidas."
-          }
-        ]
-      }
-    },
-    "languages": {
-      "badge": "Línguas",
-      "title": "Algumas palavras para começar",
-      "intro": "Cumprimentos e expressões úteis nas línguas do Benim.",
-      "banner": "As traduções «rascunho» devem ser validadas por um falante nativo. Só as marcadas como «validada» são garantidas.",
-      "names": {
-        "fon": "Fon",
-        "yoruba": "Iorubá"
-      },
-      "all": "Todas",
-      "categories": {
-        "greetings": "Cumprimentos",
-        "politeness": "Cortesia",
-        "market": "Mercado"
-      },
-      "search": "Procurar uma expressão…",
-      "validated_count": "{{ok}}/{{total}} validadas",
-      "validated": "Validada",
-      "draft": "Rascunho",
-      "pending": "Em breve",
-      "pron": "Pronúncia",
-      "pron_pending": "em breve",
-      "audio_soon": "Áudio em breve",
-      "context": "Contexto",
-      "copy": "Copiar",
-      "none": "Nenhuma expressão encontrada."
-    },
-    "stories": {
-      "badge": "Relatos",
-      "title": "Histórias para ler e compreender",
-      "intro": "Cinco entradas para compreender melhor o que verá no local.",
-      "review": "Este relato aborda práticas religiosas vivas. Está em revisão com praticantes e especialistas.",
-      "respect_title": "Visitar com respeito",
-      "respect": [
-        "Peça sempre autorização antes de fotografar ou filmar uma cerimónia ou uma pessoa.",
-        "Siga as indicações dos guias e dos responsáveis pelo local.",
-        "Não toque em objetos sagrados nem entre em espaços proibidos.",
-        "Uma contribuição ou oferta é muitas vezes esperada: informe-se junto do seu guia."
-      ],
-      "cards": [
-        {
-          "title": "Béhanzin",
-          "summary": "O último rei soberano do Daomé.",
-          "chapters": [
-            {
-              "title": "O rei",
-              "text": "Béhanzin reina de 1889 a 1894, numa altura em que a França alarga o seu domínio sobre a costa."
-            },
-            {
-              "title": "A resistência",
-              "text": "Entre 1892 e 1894, o seu exército enfrenta as tropas coloniais francesas nas guerras franco-daomeanas."
-            },
-            {
-              "title": "O exílio",
-              "text": "Vencido, é deportado para a Martinica e depois para a Argélia, onde morre em 1906."
-            }
-          ]
-        },
-        {
-          "title": "Os apliques de Abomé",
-          "summary": "Tecidos que contam a história dos reis.",
-          "chapters": [
-            {
-              "title": "Uma arte de corte",
-              "text": "Os apliques são tecidos ornados com motivos recortados e cosidos, que narram episódios marcantes dos reinados."
-            },
-            {
-              "title": "Os emblemas",
-              "text": "Cada rei está associado a um animal: o búfalo para Ghézo, o leão para Glèlè, o tubarão para Béhanzin."
-            },
-            {
-              "title": "Hoje",
-              "text": "Artesãos de Abomé perpetuam esta arte e propõem peças aos visitantes."
-            }
-          ]
-        },
-        {
-          "title": "10 de janeiro",
-          "summary": "O dia nacional do Vodum.",
-          "chapters": [
-            {
-              "title": "Uma festa nacional",
-              "text": "Instituída em 1996, reconhece o Vodum como património cultural e espiritual do país."
-            },
-            {
-              "title": "Ouidá nesse dia",
-              "text": "A cidade acolhe cerimónias, danças e procissões, e reúne praticantes e visitantes."
-            },
-            {
-              "title": "Assistir",
-              "text": "As cerimónias não são um espetáculo: informe-se sobre as regras a respeitar."
-            }
-          ]
-        },
-        {
-          "title": "Ferreiros e fundidores",
-          "summary": "O trabalho do metal, um saber antigo.",
-          "chapters": [
-            {
-              "title": "O ofício",
-              "text": "Em Abomé, artesãos fundem latão e bronze pela técnica da cera perdida para criar figuras."
-            },
-            {
-              "title": "Gu (Ogum)",
-              "text": "Na tradição vodum, o ferro e a forja estão associados à divindade Gu, também chamada Ogum."
-            },
-            {
-              "title": "Conhecer os artesãos",
-              "text": "Visitar uma oficina permite compreender as etapas do trabalho e apoiar diretamente os artesãos."
-            }
-          ]
-        },
-        {
-          "title": "O Vodum, uma religião viva",
-          "summary": "Para além dos clichés.",
-          "chapters": [
-            {
-              "title": "O que é",
-              "text": "O Vodum é um conjunto de crenças e práticas originárias da região. É praticado por muitos beninenses."
-            },
-            {
-              "title": "O que não é",
-              "text": "Não se resume à «magia negra» nem ao «vudu» dos filmes, que são caricaturas."
-            },
-            {
-              "title": "Na prática",
-              "text": "Para assistir a uma cerimónia, recorra a um guia local e respeite as indicações."
-            }
-          ]
-        }
-      ]
-    },
-    "contribute": {
-      "title": "Conhece este tema?",
-      "text": "Historiadores, falantes, artesãos: ajude-nos a corrigir e a completar estes conteúdos.",
-      "message": "Olá, gostaria de contribuir para a página «A alma do Benim».",
-      "button": "Contribuir no WhatsApp"
+  "hero": {
+    "kicker": "Descubra a África Ocidental", "title": "O Benim espera por si",
+    "subtitle": "Uma viagem entre história milenar, tradições vivas e paisagens de cortar a respiração.",
+    "explore": "Explorar", "plan": "Planear a sua viagem",
+    "alt": "Ganvié, a Veneza de África", "scroll": "Deslizar",
+    "stats": { "years": "Anos de experiência", "destinations": "Destinos", "travelers": "Viajantes satisfeitos" }
+  },
+  "home": {
+    "why_title": "Porquê viajar connosco?", "why_subtitle": "Uma equipa local, circuitos seguros e experiências pensadas para si.",
+    "experts_title": "Especialistas locais", "experts_desc": "Guias apaixonados que conhecem cada canto do Benim.",
+    "safe_title": "Viagem segura", "safe_desc": "Parceiros verificados, assistência 24/7 e seguro incluído.",
+    "custom_title": "À medida", "custom_desc": "Cada itinerário é adaptado aos seus desejos e ao seu orçamento."
+  },
+  "destPreview": {
+    "kicker": "Destinos", "title": "Lugares emblemáticos", "all": "Todos os destinos", "discover": "Descobrir",
+    "items": {
+      "abomey": { "title": "Abomey", "subtitle": "Palácios Reais — UNESCO", "description": "Os vestígios do poderoso Reino do Daomé." },
+      "ouidah": { "title": "Ouidah", "subtitle": "A Rota dos Escravos", "description": "A Porta do Não-Retorno, um lugar de memória universal." },
+      "pendjari": { "title": "Pendjari", "subtitle": "Safari e Natureza", "description": "Um dos últimos grandes santuários de vida selvagem." },
+      "cotonou": { "title": "Cotonou", "subtitle": "Coração Económico", "description": "A vibrante capital económica." }
     }
   },
-  "planner": {
-    "title": "Planear a minha viagem",
-    "subtitle": "Arraste os locais para os seus dias: distâncias, tempos e orçamento são calculados automaticamente.",
-    "reset": "Apagar tudo",
-    "demo_note": "Dados de demonstração: locais e coordenadas aproximados, preços estimados (FCFA por pessoa), trajetos calculados em linha reta com um coeficiente rodoviário.",
-    "all": "Tudo",
-    "night": "1 noite",
-    "add_to_day": "Adicionar ao dia {{n}}",
-    "day": "Dia {{n}}",
-    "activities": "atividade(s)",
-    "night_short": "noite",
-    "drop_here": "Largue um local aqui",
-    "on_site": "No local",
-    "travel": "trajetos",
-    "free": "livre",
-    "budget": "Orçamento previsto (por pessoa)",
-    "estimate": "Estimativa, não é um preço contratual.",
-    "versions": "Três versões da viagem:",
-    "relief": "Relevo 3D",
-    "relief_on": "Relevo 3D: ativo",
-    "quote": "Pedir orçamento",
-    "copied": "Ligação copiada",
-    "copy_link": "Copiar ligação",
-    "w_too_many": "Dia carregado: {{n}} atividades. Pense em passar «{{name}}» para o dia seguinte.",
-    "w_too_long": "Programa de {{h}} para um dia de {{max}}: demasiado carregado.",
-    "w_no_meal": "Menos de 1h30 livre para refeições e pausas.",
-    "w_long_leg": "Trajeto longo (~{{h}}) entre «{{from}}» e «{{to}}»."
+  "cultureSection": {
+    "kicker": "Património", "title": "Berço do Vodum",
+    "p1": "O Benim é o berço da religião vodum, uma tradição espiritual rica e complexa que continua a moldar a vida quotidiana.",
+    "p2": "Da festa anual do Vodum em Ouidah aos templos secretos do interior, descubra um património imaterial de profundidade excecional.",
+    "more": "Explorar a cultura", "alt": "Máscaras tradicionais vodum do Benim",
+    "stats": { "inhabitants": "Habitantes", "ethnic": "Etnias", "unesco": "Sítios UNESCO" }
+  },
+  "cta": {
+    "kicker": "Pronto para a aventura?", "title": "Comece a sua viagem ao Benim",
+    "text": "Quer sonhe com safaris, praias paradisíacas ou descobertas culturais, criamos o seu itinerário por medida.",
+    "button": "Fale connosco", "secondary": "Ver destinos"
+  },
+  "footer": {
+    "tagline": "Explore o Benim, terra de cultura, história e natureza. Uma viagem inesquecível espera por si no coração da África Ocidental.",
+    "navigation": "Navegação", "contact": "Contacto", "rights": "Todos os direitos reservados.", "back_to_top": "Voltar ao topo"
+  },
+  "floating": { "top": "Voltar ao topo", "whatsapp": "Conversar no WhatsApp" },
+  "whatsapp": { "label": "Fale connosco no WhatsApp", "greeting": "Olá VôdooVista, gostaria de obter informações para organizar uma viagem." },
+  "home2": {
+    "explore": {
+      "kicker": "Explorar por universo", "title": "O que o faz viajar?",
+      "tiles": {
+        "history": { "title": "História e memória", "text": "Reinos, palácios e lugares de memória." },
+        "nature": { "title": "Natureza e safari", "text": "Parques, savanas e montanhas." },
+        "beach": { "title": "Praias e lagoas", "text": "Oceano, lagoa e aldeias de pescadores." },
+        "city": { "title": "Cidades e mercados", "text": "Cotonou e Porto-Novo." },
+        "tradition": { "title": "Tradições e artes", "text": "Máscaras, cerimónias e saberes." }
+      }
+    },
+    "steps": {
+      "kicker": "Do sonho à partida", "title": "Prepare a sua viagem em 3 etapas",
+      "items": [
+        { "title": "Descubra o que procura", "text": "Um quiz curto para obter três ideias de destinos.", "cta": "Fazer o quiz" },
+        { "title": "Explore o mapa", "text": "Situe cada lugar e estime as distâncias a partir de Cotonou.", "cta": "Abrir o mapa" },
+        { "title": "Organize o seu caderno", "text": "Ordene as suas etapas e envie o seu projeto por WhatsApp.", "cta": "O meu caderno" }
+      ]
+    },
+    "facts": {
+      "kicker": "Sabia que?", "prev": "Anterior", "next": "Seguinte",
+      "items": [
+        "Doze reis sucederam-se em Abomey entre 1625 e 1900, segundo a UNESCO.",
+        "A Rota dos Escravos, em Ouidah, tem cerca de quatro quilómetros e leva à Porta do Não-Retorno.",
+        "O dia 10 de janeiro é feriado dedicado às religiões endógenas, também chamado festa do vodum.",
+        "Em 2021, a França restituiu ao Benim vinte e seis obras dos tesouros reais de Abomey.",
+        "Ganvié é uma aldeia lacustre construída sobre estacas, no lago Nokoué.",
+        "O franco CFA está indexado ao euro a uma taxa fixa: 1 € = 655,957 F CFA."
+      ]
+    }
+  },
+  "tools": {
+    "kicker": "Ferramentas de viagem", "title": "Prepare a sua viagem", "subtitle": "Conversor de moedas, contagem decrescente e estimador de orçamento.",
+    "currency": { "title": "Conversor Euro / Franco CFA", "eur": "Euros (€)", "xof": "Francos CFA (F CFA)", "rate": "Taxa fixa: 1 € = 655,957 F CFA" },
+    "countdown": { "title": "Contagem decrescente", "event": "Dia Nacional do Vodun — 10 de janeiro", "days": "Dias", "hours": "Horas", "minutes": "Minutos", "seconds": "Segundos" },
+    "budget": { "title": "Estimador de orçamento", "style": "Estilo de viagem", "essential": "Essencial", "comfort": "Conforto", "luxury": "Luxo", "days": "Número de dias", "daysUnit": "dias", "travelers": "Viajantes", "total": "Orçamento total estimado", "perPerson": "por pessoa", "note": "Estimativa indicativa.", "cta": "Pedir um orçamento personalizado" }
   }
 }

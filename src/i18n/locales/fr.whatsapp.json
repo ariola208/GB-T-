@@ -1,9 +1,0 @@
-{
-  "whatsapp": {
-    "label": "Écrivez-nous sur WhatsApp",
-    "greeting": "Bonjour Bénin Tourisme, j'aimerais avoir des informations pour organiser un voyage."
-  },
-  "destinations": {
-    "wa_message": "Bonjour Bénin Tourisme, je souhaite réserver un séjour : {{name}}. Pouvez-vous me renseigner sur les dates et les tarifs ?"
-  }
-}

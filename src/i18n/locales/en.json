@@ -1,339 +1,92 @@
 {
   "nav": {
-    "home": "Home",
-    "destinations": "Destinations",
-    "culture": "Culture",
-    "services": "Services",
-    "blog": "Blog",
-    "gallery": "Gallery",
-    "faq": "FAQ",
-    "about": "About",
-    "contact": "Contact",
-    "login": "Log in",
-    "logout": "Log out",
-    "profile": "My profile",
-    "soul": "Soul of Benin",
-    "planner": "Plan your trip",
-    "ame": "Soul of Benin"
+    "home": "Home", "destinations": "Destinations", "culture": "Culture", "services": "Services",
+    "blog": "Blog", "gallery": "Gallery", "faq": "FAQ", "about": "About", "contact": "Contact",
+    "login": "Log in", "logout": "Log out", "profile": "My profile", "soul": "Soul of Benin",
+    "planner": "Plan", "ame": "Soul of Benin", "more": "More", "search": "Search",
+    "search_placeholder": "Go to a page...", "no_result": "No results",
+    "my_account": "My account", "my_trips": "My trips", "favorites": "My favorites",
+    "map": "Map", "quiz": "Quiz", "notebook": "Travel notebook", "info": "Practical info"
   },
   "common": {
-    "language": "Language",
-    "theme_light": "Switch to light mode",
-    "theme_dark": "Switch to dark mode",
-    "listen": "Listen",
-    "loading": "Loading...",
-    "translation_partial": "Translation in progress"
+    "language": "Language", "theme_light": "Switch to light mode", "theme_dark": "Switch to dark mode",
+    "listen": "Listen", "loading": "Loading...", "translation_partial": "Translation in progress"
   },
-  "soul": {
-    "hero_badge": "Living culture",
-    "hero_title": "Soul of Benin",
-    "hero_subtitle": "History, languages and stories: discover Benin through the people who keep it alive.",
-    "hero_note": "Content is being reviewed with historians and speakers. Unvalidated items are flagged.",
-    "anchors": {
-      "heritage": "Heritage",
-      "languages": "Languages",
-      "stories": "Stories"
-    },
-    "heritage": {
-      "badge": "Heritage retold",
-      "title": "Three places, three memories",
-      "intro": "Choose a site and browse its timeline.",
-      "timeline": "Timeline",
-      "sources": "Sources",
-      "tabs": {
-        "abomey": "Abomey",
-        "ouidah": "Ouidah",
-        "portonovo": "Porto-Novo"
-      },
-      "sites": {
-        "abomey": {
-          "intro": "Capital of the Kingdom of Dahomey, Abomey preserves the palaces of its kings, listed as a UNESCO World Heritage Site.",
-          "source": "UNESCO (Royal Palaces of Abomey); Historical Museum of Abomey. To be completed with academic sources.",
-          "events": [
-            {
-              "year": "17th century",
-              "title": "Birth of the kingdom",
-              "text": "The Kingdom of Dahomey took shape around Abomey. King Houégbadja is often associated with this founding period."
-            },
-            {
-              "year": "1724–1727",
-              "title": "Opening to the coast",
-              "text": "Under King Agadja, Dahomey conquered Allada and then Ouidah, gaining direct access to Atlantic trade."
-            },
-            {
-              "year": "1818–1858",
-              "title": "The reign of Ghézo",
-              "text": "Ghézo consolidated the state and the army. His reign is one of the most powerful in the kingdom's history."
-            },
-            {
-              "year": "1892–1894",
-              "title": "The Franco-Dahomean wars",
-              "text": "King Béhanzin resisted the French colonial army. He surrendered in 1894 and was exiled to Martinique."
-            },
-            {
-              "year": "1985",
-              "title": "UNESCO listing",
-              "text": "The Royal Palaces of Abomey were inscribed on the World Heritage List."
-            },
-            {
-              "year": "2021",
-              "title": "Return of royal treasures",
-              "text": "France returned 26 works to Benin that had been taken in the 1892 looting."
-            }
-          ]
-        },
-        "ouidah": {
-          "intro": "Once a major port of the Atlantic slave trade, Ouidah is now a place of remembrance and the city of Vodun.",
-          "source": "UNESCO (The Slave Route project); history books on the Atlantic slave trade. To be completed.",
-          "events": [
-            {
-              "year": "1721",
-              "title": "The Portuguese fort",
-              "text": "The São João Baptista de Ajudá fort was established in Ouidah. It now houses a history museum."
-            },
-            {
-              "year": "1727",
-              "title": "Conquest by Dahomey",
-              "text": "Ouidah, in the Hueda kingdom, was conquered by Dahomey under King Agadja."
-            },
-            {
-              "year": "1992–1993",
-              "title": "Ouidah 92",
-              "text": "First major festival devoted to Vodun cultures and religions."
-            },
-            {
-              "year": "1994",
-              "title": "The Slave Route",
-              "text": "UNESCO's \"The Slave Route\" project was launched in Ouidah."
-            },
-            {
-              "year": "1995",
-              "title": "The Door of No Return",
-              "text": "The monument was inaugurated at the end of the route taken by captives to the beach."
-            },
-            {
-              "year": "1996",
-              "title": "10 January",
-              "text": "The national Vodun festival was established in Benin."
-            }
-          ]
-        },
-        "portonovo": {
-          "intro": "Official capital of Benin, Porto-Novo is known for its museums and Afro-Brazilian heritage.",
-          "source": "Honmè Museum; Da Silva Museum; Alexandre Sènou Adandé Ethnographic Museum. To be completed.",
-          "events": [
-            {
-              "year": "16th–17th century",
-              "title": "Hogbonou",
-              "text": "The city developed under the name Hogbonou, then the Portuguese called it Porto-Novo."
-            },
-            {
-              "year": "1863",
-              "title": "The French protectorate",
-              "text": "King Sodji signed a protectorate treaty with France."
-            },
-            {
-              "year": "1900",
-              "title": "Capital of colonial Dahomey",
-              "text": "Porto-Novo became the capital of the Dahomey colony."
-            },
-            {
-              "year": "1960",
-              "title": "Independence",
-              "text": "Dahomey became independent on 1 August. Porto-Novo remains the official capital, while Cotonou hosts the seat of government."
-            }
-          ]
-        }
-      },
-      "media": {
-        "title": "Resources coming soon",
-        "intro": "This content is being prepared with local partners.",
-        "status": "Coming soon",
-        "items": [
-          {
-            "title": "Photographs",
-            "text": "Royalty-free images of the sites, with credits."
-          },
-          {
-            "title": "Testimonies",
-            "text": "Voices of guides, craftspeople and keepers of memory."
-          },
-          {
-            "title": "Maps",
-            "text": "Maps of historic routes and places of remembrance."
-          },
-          {
-            "title": "Audio",
-            "text": "Recordings of stories and songs, with the consent of the people concerned."
-          }
-        ]
-      }
-    },
-    "languages": {
-      "badge": "Languages",
-      "title": "A few words to get started",
-      "intro": "Greetings and useful phrases in Benin's languages.",
-      "banner": "\"Draft\" translations must be validated by a native speaker. Only those marked \"validated\" are guaranteed.",
-      "names": {
-        "fon": "Fon",
-        "yoruba": "Yoruba"
-      },
-      "all": "All",
-      "categories": {
-        "greetings": "Greetings",
-        "politeness": "Politeness",
-        "market": "Market"
-      },
-      "search": "Search a phrase…",
-      "validated_count": "{{ok}}/{{total}} validated",
-      "validated": "Validated",
-      "draft": "Draft",
-      "pending": "Coming soon",
-      "pron": "Pronunciation",
-      "pron_pending": "coming soon",
-      "audio_soon": "Audio coming soon",
-      "context": "Context",
-      "copy": "Copy",
-      "none": "No phrase found."
-    },
-    "stories": {
-      "badge": "Stories",
-      "title": "Stories to read and understand",
-      "intro": "Five entries to better understand what you will see on site.",
-      "review": "This story touches on living religious practices. It is being reviewed with practitioners and specialists.",
-      "respect_title": "Visit respectfully",
-      "respect": [
-        "Always ask permission before photographing or filming a ceremony or a person.",
-        "Follow the instructions of guides and site managers.",
-        "Do not touch sacred objects or enter restricted areas.",
-        "A contribution or gift is often expected: ask your guide."
-      ],
-      "cards": [
-        {
-          "title": "Béhanzin",
-          "summary": "The last sovereign king of Dahomey.",
-          "chapters": [
-            {
-              "title": "The king",
-              "text": "Béhanzin reigned from 1889 to 1894, when France was extending its hold on the coast."
-            },
-            {
-              "title": "Resistance",
-              "text": "Between 1892 and 1894, his army fought French colonial troops in the Franco-Dahomean wars."
-            },
-            {
-              "title": "Exile",
-              "text": "Defeated, he was deported to Martinique, then to Algeria, where he died in 1906."
-            }
-          ]
-        },
-        {
-          "title": "The Abomey appliqués",
-          "summary": "Fabrics that tell the story of the kings.",
-          "chapters": [
-            {
-              "title": "A court art",
-              "text": "Appliqués are cloths decorated with cut-out motifs sewn on, telling key episodes of the reigns."
-            },
-            {
-              "title": "The emblems",
-              "text": "Each king is associated with an animal: the buffalo for Ghézo, the lion for Glèlè, the shark for Béhanzin."
-            },
-            {
-              "title": "Today",
-              "text": "Craftspeople in Abomey keep this art alive and offer pieces to visitors."
-            }
-          ]
-        },
-        {
-          "title": "10 January",
-          "summary": "The national Vodun day.",
-          "chapters": [
-            {
-              "title": "A national holiday",
-              "text": "Established in 1996, it recognises Vodun as part of the country's cultural and spiritual heritage."
-            },
-            {
-              "title": "Ouidah on that day",
-              "text": "The town hosts ceremonies, dances and processions, bringing together practitioners and visitors."
-            },
-            {
-              "title": "Attending",
-              "text": "Ceremonies are not a show: find out about the rules to respect."
-            }
-          ]
-        },
-        {
-          "title": "Blacksmiths and founders",
-          "summary": "Metalworking, an ancient skill.",
-          "chapters": [
-            {
-              "title": "The craft",
-              "text": "In Abomey, craftspeople cast brass and bronze using the lost-wax method to make figures."
-            },
-            {
-              "title": "Gu (Ogou)",
-              "text": "In the Vodun tradition, iron and the forge are associated with the deity Gu, also called Ogou."
-            },
-            {
-              "title": "Meeting the craftspeople",
-              "text": "Visiting a workshop helps you understand the steps of the work and directly supports the craftspeople."
-            }
-          ]
-        },
-        {
-          "title": "Vodun, a living religion",
-          "summary": "Beyond the clichés.",
-          "chapters": [
-            {
-              "title": "What it is",
-              "text": "Vodun is a set of beliefs and practices originating in the region. It is practised by many Beninese people."
-            },
-            {
-              "title": "What it is not",
-              "text": "It is not reduced to the \"black magic\" or \"voodoo\" of films, which are caricatures."
-            },
-            {
-              "title": "In practice",
-              "text": "To attend a ceremony, go through a local guide and follow the instructions."
-            }
-          ]
-        }
-      ]
-    },
-    "contribute": {
-      "title": "Do you know this subject?",
-      "text": "Historians, speakers, craftspeople: help us correct and complete this content.",
-      "message": "Hello, I would like to contribute to the \"Soul of Benin\" page.",
-      "button": "Contribute on WhatsApp"
+  "hero": {
+    "kicker": "Discover West Africa", "title": "Benin awaits you",
+    "subtitle": "A journey through ancient history, living traditions and breathtaking landscapes.",
+    "explore": "Explore", "plan": "Plan your trip",
+    "alt": "Ganvié, the Venice of Africa", "scroll": "Scroll",
+    "stats": { "years": "Years of experience", "destinations": "Destinations", "travelers": "Happy travelers" }
+  },
+  "home": {
+    "why_title": "Why travel with us?", "why_subtitle": "A local team, safe tours and experiences designed for you.",
+    "experts_title": "Local experts", "experts_desc": "Passionate guides who know every corner of Benin.",
+    "safe_title": "Safe travel", "safe_desc": "Vetted partners, 24/7 assistance and insurance included.",
+    "custom_title": "Tailor-made", "custom_desc": "Every itinerary is adapted to your wishes and your budget."
+  },
+  "destPreview": {
+    "kicker": "Destinations", "title": "Iconic places", "all": "All destinations", "discover": "Discover",
+    "items": {
+      "abomey": { "title": "Abomey", "subtitle": "Royal Palaces — UNESCO", "description": "The remains of the powerful Kingdom of Dahomey." },
+      "ouidah": { "title": "Ouidah", "subtitle": "The Slave Route", "description": "The Door of No Return, a universal place of remembrance." },
+      "pendjari": { "title": "Pendjari", "subtitle": "Safari & Nature", "description": "One of the last great wildlife sanctuaries in West Africa." },
+      "cotonou": { "title": "Cotonou", "subtitle": "Economic Heart", "description": "The vibrant economic capital." }
     }
   },
-  "planner": {
-    "title": "Plan my trip",
-    "subtitle": "Drag places into your days: distances, times and budget are calculated for you.",
-    "reset": "Clear all",
-    "demo_note": "Demo data: approximate places and coordinates, estimated prices (FCFA per person), travel times calculated in a straight line with a road factor.",
-    "all": "All",
-    "night": "1 night",
-    "add_to_day": "Add to day {{n}}",
-    "day": "Day {{n}}",
-    "activities": "activity(ies)",
-    "night_short": "night",
-    "drop_here": "Drop a place here",
-    "on_site": "On site",
-    "travel": "travel",
-    "free": "free",
-    "budget": "Estimated budget (per person)",
-    "estimate": "Estimate, not a contractual price.",
-    "versions": "Three versions of the trip:",
-    "relief": "3D relief",
-    "relief_on": "3D relief: on",
-    "quote": "Request a quote",
-    "copied": "Link copied",
-    "copy_link": "Copy link",
-    "w_too_many": "Busy day: {{n}} activities. Consider moving \"{{name}}\" to the next day.",
-    "w_too_long": "A {{h}} programme for a {{max}} day: too busy.",
-    "w_no_meal": "Less than 1h30 left for meals and breaks.",
-    "w_long_leg": "Long journey (~{{h}}) between \"{{from}}\" and \"{{to}}\"."
+  "cultureSection": {
+    "kicker": "Heritage", "title": "Cradle of Vodun",
+    "p1": "Benin is the birthplace of the Vodun religion, a rich and complex spiritual tradition that continues to shape daily life.",
+    "p2": "From the annual Vodun festival in Ouidah to the secret temples of the hinterland, discover an intangible heritage of exceptional depth.",
+    "more": "Explore the culture", "alt": "Traditional Vodun masks of Benin",
+    "stats": { "inhabitants": "Inhabitants", "ethnic": "Ethnic groups", "unesco": "UNESCO sites" }
+  },
+  "cta": {
+    "kicker": "Ready for adventure?", "title": "Start your journey in Benin",
+    "text": "Whether you dream of safaris, paradise beaches or cultural discoveries, we create your tailor-made itinerary.",
+    "button": "Contact us", "secondary": "See destinations"
+  },
+  "footer": {
+    "tagline": "Explore Benin, land of culture, history and nature. An unforgettable journey awaits you in the heart of West Africa.",
+    "navigation": "Navigation", "contact": "Contact", "rights": "All rights reserved.", "back_to_top": "Back to top"
+  },
+  "floating": { "top": "Back to top", "whatsapp": "Chat on WhatsApp" },
+  "whatsapp": { "label": "Chat with us on WhatsApp", "greeting": "Hello VôdooVista, I would like some information to plan a trip." },
+  "home2": {
+    "explore": {
+      "kicker": "Explore by universe", "title": "What makes you travel?",
+      "tiles": {
+        "history": { "title": "History and memory", "text": "Kingdoms, palaces and places of remembrance." },
+        "nature": { "title": "Nature and safari", "text": "Parks, savannas and mountains." },
+        "beach": { "title": "Beaches and lagoons", "text": "Ocean, lagoon and fishing villages." },
+        "city": { "title": "Cities and markets", "text": "Cotonou and Porto-Novo." },
+        "tradition": { "title": "Traditions and arts", "text": "Masks, ceremonies and know-how." }
+      }
+    },
+    "steps": {
+      "kicker": "From dream to departure", "title": "Prepare your trip in 3 steps",
+      "items": [
+        { "title": "Find what you want", "text": "A short quiz to get three destination ideas.", "cta": "Take the quiz" },
+        { "title": "Explore the map", "text": "Locate each place and estimate distances from Cotonou.", "cta": "Open the map" },
+        { "title": "Organise your notebook", "text": "Order your stops and send your plan by WhatsApp.", "cta": "My notebook" }
+      ]
+    },
+    "facts": {
+      "kicker": "Did you know?", "prev": "Previous", "next": "Next",
+      "items": [
+        "Twelve kings succeeded one another in Abomey between 1625 and 1900, according to UNESCO.",
+        "The Slave Route in Ouidah is about four kilometres long and leads to the Door of No Return.",
+        "January 10 is a public holiday dedicated to indigenous religions, also called the vodun festival.",
+        "In 2021, France returned twenty-six works from the royal treasures of Abomey to Benin.",
+        "Ganvié is a lake village built on stilts, on Lake Nokoué.",
+        "The CFA franc is pegged to the euro at a fixed rate: €1 = 655.957 F CFA."
+      ]
+    }
+  },
+  "tools": {
+    "kicker": "Travel tools", "title": "Plan your trip", "subtitle": "Currency converter, countdown and budget estimator.",
+    "currency": { "title": "Euro / CFA Franc converter", "eur": "Euros (€)", "xof": "CFA Francs (F CFA)", "rate": "Fixed rate: €1 = 655.957 F CFA" },
+    "countdown": { "title": "Countdown", "event": "National Vodun Day — January 10", "days": "Days", "hours": "Hours", "minutes": "Minutes", "seconds": "Seconds" },
+    "budget": { "title": "Budget estimator", "style": "Travel style", "essential": "Essential", "comfort": "Comfort", "luxury": "Luxury", "days": "Number of days", "daysUnit": "days", "travelers": "Travelers", "total": "Estimated total budget", "perPerson": "per person", "note": "Indicative estimate.", "cta": "Request a custom quote" }
   }
 }

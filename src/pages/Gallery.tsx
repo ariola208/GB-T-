@@ -1,18 +1,18 @@
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { X, ChevronLeft, ChevronRight, Heart, Download, Share2, Grid3x3, Grid2x2 } from "lucide-react";
+import {
+  X, ChevronLeft, ChevronRight, Heart, Download, Share2, Grid3x3, Grid2x2,
+} from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
 import { localImg, localNames } from "@/lib/localImages";
 import { useToast } from "@/hooks/use-toast";
 
 type Meta = { cat: string; place?: string; theme?: string };
 
-// Légendes = lieu (nom propre) ou thème, déduits du NOM DE FICHIER. Aucune légende inventée.
 const META_RAW: Record<string, Meta> = {
   "ganvié.jpeg": { cat: "culture", place: "Ganvié" },
   "pendjari.jpeg": { cat: "wildlife", place: "Pendjari" },
@@ -71,7 +71,8 @@ const Gallery = () => {
   const present = CATEGORY_IDS.filter((c) => ITEMS.some((i) => i.category === c));
   const filtered = selectedCategory === "all" ? ITEMS : ITEMS.filter((i) => i.category === selectedCategory);
 
-  const toggleLike = (id: string) => setLiked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]));
+  const toggleLike = (id: string) =>
+    setLiked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]));
 
   const step = (dir: 1 | -1) => {
     if (!selected || filtered.length === 0) return;
@@ -84,7 +85,10 @@ const Gallery = () => {
     if (navigator.share) {
       try { await navigator.share({ title, url }); } catch { /* annulé */ }
     } else {
-      try { await navigator.clipboard.writeText(url); toast({ title: t("destinations.link_copied") }); } catch { /* ignore */ }
+      try {
+        await navigator.clipboard.writeText(url);
+        toast({ title: t("destinations.link_copied") });
+      } catch { /* ignore */ }
     }
   };
 
@@ -118,14 +122,36 @@ const Gallery = () => {
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div className="flex flex-wrap gap-2">
                 {["all", ...present].map((c) => (
-                  <Button key={c} variant={selectedCategory === c ? "default" : "outline"} size="sm" onClick={() => setSelectedCategory(c)}>
+                  <Button
+                    key={c}
+                    variant={selectedCategory === c ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedCategory(c)}
+                    className="transition-transform hover:scale-105"
+                  >
                     {t(`gallery.categories.${c}`)}
                   </Button>
                 ))}
               </div>
               <div className="flex gap-2">
-                <Button variant={viewMode === "grid3" ? "default" : "outline"} size="icon" onClick={() => setViewMode("grid3")} aria-label="grid 3"><Grid3x3 className="h-4 w-4" /></Button>
-                <Button variant={viewMode === "grid2" ? "default" : "outline"} size="icon" onClick={() => setViewMode("grid2")} aria-label="grid 2"><Grid2x2 className="h-4 w-4" /></Button>
+                <Button
+                  variant={viewMode === "grid3" ? "default" : "outline"}
+                  size="icon"
+                  onClick={() => setViewMode("grid3")}
+                  aria-label="grid 3"
+                  className="transition-transform hover:scale-105"
+                >
+                  <Grid3x3 className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant={viewMode === "grid2" ? "default" : "outline"}
+                  size="icon"
+                  onClick={() => setViewMode("grid2")}
+                  aria-label="grid 2"
+                  className="transition-transform hover:scale-105"
+                >
+                  <Grid2x2 className="h-4 w-4" />
+                </Button>
               </div>
             </div>
           </div>
@@ -133,25 +159,60 @@ const Gallery = () => {
 
         <section className="py-12">
           <div className="container mx-auto px-6">
-            {ITEMS.length === 0 && <p className="py-16 text-center text-muted-foreground">{t("gallery.empty")}</p>}
+            {ITEMS.length === 0 && (
+              <p className="py-16 text-center text-muted-foreground">{t("gallery.empty")}</p>
+            )}
             <motion.div
               key={selectedCategory + viewMode}
-              variants={staggerContainer}
               initial="hidden"
               animate="visible"
-              className={`grid gap-4 ${viewMode === "grid3" ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4" : "grid-cols-1 md:grid-cols-2"}`}
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.05 } },
+              }}
+              className={`grid gap-4 ${
+                viewMode === "grid3"
+                  ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+                  : "grid-cols-1 md:grid-cols-2"
+              }`}
             >
               {filtered.map((img) => (
-                <motion.div key={img.id} variants={fadeInUp} className="group relative cursor-pointer" onClick={() => setSelected(img)}>
+                <motion.div
+                  key={img.id}
+                  variants={{
+                    hidden: { opacity: 0, scale: 0.9 },
+                    visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
+                  }}
+                  className="group relative cursor-pointer"
+                  onClick={() => setSelected(img)}
+                >
                   <div className="relative aspect-square overflow-hidden rounded-lg">
-                    <img src={img.src} alt={titleOf(img)} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <img
+                      src={img.src}
+                      alt={titleOf(img)}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
                     <div className="absolute inset-0 flex items-end bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
-                      <div className="w-full p-4"><h3 className="font-bold text-white">{titleOf(img)}</h3></div>
+                      <div className="w-full p-4">
+                        <h3 className="font-bold text-white">{titleOf(img)}</h3>
+                      </div>
                     </div>
-                    <Button size="icon" variant="ghost" aria-label="like"
+                    <Button
+                      size="icon"
+                      variant="ghost"
+                      aria-label="like"
                       className="absolute right-3 top-3 bg-black/50 text-white opacity-0 transition-opacity hover:bg-black/70 group-hover:opacity-100"
-                      onClick={(e) => { e.stopPropagation(); toggleLike(img.id); }}>
-                      <Heart className={`h-4 w-4 ${liked.includes(img.id) ? "fill-red-500 text-red-500" : ""}`} />
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleLike(img.id);
+                      }}
+                    >
+                      <Heart
+                        className={`h-4 w-4 ${
+                          liked.includes(img.id) ? "fill-red-500 text-red-500" : ""
+                        }`}
+                      />
                     </Button>
                     <Badge className="absolute left-3 top-3 bg-black/50 opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
                       {t(`gallery.categories.${img.category}`)}
@@ -166,22 +227,79 @@ const Gallery = () => {
       <Footer />
 
       {selected && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="fixed inset-0 z-[60] flex items-center justify-center"
+        >
           <div className="absolute inset-0 bg-black/95" onClick={() => setSelected(null)} />
           <div className="relative z-10 mx-4 w-full max-w-6xl">
-            <img src={selected.src} alt={titleOf(selected)} className="max-h-[80vh] w-full rounded-lg object-contain" />
+            <img
+              src={selected.src}
+              alt={titleOf(selected)}
+              className="max-h-[80vh] w-full rounded-lg object-contain"
+            />
             <div className="absolute right-4 top-4 flex gap-2">
-              <Button size="icon" variant="ghost" className="bg-black/50 text-white hover:bg-black/70" onClick={() => toggleLike(selected.id)} aria-label="like">
-                <Heart className={`h-4 w-4 ${liked.includes(selected.id) ? "fill-red-500 text-red-500" : ""}`} />
+              <Button
+                size="icon"
+                variant="ghost"
+                className="bg-black/50 text-white transition-transform hover:scale-110 hover:bg-black/70"
+                onClick={() => toggleLike(selected.id)}
+                aria-label="like"
+              >
+                <Heart
+                  className={`h-4 w-4 ${
+                    liked.includes(selected.id) ? "fill-red-500 text-red-500" : ""
+                  }`}
+                />
               </Button>
-              <Button size="icon" variant="ghost" className="bg-black/50 text-white hover:bg-black/70" onClick={() => share(titleOf(selected))} aria-label="share"><Share2 className="h-4 w-4" /></Button>
-              <Button size="icon" variant="ghost" asChild className="bg-black/50 text-white hover:bg-black/70">
-                <a href={selected.src} download aria-label="download"><Download className="h-4 w-4" /></a>
+              <Button
+                size="icon"
+                variant="ghost"
+                className="bg-black/50 text-white transition-transform hover:scale-110 hover:bg-black/70"
+                onClick={() => share(titleOf(selected))}
+                aria-label="share"
+              >
+                <Share2 className="h-4 w-4" />
               </Button>
-              <Button size="icon" variant="ghost" className="bg-black/50 text-white hover:bg-black/70" onClick={() => setSelected(null)} aria-label="close"><X className="h-4 w-4" /></Button>
+              <Button
+                size="icon"
+                variant="ghost"
+                asChild
+                className="bg-black/50 text-white transition-transform hover:scale-110 hover:bg-black/70"
+              >
+                <a href={selected.src} download aria-label="download">
+                  <Download className="h-4 w-4" />
+                </a>
+              </Button>
+              <Button
+                size="icon"
+                variant="ghost"
+                className="bg-black/50 text-white transition-transform hover:scale-110 hover:bg-black/70"
+                onClick={() => setSelected(null)}
+                aria-label="close"
+              >
+                <X className="h-4 w-4" />
+              </Button>
             </div>
-            <Button size="icon" variant="ghost" className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white hover:bg-black/70" onClick={() => step(-1)} aria-label="previous"><ChevronLeft className="h-6 w-6" /></Button>
-            <Button size="icon" variant="ghost" className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white hover:bg-black/70" onClick={() => step(1)} aria-label="next"><ChevronRight className="h-6 w-6" /></Button>
+            <Button
+              size="icon"
+              variant="ghost"
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white transition-transform hover:scale-110 hover:bg-black/70"
+              onClick={() => step(-1)}
+              aria-label="previous"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </Button>
+            <Button
+              size="icon"
+              variant="ghost"
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white transition-transform hover:scale-110 hover:bg-black/70"
+              onClick={() => step(1)}
+              aria-label="next"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </Button>
             <div className="absolute bottom-4 left-4 text-white">
               <h3 className="text-xl font-bold">{titleOf(selected)}</h3>
               <p className="text-white/80">{t(`gallery.categories.${selected.category}`)}</p>
@@ -190,7 +308,7 @@ const Gallery = () => {
               {filtered.findIndex((i) => i.id === selected.id) + 1} / {filtered.length}
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
     </div>
   );
