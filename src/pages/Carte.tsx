@@ -26,10 +26,10 @@ const Carte = () => {
   const km = Math.round(distKm(COTONOU, sel));
   const dx = sel.span;
   const dy = sel.span * 0.6;
-  const src = `https://www.openstreetmap.org/export/embed.html?bbox=${sel.lon - dx}%2C${
+  const src = `https://www.openstreetmap.org/export/embed.html?bbox=${sel.lng - dx}%2C${
     sel.lat - dy
-  }%2C${sel.lon + dx}%2C${sel.lat + dy}&layer=mapnik&marker=${sel.lat}%2C${sel.lon}`;
-  const inBook = favs.includes(sel.id);
+  }%2C${sel.lng + dx}%2C${sel.lat + dy}&layer=mapnik&marker=${sel.lat}%2C${sel.lng}`;
+  const inBook = favs.includes(Number(sel.id));
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -77,7 +77,7 @@ const Carte = () => {
                         {p.region} · {t(`destinations.categories.${p.category}`)}
                       </span>
                     </span>
-                    {favs.includes(p.id) && <BookMarked className="h-4 w-4" />}
+                    {favs.includes(Number(p.id)) && <BookMarked className="h-4 w-4" />}
                   </motion.button>
                 ))}
               </div>
@@ -107,7 +107,7 @@ const Carte = () => {
                   <div className="flex flex-wrap gap-3">
                     <Button asChild variant="outline" className="transition-transform hover:scale-105">
                       <a
-                        href={`https://www.google.com/maps/search/?api=1&query=${sel.lat},${sel.lon}`}
+                        href={`https://www.google.com/maps/search/?api=1&query=${sel.lat},${sel.lng}`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >

@@ -1,121 +1,1807 @@
 {
-  "nav": {
-    "home": "Accueil", "destinations": "Destinations", "culture": "Culture", "services": "Services",
-    "blog": "Blog", "gallery": "Galerie", "faq": "FAQ", "about": "À propos", "contact": "Contact",
-    "login": "Connexion", "logout": "Déconnexion", "profile": "Mon profil", "soul": "L'âme du Bénin",
-    "planner": "Planifier", "ame": "L'âme du Bénin", "more": "Plus", "search": "Rechercher",
-    "search_placeholder": "Aller vers une page...", "no_result": "Aucun résultat",
-    "my_account": "Mon compte", "my_trips": "Mes voyages", "favorites": "Mes favoris",
-    "map": "Carte", "quiz": "Quiz", "notebook": "Carnet de voyage", "info": "Infos pratiques"
-  },
-  "common": {
-    "language": "Langue", "theme_light": "Passer en mode clair", "theme_dark": "Passer en mode sombre",
-    "listen": "Écouter", "loading": "Chargement...", "translation_partial": "Traduction en cours"
-  },
-  "hero": {
-    "kicker": "Découvrez l'Afrique de l'Ouest", "title": "Le Bénin vous attend",
-    "subtitle": "Un voyage entre histoire millénaire, traditions vivantes et paysages à couper le souffle.",
-    "explore": "Explorer", "plan": "Planifier votre voyage",
-    "alt": "Ganvié, la Venise de l'Afrique", "scroll": "Défiler",
-    "stats": { "years": "Années d'expérience", "destinations": "Destinations", "travelers": "Voyageurs satisfaits" }
-  },
-  "home": {
-    "why_title": "Pourquoi voyager avec nous ?", "why_subtitle": "Une équipe locale, des circuits sûrs et des expériences conçues pour vous.",
-    "experts_title": "Experts locaux", "experts_desc": "Des guides passionnés qui connaissent chaque recoin du Bénin.",
-    "safe_title": "Voyage sécurisé", "safe_desc": "Partenaires vérifiés, assistance 24/7 et assurance incluse.",
-    "custom_title": "Sur mesure", "custom_desc": "Chaque itinéraire est adapté à vos envies et à votre budget."
-  },
-  "destPreview": {
-    "kicker": "Destinations", "title": "Lieux emblématiques", "all": "Toutes les destinations", "discover": "Découvrir",
-    "items": {
-      "abomey": { "title": "Abomey", "subtitle": "Palais Royaux — UNESCO", "description": "Les vestiges du puissant Royaume du Dahomey." },
-      "ouidah": { "title": "Ouidah", "subtitle": "La Route de l'Esclave", "description": "La Porte du Non-Retour, un lieu de mémoire universel." },
-      "pendjari": { "title": "Pendjari", "subtitle": "Safari & Nature", "description": "L'un des derniers sanctuaires de faune sauvage." },
-      "cotonou": { "title": "Cotonou", "subtitle": "Cœur Économique", "description": "La vibrante capitale économique." }
+ "nav": {
+  "home": "Accueil",
+  "destinations": "Destinations",
+  "culture": "Culture",
+  "services": "Services",
+  "blog": "Blog",
+  "gallery": "Galerie",
+  "faq": "FAQ",
+  "about": "À propos",
+  "contact": "Contact",
+  "login": "Connexion",
+  "logout": "Déconnexion",
+  "profile": "Mon profil",
+  "soul": "L'âme du Bénin",
+  "planner": "Planifier",
+  "ame": "L'âme du Bénin",
+  "more": "Plus",
+  "search": "Rechercher",
+  "search_placeholder": "Aller vers une page...",
+  "no_result": "Aucun résultat",
+  "my_account": "Mon compte",
+  "my_trips": "Mes voyages",
+  "favorites": "Mes favoris",
+  "map": "Carte",
+  "quiz": "Quiz",
+  "notebook": "Carnet de voyage",
+  "info": "Infos pratiques"
+ },
+ "common": {
+  "language": "Langue",
+  "theme_light": "Passer en mode clair",
+  "theme_dark": "Passer en mode sombre",
+  "listen": "Écouter",
+  "loading": "Chargement...",
+  "translation_partial": "Traduction en cours"
+ },
+ "hero": {
+  "kicker": "Découvrez l'Afrique de l'Ouest",
+  "title": "Le Bénin vous attend",
+  "subtitle": "Un voyage entre histoire millénaire, traditions vivantes et paysages à couper le souffle.",
+  "explore": "Explorer",
+  "plan": "Planifier votre voyage",
+  "alt": "Ganvié, la Venise de l'Afrique",
+  "scroll": "Défiler",
+  "stats": {
+   "years": "Années d'expérience",
+   "destinations": "Destinations",
+   "travelers": "Voyageurs satisfaits"
+  }
+ },
+ "home": {
+  "why_title": "Pourquoi voyager avec nous ?",
+  "why_subtitle": "Une équipe locale, des circuits sûrs et des expériences conçues pour vous.",
+  "experts_title": "Experts locaux",
+  "experts_desc": "Des guides passionnés qui connaissent chaque recoin du Bénin.",
+  "safe_title": "Voyage sécurisé",
+  "safe_desc": "Partenaires vérifiés, assistance 24/7 et assurance incluse.",
+  "custom_title": "Sur mesure",
+  "custom_desc": "Chaque itinéraire est adapté à vos envies et à votre budget."
+ },
+ "destPreview": {
+  "kicker": "Destinations",
+  "title": "Lieux emblématiques",
+  "all": "Toutes les destinations",
+  "discover": "Découvrir",
+  "items": {
+   "abomey": {
+    "title": "Abomey",
+    "subtitle": "Palais Royaux — UNESCO",
+    "description": "Les vestiges du puissant Royaume du Dahomey."
+   },
+   "ouidah": {
+    "title": "Ouidah",
+    "subtitle": "La Route de l'Esclave",
+    "description": "La Porte du Non-Retour, un lieu de mémoire universel."
+   },
+   "pendjari": {
+    "title": "Pendjari",
+    "subtitle": "Safari & Nature",
+    "description": "L'un des derniers sanctuaires de faune sauvage."
+   },
+   "cotonou": {
+    "title": "Cotonou",
+    "subtitle": "Cœur Économique",
+    "description": "La vibrante capitale économique."
+   }
+  }
+ },
+ "cultureSection": {
+  "kicker": "Patrimoine",
+  "title": "Berceau du Vodoun",
+  "p1": "Le Bénin est le berceau de la religion vodoun, une tradition spirituelle riche et complexe qui continue de façonner la vie quotidienne. Des cérémonies colorées aux masques sacrés, chaque aspect de cette culture raconte une histoire millénaire.",
+  "p2": "De la fête annuelle du Vodoun à Ouidah aux temples secrets de l'arrière-pays, découvrez un patrimoine immatériel d'une profondeur exceptionnelle.",
+  "more": "Explorer la culture",
+  "alt": "Masques traditionnels vodoun du Bénin",
+  "stats": {
+   "inhabitants": "Habitants",
+   "ethnic": "Ethnies",
+   "unesco": "Sites UNESCO"
+  }
+ },
+ "cta": {
+  "kicker": "Prêt pour l'aventure ?",
+  "title": "Commencez votre voyage au Bénin",
+  "text": "Que vous rêviez de safaris, de plages paradisiaques ou de découvertes culturelles, nous créons votre itinéraire sur mesure.",
+  "button": "Contactez-nous",
+  "secondary": "Voir les destinations"
+ },
+ "footer": {
+  "tagline": "Explorez le Bénin, terre de culture, d'histoire et de nature. Un voyage inoubliable vous attend au cœur de l'Afrique de l'Ouest.",
+  "navigation": "Navigation",
+  "contact": "Contact",
+  "rights": "Tous droits réservés.",
+  "back_to_top": "Haut de page"
+ },
+ "floating": {
+  "top": "Remonter en haut",
+  "whatsapp": "Discuter sur WhatsApp"
+ },
+ "whatsapp": {
+  "label": "Écrivez-nous sur WhatsApp",
+  "greeting": "Bonjour LEGBAH, j'aimerais avoir des informations pour organiser un voyage."
+ },
+ "home2": {
+  "explore": {
+   "kicker": "Explorer par univers",
+   "title": "Qu'est-ce qui vous fait voyager ?",
+   "tiles": {
+    "history": {
+     "title": "Histoire et mémoire",
+     "text": "Royaumes, palais et lieux de mémoire."
+    },
+    "nature": {
+     "title": "Nature et safari",
+     "text": "Parcs, savanes et montagnes."
+    },
+    "beach": {
+     "title": "Plages et lagunes",
+     "text": "Océan, lagune et villages de pêcheurs."
+    },
+    "city": {
+     "title": "Villes et marchés",
+     "text": "Cotonou et Porto-Novo."
+    },
+    "tradition": {
+     "title": "Traditions et arts",
+     "text": "Masques, cérémonies et savoir-faire."
     }
+   }
   },
-  "cultureSection": {
-    "kicker": "Patrimoine", "title": "Berceau du Vodoun",
-    "p1": "Le Bénin est le berceau de la religion vodoun, une tradition spirituelle riche et complexe qui continue de façonner la vie quotidienne. Des cérémonies colorées aux masques sacrés, chaque aspect de cette culture raconte une histoire millénaire.",
-    "p2": "De la fête annuelle du Vodoun à Ouidah aux temples secrets de l'arrière-pays, découvrez un patrimoine immatériel d'une profondeur exceptionnelle.",
-    "more": "Explorer la culture", "alt": "Masques traditionnels vodoun du Bénin",
-    "stats": { "inhabitants": "Habitants", "ethnic": "Ethnies", "unesco": "Sites UNESCO" }
+  "steps": {
+   "kicker": "Du rêve au départ",
+   "title": "Préparez votre voyage en 3 étapes",
+   "items": [
+    {
+     "title": "Trouvez vos envies",
+     "text": "Un court quiz pour obtenir trois idées de destinations.",
+     "cta": "Faire le quiz"
+    },
+    {
+     "title": "Explorez la carte",
+     "text": "Situez chaque lieu et estimez les distances depuis Cotonou.",
+     "cta": "Ouvrir la carte"
+    },
+    {
+     "title": "Organisez votre carnet",
+     "text": "Classez vos étapes et envoyez votre projet par WhatsApp.",
+     "cta": "Mon carnet"
+    }
+   ]
+  },
+  "facts": {
+   "kicker": "Le saviez-vous ?",
+   "prev": "Précédent",
+   "next": "Suivant",
+   "items": [
+    "Douze rois se sont succédé à Abomey entre 1625 et 1900, selon l'UNESCO.",
+    "La Route des Esclaves, à Ouidah, mesure environ quatre kilomètres et mène à la Porte du Non-Retour.",
+    "Le 10 janvier est un jour férié consacré aux religions endogènes, aussi appelé fête du vodoun.",
+    "En 2021, la France a restitué au Bénin vingt-six œuvres des trésors royaux d'Abomey.",
+    "Ganvié est un village lacustre bâti sur pilotis, sur le lac Nokoué.",
+    "Le franc CFA est rattaché à l'euro à taux fixe : 1 € = 655,957 F CFA."
+   ]
+  }
+ },
+ "tools": {
+  "kicker": "Outils de voyage",
+  "title": "Préparez votre voyage",
+  "subtitle": "Convertisseur de devises, compte à rebours et estimation de budget : tout ce qu'il vous faut avant de partir.",
+  "currency": {
+   "title": "Convertisseur Euro / Franc CFA",
+   "eur": "Euros (€)",
+   "xof": "Francs CFA (F CFA)",
+   "rate": "Taux fixe : 1 € = 655,957 F CFA"
+  },
+  "countdown": {
+   "title": "Compte à rebours",
+   "event": "Fête nationale du Vodoun — 10 janvier",
+   "days": "Jours",
+   "hours": "Heures",
+   "minutes": "Minutes",
+   "seconds": "Secondes"
+  },
+  "budget": {
+   "title": "Estimateur de budget",
+   "style": "Style de voyage",
+   "essential": "Essentiel",
+   "comfort": "Confort",
+   "luxury": "Luxe",
+   "days": "Nombre de jours",
+   "daysUnit": "jours",
+   "travelers": "Voyageurs",
+   "total": "Budget total estimé",
+   "perPerson": "par personne",
+   "note": "Estimation indicative. Le prix final dépend des prestations choisies.",
+   "cta": "Demander un devis personnalisé"
+  }
+ },
+ "destinations": {
+  "badge": "Explorez le Bénin",
+  "title": "Destinations",
+  "subtitle": "Des cités lacustres aux parcs nationaux, découvrez la diversité exceptionnelle du Bénin",
+  "search": "Rechercher une destination...",
+  "found": "{{count}} destination(s) trouvée(s)",
+  "found_sub": "Explorez les merveilles du Bénin",
+  "none": "Aucune destination ne correspond à votre recherche",
+  "featured": "En vedette",
+  "trending": "Tendance",
+  "discover": "Découvrir",
+  "days_range": "{{range}} jours",
+  "free": "Libre",
+  "reviews": "{{count}} avis",
+  "per_night": "/nuit",
+  "free_label": "Gratuit",
+  "region": "Région",
+  "climate": "Climat",
+  "location": "Localisation",
+  "temperature": "Température",
+  "best_time": "Meilleure période",
+  "duration": "Durée recommandée",
+  "book_now": "Réserver maintenant",
+  "book": "Réserver",
+  "share": "Partager",
+  "link_copied": "Lien copié",
+  "close": "Fermer",
+  "tabs": {
+   "overview": "Aperçu",
+   "highlights": "Points forts",
+   "activities": "Activités",
+   "accommodations": "Hébergements",
+   "info": "Infos pratiques"
+  },
+  "categories": {
+   "all": "Tous",
+   "culture": "Culture",
+   "nature": "Nature",
+   "plage": "Plage",
+   "ville": "Ville",
+   "historique": "Historique"
+  },
+  "cta_title": "Vous ne trouvez pas votre bonheur ?",
+  "cta_text": "Nous créons des itinéraires sur mesure selon vos envies.",
+  "cta_button": "Créer mon voyage personnalisé",
+  "amenities": {
+   "wifi": "WiFi",
+   "restaurant": "Restaurant",
+   "ac": "Climatisation",
+   "lakeview": "Vue sur le lac",
+   "homemeal": "Repas maison",
+   "terrace": "Terrasse",
+   "privatepirogue": "Pirogue privée",
+   "pool": "Piscine",
+   "privateguide": "Guide privé",
+   "tents": "Tentes équipées",
+   "showers": "Douches",
+   "campfire": "Feu de camp",
+   "privatebeach": "Plage privée",
+   "spa": "Spa"
+  },
+  "acc_types": {
+   "hotel": "Hôtel",
+   "hotel3": "Hôtel 3*",
+   "hotel4": "Hôtel 4*",
+   "guesthouse": "Maison d'hôtes",
+   "lodge": "Lodge",
+   "camping": "Camping",
+   "inn": "Auberge"
+  },
+  "wa_message": "Bonjour LEGBAH, je souhaite réserver un séjour : {{name}}.",
+  "items": [
+   {
+    "description": "La Venise de l'Afrique, village lacustre unique au monde",
+    "longDescription": "Ganvié est un village lacustre exceptionnel situé sur le lac Nokoué. Avec ses 30 000 habitants vivant dans des maisons sur pilotis, c'est la plus grande cité lacustre d'Afrique. La vie s'organise entièrement sur l'eau : marchés flottants, écoles, lieux de culte. Les habitants se déplacent en pirogue dans un ballet fascinant.",
+    "bestTime": "Novembre à Février",
+    "highlights": [
+     "Village lacustre emblématique",
+     "Marché flottant",
+     "Musée de Ganvié",
+     "Pêche traditionnelle",
+     "Artisanat local"
+    ],
+    "activities": [
+     "Tour en pirogue",
+     "Visite du marché flottant",
+     "Atelier artisanat"
+    ]
+   },
+   {
+    "description": "L'un des derniers grands sanctuaires de faune sauvage en Afrique de l'Ouest",
+    "longDescription": "Le Parc National de la Pendjari est un joyau de la conservation en Afrique de l'Ouest. Sur 275 000 hectares, il abrite une faune exceptionnelle : lions, éléphants, buffles, hippopotames, guépards et plus de 300 espèces d'oiseaux. La cascade de Tanougou et les montagnes de l'Atacora ajoutent à la beauté des lieux.",
+    "bestTime": "Décembre à Mars",
+    "highlights": [
+     "Safari photo",
+     "Observation des lions",
+     "Cascade de Tanougou",
+     "Observation des oiseaux",
+     "Camping sauvage"
+    ],
+    "activities": [
+     "Safari guidé",
+     "Safari photo",
+     "Randonnée à Tanougou"
+    ]
+   },
+   {
+    "description": "Cœur spirituel du vodoun et mémoire de la traite négrière",
+    "longDescription": "Ouidah est une ville chargée d'histoire. La Route des Esclaves et la Porte du Non-Retour témoignent de la tragédie de la traite négrière. La ville est aussi le berceau du vodoun, avec le Temple des Pythons et la Forêt Sacrée de Kpassè. Chaque année, le 10 janvier, la Fête Nationale du Vodoun attire des milliers de pèlerins.",
+    "bestTime": "Janvier, Octobre-Décembre",
+    "highlights": [
+     "Porte du Non-Retour",
+     "Route des Esclaves",
+     "Temple des Pythons",
+     "Forêt Sacrée de Kpassè",
+     "Musée d'Histoire"
+    ],
+    "activities": [
+     "Visite historique",
+     "Cérémonie vodoun",
+     "Musée de Ouidah"
+    ]
+   },
+   {
+    "description": "Les palais royaux du Dahomey, classés au patrimoine mondial",
+    "longDescription": "Abomey fut la capitale du puissant Royaume du Dahomey pendant près de 300 ans. Les palais royaux, classés au patrimoine mondial de l'UNESCO, sont ornés de bas-reliefs exceptionnels qui racontent l'histoire du royaume. Le musée historique abrite des trésors inestimables : trônes, armes, objets rituels.",
+    "bestTime": "Novembre à Février",
+    "highlights": [
+     "Palais royaux UNESCO",
+     "Musée historique",
+     "Bas-reliefs",
+     "Artisanat des appliqués"
+    ],
+    "activities": [
+     "Visite des palais",
+     "Atelier d'appliqués"
+    ]
+   },
+   {
+    "description": "Plages de sable fin, pêche traditionnelle et ambiance décontractée",
+    "longDescription": "Grand-Popo est une station balnéaire paisible où le fleuve Mono rencontre l'océan Atlantique. Ses longues plages bordées de cocotiers invitent à la détente. Le village de pêcheurs conserve ses traditions. La Bouche du Roy offre des paysages magnifiques.",
+    "bestTime": "Novembre à Mars",
+    "highlights": [
+     "Plages de sable fin",
+     "Bouche du Roy",
+     "Pêche traditionnelle",
+     "Couchers de soleil"
+    ],
+    "activities": [
+     "Baignade",
+     "Pirogue sur le Mono"
+    ]
+   },
+   {
+    "description": "La vibrante capitale économique, entre tradition et modernité",
+    "longDescription": "Cotonou est le cœur battant du Bénin. Cette ville dynamique mêle modernité et traditions. Le marché Dantokpa, l'un des plus grands d'Afrique de l'Ouest, est une immersion totale dans la vie locale. La Place de l'Étoile Rouge, la cathédrale Notre-Dame et la plage de Fidjrossè sont autant de lieux à découvrir.",
+    "bestTime": "Toute l'année",
+    "highlights": [
+     "Marché Dantokpa",
+     "Place de l'Étoile Rouge",
+     "Plage de Fidjrossè",
+     "Fondation Zinsou"
+    ],
+    "activities": [
+     "Visite de Dantokpa",
+     "Art contemporain"
+    ]
+   },
+   {
+    "description": "Porte d'entrée du pays Somba et de ses tatas",
+    "longDescription": "Natitingou est la principale ville du pays Somba, réputée pour ses habitations traditionnelles uniques : les tatas. Ces forteresses miniatures en terre crue ressemblent à de petits châteaux. La région offre des paysages magnifiques de collines et de vallées.",
+    "bestTime": "Novembre à Février",
+    "highlights": [
+     "Tatas Somba",
+     "Cascades de Kota",
+     "Montagnes de l'Atacora",
+     "Artisanat local"
+    ],
+    "activities": [
+     "Visite des tatas",
+     "Randonnée"
+    ]
+   },
+   {
+    "description": "La capitale administrative, riche d'histoire et de traditions",
+    "longDescription": "Porto-Novo, la capitale du Bénin, est une ville au riche patrimoine historique. Le Musée Honmè (ancien palais royal), la Grande Mosquée de style afro-brésilien et le Jardin des Plantes et de la Nature sont autant de sites à découvrir.",
+    "bestTime": "Novembre à Février",
+    "highlights": [
+     "Musée Honmè",
+     "Grande Mosquée",
+     "Jardin des Plantes",
+     "Palais du Gouverneur"
+    ],
+    "activities": [
+     "Visite du Musée Honmè",
+     "Tour de ville"
+    ]
+   }
+  ]
+ },
+ "contact": {
+  "hero_title": "Contactez-nous",
+  "hero_subtitle": "Notre équipe est là pour vous aider à créer le voyage de vos rêves au Bénin",
+  "features": {
+   "team": {
+    "title": "Équipe locale",
+    "desc": "Des experts passionnés"
+   },
+   "certified": {
+    "title": "Certifié",
+    "desc": "Agence agréée par le Ministère du Tourisme"
+   },
+   "secure": {
+    "title": "Voyage sécurisé",
+    "desc": "Partenaires vérifiés et assurance incluse"
+   }
+  },
+  "info_title": "Parlons de votre projet",
+  "info_text": "Que vous ayez une question, une demande de devis ou simplement envie d'en savoir plus.",
+  "address": {
+   "title": "Adresse",
+   "line1": "Avenue Jean-Paul II",
+   "line2": "Cotonou, Bénin"
+  },
+  "phone": {
+   "title": "Téléphone"
+  },
+  "email": {
+   "title": "Email"
+  },
+  "hours": {
+   "title": "Horaires",
+   "line1": "Lun - Ven : 8h - 18h",
+   "line2": "Sam : 9h - 15h"
+  },
+  "follow": "Suivez-nous",
+  "whatsapp": {
+   "title": "WhatsApp",
+   "text": "Préférez-vous discuter directement ?"
+  },
+  "form": {
+   "title": "Envoyez-nous un message",
+   "name": "Nom complet *",
+   "name_ph": "Jean Kouagou",
+   "email": "Email *",
+   "email_ph": "jean@email.com",
+   "phone": "Téléphone",
+   "subject": "Sujet *",
+   "subject_ph": "Demande d'information",
+   "date": "Date de voyage",
+   "travelers": "Nombre de voyageurs",
+   "budget": "Budget estimé",
+   "message": "Message *",
+   "message_ph": "Décrivez votre projet...",
+   "required": "* Champs obligatoires",
+   "send": "Envoyer le message"
+  },
+  "errors": {
+   "name": "Le nom doit contenir au moins 2 caractères",
+   "email": "Email invalide",
+   "subject": "Le sujet est requis",
+   "message": "Le message doit contenir au moins 10 caractères"
+  },
+  "toast": {
+   "title": "Message envoyé avec succès !",
+   "desc": "Notre équipe vous répondra dans les 24h."
+  },
+  "map_title": "Carte du Bénin",
+  "wa_intro": "Bonjour, je m'appelle {{name}}.",
+  "wa_dates": "Dates de voyage : {{v}}",
+  "wa_travelers": "Voyageurs : {{v}}",
+  "sent_title": "WhatsApp s'ouvre...",
+  "sent_desc": "Envoyez le message pré-rempli pour finaliser votre demande.",
+  "whatsapp_cta": "Écrire sur WhatsApp",
+  "form_note": "Votre message s'ouvre dans WhatsApp, prêt à être envoyé.",
+  "location": "Localisation",
+  "location_value": "Cotonou, Bénin"
+ },
+ "ame": {
+  "hero_badge": "Culture vivante",
+  "hero_title": "L'âme du Bénin",
+  "hero_subtitle": "Histoires, langues et traditions du Bénin, racontées avec les personnes qui les portent.",
+  "hero_note": "Rubrique en construction : les textes doivent être relus par des spécialistes, les traductions validées par des locuteurs et les enregistrements ajoutés. Les éléments non validés sont signalés.",
+  "anchors": {
+   "heritage": "Le patrimoine raconté",
+   "languages": "Les langues",
+   "stories": "Les récits"
+  },
+  "ui": {
+   "prev": "Précédent",
+   "next": "Suivant",
+   "step": "{{n}} / {{total}}"
+  },
+  "heritage": {
+   "badge": "A · Patrimoine",
+   "title": "Le patrimoine raconté",
+   "intro": "Chaque site a une histoire qui se lit dans le temps. Choisissez un lieu, puis parcourez sa chronologie.",
+   "timeline": "Chronologie",
+   "sources": "Sources",
+   "tabs": {
+    "abomey": "Abomey",
+    "ouidah": "Ouidah",
+    "portonovo": "Porto-Novo"
+   },
+   "sites": {
+    "abomey": {
+     "intro": "Capitale du royaume du Dahomey, Abomey conserve les palais d'une dynastie de douze rois. Les bas-reliefs de ses murs gardaient en mémoire les règnes et les faits marquants.",
+     "source": "UNESCO, Palais royaux d'Abomey (inscrits en 1985) ; Musée historique d'Abomey.",
+     "events": [
+      {
+       "year": "1625–1900",
+       "title": "Une dynastie de douze rois",
+       "text": "Selon l'UNESCO, douze rois se succèdent à la tête du royaume du Dahomey. Chacun fait ajouter son propre palais dans l'enceinte royale d'Abomey."
+      },
+      {
+       "year": "1724–1727",
+       "title": "L'accès à la côte",
+       "text": "Sous le roi Agadja, le Dahomey conquiert Allada, puis Ouidah en 1727. Le royaume accède ainsi à la côte et au commerce atlantique, dont la traite des esclaves."
+      },
+      {
+       "year": "1818–1858",
+       "title": "Le règne de Guézo",
+       "text": "Le règne de Guézo est l'un des plus longs de la dynastie. Le Dahomey est alors un État puissant et très organisé."
+      },
+      {
+       "year": "1892–1894",
+       "title": "La guerre franco-dahoméenne",
+       "text": "La guerre s'achève par la reddition du roi Béhanzin, exilé en Martinique puis en Algérie. Le royaume passe sous domination coloniale française."
+      },
+      {
+       "year": "1985",
+       "title": "Patrimoine mondial",
+       "text": "Les palais royaux d'Abomey sont inscrits sur la Liste du patrimoine mondial de l'UNESCO."
+      },
+      {
+       "year": "2021",
+       "title": "Le retour des trésors royaux",
+       "text": "La France restitue au Bénin vingt-six œuvres des trésors royaux d'Abomey, prises lors de la conquête de 1892."
+      }
+     ]
+    },
+    "ouidah": {
+     "intro": "Ancien port de la traite atlantique et lieu central des traditions vodoun, Ouidah est aujourd'hui un lieu de mémoire et de pratiques vivantes. La Route des Esclaves, longue d'environ quatre kilomètres, mène à la Porte du Non-Retour, face à l'océan.",
+     "source": "UNESCO, projet « La Route de l'Esclave » ; Musée d'histoire de Ouidah.",
+     "events": [
+      {
+       "year": "1721",
+       "title": "Le fort portugais",
+       "text": "Le Portugal fonde à Ouidah le fort São João Baptista de Ajudá. Il abrite aujourd'hui le musée d'histoire de Ouidah."
+      },
+      {
+       "year": "1727",
+       "title": "La conquête dahoméenne",
+       "text": "Le Dahomey conquiert Ouidah. Le port est alors l'un des principaux points d'embarquement de captifs vers les Amériques."
+      },
+      {
+       "year": "1994",
+       "title": "La Route de l'Esclave",
+       "text": "Le projet de l'UNESCO « La Route de l'Esclave » est lancé à Ouidah, pour faire connaître l'histoire de la traite et ses conséquences."
+      },
+      {
+       "year": "1996",
+       "title": "Une religion reconnue",
+       "text": "Le vodoun est officiellement reconnu au Bénin. Le 10 janvier devient un jour férié consacré aux religions endogènes."
+      }
+     ]
+    },
+    "portonovo": {
+     "intro": "Capitale officielle du Bénin, Porto-Novo est l'ancienne capitale du royaume de Hogbonou. Son patrimoine mêle traditions royales, influences afro-brésiliennes et héritage colonial.",
+     "source": "Musée Honmè (ancien palais royal). Sources à compléter avec le musée et les services du patrimoine.",
+     "events": [
+      {
+       "year": "XVIIe–XVIIIe siècles",
+       "title": "Le royaume de Hogbonou",
+       "text": "Le royaume se développe au bord de la lagune. Les marchands portugais donnent à la ville le nom de « Porto-Novo »."
+      },
+      {
+       "year": "1863",
+       "title": "Le protectorat",
+       "text": "Le roi Sodji accepte le protectorat de la France sur son royaume."
+      },
+      {
+       "year": "Aujourd'hui",
+       "title": "Une capitale discrète",
+       "text": "Porto-Novo est la capitale officielle du pays, tandis que Cotonou concentre le gouvernement et l'activité économique. Le palais Honmè, ancienne résidence royale, abrite un musée."
+      }
+     ]
+    }
+   },
+   "media": {
+    "title": "Photographies, voix et cartes",
+    "intro": "Ces contenus ne sont pas encore publiés. Nous les ajouterons uniquement quand les droits et les accords des personnes concernées seront réunis.",
+    "status": "À venir",
+    "items": [
+     {
+      "title": "Photographies historiques",
+      "text": "Nous ne publions des images d'archives que lorsque leur auteur ou leurs ayants droit ont donné leur accord, ou lorsqu'elles sont libres de droits."
+     },
+     {
+      "title": "Témoignages",
+      "text": "Gardiens de sites, guides, artisans, habitants : leurs témoignages seront recueillis avec leur consentement. Aucun témoignage n'est inventé."
+     },
+     {
+      "title": "Cartes historiques",
+      "text": "Cartes anciennes et cartes commentées de la région, accompagnées de leur origine et de leur contexte."
+     },
+     {
+      "title": "Enregistrements audio",
+      "text": "Récits oraux et chants, enregistrés avec l'accord des personnes concernées et, pour les pratiques religieuses, de leurs responsables."
+     }
+    ]
+   }
+  },
+  "languages": {
+   "badge": "B · Langues",
+   "title": "Explorateur des langues béninoises",
+   "intro": "Un mini-dictionnaire pour voyager : choisissez une langue et une situation.",
+   "banner": "Les traductions affichées sont des brouillons. Elles doivent être validées par des locuteurs compétents avant d'être considérées comme fiables. Les enregistrements authentiques seront ajoutés au fur et à mesure.",
+   "names": {
+    "yo": "Yoruba",
+    "fon": "Fon",
+    "ddn": "Dendi"
+   },
+   "all": "Toutes",
+   "categories": {
+    "salutations": "Salutations",
+    "remerciements": "Remerciements",
+    "directions": "Directions",
+    "marche": "Marché",
+    "restaurant": "Restaurant",
+    "politesse": "Politesse",
+    "culture": "Expressions culturelles"
+   },
+   "search": "Rechercher une expression...",
+   "only_available": "Afficher seulement les expressions disponibles",
+   "validated_count": "{{ok}} / {{total}} validées",
+   "draft": "Brouillon : à valider",
+   "validated": "Validé",
+   "pending": "À renseigner avec un locuteur",
+   "pron": "Prononciation",
+   "pron_pending": "À enregistrer avec un locuteur",
+   "audio_soon": "Audio à venir",
+   "context": "Contexte culturel",
+   "copy": "Copier",
+   "none": "Aucune expression ne correspond.",
+   "empty_title": "Pas encore d'expressions pour cette langue",
+   "empty_text": "Nous n'inventons pas de traductions. Cette langue sera complétée avec des locuteurs qui acceptent de relire, corriger et enregistrer les expressions."
+  },
+  "stories": {
+   "badge": "C · Récits",
+   "title": "Récits culturels",
+   "intro": "Des royaumes aux savoir-faire, parcourez les traditions du Bénin chapitre par chapitre.",
+   "note": "Ces récits sont des synthèses : ils doivent être relus avec des historiens et des spécialistes avant publication définitive.",
+   "review": "Texte provisoire : ce contenu doit être relu et complété avec des pratiquants, des responsables de cultes et des spécialistes avant publication définitive.",
+   "respect_title": "Visiter avec respect",
+   "respect": [
+    "Demandez l'autorisation avant de photographier ou de filmer une cérémonie ou une personne.",
+    "Certains lieux et certains rites sont réservés aux initiés : respectez les interdits.",
+    "Faites-vous accompagner par un guide local de confiance.",
+    "Une cérémonie n'est pas un spectacle : on n'y est pas un simple spectateur."
+   ],
+   "cards": [
+    {
+     "title": "Les royaumes historiques",
+     "summary": "Du littoral au nord du pays, plusieurs royaumes ont façonné le Bénin actuel.",
+     "chapters": [
+      {
+       "title": "Allada, Abomey, Porto-Novo",
+       "text": "Selon de nombreuses traditions, les familles royales d'Allada, du Dahomey et de Hogbonou (Porto-Novo) partagent une origine commune, liée au peuple aja venu de la région de Tado."
+      },
+      {
+       "title": "Kétou",
+       "text": "Kétou est un ancien royaume yoruba. C'est l'un des foyers de la tradition Gèlèdè."
+      },
+      {
+       "title": "Nikki et le Borgou",
+       "text": "Dans le nord, le royaume bariba de Nikki a structuré la région du Borgou. La fête de la Gaani, célébrée chaque année à Nikki, en perpétue la mémoire."
+      }
+     ]
+    },
+    {
+     "title": "Béhanzin",
+     "summary": "Le dernier roi souverain du Dahomey.",
+     "chapters": [
+      {
+       "title": "Le roi",
+       "text": "Béhanzin règne de 1889 à 1894, à une époque où la France étend son emprise sur la côte."
+      },
+      {
+       "title": "La résistance",
+       "text": "Le Dahomey et la France s'affrontent en 1890, puis lors de la guerre de 1892-1894. Béhanzin conduit la défense de son royaume."
+      },
+      {
+       "title": "L'exil",
+       "text": "Il se rend en janvier 1894 et est exilé en Martinique, puis en Algérie, où il meurt en 1906. Ses restes sont rapatriés au Dahomey en 1928."
+      }
+     ]
+    },
+    {
+     "title": "Les arts",
+     "summary": "Sur les murs, sur les tissus, sous les masques : l'histoire se raconte en images.",
+     "chapters": [
+      {
+       "title": "Les bas-reliefs d'Abomey",
+       "text": "Les murs des palais sont ornés de bas-reliefs en terre colorée. Chaque motif évoque un souverain, un animal-emblème ou un fait marquant."
+      },
+      {
+       "title": "Les appliqués",
+       "text": "Les appliqués sont des tissus décorés de motifs découpés puis cousus. À Abomey, ils célèbrent les emblèmes des rois."
+      },
+      {
+       "title": "Les Gèlèdè",
+       "text": "Inscrits par l'UNESCO au patrimoine culturel immatériel, les Gèlèdè sont des spectacles de masques qui rendent hommage aux mères et à leur pouvoir spirituel. Ils mêlent danse, chant et sculpture."
+      }
+     ]
+    },
+    {
+     "title": "Les fêtes traditionnelles",
+     "summary": "Des moments où toute une communauté se retrouve.",
+     "chapters": [
+      {
+       "title": "Le 10 janvier",
+       "text": "Chaque année, la fête des religions endogènes, ou fête du vodoun, rassemble pratiquants et visiteurs, notamment à Ouidah."
+      },
+      {
+       "title": "La Gaani",
+       "text": "La Gaani est la grande fête du peuple bariba à Nikki. Elle comprend notamment des cérémonies et des cavalcades."
+      },
+      {
+       "title": "Participer avec respect",
+       "text": "Une fête n'est pas un spectacle donné aux visiteurs. Renseignez-vous auprès d'un guide local, demandez avant de filmer et suivez les consignes des organisateurs."
+      }
+     ]
+    },
+    {
+     "title": "Forgerons et fondeurs",
+     "summary": "Des gestes transmis de génération en génération.",
+     "chapters": [
+      {
+       "title": "Le métal",
+       "text": "Le travail du bronze et du laiton à la cire perdue est pratiqué dans plusieurs régions. L'objet est d'abord modelé en cire, puis enveloppé d'argile avant la coulée du métal."
+      },
+      {
+       "title": "Le textile",
+       "text": "Tissage, teinture et appliqué transmettent des motifs porteurs de sens. Chaque atelier a ses codes."
+      },
+      {
+       "title": "La terre et la fibre",
+       "text": "Poterie et vannerie font partie du quotidien : contenir l'eau, conserver, transporter. Ces gestes se transmettent souvent de génération en génération."
+      }
+     ]
+    },
+    {
+     "title": "Le vodoun",
+     "summary": "Une religion vivante, à aborder avec écoute et respect.",
+     "chapters": [
+      {
+       "title": "Une religion, pas un folklore",
+       "text": "Le vodoun est une religion pratiquée au Bénin, au Togo et dans la région. Il organise la relation entre les humains, les ancêtres et les forces de la nature."
+      },
+      {
+       "title": "Un monde de divinités",
+       "text": "Dans la cosmologie fon, Mawu et Lisa sont associés à la création, et de nombreux vodoun veillent sur des domaines précis. Legba est considéré comme l'intermédiaire entre les humains et les divinités."
+      },
+      {
+       "title": "Un lien avec la diaspora",
+       "text": "Des pratiques venues d'Afrique de l'Ouest ont pris des formes propres en Haïti, à Cuba ou au Brésil, par exemple le vodou haïtien ou le candomblé."
+      }
+     ]
+    }
+   ]
+  },
+  "contribute": {
+   "title": "Vous portez cette mémoire ? Aidez-nous.",
+   "text": "Gardiens de site, locuteurs, historiens, artisans, praticiens : contactez-nous pour valider, corriger ou enrichir ces contenus.",
+   "button": "Nous écrire sur WhatsApp",
+   "message": "Bonjour, je souhaite contribuer à la rubrique « L'âme du Bénin » (traduction, témoignage ou validation de contenu)."
+  }
+ },
+ "culture": {
+  "hero_badge": "Découvrez l'âme du Bénin",
+  "hero_title_1": "Culture &",
+  "hero_title_2": "Traditions",
+  "hero_subtitle": "Plongez au cœur des traditions millénaires qui font la richesse du Bénin",
+  "hero_cta": "Explorer les traditions",
+  "intro_badge": "Notre héritage",
+  "intro_title": "Un patrimoine culturel exceptionnel",
+  "intro_text": "Le Bénin est un carrefour de civilisations où se mêlent traditions ancestrales et expressions contemporaines. Des palais royaux d'Abomey aux cérémonies vodoun de Ouidah, en passant par les marchés colorés et les festivals vibrants, chaque recoin du pays raconte une histoire fascinante.",
+  "key_traditions": "Traditions clés",
+  "gallery": "Galerie photo",
+  "events_badge": "Agenda culturel",
+  "events_title": "Événements à ne pas manquer",
+  "events_text": "Planifiez votre voyage pour coïncider avec ces célébrations uniques",
+  "register": "S'inscrire",
+  "participants": "{{count}} participants",
+  "testimonials_badge": "Témoignages",
+  "testimonials_title": "Ce que disent nos voyageurs",
+  "testimonials_text": "Des expériences authentiques vécues par notre communauté",
+  "newsletter_title": "Recevez notre guide culturel gratuit",
+  "newsletter_text": "Inscrivez-vous pour recevoir notre ebook « Trésors culturels du Bénin » et notre newsletter mensuelle",
+  "email_ph": "Votre email",
+  "download": "Télécharger",
+  "newsletter_note": "Gratuit • Plus de 50 pages • Mis à jour chaque mois",
+  "stat_labels": {
+   "temples": "Temples",
+   "practitioners": "Pratiquants",
+   "ceremonies": "Cérémonies",
+   "communities": "Communautés",
+   "artisans": "Artisans",
+   "festivals": "Festivals",
+   "recipes": "Recettes",
+   "restaurants": "Restaurants",
+   "markets": "Marchés",
+   "workshops": "Ateliers",
+   "cooperatives": "Coopératives",
+   "instruments": "Instruments",
+   "troupes": "Troupes",
+   "participants": "Participants",
+   "events": "Événements"
+  },
+  "categories": [
+   {
+    "title": "Le Vodoun",
+    "subtitle": "Spiritualité ancestrale",
+    "longDescription": "Religion traditionnelle née au Bénin, le vodoun est bien plus qu'une croyance : c'est un mode de vie, une philosophie et un lien sacré avec les ancêtres et les forces de la nature. Le panthéon vodoun compte des centaines de divinités, chacune associée à des éléments naturels ou à des aspects de la vie humaine. Les cérémonies, rythmées par les tambours sacrés, sont des moments de communion intense. Chaque année, le 10 janvier, la Fête Nationale du Vodoun attire des milliers de fidèles et de curieux à Ouidah.",
+    "traditions": [
+     "Fête du Vodoun (10 janvier)",
+     "Culte des ancêtres",
+     "Cérémonies Egungun",
+     "Consultation du Fâ"
+    ]
+   },
+   {
+    "title": "Les Gélédé",
+    "subtitle": "Patrimoine de l'UNESCO",
+    "longDescription": "Les masques Gélédé, inscrits au patrimoine culturel immatériel de l'UNESCO depuis 2008, sont des spectacles rituels célébrant la puissance féminine et la sagesse des mères ancestrales. Les masques, véritables œuvres d'art, sont sculptés dans le bois et richement décorés. Les danseurs portent ces masques imposants et exécutent des chorégraphies complexes au son des tambours, dans un spectacle hypnotique qui peut durer toute une journée.",
+    "traditions": [
+     "Cérémonie Efe (nuit)",
+     "Cérémonie Gélédé (jour)",
+     "Chants satiriques",
+     "Danses acrobatiques"
+    ]
+   },
+   {
+    "title": "La Gastronomie",
+    "subtitle": "Saveurs authentiques",
+    "longDescription": "De la pâte rouge au poulet braisé, en passant par l'amiwo et le tchoukoutou (bière de mil), la cuisine béninoise reflète la diversité culturelle du pays. Les marchés colorés regorgent de produits frais : ignames, manioc, maïs, piments, poissons du lac. Les sauces, véritables signatures des cuisinières, peuvent mijoter pendant des heures. Ne manquez pas l'akassa (pâte de maïs fermentée), le wô ou encore l'atchomon.",
+    "traditions": [
+     "Pâte rouge",
+     "Poulet braisé",
+     "Amiwo",
+     "Tchoukoutou",
+     "Akassa"
+    ]
+   },
+   {
+    "title": "L'Artisanat",
+    "subtitle": "Savoir-faire ancestral",
+    "longDescription": "Les artisans béninois excellent dans le travail du bronze, la poterie, le tissage et la sculpture sur bois. Les fondeurs utilisent la technique de la cire perdue, héritée des anciens royaumes. Les appliqués d'Abomey, tapisseries royales qui racontent l'histoire du royaume du Dahomey, sont mondialement reconnus. Chaque objet raconte une histoire, porte un message, transmet une tradition.",
+    "traditions": [
+     "Bronze à la cire perdue",
+     "Appliqués d'Abomey",
+     "Poterie",
+     "Tissage du Nord"
+    ]
+   },
+   {
+    "title": "Musique & Danse",
+    "subtitle": "Le rythme dans le sang",
+    "longDescription": "La musique béninoise est un kaléidoscope de rythmes et de traditions. Chaque région a développé son propre langage musical, ses instruments et ses danses. Les tambours sont au cœur de la vie sociale et spirituelle, et le tam-tam parleur reproduit les intonations de la langue fon. Aujourd'hui, des artistes comme Angélique Kidjo font rayonner la musique béninoise dans le monde entier.",
+    "traditions": [
+     "Zinli",
+     "Tchinkounmè",
+     "Agbadja moderne",
+     "Tambours parleurs"
+    ]
+   },
+   {
+    "title": "Fêtes Traditionnelles",
+    "subtitle": "Célébrations ancestrales",
+    "longDescription": "Le calendrier béninois est rythmé par de nombreuses fêtes traditionnelles qui célèbrent les récoltes, honorent les divinités ou commémorent des événements historiques. Chaque célébration est unique et mobilise toute la communauté. Les visiteurs sont souvent invités à participer, dans une ambiance de partage et de convivialité inégalée.",
+    "traditions": [
+     "Fête des ignames",
+     "Nonvitcha",
+     "Sortie de couvent",
+     "Fête du Vodoun"
+    ]
+   }
+  ],
+  "events": [
+   {
+    "title": "Fête du Vodoun",
+    "date": "10 janvier",
+    "location": "Ouidah",
+    "category": "Religion"
+   },
+   {
+    "title": "Festival des Masques Gélédé",
+    "date": "Mars",
+    "location": "Kétou",
+    "category": "Danse"
+   },
+   {
+    "title": "Fête des Ignames",
+    "date": "Août",
+    "location": "Savalou",
+    "category": "Tradition"
+   },
+   {
+    "title": "Festival de Jazz de Ouidah",
+    "date": "Septembre",
+    "location": "Ouidah",
+    "category": "Musique"
+   }
+  ],
+  "testimonials": [
+   {
+    "role": "Guide culturelle",
+    "content": "Participer aux cérémonies vodoun a été une expérience transformatrice. La puissance des tambours, l'énergie des danseurs, la ferveur des fidèles : c'est une immersion totale dans une spiritualité vivante."
+   },
+   {
+    "role": "Ethnologue",
+    "content": "Les appliqués d'Abomey sont des chefs-d'œuvre qui racontent l'histoire du Dahomey. Chaque motif a une signification précise. C'est fascinant de voir ces artisans perpétuer un savoir-faire séculaire."
+   },
+   {
+    "role": "Cheffe cuisinière",
+    "content": "La cuisine béninoise est une découverte à chaque bouchée. Les sauces sont complexes, les épices parfaitement dosées. J'ai pris des cours de cuisine à Cotonou, une expérience inoubliable !"
+   }
+  ]
+ },
+ "login": {
+  "title": "Connexion",
+  "register_title": "Inscription",
+  "subtitle": "Connectez-vous à votre compte",
+  "register_subtitle": "Créez votre compte",
+  "first_name": "Prénom",
+  "last_name": "Nom",
+  "email": "Email",
+  "password": "Mot de passe",
+  "phone": "Téléphone (optionnel)",
+  "submit": "Se connecter",
+  "register_submit": "S'inscrire",
+  "loading": "Chargement...",
+  "no_account": "Pas de compte ? S'inscrire",
+  "has_account": "Déjà un compte ? Se connecter",
+  "error": "Une erreur est survenue",
+  "server_error": "Erreur de connexion au serveur",
+  "registered": "Compte créé ! Vous pouvez maintenant vous connecter."
+ },
+ "notfound": {
+  "title": "404",
+  "text": "Oups ! Cette page n'existe pas.",
+  "back": "Retour à l'accueil"
+ },
+ "gallery": {
+  "empty": "Aucune photo pour le moment.",
+  "themes": {
+   "vodoun": "Vodoun",
+   "egungun": "Egungun",
+   "gelede": "Gèlèdè",
+   "gastronomie": "Gastronomie",
+   "vannerie": "Vannerie",
+   "poterie": "Poterie",
+   "bronze": "Bronze",
+   "danse": "Danse",
+   "tambours": "Tambours"
+  },
+  "badge": "Galerie",
+  "title": "Le Bénin en images",
+  "subtitle": "Découvrez la beauté du Bénin à travers notre collection de photos",
+  "categories": {
+   "all": "Toutes",
+   "landscapes": "Paysages",
+   "culture": "Culture",
+   "wildlife": "Faune",
+   "cities": "Villes",
+   "beaches": "Plages",
+   "traditions": "Traditions"
+  },
+  "items": [
+   "Ganvié",
+   "Porte du Non-Retour",
+   "Palais Royaux",
+   "Éléphants",
+   "Cotonou",
+   "Grand-Popo",
+   "Marché",
+   "Collines",
+   "Pirogues",
+   "Cérémonie",
+   "Bas-reliefs",
+   "Lion"
+  ]
+ },
+ "soul": {
+  "hero_badge": "Culture vivante",
+  "hero_title": "L'âme du Bénin",
+  "hero_subtitle": "Histoire, langues et récits : découvrez le Bénin par ceux qui le font vivre.",
+  "hero_note": "Contenu en cours de relecture avec des historiens et des locuteurs. Les éléments non validés sont signalés.",
+  "anchors": {
+   "heritage": "Patrimoine",
+   "languages": "Langues",
+   "stories": "Récits"
+  },
+  "heritage": {
+   "badge": "Patrimoine raconté",
+   "title": "Trois lieux, trois mémoires",
+   "intro": "Choisissez un site et parcourez sa chronologie.",
+   "timeline": "Chronologie",
+   "sources": "Sources",
+   "tabs": {
+    "abomey": "Abomey",
+    "ouidah": "Ouidah",
+    "portonovo": "Porto-Novo"
+   },
+   "sites": {
+    "abomey": {
+     "intro": "Capitale du royaume du Dahomey, Abomey conserve les palais de ses rois, inscrits au patrimoine mondial de l'UNESCO.",
+     "source": "UNESCO (Palais royaux d'Abomey) ; Musée historique d'Abomey. À compléter par des sources académiques.",
+     "events": [
+      {
+       "year": "XVIIe siècle",
+       "title": "Naissance du royaume",
+       "text": "Le royaume du Dahomey se structure autour d'Abomey. Le roi Houégbadja est souvent associé à cette période de fondation."
+      },
+      {
+       "year": "1724–1727",
+       "title": "L'ouverture sur la côte",
+       "text": "Sous le roi Agadja, le Dahomey conquiert Allada puis Ouidah, et accède directement au commerce atlantique."
+      },
+      {
+       "year": "1818–1858",
+       "title": "Le règne de Ghézo",
+       "text": "Ghézo consolide l'État et l'armée. Son règne est l'un des plus puissants de l'histoire du royaume."
+      },
+      {
+       "year": "1892–1894",
+       "title": "Les guerres franco-dahoméennes",
+       "text": "Le roi Béhanzin résiste à l'armée coloniale française. Il se rend en 1894 et est exilé en Martinique."
+      },
+      {
+       "year": "1985",
+       "title": "Inscription à l'UNESCO",
+       "text": "Les Palais royaux d'Abomey sont inscrits sur la Liste du patrimoine mondial."
+      },
+      {
+       "year": "2021",
+       "title": "Retour de trésors royaux",
+       "text": "La France restitue au Bénin 26 œuvres issues du pillage de 1892."
+      }
+     ]
+    },
+    "ouidah": {
+     "intro": "Ancien port majeur de la traite atlantique, Ouidah est aujourd'hui un lieu de mémoire et la ville du Vodun.",
+     "source": "UNESCO (projet La Route de l'esclave) ; ouvrages d'histoire de la traite atlantique. À compléter.",
+     "events": [
+      {
+       "year": "1721",
+       "title": "Le fort portugais",
+       "text": "Le fort São João Baptista de Ajudá est établi à Ouidah. Il abrite aujourd'hui un musée d'histoire."
+      },
+      {
+       "year": "1727",
+       "title": "La conquête par le Dahomey",
+       "text": "Ouidah, royaume de Hueda, est conquis par le Dahomey du roi Agadja."
+      },
+      {
+       "year": "1992–1993",
+       "title": "Ouidah 92",
+       "text": "Premier grand festival consacré aux cultures et aux religions vodun."
+      },
+      {
+       "year": "1994",
+       "title": "La Route de l'esclave",
+       "text": "Le projet de l'UNESCO « La Route de l'esclave » est lancé à Ouidah."
+      },
+      {
+       "year": "1995",
+       "title": "La Porte du Non-Retour",
+       "text": "Le monument est inauguré au bout de la route empruntée par les captifs jusqu'à la plage."
+      },
+      {
+       "year": "1996",
+       "title": "Le 10 janvier",
+       "text": "La fête nationale du Vodun est instituée au Bénin."
+      }
+     ]
+    },
+    "portonovo": {
+     "intro": "Capitale officielle du Bénin, Porto-Novo est connue pour ses musées et son héritage afro-brésilien.",
+     "source": "Musée Honmè ; Musée Da Silva ; Musée ethnographique Alexandre-Sènou-Adandé. À compléter.",
+     "events": [
+      {
+       "year": "XVIe–XVIIe siècle",
+       "title": "Hogbonou",
+       "text": "La ville se développe sous le nom de Hogbonou, puis les Portugais la nomment Porto-Novo."
+      },
+      {
+       "year": "1863",
+       "title": "Le protectorat français",
+       "text": "Le roi Sodji signe un traité de protectorat avec la France."
+      },
+      {
+       "year": "1900",
+       "title": "Capitale du Dahomey colonial",
+       "text": "Porto-Novo devient la capitale de la colonie du Dahomey."
+      },
+      {
+       "year": "1960",
+       "title": "L'indépendance",
+       "text": "Le Dahomey devient indépendant le 1er août. Porto-Novo reste la capitale officielle, Cotonou abrite le siège du gouvernement."
+      }
+     ]
+    }
+   },
+   "media": {
+    "title": "Ressources à venir",
+    "intro": "Ces contenus sont en préparation avec des partenaires locaux.",
+    "status": "À venir",
+    "items": [
+     {
+      "title": "Photographies",
+      "text": "Images libres de droits des sites, avec leurs crédits."
+     },
+     {
+      "title": "Témoignages",
+      "text": "Paroles de guides, d'artisans et de gardiens de la mémoire."
+     },
+     {
+      "title": "Cartes",
+      "text": "Cartes des circuits historiques et des lieux de mémoire."
+     },
+     {
+      "title": "Audio",
+      "text": "Enregistrements de récits et de chants, avec l'accord des personnes concernées."
+     }
+    ]
+   }
+  },
+  "languages": {
+   "badge": "Langues",
+   "title": "Quelques mots pour commencer",
+   "intro": "Salutations et expressions utiles dans les langues du Bénin.",
+   "banner": "Les traductions « brouillon » doivent être validées par un locuteur natif. Seules celles marquées « validée » sont garanties.",
+   "names": {
+    "fon": "Fon",
+    "yoruba": "Yoruba"
+   },
+   "all": "Toutes",
+   "categories": {
+    "greetings": "Salutations",
+    "politeness": "Politesse",
+    "market": "Marché"
+   },
+   "search": "Rechercher une phrase…",
+   "validated_count": "{{ok}}/{{total}} validées",
+   "validated": "Validée",
+   "draft": "Brouillon",
+   "pending": "À venir",
+   "pron": "Prononciation",
+   "pron_pending": "à venir",
+   "audio_soon": "Audio bientôt",
+   "context": "Contexte",
+   "copy": "Copier",
+   "none": "Aucune phrase trouvée."
+  },
+  "stories": {
+   "badge": "Récits",
+   "title": "Histoires à lire et à comprendre",
+   "intro": "Cinq entrées pour mieux comprendre ce que vous verrez sur place.",
+   "review": "Ce récit touche à des pratiques religieuses vivantes. Il est en cours de relecture avec des praticiens et des spécialistes.",
+   "respect_title": "Visiter avec respect",
+   "respect": [
+    "Demandez toujours la permission avant de photographier ou filmer une cérémonie ou une personne.",
+    "Suivez les consignes des guides et des responsables du lieu.",
+    "Ne touchez pas aux objets sacrés et ne franchissez pas les espaces interdits.",
+    "Une contribution ou un cadeau est souvent attendu : renseignez-vous auprès de votre guide."
+   ],
+   "cards": [
+    {
+     "title": "Béhanzin",
+     "summary": "Le dernier roi souverain du Dahomey.",
+     "chapters": [
+      {
+       "title": "Le roi",
+       "text": "Béhanzin règne de 1889 à 1894, à une époque où la France étend son emprise sur la côte."
+      },
+      {
+       "title": "La résistance",
+       "text": "Entre 1892 et 1894, son armée affronte les troupes coloniales françaises lors des guerres franco-dahoméennes."
+      },
+      {
+       "title": "L'exil",
+       "text": "Vaincu, il est déporté en Martinique, puis en Algérie, où il meurt en 1906."
+      }
+     ]
+    },
+    {
+     "title": "Les appliqués d'Abomey",
+     "summary": "Des tissus qui racontent l'histoire des rois.",
+     "chapters": [
+      {
+       "title": "Un art de cour",
+       "text": "Les appliqués sont des tissus ornés de motifs découpés et cousus, qui racontent des épisodes marquants des règnes."
+      },
+      {
+       "title": "Les emblèmes",
+       "text": "Chaque roi est associé à un animal : le buffle pour Ghézo, le lion pour Glèlè, le requin pour Béhanzin."
+      },
+      {
+       "title": "Aujourd'hui",
+       "text": "Des artisans d'Abomey perpétuent cet art et en proposent aux visiteurs."
+      }
+     ]
+    },
+    {
+     "title": "Le 10 janvier",
+     "summary": "La journée nationale du Vodun.",
+     "chapters": [
+      {
+       "title": "Une fête nationale",
+       "text": "Instituée en 1996, elle reconnaît le Vodun comme patrimoine culturel et spirituel du pays."
+      },
+      {
+       "title": "Ouidah ce jour-là",
+       "text": "La ville accueille cérémonies, danses et processions, et rassemble pratiquants et visiteurs."
+      },
+      {
+       "title": "Y assister",
+       "text": "Les cérémonies ne sont pas un spectacle : informez-vous sur les règles à respecter."
+      }
+     ]
+    },
+    {
+     "title": "Forgerons et fondeurs",
+     "summary": "Le travail du métal, un savoir-faire ancien.",
+     "chapters": [
+      {
+       "title": "Le métier",
+       "text": "À Abomey, des artisans fondent le laiton et le bronze à la cire perdue pour réaliser des figures."
+      },
+      {
+       "title": "Gu (Ogou)",
+       "text": "Dans la tradition vodun, le fer et la forge sont associés à la divinité Gu, aussi appelée Ogou."
+      },
+      {
+       "title": "Rencontrer les artisans",
+       "text": "Visiter un atelier permet de comprendre les étapes du travail et de soutenir directement les artisans."
+      }
+     ]
+    },
+    {
+     "title": "Le Vodun, une religion vivante",
+     "summary": "Au-delà des clichés.",
+     "chapters": [
+      {
+       "title": "Ce que c'est",
+       "text": "Le Vodun est un ensemble de croyances et de pratiques originaires de la région. Il est pratiqué par de nombreux Béninois."
+      },
+      {
+       "title": "Ce que ce n'est pas",
+       "text": "Il ne se résume pas à la « magie noire » ou au « vaudou » des films, qui sont des caricatures."
+      },
+      {
+       "title": "En pratique",
+       "text": "Pour assister à une cérémonie, passez par un guide local et respectez les consignes."
+      }
+     ]
+    }
+   ]
+  },
+  "contribute": {
+   "title": "Vous connaissez ce sujet ?",
+   "text": "Historiens, locuteurs, artisans : aidez-nous à corriger et à compléter ces contenus.",
+   "message": "Bonjour, je souhaite contribuer à la page « L'âme du Bénin ».",
+   "button": "Contribuer sur WhatsApp"
+  }
+ },
+ "faq": {
+  "badge": "FAQ",
+  "title": "Foire aux questions",
+  "subtitle": "Trouvez rapidement des réponses à vos questions sur le voyage au Bénin",
+  "search": "Rechercher une question...",
+  "results": "{{count}} résultat(s) trouvé(s)",
+  "noresult": "Aucune question trouvée",
+  "contact": {
+   "phone": {
+    "title": "Par téléphone",
+    "hours": "Lun-Ven : 8h-18h"
+   },
+   "email": {
+    "title": "Par email",
+    "reply": "Réponse sous 24h"
+   },
+   "whatsapp": {
+    "title": "WhatsApp",
+    "instant": "Discussion instantanée"
+   }
+  },
+  "notfound": {
+   "title": "Vous n'avez pas trouvé votre réponse ?",
+   "text": "Notre équipe est là pour vous aider. Contactez-nous par email, téléphone ou via notre formulaire.",
+   "button": "Nous contacter"
+  },
+  "categories": [
+   {
+    "id": "general",
+    "name": "Général",
+    "questions": [
+     {
+      "q": "Quelle est la meilleure période pour visiter le Bénin ?",
+      "a": "La meilleure période s'étend de novembre à mars, pendant la saison sèche. Les températures sont agréables (25-32°C) et les routes sont praticables. C'est aussi la période idéale pour les safaris dans le Parc de la Pendjari."
+     },
+     {
+      "q": "Faut-il un visa pour entrer au Bénin ?",
+      "a": "Oui, un visa est nécessaire pour la plupart des nationalités. Vous pouvez l'obtenir en ligne via le système e-Visa (https://evisa.gouv.bj) ou à l'arrivée à l'aéroport de Cotonou. Le visa touriste coûte environ 50€ pour 30 jours."
+     },
+     {
+      "q": "Quels vaccins sont recommandés ?",
+      "a": "La vaccination contre la fièvre jaune est obligatoire. Les vaccins recommandés incluent : hépatite A et B, typhoïde, méningite, et rage. Un traitement antipaludique est fortement conseillé."
+     },
+     {
+      "q": "Quelle est la monnaie au Bénin ?",
+      "a": "La monnaie est le Franc CFA (XOF). 1€ ≈ 655 FCFA. Les cartes bancaires sont acceptées dans les grands hôtels, mais il est préférable d'avoir des espèces pour les zones rurales."
+     },
+     {
+      "q": "Quelles langues parle-t-on au Bénin ?",
+      "a": "Le français est la langue officielle. Les langues locales les plus parlées sont le fon, le yoruba, l'adja et le bariba. Dans les zones touristiques, l'anglais est également compris."
+     }
+    ]
+   },
+   {
+    "id": "reservations",
+    "name": "Réservations",
+    "questions": [
+     {
+      "q": "Comment réserver un circuit avec LEGBAH ?",
+      "a": "Vous pouvez réserver directement sur notre site en choisissant votre circuit et vos dates, ou nous contacter via le formulaire de contact pour un devis personnalisé. Un acompte de 30% est demandé à la réservation."
+     },
+     {
+      "q": "Puis-je modifier ou annuler ma réservation ?",
+      "a": "Oui, les modifications sont possibles selon disponibilité. Pour les annulations : plus de 60 jours avant le départ : remboursement intégral ; 30-60 jours : 50% retenu ; moins de 30 jours : non remboursable."
+     },
+     {
+      "q": "Proposez-vous des circuits pour les groupes ?",
+      "a": "Absolument ! Nous organisons des circuits pour groupes de toute taille : familles, associations, entreprises. Des tarifs dégressifs s'appliquent à partir de 6 personnes."
+     },
+     {
+      "q": "Les prix incluent-ils les vols internationaux ?",
+      "a": "Nos circuits n'incluent généralement pas les vols internationaux, sauf mention contraire. Nous pouvons cependant vous conseiller sur les meilleures options de vol."
+     }
+    ]
+   },
+   {
+    "id": "voyage",
+    "name": "Sur place",
+    "questions": [
+     {
+      "q": "Comment se déplacer au Bénin ?",
+      "a": "Pour les circuits organisés, nous fournissons des véhicules privés climatisés avec chauffeur-guide. Pour les voyageurs indépendants, les options incluent : taxis-motos (zémidjans), taxis collectifs, bus, et location de voiture avec chauffeur."
+     },
+     {
+      "q": "Quels types d'hébergement proposez-vous ?",
+      "a": "Nous sélectionnons des hébergements de qualité : hôtels 3-4 étoiles à Cotonou, lodges confortables près des parcs, maisons d'hôtes authentiques, et parfois hébergement chez l'habitant."
+     },
+     {
+      "q": "La nourriture est-elle sûre ?",
+      "a": "Oui, nous sélectionnons des restaurants de confiance. Il est recommandé de boire de l'eau en bouteille, d'éviter les crudités non lavées et les glaçons."
+     },
+     {
+      "q": "Y a-t-il des connexions Internet ?",
+      "a": "La 4G est disponible dans les grandes villes. Nous fournissons une carte SIM locale avec data à tous nos voyageurs. Le WiFi est disponible dans la plupart des hôtels."
+     }
+    ]
+   },
+   {
+    "id": "securite",
+    "name": "Sécurité",
+    "questions": [
+     {
+      "q": "Le Bénin est-il un pays sûr ?",
+      "a": "Oui, le Bénin est considéré comme l'un des pays les plus sûrs d'Afrique de l'Ouest. Les Béninois sont réputés pour leur hospitalité. Comme partout, restez vigilant dans les zones touristiques."
+     },
+     {
+      "q": "Une assurance voyage est-elle obligatoire ?",
+      "a": "Oui, une assurance voyage incluant rapatriement sanitaire est obligatoire pour participer à nos circuits. Nous pouvons vous proposer une assurance complète lors de votre réservation."
+     },
+     {
+      "q": "Que faire en cas d'urgence ?",
+      "a": "Nous fournissons une assistance 24/7 avec un numéro d'urgence local. Notre équipe sur place peut vous aider en cas de problème. Conservez également les coordonnées de votre ambassade."
+     }
+    ]
+   }
+  ]
+ },
+ "profile": {
+  "loading": "Chargement du profil...",
+  "error_title": "Impossible de charger votre profil",
+  "error_text": "Le serveur ne répond pas ou a renvoyé une erreur. Vérifiez que le backend est lancé (port 5000), puis réessayez.",
+  "retry": "Réessayer",
+  "login_again": "Se reconnecter",
+  "not_set": "Non renseigné",
+  "member_since": "Membre depuis",
+  "edit": "Modifier",
+  "logout": "Déconnexion",
+  "logged_out_title": "Déconnecté",
+  "logged_out_desc": "À bientôt !",
+  "stats": {
+   "trips": "Voyages",
+   "reviews": "Avis",
+   "favorites": "Favoris",
+   "points": "Points"
+  },
+  "tabs": {
+   "trips": "Voyages",
+   "favorites": "Favoris",
+   "reviews": "Avis",
+   "profile": "Profil"
+  },
+  "status": {
+   "upcoming": "À venir",
+   "confirmed": "Confirmé",
+   "completed": "Terminé",
+   "cancelled": "Annulé"
+  },
+  "no_trips": "Aucun voyage pour le moment",
+  "explore": "Explorer",
+  "travelers": "{{count}} voyageur(s)",
+  "manage": "Gérer la réservation",
+  "no_favorites": "Aucun favori",
+  "discover": "Découvrir",
+  "details": "Voir détails",
+  "no_reviews": "Pas encore d'avis",
+  "personal_info": "Informations personnelles",
+  "name": "Nom complet",
+  "email": "Email",
+  "phone": "Téléphone",
+  "location": "Localisation",
+  "bio": "Bio",
+  "no_bio": "Aucune bio",
+  "save": "Enregistrer",
+  "cancel": "Annuler",
+  "security": "Sécurité",
+  "change_password": "Changer le mot de passe",
+  "current_password": "Mot de passe actuel",
+  "new_password": "Nouveau mot de passe",
+  "confirm_password": "Confirmer",
+  "modify": "Modifier",
+  "help_title": "Besoin d'aide ?",
+  "help_text": "Notre équipe est disponible 24/7.",
+  "contact_support": "Contacter le support",
+  "pw_mismatch": "Les mots de passe ne correspondent pas",
+  "pw_short": "Le mot de passe doit contenir au moins 8 caractères",
+  "server_error": "Erreur serveur",
+  "toast": {
+   "success": "Succès",
+   "error": "Erreur",
+   "updated": "Profil mis à jour",
+   "update_failed": "Impossible de mettre à jour",
+   "pw_changed": "Mot de passe modifié",
+   "fav_removed": "Retiré des favoris",
+   "fav_failed": "Impossible de retirer"
+  }
+ },
+ "services": {
+  "subtitle": "Nos Services",
+  "title": "Des prestations sur mesure",
+  "description": "De la réservation de vols aux excursions personnalisées, nous nous occupons de tout pour vous offrir un voyage inoubliable au Bénin.",
+  "popular": "Populaire",
+  "recommended": "Recommandé",
+  "book": "Réserver",
+  "choose": "Choisir ce forfait",
+  "per_person": "/ personne",
+  "packages_title": "Nos forfaits tout compris",
+  "packages_text": "Choisissez le forfait qui correspond le mieux à vos envies et à votre budget",
+  "items": [
+   {
+    "title": "Vols & Transport",
+    "description": "Réservation de vols internationaux et transport local avec chauffeurs privés.",
+    "features": [
+     "Vols directs",
+     "Transferts aéroport",
+     "Véhicules climatisés"
+    ],
+    "price": "À partir de 50€"
+   },
+   {
+    "title": "Hébergement",
+    "description": "Sélection d'hôtels, lodges et hébergements traditionnels de qualité.",
+    "features": [
+     "Hôtels 3-5 étoiles",
+     "Lodges écologiques",
+     "Chez l'habitant"
+    ],
+    "price": "À partir de 30€/nuit"
+   },
+   {
+    "title": "Guides Locaux",
+    "description": "Guides francophones passionnés pour des visites authentiques.",
+    "features": [
+     "Guides certifiés",
+     "Visites personnalisées",
+     "Toutes les régions"
+    ],
+    "price": "À partir de 40€/jour"
+   },
+   {
+    "title": "Voyages en Groupe",
+    "description": "Circuits organisés pour groupes, associations et entreprises.",
+    "features": [
+     "Tarifs dégressifs",
+     "Programme sur mesure",
+     "Accompagnateur dédié"
+    ],
+    "price": "Sur devis"
+   },
+   {
+    "title": "Tours Photo",
+    "description": "Excursions photo avec photographes professionnels locaux.",
+    "features": [
+     "Coaching photo",
+     "Meilleurs spots",
+     "Matériel disponible"
+    ],
+    "price": "À partir de 60€"
+   },
+   {
+    "title": "Expériences Culinaires",
+    "description": "Cours de cuisine, dégustations et repas chez l'habitant.",
+    "features": [
+     "Cours de cuisine",
+     "Marchés locaux",
+     "Repas traditionnels"
+    ],
+    "price": "À partir de 25€"
+   }
+  ],
+  "packages": [
+   {
+    "name": "Essentiel",
+    "price": "499€",
+    "duration": "5 jours",
+    "features": [
+     "Hébergement 3*",
+     "Petit-déjeuner inclus",
+     "Guide local 2 jours",
+     "Transferts aéroport",
+     "Assurance voyage"
+    ]
+   },
+   {
+    "name": "Confort",
+    "price": "899€",
+    "duration": "7 jours",
+    "features": [
+     "Hébergement 4*",
+     "Pension complète",
+     "Guide privé 4 jours",
+     "Transferts inclus",
+     "Assurance premium",
+     "Activités incluses"
+    ]
+   },
+   {
+    "name": "Luxe",
+    "price": "1499€",
+    "duration": "10 jours",
+    "features": [
+     "Hébergement 5* / Lodge",
+     "Pension complète",
+     "Guide privé tout le séjour",
+     "Véhicule privé",
+     "Assurance tous risques",
+     "Toutes activités incluses",
+     "Spa & Bien-être"
+    ]
+   }
+  ],
+  "guarantees": [
+   {
+    "title": "Paiement sécurisé",
+    "desc": "Transactions 100% sécurisées"
+   },
+   {
+    "title": "Support 24/7",
+    "desc": "Assistance à tout moment"
+   },
+   {
+    "title": "Annulation flexible",
+    "desc": "Remboursement jusqu'à 30 jours"
+   },
+   {
+    "title": "Experts locaux",
+    "desc": "Équipe passionnée et certifiée"
+   }
+  ]
+ },
+ "about": {
+  "hero_badge": "Notre histoire",
+  "hero_title": "À propos de nous",
+  "hero_subtitle": "Une équipe de passionnés qui œuvre pour vous faire découvrir le Bénin authentique depuis plus de 15 ans",
+  "stats": [
+   "Années d'expérience",
+   "Voyageurs satisfaits",
+   "Partenaires locaux",
+   "Satisfaction client",
+   "Support client",
+   "Destinations"
+  ],
+  "tabs": {
+   "mission": "Mission",
+   "vision": "Vision",
+   "values": "Valeurs"
+  },
+  "mission": {
+   "badge": "Ce qui nous anime",
+   "title": "Faire découvrir le Bénin authentique",
+   "text": "LEGBAH est né d'une passion profonde pour ce pays extraordinaire. Notre mission est de créer des ponts entre les voyageurs curieux et les communautés locales, de révéler la richesse culturelle et naturelle du Bénin, et de contribuer à un tourisme durable qui profite à tous.",
+   "cta": "Découvrir nos circuits"
+  },
+  "vision": {
+   "badge": "Où nous allons",
+   "title": "Devenir la référence du tourisme durable",
+   "points": [
+    "Accompagner 100 000 voyageurs par an",
+    "Créer 500 emplois directs",
+    "Planter 10 000 arbres"
+   ]
+  },
+  "values": [
+   {
+    "title": "Passion",
+    "description": "Nous aimons profondément le Bénin et sa culture."
+   },
+   {
+    "title": "Durabilité",
+    "description": "Un tourisme responsable qui préserve l'environnement."
+   },
+   {
+    "title": "Excellence",
+    "description": "Nous visons l'excellence dans chaque détail."
+   },
+   {
+    "title": "Authenticité",
+    "description": "Des expériences authentiques qui vous connectent à la culture."
+   }
+  ],
+  "journey": {
+   "badge": "Notre parcours",
+   "title": "Une histoire de passion"
+  },
+  "milestones": [
+   {
+    "title": "Création",
+    "description": "Naissance de LEGBAH"
+   },
+   {
+    "title": "Expansion",
+    "description": "Ouverture du bureau à Cotonou"
+   },
+   {
+    "title": "1er Prix",
+    "description": "Meilleur tour-opérateur local"
+   },
+   {
+    "title": "10K voyageurs",
+    "description": "Plus de 10 000 voyageurs"
+   },
+   {
+    "title": "Digitalisation",
+    "description": "Lancement de la plateforme"
+   },
+   {
+    "title": "50K voyageurs",
+    "description": "50 000 explorateurs"
+   }
+  ],
+  "team": {
+   "badge": "Notre équipe",
+   "title": "Les visages derrière LEGBAH",
+   "subtitle": "Une équipe multiculturelle unie par une même passion : vous faire aimer le Bénin"
+  },
+  "members": [
+   {
+    "role": "Fondateur & CEO",
+    "bio": "Passionné par le Bénin depuis 20 ans, a créé LEGBAH pour partager les trésors de son pays natal."
+   },
+   {
+    "role": "Directrice des opérations",
+    "bio": "Experte en tourisme durable, Sophie veille à ce que chaque voyage ait un impact positif."
+   },
+   {
+    "role": "Guide en chef",
+    "bio": "Historien de formation, Marc connaît chaque recoin du Bénin."
+   },
+   {
+    "role": "Responsable culture",
+    "bio": "Anthropologue, Amina crée des expériences immersives."
+   },
+   {
+    "role": "Responsable logistique",
+    "bio": "David s'assure que chaque détail de votre voyage soit parfait."
+   },
+   {
+    "role": "Service client",
+    "bio": "Toujours disponible, Grace est votre contact privilégié."
+   }
+  ],
+  "office": {
+   "badge": "Nos bureaux",
+   "title": "Venez nous rencontrer",
+   "button": "Nous contacter"
   },
   "cta": {
-    "kicker": "Prêt pour l'aventure ?", "title": "Commencez votre voyage au Bénin",
-    "text": "Que vous rêviez de safaris, de plages paradisiaques ou de découvertes culturelles, nous créons votre itinéraire sur mesure.",
-    "button": "Contactez-nous", "secondary": "Voir les destinations"
-  },
-  "footer": {
-    "tagline": "Explorez le Bénin, terre de culture, d'histoire et de nature. Un voyage inoubliable vous attend au cœur de l'Afrique de l'Ouest.",
-    "navigation": "Navigation", "contact": "Contact", "rights": "Tous droits réservés.", "back_to_top": "Haut de page"
-  },
-  "floating": { "top": "Remonter en haut", "whatsapp": "Discuter sur WhatsApp" },
-  "whatsapp": { "label": "Écrivez-nous sur WhatsApp", "greeting": "Bonjour VôdooVista, j'aimerais avoir des informations pour organiser un voyage." },
-  "home2": {
-    "explore": {
-      "kicker": "Explorer par univers", "title": "Qu'est-ce qui vous fait voyager ?",
-      "tiles": {
-        "history": { "title": "Histoire et mémoire", "text": "Royaumes, palais et lieux de mémoire." },
-        "nature": { "title": "Nature et safari", "text": "Parcs, savanes et montagnes." },
-        "beach": { "title": "Plages et lagunes", "text": "Océan, lagune et villages de pêcheurs." },
-        "city": { "title": "Villes et marchés", "text": "Cotonou et Porto-Novo." },
-        "tradition": { "title": "Traditions et arts", "text": "Masques, cérémonies et savoir-faire." }
-      }
-    },
-    "steps": {
-      "kicker": "Du rêve au départ", "title": "Préparez votre voyage en 3 étapes",
-      "items": [
-        { "title": "Trouvez vos envies", "text": "Un court quiz pour obtenir trois idées de destinations.", "cta": "Faire le quiz" },
-        { "title": "Explorez la carte", "text": "Situez chaque lieu et estimez les distances depuis Cotonou.", "cta": "Ouvrir la carte" },
-        { "title": "Organisez votre carnet", "text": "Classez vos étapes et envoyez votre projet par WhatsApp.", "cta": "Mon carnet" }
-      ]
-    },
-    "facts": {
-      "kicker": "Le saviez-vous ?", "prev": "Précédent", "next": "Suivant",
-      "items": [
-        "Douze rois se sont succédé à Abomey entre 1625 et 1900, selon l'UNESCO.",
-        "La Route des Esclaves, à Ouidah, mesure environ quatre kilomètres et mène à la Porte du Non-Retour.",
-        "Le 10 janvier est un jour férié consacré aux religions endogènes, aussi appelé fête du vodoun.",
-        "En 2021, la France a restitué au Bénin vingt-six œuvres des trésors royaux d'Abomey.",
-        "Ganvié est un village lacustre bâti sur pilotis, sur le lac Nokoué.",
-        "Le franc CFA est rattaché à l'euro à taux fixe : 1 € = 655,957 F CFA."
-      ]
-    }
-  },
-  "tools": {
-    "kicker": "Outils de voyage", "title": "Préparez votre voyage", "subtitle": "Convertisseur de devises, compte à rebours et estimation de budget : tout ce qu'il vous faut avant de partir.",
-    "currency": { "title": "Convertisseur Euro / Franc CFA", "eur": "Euros (€)", "xof": "Francs CFA (F CFA)", "rate": "Taux fixe : 1 € = 655,957 F CFA" },
-    "countdown": { "title": "Compte à rebours", "event": "Fête nationale du Vodoun — 10 janvier", "days": "Jours", "hours": "Heures", "minutes": "Minutes", "seconds": "Secondes" },
-    "budget": { "title": "Estimateur de budget", "style": "Style de voyage", "essential": "Essentiel", "comfort": "Confort", "luxury": "Luxe", "days": "Nombre de jours", "daysUnit": "jours", "travelers": "Voyageurs", "total": "Budget total estimé", "perPerson": "par personne", "note": "Estimation indicative. Le prix final dépend des prestations choisies.", "cta": "Demander un devis personnalisé" }
-  },
-  "destinations": {
-    "badge": "Explorez le Bénin", "title": "Destinations", "subtitle": "Des cités lacustres aux parcs nationaux, découvrez la diversité exceptionnelle du Bénin",
-    "search": "Rechercher une destination...", "found": "{{count}} destination(s) trouvée(s)", "found_sub": "Explorez les merveilles du Bénin",
-    "none": "Aucune destination ne correspond à votre recherche", "featured": "En vedette", "trending": "Tendance",
-    "discover": "Découvrir", "days_range": "{{range}} jours", "free": "Libre", "reviews": "{{count}} avis",
-    "per_night": "/nuit", "free_label": "Gratuit", "region": "Région", "climate": "Climat", "location": "Localisation",
-    "temperature": "Température", "best_time": "Meilleure période", "duration": "Durée recommandée",
-    "book_now": "Réserver maintenant", "book": "Réserver", "share": "Partager", "link_copied": "Lien copié",
-    "close": "Fermer", "tabs": { "overview": "Aperçu", "highlights": "Points forts", "activities": "Activités", "accommodations": "Hébergements", "info": "Infos pratiques" },
-    "categories": { "all": "Tous", "culture": "Culture", "nature": "Nature", "plage": "Plage", "ville": "Ville", "historique": "Historique" },
-    "cta_title": "Vous ne trouvez pas votre bonheur ?", "cta_text": "Nous créons des itinéraires sur mesure selon vos envies.",
-    "cta_button": "Créer mon voyage personnalisé", "amenities": { "wifi": "WiFi", "restaurant": "Restaurant", "ac": "Climatisation", "lakeview": "Vue sur le lac", "homemeal": "Repas maison", "terrace": "Terrasse", "privatepirogue": "Pirogue privée", "pool": "Piscine", "privateguide": "Guide privé", "tents": "Tentes équipées", "showers": "Douches", "campfire": "Feu de camp", "privatebeach": "Plage privée", "spa": "Spa" },
-    "acc_types": { "hotel": "Hôtel", "hotel3": "Hôtel 3*", "hotel4": "Hôtel 4*", "guesthouse": "Maison d'hôtes", "lodge": "Lodge", "camping": "Camping", "inn": "Auberge" },
-    "wa_message": "Bonjour VôdooVista, je souhaite réserver un séjour : {{name}}."
-  },
-  "contact": {
-    "hero_title": "Contactez-nous", "hero_subtitle": "Notre équipe est là pour vous aider à créer le voyage de vos rêves au Bénin",
-    "features": { "team": { "title": "Équipe locale", "desc": "Des experts passionnés" }, "certified": { "title": "Certifié", "desc": "Agence agréée par le Ministère du Tourisme" }, "secure": { "title": "Voyage sécurisé", "desc": "Partenaires vérifiés et assurance incluse" } },
-    "info_title": "Parlons de votre projet", "info_text": "Que vous ayez une question, une demande de devis ou simplement envie d'en savoir plus.",
-    "address": { "title": "Adresse", "line1": "Avenue Jean-Paul II", "line2": "Cotonou, Bénin" },
-    "phone": { "title": "Téléphone" }, "email": { "title": "Email" }, "hours": { "title": "Horaires", "line1": "Lun - Ven : 8h - 18h", "line2": "Sam : 9h - 15h" },
-    "follow": "Suivez-nous", "whatsapp": { "title": "WhatsApp", "text": "Préférez-vous discuter directement ?" },
-    "form": { "title": "Envoyez-nous un message", "name": "Nom complet *", "name_ph": "Jean Kouagou", "email": "Email *", "email_ph": "jean@email.com", "phone": "Téléphone", "subject": "Sujet *", "subject_ph": "Demande d'information", "date": "Date de voyage", "travelers": "Nombre de voyageurs", "budget": "Budget estimé", "message": "Message *", "message_ph": "Décrivez votre projet...", "required": "* Champs obligatoires", "send": "Envoyer le message" },
-    "errors": { "name": "Le nom doit contenir au moins 2 caractères", "email": "Email invalide", "subject": "Le sujet est requis", "message": "Le message doit contenir au moins 10 caractères" },
-    "toast": { "title": "Message envoyé avec succès !", "desc": "Notre équipe vous répondra dans les 24h." }, "map_title": "Carte du Bénin",
-    "wa_intro": "Bonjour, je m'appelle {{name}}.", "wa_dates": "Dates de voyage : {{v}}", "wa_travelers": "Voyageurs : {{v}}",
-    "sent_title": "WhatsApp s'ouvre...", "sent_desc": "Envoyez le message pré-rempli pour finaliser votre demande.", "whatsapp_cta": "Écrire sur WhatsApp",
-    "form_note": "Votre message s'ouvre dans WhatsApp, prêt à être envoyé.", "location": "Localisation", "location_value": "Cotonou, Bénin"
+   "title": "Prêt à vivre l'expérience LEGBAH ?",
+   "text": "Rejoignez les milliers de voyageurs qui nous ont fait confiance",
+   "button": "Explorer les destinations"
   }
+ },
+ "blog": {
+  "badge": "Blog & Actualités",
+  "title": "Le Blog LEGBAH",
+  "subtitle": "Conseils, récits et inspirations pour votre voyage au Bénin",
+  "search": "Rechercher un article...",
+  "featured": "Article en vedette",
+  "read_article": "Lire l'article",
+  "read": "Lire",
+  "trending_title": "Articles tendance",
+  "newsletter_title": "Newsletter",
+  "newsletter_text": "Recevez nos derniers articles et conseils de voyage",
+  "email_ph": "Votre email",
+  "subscribe": "S'abonner",
+  "tags_title": "Tags populaires",
+  "categories_title": "Catégories",
+  "no_result": "Aucun article trouvé",
+  "help_title": "Une question sur votre voyage ?",
+  "help_text": "Notre équipe d'experts est là pour vous conseiller",
+  "contact": "Contactez-nous",
+  "min": "min",
+  "categories": {
+   "all": "Tous",
+   "voyage": "Voyage",
+   "culture": "Culture",
+   "gastronomie": "Gastronomie",
+   "photographie": "Photographie",
+   "artisanat": "Artisanat",
+   "itineraires": "Itinéraires"
+  },
+  "tags": [
+   "Voyage",
+   "Culture",
+   "Vodoun",
+   "Safari",
+   "Photo",
+   "Gastronomie",
+   "Artisanat",
+   "Plage",
+   "UNESCO",
+   "Tradition"
+  ],
+  "posts": [
+   {
+    "title": "10 expériences incontournables au Bénin",
+    "excerpt": "Des palais royaux d'Abomey aux plages de Grand-Popo, découvrez les expériences qui rendront votre voyage inoubliable."
+   },
+   {
+    "title": "Guide complet du Vodoun : histoire et traditions",
+    "excerpt": "Plongez au cœur de la spiritualité béninoise et découvrez les secrets de cette religion ancestrale."
+   },
+   {
+    "title": "Safari photo au Parc de la Pendjari",
+    "excerpt": "Conseils et astuces pour réussir vos photos de safari dans l'un des plus beaux parcs d'Afrique de l'Ouest."
+   },
+   {
+    "title": "La gastronomie béninoise : un voyage culinaire",
+    "excerpt": "De la pâte rouge au poulet braisé, explorez les saveurs authentiques de la cuisine béninoise."
+   },
+   {
+    "title": "Rencontre avec les artisans d'Abomey",
+    "excerpt": "Les appliqués d'Abomey sont mondialement reconnus. Découvrez les secrets de fabrication de ces tapisseries royales."
+   },
+   {
+    "title": "Itinéraire de 7 jours pour découvrir le Bénin",
+    "excerpt": "Un circuit complet pour ne rien manquer des merveilles du Bénin en une semaine."
+   }
+  ]
+ }
 }

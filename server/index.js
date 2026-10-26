@@ -7,6 +7,11 @@ const rateLimit = require('express-rate-limit');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32) {
+  console.error('JWT_SECRET manquant ou trop court (32 caractères minimum) dans server/.env');
+  process.exit(1);
+}
+
 const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:8080')
   .split(',').map((o) => o.trim());
 
@@ -23,7 +28,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/', rateLimit({ windowMs: 15 * 60 * 1000, max: 200 }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+app.use('/api/auth', rateLimit({ windowMs: 15 * 60 * 1000, max: 20 }));
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api', require('./routes/public'));
 app.use('/api/profile', require('./routes/profile'));
 app.use('/api/profile', require('./routes/avatar'));
 

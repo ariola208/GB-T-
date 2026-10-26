@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
   MapPin, Calendar, Star, Heart, Share2, Search, ChevronRight, Clock, Compass,
@@ -15,6 +15,7 @@ import { Badge } from "../components/ui/badge";
 import { useToast } from "../hooks/use-toast";
 import { FALLBACK } from "@/lib/localImages";
 import { waLink } from "@/lib/whatsapp";
+import { useFavorites } from "@/hooks/useFavorites";
 
 const local = import.meta.glob("./placeholder/*.{jpeg,jpg,png}", {
   eager: true,
@@ -90,9 +91,8 @@ const Destinations = () => {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("all");
   const [view, setView] = useState<"grid" | "list">("grid");
-  const [liked, setLiked] = useState<number[]>(() => {
-    try { return JSON.parse(localStorage.getItem("fav_destinations") || "[]"); } catch { return []; }
-  });
+  const { isFavorite, toggle } = useFavorites();
+  const { hash } = useLocation();
 
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const heroOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
@@ -109,9 +109,11 @@ const Destinations = () => {
     return hit && (category === "all" || d.category === category);
   });
 
+  // Ouvre la fiche d'une destination via /destinations#slug
   useEffect(() => {
-    try { localStorage.setItem("fav_destinations", JSON.stringify(liked)); } catch { /* ignore */ }
-  }, [liked]);
+    const d = destinations.find((x) => x.slug === hash.slice(1));
+    if (d) { setTab("overview"); setSelected(d); }
+  }, [hash]);
 
   // Échap pour fermer + blocage du scroll derrière la fenêtre
   useEffect(() => {
@@ -124,7 +126,6 @@ const Destinations = () => {
   }, [selected]);
 
   const open = (d: Dest) => { setTab("overview"); setSelected(d); };
-  const toggleLike = (id: number) => setLiked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]));
 
   const share = async (d: Dest) => {
     const url = `${window.location.origin}/destinations`;
@@ -210,8 +211,8 @@ const Destinations = () => {
                       
                       <Button size="icon" variant="ghost" aria-label="like"
                         className="absolute right-3 top-3 bg-black/50 text-white hover:bg-black/70"
-                        onClick={(e) => { e.stopPropagation(); toggleLike(d.id); }}>
-                        <Heart className={`h-4 w-4 ${liked.includes(d.id) ? "fill-red-500 text-red-500" : ""}`} />
+                        onClick={(e) => { e.stopPropagation(); toggle(d.id); }}>
+                        <Heart className={`h-4 w-4 ${isFavorite(d.id) ? "fill-red-500 text-red-500" : ""}`} />
                       </Button>
                       
                       

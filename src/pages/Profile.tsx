@@ -16,6 +16,7 @@ import { Textarea } from "../components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
 import { useToast } from "../hooks/use-toast";
+import { useWeather } from "@/hooks/useWeather";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 
@@ -33,17 +34,19 @@ const statusStyle: Record<string, string> = {
 
 const TAB_IDS = ["trips", "favorites", "reviews", "profile"];
 
-const mockWeather = {
-  city: "Cotonou",
-  temp: 28,
-  condition: "Ensoleillé",
-  icon: Sun,
-};
+const Shell = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex min-h-screen flex-col bg-background">
+    <Navbar />
+    <main className="flex-1 pt-24">{children}</main>
+    <Footer />
+  </div>
+);
 
 const Profile = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { data: wx } = useWeather();
 
   const [state, setState] = useState<"loading" | "ready" | "error">("loading");
   const [tab, setTab] = useState("trips");
@@ -188,14 +191,6 @@ const Profile = () => {
     toast({ title: t("profile.logged_out_title"), description: t("profile.logged_out_desc") });
   };
 
-  const Shell = ({ children }: { children: React.ReactNode }) => (
-    <div className="flex min-h-screen flex-col bg-background">
-      <Navbar />
-      <main className="flex-1 pt-24">{children}</main>
-      <Footer />
-    </div>
-  );
-
   if (state === "loading") {
     return (
       <Shell>
@@ -239,8 +234,6 @@ const Profile = () => {
       </Shell>
     );
   }
-
-  const WeatherIcon = mockWeather.icon;
 
   return (
     <Shell>
@@ -315,14 +308,14 @@ const Profile = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Sun className="h-5 w-5" />
-                Météo à {mockWeather.city}
+                {t("profile.weather_in")} Cotonou
               </CardTitle>
             </CardHeader>
             <CardContent className="flex items-center gap-4">
-              <WeatherIcon className="h-12 w-12 text-primary" />
+              <Sun className="h-12 w-12 text-primary" />
               <div>
-                <p className="text-3xl font-bold">{mockWeather.temp}°C</p>
-                <p className="text-muted-foreground">{mockWeather.condition}</p>
+                <p className="text-3xl font-bold">{wx ? wx.temp : "–"}°C</p>
+                <p className="text-muted-foreground">{wx ? t(`weather.${wx.kind}`) : ""}</p>
               </div>
             </CardContent>
           </Card>
@@ -331,26 +324,26 @@ const Profile = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <TrendingUp className="h-5 w-5" />
-                Actions rapides
+                {t("profile.quick_actions")}
               </CardTitle>
             </CardHeader>
             <CardContent className="flex flex-wrap gap-3">
               <Button asChild className="transition-transform hover:scale-105">
                 <Link to="/planifier">
                   <Plane className="mr-2 h-4 w-4" />
-                  Planifier un voyage
+                  {t("profile.plan_trip")}
                 </Link>
               </Button>
               <Button variant="outline" asChild className="transition-transform hover:scale-105">
                 <Link to="/destinations">
                   <Compass className="mr-2 h-4 w-4" />
-                  Explorer
+                  {t("profile.explore_short")}
                 </Link>
               </Button>
               <Button variant="outline" asChild className="transition-transform hover:scale-105">
                 <Link to="/contact">
                   <Wallet className="mr-2 h-4 w-4" />
-                  Devis
+                  {t("profile.quote_short")}
                 </Link>
               </Button>
             </CardContent>
@@ -632,12 +625,12 @@ const Profile = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Bell className="h-5 w-5" />
-                    Notifications
+                    {t("profile.notifications")}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Aucune nouvelle notification.
+                    {t("profile.no_notifications")}
                   </p>
                 </CardContent>
               </Card>

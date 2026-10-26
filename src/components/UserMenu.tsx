@@ -66,7 +66,7 @@ const UserMenu = ({ user, isLoggedIn, onLogout }: Props) => {
           <Compass className="h-4 w-4" />
           {t("nav.my_trips", "Mes voyages")}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => navigate("/profile")} className="cursor-pointer gap-3 rounded-xl px-3 py-2.5">
+        <DropdownMenuItem onClick={() => navigate("/favoris")} className="cursor-pointer gap-3 rounded-xl px-3 py-2.5">
           <Heart className="h-4 w-4" />
           {t("nav.favorites", "Mes favoris")}
         </DropdownMenuItem>

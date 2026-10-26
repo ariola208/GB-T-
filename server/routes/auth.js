@@ -29,10 +29,11 @@ router.post('/login', async (req, res) => {
   const { email, password } = req.body;
   if (!emailOk(email) || typeof password !== 'string') return res.status(400).json({ error: 'Identifiants invalides' });
   try {
-    const [rows] = await pool.execute('SELECT user_id, email, password_hash, first_name, last_name, role FROM users WHERE email = ?', [email]);
+    const [rows] = await pool.execute('SELECT user_id, email, password_hash, first_name, last_name, role, is_active FROM users WHERE email = ?', [email]);
     if (!rows.length) return res.status(401).json({ error: 'Email ou mot de passe incorrect' });
     const ok = await bcrypt.compare(password, rows[0].password_hash);
     if (!ok) return res.status(401).json({ error: 'Email ou mot de passe incorrect' });
+    if (!rows[0].is_active) return res.status(403).json({ error: 'Compte désactivé' });
     const token = sign({ userId: rows[0].user_id, email: rows[0].email, role: rows[0].role });
     res.json({ message: 'OK', token, user: { id: rows[0].user_id, name: `${rows[0].first_name} ${rows[0].last_name}`, email: rows[0].email, role: rows[0].role } });
   } catch (e) { console.error(e); res.status(500).json({ error: 'Erreur serveur' }); }

@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { motion, useMotionValueEvent, useScroll, useSpring } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Menu, Search, ChevronDown } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSwitcher from "./LanguageSwitcher";
 import UserMenu from "./UserMenu";
 import Logo from "./Logo";
+import FavoritesBadge from "./FavoritesBadge";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import {
   CommandDialog,
@@ -30,11 +31,12 @@ const mainLinks = [
   { key: "destinations", path: "/destinations" },
   { key: "culture", path: "/culture" },
   { key: "ame", path: "/ame-du-benin" },
-  { key: "blog", path: "/blog" },
+  { key: "planner", path: "/planifier" },
   { key: "contact", path: "/contact" },
 ];
 
 const moreLinks = [
+  { key: "blog", path: "/blog" },
   { key: "map", path: "/carte" },
   { key: "quiz", path: "/quiz" },
   { key: "notebook", path: "/carnet" },
@@ -59,8 +61,7 @@ const Navbar = () => {
   const { pathname } = useLocation();
   const { t } = useTranslation();
 
-  const { scrollY, scrollYProgress } = useScroll();
-  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
+  const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const prev = scrollY.getPrevious() ?? 0;
@@ -118,7 +119,7 @@ const Navbar = () => {
   const tone = overHero ? "text-white" : "text-foreground";
   const isMoreActive = moreLinks.some((l) => l.path === pathname);
 
-  const LinkItem = ({ link }: { link: { key: string; path: string } }) => {
+  const renderLink = (link: { key: string; path: string }) => {
     const active = pathname === link.path;
     return (
       <Link
@@ -163,7 +164,7 @@ const Navbar = () => {
 
           <div className="hidden items-center gap-1 lg:flex">
             {mainLinks.map((l) => (
-              <LinkItem key={l.path} link={l} />
+              <Fragment key={l.path}>{renderLink(l)}</Fragment>
             ))}
 
             <DropdownMenu>
@@ -206,6 +207,7 @@ const Navbar = () => {
             <div className="hidden items-center gap-2 md:flex">
               <LanguageSwitcher />
               <ThemeToggle />
+              <FavoritesBadge />
             </div>
 
             <UserMenu user={user} isLoggedIn={isLoggedIn} onLogout={handleLogout} />
@@ -227,10 +229,6 @@ const Navbar = () => {
           </div>
         </nav>
 
-        <motion.div
-          style={{ scaleX: progress }}
-          className="mx-auto mt-1.5 h-0.5 max-w-[104rem] origin-left rounded-full bg-foreground"
-        />
       </motion.header>
 
       <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>

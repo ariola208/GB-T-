@@ -10,12 +10,12 @@ import fon from "./locales/fon.json";
 import ddn from "./locales/ddn.json";
 
 export const LANGUAGES = [
-  { code: "fr", label: "Français", complete: true },
-  { code: "en", label: "English", complete: true },
-  { code: "pt", label: "Português", complete: true },
-  { code: "yo", label: "Yorùbá", complete: false },
-  { code: "fon", label: "Fɔ̀ngbè", complete: false },
-  { code: "ddn", label: "Dendi", complete: false },
+  { code: "fr", label: "Français", flag: "🇫🇷", complete: true },
+  { code: "en", label: "English", flag: "🇬🇧", complete: true },
+  { code: "pt", label: "Português", flag: "🇵🇹", complete: true },
+  { code: "yo", label: "Yorùbá", flag: "🇳🇬", complete: false },
+  { code: "fon", label: "Fɔ̀ngbè", flag: "🇧🇯", complete: false },
+  { code: "ddn", label: "Dendi", flag: "🇧🇯", complete: false },
 ] as const;
 
 // Fichiers par page : src/i18n/locales/pages/<langue>/<page>.json
@@ -49,9 +49,16 @@ i18n
     ),
     supportedLngs: LANGUAGES.map((l) => l.code),
     nonExplicitSupportedLngs: true,
+    load: "languageOnly",
     fallbackLng: "fr",
     returnEmptyString: false,
     interpolation: { escapeValue: false },
+    saveMissing: import.meta.env.DEV,
+    missingKeyHandler: (lngs: readonly string[], _ns: string, key: string) => {
+      if (lngs.some((l) => l === "fr" || l === "en")) {
+        console.warn(`[i18n] clé manquante (${lngs[0]}) : ${key}`);
+      }
+    },
     detection: {
       order: ["localStorage", "navigator"],
       lookupLocalStorage: "lang",

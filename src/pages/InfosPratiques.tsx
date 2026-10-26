@@ -90,7 +90,7 @@ const Infos = () => {
     const ics = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
-      "PRODID:-//VôdooVista//Jours feries//FR",
+      "PRODID:-//LEGBAH//Jours feries//FR",
       ...events,
       "END:VCALENDAR",
     ].join("\r\n");

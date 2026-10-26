@@ -1,14 +1,15 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import FloatingActions from "@/components/FloatingActions";
 import WhatsAppBubble from "@/components/WhatsAppBubble";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { useAutoTheme } from "@/hooks/useAutoTheme";
+import { useRouteSeo } from "@/lib/seo";
 
 const Index = lazy(() => import("./pages/Index"));
 const Destinations = lazy(() => import("./pages/Destinations"));
@@ -22,9 +23,8 @@ const Gallery = lazy(() => import("./pages/Gallery"));
 const Faq = lazy(() => import("./pages/Faq"));
 const Login = lazy(() => import("./pages/Login"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const Admin = lazy(() => import("./pages/Admin"));
-const AmeDuBenin = lazy(() => import("./pages/AmeDuBenin"));
-const Planifier = lazy(() => import("./pages/Planifier"));
+const Soul = lazy(() => import("./pages/Soul"));
+const Planner = lazy(() => import("./pages/Planner"));
 const InfosPratiques = lazy(() => import("./pages/InfosPratiques"));
 const Carte = lazy(() => import("./pages/Carte"));
 const Quiz = lazy(() => import("./pages/Quiz"));
@@ -49,16 +49,24 @@ const routes = [
   { path: "/gallery", element: Gallery },
   { path: "/faq", element: Faq },
   { path: "/login", element: Login },
-  { path: "/ame-du-benin", element: AmeDuBenin },
-  { path: "/planifier", element: Planifier },
+  { path: "/ame-du-benin", element: Soul },
+  { path: "/planifier", element: Planner },
   { path: "/infos-pratiques", element: InfosPratiques },
   { path: "/carte", element: Carte },
   { path: "/quiz", element: Quiz },
   { path: "/carnet", element: Carnet },
-  { path: "/admin", element: Admin },
   { path: "/favoris", element: Favoris },
   { path: "*", element: NotFound },
 ];
+
+const RouterEffects = () => {
+  const { pathname, hash } = useLocation();
+  useRouteSeo();
+  useEffect(() => {
+    if (!hash) window.scrollTo(0, 0);
+  }, [pathname, hash]);
+  return null;
+};
 
 const App = () => {
   useAutoTheme();
@@ -68,6 +76,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <RouterEffects />
           <Suspense fallback={<LoadingSpinner size="lg" fullScreen />}>
             <Routes>
               {routes.map(({ path, element: Element }) => (

@@ -10,14 +10,18 @@ const write = (key: string, value: unknown) => { try { localStorage.setItem(key,
 
 export const getFavs = (): number[] => {
   const v = read<unknown>(FAV, []);
-  return Array.isArray(v) ? v.filter((x) => typeof x === "number") : [];
+  return Array.isArray(v) ? v.map(Number).filter(Number.isFinite) : [];
 };
-export const setFavs = (ids: number[]) => write(FAV, ids);
-export const toggleFav = (id: number): number[] => {
+export const setFavs = (ids: number[]) => {
+  write(FAV, ids);
+  window.dispatchEvent(new Event("benin-favorites-changed"));
+};
+export const toggleFav = (id: number | string): number[] => {
+  const n = Number(id);
   const f = getFavs();
-  const n = f.includes(id) ? f.filter((x) => x !== id) : [...f, id];
-  setFavs(n);
-  return n;
+  const r = f.includes(n) ? f.filter((x) => x !== n) : [...f, n];
+  setFavs(r);
+  return r;
 };
 export const getNotes = (): Record<string, string> => read<Record<string, string>>(NOTES, {});
 export const setNotes = (n: Record<string, string>) => write(NOTES, n);

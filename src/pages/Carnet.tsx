@@ -23,7 +23,7 @@ const Carnet = () => {
   const [trip, setTripState] = useState(getTrip());
 
   const places = ids
-    .map((id) => PLACES.find((p) => p.id === id))
+    .map((id) => PLACES.find((p) => Number(p.id) === id))
     .filter(Boolean) as typeof PLACES;
 
   const save = (next: number[]) => {
@@ -151,7 +151,7 @@ const Carnet = () => {
                               variant="ghost"
                               aria-label={t("notebook.remove")}
                               className="text-destructive transition-transform hover:scale-110"
-                              onClick={() => remove(p.id)}
+                              onClick={() => remove(Number(p.id))}
                             >
                               <Trash2 className="h-4 w-4" />
                             </Button>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ArrowUp, Facebook, Instagram, Mail, MapPin, Phone, Twitter, Youtube } from "lucide-react";
+import Logo from "./Logo";
 
 const links = [
   { key: "home", path: "/" },
@@ -30,7 +31,7 @@ const Footer = () => {
       <div className="container relative mx-auto px-6">
         <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
-            <h3 className="mb-4 font-heading text-3xl font-bold">BÉNIN</h3>
+            <Logo className="mb-4 h-9" />
             <p className="max-w-md font-body text-sm leading-relaxed text-muted-foreground">{t("footer.tagline")}</p>
             <div className="mt-6 flex gap-3">
               {socials.map((s) => (
@@ -78,7 +79,7 @@ const Footer = () => {
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="font-body text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Bénin Tourisme. {t("footer.rights")}
+            © {new Date().getFullYear()} LEGBAH. {t("footer.rights")}
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

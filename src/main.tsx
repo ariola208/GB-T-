@@ -5,8 +5,13 @@ import "./i18n";
 import App from "./App";
 import "./index.css";
 
-import { initTranslation } from "@/lib/translate";
-initTranslation();
+if ("serviceWorker" in navigator) {
+  if (import.meta.env.PROD) {
+    window.addEventListener("load", () => navigator.serviceWorker.register("/sw.js"));
+  } else {
+    navigator.serviceWorker.getRegistrations().then((rs) => rs.forEach((r) => r.unregister()));
+  }
+}
 
 const root = document.getElementById("root");
 

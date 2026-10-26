@@ -1,88 +1,41 @@
-import { useEffect, useState, useCallback } from "react";
-
-export type Favorite = {
-  id: number | string;
-  name: string;
-  slug?: string;
-  region?: string;
-  image?: string;
-  rating?: number;
-  description?: string;
-  addedAt: number;
-};
-
-const STORAGE_KEY = "benin-favorites";
-const EVENT_NAME = "benin-favorites-changed";
-
-const readFavorites = (): Favorite[] => {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
-};
-
-const writeFavorites = (favorites: Favorite[]) => {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
-  window.dispatchEvent(new CustomEvent(EVENT_NAME));
-};
+import { useCallback, useEffect, useState } from "react";
+import { PLACES } from "@/data/places";
+import { getFavs, setFavs } from "@/lib/carnet";
 
 export const useFavorites = () => {
-  const [favorites, setFavorites] = useState<Favorite[]>(() => readFavorites());
+  const [ids, setIds] = useState<number[]>(getFavs);
 
   useEffect(() => {
-    const sync = () => setFavorites(readFavorites());
-    window.addEventListener(EVENT_NAME, sync);
+    const sync = () => setIds(getFavs());
+    window.addEventListener("benin-favorites-changed", sync);
     window.addEventListener("storage", sync);
     return () => {
-      window.removeEventListener(EVENT_NAME, sync);
+      window.removeEventListener("benin-favorites-changed", sync);
       window.removeEventListener("storage", sync);
     };
   }, []);
 
-  const add = useCallback((fav: Omit<Favorite, "addedAt">) => {
-    const current = readFavorites();
-    if (current.some((f) => f.id === fav.id)) return;
-    const next = [{ ...fav, addedAt: Date.now() }, ...current];
-    writeFavorites(next);
+  const toggle = useCallback((id: number | string) => {
+    const n = Number(id);
+    const cur = getFavs();
+    setFavs(cur.includes(n) ? cur.filter((x) => x !== n) : [...cur, n]);
   }, []);
 
   const remove = useCallback((id: number | string) => {
-    const next = readFavorites().filter((f) => f.id !== id);
-    writeFavorites(next);
+    setFavs(getFavs().filter((x) => x !== Number(id)));
   }, []);
 
-  const toggle = useCallback(
-    (fav: Omit<Favorite, "addedAt">) => {
-      const current = readFavorites();
-      if (current.some((f) => f.id === fav.id)) {
-        remove(fav.id);
-      } else {
-        add(fav);
-      }
-    },
-    [add, remove]
-  );
-
-  const clear = useCallback(() => {
-    writeFavorites([]);
-  }, []);
-
-  const isFavorite = useCallback(
-    (id: number | string) => favorites.some((f) => f.id === id),
-    [favorites]
-  );
+  const favorites = ids
+    .map((id) => PLACES.find((p) => Number(p.id) === id))
+    .filter(Boolean)
+    .map((p) => ({ id: Number(p!.id), name: p!.name, slug: p!.slug, region: p!.region }));
 
   return {
     favorites,
     count: favorites.length,
-    add,
-    remove,
     toggle,
-    clear,
-    isFavorite,
+    remove,
+    clear: () => setFavs([]),
+    isFavorite: (id: number | string) => ids.includes(Number(id)),
   };
 };

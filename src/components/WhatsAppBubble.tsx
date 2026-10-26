@@ -65,14 +65,14 @@ const WhatsAppBubble = () => {
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-2xl">🇧🇯</div>
                 <div>
                   <p className="font-bold">LEGBAH</p>
-                  <p className="text-xs opacity-90">● En ligne · répond en ~5 min</p>
+                  <p className="text-xs opacity-90">{t("whatsapp.subtitle")}</p>
                 </div>
               </div>
             </div>
             <div className="p-5">
               <div className="mb-4 rounded-2xl bg-muted/50 p-4">
                 <p className="text-sm text-muted-foreground">
-                  👋 Bonjour ! Une question sur votre voyage au Bénin ? Écrivez-nous, on vous répond directement.
+                  {t("whatsapp.welcome")}
                 </p>
               </div>
               <textarea
@@ -93,9 +93,8 @@ const WhatsAppBubble = () => {
                 className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 font-semibold text-white transition hover:bg-[#1eb858] active:scale-[0.98]"
               >
                 <Send className="h-4 w-4" />
-                Envoyer sur WhatsApp
+                {t("whatsapp.send")}
               </button>
-              <p className="mt-3 text-center text-xs text-muted-foreground">Ouvert 7j/7 · 8h–20h (GMT+1)</p>
             </div>
           </motion.div>
         )}

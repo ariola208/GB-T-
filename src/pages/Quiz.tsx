@@ -224,7 +224,7 @@ const Quiz = () => {
                     )}
                     <div className="space-y-4">
                       {results.map(({ p, km, score: sc }) => {
-                        const inBook = favs.includes(p.id);
+                        const inBook = favs.includes(Number(p.id));
                         return (
                           <motion.div
                             key={p.id}

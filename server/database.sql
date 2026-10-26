@@ -1,5 +1,3 @@
-CREATE DATABASE IF NOT EXISTS vodoovista_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE vodoovista_db;
 
 CREATE TABLE IF NOT EXISTS users (
   user_id INT PRIMARY KEY AUTO_INCREMENT,

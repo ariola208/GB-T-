@@ -24,7 +24,7 @@ if [ ! -f server/.env ]; then
   err "server/.env introuvable. Crée-le d'abord."
   exit 1
 fi
-export $(grep -v '^#' server/.env | xargs)
+set -a; . server/.env; set +a
 
 # 3. Vérifie que la base existe
 DB_EXISTS=$(mysql -u "$DB_USER" -p"$DB_PASSWORD" -sN -e "SHOW DATABASES LIKE '$DB_NAME';" 2>/dev/null || true)

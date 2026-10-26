@@ -7,6 +7,7 @@ const pool = require('../config/db');
 const auth = require('../middleware/auth');
 
 router.use(auth);
+const EXT = { 'image/jpeg': '.jpg', 'image/png': '.png', 'image/webp': '.webp', 'image/gif': '.gif' };
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     const dir = path.join(__dirname, '..', 'uploads', 'avatars');
@@ -14,11 +15,11 @@ const storage = multer.diskStorage({
     cb(null, dir);
   },
   filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname).toLowerCase();
+    const ext = EXT[file.mimetype];
     cb(null, `user-${req.user.userId}-${Date.now()}${ext}`);
   },
 });
-const fileFilter = (req, file, cb) => cb(null, /jpeg|jpg|png|webp|gif/i.test(file.mimetype));
+const fileFilter = (req, file, cb) => cb(null, file.mimetype in EXT);
 const upload = multer({ storage, fileFilter, limits: { fileSize: 5 * 1024 * 1024 } });
 
 router.post('/avatar', upload.single('avatar'), async (req, res) => {
