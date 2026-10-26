@@ -158,7 +158,7 @@ const Carnet = () => {
                           </div>
                           <input
                             value={notes[p.id] ?? ""}
-                            onChange={(e) => note(p.id, e.target.value)}
+                            onChange={(e) => note(Number(p.id), e.target.value)}
                             placeholder={t("notebook.note_ph")}
                             className="mt-3 w-full rounded-lg border border-border bg-background px-3 py-2 text-sm transition-all focus:outline-none focus:ring-2 focus:ring-ring"
                           />

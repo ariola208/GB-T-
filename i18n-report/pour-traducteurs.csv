@@ -1,0 +1,705 @@
+﻿cle,francais,anglais,yoruba,fon,dendi
+nav.home,Accueil,Home,Ilé,Xwé,Xwé
+nav.destinations,Destinations,Destinations,Àwọn ibi ìbẹ̀wò,Fi e nɔ yi,Yi e nɔ yi
+nav.culture,Culture,Culture,Àṣà,Kɔnɖo,Kɔnɖo
+nav.services,Services,Services,Àwọn iṣẹ́,Azɔ̌wanu,Azɔ̌wanu
+nav.blog,Blog,Blog,Bọ́ọ̀gì,Blogu,Blogu
+nav.gallery,Galerie,Gallery,Àwòrán,Fɔto,Fɔto
+nav.faq,FAQ,FAQ,Àwọn ìbéèrè,Nkambi,Nkambi
+nav.about,À propos,About,Nípa wa,Nípa wa,Nípa wa
+nav.contact,Contact,Contact,Kàn sí wa,Kàn xa mí,Kàn xa mí
+nav.login,Connexion,Log in,Wọlé,Byɔ,Byɔ
+nav.logout,Déconnexion,Log out,Jáde,Jáde,Jáde
+nav.profile,Mon profil,My profile,Profaili mi,Nɔ mɛ tɔn,Profaili
+nav.soul,L'âme du Bénin,Soul of Benin,,Benin ɖeɖe,Benin ɖeɖe
+nav.planner,Planifier,Plan,,Wlan kplé,Wlan
+nav.ame,L'âme du Bénin,Soul of Benin,,Benin ɖeɖe,Benin ɖeɖe
+nav.more,Plus,More,,Kpɔ́,Kpɔ́
+nav.search,Rechercher,Search,,Wlí,Wlí
+nav.search_placeholder,Aller vers une page...,Go to a page...,,Yi fi ɖokpó...,Yi yi ɖokpó...
+nav.no_result,Aucun résultat,No results,,Nǔ ɖokpó ma ɖo,Nǔ ɖokpó ma ɖo
+nav.my_account,Mon compte,My account,,Nɔ mɛ tɔn,Nɔ mɛ tɔn
+nav.my_trips,Mes voyages,My trips,,Nǔ e nɔ yi lɛ,Nǔ e nɔ yi lɛ
+nav.favorites,Mes favoris,My favorites,,Nǔ e yí lɛ,Nǔ e yí lɛ
+nav.map,Carte,Map,,Carte,Carte
+nav.quiz,Quiz,Quiz,,Quiz,Quiz
+nav.notebook,Carnet de voyage,Travel notebook,,Carnet de voyage,Carnet de voyage
+nav.info,Infos pratiques,Practical info,,Xó lɛ,Xó lɛ
+common.language,Langue,Language,Èdè,Gbè,Sɛ̃
+common.theme_light,Passer en mode clair,Switch to light mode,Yípadà sí ipò ìmọ́lẹ̀,Yi zǎnzan mɛ,Yi mɔlɔ
+common.theme_dark,Passer en mode sombre,Switch to dark mode,Yípadà sí ipò òkùnkùn,Yi zanmɛ mɛ,Yi zanmɛ
+common.listen,Écouter,Listen,,Ɖo to,Ɖo to
+common.loading,Chargement...,Loading...,Ń gbé e wá...,Ń gbé e wá...,Ń gbé e wá...
+common.translation_partial,Traduction en cours,Translation in progress,Ìtumọ̀ ń lọ lọ́wọ́,Gbɛvi ɖo azɔ̌ wà,Gbɛvi ɖo azɔ̌ wà
+hero.kicker,Découvrez l'Afrique de l'Ouest,Discover West Africa,,Mɔ Afrique de l'Ouest,Mɔ Afrique de l'Ouest
+hero.title,Le Bénin vous attend,Benin awaits you,,Benin ɖo nǔ kpé,Benin ɖo nǔ kpé
+hero.explore,Explorer,Explore,,Kɛ̀n,Kɛ̀n
+hero.plan,Planifier votre voyage,Plan your trip,,Wlan yi,Wlan yi
+hero.alt,"Ganvié, la Venise de l'Afrique","Ganvié, the Venice of Africa",,"Ganvié, Afrique Venise, cité lacustre lac Nokoué, Benin","Ganvié, Afrique Venise, cité lacustre lac Nokoué, Benin"
+hero.scroll,Défiler,Scroll,,Descente,Descente
+hero.stats.years,Années d'expérience,Years of experience,,Xwè expérience,Xwè expérience
+hero.stats.destinations,Destinations,Destinations,,Fi,Yi
+hero.stats.travelers,Voyageurs satisfaits,Happy travelers,,Mɛ e nɔ yi,Mɛ e nɔ yi
+home.why_title,Pourquoi voyager avec nous ?,Why travel with us?,,Etɛwu yi xa mí?,Etɛwu yi xa mí?
+home.why_subtitle,"Une équipe locale, des circuits sûrs et des expériences conçues pour vous.","A local team, safe tours and experiences designed for you.",,"Kpɔ́ ɖokpó, circuit ɖagbe kpodo expérience nǔ wɛ.","Kpɔ́ ɖokpó, circuit ɖagbe kpodo expérience nǔ wɛ."
+home.experts_title,Experts locaux,Local experts,,Gbèxó lɛ,Sɛ̃xó lɛ
+home.experts_desc,Des guides passionnés qui connaissent chaque recoin du Bénin.,Passionate guides who know every corner of Benin.,,Guide e nɔ kpé Benin bǐ.,Guide e nɔ kpé Benin bǐ.
+home.safe_title,Voyage sécurisé,Safe travel,,Yi ɖagbe,Yi ɖagbe
+home.safe_desc,"Partenaires vérifiés, assistance 24/7 et assurance incluse.","Vetted partners, 24/7 assistance and insurance included.",,"Partenaire ɖagbe, assistance 24/7 kpodo assurance kpo.","Partenaire ɖagbe, assistance 24/7 kpodo assurance kpo."
+home.custom_title,Sur mesure,Tailor-made,,Nǔ wɛ,Nǔ wɛ
+home.custom_desc,Chaque itinéraire est adapté à vos envies et à votre budget.,Every itinerary is adapted to your wishes and your budget.,,Itinéraire ɖokpó ɖokpó ɖo nǔ wɛ kpodo budget kpo.,Itinéraire ɖokpó ɖokpó ɖo nǔ wɛ kpodo budget kpo.
+destPreview.kicker,Destinations,Destinations,,Fi e nɔ yi,Yi e nɔ yi
+destPreview.title,Lieux emblématiques,Iconic places,,Fi ɖagbe,Yi ɖagbe
+destPreview.all,Toutes les destinations,All destinations,,Fi bǐ,Yi bǐ
+destPreview.discover,Découvrir,Discover,,Mɔ,Mɔ
+destPreview.items.abomey.title,Abomey,Abomey,,Abomey,Abomey
+destPreview.items.abomey.subtitle,Palais Royaux — UNESCO,Royal Palaces — UNESCO,,Palais royaux — UNESCO,Palais royaux — UNESCO
+destPreview.items.abomey.description,Les vestiges du puissant Royaume du Dahomey.,The remains of the powerful Kingdom of Dahomey.,,"Dahomey aɖɔ̀xɔ́ tɔn, patrimoine mondial.","Dahomey aɖɔ̀xɔ́ tɔn, patrimoine mondial."
+destPreview.items.ouidah.title,Ouidah,Ouidah,,Ouidah,Ouidah
+destPreview.items.ouidah.subtitle,La Route de l'Esclave,The Slave Route,,Route de l'Esclave,Route de l'Esclave
+destPreview.items.ouidah.description,"La Porte du Non-Retour, un lieu de mémoire universel.","The Door of No Return, a universal place of remembrance.",,"Porte du Non-Retour, lieu mémoire.","Porte du Non-Retour, lieu mémoire."
+destPreview.items.pendjari.title,Pendjari,Pendjari,,Pendjari,Pendjari
+destPreview.items.pendjari.subtitle,Safari & Nature,Safari & Nature,,Safari & Nature,Safari & Nature
+destPreview.items.pendjari.description,L'un des derniers sanctuaires de faune sauvage.,One of the last great wildlife sanctuaries in West Africa.,,Sanctuaire faune sauvage Afrique de l'Ouest.,Sanctuaire faune sauvage Afrique de l'Ouest.
+destPreview.items.cotonou.title,Cotonou,Cotonou,,Cotonou,Cotonou
+destPreview.items.cotonou.subtitle,Cœur Économique,Economic Heart,,Cœur économique,Cœur économique
+destPreview.items.cotonou.description,La vibrante capitale économique.,The vibrant economic capital.,,"Capitale économique, asì kpodo modernité.","Capitale économique, asì kpodo modernité."
+cultureSection.kicker,Patrimoine,Heritage,,Kɔnɖo,Kɔnɖo
+cultureSection.title,Berceau du Vodoun,Cradle of Vodun,,Vodoun xwé,Vodoun xwé
+cultureSection.more,Explorer la culture,Explore the culture,,Kɛ̀n kɔnɖo,Kɛ̀n kɔnɖo
+cultureSection.alt,Masques traditionnels vodoun du Bénin,Traditional Vodun masks of Benin,,Masque vodoun traditionnel Benin,Masque vodoun traditionnel Benin
+cultureSection.stats.inhabitants,Habitants,Inhabitants,,Mɛ,Mɛ
+cultureSection.stats.ethnic,Ethnies,Ethnic groups,,Ethnie,Ethnie
+cultureSection.stats.unesco,Sites UNESCO,UNESCO sites,,UNESCO,UNESCO
+cta.kicker,Prêt pour l'aventure ?,Ready for adventure?,,A ɖo nǔ aventure?,A ɖo nǔ aventure?
+cta.title,Commencez votre voyage au Bénin,Start your journey in Benin,,Bɛ̀ yi ɖò Benin,Bɛ̀ yi ɖò Benin
+cta.button,Contactez-nous,Contact us,,Kàn xa mí,Kàn xa mí
+cta.secondary,Voir les destinations,See destinations,,Kɛ̀n fi,Kɛ̀n yi
+footer.navigation,Navigation,Navigation,,Navigation,Navigation
+footer.contact,Contact,Contact,,Contact,Contact
+footer.rights,Tous droits réservés.,All rights reserved.,,Droit bǐ.,Droit bǐ.
+footer.back_to_top,Haut de page,Back to top,,,
+floating.top,Remonter en haut,Back to top,,,
+floating.whatsapp,Discuter sur WhatsApp,Chat on WhatsApp,,,
+whatsapp.label,Écrivez-nous sur WhatsApp,Chat with us on WhatsApp,,Wlán mí WhatsApp,Wlán mí WhatsApp
+whatsapp.greeting,"Bonjour LEGBAH, j'aimerais avoir des informations pour organiser un voyage.","Hello LEGBAH, I would like some information to plan a trip.",,"Bonjour LEGBAH, j'aimerais des informations pour organiser un voyage.","Bonjour LEGBAH, j'aimerais des informations pour organiser un voyage."
+whatsapp.subtitle,Discutons sur WhatsApp,Let's chat on WhatsApp,,,
+whatsapp.welcome,👋 Bonjour ! Une question sur votre voyage au Bénin ? Écrivez-nous.,👋 Hello! A question about your trip to Benin? Write to us.,,,
+whatsapp.send,Envoyer sur WhatsApp,Send on WhatsApp,,,
+home2.explore.kicker,Explorer par univers,Explore by universe,,,
+home2.explore.title,Qu'est-ce qui vous fait voyager ?,What makes you travel?,,,
+home2.explore.tiles.history.title,Histoire et mémoire,History and memory,,,
+home2.explore.tiles.history.text,"Royaumes, palais et lieux de mémoire.","Kingdoms, palaces and places of remembrance.",,,
+home2.explore.tiles.nature.title,Nature et safari,Nature and safari,,,
+home2.explore.tiles.nature.text,"Parcs, savanes et montagnes.","Parks, savannas and mountains.",,,
+home2.explore.tiles.beach.title,Plages et lagunes,Beaches and lagoons,,,
+home2.explore.tiles.beach.text,"Océan, lagune et villages de pêcheurs.","Ocean, lagoon and fishing villages.",,,
+home2.explore.tiles.city.title,Villes et marchés,Cities and markets,,,
+home2.explore.tiles.city.text,Cotonou et Porto-Novo.,Cotonou and Porto-Novo.,,,
+home2.explore.tiles.tradition.title,Traditions et arts,Traditions and arts,,,
+home2.explore.tiles.tradition.text,"Masques, cérémonies et savoir-faire.","Masks, ceremonies and know-how.",,,
+home2.steps.kicker,Du rêve au départ,From dream to departure,,,
+home2.steps.title,Préparez votre voyage en 3 étapes,Prepare your trip in 3 steps,,,
+home2.steps.items.0.title,Trouvez vos envies,Find what you want,,,
+home2.steps.items.0.text,Un court quiz pour obtenir trois idées de destinations.,A short quiz to get three destination ideas.,,,
+home2.steps.items.0.cta,Faire le quiz,Take the quiz,,,
+home2.steps.items.1.title,Explorez la carte,Explore the map,,,
+home2.steps.items.1.text,Situez chaque lieu et estimez les distances depuis Cotonou.,Locate each place and estimate distances from Cotonou.,,,
+home2.steps.items.1.cta,Ouvrir la carte,Open the map,,,
+home2.steps.items.2.title,Organisez votre carnet,Organise your notebook,,,
+home2.steps.items.2.text,Classez vos étapes et envoyez votre projet par WhatsApp.,Order your stops and send your plan by WhatsApp.,,,
+home2.steps.items.2.cta,Mon carnet,My notebook,,,
+home2.facts.kicker,Le saviez-vous ?,Did you know?,,,
+home2.facts.prev,Précédent,Previous,,,
+home2.facts.next,Suivant,Next,,,
+home2.facts.items.0,"Douze rois se sont succédé à Abomey entre 1625 et 1900, selon l'UNESCO.","Twelve kings succeeded one another in Abomey between 1625 and 1900, according to UNESCO.",,,
+home2.facts.items.4,"Ganvié est un village lacustre bâti sur pilotis, sur le lac Nokoué.","Ganvié is a lake village built on stilts, on Lake Nokoué.",,,
+home2.facts.items.5,"Le franc CFA est rattaché à l'euro à taux fixe : 1 € = 655,957 F CFA.",The CFA franc is pegged to the euro at a fixed rate: €1 = 655.957 F CFA.,,,
+tools.kicker,Outils de voyage,Travel tools,,,
+tools.title,Préparez votre voyage,Plan your trip,,,
+tools.currency.title,Convertisseur Euro / Franc CFA,Euro / CFA Franc converter,,,
+tools.currency.eur,Euros (€),Euros (€),,,
+tools.currency.xof,Francs CFA (F CFA),CFA Francs (F CFA),,,
+tools.currency.rate,"Taux fixe : 1 € = 655,957 F CFA",Fixed rate: €1 = 655.957 F CFA,,,
+tools.countdown.title,Compte à rebours,Countdown,,,
+tools.countdown.event,Fête nationale du Vodoun — 10 janvier,National Vodun Day — January 10,,,
+tools.countdown.days,Jours,Days,,,
+tools.countdown.hours,Heures,Hours,,,
+tools.countdown.minutes,Minutes,Minutes,,,
+tools.countdown.seconds,Secondes,Seconds,,,
+tools.budget.title,Estimateur de budget,Budget estimator,,,
+tools.budget.style,Style de voyage,Travel style,,,
+tools.budget.essential,Essentiel,Essential,,,
+tools.budget.comfort,Confort,Comfort,,,
+tools.budget.luxury,Luxe,Luxury,,,
+tools.budget.days,Nombre de jours,Number of days,,,
+tools.budget.daysUnit,jours,days,,,
+tools.budget.travelers,Voyageurs,Travelers,,,
+tools.budget.total,Budget total estimé,Estimated total budget,,,
+tools.budget.perPerson,par personne,per person,,,
+tools.budget.note,Estimation indicative. Le prix final dépend des prestations choisies.,Indicative estimate.,,,
+tools.budget.cta,Demander un devis personnalisé,Request a custom quote,,,
+destinations.badge,Explorez le Bénin,Explore Benin,,Kɛ̀n Benin,Kɛ̀n Benin
+destinations.title,Destinations,Destinations,,Fi e nɔ yi,Yi e nɔ yi
+destinations.search,Rechercher une destination...,Search for a destination...,,Wlí fi ɖokpó...,Wlí yi ɖokpó...
+destinations.found,{{count}} destination(s) trouvée(s),{{count}} destination(s) found,,{{count}} fi e mɔ,{{count}} yi e mɔ
+destinations.found_sub,Explorez les merveilles du Bénin,Explore the wonders of Benin,,Kɛ̀n Benin nǔ ɖagbe,Kɛ̀n Benin nǔ ɖagbe
+destinations.none,Aucune destination ne correspond à votre recherche,No destination matches your search,,Fi ɖokpó ma ɖo,Yi ɖokpó ma ɖo
+destinations.featured,En vedette,Featured,,E ɖo kpɔ́,E ɖo kpɔ́
+destinations.trending,Tendance,Trending,,E nɔ yì,E nɔ yì
+destinations.discover,Découvrir,Discover,,Mɔ,Mɔ
+destinations.days_range,{{range}} jours,{{range}} days,,{{range}} azǎn,{{range}} azǎn
+destinations.free,Libre,Flexible,,Ɖagbe,Ɖagbe
+destinations.reviews,{{count}} avis,{{count}} reviews,,{{count}} xó,{{count}} xó
+destinations.per_night,/nuit,/night,,/zan,/zan
+destinations.free_label,Gratuit,Free,,Ɖagbe,Ɖagbe
+destinations.region,Région,Region,,Agbègbè,Agbègbè
+destinations.climate,Climat,Climate,,Climat,Climat
+destinations.location,Localisation,Location,,Fi,Yi
+destinations.temperature,Température,Temperature,,Température,Température
+destinations.best_time,Meilleure période,Best time to visit,,Hwenu ɖagbe,Hwenu ɖagbe
+destinations.duration,Durée recommandée,Recommended duration,,Hwenu e ɖo na wà,Hwenu e ɖo na wà
+destinations.book_now,Réserver maintenant,Book now,,Wlan,Wlan
+destinations.book,Réserver,Book,,Wlan,Wlan
+destinations.share,Partager,Share,,Xo,Xo
+destinations.link_copied,Lien copié,Link copied,,Lien kɔ́,Lien kɔ́
+destinations.close,Fermer,Close,,Kpé,Kpé
+destinations.tabs.overview,Aperçu,Overview,,Kɛ̀n,Kɛ̀n
+destinations.tabs.highlights,Points forts,Highlights,,Nǔ ɖagbe lɛ,Nǔ ɖagbe lɛ
+destinations.tabs.activities,Activités,Activities,,Azɔ̌ lɛ,Azɔ̌ lɛ
+destinations.tabs.accommodations,Hébergements,Accommodation,,Xwé lɛ,Xwé lɛ
+destinations.tabs.info,Infos pratiques,Practical info,,Xó lɛ,Xó lɛ
+destinations.categories.all,Tous,All,,Bǐ,Bǐ
+destinations.categories.culture,Culture,Culture,,Kɔnɖo,Kɔnɖo
+destinations.categories.nature,Nature,Nature,,Nature,Nature
+destinations.categories.plage,Plage,Beach,,Xù,Xù
+destinations.categories.ville,Ville,City,,Aɖɔ̀xɔ́,Aɖɔ̀xɔ́
+destinations.categories.historique,Historique,Historic,,Xotɛn,Xotɛn
+destinations.cta_title,Vous ne trouvez pas votre bonheur ?,Can't find what you're looking for?,,A ma mɔ nǔ e ɖo?,A ma mɔ nǔ e ɖo?
+destinations.cta_text,Nous créons des itinéraires sur mesure selon vos envies.,We create tailor-made itineraries to match your wishes. Tell us about your project!,,Mí nɔ wà itinéraire nǔ wɛ. Xo mí nǔ wɛ!,Mí nɔ wà itinéraire nǔ wɛ. Xo mí nǔ wɛ!
+destinations.cta_button,Créer mon voyage personnalisé,Create my custom trip,,Wà nǔ tɔn,Wà nǔ tɔn
+destinations.amenities.wifi,WiFi,WiFi,,WiFi,WiFi
+destinations.amenities.restaurant,Restaurant,Restaurant,,Nǔɖuɖu xwé,Nǔɖuɖu xwé
+destinations.amenities.ac,Climatisation,Air conditioning,,Climatisation,Climatisation
+destinations.amenities.lakeview,Vue sur le lac,Lake view,,Kɛ̀n lagune,Kɛ̀n lagune
+destinations.amenities.homemeal,Repas maison,Home-cooked meals,,Nǔɖuɖu xwé tɔn,Nǔɖuɖu xwé tɔn
+destinations.amenities.terrace,Terrasse,Terrace,,Terrasse,Terrasse
+destinations.amenities.privatepirogue,Pirogue privée,Private pirogue,,Pirogue tɔn,Pirogue tɔn
+destinations.amenities.pool,Piscine,Swimming pool,,Piscine,Piscine
+destinations.amenities.privateguide,Guide privé,Private guide,,Guide tɔn,Guide tɔn
+destinations.amenities.tents,Tentes équipées,Equipped tents,,Tente lɛ,Tente lɛ
+destinations.amenities.showers,Douches,Showers,,Douche lɛ,Douche lɛ
+destinations.amenities.campfire,Feu de camp,Campfire,,Feu de camp,Feu de camp
+destinations.amenities.privatebeach,Plage privée,Private beach,,Xù tɔn,Xù tɔn
+destinations.amenities.spa,Spa,Spa,,Spa,Spa
+destinations.acc_types.hotel,Hôtel,Hotel,,Hôtel,Hôtel
+destinations.acc_types.hotel3,Hôtel 3*,3* Hotel,,Hôtel 3*,Hôtel 3*
+destinations.acc_types.hotel4,Hôtel 4*,4* Hotel,,Hôtel 4*,Hôtel 4*
+destinations.acc_types.guesthouse,Maison d'hôtes,Guesthouse,,Xwé,Xwé
+destinations.acc_types.lodge,Lodge,Lodge,,Lodge,Lodge
+destinations.acc_types.camping,Camping,Camping,,Camping,Camping
+destinations.acc_types.inn,Auberge,Inn,,Auberge,Auberge
+destinations.wa_message,"Bonjour LEGBAH, je souhaite réserver un séjour : {{name}}.","Hello LEGBAH, I would like to book a stay: {{name}}. Could you tell me about the dates and prices?",,"Bonjour LEGBAH, je souhaite réserver un séjour : {{name}}. Pouvez-vous me renseigner sur les dates et les tarifs ?","Bonjour LEGBAH, je souhaite réserver un séjour : {{name}}. Pouvez-vous me renseigner sur les dates et les tarifs ?"
+destinations.items.0.description,"La Venise de l'Afrique, village lacustre unique au monde","The Venice of Africa, a lake village unlike any other",,"Afrique Venise, cité lacustre ɖe tɛnmɛ","Afrique Venise, cité lacustre ɖe tɛnmɛ"
+destinations.items.0.bestTime,Novembre à Février,November to February,,Novembre à Février,Novembre à Février
+destinations.items.0.highlights.0,Village lacustre emblématique,Iconic lake village,,Cité lacustre,Cité lacustre
+destinations.items.0.highlights.1,Marché flottant,Floating market,,Asì ɖò sìn mɛ,Asì ɖò sìn mɛ
+destinations.items.0.highlights.2,Musée de Ganvié,Ganvié Museum,,Musée Ganvié,Musée Ganvié
+destinations.items.0.highlights.3,Pêche traditionnelle,Traditional fishing,,Pêche traditionnelle,Pêche traditionnelle
+destinations.items.0.highlights.4,Artisanat local,Local crafts,,Azɔ̌wanu,Azɔ̌wanu
+destinations.items.0.activities.0,Tour en pirogue,Pirogue tour,,Pirogue,Pirogue
+destinations.items.0.activities.1,Visite du marché flottant,Floating market visit,,Asì ɖò sìn mɛ,Asì ɖò sìn mɛ
+destinations.items.0.activities.2,Atelier artisanat,Craft workshop,,Atelier azɔ̌wanu,Atelier azɔ̌wanu
+destinations.items.1.description,L'un des derniers grands sanctuaires de faune sauvage en Afrique de l'Ouest,One of the last great wildlife sanctuaries in West Africa,,"Parc National Pendjari, ɖagbe ɖò Afrique de l'Ouest","Parc National Pendjari, ɖagbe ɖò Afrique de l'Ouest"
+destinations.items.1.bestTime,Décembre à Mars,December to March,,Décembre à Mars,Décembre à Mars
+destinations.items.1.highlights.0,Safari photo,Photo safari,,Safari photo,Safari photo
+destinations.items.1.highlights.1,Observation des lions,Lion watching,,Lion,Lion
+destinations.items.1.highlights.2,Cascade de Tanougou,Tanougou waterfall,,Cascade Tanougou,Cascade Tanougou
+destinations.items.1.highlights.3,Observation des oiseaux,Birdwatching,,Oiseau,Oiseau
+destinations.items.1.highlights.4,Camping sauvage,Wild camping,,Camping,Camping
+destinations.items.1.activities.0,Safari guidé,Guided safari,,Safari guidé,Safari guidé
+destinations.items.1.activities.1,Safari photo,Photo safari,,Safari photo,Safari photo
+destinations.items.1.activities.2,Randonnée à Tanougou,Hike to Tanougou,,Randonnée Tanougou,Randonnée Tanougou
+destinations.items.2.description,Cœur spirituel du vodoun et mémoire de la traite négrière,Spiritual heart of Vodun and memorial of the slave trade,,"Ouidah, kɔnɖo vodoun kpodo xotɛn traite","Ouidah, kɔnɖo vodoun kpodo xotɛn traite"
+destinations.items.2.bestTime,"Janvier, Octobre-Décembre","January, October-December",,"Janvier, Octobre-Décembre","Janvier, Octobre-Décembre"
+destinations.items.2.highlights.0,Porte du Non-Retour,Door of No Return,,Porte du Non-Retour,Porte du Non-Retour
+destinations.items.2.highlights.1,Route des Esclaves,Slave Route,,Route des Esclaves,Route des Esclaves
+destinations.items.2.highlights.2,Temple des Pythons,Temple of Pythons,,Temple des Pythons,Temple des Pythons
+destinations.items.2.highlights.3,Forêt Sacrée de Kpassè,Sacred Forest of Kpassè,,Forêt Kpassè,Forêt Kpassè
+destinations.items.2.highlights.4,Musée d'Histoire,History Museum,,Musée,Musée
+destinations.items.2.activities.0,Visite historique,Historical tour,,Visite xotɛn,Visite xotɛn
+destinations.items.2.activities.1,Cérémonie vodoun,Vodun ceremony,,Cérémonie vodoun,Cérémonie vodoun
+destinations.items.2.activities.2,Musée de Ouidah,Ouidah Museum,,Musée Ouidah,Musée Ouidah
+destinations.items.3.description,"Les palais royaux du Dahomey, classés au patrimoine mondial","The royal palaces of Dahomey, a World Heritage site",,"Palais royaux Dahomey, UNESCO","Palais royaux Dahomey, UNESCO"
+destinations.items.3.bestTime,Novembre à Février,November to February,,Novembre à Février,Novembre à Février
+destinations.items.3.highlights.0,Palais royaux UNESCO,UNESCO royal palaces,,Palais UNESCO,Palais UNESCO
+destinations.items.3.highlights.1,Musée historique,Historical museum,,Musée,Musée
+destinations.items.3.highlights.2,Bas-reliefs,Bas-reliefs,,Bas-reliefs,Bas-reliefs
+destinations.items.3.highlights.3,Artisanat des appliqués,Appliqué craftsmanship,,Appliqués,Appliqués
+destinations.items.3.activities.0,Visite des palais,Palace tour,,Palais,Palais
+destinations.items.3.activities.1,Atelier d'appliqués,Appliqué workshop,,Atelier appliqués,Atelier appliqués
+destinations.items.4.description,"Plages de sable fin, pêche traditionnelle et ambiance décontractée","Fine sandy beaches, traditional fishing and a relaxed atmosphere",,"Grand-Popo, xù kpodo pêche traditionnelle","Grand-Popo, xù kpodo pêche traditionnelle"
+destinations.items.4.bestTime,Novembre à Mars,November to March,,Novembre à Mars,Novembre à Mars
+destinations.items.4.highlights.0,Plages de sable fin,Fine sandy beaches,,Xù,Xù
+destinations.items.4.highlights.1,Bouche du Roy,Bouche du Roy,,Bouche du Roy,Bouche du Roy
+destinations.items.4.highlights.2,Pêche traditionnelle,Traditional fishing,,Pêche,Pêche
+destinations.items.4.highlights.3,Couchers de soleil,Sunsets,,Coucher de soleil,Coucher de soleil
+destinations.items.4.activities.0,Baignade,Swimming,,Baignade,Baignade
+destinations.items.4.activities.1,Pirogue sur le Mono,Pirogue on the Mono,,Pirogue Mono,Pirogue Mono
+destinations.items.5.description,"La vibrante capitale économique, entre tradition et modernité","The vibrant economic capital, between tradition and modernity",,"Cotonou, capitale économique","Cotonou, capitale économique"
+destinations.items.5.bestTime,Toute l'année,Year-round,,Xwè bǐ,Xwè bǐ
+destinations.items.5.highlights.0,Marché Dantokpa,Dantokpa Market,,Marché Dantokpa,Marché Dantokpa
+destinations.items.5.highlights.1,Place de l'Étoile Rouge,Red Star Square,,Place Étoile Rouge,Place Étoile Rouge
+destinations.items.5.highlights.2,Plage de Fidjrossè,Fidjrossè Beach,,Plage Fidjrossè,Plage Fidjrossè
+destinations.items.5.highlights.3,Fondation Zinsou,Zinsou Foundation,,Fondation Zinsou,Fondation Zinsou
+destinations.items.5.activities.0,Visite de Dantokpa,Dantokpa visit,,Dantokpa,Dantokpa
+destinations.items.5.activities.1,Art contemporain,Contemporary art,,Art contemporain,Art contemporain
+destinations.items.6.description,Porte d'entrée du pays Somba et de ses tatas,Gateway to Somba country and its tatas,,"Natitingou, pays Somba kpodo tata","Natitingou, pays Somba kpodo tata"
+destinations.items.6.bestTime,Novembre à Février,November to February,,Novembre à Février,Novembre à Février
+destinations.items.6.highlights.0,Tatas Somba,Somba tatas,,Tata Somba,Tata Somba
+destinations.items.6.highlights.1,Cascades de Kota,Kota waterfalls,,Cascade Kota,Cascade Kota
+destinations.items.6.highlights.2,Montagnes de l'Atacora,Atacora mountains,,Montagne Atacora,Montagne Atacora
+destinations.items.6.highlights.3,Artisanat local,Local crafts,,Azɔ̌wanu,Azɔ̌wanu
+destinations.items.6.activities.0,Visite des tatas,Tata visit,,Tata,Tata
+destinations.items.6.activities.1,Randonnée,Hiking,,Randonnée,Randonnée
+destinations.items.7.description,"La capitale administrative, riche d'histoire et de traditions","The administrative capital, rich in history and traditions",,"Porto-Novo, capitale administrative","Porto-Novo, capitale administrative"
+destinations.items.7.bestTime,Novembre à Février,November to February,,Novembre à Février,Novembre à Février
+destinations.items.7.highlights.0,Musée Honmè,Honmè Museum,,Musée Honmè,Musée Honmè
+destinations.items.7.highlights.1,Grande Mosquée,Great Mosque,,Grande Mosquée,Grande Mosquée
+destinations.items.7.highlights.2,Jardin des Plantes,Botanical Garden,,Jardin des Plantes,Jardin des Plantes
+destinations.items.7.highlights.3,Palais du Gouverneur,Governor's Palace,,Palais Gouverneur,Palais Gouverneur
+destinations.items.7.activities.0,Visite du Musée Honmè,Honmè Museum visit,,Musée Honmè,Musée Honmè
+destinations.items.7.activities.1,Tour de ville,City tour,,Tour ville,Tour ville
+contact.hero_title,Contactez-nous,,,Kàn xa mí,Kàn xa mí
+contact.hero_subtitle,Notre équipe est là pour vous aider à créer le voyage de vos rêves au Bénin,,,Mí kpɔ́ ɖo nǔ wà nǔ yi ɖagbe ɖò Benin,Mí kpɔ́ ɖo nǔ wà nǔ yi ɖagbe ɖò Benin
+contact.features.team.title,Équipe locale,,,Kpɔ́,Kpɔ́
+contact.features.team.desc,Des experts passionnés,,,Gbèxó e nɔ kpé Benin bǐ,Sɛ̃xó e nɔ kpé Benin bǐ
+contact.features.certified.title,Certifié,,,Certifié,Certifié
+contact.features.certified.desc,Agence agréée par le Ministère du Tourisme,,,Agence e Ministère du Tourisme du Bénin yí,Agence e Ministère du Tourisme du Bénin yí
+contact.features.secure.title,Voyage sécurisé,,,Yi ɖagbe,Yi ɖagbe
+contact.features.secure.desc,Partenaires vérifiés et assurance incluse,,,Partenaire ɖagbe kpodo assurance kpo,Partenaire ɖagbe kpodo assurance kpo
+contact.info_title,Parlons de votre projet,,,Xo mí nǔ wɛ,Xo mí nǔ wɛ
+contact.address.title,Adresse,,,Adresse,Adresse
+contact.address.line1,Avenue Jean-Paul II,,,Avenue Jean-Paul II,Avenue Jean-Paul II
+contact.address.line2,"Cotonou, Bénin",,,"Cotonou, Bénin","Cotonou, Bénin"
+contact.phone.title,Téléphone,,,Téléphone,Téléphone
+contact.email.title,Email,,,Email,Email
+contact.hours.title,Horaires,,,Hwenu,Hwenu
+contact.hours.line1,Lun - Ven : 8h - 18h,,,Lun - Ven : 8h - 18h,Lun - Ven : 8h - 18h
+contact.hours.line2,Sam : 9h - 15h,,,Sam : 9h - 15h,Sam : 9h - 15h
+contact.follow,Suivez-nous,,,Kpé mí,Kpé mí
+contact.whatsapp.title,WhatsApp,,,WhatsApp,WhatsApp
+contact.whatsapp.text,Préférez-vous discuter directement ?,,,A ɖo na xo xa mí ɖò WhatsApp!,A ɖo na xo xa mí ɖò WhatsApp!
+contact.form.title,Envoyez-nous un message,,,Wlan mí xó,Wlan mí xó
+contact.form.name,Nom complet *,,,Nyikɔ *,Nyikɔ *
+contact.form.name_ph,Jean Kouagou,,,Jean Kouagou,Jean Kouagou
+contact.form.email,Email *,,,Email *,Email *
+contact.form.email_ph,jean@email.com,,,jean@email.com,jean@email.com
+contact.form.phone,Téléphone,,,Téléphone,Téléphone
+contact.form.subject,Sujet *,,,Xó *,Xó *
+contact.form.subject_ph,Demande d'information,,,Nkambi,Nkambi
+contact.form.date,Date de voyage,,,Azǎn yi,Azǎn yi
+contact.form.travelers,Nombre de voyageurs,,,Mɛ e nɔ yi,Mɛ e nɔ yi
+contact.form.budget,Budget estimé,,,Budget,Budget
+contact.form.message,Message *,,,Xó *,Xó *
+contact.form.message_ph,Décrivez votre projet...,,,"Xo nǔ yi tɔn, nǔ e ɖo na yí, nkambi...","Xo nǔ yi tɔn, nǔ e ɖo na yí, nkambi..."
+contact.form.required,* Champs obligatoires,,,* Nǔ e ɖo na wà,* Nǔ e ɖo na wà
+contact.form.send,Envoyer le message,,,Wlan xó,Wlan xó
+contact.errors.name,Le nom doit contenir au moins 2 caractères,,,Nyikɔ ɖo na ɖo xó 2,Nyikɔ ɖo na ɖo xó 2
+contact.errors.email,Email invalide,,,Email ɖagbe,Email ɖagbe
+contact.errors.subject,Le sujet est requis,,,Xó ɖo na ɖo,Xó ɖo na ɖo
+contact.errors.message,Le message doit contenir au moins 10 caractères,,,Xó ɖo na ɖo xó 10,Xó ɖo na ɖo xó 10
+contact.toast.title,Message envoyé avec succès !,,,✨ Xó yì ɖagbe!,✨ Xó yì ɖagbe!
+contact.toast.desc,Notre équipe vous répondra dans les 24h.,,,Mí na xo ɖò 24h mɛ.,Mí na xo ɖò 24h mɛ.
+contact.map_title,Carte du Bénin,,,Carte Bénin,Carte Bénin
+contact.wa_intro,"Bonjour, je m'appelle {{name}}.",,,,
+contact.wa_dates,Dates de voyage : {{v}},,,,
+contact.wa_travelers,Voyageurs : {{v}},,,,
+contact.sent_title,WhatsApp s'ouvre...,,,,
+contact.sent_desc,Envoyez le message pré-rempli pour finaliser votre demande.,,,,
+contact.whatsapp_cta,Écrire sur WhatsApp,,,,
+contact.form_note,"Votre message s'ouvre dans WhatsApp, prêt à être envoyé.",,,,
+contact.location,Localisation,,,,
+contact.location_value,"Cotonou, Bénin",,,,
+login.title,Connexion,Sign in,,Byɔ,Byɔ
+login.register_title,Créer un compte,Create an account,,Wlan,Wlan
+login.subtitle,Accédez à votre espace voyageur,Access your traveller account,,Byɔ ɖò nɔ mɛ tɔn,Byɔ ɖò nɔ mɛ tɔn
+login.register_subtitle,Rejoignez-nous pour préparer vos voyages au Bénin,Join us to prepare your trips to Benin,,Wlan nɔ mɛ tɔn,Wlan nɔ mɛ tɔn
+login.first_name,Prénom,First name,,Nyikɔ,Nyikɔ
+login.last_name,Nom,Last name,,Xwégbè,Xwégbè
+login.email,Adresse e-mail,Email address,,Email,Email
+login.password,Mot de passe,Password,,Password,Password
+login.phone,Téléphone (facultatif),Phone (optional),,Téléphone (optionnel),Téléphone (optionnel)
+login.submit,Se connecter,Sign in,,Byɔ,Byɔ
+login.register_submit,Créer mon compte,Create my account,,Wlan,Wlan
+login.loading,Chargement...,Loading...,,Ń gbé e wá...,Ń gbé e wá...
+login.no_account,Pas encore de compte ? Inscrivez-vous,No account yet? Sign up,,Nɔ mɛ ɖo? Wlan,Nɔ mɛ ɖo? Wlan
+login.has_account,Déjà un compte ? Connectez-vous,Already have an account? Sign in,,Nɔ mɛ ɖo? Byɔ,Nɔ mɛ ɖo? Byɔ
+login.error,Une erreur est survenue. Réessayez.,Something went wrong. Please try again.,,Nǔ ɖokpó jɔ̀,Nǔ ɖokpó jɔ̀
+login.server_error,Impossible de joindre le serveur. Réessayez plus tard.,Cannot reach the server. Please try again later.,,Serveur ɖokpó ma ɖo,Serveur ɖokpó ma ɖo
+login.registered,Compte créé. Vous pouvez maintenant vous connecter.,Account created. You can now sign in.,,Nɔ mɛ wlan! A nɔ byɔ.,Nɔ mɛ wlan! A nɔ byɔ.
+notfound.title,404,404,,404,404
+notfound.text,"Oups, cette page est introuvable.","Oops, this page could not be found.",,Oups! Page e ɔ́ ma ɖo.,Oups! Page e ɔ́ ma ɖo.
+notfound.back,Retour à l'accueil,Back to home,,Lɛ́kɔ́ xwé,Lɛ́kɔ́ xwé
+gallery.empty,Aucune photo pour le moment.,No photos yet.,,Fɔto ɖokpó ma ɖo.,Fɔto ɖokpó ma ɖo.
+gallery.themes.vodoun,Vodoun,Vodoun,,Vodoun,Vodoun
+gallery.themes.egungun,Egungun,Egungun,,Egungun,Egungun
+gallery.themes.gelede,Gèlèdè,Gèlèdè,,Gèlèdè,Gèlèdè
+gallery.themes.gastronomie,Gastronomie,Cuisine,,Nǔɖuɖu,Nǔɖuɖu
+gallery.themes.vannerie,Vannerie,Basketry,,Vannerie,Vannerie
+gallery.themes.poterie,Poterie,Pottery,,Poterie,Poterie
+gallery.themes.bronze,Bronze,Bronze,,Bronze,Bronze
+gallery.themes.danse,Danse,Dance,,Danse,Danse
+gallery.themes.tambours,Tambours,Drums,,Tambour,Tambour
+gallery.badge,Galerie photo,Photo gallery,,Fɔto,Fɔto
+gallery.title,Le Bénin en images,Benin in pictures,,Benin ɖò fɔto mɛ,Benin ɖò fɔto mɛ
+gallery.subtitle,"Paysages, culture, traditions : une sélection de nos plus belles photos.","Landscapes, culture, traditions: a selection of our best photos.",,Mɔ ẹwà Benin ɖò collection fɔto wa,Mɔ ẹwà Benin ɖò collection fɔto wa
+gallery.categories.all,Toutes,All,,Bǐ,Bǐ
+gallery.categories.landscapes,Paysages,Landscapes,,Paysage,Paysage
+gallery.categories.culture,Culture,Culture,,Kɔnɖo,Kɔnɖo
+gallery.categories.wildlife,Faune,Wildlife,,Faune,Faune
+gallery.categories.cities,Villes,Cities,,Aɖɔ̀xɔ́,Aɖɔ̀xɔ́
+gallery.categories.beaches,Plages,Beaches,,Xù,Xù
+gallery.categories.traditions,Traditions,Traditions,,Tradition,Tradition
+gallery.items.0,Ganvié,,,Ganvié,Ganvié
+gallery.items.1,Porte du Non-Retour,,,Porte du Non-Retour,Porte du Non-Retour
+gallery.items.2,Palais Royaux,,,Palais Royaux,Palais Royaux
+gallery.items.3,Éléphants,,,Éléphants,Éléphants
+gallery.items.4,Cotonou,,,Cotonou,Cotonou
+gallery.items.5,Grand-Popo,,,Grand-Popo,Grand-Popo
+gallery.items.6,Marché,,,Asì,Asì
+gallery.items.7,Collines,,,Collines,Collines
+gallery.items.8,Pirogues,,,Pirogues,Pirogues
+gallery.items.9,Cérémonie,,,Cérémonie,Cérémonie
+gallery.items.10,Bas-reliefs,,,Bas-reliefs,Bas-reliefs
+gallery.items.11,Lion,,,Lion,Lion
+profile.loading,Chargement du profil...,Loading profile...,,Ń gbé profil wá...,Ń gbé profil wá...
+profile.error_title,Une erreur est survenue,Something went wrong,,Ma kpé profil tɔn,Ma kpé profil tɔn
+profile.error_text,Impossible de charger votre profil.,Your profile could not be loaded.,,"Serveur ma xo alǒ error. Kɛ̀n backend (port 5000), bo bɛ̀.","Serveur ma xo alǒ error. Kɛ̀n backend (port 5000), bo bɛ̀."
+profile.retry,Réessayer,Try again,,Bɛ̀,Bɛ̀
+profile.login_again,Se reconnecter,Sign in again,,Byɔ,Byɔ
+profile.not_set,Non renseigné,Not set,,Ma ɖo,Ma ɖo
+profile.member_since,Membre depuis le,Member since,,Membre sɔ́,Membre sɔ́
+profile.edit,Modifier,Edit,,Wlan,Wlan
+profile.logout,Déconnexion,Sign out,,Jáde,Jáde
+profile.logged_out_title,Déconnexion réussie,Signed out,,Jáde,Jáde
+profile.logged_out_desc,À bientôt !,See you soon!,,Bɔ̀ nǔ wá!,Bɔ̀ nǔ wá!
+profile.stats.trips,Voyages,Trips,,Yi,Yi
+profile.stats.reviews,Avis,Reviews,,Xó,Xó
+profile.stats.favorites,Favoris,Favourites,,Nǔ e yí,Nǔ e yí
+profile.stats.points,Points,Points,,Point,Point
+profile.tabs.trips,Mes voyages,My trips,,Yi,Yi
+profile.tabs.favorites,Favoris,Favourites,,Nǔ e yí,Nǔ e yí
+profile.tabs.reviews,Avis,Reviews,,Xó,Xó
+profile.tabs.profile,Profil,Profile,,Profil,Profil
+profile.status.upcoming,À venir,Upcoming,,E ɖo na wá,E ɖo na wá
+profile.status.confirmed,Confirmé,Confirmed,,Confirmé,Confirmé
+profile.status.completed,Terminé,Completed,,Kpé,Kpé
+profile.status.cancelled,Annulé,Cancelled,,Annulé,Annulé
+profile.no_trips,Aucun voyage pour le moment.,No trips yet.,,Yi ɖokpó ma ɖo,Yi ɖokpó ma ɖo
+profile.explore,Explorer les destinations,Explore destinations,,Kɛ̀n,Kɛ̀n
+profile.travelers,{{count}} voyageur(s),,,{{count}} mɛ,{{count}} mɛ
+profile.manage,Gérer la réservation,,,Kpé réservation,Kpé réservation
+profile.no_favorites,Aucun favori pour le moment.,No favourites yet.,,Nǔ e yí ɖokpó ma ɖo,Nǔ e yí ɖokpó ma ɖo
+profile.discover,Découvrir,Discover,,Mɔ,Mɔ
+profile.details,Voir détails,,,Kɛ̀n détails,Kɛ̀n détails
+profile.no_reviews,Aucun avis pour le moment.,No reviews yet.,,Xó ɖokpó ma ɖo,Xó ɖokpó ma ɖo
+profile.personal_info,Informations personnelles,Personal information,,Xó mɛ tɔn,Xó mɛ tɔn
+profile.name,Nom,Name,,Nyikɔ,Nyikɔ
+profile.email,E-mail,Email,,Email,Email
+profile.phone,Téléphone,Phone,,Téléphone,Téléphone
+profile.location,Localisation,Location,,Fi,Yi
+profile.bio,Biographie,Biography,,Bio,Bio
+profile.no_bio,Aucune biographie.,No biography.,,Bio ɖokpó ma ɖo,Bio ɖokpó ma ɖo
+profile.save,Enregistrer,Save,,Kpé,Kpé
+profile.cancel,Annuler,Cancel,,Annuler,Annuler
+profile.security,Sécurité,Security,,Sécurité,Sécurité
+profile.change_password,Changer le mot de passe,Change password,,Wlan password,Wlan password
+profile.current_password,Mot de passe actuel,Current password,,Password actuel,Password actuel
+profile.new_password,Nouveau mot de passe,New password,,Password nouveau,Password nouveau
+profile.confirm_password,Confirmer le mot de passe,Confirm password,,Confirmer,Confirmer
+profile.modify,Modifier,Update,,Wlan,Wlan
+profile.help_title,Besoin d'aide ?,Need help?,,A ɖo na kpe?,A ɖo na kpe?
+profile.help_text,Une question sur votre compte ou votre voyage ?,A question about your account or your trip?,,Mí kpɔ́ 24/7.,Mí kpɔ́ 24/7.
+profile.contact_support,Contacter le support,Contact support,,Kàn support,Kàn support
+profile.pw_mismatch,Les mots de passe ne correspondent pas.,Passwords do not match.,,Password ma kpé,Password ma kpé
+profile.pw_short,Le mot de passe doit contenir au moins 8 caractères.,Password must be at least 8 characters long.,,Password ɖo na 8 caractère,Password ɖo na 8 caractère
+profile.server_error,Erreur du serveur.,Server error.,,Error serveur,Error serveur
+profile.toast.success,Succès,Success,,Ɖagbe,Ɖagbe
+profile.toast.error,Erreur,Error,,Error,Error
+profile.toast.updated,Profil mis à jour.,Profile updated.,,Profil wlan,Profil wlan
+profile.toast.update_failed,Mise à jour impossible.,Update failed.,,Ma wlan,Ma wlan
+profile.toast.pw_changed,Mot de passe modifié.,Password changed.,,Password wlan,Password wlan
+profile.toast.fav_removed,Favori retiré.,Favourite removed.,,Ɖe favori,Ɖe favori
+profile.toast.fav_failed,Impossible de retirer ce favori.,Could not remove this favourite.,,Ma ɖe,Ma ɖe
+profile.travelers_one,{{count}} voyageur,{{count}} traveller,,,
+profile.travelers_other,{{count}} voyageurs,{{count}} travellers,,,
+profile.weather_in,Météo à,Weather in,,,
+profile.sunny,Ensoleillé,Sunny,,,
+profile.quick_actions,Actions rapides,Quick actions,,,
+profile.plan_trip,Planifier un voyage,Plan a trip,,,
+profile.explore_short,Explorer,Explore,,,
+profile.quote_short,Devis,Quote,,,
+profile.notifications,Notifications,Notifications,,,
+profile.no_notifications,Aucune nouvelle notification.,No new notifications.,,,
+services.subtitle,Nos services,Our services,,Azɔ̌wanu lɛ,Azɔ̌wanu lɛ
+services.title,Un voyage sur mesure,A tailor-made trip,,Azɔ̌wanu nǔ wɛ,Azɔ̌wanu nǔ wɛ
+services.description,"De la réservation à l'accompagnement sur place, nous organisons chaque étape.","From booking to on-site support, we organise every step.",,"Sɔ́ vol yì excursion, mí nɔ wà bǐ nǔ yi ɖagbe ɖò Benin.","Sɔ́ vol yì excursion, mí nɔ wà bǐ nǔ yi ɖagbe ɖò Benin."
+services.popular,Populaire,,,Populaire,Populaire
+services.recommended,Recommandé,,,Recommandé,Recommandé
+services.book,Réserver,,,Wlan,Wlan
+services.choose,Choisir ce forfait,,,Sɔ́ forfait e ɔ́,Sɔ́ forfait e ɔ́
+services.per_person,/ personne,,,/ mɛ,/ mɛ
+services.packages_title,Nos forfaits tout compris,,,Forfait tout compris,Forfait tout compris
+services.packages_text,Choisissez le forfait qui correspond le mieux à vos envies et à votre budget,,,Sɔ́ forfait e ɖo nǔ wɛ kpodo budget kpo,Sɔ́ forfait e ɖo nǔ wɛ kpodo budget kpo
+services.items.0.title,Vols et transferts,Flights and transfers,,Vol & Transport,Vol & Transport
+services.items.0.description,"Billets d'avion, accueil à l'aéroport et transferts entre les villes.","Flight tickets, airport pick-up and transfers between cities.",,Vol international kpodo transport local kpodo chauffeur privé.,Vol international kpodo transport local kpodo chauffeur privé.
+services.items.1.title,Hébergement,Accommodation,,Hébergement,Hébergement
+services.items.1.description,"Hôtels, maisons d'hôtes et lodges choisis selon votre budget.","Hotels, guesthouses and lodges chosen to fit your budget.",,"Hôtel, lodge kpodo hébergement traditionnel ɖagbe.","Hôtel, lodge kpodo hébergement traditionnel ɖagbe."
+services.items.2.title,Guides locaux,Local guides,,Guide local,Guide local
+services.items.2.description,"Des guides qui connaissent l'histoire, les lieux et les usages.","Guides who know the history, the places and the customs.",,Guide francophone passionné nǔ visite authentique.,Guide francophone passionné nǔ visite authentique.
+services.items.3.title,Voyages en groupe,Group trips,,Voyage groupe,Voyage groupe
+services.items.3.description,"Familles, amis, associations : un programme adapté au groupe.","Families, friends, associations: a programme adapted to the group.",,"Circuit organisé nǔ groupe, association kpodo entreprise.","Circuit organisé nǔ groupe, association kpodo entreprise."
+services.items.4.title,Photographie,Photography,,Tour photo,Tour photo
+services.items.4.description,"Itinéraires pensés pour les photographes, aux meilleures heures de lumière.","Itineraries designed for photographers, at the best light.",,Excursion photo kpodo photographe professionnel local.,Excursion photo kpodo photographe professionnel local.
+services.items.5.title,Expériences culinaires,Culinary experiences,,Expérience culinaire,Expérience culinaire
+services.items.5.description,"Marchés, cuisine locale et repas chez l'habitant.","Markets, local cooking and meals with local families.",,"Cours cuisine, dégustation kpodo repas chez l'habitant.","Cours cuisine, dégustation kpodo repas chez l'habitant."
+services.packages.0.name,Essentiel,,,Essentiel,Essentiel
+services.packages.0.price,499€,,,499€,499€
+services.packages.0.duration,5 jours,,,5 azǎn,5 azǎn
+services.packages.0.features.0,Hébergement 3*,,,Hébergement 3*,Hébergement 3*
+services.packages.0.features.1,Petit-déjeuner inclus,,,Petit-déjeuner,Petit-déjeuner
+services.packages.0.features.2,Guide local 2 jours,,,Guide local 2 azǎn,Guide local 2 azǎn
+services.packages.0.features.3,Transferts aéroport,,,Transfert aéroport,Transfert aéroport
+services.packages.0.features.4,Assurance voyage,,,Assurance,Assurance
+services.packages.1.name,Confort,,,Confort,Confort
+services.packages.1.price,899€,,,899€,899€
+services.packages.1.duration,7 jours,,,7 azǎn,7 azǎn
+services.packages.1.features.0,Hébergement 4*,,,Hébergement 4*,Hébergement 4*
+services.packages.1.features.1,Pension complète,,,Pension complète,Pension complète
+services.packages.1.features.2,Guide privé 4 jours,,,Guide privé 4 azǎn,Guide privé 4 azǎn
+services.packages.1.features.3,Transferts inclus,,,Transfert,Transfert
+services.packages.1.features.4,Assurance premium,,,Assurance premium,Assurance premium
+services.packages.1.features.5,Activités incluses,,,Activité,Activité
+services.packages.2.name,Luxe,,,Luxe,Luxe
+services.packages.2.price,1499€,,,1499€,1499€
+services.packages.2.duration,10 jours,,,10 azǎn,10 azǎn
+services.packages.2.features.0,Hébergement 5* / Lodge,,,Hébergement 5*/Lodge,Hébergement 5*/Lodge
+services.packages.2.features.1,Pension complète,,,Pension complète,Pension complète
+services.packages.2.features.2,Guide privé tout le séjour,,,Guide privé,Guide privé
+services.packages.2.features.3,Véhicule privé,,,Véhicule privé,Véhicule privé
+services.packages.2.features.4,Assurance tous risques,,,Assurance tous risques,Assurance tous risques
+services.packages.2.features.5,Toutes activités incluses,,,Activité bǐ,Activité bǐ
+services.packages.2.features.6,Spa & Bien-être,,,Spa,Spa
+services.guarantees.0.title,Paiement sécurisé,,,Paiement sécurisé,Paiement sécurisé
+services.guarantees.0.desc,Transactions 100% sécurisées,,,Transaction 100% sécurisée,Transaction 100% sécurisée
+services.guarantees.1.title,Support 24/7,,,Support 24/7,Support 24/7
+services.guarantees.1.desc,Assistance à tout moment,,,Assistance hwenu bǐ,Assistance hwenu bǐ
+services.guarantees.2.title,Annulation flexible,,,Annulation flexible,Annulation flexible
+services.guarantees.2.desc,Remboursement jusqu'à 30 jours,,,Remboursement 30 azǎn,Remboursement 30 azǎn
+services.guarantees.3.title,Experts locaux,,,Expert local,Expert local
+services.guarantees.3.desc,Équipe passionnée et certifiée,,,Kpɔ́ passionné kpodo certifié,Kpɔ́ passionné kpodo certifié
+services.quote,Demander un devis,Request a quote,,,
+services.wa_message,"Bonjour, je souhaite un devis pour : {{name}}.","Hello, I would like a quote for: {{name}}.",,,
+services.cta_title,Une idée de voyage ?,Got a trip in mind?,,,
+services.cta_text,"Racontez-nous votre projet, nous vous répondons rapidement.",Tell us about your project and we will reply quickly.,,,
+services.cta_button,Écrire sur WhatsApp,Write on WhatsApp,,,
+services.cta_message,"Bonjour, j'aimerais organiser un voyage au Bénin.","Hello, I would like to organise a trip to Benin.",,,
+favorites.badge,Mes coups de cœur,My favourites,,,
+favorites.title,Mes favoris,My favourites,,,
+favorites.subtitle,Retrouvez ici toutes les destinations que vous avez aimées.,Find all the destinations you liked here.,,,
+favorites.empty_title,Votre liste est vide,Your list is empty,,,
+favorites.empty_text,Explorez nos destinations et cliquez sur le cœur pour les ajouter ici.,Explore our destinations and click the heart to add them here.,,,
+favorites.explore,Explorer les destinations,Explore destinations,,,
+favorites.count_one,{{count}} destination enregistrée,{{count}} saved destination,,,
+favorites.count_other,{{count}} destinations enregistrées,{{count}} saved destinations,,,
+favorites.clear_all,Tout supprimer,Remove all,,,
+favorites.view,Voir la destination,View destination,,,
+favorites.cta_title,Envie d'explorer plus ?,Want to explore more?,,,
+favorites.cta_text,Découvrez d'autres destinations ou laissez-vous surprendre.,Discover other destinations or let yourself be surprised.,,,
+favorites.cta_button,Voir toutes les destinations,See all destinations,,,
+favorites.remove,Retirer des favoris,Remove from favourites,,,
+notebook.title,Mon carnet de voyage,My travel notebook,,Carnet de voyage tɔn,Carnet de voyage tɔn
+notebook.subtitle,"Réunissez vos lieux préférés, ajoutez des notes et envoyez votre programme.","Gather your favourite places, add notes and send your plan.",,"Kpé nǔ e ɖo na yí, wlan, bo sɛ́ WhatsApp.","Kpé nǔ e ɖo na yí, wlan, bo sɛ́ WhatsApp."
+notebook.count_one,{{count}} lieu,{{count}} place,,,
+notebook.count_other,{{count}} lieux,{{count}} places,,,
+notebook.empty,Votre carnet est vide.,Your notebook is empty.,,Carnet tɔn ɖo vidé.,Carnet tɔn ɖo vidé.
+notebook.empty_cta,Découvrir les destinations,Discover destinations,,Kɛ̀n fi lɛ,Kɛ̀n yi lɛ
+notebook.up,Monter,Move up,,Yi,Yi
+notebook.down,Descendre,Move down,,Wá,Wá
+notebook.remove,Retirer,Remove,,Ɖe,Ɖe
+notebook.note_ph,Ajouter une note...,Add a note...,,"Note (ex.: 2 nuit, kɛ̀n asì...)","Note (ex.: 2 nuit, kɛ̀n asì...)"
+notebook.dates,Dates du voyage,Travel dates,,Azǎn,Azǎn
+notebook.dates_ph,ex. du 10 au 20 mars,e.g. 10 to 20 March,,Ex.: 12 yì 20 décembre,Ex.: 12 yì 20 décembre
+notebook.travelers,Nombre de voyageurs,Number of travellers,,Mɛ e nɔ yi,Mɛ e nɔ yi
+notebook.send,Envoyer sur WhatsApp,Send on WhatsApp,,Sɛ́ WhatsApp,Sɛ́ WhatsApp
+notebook.copy,Copier le résumé,Copy summary,,Kɔ́ résumé,Kɔ́ résumé
+notebook.copied,Résumé copié,Summary copied,,Résumé kɔ́,Résumé kɔ́
+notebook.stored,Votre carnet est enregistré uniquement sur cet appareil.,Your notebook is saved on this device only.,,Carnet tɔn ɖo navigateur e ɔ́ mɛ.,Carnet tɔn ɖo navigateur e ɔ́ mɛ.
+notebook.wa_intro,"Bonjour, voici mon programme de voyage au Bénin :","Hello, here is my travel plan for Benin:",,"Bonjour, projet yi tɔn ɖò Benin:","Bonjour, projet yi tɔn ɖò Benin:"
+notebook.wa_dates,Dates : {{dates}},Dates: {{dates}},,Dates: {{dates}},Dates: {{dates}}
+notebook.wa_travelers,Voyageurs : {{n}},Travellers: {{n}},,Voyageurs: {{n}},Voyageurs: {{n}}
+map.badge,Carte,Map,,Carte,Carte
+map.title,Carte du Bénin,Map of Benin,,Fi e nɔ yi ɖò Benin?,Yi e nɔ yi ɖò Benin?
+map.subtitle,Choisissez un lieu pour voir où il se trouve.,Choose a place to see where it is.,,Sɔ́ fi ɖokpó nǔ kɛ̀n carte kpodo distance sɔ́ Cotonou.,Sɔ́ yi ɖokpó nǔ kɛ̀n carte kpodo distance sɔ́ Cotonou.
+map.list,Lieux,Places,,Fi lɛ,Yi lɛ
+map.distance,À environ {{km}} km de Cotonou (à vol d'oiseau),About {{km}} km from Cotonou (as the crow flies),,{{km}} km sɔ́ Cotonou (route ɖo xó).,{{km}} km sɔ́ Cotonou (route ɖo xó).
+map.start,Point de départ : Cotonou,Starting point: Cotonou,,Cotonou ɖo fi nǔ distance.,Cotonou ɖo yi nǔ distance.
+map.open,Ouvrir dans Google Maps,Open in Google Maps,,Kpé Google Maps,Kpé Google Maps
+map.add,Ajouter au carnet,Add to notebook,,Kó ɖò carnet,Kó ɖò carnet
+map.added,Ajouté au carnet,Added to notebook,,Ɖò carnet,Ɖò carnet
+map.notebook,Voir mon carnet,View my notebook,,Kɛ̀n carnet,Kɛ̀n carnet
+map.offline,La carte nécessite une connexion internet.,The map needs an internet connection.,,Carte ɖo na Internet.,Carte ɖo na Internet.
+newsletter.ok,"Merci, vous êtes inscrit·e !","Thanks, you're subscribed!",,,
+newsletter.error,Inscription impossible,Could not subscribe,,,
+weather.clear,Dégagé,Clear,,,
+weather.cloudy,Nuageux,Cloudy,,,
+weather.fog,Brouillard,Fog,,,
+weather.rain,Pluie,Rain,,,
+weather.storm,Orage,Thunderstorm,,,
+avatar.change,Changer,Change,,,
+avatar.upload,Ajouter une photo,Add a photo,,,
+avatar.remove,Supprimer,Remove,,,
+avatar.confirm_remove,Supprimer votre photo de profil ?,Remove your profile photo?,,,
+avatar.error_format,Format non supporté,Unsupported format,,,
+avatar.error_format_desc,"Utilisez JPG, PNG, WEBP ou GIF.","Use JPG, PNG, WEBP or GIF.",,,
+avatar.error_size,Fichier trop lourd,File too large,,,
+avatar.error_size_desc,Maximum 5 Mo.,Maximum 5 MB.,,,
+avatar.error_upload,Échec de l'envoi,Upload failed,,,
+avatar.success,Photo mise à jour,Photo updated,,,
+avatar.success_desc,Votre nouvelle photo est en ligne.,Your new photo is live.,,,
+avatar.removed,Photo supprimée,Photo removed,,,
+avatar.removed_desc,Votre avatar par défaut est restauré.,Your default avatar has been restored.,,,
+avatar.hint,"Glissez une image ou cliquez pour choisir. JPG, PNG, WEBP ou GIF · 5 Mo max.","Drag an image here or click to choose. JPG, PNG, WEBP or GIF · 5 MB max.",,,
+info.title,Infos pratiques,Practical info,,Xó lɛ,Xó lɛ
+info.subtitle,Ce qu'il faut savoir avant de partir.,What to know before you go.,,Nǔ e ɖo na wà nǔ yi.,Nǔ e ɖo na wà nǔ yi.
+info.converter.title,Euro / Franc CFA,Euro / CFA franc,,Euro / CFA franc,Euro / CFA franc
+info.converter.eur,Euro (€),Euro (€),,Euro (€),Euro (€)
+info.converter.xof,Franc CFA (F CFA),CFA franc (F CFA),,CFA franc (F CFA),CFA franc (F CFA)
+info.converter.result,= {{value}},= {{value}},,= {{value}},= {{value}}
+info.converter.note,"Taux fixe : 1 € = 655,957 F CFA.",Fixed rate: €1 = 655.957 F CFA.,,"Taux fixe: 1 € = 655,957 F CFA.","Taux fixe: 1 € = 655,957 F CFA."
+info.facts.language.title,Langues,Languages,,Gbè,Sɛ̃
+info.facts.currency.title,Monnaie,Currency,,Monnaie,Monnaie
+info.facts.currency.text,"Franc CFA (XOF), rattaché à l'euro à taux fixe.","CFA franc (XOF), pegged to the euro at a fixed rate.",,"CFA franc (XOF), euro taux fixe.","CFA franc (XOF), euro taux fixe."
+info.facts.timezone.title,Fuseau horaire,Time zone,,Fuseau horaire,Fuseau horaire
+info.facts.timezone.text,UTC+1 toute l'année.,UTC+1 all year round.,,UTC+1 xwè bǐ.,UTC+1 xwè bǐ.
+info.facts.electricity.title,Électricité,Electricity,,Électricité,Électricité
+info.facts.electricity.text,"220 V, 50 Hz. Prises de type C et E : prévoyez un adaptateur.","220 V, 50 Hz. Type C and E sockets: bring an adapter.",,"220 V, 50 Hz. Type C kpodo E: adaptateur.","220 V, 50 Hz. Type C kpodo E: adaptateur."
+info.facts.phone.title,Téléphone,Phone,,Téléphone,Téléphone
+info.facts.phone.text,Indicatif : +229.,Country code: +229.,,Indicatif: +229.,Indicatif: +229.
+info.facts.driving.title,Circulation,Traffic,,Circulation,Circulation
+info.facts.driving.text,On roule à droite.,Driving is on the right.,,A nɔ zɔn ɖò droite.,A nɔ zɔn ɖò droite.
+info.facts.health.title,Santé,Health,,Santé,Santé
+info.facts.entry.title,Entrée,Entry,,Entrée,Entrée
+info.holidays.title,Jours fériés,Public holidays,,Jours fériés,Jours fériés
+info.holidays.download,Ajouter à mon agenda (.ics),Add to my calendar (.ics),,Kó agenda (.ics),Kó agenda (.ics)
+info.holidays.names.newyear,Jour de l'An,New Year's Day,,Xwè,Xwè
+info.holidays.names.religions,Journée des religions endogènes (fête du vodoun),Day of Indigenous Religions (Vodun festival),,Jour religions endogènes (fête vodoun),Jour religions endogènes (fête vodoun)
+info.holidays.names.easterMonday,Lundi de Pâques,Easter Monday,,Lundi de Pâques,Lundi de Pâques
+info.holidays.names.labour,Fête du travail,Labour Day,,Fête du travail,Fête du travail
+info.holidays.names.ascension,Ascension,Ascension Day,,Ascension,Ascension
+info.holidays.names.whitMonday,Lundi de Pentecôte,Whit Monday,,Lundi de Pentecôte,Lundi de Pentecôte
+info.holidays.names.independence,Fête de l'indépendance,Independence Day,,Fête indépendance,Fête indépendance
+info.holidays.names.assumption,Assomption,Assumption,,Assomption,Assomption
+info.holidays.names.allsaints,Toussaint,All Saints' Day,,Toussaint,Toussaint
+info.holidays.names.christmas,Noël,Christmas,,Noël,Noël
+planner.title,Planifier mon voyage,Plan my trip,,Wlan yi tɔn,Wlan yi tɔn
+planner.reset,Tout effacer,Clear all,,Ɖe bǐ,Ɖe bǐ
+planner.versions,Trois versions du voyage :,Three versions of the trip:,,Version atɔn yi tɔn:,Version atɔn yi tɔn:
+planner.relief,Relief 3D,3D relief,,Relief 3D,Relief 3D
+planner.relief_on,Relief 3D : activé,3D relief: on,,Relief 3D: ɖo,Relief 3D: ɖo
+planner.all,Tout,All,,Bǐ,Bǐ
+planner.night,1 nuit,1 night,,1 nuit,1 nuit
+planner.add_to_day,Ajouter au jour {{n}},Add to day {{n}},,Kó azǎn {{n}},Kó azǎn {{n}}
+planner.add_day,Ajouter un jour,Add a day,,,
+planner.day,Jour {{n}},Day {{n}},,Azǎn {{n}},Azǎn {{n}}
+planner.activities,activité(s),activity(ies),,azɔ̌,azɔ̌
+planner.night_short,nuit,night,,nuit,nuit
+planner.drop_here,Déposez un lieu ici,Drop a place here,,Ɖe fi ɖò e,Ɖe yi ɖò e
+planner.on_site,Sur place,On site,,Ɖò fi,Ɖò yi
+planner.travel,trajets,travel,,yi,yi
+planner.free,libre,free,,libre,libre
+planner.budget,Budget prévisionnel (par personne),Estimated budget (per person),,Budget (mɛ),Budget (mɛ)
+planner.estimate,"Estimation, pas un tarif contractuel.","Estimate, not a contractual price.",,"Estimation, ma prix contractuel.","Estimation, ma prix contractuel."
+planner.quote,Demander un devis,Request a quote,,Biɔ devis,Biɔ devis
+planner.copied,Lien copié,Link copied,,Lien kɔ́,Lien kɔ́
+planner.copy_link,Copier le lien,Copy link,,Kɔ́ lien,Kɔ́ lien
+planner.w_too_many,Journée chargée : {{n}} activités. Pensez à déplacer « {{name}} » au lendemain.,"Busy day: {{n}} activities. Consider moving ""{{name}}"" to the next day.",,Azǎn kpé: {{n}} azɔ̌. Kpé «{{name}}» azǎn e ɖo na wá.,Azǎn kpé: {{n}} azɔ̌. Kpé «{{name}}» azǎn e ɖo na wá.
+planner.w_too_long,Programme de {{h}} pour une journée de {{max}} : trop chargé.,A {{h}} schedule for a {{max}} day: too packed.,,Programme {{h}} nǔ azǎn {{max}}: kpé.,Programme {{h}} nǔ azǎn {{max}}: kpé.
+planner.w_no_meal,Moins de 1h30 de libre pour les repas et les pauses.,Less than 1h30 free for meals and breaks.,,Ma 1h30 nǔ nǔɖuɖu kpodo pause.,Ma 1h30 nǔ nǔɖuɖu kpodo pause.
+planner.w_long_leg,Long trajet (~{{h}}) entre « {{from}} » et « {{to}} ».,"Long trip (~{{h}}) between ""{{from}}"" and ""{{to}}"".",,Yi xó (~{{h}}) «{{from}}» kpodo «{{to}}».,Yi xó (~{{h}}) «{{from}}» kpodo «{{to}}».
+quiz.badge,Jeux et découvertes,Games and discoveries,,Jeu kpodo découverte,Jeu kpodo découverte
+quiz.title,Quiz,Quiz,,Quiz,Quiz
+quiz.subtitle,"Trouvez le voyage qui vous ressemble, puis testez vos connaissances.","Find the trip that suits you, then test your knowledge.",,"Mɔ yi e ɖo na yí, bo test connaissance tɔn.","Mɔ yi e ɖo na yí, bo test connaissance tɔn."
+quiz.tabs.finder,Trouver mon voyage,Find my trip,,Mɔ yi tɔn,Mɔ yi tɔn
+quiz.tabs.culture,Quiz culture,Culture quiz,,Quiz culture,Quiz culture
+quiz.finder.q1,Qu'est-ce qui vous attire le plus ?,What attracts you the most?,,Etɛ́ ɖo na yí?,Etɛ́ ɖo na yí?
+quiz.finder.q2,Et en deuxième choix ?,And as a second choice?,,Etɛ́ ɖò deuxième?,Etɛ́ ɖò deuxième?
+quiz.finder.q3,Combien de temps avez-vous ?,How much time do you have?,,Hwenu ɖe?,Hwenu ɖe?
+quiz.finder.interests.historique,Histoire et monuments,History and monuments,,Xotɛn kpodo monument,Xotɛn kpodo monument
+quiz.finder.interests.nature,Nature et animaux,Nature and wildlife,,Nature kpodo animal,Nature kpodo animal
+quiz.finder.interests.plage,Plage et détente,Beach and relaxation,,Xù kpodo détente,Xù kpodo détente
+quiz.finder.interests.ville,Ville et marchés,City and markets,,Vie urbaine kpodo asì,Vie urbaine kpodo asì
+quiz.finder.interests.culture,Traditions et vie locale,Traditions and local life,,Tradition kpodo vie locale,Tradition kpodo vie locale
+quiz.finder.durations.short,Court séjour (1-3 jours),Short stay (1-3 days),,Hwenu kpɛvi (1-3 azǎn),Hwenu kpɛvi (1-3 azǎn)
+quiz.finder.durations.medium,Environ une semaine,About a week,,Semaine ɖokpó,Semaine ɖokpó
+quiz.finder.durations.long,Plus d'une semaine,More than a week,,Xó semaine ɖokpó,Xó semaine ɖokpó
+quiz.finder.step,Étape {{n}} / 3,Step {{n}} / 3,,Étape {{n}} / 3,Étape {{n}} / 3
+quiz.finder.back,Retour,Back,,Lɛ́kɔ́,Lɛ́kɔ́
+quiz.finder.restart,Recommencer,Start over,,Bɛ̀,Bɛ̀
+quiz.finder.result_title,Nos idées pour vous,Our ideas for you,,Nǔ e mí ɖo nǔ wɛ,Nǔ e mí ɖo nǔ wɛ
+quiz.finder.result_note_short,"Pour un court séjour, nous retenons les lieux à moins de 300 km de Cotonou.","For a short stay, we pick places within 300 km of Cotonou.",,"Nǔ hwenu kpɛvi, mí sɔ́ fi e ɖo Cotonou.","Nǔ hwenu kpɛvi, mí sɔ́ yi e ɖo Cotonou."
+quiz.finder.match1,Votre premier choix,Your first choice,,Nǔ e ɖo na yí kpɔ́,Nǔ e ɖo na yí kpɔ́
+quiz.finder.match2,Votre deuxième choix,Your second choice,,Nǔ e ɖo na yí deuxième,Nǔ e ɖo na yí deuxième
+quiz.finder.match0,Une bonne alternative,A good alternative,,Cotonou,Cotonou
+quiz.finder.see_map,Voir sur la carte,See on the map,,Kɛ̀n carte,Kɛ̀n carte
+quiz.finder.add,Ajouter au carnet,Add to notebook,,Kó carnet,Kó carnet
+quiz.finder.added,Dans le carnet,In the notebook,,Ɖò carnet,Ɖò carnet
+quiz.finder.aerial,≈ {{km}} km de Cotonou (à vol d'oiseau),≈ {{km}} km from Cotonou (as the crow flies),,≈ {{km}} km sɔ́ Cotonou,≈ {{km}} km sɔ́ Cotonou
+quiz.culture.intro,10 questions sur l'histoire et la culture du Bénin.,10 questions about the history and culture of Benin.,,10 nkambi xotɛn kpodo kɔnɖo Benin.,10 nkambi xotɛn kpodo kɔnɖo Benin.
+quiz.culture.start,Commencer,Start,,Bɛ̀,Bɛ̀
+quiz.culture.question_of,Question {{n}} / {{total}},Question {{n}} / {{total}},,Nkambi {{n}} / {{total}},Nkambi {{n}} / {{total}}
+quiz.culture.correct,Bonne réponse !,Correct!,,Ɖagbe!,Ɖagbe!
+quiz.culture.wrong,Pas tout à fait.,Not quite.,,Ma ɖagbe.,Ma ɖagbe.
+quiz.culture.next,Question suivante,Next question,,Nkambi e ɖo na wá,Nkambi e ɖo na wá
+quiz.culture.finish,Voir mon score,See my score,,Kɛ̀n score,Kɛ̀n score
+quiz.culture.score,Votre score : {{score}} / {{total}},Your score: {{score}} / {{total}},,Score: {{score}} / {{total}},Score: {{score}} / {{total}}
+quiz.culture.best,Meilleur score : {{best}} / {{total}},Best score: {{best}} / {{total}},,Score ɖagbe: {{best}} / {{total}},Score ɖagbe: {{best}} / {{total}}
+quiz.culture.tiers.high,Excellent ! Vous connaissez très bien le Bénin.,Excellent! You know Benin very well.,,Ɖagbe: a nɔ Benin ɖagbe!,Ɖagbe: a nɔ Benin ɖagbe!
+quiz.culture.tiers.mid,Bien joué ! Vous avez de bonnes bases.,Well done! You have a good foundation.,,Ɖagbe: a ɖo base ɖagbe.,Ɖagbe: a ɖo base ɖagbe.
+quiz.culture.tiers.low,Continuez à explorer : la rubrique « L'âme du Bénin » vous aidera.,"Keep exploring: the ""Soul of Benin"" section will help.",,Découverte: « Benin ɖeɖe » na kpé nǔ.,Découverte: « Benin ɖeɖe » na kpé nǔ.
+quiz.culture.restart,Rejouer,Play again,,Bɛ̀,Bɛ̀
+quiz.culture.share,Partager mon score,Share my score,,Xo score,Xo score
+quiz.culture.share_text,J'ai obtenu {{score}}/{{total}} au quiz culture du Bénin !,I scored {{score}}/{{total}} on the Benin culture quiz!,,Score {{score}}/{{total}} quiz culture Benin!,Score {{score}}/{{total}} quiz culture Benin!
+quiz.culture.copied,Texte copié,Text copied,,Xó kɔ́,Xó kɔ́
+quiz.q.unesco.exp,Ils sont inscrits depuis 1985.,They have been listed since 1985.,,1985.,1985.
+quiz.q.exile.q,Quel roi du Dahomey s'est rendu en 1894 avant d'être exilé en Martinique ?,Which king of Dahomey surrendered in 1894 before being exiled to Martinique?,,Aɖɔ̀xɔ́ ɖe Dahomey yì 1894 bo yì Martinique?,Aɖɔ̀xɔ́ ɖe Dahomey yì 1894 bo yì Martinique?
+quiz.q.exile.exp,"Béhanzin, exilé en Martinique puis en Algérie.","Béhanzin, exiled to Martinique and then to Algeria.",,"Béhanzin, yì Martinique kpodo Algérie.","Béhanzin, yì Martinique kpodo Algérie."
+quiz.q.jan10.q,À quoi est consacré le 10 janvier au Bénin ?,What is January 10 dedicated to in Benin?,,10 janvier ɖo nǔ ɖe Benin?,10 janvier ɖo nǔ ɖe Benin?
+quiz.q.jan10.opts.0,La fête de l'indépendance,Independence Day,,Fête indépendance,Fête indépendance
+quiz.q.jan10.opts.1,La journée des religions endogènes,Day of Indigenous Religions,,Jour religions endogènes,Jour religions endogènes
+quiz.q.jan10.opts.2,La fête du travail,Labour Day,,Fête travail,Fête travail
+quiz.q.jan10.opts.3,Le jour de l'An,New Year's Day,,Xwè,Xwè
+quiz.q.jan10.exp,"C'est la journée des religions endogènes, aussi appelée fête du vodoun.","It is the Day of Indigenous Religions, also called the Vodun festival.",,"Jour religions endogènes, fête vodoun.","Jour religions endogènes, fête vodoun."
+quiz.q.gate.q,Quelle ville abrite la Porte du Non-Retour ?,Which city is home to the Door of No Return?,,Aɖɔ̀xɔ́ ɖe ɖo Porte du Non-Retour?,Aɖɔ̀xɔ́ ɖe ɖo Porte du Non-Retour?
+quiz.q.gate.exp,"Ouidah, au bout de la Route des Esclaves.","Ouidah, at the end of the Slave Route.",,"Ouidah, Route des Esclaves.","Ouidah, Route des Esclaves."
+quiz.q.capital.q,Quelle est la capitale officielle du Bénin ?,What is the official capital of Benin?,,Capitale officielle Benin?,Capitale officielle Benin?
+quiz.q.capital.exp,Porto-Novo est la capitale officielle ; Cotonou concentre le gouvernement.,Porto-Novo is the official capital; Cotonou hosts the government.,,Porto-Novo; Cotonou ɖo gouvernement.,Porto-Novo; Cotonou ɖo gouvernement.
+quiz.q.bronze.q,Quelle technique sert à couler le bronze dans l'artisanat béninois ?,Which technique is used to cast bronze in Beninese craftsmanship?,,Technique ɖe nǔ bronze Benin?,Technique ɖe nǔ bronze Benin?
+quiz.q.bronze.opts.0,Le tissage,Weaving,,Tissage,Tissage
+quiz.q.bronze.opts.1,La poterie,Pottery,,Poterie,Poterie
+quiz.q.bronze.opts.2,La cire perdue,Lost-wax casting,,Cire perdue,Cire perdue
+quiz.q.bronze.opts.3,La vannerie,Basketry,,Vannerie,Vannerie
+quiz.q.bronze.exp,"La cire perdue : l'objet est modelé en cire, puis le métal remplace la cire.","Lost-wax casting: the object is modelled in wax, then the metal replaces the wax.",,"Cire perdue: objet ɖo cire, argile, métal.","Cire perdue: objet ɖo cire, argile, métal."
+quiz.q.rename.q,En quelle année le Dahomey est-il devenu le Bénin ?,In what year did Dahomey become Benin?,,Xwè ɖe Dahomey yí Benin?,Xwè ɖe Dahomey yí Benin?
+quiz.q.rename.exp,En 1975.,In 1975.,,1975.,1975.
+quiz.q.currency.q,Quelle est la monnaie du Bénin ?,What is the currency of Benin?,,Monnaie Benin?,Monnaie Benin?
+quiz.q.currency.exp,"Le franc CFA (XOF), rattaché à l'euro à taux fixe.","The CFA franc (XOF), pegged to the euro at a fixed rate.",,"CFA franc (XOF), euro taux fixe.","CFA franc (XOF), euro taux fixe."
+quiz.q.gelede.q,Qui les masques Gèlèdè honorent-ils ?,Who do Gèlèdè masks honour?,,Mɛ ɖe Gèlèdè nɔ kpé?,Mɛ ɖe Gèlèdè nɔ kpé?
+quiz.q.gelede.opts.0,Les chasseurs,Hunters,,Chasseur,Chasseur
+quiz.q.gelede.opts.1,Les mères,Mothers,,Nɔ̀,Nɔ̀
+quiz.q.gelede.opts.2,Les pêcheurs,Fishermen,,Pêcheur,Pêcheur
+quiz.q.gelede.opts.3,Les rois,Kings,,Aɖɔ̀xɔ́,Aɖɔ̀xɔ́
+quiz.q.gelede.exp,Les Gèlèdè rendent hommage aux mères et à leur pouvoir spirituel.,Gèlèdè pays tribute to mothers and their spiritual power.,,Gèlèdè nɔ kpé nɔ̀ kpodo gbɛ̀n tɔn.,Gèlèdè nɔ kpé nɔ̀ kpodo gbɛ̀n tɔn.
+quiz.q.fort.q,"Le fort São João Baptista de Ajudá, à Ouidah, a été fondé par le Portugal en…",The São João Baptista de Ajudá fort in Ouidah was founded by Portugal in…,,"Fort São João Baptista de Ajudá Ouidah, Portugal xwè ɖe?","Fort São João Baptista de Ajudá Ouidah, Portugal xwè ɖe?"
+quiz.q.fort.exp,En 1721. Il abrite aujourd'hui le musée d'histoire de Ouidah.,In 1721. It now houses the Ouidah History Museum.,,1721. Musée Ouidah.,1721. Musée Ouidah.

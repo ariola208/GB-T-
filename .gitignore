@@ -27,3 +27,8 @@ dist-ssr
 !.env
 .env
 node_modules
+
+*.bak
+vite.config.ts.timestamp-*
+server/.env
+server/uploads/
