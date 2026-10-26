@@ -1,92 +1,245 @@
 {
-  "nav": {
-    "home": "Home", "destinations": "Destinations", "culture": "Culture", "services": "Services",
-    "blog": "Blog", "gallery": "Gallery", "faq": "FAQ", "about": "About", "contact": "Contact",
-    "login": "Log in", "logout": "Log out", "profile": "My profile", "soul": "Soul of Benin",
-    "planner": "Plan", "ame": "Soul of Benin", "more": "More", "search": "Search",
-    "search_placeholder": "Go to a page...", "no_result": "No results",
-    "my_account": "My account", "my_trips": "My trips", "favorites": "My favorites",
-    "map": "Map", "quiz": "Quiz", "notebook": "Travel notebook", "info": "Practical info"
-  },
-  "common": {
-    "language": "Language", "theme_light": "Switch to light mode", "theme_dark": "Switch to dark mode",
-    "listen": "Listen", "loading": "Loading...", "translation_partial": "Translation in progress"
-  },
-  "hero": {
-    "kicker": "Discover West Africa", "title": "Benin awaits you",
-    "subtitle": "A journey through ancient history, living traditions and breathtaking landscapes.",
-    "explore": "Explore", "plan": "Plan your trip",
-    "alt": "Ganvié, the Venice of Africa", "scroll": "Scroll",
-    "stats": { "years": "Years of experience", "destinations": "Destinations", "travelers": "Happy travelers" }
-  },
-  "home": {
-    "why_title": "Why travel with us?", "why_subtitle": "A local team, safe tours and experiences designed for you.",
-    "experts_title": "Local experts", "experts_desc": "Passionate guides who know every corner of Benin.",
-    "safe_title": "Safe travel", "safe_desc": "Vetted partners, 24/7 assistance and insurance included.",
-    "custom_title": "Tailor-made", "custom_desc": "Every itinerary is adapted to your wishes and your budget."
-  },
-  "destPreview": {
-    "kicker": "Destinations", "title": "Iconic places", "all": "All destinations", "discover": "Discover",
-    "items": {
-      "abomey": { "title": "Abomey", "subtitle": "Royal Palaces — UNESCO", "description": "The remains of the powerful Kingdom of Dahomey." },
-      "ouidah": { "title": "Ouidah", "subtitle": "The Slave Route", "description": "The Door of No Return, a universal place of remembrance." },
-      "pendjari": { "title": "Pendjari", "subtitle": "Safari & Nature", "description": "One of the last great wildlife sanctuaries in West Africa." },
-      "cotonou": { "title": "Cotonou", "subtitle": "Economic Heart", "description": "The vibrant economic capital." }
-    }
-  },
-  "cultureSection": {
-    "kicker": "Heritage", "title": "Cradle of Vodun",
-    "p1": "Benin is the birthplace of the Vodun religion, a rich and complex spiritual tradition that continues to shape daily life.",
-    "p2": "From the annual Vodun festival in Ouidah to the secret temples of the hinterland, discover an intangible heritage of exceptional depth.",
-    "more": "Explore the culture", "alt": "Traditional Vodun masks of Benin",
-    "stats": { "inhabitants": "Inhabitants", "ethnic": "Ethnic groups", "unesco": "UNESCO sites" }
-  },
-  "cta": {
-    "kicker": "Ready for adventure?", "title": "Start your journey in Benin",
-    "text": "Whether you dream of safaris, paradise beaches or cultural discoveries, we create your tailor-made itinerary.",
-    "button": "Contact us", "secondary": "See destinations"
-  },
-  "footer": {
-    "tagline": "Explore Benin, land of culture, history and nature. An unforgettable journey awaits you in the heart of West Africa.",
-    "navigation": "Navigation", "contact": "Contact", "rights": "All rights reserved.", "back_to_top": "Back to top"
-  },
-  "floating": { "top": "Back to top", "whatsapp": "Chat on WhatsApp" },
-  "whatsapp": { "label": "Chat with us on WhatsApp", "greeting": "Hello LEGBAH, I would like some information to plan a trip." },
-  "home2": {
-    "explore": {
-      "kicker": "Explore by universe", "title": "What makes you travel?",
-      "tiles": {
-        "history": { "title": "History and memory", "text": "Kingdoms, palaces and places of remembrance." },
-        "nature": { "title": "Nature and safari", "text": "Parks, savannas and mountains." },
-        "beach": { "title": "Beaches and lagoons", "text": "Ocean, lagoon and fishing villages." },
-        "city": { "title": "Cities and markets", "text": "Cotonou and Porto-Novo." },
-        "tradition": { "title": "Traditions and arts", "text": "Masks, ceremonies and know-how." }
-      }
-    },
-    "steps": {
-      "kicker": "From dream to departure", "title": "Prepare your trip in 3 steps",
-      "items": [
-        { "title": "Find what you want", "text": "A short quiz to get three destination ideas.", "cta": "Take the quiz" },
-        { "title": "Explore the map", "text": "Locate each place and estimate distances from Cotonou.", "cta": "Open the map" },
-        { "title": "Organise your notebook", "text": "Order your stops and send your plan by WhatsApp.", "cta": "My notebook" }
-      ]
-    },
-    "facts": {
-      "kicker": "Did you know?", "prev": "Previous", "next": "Next",
-      "items": [
-        "Twelve kings succeeded one another in Abomey between 1625 and 1900, according to UNESCO.",
-        "The Slave Route in Ouidah is about four kilometres long and leads to the Door of No Return.",
-        "January 10 is a public holiday dedicated to indigenous religions, also called the vodun festival.",
-        "In 2021, France returned twenty-six works from the royal treasures of Abomey to Benin.",
-        "Ganvié is a lake village built on stilts, on Lake Nokoué.",
-        "The CFA franc is pegged to the euro at a fixed rate: €1 = 655.957 F CFA."
-      ]
-    }
-  },
-  "tools": {
-    "kicker": "Travel tools", "title": "Plan your trip", "subtitle": "Currency converter, countdown and budget estimator.",
-    "currency": { "title": "Euro / CFA Franc converter", "eur": "Euros (€)", "xof": "CFA Francs (F CFA)", "rate": "Fixed rate: €1 = 655.957 F CFA" },
-    "countdown": { "title": "Countdown", "event": "National Vodun Day — January 10", "days": "Days", "hours": "Hours", "minutes": "Minutes", "seconds": "Seconds" },
-    "budget": { "title": "Budget estimator", "style": "Travel style", "essential": "Essential", "comfort": "Comfort", "luxury": "Luxury", "days": "Number of days", "daysUnit": "days", "travelers": "Travelers", "total": "Estimated total budget", "perPerson": "per person", "note": "Indicative estimate.", "cta": "Request a custom quote" }
+ "nav": {
+  "home": "Home",
+  "destinations": "Destinations",
+  "culture": "Culture",
+  "services": "Services",
+  "blog": "Blog",
+  "gallery": "Gallery",
+  "faq": "FAQ",
+  "about": "About",
+  "contact": "Contact",
+  "login": "Log in",
+  "logout": "Log out",
+  "profile": "My profile",
+  "soul": "Soul of Benin",
+  "planner": "Plan",
+  "ame": "Soul of Benin",
+  "more": "More",
+  "search": "Search",
+  "search_placeholder": "Go to a page...",
+  "no_result": "No results",
+  "my_account": "My account",
+  "my_trips": "My trips",
+  "favorites": "My favorites",
+  "map": "Map",
+  "quiz": "Quiz",
+  "notebook": "Travel notebook",
+  "info": "Practical info"
+ },
+ "common": {
+  "language": "Language",
+  "theme_light": "Switch to light mode",
+  "theme_dark": "Switch to dark mode",
+  "listen": "Listen",
+  "loading": "Loading...",
+  "translation_partial": "Translation in progress"
+ },
+ "hero": {
+  "kicker": "Discover West Africa",
+  "title": "Benin awaits you",
+  "subtitle": "A journey through ancient history, living traditions and breathtaking landscapes.",
+  "explore": "Explore",
+  "plan": "Plan your trip",
+  "alt": "Ganvié, the Venice of Africa",
+  "scroll": "Scroll",
+  "stats": {
+   "years": "Years of experience",
+   "destinations": "Destinations",
+   "travelers": "Happy travelers"
   }
+ },
+ "home": {
+  "why_title": "Why travel with us?",
+  "why_subtitle": "A local team, safe tours and experiences designed for you.",
+  "experts_title": "Local experts",
+  "experts_desc": "Passionate guides who know every corner of Benin.",
+  "safe_title": "Safe travel",
+  "safe_desc": "Vetted partners, 24/7 assistance and insurance included.",
+  "custom_title": "Tailor-made",
+  "custom_desc": "Every itinerary is adapted to your wishes and your budget."
+ },
+ "destPreview": {
+  "kicker": "Destinations",
+  "title": "Iconic places",
+  "all": "All destinations",
+  "discover": "Discover",
+  "items": {
+   "abomey": {
+    "title": "Abomey",
+    "subtitle": "Royal Palaces — UNESCO",
+    "description": "The remains of the powerful Kingdom of Dahomey."
+   },
+   "ouidah": {
+    "title": "Ouidah",
+    "subtitle": "The Slave Route",
+    "description": "The Door of No Return, a universal place of remembrance."
+   },
+   "pendjari": {
+    "title": "Pendjari",
+    "subtitle": "Safari & Nature",
+    "description": "One of the last great wildlife sanctuaries in West Africa."
+   },
+   "cotonou": {
+    "title": "Cotonou",
+    "subtitle": "Economic Heart",
+    "description": "The vibrant economic capital."
+   }
+  }
+ },
+ "cultureSection": {
+  "kicker": "Heritage",
+  "title": "Cradle of Vodun",
+  "p1": "Benin is the birthplace of the Vodun religion, a rich and complex spiritual tradition that continues to shape daily life.",
+  "p2": "From the annual Vodun festival in Ouidah to the secret temples of the hinterland, discover an intangible heritage of exceptional depth.",
+  "more": "Explore the culture",
+  "alt": "Traditional Vodun masks of Benin",
+  "stats": {
+   "inhabitants": "Inhabitants",
+   "ethnic": "Ethnic groups",
+   "unesco": "UNESCO sites"
+  }
+ },
+ "cta": {
+  "kicker": "Ready for adventure?",
+  "title": "Start your journey in Benin",
+  "text": "Whether you dream of safaris, paradise beaches or cultural discoveries, we create your tailor-made itinerary.",
+  "button": "Contact us",
+  "secondary": "See destinations"
+ },
+ "footer": {
+  "tagline": "Explore Benin, land of culture, history and nature. An unforgettable journey awaits you in the heart of West Africa.",
+  "navigation": "Navigation",
+  "contact": "Contact",
+  "rights": "All rights reserved.",
+  "back_to_top": "Back to top"
+ },
+ "floating": {
+  "top": "Back to top",
+  "whatsapp": "Chat on WhatsApp"
+ },
+ "whatsapp": {
+  "label": "Chat with us on WhatsApp",
+  "greeting": "Hello LEGBAH, I would like some information to plan a trip."
+ },
+ "home2": {
+  "explore": {
+   "kicker": "Explore by universe",
+   "title": "What makes you travel?",
+   "tiles": {
+    "history": {
+     "title": "History and memory",
+     "text": "Kingdoms, palaces and places of remembrance."
+    },
+    "nature": {
+     "title": "Nature and safari",
+     "text": "Parks, savannas and mountains."
+    },
+    "beach": {
+     "title": "Beaches and lagoons",
+     "text": "Ocean, lagoon and fishing villages."
+    },
+    "city": {
+     "title": "Cities and markets",
+     "text": "Cotonou and Porto-Novo."
+    },
+    "tradition": {
+     "title": "Traditions and arts",
+     "text": "Masks, ceremonies and know-how."
+    }
+   }
+  },
+  "steps": {
+   "kicker": "From dream to departure",
+   "title": "Prepare your trip in 3 steps",
+   "items": [
+    {
+     "title": "Find what you want",
+     "text": "A short quiz to get three destination ideas.",
+     "cta": "Take the quiz"
+    },
+    {
+     "title": "Explore the map",
+     "text": "Locate each place and estimate distances from Cotonou.",
+     "cta": "Open the map"
+    },
+    {
+     "title": "Organise your notebook",
+     "text": "Order your stops and send your plan by WhatsApp.",
+     "cta": "My notebook"
+    }
+   ]
+  },
+  "facts": {
+   "kicker": "Did you know?",
+   "prev": "Previous",
+   "next": "Next",
+   "items": [
+    "Twelve kings succeeded one another in Abomey between 1625 and 1900, according to UNESCO.",
+    "The Slave Route in Ouidah is about four kilometres long and leads to the Door of No Return.",
+    "January 10 is a public holiday dedicated to indigenous religions, also called the vodun festival.",
+    "In 2021, France returned twenty-six works from the royal treasures of Abomey to Benin.",
+    "Ganvié is a lake village built on stilts, on Lake Nokoué.",
+    "The CFA franc is pegged to the euro at a fixed rate: €1 = 655.957 F CFA."
+   ]
+  }
+ },
+ "tools": {
+  "kicker": "Travel tools",
+  "title": "Plan your trip",
+  "subtitle": "Currency converter, countdown and budget estimator.",
+  "currency": {
+   "title": "Euro / CFA Franc converter",
+   "eur": "Euros (€)",
+   "xof": "CFA Francs (F CFA)",
+   "rate": "Fixed rate: €1 = 655.957 F CFA"
+  },
+  "countdown": {
+   "title": "Countdown",
+   "event": "National Vodun Day — January 10",
+   "days": "Days",
+   "hours": "Hours",
+   "minutes": "Minutes",
+   "seconds": "Seconds"
+  },
+  "budget": {
+   "title": "Budget estimator",
+   "style": "Travel style",
+   "essential": "Essential",
+   "comfort": "Comfort",
+   "luxury": "Luxury",
+   "days": "Number of days",
+   "daysUnit": "days",
+   "travelers": "Travelers",
+   "total": "Estimated total budget",
+   "perPerson": "per person",
+   "note": "Indicative estimate.",
+   "cta": "Request a custom quote"
+  }
+ },
+ "login": {
+  "show_password": "Show password",
+  "hide_password": "Hide password",
+  "capslock": "Caps Lock is on",
+  "strength": "Strength",
+  "rule_length": "8 characters min.",
+  "rule_lower": "One lowercase",
+  "rule_upper": "One uppercase",
+  "rule_digit": "One digit",
+  "rule_symbol": "One symbol",
+  "remember": "Remember me",
+  "forgot": "Forgot password?",
+  "forgot_hint": "Coming soon.",
+  "confirm_password": "Confirm password",
+  "secure_hint": "Your data is encrypted. No sharing with third parties.",
+  "fill_demo": "Fill demo credentials",
+  "errors": {
+   "email": "Invalid email address",
+   "firstName": "First name required (2 chars min.)",
+   "lastName": "Last name required",
+   "password_short": "8 characters minimum",
+   "password_weak": "Password too weak",
+   "confirm": "Passwords do not match"
+  }
+ }
 }

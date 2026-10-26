@@ -1,94 +1,245 @@
 {
-  "nav": {
-    "home": "Início", "destinations": "Destinos", "culture": "Cultura", "services": "Serviços",
-    "blog": "Blog", "gallery": "Galeria", "faq": "Perguntas frequentes", "about": "Sobre nós",
-    "contact": "Contacto", "login": "Entrar", "logout": "Sair", "profile": "Meu perfil",
-    "soul": "A alma do Benim", "planner": "Planear viagem", "ame": "A alma do Benim",
-    "more": "Mais", "search": "Pesquisar", "search_placeholder": "Ir para uma página...",
-    "no_result": "Sem resultados", "my_account": "A minha conta", "my_trips": "As minhas viagens",
-    "favorites": "Os meus favoritos", "map": "Mapa", "quiz": "Quiz",
-    "notebook": "Caderno de viagem", "info": "Informações práticas"
-  },
-  "common": {
-    "language": "Idioma", "theme_light": "Mudar para o modo claro",
-    "theme_dark": "Mudar para o modo escuro", "listen": "Ouvir", "loading": "A carregar...",
-    "translation_partial": "Tradução em curso"
-  },
-  "hero": {
-    "kicker": "Descubra a África Ocidental", "title": "O Benim espera por si",
-    "subtitle": "Uma viagem entre história milenar, tradições vivas e paisagens de cortar a respiração.",
-    "explore": "Explorar", "plan": "Planear a sua viagem",
-    "alt": "Ganvié, a Veneza de África", "scroll": "Deslizar",
-    "stats": { "years": "Anos de experiência", "destinations": "Destinos", "travelers": "Viajantes satisfeitos" }
-  },
-  "home": {
-    "why_title": "Porquê viajar connosco?", "why_subtitle": "Uma equipa local, circuitos seguros e experiências pensadas para si.",
-    "experts_title": "Especialistas locais", "experts_desc": "Guias apaixonados que conhecem cada canto do Benim.",
-    "safe_title": "Viagem segura", "safe_desc": "Parceiros verificados, assistência 24/7 e seguro incluído.",
-    "custom_title": "À medida", "custom_desc": "Cada itinerário é adaptado aos seus desejos e ao seu orçamento."
-  },
-  "destPreview": {
-    "kicker": "Destinos", "title": "Lugares emblemáticos", "all": "Todos os destinos", "discover": "Descobrir",
-    "items": {
-      "abomey": { "title": "Abomey", "subtitle": "Palácios Reais — UNESCO", "description": "Os vestígios do poderoso Reino do Daomé." },
-      "ouidah": { "title": "Ouidah", "subtitle": "A Rota dos Escravos", "description": "A Porta do Não-Retorno, um lugar de memória universal." },
-      "pendjari": { "title": "Pendjari", "subtitle": "Safari e Natureza", "description": "Um dos últimos grandes santuários de vida selvagem." },
-      "cotonou": { "title": "Cotonou", "subtitle": "Coração Económico", "description": "A vibrante capital económica." }
-    }
-  },
-  "cultureSection": {
-    "kicker": "Património", "title": "Berço do Vodum",
-    "p1": "O Benim é o berço da religião vodum, uma tradição espiritual rica e complexa que continua a moldar a vida quotidiana.",
-    "p2": "Da festa anual do Vodum em Ouidah aos templos secretos do interior, descubra um património imaterial de profundidade excecional.",
-    "more": "Explorar a cultura", "alt": "Máscaras tradicionais vodum do Benim",
-    "stats": { "inhabitants": "Habitantes", "ethnic": "Etnias", "unesco": "Sítios UNESCO" }
-  },
-  "cta": {
-    "kicker": "Pronto para a aventura?", "title": "Comece a sua viagem ao Benim",
-    "text": "Quer sonhe com safaris, praias paradisíacas ou descobertas culturais, criamos o seu itinerário por medida.",
-    "button": "Fale connosco", "secondary": "Ver destinos"
-  },
-  "footer": {
-    "tagline": "Explore o Benim, terra de cultura, história e natureza. Uma viagem inesquecível espera por si no coração da África Ocidental.",
-    "navigation": "Navegação", "contact": "Contacto", "rights": "Todos os direitos reservados.", "back_to_top": "Voltar ao topo"
-  },
-  "floating": { "top": "Voltar ao topo", "whatsapp": "Conversar no WhatsApp" },
-  "whatsapp": { "label": "Fale connosco no WhatsApp", "greeting": "Olá LEGBAH, gostaria de obter informações para organizar uma viagem." },
-  "home2": {
-    "explore": {
-      "kicker": "Explorar por universo", "title": "O que o faz viajar?",
-      "tiles": {
-        "history": { "title": "História e memória", "text": "Reinos, palácios e lugares de memória." },
-        "nature": { "title": "Natureza e safari", "text": "Parques, savanas e montanhas." },
-        "beach": { "title": "Praias e lagoas", "text": "Oceano, lagoa e aldeias de pescadores." },
-        "city": { "title": "Cidades e mercados", "text": "Cotonou e Porto-Novo." },
-        "tradition": { "title": "Tradições e artes", "text": "Máscaras, cerimónias e saberes." }
-      }
-    },
-    "steps": {
-      "kicker": "Do sonho à partida", "title": "Prepare a sua viagem em 3 etapas",
-      "items": [
-        { "title": "Descubra o que procura", "text": "Um quiz curto para obter três ideias de destinos.", "cta": "Fazer o quiz" },
-        { "title": "Explore o mapa", "text": "Situe cada lugar e estime as distâncias a partir de Cotonou.", "cta": "Abrir o mapa" },
-        { "title": "Organize o seu caderno", "text": "Ordene as suas etapas e envie o seu projeto por WhatsApp.", "cta": "O meu caderno" }
-      ]
-    },
-    "facts": {
-      "kicker": "Sabia que?", "prev": "Anterior", "next": "Seguinte",
-      "items": [
-        "Doze reis sucederam-se em Abomey entre 1625 e 1900, segundo a UNESCO.",
-        "A Rota dos Escravos, em Ouidah, tem cerca de quatro quilómetros e leva à Porta do Não-Retorno.",
-        "O dia 10 de janeiro é feriado dedicado às religiões endógenas, também chamado festa do vodum.",
-        "Em 2021, a França restituiu ao Benim vinte e seis obras dos tesouros reais de Abomey.",
-        "Ganvié é uma aldeia lacustre construída sobre estacas, no lago Nokoué.",
-        "O franco CFA está indexado ao euro a uma taxa fixa: 1 € = 655,957 F CFA."
-      ]
-    }
-  },
-  "tools": {
-    "kicker": "Ferramentas de viagem", "title": "Prepare a sua viagem", "subtitle": "Conversor de moedas, contagem decrescente e estimador de orçamento.",
-    "currency": { "title": "Conversor Euro / Franco CFA", "eur": "Euros (€)", "xof": "Francos CFA (F CFA)", "rate": "Taxa fixa: 1 € = 655,957 F CFA" },
-    "countdown": { "title": "Contagem decrescente", "event": "Dia Nacional do Vodun — 10 de janeiro", "days": "Dias", "hours": "Horas", "minutes": "Minutos", "seconds": "Segundos" },
-    "budget": { "title": "Estimador de orçamento", "style": "Estilo de viagem", "essential": "Essencial", "comfort": "Conforto", "luxury": "Luxo", "days": "Número de dias", "daysUnit": "dias", "travelers": "Viajantes", "total": "Orçamento total estimado", "perPerson": "por pessoa", "note": "Estimativa indicativa.", "cta": "Pedir um orçamento personalizado" }
+ "nav": {
+  "home": "Início",
+  "destinations": "Destinos",
+  "culture": "Cultura",
+  "services": "Serviços",
+  "blog": "Blog",
+  "gallery": "Galeria",
+  "faq": "Perguntas frequentes",
+  "about": "Sobre nós",
+  "contact": "Contacto",
+  "login": "Entrar",
+  "logout": "Sair",
+  "profile": "Meu perfil",
+  "soul": "A alma do Benim",
+  "planner": "Planear viagem",
+  "ame": "A alma do Benim",
+  "more": "Mais",
+  "search": "Pesquisar",
+  "search_placeholder": "Ir para uma página...",
+  "no_result": "Sem resultados",
+  "my_account": "A minha conta",
+  "my_trips": "As minhas viagens",
+  "favorites": "Os meus favoritos",
+  "map": "Mapa",
+  "quiz": "Quiz",
+  "notebook": "Caderno de viagem",
+  "info": "Informações práticas"
+ },
+ "common": {
+  "language": "Idioma",
+  "theme_light": "Mudar para o modo claro",
+  "theme_dark": "Mudar para o modo escuro",
+  "listen": "Ouvir",
+  "loading": "A carregar...",
+  "translation_partial": "Tradução em curso"
+ },
+ "hero": {
+  "kicker": "Descubra a África Ocidental",
+  "title": "O Benim espera por si",
+  "subtitle": "Uma viagem entre história milenar, tradições vivas e paisagens de cortar a respiração.",
+  "explore": "Explorar",
+  "plan": "Planear a sua viagem",
+  "alt": "Ganvié, a Veneza de África",
+  "scroll": "Deslizar",
+  "stats": {
+   "years": "Anos de experiência",
+   "destinations": "Destinos",
+   "travelers": "Viajantes satisfeitos"
   }
+ },
+ "home": {
+  "why_title": "Porquê viajar connosco?",
+  "why_subtitle": "Uma equipa local, circuitos seguros e experiências pensadas para si.",
+  "experts_title": "Especialistas locais",
+  "experts_desc": "Guias apaixonados que conhecem cada canto do Benim.",
+  "safe_title": "Viagem segura",
+  "safe_desc": "Parceiros verificados, assistência 24/7 e seguro incluído.",
+  "custom_title": "À medida",
+  "custom_desc": "Cada itinerário é adaptado aos seus desejos e ao seu orçamento."
+ },
+ "destPreview": {
+  "kicker": "Destinos",
+  "title": "Lugares emblemáticos",
+  "all": "Todos os destinos",
+  "discover": "Descobrir",
+  "items": {
+   "abomey": {
+    "title": "Abomey",
+    "subtitle": "Palácios Reais — UNESCO",
+    "description": "Os vestígios do poderoso Reino do Daomé."
+   },
+   "ouidah": {
+    "title": "Ouidah",
+    "subtitle": "A Rota dos Escravos",
+    "description": "A Porta do Não-Retorno, um lugar de memória universal."
+   },
+   "pendjari": {
+    "title": "Pendjari",
+    "subtitle": "Safari e Natureza",
+    "description": "Um dos últimos grandes santuários de vida selvagem."
+   },
+   "cotonou": {
+    "title": "Cotonou",
+    "subtitle": "Coração Económico",
+    "description": "A vibrante capital económica."
+   }
+  }
+ },
+ "cultureSection": {
+  "kicker": "Património",
+  "title": "Berço do Vodum",
+  "p1": "O Benim é o berço da religião vodum, uma tradição espiritual rica e complexa que continua a moldar a vida quotidiana.",
+  "p2": "Da festa anual do Vodum em Ouidah aos templos secretos do interior, descubra um património imaterial de profundidade excecional.",
+  "more": "Explorar a cultura",
+  "alt": "Máscaras tradicionais vodum do Benim",
+  "stats": {
+   "inhabitants": "Habitantes",
+   "ethnic": "Etnias",
+   "unesco": "Sítios UNESCO"
+  }
+ },
+ "cta": {
+  "kicker": "Pronto para a aventura?",
+  "title": "Comece a sua viagem ao Benim",
+  "text": "Quer sonhe com safaris, praias paradisíacas ou descobertas culturais, criamos o seu itinerário por medida.",
+  "button": "Fale connosco",
+  "secondary": "Ver destinos"
+ },
+ "footer": {
+  "tagline": "Explore o Benim, terra de cultura, história e natureza. Uma viagem inesquecível espera por si no coração da África Ocidental.",
+  "navigation": "Navegação",
+  "contact": "Contacto",
+  "rights": "Todos os direitos reservados.",
+  "back_to_top": "Voltar ao topo"
+ },
+ "floating": {
+  "top": "Voltar ao topo",
+  "whatsapp": "Conversar no WhatsApp"
+ },
+ "whatsapp": {
+  "label": "Fale connosco no WhatsApp",
+  "greeting": "Olá LEGBAH, gostaria de obter informações para organizar uma viagem."
+ },
+ "home2": {
+  "explore": {
+   "kicker": "Explorar por universo",
+   "title": "O que o faz viajar?",
+   "tiles": {
+    "history": {
+     "title": "História e memória",
+     "text": "Reinos, palácios e lugares de memória."
+    },
+    "nature": {
+     "title": "Natureza e safari",
+     "text": "Parques, savanas e montanhas."
+    },
+    "beach": {
+     "title": "Praias e lagoas",
+     "text": "Oceano, lagoa e aldeias de pescadores."
+    },
+    "city": {
+     "title": "Cidades e mercados",
+     "text": "Cotonou e Porto-Novo."
+    },
+    "tradition": {
+     "title": "Tradições e artes",
+     "text": "Máscaras, cerimónias e saberes."
+    }
+   }
+  },
+  "steps": {
+   "kicker": "Do sonho à partida",
+   "title": "Prepare a sua viagem em 3 etapas",
+   "items": [
+    {
+     "title": "Descubra o que procura",
+     "text": "Um quiz curto para obter três ideias de destinos.",
+     "cta": "Fazer o quiz"
+    },
+    {
+     "title": "Explore o mapa",
+     "text": "Situe cada lugar e estime as distâncias a partir de Cotonou.",
+     "cta": "Abrir o mapa"
+    },
+    {
+     "title": "Organize o seu caderno",
+     "text": "Ordene as suas etapas e envie o seu projeto por WhatsApp.",
+     "cta": "O meu caderno"
+    }
+   ]
+  },
+  "facts": {
+   "kicker": "Sabia que?",
+   "prev": "Anterior",
+   "next": "Seguinte",
+   "items": [
+    "Doze reis sucederam-se em Abomey entre 1625 e 1900, segundo a UNESCO.",
+    "A Rota dos Escravos, em Ouidah, tem cerca de quatro quilómetros e leva à Porta do Não-Retorno.",
+    "O dia 10 de janeiro é feriado dedicado às religiões endógenas, também chamado festa do vodum.",
+    "Em 2021, a França restituiu ao Benim vinte e seis obras dos tesouros reais de Abomey.",
+    "Ganvié é uma aldeia lacustre construída sobre estacas, no lago Nokoué.",
+    "O franco CFA está indexado ao euro a uma taxa fixa: 1 € = 655,957 F CFA."
+   ]
+  }
+ },
+ "tools": {
+  "kicker": "Ferramentas de viagem",
+  "title": "Prepare a sua viagem",
+  "subtitle": "Conversor de moedas, contagem decrescente e estimador de orçamento.",
+  "currency": {
+   "title": "Conversor Euro / Franco CFA",
+   "eur": "Euros (€)",
+   "xof": "Francos CFA (F CFA)",
+   "rate": "Taxa fixa: 1 € = 655,957 F CFA"
+  },
+  "countdown": {
+   "title": "Contagem decrescente",
+   "event": "Dia Nacional do Vodun — 10 de janeiro",
+   "days": "Dias",
+   "hours": "Horas",
+   "minutes": "Minutos",
+   "seconds": "Segundos"
+  },
+  "budget": {
+   "title": "Estimador de orçamento",
+   "style": "Estilo de viagem",
+   "essential": "Essencial",
+   "comfort": "Conforto",
+   "luxury": "Luxo",
+   "days": "Número de dias",
+   "daysUnit": "dias",
+   "travelers": "Viajantes",
+   "total": "Orçamento total estimado",
+   "perPerson": "por pessoa",
+   "note": "Estimativa indicativa.",
+   "cta": "Pedir um orçamento personalizado"
+  }
+ },
+ "login": {
+  "show_password": "Mostrar palavra-passe",
+  "hide_password": "Ocultar palavra-passe",
+  "capslock": "Caps Lock ativo",
+  "strength": "Força",
+  "rule_length": "Mín. 8 caracteres",
+  "rule_lower": "Uma minúscula",
+  "rule_upper": "Uma maiúscula",
+  "rule_digit": "Um dígito",
+  "rule_symbol": "Um símbolo",
+  "remember": "Lembrar-me",
+  "forgot": "Esqueceu-se da palavra-passe?",
+  "forgot_hint": "Brevemente disponível.",
+  "confirm_password": "Confirmar palavra-passe",
+  "secure_hint": "Os seus dados são encriptados.",
+  "fill_demo": "Preencher credenciais de demonstração",
+  "errors": {
+   "email": "Endereço de e-mail inválido",
+   "firstName": "Nome próprio obrigatório (2 caracteres)",
+   "lastName": "Apelido obrigatório",
+   "password_short": "Mínimo 8 caracteres",
+   "password_weak": "Palavra-passe demasiado fraca",
+   "confirm": "As palavras-passe não coincidem"
+  }
+ }
 }

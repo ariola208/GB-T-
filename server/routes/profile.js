@@ -71,10 +71,10 @@ router.put('/change-password', async (req, res) => {
 router.get('/trips', async (req, res) => {
   try {
     const [rows] = await pool.execute(
-      `SELECT b.booking_id AS id, COALESCE(t.name, 'Voyage') AS destination, t.image_url AS image,
-              b.start_date, b.end_date, (b.number_of_adults + COALESCE(b.number_of_children, 0)) AS travelers,
+      `SELECT b.booking_id AS id, COALESCE(d.name, 'Voyage') AS destination, d.image_url AS image,
+              b.start_date, b.end_date, COALESCE(b.number_of_travelers, 1) AS travelers,
               b.total_price AS price, b.status
-       FROM bookings b LEFT JOIN tours t ON b.tour_id = t.tour_id
+       FROM bookings b LEFT JOIN destinations d ON b.destination_id = d.destination_id
        WHERE b.user_id = ? ORDER BY b.start_date DESC`,
       [req.user.userId]
     );

@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import AvatarUploader from "@/components/AvatarUploader";
+import { DeleteAccountDialog } from "@/components/DeleteAccountDialog";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
@@ -17,22 +18,24 @@ import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card"
 import { Badge } from "../components/ui/badge";
 import { useToast } from "../hooks/use-toast";
 import { useWeather } from "@/hooks/useWeather";
+import { api, ApiError } from "@/lib/api";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+const STATUS_KEYS = ["upcoming", "confirmed", "completed", "cancelled", "refunded"] as const;
+type Status = (typeof STATUS_KEYS)[number];
 
-const authHeaders = () => ({
-  Authorization: `Bearer ${localStorage.getItem("token")}`,
-  "Content-Type": "application/json",
-});
-
-const statusStyle: Record<string, string> = {
+const statusStyle: Record<Status, string> = {
   upcoming: "bg-blue-500",
   confirmed: "bg-green-500",
   completed: "bg-gray-500",
   cancelled: "bg-red-500",
+  refunded: "bg-purple-500",
 };
 
-const TAB_IDS = ["trips", "favorites", "reviews", "profile"];
+const normalizeStatus = (s: string): Status =>
+  (STATUS_KEYS as readonly string[]).includes(s) ? (s as Status) : "upcoming";
+
+const TAB_IDS = ["trips", "favorites", "reviews", "profile"] as const;
+type Tab = (typeof TAB_IDS)[number];
 
 const Shell = ({ children }: { children: React.ReactNode }) => (
   <div className="flex min-h-screen flex-col bg-background">
@@ -42,23 +45,47 @@ const Shell = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
+const WeatherCard = () => {
+  const { t } = useTranslation();
+  const { data: wx } = useWeather();
+  return (
+    <Card flat className="lg:col-span-1">
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2">
+          <Sun className="h-5 w-5" />
+          {t("profile.weather_in")} Cotonou
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="flex items-center gap-4">
+        <Sun className="h-12 w-12 text-primary" />
+        <div>
+          <p className="text-3xl font-bold">{wx ? wx.temp : "–"}°C</p>
+          <p className="text-muted-foreground">{wx ? t(`weather.${wx.kind}`) : ""}</p>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
+
 const Profile = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { toast } = useToast();
-  const { data: wx } = useWeather();
 
   const [state, setState] = useState<"loading" | "ready" | "error">("loading");
-  const [tab, setTab] = useState("trips");
+  const [tab, setTab] = useState<Tab>("trips");
   const [profile, setProfile] = useState<any>(null);
   const [trips, setTrips] = useState<any[]>([]);
   const [favorites, setFavorites] = useState<any[]>([]);
   const [reviews, setReviews] = useState<any[]>([]);
   const [isEditing, setIsEditing] = useState(false);
-  const [editForm, setEditForm] = useState({ name: "", email: "", phone: "", location: "", bio: "" });
+  const [editForm, setEditForm] = useState({
+    name: "", email: "", phone: "", location: "", bio: "",
+  });
   const [showPassword, setShowPassword] = useState(false);
   const [pw, setPw] = useState({ currentPassword: "", newPassword: "", confirmPassword: "" });
   const [pwError, setPwError] = useState("");
+  const [deleteOpen, setDeleteOpen] = useState(false);
 
   const fmtDate = (d: string) => new Date(d).toLocaleDateString(i18n.language);
 
@@ -69,39 +96,33 @@ const Profile = () => {
 
   const load = useCallback(async () => {
     if (!localStorage.getItem("token")) {
-      navigate("/login");
+      navigate("/login", { state: { from: "/profile" } });
       return;
     }
     setState("loading");
     try {
-      const res = await fetch(`${API_URL}/profile/profile`, { headers: authHeaders() });
-      if (res.status === 401 || res.status === 403) {
-        clearSession();
-        navigate("/login");
-        return;
-      }
-      if (!res.ok) throw new Error(String(res.status));
-      setProfile(await res.json());
+      const p = await api.get<any>("/profile/profile");
+      setProfile(p);
       setState("ready");
-
-      const [tr, fv, rv] = await Promise.allSettled(
-        ["trips", "favorites", "reviews"].map((p) =>
-          fetch(`${API_URL}/profile/${p}`, { headers: authHeaders() }).then((r) =>
-            r.ok ? r.json() : []
-          )
-        )
-      );
+      const [tr, fv, rv] = await Promise.allSettled([
+        api.get<any[]>("/profile/trips"),
+        api.get<any[]>("/profile/favorites"),
+        api.get<any[]>("/profile/reviews"),
+      ]);
       setTrips(tr.status === "fulfilled" && Array.isArray(tr.value) ? tr.value : []);
       setFavorites(fv.status === "fulfilled" && Array.isArray(fv.value) ? fv.value : []);
       setReviews(rv.status === "fulfilled" && Array.isArray(rv.value) ? rv.value : []);
-    } catch {
+    } catch (e) {
+      if (e instanceof ApiError && (e.status === 401 || e.status === 403)) {
+        clearSession();
+        navigate("/login", { state: { from: "/profile" } });
+        return;
+      }
       setState("error");
     }
   }, [navigate]);
 
-  useEffect(() => {
-    load();
-  }, [load]);
+  useEffect(() => { load(); }, [load]);
 
   const startEditing = () => {
     setEditForm({
@@ -117,27 +138,14 @@ const Profile = () => {
 
   const handleUpdate = async () => {
     try {
-      const res = await fetch(`${API_URL}/profile/profile`, {
-        method: "PUT",
-        headers: authHeaders(),
-        body: JSON.stringify(editForm),
-      });
-      if (res.ok) {
-        await load();
-        setIsEditing(false);
-        toast({ title: t("profile.toast.success"), description: t("profile.toast.updated") });
-      } else {
-        const data = await res.json().catch(() => ({}));
-        toast({
-          title: t("profile.toast.error"),
-          description: data.error || t("profile.toast.update_failed"),
-          variant: "destructive",
-        });
-      }
-    } catch {
+      await api.put("/profile/profile", editForm);
+      await load();
+      setIsEditing(false);
+      toast({ title: t("profile.toast.success"), description: t("profile.toast.updated") });
+    } catch (e) {
       toast({
         title: t("profile.toast.error"),
-        description: t("profile.toast.update_failed"),
+        description: e instanceof ApiError ? e.message : t("profile.toast.update_failed"),
         variant: "destructive",
       });
     }
@@ -147,39 +155,28 @@ const Profile = () => {
     if (pw.newPassword !== pw.confirmPassword) return setPwError(t("profile.pw_mismatch"));
     if (pw.newPassword.length < 8) return setPwError(t("profile.pw_short"));
     try {
-      const res = await fetch(`${API_URL}/profile/change-password`, {
-        method: "PUT",
-        headers: authHeaders(),
-        body: JSON.stringify({ currentPassword: pw.currentPassword, newPassword: pw.newPassword }),
+      await api.put("/profile/change-password", {
+        currentPassword: pw.currentPassword,
+        newPassword: pw.newPassword,
       });
-      if (res.ok) {
-        setShowPassword(false);
-        setPw({ currentPassword: "", newPassword: "", confirmPassword: "" });
-        setPwError("");
-        toast({ title: t("profile.toast.success"), description: t("profile.toast.pw_changed") });
-      } else {
-        const data = await res.json().catch(() => ({}));
-        setPwError(data.error || t("profile.server_error"));
-      }
-    } catch {
-      setPwError(t("profile.server_error"));
+      setShowPassword(false);
+      setPw({ currentPassword: "", newPassword: "", confirmPassword: "" });
+      setPwError("");
+      toast({ title: t("profile.toast.success"), description: t("profile.toast.pw_changed") });
+    } catch (e) {
+      setPwError(e instanceof ApiError ? e.message : t("profile.server_error"));
     }
   };
 
   const removeFavorite = async (id: number) => {
     try {
-      const res = await fetch(`${API_URL}/profile/favorites/${id}`, {
-        method: "DELETE",
-        headers: authHeaders(),
-      });
-      if (res.ok) {
-        setFavorites((f) => f.filter((x) => x.id !== id));
-        toast({ title: t("profile.toast.success"), description: t("profile.toast.fav_removed") });
-      }
-    } catch {
+      await api.delete(`/profile/favorites/${id}`);
+      setFavorites((f) => f.filter((x) => x.id !== id));
+      toast({ title: t("profile.toast.success"), description: t("profile.toast.fav_removed") });
+    } catch (e) {
       toast({
         title: t("profile.toast.error"),
-        description: t("profile.toast.fav_failed"),
+        description: e instanceof ApiError ? e.message : t("profile.toast.fav_failed"),
         variant: "destructive",
       });
     }
@@ -209,22 +206,14 @@ const Profile = () => {
           <Card flat className="max-w-md text-center">
             <CardContent className="p-8">
               <AlertCircle className="mx-auto mb-4 h-12 w-12 text-red-500" />
-              <h1 className="mb-2 font-heading text-2xl font-bold">
-                {t("profile.error_title")}
-              </h1>
+              <h1 className="mb-2 font-heading text-2xl font-bold">{t("profile.error_title")}</h1>
               <p className="mb-6 text-sm text-muted-foreground">{t("profile.error_text")}</p>
               <div className="flex justify-center gap-3">
                 <Button onClick={load}>
                   <RefreshCw className="mr-2 h-4 w-4" />
                   {t("profile.retry")}
                 </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => {
-                    clearSession();
-                    navigate("/login");
-                  }}
-                >
+                <Button variant="outline" onClick={() => { clearSession(); navigate("/login"); }}>
                   {t("profile.login_again")}
                 </Button>
               </div>
@@ -238,7 +227,6 @@ const Profile = () => {
   return (
     <Shell>
       <div className="container mx-auto px-6 py-8">
-        {/* En-tête */}
         <div className="relative mb-12">
           <div className="h-48 rounded-2xl bg-gradient-to-r from-foreground/20 via-foreground/10 to-foreground/5" />
           <div className="-mt-16 flex flex-col items-start gap-6 px-6 md:flex-row md:items-end">
@@ -262,12 +250,7 @@ const Profile = () => {
                 <Edit3 className="mr-2 h-4 w-4" />
                 {t("profile.edit")}
               </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="text-destructive"
-                onClick={logout}
-              >
+              <Button variant="outline" size="sm" className="text-destructive" onClick={logout}>
                 <LogOut className="mr-2 h-4 w-4" />
                 {t("profile.logout")}
               </Button>
@@ -275,7 +258,6 @@ const Profile = () => {
           </div>
         </div>
 
-        {/* Stats */}
         <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { icon: Compass, key: "trips", value: profile.stats?.trips || 0, color: "text-primary" },
@@ -283,43 +265,20 @@ const Profile = () => {
             { icon: Heart, key: "favorites", value: favorites.length, color: "text-destructive" },
             { icon: Award, key: "points", value: profile.stats?.points || 0, color: "text-accent" },
           ].map((s, i) => (
-            <motion.div
-              key={s.key}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-            >
+            <motion.div key={s.key} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}>
               <Card className="text-center transition-all duration-500 hover:-translate-y-1 hover:shadow-dramatic">
                 <CardContent className="p-6">
                   <s.icon className={`mx-auto mb-2 h-8 w-8 ${s.color}`} />
                   <p className="font-heading text-3xl font-bold">{s.value}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {t(`profile.stats.${s.key}`)}
-                  </p>
+                  <p className="text-sm text-muted-foreground">{t(`profile.stats.${s.key}`)}</p>
                 </CardContent>
               </Card>
             </motion.div>
           ))}
         </div>
 
-        {/* Météo + Actions rapides */}
         <div className="mb-8 grid grid-cols-1 gap-4 lg:grid-cols-3">
-          <Card flat className="lg:col-span-1">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Sun className="h-5 w-5" />
-                {t("profile.weather_in")} Cotonou
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="flex items-center gap-4">
-              <Sun className="h-12 w-12 text-primary" />
-              <div>
-                <p className="text-3xl font-bold">{wx ? wx.temp : "–"}°C</p>
-                <p className="text-muted-foreground">{wx ? t(`weather.${wx.kind}`) : ""}</p>
-              </div>
-            </CardContent>
-          </Card>
-
+          <WeatherCard />
           <Card flat className="lg:col-span-2">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -350,144 +309,114 @@ const Profile = () => {
           </Card>
         </div>
 
-        {/* Onglets */}
         <div className="mb-8 flex flex-wrap gap-2 border-b border-border">
           {TAB_IDS.map((k) => (
-            <button
-              key={k}
-              onClick={() => setTab(k)}
+            <button key={k} onClick={() => setTab(k)}
               className={`-mb-px border-b-2 px-4 py-2 text-sm font-medium transition-colors ${
-                tab === k
-                  ? "border-foreground text-foreground"
-                  : "border-transparent text-muted-foreground hover:text-foreground"
-              }`}
-            >
+                tab === k ? "border-foreground text-foreground" : "border-transparent text-muted-foreground hover:text-foreground"
+              }`}>
               {t(`profile.tabs.${k}`)}
             </button>
           ))}
         </div>
 
-        {/* Trips */}
-        {tab === "trips" &&
-          (trips.length === 0 ? (
-            <div className="py-12 text-center">
-              <Compass className="mx-auto mb-4 h-12 w-12 text-muted-foreground" />
-              <p>{t("profile.no_trips")}</p>
-              <Button className="mt-4" asChild>
-                <Link to="/destinations">{t("profile.explore")}</Link>
-              </Button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              {trips.map((trip) => (
-                <Card key={trip.id} className="overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-dramatic">
-                  {trip.image ? (
-                    <img src={trip.image} alt="" className="h-48 w-full object-cover" />
-                  ) : (
-                    <div className="flex h-48 items-center justify-center bg-muted">
-                      <Compass className="h-10 w-10 text-muted-foreground" />
-                    </div>
-                  )}
-                  <CardContent className="p-4">
-                    <div className="flex items-start justify-between">
-                      <h3 className="text-lg font-bold">{trip.destination}</h3>
-                      <Badge className={statusStyle[trip.status] || statusStyle.upcoming}>
-                        {t(`profile.status.${statusStyle[trip.status] ? trip.status : "upcoming"}`)}
-                      </Badge>
-                    </div>
-                    <p className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
-                      <Calendar className="h-4 w-4" />
-                      {trip.startDate} - {trip.endDate}
-                    </p>
-                    <p className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Users className="h-4 w-4" />
-                      {t("profile.travelers", { count: trip.travelers })}
-                    </p>
-                    <p className="mt-2 font-bold">{trip.price}€</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ))}
+        {tab === "trips" && (trips.length === 0 ? (
+          <div className="py-12 text-center">
+            <Compass className="mx-auto mb-4 h-12 w-12 text-muted-foreground" />
+            <p>{t("profile.no_trips")}</p>
+            <Button className="mt-4" asChild><Link to="/destinations">{t("profile.explore")}</Link></Button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {trips.map((trip) => (
+              <Card key={trip.id} className="overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-dramatic">
+                {trip.image ? (
+                  <img src={trip.image} alt="" className="h-48 w-full object-cover" />
+                ) : (
+                  <div className="flex h-48 items-center justify-center bg-muted">
+                    <Compass className="h-10 w-10 text-muted-foreground" />
+                  </div>
+                )}
+                <CardContent className="p-4">
+                  <div className="flex items-start justify-between">
+                    <h3 className="text-lg font-bold">{trip.destination}</h3>
+                    <Badge className={statusStyle[normalizeStatus(trip.status)]}>
+                      {t(`profile.status.${normalizeStatus(trip.status)}`)}
+                    </Badge>
+                  </div>
+                  <p className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
+                    <Calendar className="h-4 w-4" />{trip.startDate} - {trip.endDate}
+                  </p>
+                  <p className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Users className="h-4 w-4" />{t("profile.travelers", { count: trip.travelers })}
+                  </p>
+                  <p className="mt-2 font-bold">{trip.price}€</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        ))}
 
-        {/* Favorites */}
-        {tab === "favorites" &&
-          (favorites.length === 0 ? (
-            <div className="py-12 text-center">
-              <Heart className="mx-auto mb-4 h-12 w-12 text-muted-foreground" />
-              <p>{t("profile.no_favorites")}</p>
-              <Button className="mt-4" asChild>
-                <Link to="/destinations">{t("profile.discover")}</Link>
-              </Button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {favorites.map((fav) => (
-                <Card key={fav.id} className="overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-dramatic">
-                  {fav.image && <img src={fav.image} alt="" className="h-48 w-full object-cover" />}
-                  <CardContent className="p-4">
-                    <div className="flex items-start justify-between">
-                      <h3 className="font-bold">{fav.name}</h3>
-                      <Button
-                        size="icon"
-                        variant="ghost"
-                        className="text-destructive transition-transform hover:scale-110"
-                        onClick={() => removeFavorite(fav.id)}
-                        aria-label="remove"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </Button>
-                    </div>
-                    <p className="flex items-center gap-1 text-sm text-muted-foreground">
-                      <MapPin className="h-3 w-3" />
-                      {fav.location}
-                    </p>
-                    <div className="mt-2 flex items-center gap-1">
-                      <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" />
-                      <span>{fav.rating}</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ))}
+        {tab === "favorites" && (favorites.length === 0 ? (
+          <div className="py-12 text-center">
+            <Heart className="mx-auto mb-4 h-12 w-12 text-muted-foreground" />
+            <p>{t("profile.no_favorites")}</p>
+            <Button className="mt-4" asChild><Link to="/destinations">{t("profile.discover")}</Link></Button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {favorites.map((fav) => (
+              <Card key={fav.id} className="overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-dramatic">
+                {fav.image && <img src={fav.image} alt="" className="h-48 w-full object-cover" />}
+                <CardContent className="p-4">
+                  <div className="flex items-start justify-between">
+                    <h3 className="font-bold">{fav.name}</h3>
+                    <Button size="icon" variant="ghost" className="text-destructive transition-transform hover:scale-110"
+                      onClick={() => removeFavorite(fav.id)} aria-label="remove">
+                      <Trash2 className="h-4 w-4" />
+                    </Button>
+                  </div>
+                  <p className="flex items-center gap-1 text-sm text-muted-foreground">
+                    <MapPin className="h-3 w-3" />{fav.location}
+                  </p>
+                  <div className="mt-2 flex items-center gap-1">
+                    <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" />
+                    <span>{fav.rating}</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        ))}
 
-        {/* Reviews */}
-        {tab === "reviews" &&
-          (reviews.length === 0 ? (
-            <div className="py-12 text-center">
-              <Star className="mx-auto mb-4 h-12 w-12 text-muted-foreground" />
-              <p>{t("profile.no_reviews")}</p>
-            </div>
-          ) : (
-            <div className="space-y-4">
-              {reviews.map((r) => (
-                <Card key={r.id}>
-                  <CardContent className="p-6">
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <h3 className="font-bold">{r.destination}</h3>
-                        <p className="text-sm text-muted-foreground">{fmtDate(r.date)}</p>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`h-4 w-4 ${
-                              i < r.rating ? "fill-yellow-500 text-yellow-500" : "text-muted"
-                            }`}
-                          />
-                        ))}
-                      </div>
+        {tab === "reviews" && (reviews.length === 0 ? (
+          <div className="py-12 text-center">
+            <Star className="mx-auto mb-4 h-12 w-12 text-muted-foreground" />
+            <p>{t("profile.no_reviews")}</p>
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {reviews.map((r) => (
+              <Card key={r.id}>
+                <CardContent className="p-6">
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h3 className="font-bold">{r.destination}</h3>
+                      <p className="text-sm text-muted-foreground">{fmtDate(r.date)}</p>
                     </div>
-                    <p className="mt-3 text-muted-foreground">{r.comment}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ))}
+                    <div className="flex items-center gap-1">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} className={`h-4 w-4 ${i < r.rating ? "fill-yellow-500 text-yellow-500" : "text-muted"}`} />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="mt-3 text-muted-foreground">{r.comment}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        ))}
 
-        {/* Profile */}
         {tab === "profile" && (
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
@@ -496,61 +425,27 @@ const Profile = () => {
                   <CardTitle>{t("profile.personal_info")}</CardTitle>
                   {!isEditing && (
                     <Button variant="outline" size="sm" onClick={startEditing}>
-                      <Edit3 className="mr-2 h-4 w-4" />
-                      {t("profile.edit")}
+                      <Edit3 className="mr-2 h-4 w-4" />{t("profile.edit")}
                     </Button>
                   )}
                 </CardHeader>
                 <CardContent>
                   {isEditing ? (
-                    <form
-                      onSubmit={(e) => {
-                        e.preventDefault();
-                        handleUpdate();
-                      }}
-                      className="space-y-4"
-                    >
-                      <Input
-                        label={t("profile.name")}
-                        value={editForm.name}
-                        onChange={(e) => setEditForm({ ...editForm, name: e.target.value })}
-                        required
-                      />
-                      <Input
-                        label={t("profile.email")}
-                        type="email"
-                        value={editForm.email}
-                        onChange={(e) => setEditForm({ ...editForm, email: e.target.value })}
-                        required
-                      />
-                      <Input
-                        label={t("profile.phone")}
-                        value={editForm.phone}
-                        onChange={(e) => setEditForm({ ...editForm, phone: e.target.value })}
-                      />
-                      <Input
-                        label={t("profile.location")}
-                        value={editForm.location}
-                        onChange={(e) => setEditForm({ ...editForm, location: e.target.value })}
-                      />
-                      <Textarea
-                        label={t("profile.bio")}
-                        rows={4}
-                        value={editForm.bio}
-                        onChange={(e) => setEditForm({ ...editForm, bio: e.target.value })}
-                      />
+                    <form onSubmit={(e) => { e.preventDefault(); handleUpdate(); }} className="space-y-4">
+                      <Input label={t("profile.name")} value={editForm.name}
+                        onChange={(e) => setEditForm({ ...editForm, name: e.target.value })} required />
+                      <Input label={t("profile.email")} type="email" value={editForm.email}
+                        onChange={(e) => setEditForm({ ...editForm, email: e.target.value })} required />
+                      <Input label={t("profile.phone")} value={editForm.phone}
+                        onChange={(e) => setEditForm({ ...editForm, phone: e.target.value })} />
+                      <Input label={t("profile.location")} value={editForm.location}
+                        onChange={(e) => setEditForm({ ...editForm, location: e.target.value })} />
+                      <Textarea label={t("profile.bio")} rows={4} value={editForm.bio}
+                        onChange={(e) => setEditForm({ ...editForm, bio: e.target.value })} />
                       <div className="flex gap-2">
-                        <Button type="submit">
-                          <Save className="mr-2 h-4 w-4" />
-                          {t("profile.save")}
-                        </Button>
-                        <Button
-                          type="button"
-                          variant="outline"
-                          onClick={() => setIsEditing(false)}
-                        >
-                          <X className="mr-2 h-4 w-4" />
-                          {t("profile.cancel")}
+                        <Button type="submit"><Save className="mr-2 h-4 w-4" />{t("profile.save")}</Button>
+                        <Button type="button" variant="outline" onClick={() => setIsEditing(false)}>
+                          <X className="mr-2 h-4 w-4" />{t("profile.cancel")}
                         </Button>
                       </div>
                     </form>
@@ -559,16 +454,8 @@ const Profile = () => {
                       {[
                         { icon: User, label: t("profile.name"), value: profile.name },
                         { icon: Mail, label: t("profile.email"), value: profile.email },
-                        {
-                          icon: Phone,
-                          label: t("profile.phone"),
-                          value: profile.phone || t("profile.not_set"),
-                        },
-                        {
-                          icon: MapPin,
-                          label: t("profile.location"),
-                          value: profile.location || t("profile.not_set"),
-                        },
+                        { icon: Phone, label: t("profile.phone"), value: profile.phone || t("profile.not_set") },
+                        { icon: MapPin, label: t("profile.location"), value: profile.location || t("profile.not_set") },
                       ].map((row) => (
                         <div key={row.label} className="flex items-center gap-3 border-b py-2">
                           <row.icon className="h-5 w-5 text-muted-foreground" />
@@ -577,12 +464,8 @@ const Profile = () => {
                         </div>
                       ))}
                       <div>
-                        <dt className="mb-2 text-sm text-muted-foreground">
-                          {t("profile.bio")}
-                        </dt>
-                        <dd className="text-muted-foreground">
-                          {profile.bio || t("profile.no_bio")}
-                        </dd>
+                        <dt className="mb-2 text-sm text-muted-foreground">{t("profile.bio")}</dt>
+                        <dd className="text-muted-foreground">{profile.bio || t("profile.no_bio")}</dd>
                       </div>
                     </dl>
                   )}
@@ -592,47 +475,33 @@ const Profile = () => {
 
             <div className="space-y-6">
               <Card flat>
-                <CardHeader>
-                  <CardTitle>{t("profile.security")}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <Button
-                    variant="outline"
-                    className="w-full justify-start transition-transform hover:scale-105"
-                    onClick={() => setShowPassword(true)}
-                  >
-                    <Lock className="mr-2 h-4 w-4" />
-                    {t("profile.change_password")}
+                <CardHeader><CardTitle>{t("profile.security")}</CardTitle></CardHeader>
+                <CardContent className="space-y-2">
+                  <Button variant="outline" className="w-full justify-start transition-transform hover:scale-105"
+                    onClick={() => setShowPassword(true)}>
+                    <Lock className="mr-2 h-4 w-4" />{t("profile.change_password")}
+                  </Button>
+                  <Button variant="outline" className="w-full justify-start text-destructive transition-transform hover:scale-105 hover:text-destructive"
+                    onClick={() => setDeleteOpen(true)}>
+                    <Trash2 className="mr-2 h-4 w-4" />
+                    {t("profile.delete_account", "Supprimer mon compte")}
                   </Button>
                 </CardContent>
               </Card>
 
               <Card flat>
-                <CardHeader>
-                  <CardTitle>{t("profile.help_title")}</CardTitle>
-                </CardHeader>
+                <CardHeader><CardTitle>{t("profile.help_title")}</CardTitle></CardHeader>
                 <CardContent>
-                  <p className="mb-4 text-sm text-muted-foreground">
-                    {t("profile.help_text")}
-                  </p>
-                  <Button variant="link" className="p-0" asChild>
-                    <Link to="/contact">{t("profile.contact_support")}</Link>
-                  </Button>
+                  <p className="mb-4 text-sm text-muted-foreground">{t("profile.help_text")}</p>
+                  <Button variant="link" className="p-0" asChild><Link to="/contact">{t("profile.contact_support")}</Link></Button>
                 </CardContent>
               </Card>
 
               <Card flat>
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Bell className="h-5 w-5" />
-                    {t("profile.notifications")}
-                  </CardTitle>
+                  <CardTitle className="flex items-center gap-2"><Bell className="h-5 w-5" />{t("profile.notifications")}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    {t("profile.no_notifications")}
-                  </p>
-                </CardContent>
+                <CardContent><p className="text-sm text-muted-foreground">{t("profile.no_notifications")}</p></CardContent>
               </Card>
             </div>
           </div>
@@ -641,46 +510,27 @@ const Profile = () => {
 
       {showPassword && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
-          <div
-            className="absolute inset-0 bg-black/80"
-            onClick={() => setShowPassword(false)}
-          />
+          <div className="absolute inset-0 bg-black/80" onClick={() => setShowPassword(false)} />
           <div className="relative w-full max-w-md rounded-2xl bg-background p-6">
-            <h3 className="mb-4 font-heading text-2xl font-bold">
-              {t("profile.change_password")}
-            </h3>
+            <h3 className="mb-4 font-heading text-2xl font-bold">{t("profile.change_password")}</h3>
             <div className="space-y-4">
-              <Input
-                type="password"
-                placeholder={t("profile.current_password")}
-                value={pw.currentPassword}
-                onChange={(e) => setPw({ ...pw, currentPassword: e.target.value })}
-              />
-              <Input
-                type="password"
-                placeholder={t("profile.new_password")}
-                value={pw.newPassword}
-                onChange={(e) => setPw({ ...pw, newPassword: e.target.value })}
-              />
-              <Input
-                type="password"
-                placeholder={t("profile.confirm_password")}
-                value={pw.confirmPassword}
-                onChange={(e) => setPw({ ...pw, confirmPassword: e.target.value })}
-              />
+              <Input type="password" placeholder={t("profile.current_password")} value={pw.currentPassword}
+                onChange={(e) => setPw({ ...pw, currentPassword: e.target.value })} />
+              <Input type="password" placeholder={t("profile.new_password")} value={pw.newPassword}
+                onChange={(e) => setPw({ ...pw, newPassword: e.target.value })} />
+              <Input type="password" placeholder={t("profile.confirm_password")} value={pw.confirmPassword}
+                onChange={(e) => setPw({ ...pw, confirmPassword: e.target.value })} />
             </div>
             {pwError && <p className="mt-2 text-sm text-destructive">{pwError}</p>}
             <div className="mt-6 flex gap-3">
-              <Button onClick={handleChangePassword} className="flex-1">
-                {t("profile.modify")}
-              </Button>
-              <Button variant="outline" onClick={() => setShowPassword(false)}>
-                {t("profile.cancel")}
-              </Button>
+              <Button onClick={handleChangePassword} className="flex-1">{t("profile.modify")}</Button>
+              <Button variant="outline" onClick={() => setShowPassword(false)}>{t("profile.cancel")}</Button>
             </div>
           </div>
         </div>
       )}
+
+      <DeleteAccountDialog open={deleteOpen} onClose={() => setDeleteOpen(false)} />
     </Shell>
   );
 };

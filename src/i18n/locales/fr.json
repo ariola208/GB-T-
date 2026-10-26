@@ -964,7 +964,30 @@
   "has_account": "Déjà un compte ? Se connecter",
   "error": "Une erreur est survenue",
   "server_error": "Erreur de connexion au serveur",
-  "registered": "Compte créé ! Vous pouvez maintenant vous connecter."
+  "registered": "Compte créé ! Vous pouvez maintenant vous connecter.",
+  "show_password": "Afficher le mot de passe",
+  "hide_password": "Masquer le mot de passe",
+  "capslock": "Verr. Maj. activé",
+  "strength": "Force",
+  "rule_length": "8 caractères min.",
+  "rule_lower": "Une minuscule",
+  "rule_upper": "Une majuscule",
+  "rule_digit": "Un chiffre",
+  "rule_symbol": "Un symbole",
+  "remember": "Se souvenir de moi",
+  "forgot": "Mot de passe oublié ?",
+  "forgot_hint": "Fonction bientôt disponible.",
+  "confirm_password": "Confirmer le mot de passe",
+  "secure_hint": "Vos données sont chiffrées. Aucun partage avec des tiers.",
+  "fill_demo": "Remplir les identifiants de démo",
+  "errors": {
+   "email": "Adresse e-mail invalide",
+   "firstName": "Prénom requis (2 caractères min.)",
+   "lastName": "Nom requis",
+   "password_short": "8 caractères minimum",
+   "password_weak": "Mot de passe trop faible",
+   "confirm": "Les mots de passe ne correspondent pas"
+  }
  },
  "notfound": {
   "title": "404",

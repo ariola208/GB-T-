@@ -7,12 +7,17 @@
     "dev": "bash scripts/dev-setup.sh && concurrently -k -n \"API,WEB\" -c \"cyan,magenta\" \"pnpm --dir server run dev\" \"vite --host 0.0.0.0\"",
     "dev:web": "vite --host 0.0.0.0",
     "dev:api": "pnpm --dir server run dev",
-    "build": "vite build",
+    "build": "tsc -p tsconfig.app.json --noEmit && vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview --host 0.0.0.0",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.app.json --noEmit",
+    "i18n:check": "python3 check_i18n.py",
+    "db:migrate": "mysql -u $DB_USER -p$DB_PASSWORD $DB_NAME < scripts/migrations/001_auth_stats.sql",
+    "db:maintain": "mysql -u $DB_USER -p$DB_PASSWORD $DB_NAME < scripts/db-maintenance.sql",
+    "db:diagnose": "mysql -u $DB_USER -p$DB_PASSWORD $DB_NAME < scripts/db-diagnostics.sql"
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.8",
@@ -63,6 +68,7 @@
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.61.1",
     "react-i18next": "^17.0.16",
+    "react-phone-number-input": "^3.4.18",
     "react-resizable-panels": "^2.1.9",
     "react-router-dom": "^6.30.1",
     "recharts": "^2.15.4",
